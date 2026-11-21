@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'C++按天学习计划.md'
+      - '*按天学习计划.md'
       - 'tutorials/**'
       - 'tools/**'
       - 'static/**'
