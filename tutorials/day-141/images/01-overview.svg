@@ -3,7 +3,7 @@
   <g stroke-linecap="round" stroke-linejoin="round">
     <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 141 全貌：代码整理——功能之外的可维护性</text>
     <path d="M 320,60 Q 480,52 640,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
-    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定"README、目录结构、注释规范"——14 天 1717 行的 JSON 项目做发布前的整理：三层注释的示范、文件清单的审视、"给未来的自己写"</text>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定三项全做——14 天 1717 行的发布前整理：三层注释示范、文件清单审视、"给未来的自己写"</text>
 
     <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
     <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">三层注释的规范（示范）</text>
