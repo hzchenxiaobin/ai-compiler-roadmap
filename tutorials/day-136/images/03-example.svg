@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">七用例、两失败形态与过滤器战报</text>
+    <path d="M 380,58 Q 480,52 580,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 -std=c++20 -Wall -Wextra + googletest 1.18.0）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,490 Q 248,495 26,490 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 296)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出（节选）</text>
+    <rect x="38" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ g++ … -lgtest -lgtest_main &amp;&amp; ./ft</text>
+    <text x="54" y="200" font-size="12" fill="#9fb8a8">== 7 tests from 4 suites ==</text>
+    <text x="54" y="222" font-size="11.5" fill="#cfe8c8">AddTest×3 全 OK ✔</text>
+    <text x="54" y="242" font-size="11.5" fill="#cfe8c8">Assertions.Family OK（十断言）✔</text>
+    <text x="54" y="266" font-size="11.5" fill="#f0c9c0">CheckPointer.AssertStops：</text>
+    <text x="54" y="286" font-size="11" fill="#9fb8a8">　Expected: (p) != (nullptr)</text>
+    <text x="54" y="304" font-size="11" fill="#9fb8a8">　actual: NULL ✔（ASSERT 生效）</text>
+    <text x="54" y="330" font-size="11.5" fill="#f0c9c0">FailDemo.ThisOneFails：</text>
+    <text x="54" y="350" font-size="11" fill="#9fb8a8">　add(2,2) Which is: 4 / 5 ✔</text>
+    <text x="54" y="376" font-size="11.5" fill="#cfe8c8">PASSED 5｜FAILED 2（故意）</text>
+    <text x="54" y="404" font-size="12" fill="#9fb8a8">== 过滤器 ==</text>
+    <text x="54" y="426" font-size="11.5" fill="#cfe8c8">--gtest_filter="AddTest.*" → 3 过 ✔</text>
+    <text x="54" y="450" font-size="11" fill="#9fb8a8">（套件级通配——开发时只跑相关的）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,490 Q 712,495 490,490 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 296)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">明天的测试矩阵预览</text>
+    <rect x="502" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">JSON 解析器的测试套件设计：</text>
+    <text x="514" y="198" font-size="11.5" fill="#cfe8c8">ParseTest：合法输入（嵌套/转义/</text>
+    <text x="514" y="218" font-size="11" fill="#9fb8a8">　emoji/多行各一用例）</text>
+    <text x="514" y="246" font-size="11.5" fill="#cfe8c8">ParseErrorTest：六类错误各断言消息</text>
+    <text x="514" y="272" font-size="11.5" fill="#cfe8c8">DumpTest：双模式的输出比对</text>
+    <text x="514" y="298" font-size="11.5" fill="#cfe8c8">RoundTripTest：parse→dump→parse</text>
+    <text x="514" y="318" font-size="11" fill="#9fb8a8">　（幂等性断言——Day 134 的伏笔）</text>
+    <text x="514" y="346" font-size="11.5" fill="#cfe8c8">AccessTest：get/[]/迭代的正确性</text>
+    <text x="514" y="378" font-size="12.5" fill="#45703a">（136/144 = 94.4%）</text>
+    <text x="514" y="408" font-size="11" fill="#9fb8a8">（Day 137 补齐 20+ 用例；</text>
+    <text x="514" y="426" font-size="11" fill="#9fb8a8">　Day 138 公开测试集（JSONTestSuite））</text>
+    <text x="514" y="456" font-size="11" fill="#9fb8a8">（安装插曲：brew install googletest</text>
+    <text x="514" y="474" font-size="11" fill="#9fb8a8">　——1.18.0 本地就位）</text>
+
+    <path d="M 24,516 Q 470,510 905,517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>
+    <text x="46" y="542" font-size="15.5" font-weight="bold" fill="#9c5a22">测试的意义</text>
+    <text x="46" y="568" font-size="12.5" fill="#3b3a36">"这个函数对不对"从"我跑过一次"变成"任何时候跑都过"——改代码的底气、重构的护栏、回归的哨兵；五个月手工验证的积累今天找到了自动化形态</text>
+
+    <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 137 补齐 20+ 测试用例——空串、深层嵌套、非法输入等边界（计划指定）</text>
+  </g>
+</svg>

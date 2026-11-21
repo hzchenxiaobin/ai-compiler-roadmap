@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 136 全貌：GoogleTest 入门——第一个测试用例（质量周开篇）</text>
+    <path d="M 270,60 Q 480,52 690,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定"安装、写第一个测试用例"——brew 装好 1.18.0；7 个用例跑通（含 2 个故意的失败——看报告形态）；断言家族 + EXPECT/ASSERT 差异 + 过滤器</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">TEST 宏与断言家族</text>
+    <rect x="64" y="164" width="440" height="70" fill="#33413a"/>
+    <text x="284" y="190" font-size="11" fill="#9fb8a8">TEST(套件名, 用例名) {</text>
+    <text x="284" y="212" font-size="11" fill="#cfe8c8">　EXPECT_EQ(add(2,2), 4);　}</text>
+    <text x="64" y="260" font-size="12.5" fill="#45703a">断言十件：EQ/NE/LT/LE/GT/GE/</text>
+    <text x="64" y="282" font-size="12.5" fill="#45703a">　TRUE/FALSE/FLOAT_EQ/DOUBLE_EQ</text>
+    <text x="64" y="314" font-size="12.5" fill="#a33f2e">EXPECT vs ASSERT（核心差异）：</text>
+    <text x="64" y="336" font-size="12" fill="#8a8578">（EXPECT 失败继续 / ASSERT 失败即停）</text>
+    <text x="64" y="366" font-size="11.5" fill="#8a8578">（实测：空指针场景 ASSERT 保护后续解引用）</text>
+
+    <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">实测战报（7 用例）</text>
+    <text x="572" y="180" font-size="12" fill="#45703a">5 过 + 2 败（故意的——看形态）</text>
+    <text x="572" y="208" font-size="12" fill="#45703a">失败的报告：</text>
+    <text x="572" y="230" font-size="11" fill="#8a8578">（Expected: (p) != (nullptr), actual: NULL）</text>
+    <text x="572" y="250" font-size="11" fill="#8a8578">（add(2,2) Which is: 4 / 5——期望实际都给）</text>
+    <text x="572" y="282" font-size="12" fill="#45703a">过滤器：--gtest_filter="AddTest.*"</text>
+    <text x="572" y="304" font-size="12" fill="#8a8578">（只跑 3 个——套件名.* 通配）</text>
+    <text x="572" y="340" font-size="12.5" fill="#6b675e">编译：-lgtest -lgtest_main</text>
+    <text x="572" y="362" font-size="12" fill="#8a8578">（main 库提供——不用手写 main）</text>
+
+    <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
+    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">从手工验证到自动回归</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">133~135 的十组合法/错误手工跑——明天起变成 TEST 宏的自动矩阵；改一行代码跑一遍全知道（不用肉眼比对输出）——质量周的主线</text>
+    <text x="70" y="490" font-size="12.5" fill="#6b675e">（测试是"改代码的底气"——重构不慌的根源）</text>
+
+    <path d="M 60,514 Q 480,508 905 515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 127~135 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 136（今天）</text>
+    <circle cx="650" cy="514" r="5" fill="#5b8db8"/>
+    <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 137~138</text>
+    <circle cx="850" cy="514" r="5" fill="#e0955f"/>
+    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 144 毕业</text>
+  </g>
+</svg>
