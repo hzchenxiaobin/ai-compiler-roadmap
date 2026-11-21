@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 127 全貌：JSON 规范与三模块设计（集大成项目开篇）</text>
+    <path d="M 250,60 Q 480,52 710,61" fill="none" stroke="#e0955f" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">阶段六开篇——18 天的 JSON 解析器从今天起步：先学规范、再定三模块（Tokenizer/Parser/Value）——今天 Tokenizer 原型已跑通</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">JSON 的六种值</text>
+    <rect x="64" y="164" width="200" height="42" fill="#d8ecce" stroke="#7aa663" stroke-width="1.8"/>
+    <text x="164" y="190" font-size="10.5" fill="#45703a">object {k:v,…}</text>
+    <rect x="284" y="164" width="200" height="42" fill="#d8ecce" stroke="#7aa663" stroke-width="1.8"/>
+    <text x="384" y="190" font-size="10.5" fill="#45703a">array [v,…]</text>
+    <rect x="64" y="214" width="200" height="42" fill="#f9d9b8" stroke="#e0955f" stroke-width="1.8"/>
+    <text x="164" y="240" font-size="10.5" fill="#9c5a22">string "…"</text>
+    <rect x="284" y="214" width="200" height="42" fill="#f9d9b8" stroke="#e0955f" stroke-width="1.8"/>
+    <text x="384" y="240" font-size="10.5" fill="#9c5a22">number -12.5e3</text>
+    <rect x="64" y="264" width="200" height="42" fill="#f1f4f7" stroke="#8a94a3" stroke-width="1.8"/>
+    <text x="164" y="290" font-size="10.5" fill="#55606e">bool true/false</text>
+    <rect x="284" y="264" width="200" height="42" fill="#f1f4f7" stroke="#8a94a3" stroke-width="1.8"/>
+    <text x="384" y="290" font-size="10.5" fill="#55606e">null</text>
+    <text x="64" y="336" font-size="12.5" fill="#6b675e">值可嵌套——树形结构的文本表示</text>
+    <text x="64" y="358" font-size="12" fill="#8a8578">（解析 = 文本 → 树；序列化 = 树 → 文本）</text>
+
+    <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">三模块流水线（总体设计）</text>
+    <rect x="572" y="164" width="320" height="56" fill="#33413a"/>
+    <text x="732" y="186" font-size="10.5" fill="#cfe8c8">①Tokenizer：字符流 → 记号流</text>
+    <text x="732" y="206" font-size="10" fill="#8a8578">（今天原型：26 记号全识别 ✔）</text>
+    <rect x="572" y="230" width="320" height="56" fill="#33413a"/>
+    <text x="732" y="252" font-size="10.5" fill="#9fb8a8">②Parser：记号流 → JsonValue 树</text>
+    <text x="732" y="272" font-size="10" fill="#8a8578">（Day 128 主场——递归下降）</text>
+    <rect x="572" y="296" width="320" height="56" fill="#33413a"/>
+    <text x="732" y="318" font-size="10.5" fill="#9fb8a8">③Value：六种值的表示+访问</text>
+    <text x="732" y="338" font-size="10" fill="#8a8578">（今天设计稿：Type 枚举起步）</text>
+    <text x="572" y="374" font-size="11.5" fill="#8a8578">（各管一段、接口清晰——Day 96 的多文件经验）</text>
+
+    <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
+    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">与五个月旧知识的连接</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">Tokenizer ≈ Day 77 工厂 + Day 56 流拆词｜Value 树 ≈ Day 76 多态层次（variant 备选——Day 121）｜Parser ≈ Day 121 optional&lt;Json&gt; 的失败表达</text>
+    <text x="70" y="490" font-size="12.5" fill="#6b675e">（"集大成"不是口号——每个模块都有五个月的技能背书）</text>
+
+    <path d="M 60,514 Q 480,508 905 515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#e0955f"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#9c5a22">Day 127（阶段六开篇）</text>
+    <circle cx="690" cy="514" r="5" fill="#5b8db8"/>
+    <text x="690" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 128~131</text>
+    <circle cx="870" cy="514" r="5" fill="#e0955f"/>
+    <text x="870" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 144 终点</text>
+  </g>
+</svg>

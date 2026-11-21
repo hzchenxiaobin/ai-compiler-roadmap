@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">同一 JSON 的文本形态与树形态</text>
+    <path d="M 330,58 Q 480,52 630,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,340 Q 470,334 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 220)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">文本 → 树（解析的几何）</text>
+    <rect x="110" y="146" width="360" height="170" fill="#33413a"/>
+    <text x="290" y="172" font-size="10.5" fill="#9fb8a8">文本形态：</text>
+    <text x="290" y="194" font-size="10.5" fill="#cfe8c8">{</text>
+    <text x="290" y="214" font-size="10.5" fill="#cfe8c8">　"name": "Ada",</text>
+    <text x="290" y="234" font-size="10.5" fill="#cfe8c8">　"tags": ["math", true],</text>
+    <text x="290" y="254" font-size="10.5" fill="#cfe8c8">　"score": 99.5, "note": null</text>
+    <text x="290" y="274" font-size="10.5" fill="#cfe8c8">}</text>
+    <text x="290" y="302" font-size="10" fill="#8a8578">（线性的字符——今天的 tokenizer 输入）</text>
+    <rect x="510" y="146" width="340" height="170" fill="#33413a"/>
+    <text x="680" y="172" font-size="10.5" fill="#9fb8a8">树形态（Parser 的目标）：</text>
+    <text x="680" y="196" font-size="10.5" fill="#cfe8c8">object</text>
+    <text x="680" y="216" font-size="10.5" fill="#cfe8c8">├ name → string("Ada")</text>
+    <text x="680" y="236" font-size="10.5" fill="#cfe8c8">├ tags → array</text>
+    <text x="680" y="256" font-size="10.5" fill="#cfe8c8">│　　　　├ string("math")</text>
+    <text x="680" y="276" font-size="10.5" fill="#cfe8c8">│　　　　└ bool(true)</text>
+    <text x="680" y="296" font-size="10.5" fill="#cfe8c8">├ score → number(99.5) └ note → null</text>
+    <text x="472" y="334" font-size="11.5" fill="#8a8578">（解析 = 线性到树的升维——Day 76 图形库层次的同构）</text>
+
+    <path d="M 40,364 Q 280,358 520,364 Q 524,480 520,576 Q 280,582 42,576 Q 36,480 40,364 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 470)"/>
+    <text x="280" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">Tokenizer 原型的记号流</text>
+    <rect x="64" y="412" width="430" height="150" fill="#33413a"/>
+    <text x="279" y="436" font-size="10.5" fill="#9fb8a8">26 个记号（实测）：</text>
+    <text x="279" y="458" font-size="10.5" fill="#cfe8c8">{ str(name) : str(Ada) , …</text>
+    <text x="279" y="478" font-size="10.5" fill="#cfe8c8">　[ str(math) , true ] , …</text>
+    <text x="279" y="498" font-size="10.5" fill="#cfe8c8">　num(99.5) , null } EOF</text>
+    <text x="279" y="526" font-size="10" fill="#8a8578">（每个记号带行号——出错报告的锚点）</text>
+
+    <path d="M 550,364 Q 730,358 905,364 Q 908,480 905,576 Q 730,582 552,576 Q 547,480 550,364 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 470)"/>
+    <text x="727" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">18 天的项目路线</text>
+    <rect x="572" y="412" width="320" height="150" fill="#33413a"/>
+    <text x="732" y="436" font-size="10.5" fill="#cfe8c8">127 规范+设计+Tokenizer 原型（今天）✔</text>
+    <text x="732" y="458" font-size="10.5" fill="#9fb8a8">128 Parser（递归下降）</text>
+    <text x="732" y="478" font-size="10.5" fill="#9fb8a8">129 完整（转义/错误处理）</text>
+    <text x="732" y="498" font-size="10.5" fill="#9fb8a8">130~143 序列化/访问/测试…</text>
+    <text x="732" y="518" font-size="10.5" fill="#9fb8a8">144 终点验收（对照真实 JSON）</text>
+    <text x="732" y="544" font-size="10.5" fill="#cfe8c8">（五阶段技能的全合成考试）</text>
+  </g>
+</svg>
