@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 13 全貌：数组——同款盒子的集装箱</text>
+    <path d="M 320,60 Q 480,52 640,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">前 12 天的变量一个一个搬，今天一次进货八箱——第 3 周（数组与字符串）开箱</text>
+
+    <text x="90" y="140" font-size="15" font-weight="bold" fill="#2c5a82">int scores[8]：8 个同款 int 盒子连排</text>
+    <rect x="60" y="156" width="100" height="46" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.5"/>
+    <text x="110" y="184" text-anchor="middle" font-size="15" fill="#3b3a36">12</text>
+    <rect x="160" y="156" width="100" height="46" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.5"/>
+    <text x="210" y="184" text-anchor="middle" font-size="15" fill="#3b3a36">25</text>
+    <rect x="260" y="156" width="100" height="46" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.5"/>
+    <text x="310" y="184" text-anchor="middle" font-size="15" fill="#3b3a36">9</text>
+    <rect x="360" y="156" width="100" height="46" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.5"/>
+    <text x="410" y="184" text-anchor="middle" font-size="15" fill="#3b3a36">31</text>
+    <rect x="460" y="156" width="100" height="46" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.5"/>
+    <text x="510" y="184" text-anchor="middle" font-size="15" fill="#3b3a36">18</text>
+    <rect x="560" y="156" width="100" height="46" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.5"/>
+    <text x="610" y="184" text-anchor="middle" font-size="15" fill="#3b3a36">27</text>
+    <rect x="660" y="156" width="100" height="46" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.5"/>
+    <text x="710" y="184" text-anchor="middle" font-size="15" fill="#3b3a36">22</text>
+    <rect x="760" y="156" width="100" height="46" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.5"/>
+    <text x="810" y="184" text-anchor="middle" font-size="15" fill="#3b3a36">35</text>
+
+    <text x="110" y="228" text-anchor="middle" font-size="13" font-weight="bold" fill="#c96a5a">[0]</text>
+    <text x="210" y="228" text-anchor="middle" font-size="13" fill="#8a8578">[1]</text>
+    <text x="310" y="228" text-anchor="middle" font-size="13" fill="#8a8578">[2]</text>
+    <text x="410" y="228" text-anchor="middle" font-size="13" fill="#8a8578">[3]</text>
+    <text x="510" y="228" text-anchor="middle" font-size="13" fill="#8a8578">[4]</text>
+    <text x="610" y="228" text-anchor="middle" font-size="13" fill="#8a8578">[5]</text>
+    <text x="710" y="228" text-anchor="middle" font-size="13" fill="#8a8578">[6]</text>
+    <text x="810" y="228" text-anchor="middle" font-size="13" font-weight="bold" fill="#45703a">[7]</text>
+    <text x="480" y="258" text-anchor="middle" font-size="13.5" fill="#55606e">下标从 0 开始，到 7 结束——第 1 周住 [0]，第 8 周住 [7]</text>
+
+    <path d="M 40,290 Q 240,284 440,290 Q 444,370 440,452 Q 240,458 42,452 Q 36,370 40,290 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 240 371)"/>
+    <text x="240" y="320" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">今天的统计四件套</text>
+    <text x="66" y="352" font-size="13" fill="#3b3a36">最大 = 35（第 8 周）　最小 = 9（第 3 周）</text>
+    <text x="66" y="378" font-size="13" fill="#3b3a36">总和 = 179　　平均 = 22.375</text>
+    <text x="66" y="412" font-size="12.5" fill="#6b675e">擂台法：拿 [0] 当擂主，for 扫一遍逐个挑战；</text>
+    <text x="66" y="432" font-size="12.5" fill="#6b675e">平均记得乘 1.0 变浮点（Day 3 的老朋友）</text>
+
+    <path d="M 470,290 Q 680,284 905,290 Q 909,370 905,452 Q 680,458 472,452 Q 466,370 470,290 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="3" transform="rotate(0.3 687 371)"/>
+    <text x="687" y="320" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#a33f2e">越界：今天的头号危险品</text>
+    <text x="492" y="352" font-size="13" fill="#3b3a36">scores[8] 不存在——那是邻居的地盘</text>
+    <text x="492" y="378" font-size="13" fill="#a33f2e">普通编译：悄悄通过，exit=0（更可怕）</text>
+    <text x="492" y="404" font-size="13" fill="#45703a">-Wall：常量下标当场警告</text>
+    <text x="492" y="430" font-size="13" fill="#45703a">ASan：运行期现场抓捕（真实报告见教程）</text>
+
+    <path d="M 60,486 Q 480,480 905,487" fill="none" stroke="#8a8578" stroke-width="3"/>
+    <circle cx="170" cy="486" r="6" fill="#8a94a3"/>
+    <text x="170" y="512" text-anchor="middle" font-size="12.5" fill="#3b3a36">第 1~2 周 ✓</text>
+    <circle cx="350" cy="487" r="13" fill="none" stroke="#c96a5a" stroke-width="2.2"/>
+    <circle cx="350" cy="487" r="6" fill="#5b8db8"/>
+    <text x="350" y="512" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#c96a5a">Day 13（今天）</text>
+    <circle cx="520" cy="486" r="6" fill="#5b8db8"/>
+    <text x="520" y="512" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 14~17</text>
+    <circle cx="690" cy="487" r="6" fill="#5b8db8"/>
+    <text x="690" y="512" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 18 项目日</text>
+    <circle cx="860" cy="486" r="6" fill="#e0955f"/>
+    <text x="860" y="512" text-anchor="middle" font-size="12.5" fill="#3b3a36">第 4 周 指针</text>
+
+    <rect x="140" y="526" width="680" height="26" fill="#f7e8a0" opacity="0.5" transform="rotate(-0.3 480 539)"/>
+    <text x="480" y="544" text-anchor="middle" font-size="13" fill="#8a6d1a">周六项目日预告：文本统计器——字符计数 / 单词数 / 行数 / 字母频率，全是数组的舞台</text>
+  </g>
+</svg>

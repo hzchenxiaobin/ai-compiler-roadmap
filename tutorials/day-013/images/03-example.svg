@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">统计四件套、正逆遍历与 ASan 抓捕现场</text>
+    <path d="M 290,58 Q 480,52 670,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,240 470,380 Q 248,385 26,380 Q 20,240 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 241)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">实验 1：统计四件套</text>
+    <rect x="38" y="146" width="420" height="170" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="12.5" fill="#cfe8c6">8 周成绩：12 25 9 31 18 27 22 35</text>
+    <text x="54" y="196" font-size="12.5" fill="#cfe8c6">最大 = 35（第 8 周）</text>
+    <text x="54" y="220" font-size="12.5" fill="#cfe8c6">最小 = 9（第 3 周）</text>
+    <text x="54" y="244" font-size="12.5" fill="#cfe8c6">总和 = 179</text>
+    <text x="54" y="268" font-size="12.5" fill="#cfe8c6">平均 = 22.375</text>
+    <text x="54" y="298" font-size="12" fill="#9fb8a8">擂主法：max/min 都从 scores[0] 起步</text>
+    <text x="46" y="344" font-size="13" fill="#45703a">实验 2：同一数组的两种走法</text>
+    <rect x="38" y="358" width="420" height="0" fill="none"/>
+    <text x="46" y="366" font-size="12.5" fill="#3b3a36">正向：12 25 9 31 18 27 22 35</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,240 934,380 Q 712,385 490,380 Q 484,240 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 241)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">逆序的循环边界</text>
+    <rect x="502" y="146" width="420" height="90" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="12.5" fill="#cfe8c6">逆向：35 22 27 18 31 9 25 12</text>
+    <text x="514" y="196" font-size="12" fill="#9fb8a8">for (int i = WEEKS - 1; i &gt;= 0; --i)</text>
+    <text x="514" y="220" font-size="12" fill="#9fb8a8">起点 7、终点 0、方向 --：三个部件全反过来</text>
+    <path d="M 502,252 Q 711,246 922,253 L 919,332 Q 711,326 505,331 Z" fill="#fffdf7" stroke="#9db8cf" stroke-width="2" stroke-dasharray="8 5"/>
+    <text x="514" y="278" font-size="12.5" fill="#2c5a82">陷阱预告：把 i 写成 unsigned 的话，</text>
+    <text x="514" y="298" font-size="12.5" fill="#2c5a82">i &gt;= 0 永远成立会死循环——</text>
+    <text x="514" y="318" font-size="12.5" fill="#6b675e">现阶段用 int 当下标最稳</text>
+
+    <path d="M 24,406 Q 470,400 905,407 L 901,510 Q 470,504 26,509 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="3" transform="rotate(-0.2 464 457)"/>
+    <text x="46" y="436" font-size="16" font-weight="bold" fill="#a33f2e">实验 3：越界的三种命运（全部真实）</text>
+    <text x="46" y="466" font-size="13" fill="#3b3a36">普通编译运行：三行照常打印、exit=0——静默踩踏，最危险的形态</text>
+    <text x="46" y="492" font-size="13" fill="#3b3a36">-Wall：编译时警告 array index 8 is past the end（常量下标才抓得到）</text>
+    <text x="500" y="466" font-size="13" fill="#a33f2e">-fsanitize=address：当场击落（exit=141），报告如下</text>
+    <text x="500" y="492" font-size="13" fill="#6b675e">ASan 的存在证明：越界不是"没报错就没发生"</text>
+
+    <rect x="24" y="526" width="912" height="110" rx="8" fill="#33413a"/>
+    <text x="40" y="552" font-size="12" fill="#f0c9c0">==16849==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x00016f532ca0</text>
+    <text x="40" y="574" font-size="12" fill="#ffd7d0">WRITE of size 4 at 0x00016f532ca0 thread T0　←一次 4 字节的踩踏（一个 int）</text>
+    <text x="40" y="596" font-size="12" fill="#9fb8a8">    #0 ... in main+0x1e0 (oob_asan:arm64+0x100000a70)　←案发地点直接定位</text>
+    <text x="40" y="618" font-size="12" fill="#9fb8a8">Address ... is located in stack of thread T0 at offset 64 in frame　←踩的是栈上数组外</text>
+  </g>
+</svg>
