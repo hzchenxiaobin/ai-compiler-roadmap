@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 43 全貌：继承——共享血脉，各长本领</text>
+    <path d="M 320,60 Q 480,52 640,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">昨天组合是 has-a（车有发动机），今天继承是 is-a（学生是一个人）——共享基类的全部家当</text>
+
+    <path d="M 40,116 Q 250,110 460,116 Q 464,260 460,404 Q 250,410 42,404 Q 36,260 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 250 260)"/>
+    <text x="250" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">class Student : public Person</text>
+    <rect x="100" y="164" width="300" height="100" fill="#fffdf7" stroke="#9db8cf" stroke-width="2"/>
+    <text x="250" y="190" text-anchor="middle" font-size="13" font-weight="bold" fill="#2c5a82">基类 Person</text>
+    <text x="250" y="214" text-anchor="middle" font-size="11.5" fill="#6b675e">name_ / age_（protected）</text>
+    <text x="250" y="236" text-anchor="middle" font-size="11.5" fill="#6b675e">introduce()（public）</text>
+    <path d="M 150,272 Q 150,290 150,304" fill="none" stroke="#45703a" stroke-width="2.6"/>
+    <path d="M 142,298 Q 150,308 159,299" fill="none" stroke="#45703a" stroke-width="2.6"/>
+    <path d="M 350,272 Q 350,290 350,304" fill="none" stroke="#45703a" stroke-width="2.6"/>
+    <path d="M 342,298 Q 350,308 359,299" fill="none" stroke="#45703a" stroke-width="2.6"/>
+    <rect x="60" y="310" width="180" height="80" fill="#eef5e8" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="150" y="336" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#45703a">Student</text>
+    <text x="150" y="358" text-anchor="middle" font-size="10.5" fill="#6b675e">+ grade_、study()</text>
+    <text x="150" y="376" text-anchor="middle" font-size="10" fill="#8a8578">（继承 name_/introduce）</text>
+    <rect x="260" y="310" width="180" height="80" fill="#f9d9b8" stroke="#e0955f" stroke-width="2.2"/>
+    <text x="350" y="336" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#9c5a22">Teacher</text>
+    <text x="350" y="358" text-anchor="middle" font-size="10.5" fill="#6b675e">+ subject_、teach()</text>
+    <text x="350" y="376" text-anchor="middle" font-size="10" fill="#8a8578">（同一份基类家当）</text>
+
+    <path d="M 490,116 Q 700,110 905,116 Q 908,260 905,404 Q 700,410 492,404 Q 487,260 490,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 697 260)"/>
+    <text x="697" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">访问控制三档</text>
+    <text x="514" y="180" font-size="12.5" fill="#3b3a36">public：谁都可见（接口）</text>
+    <text x="514" y="208" font-size="12.5" fill="#9c5a22">protected：派生类可见、外界不可</text>
+    <text x="514" y="236" font-size="12.5" fill="#a33f2e">private：只有自己（连子女都不给）</text>
+    <text x="514" y="274" font-size="12.5" fill="#6b675e">实测：s.name_ = "改名" →</text>
+    <text x="514" y="296" font-size="12" fill="#a33f2e">error: 'name_' is a protected member</text>
+    <text x="514" y="330" font-size="12.5" fill="#45703a">Student::study() 里用 name_ ✔</text>
+    <text x="514" y="352" font-size="12" fill="#8a8578">（派生类的成员函数摸得到）</text>
+    <text x="514" y="386" font-size="12" fill="#8a8578">（Day 37 的两档变三档——多出"子女档"）</text>
+
+    <path d="M 40,428 Q 470,422 905,429 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 464)"/>
+    <text x="472" y="456" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">基类指针：统一管理 + 一个限制</text>
+    <text x="70" y="486" font-size="13" fill="#3b3a36">Person* roster[] 统一点名 ✔　基类指针调派生类新函数 ✘（编译拦截）——虚函数（Day 45）将解锁这一格</text>
+
+    <path d="M 60,514 Q 480,508 905,515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 37~42 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 43（今天）</text>
+    <circle cx="640" cy="514" r="5" fill="#5b8db8"/>
+    <text x="640" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 44~45 虚函数</text>
+    <circle cx="840" cy="514" r="5" fill="#e0955f"/>
+    <text x="840" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 48 里程碑</text>
+  </g>
+</svg>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">构造链条与基类指针的权力边界</text>
+    <path d="M 310,58 Q 480,52 650,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,300 Q 470,294 44,299 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 200)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">构造链实测：基类先建、派生类后建</text>
+    <rect x="240" y="146" width="480" height="130" fill="#33413a"/>
+    <text x="480" y="174" font-size="12" fill="#cfe8c6">[Person 构造] 小明　　　← 基类部分先就位</text>
+    <text x="480" y="198" font-size="12" fill="#cfe8c6">[Student 构造] 小明 9 年级　← 派生类部分后组装</text>
+    <text x="480" y="228" font-size="12" fill="#f0c9c0">[Student 析构] 小明　　← 派生类先拆</text>
+    <text x="480" y="252" font-size="12" fill="#f0c9c0">[Person 析构] 小明　　　← 基类后拆</text>
+    <text x="472" y="286" text-anchor="middle" font-size="12" fill="#9fb8a8">（组合的"零件先就位"在继承里变成"祖先先就位"——同一套栈规则）</text>
+
+    <path d="M 40,324 Q 280,318 520,324 Q 524,450 520,560 Q 280,566 42,560 Q 36,450 40,324 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 442)"/>
+    <text x="280" y="354" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">基类指针的能与不能</text>
+    <text x="64" y="388" font-size="12.5" fill="#45703a">✔ roster[i]->introduce()——</text>
+    <text x="64" y="410" font-size="12.5" fill="#3b3a36">　学生老师统一调基类接口（实测 3 行）</text>
+    <text x="64" y="442" font-size="12.5" fill="#a33f2e">✘ roster[0]->study()——</text>
+    <text x="64" y="464" font-size="12" fill="#a33f2e">error: no member named 'study' in 'Person'</text>
+    <text x="64" y="496" font-size="12" fill="#6b675e">基类指针只知道基类的接口——</text>
+    <text x="64" y="516" font-size="12" fill="#6b675e">派生类新增的能力它"看不见"</text>
+    <text x="64" y="546" font-size="12" fill="#8a8578">（虚函数 Day 45 解锁这一格）</text>
+
+    <path d="M 550,324 Q 730,318 905,324 Q 908,450 905,560 Q 730,566 552,560 Q 547,450 550,324 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 442)"/>
+    <text x="727" y="354" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">组合 vs 继承（昨天牌 today 对表）</text>
+    <text x="572" y="388" font-size="12.5" fill="#3b3a36">Car 有 Engine（has-a）——</text>
+    <text x="572" y="410" font-size="12" fill="#6b675e">　零件可换、复用自然</text>
+    <text x="572" y="442" font-size="12.5" fill="#3b3a36">Student 是 Person（is-a）——</text>
+    <text x="572" y="464" font-size="12" fill="#6b675e">　血脉共享、接口统一</text>
+    <text x="572" y="500" font-size="12.5" fill="#45703a">判断法：能说"X 是一个 Y" → 继承</text>
+    <text x="572" y="522" font-size="12.5" fill="#45703a">　　　　能说"X 有一个 Y" → 组合</text>
+    <text x="572" y="550" font-size="12" fill="#8a8578">（拿不准就用组合——昨天口诀仍有效）</text>
+  </g>
+</svg>
