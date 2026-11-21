@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">放行一个名字 vs 敞开一扇大门</text>
+    <path d="M 310,58 Q 480,52 650,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 260,94 480,100 Q 484,220 480,340 Q 260,346 42,340 Q 36,220 40,100 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 260 220)"/>
+    <text x="260" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">using 声明（点名放行）</text>
+    <rect x="70" y="148" width="380" height="90" fill="#33413a"/>
+    <text x="260" y="174" text-anchor="middle" font-size="12" fill="#9fb8a8">using my_utils::clamp;</text>
+    <text x="260" y="200" text-anchor="middle" font-size="12" fill="#cfe8c6">→ 从此 clamp 直呼其名</text>
+    <text x="260" y="224" text-anchor="middle" font-size="11.5" fill="#9fb8a8">作用域内只多这一个名字</text>
+    <path d="M 70,254 Q 260,248 450,255 L 447,326 Q 260,320 73,325 Z" fill="#fffdf7" stroke="#9db8cf" stroke-width="2" stroke-dasharray="8 5"/>
+    <text x="260" y="280" text-anchor="middle" font-size="12" fill="#2c5a82">风险敞口：一个名字——</text>
+    <text x="260" y="300" text-anchor="middle" font-size="12" fill="#2c5a82">要撞名也得恰好撞它</text>
+    <text x="260" y="320" text-anchor="middle" font-size="11.5" fill="#8a8578">适用：小作用域内频繁使用某一个函数</text>
+
+    <path d="M 520,100 Q 730,94 930,100 Q 933,220 930,340 Q 730,346 522,340 Q 517,220 520,100 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(0.3 725 220)"/>
+    <text x="725" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">using 指令（整门敞开）</text>
+    <rect x="550" y="148" width="350" height="90" fill="#33413a"/>
+    <text x="725" y="174" text-anchor="middle" font-size="12" fill="#9fb8a8">using namespace my_utils;</text>
+    <text x="725" y="200" text-anchor="middle" font-size="12" fill="#cfe8c6">→ 姓氏下所有名字全部裸奔</text>
+    <text x="725" y="224" text-anchor="middle" font-size="11.5" fill="#9fb8a8">作用域内多了整个命名空间</text>
+    <path d="M 550,254 Q 725,248 900,255 L 897,326 Q 725,320 553,325 Z" fill="#fffdf7" stroke="#dda79b" stroke-width="2" stroke-dasharray="8 5"/>
+    <text x="725" y="280" text-anchor="middle" font-size="12" fill="#a33f2e">风险敞口：全体名字——</text>
+    <text x="725" y="300" text-anchor="middle" font-size="12" fill="#a33f2e">任何同名都可能撞（今天的实测）</text>
+    <text x="725" y="320" text-anchor="middle" font-size="11.5" fill="#8a8578">适用：小 .cpp 里图省事可以；头文件里禁用</text>
+
+    <path d="M 40,366 Q 470,360 905,367 L 901,470 Q 470,464 44,469 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.2 472 418)"/>
+    <text x="472" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#8a6d1a">歧义是怎么发生的（对照今天的报错）</text>
+    <text x="70" y="424" font-size="13" fill="#3b3a36">lib_a::print_value 和 lib_b::print_value 都被 using 进当前作用域 → 裸调 print_value 时两个候选平手</text>
+    <text x="70" y="450" font-size="13" fill="#a33f2e">→ error: call to 'print_value' is ambiguous（编译器拒绝掷硬币——和 Day 10 重载歧义同款逻辑）</text>
+
+    <path d="M 40,490 Q 470,484 905,491 L 901,576 Q 470,570 44,575 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 472 533)"/>
+    <text x="472" y="518" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#55606e">工程铁则</text>
+    <text x="70" y="548" font-size="12.5" fill="#3b3a36">头文件：只写全限定（namespace my_utils { 声明 }）——不传染任何 using</text>
+    <text x="70" y="570" font-size="12.5" fill="#6b675e">源文件：要省事可以在函数内或文件尾部 using——影响范围自己看得见</text>
+  </g>
+</svg>

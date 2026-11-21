@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">三种用法战报与歧义事故现场</text>
+    <path d="M 330,58 Q 480,52 630,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,230 470,360 Q 248,365 26,360 Q 20,230 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 231)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">实验 1：三种用法（实测）</text>
+    <rect x="38" y="146" width="420" height="190" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="12" fill="#9fb8a8">$ g++ -Wall use_utils.cpp my_utils.cpp -o uu &amp;&amp; ./uu</text>
+    <text x="54" y="196" font-size="12.5" fill="#cfe8c6">100　　← my_utils::clamp(150, 0, 100)</text>
+    <text x="54" y="220" font-size="12.5" fill="#cfe8c6">25　　 ← my_utils::to_percent(36, 144)</text>
+    <text x="54" y="244" font-size="12.5" fill="#cfe8c6">0　　　← using 声明后：clamp(-7, 0, 100)</text>
+    <text x="54" y="268" font-size="12.5" fill="#cfe8c6">50　　 ← using 指令后：to_percent(72, 144)</text>
+    <text x="54" y="298" font-size="12" fill="#9fb8a8">同一组函数，三种穿衣方式全跑通；</text>
+    <text x="54" y="318" font-size="12" fill="#9fb8a8">clamp 夹边、to_percent 防截断都是本周旧知识</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,230 934,360 Q 712,365 490,360 Q 484,230 488,102 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="3" transform="rotate(0.3 711 231)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#a33f2e">实验 2：撞名歧义（实测报错）</text>
+    <rect x="502" y="146" width="420" height="190" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="12" fill="#9fb8a8">$ g++ -Wall name_clash.cpp -o nc</text>
+    <text x="514" y="196" font-size="11.5" fill="#ffd7d0">name_clash.cpp:19:5:</text>
+    <text x="514" y="216" font-size="11.5" fill="#ffd7d0">error: call to 'print_value' is ambiguous</text>
+    <text x="514" y="240" font-size="11.5" fill="#9fb8a8">note: candidate function　lib_a::print_value</text>
+    <text x="514" y="260" font-size="11.5" fill="#9fb8a8">note: candidate function　lib_b::print_value</text>
+    <text x="514" y="290" font-size="12" fill="#9fb8a8">两个 using 把同名函数都放进来，裸调撞车——</text>
+    <text x="514" y="310" font-size="12" fill="#9fb8a8">编译器列出候选后拒绝猜测</text>
+    <text x="514" y="330" font-size="12" fill="#9fb8a8">（与 Day 10 重载二义同款逻辑）</text>
+
+    <path d="M 24,386 Q 248,380 470,386 Q 474,470 470,560 Q 248,565 26,560 Q 20,470 24,386 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 247 473)"/>
+    <text x="46" y="414" font-size="15.5" font-weight="bold" fill="#2c5a82">实验 3：修复版（实测）</text>
+    <rect x="38" y="428" width="420" height="120" rx="6" fill="#33413a"/>
+    <text x="54" y="452" font-size="12" fill="#9fb8a8">注释掉第二个 using（收回一个名字）：</text>
+    <text x="54" y="476" font-size="12.5" fill="#cfe8c6">[A] 1　　← lib_a::print_value(1)</text>
+    <text x="54" y="500" font-size="12.5" fill="#cfe8c6">[B] 2　　← lib_b::print_value(2)</text>
+    <text x="54" y="524" font-size="12.5" fill="#cfe8c6">[A] 3　　← 裸调命中 using 的那个</text>
+    <text x="54" y="548" font-size="12" fill="#9fb8a8">歧义消失：少放行一个就少一个候选</text>
+
+    <path d="M 488,386 Q 712,380 934,386 Q 938,470 934,560 Q 712,565 490,560 Q 484,470 488,386 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 711 473)"/>
+    <text x="510" y="414" font-size="15.5" font-weight="bold" fill="#55606e">std 的认亲时刻</text>
+    <text x="510" y="446" font-size="12.5" fill="#3b3a36">std::cout——"命名空间 std 里的 cout"</text>
+    <text x="510" y="472" font-size="12.5" fill="#3b3a36">25 天的全限定写法今天有了名字</text>
+    <text x="510" y="506" font-size="12.5" fill="#a33f2e">为什么教程坚持 std:: 前缀？</text>
+    <text x="510" y="530" font-size="12" fill="#6b675e">count、size、find……std 里有几百个常用名，</text>
+    <text x="510" y="550" font-size="12" fill="#6b675e">整门敞开后撞名概率肉眼可见</text>
+  </g>
+</svg>
