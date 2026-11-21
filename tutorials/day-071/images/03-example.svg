@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">两版对照战报与基类设施实录</text>
+    <path d="M 360,58 Q 480,52 600,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21；-Wall 零警告）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,480 Q 248,485 26,480 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 291)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出</text>
+    <rect x="38" y="146" width="420" height="320" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./pc　（-Wall 零警告）</text>
+    <text x="54" y="200" font-size="12" fill="#9fb8a8">== 方式一：vector&lt;Shape*&gt; ==</text>
+    <text x="54" y="222" font-size="11.5" fill="#cfe8c6">圆(r=2)：面积 12.5664</text>
+    <text x="54" y="240" font-size="11.5" fill="#cfe8c6">矩形(3×4)：面积 12</text>
+    <text x="54" y="258" font-size="11.5" fill="#cfe8c6">三角形(3,4,5)：面积 6</text>
+    <text x="54" y="280" font-size="11.5" fill="#cfe8c6">总面积 = 30.5664</text>
+    <text x="54" y="302" font-size="11" fill="#f0c9c0">（手动 delete ×3——忘了就泄漏）</text>
+    <text x="54" y="332" font-size="12" fill="#9fb8a8">== 方式二：unique_ptr ==</text>
+    <text x="54" y="354" font-size="11.5" fill="#cfe8c6">（输出与方式一完全相同）</text>
+    <text x="54" y="376" font-size="11.5" fill="#cfe8c6">总面积 = 30.5664 ✔</text>
+    <text x="54" y="400" font-size="11" fill="#f0c9c0">（零 delete——自动收摊）</text>
+    <text x="54" y="432" font-size="11.5" fill="#9fb8a8">ASan：零报错（两版都干净 ✔）</text>
+    <text x="54" y="456" font-size="11.5" fill="#9fb8a8">（手算：4π=12.57、12、√36=6）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,480 Q 712,485 490,480 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 291)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">本周的位置与明天</text>
+    <rect x="502" y="146" width="420" height="320" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">第 12 周（继承多态）第五天：</text>
+    <text x="514" y="198" font-size="11.5" fill="#cfe8c6">67 继承 → 68 虚函数 → 69 虚析构</text>
+    <text x="514" y="218" font-size="11.5" fill="#cfe8c6">→ 70 纯虚 → 71 多态容器（今天）</text>
+    <text x="514" y="250" font-size="12" fill="#9fb8a8">本周技能的会师：</text>
+    <text x="514" y="272" font-size="11.5" fill="#cfe8c6">虚分发（68）+ 虚析构（69）</text>
+    <text x="514" y="292" font-size="11.5" fill="#cfe8c6">　+ 抽象基类（70）+ 容器 RAII</text>
+    <text x="514" y="324" font-size="12" fill="#9fb8a8">智能指针的"照用"边界：</text>
+    <text x="514" y="346" font-size="11.5" fill="#9fb8a8">（今天会 make_unique/->/禁拷贝</text>
+    <text x="514" y="366" font-size="11.5" fill="#9fb8a8">　即可——内部机制是第 12 周的课）</text>
+    <text x="514" y="400" font-size="12.5" fill="#45703a">明天项目日：图形库 v1——</text>
+    <text x="514" y="422" font-size="12.5" fill="#45703a">　5 种图形多态计算面积/周长排序</text>
+    <text x="514" y="444" font-size="12" fill="#8a8578">（今天的骨架直接复用！）</text>
+
+    <path d="M 24,506 Q 470,500 905,507 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 543)"/>
+    <text x="46" y="532" font-size="15.5" font-weight="bold" fill="#9c5a22">选择建议</text>
+    <text x="46" y="560" font-size="12.5" fill="#3b3a36">新代码一律 unique_ptr 版（今天的理由：零 delete + 异常安全 + 容器自动收摊）；裸指针版留在对照里理解"它替你做了什么"</text>
+
+    <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 72（项目日）图形库 v1——5 种图形的多态计算与排序（第 12 周收官）</text>
+  </g>
+</svg>
