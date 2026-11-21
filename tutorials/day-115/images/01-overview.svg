@@ -3,7 +3,7 @@
   <g stroke-linecap="round" stroke-linejoin="round">
     <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 115 全貌：unique_ptr——独占所有权（第 20 周开篇）</text>
     <path d="M 300,60 Q 480,52 660,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
-    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定"工厂函数返回 unique_ptr"——告别裸 new/delete 的第一步：拷贝被 =delete、移动即交接、析构全自动（五法则的官方代驾）</text>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定"工厂函数返回 unique_ptr"——告别裸 new/delete：拷贝被 =delete、移动即交接、析构全自动（五法则的官方代驾）</text>
 
     <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
     <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">独占的三个表现</text>
