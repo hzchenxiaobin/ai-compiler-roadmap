@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">计数器三连调与两个真实报错</text>
+    <path d="M 330,58 Q 480,52 630,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,280 470,470 Q 248,475 26,470 Q 20,280 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 286)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">主角实验：调用计数器对照</text>
+    <rect x="38" y="146" width="420" height="250" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="12" fill="#9fb8a8">$ ./counter_call</text>
+    <text x="54" y="196" font-size="12.5" fill="#cfe8c6">—— 第 1 次调用 ——</text>
+    <text x="54" y="216" font-size="12.5" fill="#cfe8c6">普通局部 count = 1</text>
+    <text x="54" y="236" font-size="12.5" fill="#cfe8c6">static   count = 1</text>
+    <text x="54" y="260" font-size="12.5" fill="#cfe8c6">—— 第 2 次调用 ——</text>
+    <text x="54" y="280" font-size="12.5" fill="#f0c9c0">普通局部 count = 1　←又归零了</text>
+    <text x="54" y="300" font-size="12.5" fill="#cfe8c6">static   count = 2　　←接着涨</text>
+    <text x="54" y="324" font-size="12.5" fill="#cfe8c6">—— 第 3 次调用 ——</text>
+    <text x="54" y="344" font-size="12.5" fill="#f0c9c0">普通局部 count = 1</text>
+    <text x="54" y="364" font-size="12.5" fill="#cfe8c6">static   count = 3</text>
+    <text x="54" y="392" font-size="12" fill="#9fb8a8">两函数只差一个 static 关键字</text>
+    <text x="46" y="428" font-size="13" fill="#45703a">判读：普通变量"每次调用都是新的一生"，</text>
+    <text x="46" y="450" font-size="13" fill="#6b675e">static 变量"一生跨多次调用"——其余全部相同</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,220 934,340 Q 712,345 490,340 Q 484,220 488,102 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="3" transform="rotate(0.3 711 221)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#a33f2e">报错一：出栏访问块内变量</text>
+    <rect x="502" y="146" width="420" height="130" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="12" fill="#f0c9c0">undeclared.cpp:15:18:</text>
+    <text x="514" y="192" font-size="12" fill="#ffd7d0">error: use of undeclared identifier 'y'</text>
+    <text x="514" y="216" font-size="12" fill="#9fb8a8">   15 |     std::cout &lt;&lt; y &lt;&lt; std::endl;</text>
+    <text x="514" y="236" font-size="12" fill="#9fb8a8">      |                  ^</text>
+    <text x="514" y="262" font-size="12.5" fill="#6b675e">块内的 y 出了 {} 就"查无此人"——</text>
+    <text x="514" y="282" font-size="12.5" fill="#6b675e">作用域结束，名字失效</text>
+    <path d="M 502,296 Q 711,290 922,297 L 919,332 Q 711,326 505,331 Z" fill="#fffdf7" stroke="#dda79b" stroke-width="2" stroke-dasharray="8 5"/>
+    <text x="711" y="320" text-anchor="middle" font-size="12" fill="#8a8578">报错三要素依旧适用：位置 → 类别 → 描述</text>
+
+    <path d="M 488,364 Q 712,358 934,364 Q 938,430 934,470 Q 712,475 490,470 Q 484,430 488,364 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 711 419)"/>
+    <text x="510" y="392" font-size="15.5" font-weight="bold" fill="#2c5a82">报错二：-Wshadow 点名遮蔽</text>
+    <rect x="502" y="404" width="420" height="56" rx="6" fill="#33413a"/>
+    <text x="514" y="426" font-size="11.5" fill="#ffd7d0">warning: declaration shadows a local variable [-Wshadow]</text>
+    <text x="514" y="446" font-size="11.5" fill="#9fb8a8">note: previous declaration is here（指出外层的 x）</text>
+
+    <path d="M 24,496 Q 248,490 470,496 Q 474,540 470,600 Q 248,605 26,600 Q 20,540 24,496 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 247 550)"/>
+    <text x="46" y="526" font-size="15.5" font-weight="bold" fill="#55606e">遮蔽实验完整战报（scope_demo）</text>
+    <text x="46" y="556" font-size="12.5" fill="#3b3a36">块内：x = 10，y = 99，inner_x = 5</text>
+    <text x="46" y="578" font-size="12.5" fill="#3b3a36">块外：x = 10　　内层同名块：x = 777　　出块后：x = 10</text>
+
+    <path d="M 488,496 Q 712,490 934,496 Q 938,540 934,600 Q 712,605 490,600 Q 484,540 488,496 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.3 711 550)"/>
+    <text x="711" y="526" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#8a6d1a">static 的适用边界</text>
+    <text x="711" y="556" text-anchor="middle" font-size="12.5" fill="#3b3a36">记调用次数、缓存计算结果 ✔</text>
+    <text x="711" y="580" text-anchor="middle" font-size="12.5" fill="#6b675e">在函数间传数据 ✘（那是参数和返回值的活）</text>
+  </g>
+</svg>

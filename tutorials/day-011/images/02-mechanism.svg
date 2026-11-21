@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">普通房间 vs static 房间：三次调用两部电梯</text>
+    <path d="M 260,58 Q 480,52 700,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 240,94 440,100 Q 444,210 440,320 Q 240,326 42,320 Q 36,210 40,100 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(-0.3 240 210)"/>
+    <text x="240" y="130" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">普通局部变量（每次重建）</text>
+    <rect x="90" y="148" width="300" height="160" fill="#fffdf7" stroke="#9db8cf" stroke-width="1.8"/>
+    <text x="110" y="176" font-size="12.5" fill="#3b3a36">第 1 次调用：出生 count=0 → +1 → 打印 1</text>
+    <text x="110" y="196" font-size="12.5" fill="#a33f2e">　　　　　　↑ 返回时房间连人一起拆掉</text>
+    <text x="110" y="222" font-size="12.5" fill="#3b3a36">第 2 次调用：重新出生 count=0 → 打印 1</text>
+    <text x="110" y="242" font-size="12.5" fill="#a33f2e">　　　　　　（昨天复印实验的地盘拆装同款）</text>
+    <text x="110" y="268" font-size="12.5" fill="#3b3a36">第 3 次调用：还是 count=1</text>
+    <text x="240" y="298" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#2c5a82">三次输出：1　1　1（本机实测）</text>
+
+    <path d="M 520,100 Q 720,94 920,100 Q 924,210 920,320 Q 720,326 522,320 Q 516,210 520,100 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(0.3 720 210)"/>
+    <text x="720" y="130" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">static 局部变量（出生一次）</text>
+    <rect x="570" y="148" width="300" height="160" fill="#fffdf7" stroke="#a8c494" stroke-width="1.8"/>
+    <text x="590" y="176" font-size="12.5" fill="#3b3a36">第 1 次调用：出生 count=0 → +1 → 打印 1</text>
+    <text x="590" y="196" font-size="12.5" fill="#45703a">　　　　　　↑ 返回时房间保留、人不搬走</text>
+    <text x="590" y="222" font-size="12.5" fill="#3b3a36">第 2 次调用：跳过出生行 → +1 → 打印 2</text>
+    <text x="590" y="242" font-size="12.5" fill="#45703a">　　　　　　（static int count = 0 不再执行）</text>
+    <text x="590" y="268" font-size="12.5" fill="#3b3a36">第 3 次调用：接着涨 → 打印 3</text>
+    <text x="720" y="298" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#45703a">三次输出：1　2　3（本机实测）</text>
+
+    <path d="M 40,350 Q 290,344 540,350 Q 544,460 540,580 Q 290,586 42,580 Q 36,460 40,350 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.3 290 465)"/>
+    <text x="290" y="382" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#a33f2e">遮蔽：同名变量的"顶替"</text>
+    <rect x="70" y="398" width="200" height="40" fill="#fffdf7" stroke="#dda79b" stroke-width="2"/>
+    <text x="170" y="416" text-anchor="middle" font-size="12" fill="#3b3a36">外层 x = 10</text>
+    <text x="170" y="432" text-anchor="middle" font-size="11" fill="#8a8578">main 围栏</text>
+    <rect x="300" y="398" width="200" height="40" fill="#f9d9b8" stroke="#e0955f" stroke-width="2" transform="rotate(-0.6 400 418)"/>
+    <text x="400" y="416" text-anchor="middle" font-size="12" fill="#3b3a36">内层 x = 777</text>
+    <text x="400" y="432" text-anchor="middle" font-size="11" fill="#8a8578">小围栏里顶了同名</text>
+    <text x="290" y="470" text-anchor="middle" font-size="12.5" fill="#3b3a36">小围栏内叫 x，答应的是 777；</text>
+    <text x="290" y="490" text-anchor="middle" font-size="12.5" fill="#3b3a36">出栏后再叫，恢复 10（实测：出块后 x = 10）</text>
+    <path d="M 70,516 Q 290,510 510,517 L 507,560 Q 290,554 73,559 Z" fill="#fffdf7" stroke="#dda79b" stroke-width="2" stroke-dasharray="8 5"/>
+    <text x="290" y="538" text-anchor="middle" font-size="12" fill="#a33f2e">-Wshadow 会点名警告（本机实测已抓到）；</text>
+    <text x="290" y="556" text-anchor="middle" font-size="12" fill="#6b675e">合法 ≠ 好习惯——内外同名纯属给自己埋雷</text>
+
+    <path d="M 560,350 Q 740,344 920,350 Q 924,460 920,580 Q 740,586 562,580 Q 556,460 560,350 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(0.3 740 465)"/>
+    <text x="740" y="382" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#8a6d1a">两把尺子，别混用</text>
+    <text x="740" y="416" text-anchor="middle" font-size="12.5" fill="#3b3a36">作用域问：这个名字哪里叫得应？</text>
+    <text x="740" y="440" text-anchor="middle" font-size="12.5" fill="#3b3a36">　　　　　（编译期的"地图"问题）</text>
+    <text x="740" y="472" text-anchor="middle" font-size="12.5" fill="#3b3a36">生命周期问：这个对象活多久？</text>
+    <text x="740" y="496" text-anchor="middle" font-size="12.5" fill="#3b3a36">　　　　　（运行期的"寿命"问题）</text>
+    <text x="740" y="530" text-anchor="middle" font-size="12" fill="#8a8578">static 改的是寿命，没改作用域——</text>
+    <text x="740" y="550" text-anchor="middle" font-size="12" fill="#8a8578">count 依然只在函数体内叫得应</text>
+  </g>
+</svg>
