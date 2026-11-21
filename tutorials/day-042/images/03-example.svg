@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">完整会话、越界拦截与七周战绩</text>
+    <path d="M 370,58 Q 480,52 590,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,480 Q 248,485 26,480 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 291)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出</text>
+    <rect x="38" y="146" width="420" height="320" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./ia　（-Wall 零警告）</text>
+    <text x="54" y="200" font-size="12" fill="#9fb8a8">== 基本流程 ==</text>
+    <text x="54" y="222" font-size="12.5" fill="#cfe8c6">[构造] 容量 4 起步</text>
+    <text x="54" y="246" font-size="12.5" fill="#f0c9c0">[扩容] 4 → 8　（第 5 个 push 触发）</text>
+    <text x="54" y="268" font-size="12.5" fill="#cfe8c6">size = 5，capacity = 8 ✔</text>
+    <text x="54" y="292" font-size="12.5" fill="#cfe8c6">at(0)=10 … at(4)=50 ✔</text>
+    <text x="54" y="324" font-size="12" fill="#9fb8a8">== 越界被拦 ==</text>
+    <text x="54" y="346" font-size="12" fill="#9fb8a8">尝试 at(99)……</text>
+    <text x="54" y="370" font-size="12" fill="#f0c9c0">[at 越界] index 99 &gt;= size 5</text>
+    <text x="54" y="392" font-size="11.5" fill="#9fb8a8">exit=1（可检查的失败 ✔）</text>
+    <text x="54" y="424" font-size="12" fill="#9fb8a8">（去掉越界行后 ASan 全场景：</text>
+    <text x="54" y="444" font-size="12" fill="#9fb8a8">　零报错——构造/扩容/析构链全对）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,480 Q 712,485 490,480 Q 484,290 488,102 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 711 291)"/>
+    <text x="510" y="132" font-size="15.5" font-weight="bold" fill="#55606e">七周战绩总表</text>
+    <rect x="502" y="146" width="420" height="220" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="11.5" fill="#cfe8c6">第 1~3 周：基础/函数/数组字符串　✔</text>
+    <text x="514" y="196" font-size="11.5" fill="#cfe8c6">第 4~6 周：指针/文件/通讯录　　　✔</text>
+    <text x="514" y="220" font-size="11.5" fill="#cfe8c6">第 7 周：内存模型＋动态数组 v1　　✔</text>
+    <text x="514" y="248" font-size="12" fill="#9fb8a8">（42/144 = 29%；第 8 个项目日全胜）</text>
+    <text x="514" y="276" font-size="12" fill="#9fb8a8">本周新增：四区布局、new/delete、</text>
+    <text x="514" y="296" font-size="12" fill="#9fb8a8">ASan、二维数组、深浅拷贝、动态数组</text>
+    <text x="510" y="340" font-size="12.5" fill="#3b3a36">阶段二（指针与内存）过半——</text>
+    <text x="510" y="362" font-size="12.5" fill="#3b3a36">　下周"内存进阶"收官</text>
+    <text x="510" y="400" font-size="12" fill="#8a8578">下周预告：string/string_view、内存对齐、</text>
+    <text x="510" y="420" font-size="12" fill="#8a8578">　错误案例集、auto/范围 for、v2、自测日</text>
+    <text x="510" y="452" font-size="12" fill="#8a8578">（v2 的倍增+reserve 正是今天扩容的进化）</text>
+
+    <path d="M 24,506 Q 470,500 905,507 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 543)"/>
+    <text x="46" y="532" font-size="15.5" font-weight="bold" fill="#9c5a22">项目日的隐藏关卡</text>
+    <text x="46" y="560" font-size="12.5" fill="#3b3a36">昨天的深拷贝意识：IntArray 禁拷贝（=delete）——如果不禁、用户写 IntArray b = a 会怎样？（思考题，答案在笔记里画内存图）</text>
+
+    <path d="M 24,596 Q 470,590 905,597 L 901,648 Q 470,642 26,647 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 622)"/>
+    <text x="480" y="626" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 43 std::string 与 string_view——三种字符串遍历对比（计划指定练习）</text>
+  </g>
+</svg>

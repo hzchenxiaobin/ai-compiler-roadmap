@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 42 项目日：手写动态数组 v1——第 7 周毕业考</text>
+    <path d="M 290,60 Q 480,52 670,61" fill="none" stroke="#e0955f" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">六天内存课（布局/钥匙/雷达/二维/深浅拷贝）一次装齐——计划指定的 v1 五件套：构造/析构/push_back/size/at</text>
+
+    <path d="M 40,116 Q 470,110 905,117 L 901,310 Q 470,304 44,309 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 213)"/>
+    <text x="472" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">零件清单（每天一件，今天全用上）</text>
+    <text x="70" y="178" font-size="13" fill="#3b3a36">new int[cap]{}（构造拿内存）＋delete[]（析构还）　← Day 38 配对纪律</text>
+    <text x="70" y="204" font-size="13" fill="#3b3a36">size_ 与 capacity_ 分开管　＋倍增扩容　　　　　← Day 37/38（容量=租的房、size=住了人）</text>
+    <text x="70" y="230" font-size="13" fill="#3b3a36">扩容四步：new 大块→搬旧→delete[] 旧→换指针　← Day 40 的行数据搬家</text>
+    <text x="70" y="256" font-size="13" fill="#3b3a36">at() 边界检查（越界打印+exit）　　　　　　　　← Day 39 的"可检查失败"</text>
+    <text x="70" y="282" font-size="13" fill="#3b3a36">禁拷贝（=delete）——浅拷贝的雷先拆掉　　　　　← Day 41 的教训</text>
+    <text x="70" y="306" font-size="12.5" fill="#6b675e">（拷贝控制的正课在第 10 周——v1 用"禁"守住安全）</text>
+
+    <path d="M 40,334 Q 280,328 520,334 Q 524,430 520,504 Q 280,510 42,504 Q 36,430 40,334 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 419)"/>
+    <text x="280" y="364" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">实测战报（全过）</text>
+    <text x="64" y="394" font-size="12.5" fill="#3b3a36">构造容量 4 起步 → push 5 个触发扩容 4→8 ✔</text>
+    <text x="64" y="418" font-size="12.5" fill="#3b3a36">size=5、capacity=8 分开报 ✔</text>
+    <text x="64" y="442" font-size="12.5" fill="#3b3a36">at(0)~at(4) = 10/20/30/40/50 ✔</text>
+    <text x="64" y="466" font-size="12.5" fill="#a33f2e">at(99) → [越界] index 99 >= size 5 + exit(1) ✔</text>
+    <text x="64" y="492" font-size="12" fill="#8a8578">（ASan 正常路径零报错；析构释放日志齐全）</text>
+
+    <path d="M 550,334 Q 730,328 905,334 Q 908,430 905,504 Q 730,510 552,504 Q 547,430 550,334 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(0.3 727 419)"/>
+    <text x="727" y="364" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">自测清单（闭卷标准）</text>
+    <text x="572" y="394" font-size="12.5" fill="#3b3a36">□ 独立复现五件套（不看教程）</text>
+    <text x="572" y="418" font-size="12.5" fill="#3b3a36">□ -Wall 零警告 + ASan 零报错</text>
+    <text x="572" y="442" font-size="12.5" fill="#3b3a36">□ 能讲出扩容四步的顺序原因</text>
+    <text x="572" y="466" font-size="12.5" fill="#3b3a36">□ 能指出哪行用哪天的知识</text>
+    <text x="572" y="490" font-size="12" fill="#8a8578">（全勾 = 第 7 周收官）</text>
+
+    <path d="M 60,520 Q 480,514 905,521" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="440" cy="520" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="520" r="5" fill="#e0955f"/>
+    <text x="440" y="540" text-anchor="middle" font-size="12" font-weight="bold" fill="#9c5a22">Day 42（第 7 周收官）</text>
+    <circle cx="680" cy="520" r="5" fill="#5b8db8"/>
+    <text x="680" y="540" text-anchor="middle" font-size="12" fill="#3b3a36">第 8 周 内存进阶</text>
+    <circle cx="860" cy="520" r="5" fill="#5b8db8"/>
+    <text x="860" y="540" text-anchor="middle" font-size="12" fill="#3b3a36">……Day 48 自测日</text>
+  </g>
+</svg>
