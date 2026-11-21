@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 54 项目日：MyString v2——第 9 周收官</text>
+    <path d="M 300,60 Q 480,52 660,61" fill="none" stroke="#e0955f" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">手写动态数组的完整拷贝控制——四天零件（拷贝构造/拷贝赋值/三法则/=delete）一次装齐</text>
+
+    <path d="M 40,116 Q 470,110 905,117 L 901,310 Q 470,304 44,309 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 213)"/>
+    <text x="472" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">MyString 的零件清单（每天一件）</text>
+    <text x="70" y="178" font-size="13" fill="#3b3a36">三法则①拷贝构造（深拷贝 new+memcpy）　　　← Day 49</text>
+    <text x="70" y="204" font-size="13" fill="#3b3a36">三法则②拷贝赋值（三步式+自赋值检查）　　　← Day 50</text>
+    <text x="70" y="230" font-size="13" fill="#3b3a36">三法则③析构（delete[] 收摊）　　　　　　　　← Day 39/46</text>
+    <text x="70" y="256" font-size="13" fill="#3b3a36">operator[] 读写双版（const 正确性）　　　　← Day 40</text>
+    <text x="70" y="282" font-size="13" fill="#3b3a36">append 动态扩容（new 大块→抄→放旧）　　　← Day 31 预告兑现</text>
+    <text x="70" y="306" font-size="12.5" fill="#6b675e">（返回 *this 链式 append().append()——Day 37/50 的 this 三用法）</text>
+
+    <path d="M 40,334 Q 280,328 520,334 Q 524,430 520,504 Q 280,510 42,504 Q 36,430 40,334 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 419)"/>
+    <text x="280" y="364" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">实测战报（五场景全过）</text>
+    <text x="64" y="394" font-size="12.5" fill="#3b3a36">①三件套联动：构造/拷贝构造/拷贝赋值全登场 ✔</text>
+    <text x="64" y="418" font-size="12.5" fill="#3b3a36">②下标读写：b[0]='H' 后 b="Hello"，a 仍 "hello" ✔</text>
+    <text x="64" y="442" font-size="12.5" fill="#3b3a36">③链式扩容：append("cd").append("ef") → "abcdef" ✔</text>
+    <text x="64" y="466" font-size="12.5" fill="#3b3a36">④自赋值：被①拦下，内容无损 ✔</text>
+    <text x="64" y="490" font-size="12.5" fill="#45703a">⑤逆序析构×4 + ASan 全场景零报错 ✔</text>
+
+    <path d="M 550,334 Q 730,328 905,334 Q 908,430 905,504 Q 730,510 552,504 Q 547,430 550,334 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(0.3 727 419)"/>
+    <text x="727" y="364" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">自测清单（闭卷标准）</text>
+    <text x="572" y="394" font-size="12.5" fill="#3b3a36">□ 独立复现三件套（不看教程）</text>
+    <text x="572" y="418" font-size="12.5" fill="#3b3a36">□ -Wall 零警告 + ASan 零报错</text>
+    <text x="572" y="442" font-size="12.5" fill="#3b3a36">□ 五场景输出逐行对上</text>
+    <text x="572" y="466" font-size="12.5" fill="#3b3a36">□ 能指认每个零件出处</text>
+    <text x="572" y="490" font-size="12" fill="#8a8578">（全勾 = 第 9 周收官）</text>
+
+    <path d="M 60,520 Q 480,514 905,521" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="440" cy="520" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="520" r="5" fill="#e0955f"/>
+    <text x="440" y="540" text-anchor="middle" font-size="12" font-weight="bold" fill="#9c5a22">Day 54（第 9 周收官）</text>
+    <circle cx="680" cy="520" r="5" fill="#5b8db8"/>
+    <text x="680" y="540" text-anchor="middle" font-size="12" fill="#3b3a36">第 10 周 OOP 深入</text>
+    <circle cx="860" cy="520" r="5" fill="#5b8db8"/>
+    <text x="860" y="540" text-anchor="middle" font-size="12" fill="#3b3a36">……Day 78 里程碑</text>
+  </g>
+</svg>

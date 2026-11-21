@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">五场景全记录与九周战绩</text>
+    <path d="M 390,58 Q 480,52 570,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,480 Q 248,485 26,480 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 291)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出（节选）</text>
+    <rect x="38" y="146" width="420" height="320" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./ms</text>
+    <text x="54" y="198" font-size="12" fill="#9fb8a8">== ② 下标访问 ==</text>
+    <text x="54" y="220" font-size="12.5" fill="#cfe8c6">b[0] = h</text>
+    <text x="54" y="242" font-size="12.5" fill="#cfe8c6">改后 b = "Hello"</text>
+    <text x="54" y="262" font-size="12.5" fill="#f0c9c0">（a 仍是 "hello"——深拷贝独立）</text>
+    <text x="54" y="296" font-size="12" fill="#9fb8a8">== ③ 动态扩容 ==</text>
+    <text x="54" y="318" font-size="12.5" fill="#cfe8c6">d = "abcdef"，size = 6</text>
+    <text x="54" y="340" font-size="12.5" fill="#9fb8a8">（链式 append().append()）</text>
+    <text x="54" y="372" font-size="12" fill="#9fb8a8">== ④ 自赋值 ==</text>
+    <text x="54" y="394" font-size="12.5" fill="#cfe8c6">自赋值后 a = "hello" ✔</text>
+    <text x="54" y="426" font-size="12" fill="#9fb8a8">== ⑤ 逆序析构×4 ==</text>
+    <text x="54" y="448" font-size="12.5" fill="#cfe8c6">"abcdef"→"hello"→"Hello"→"hello"</text>
+    <text x="54" y="470" font-size="12" fill="#9fb8a8">（ASan 全场景零报错）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,480 Q 712,485 490,480 Q 484,290 488,102 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 711 291)"/>
+    <text x="510" y="132" font-size="15.5" font-weight="bold" fill="#55606e">九周战绩总表</text>
+    <rect x="502" y="146" width="420" height="200" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="11.5" fill="#cfe8c6">第 7 周：类五件套＋银行账户　　　✔</text>
+    <text x="514" y="194" font-size="11.5" fill="#cfe8c6">第 8 周：继承多态＋图形库 v3　　　✔</text>
+    <text x="514" y="216" font-size="11.5" fill="#cfe8c6">第 9 周：拷贝控制＋MyString v2　　✔</text>
+    <text x="514" y="244" font-size="12" fill="#9fb8a8">（54/144 = 37.5%；八个项目日全胜）</text>
+    <text x="514" y="272" font-size="12" fill="#9fb8a8">本周新增：拷贝构造、拷贝赋值、三法则、</text>
+    <text x="514" y="292" font-size="12" fill="#9fb8a8">=default/=delete、单例、坏例重构</text>
+    <text x="510" y="336" font-size="12.5" fill="#3b3a36">OOP 的四根支柱全部到手：</text>
+    <text x="510" y="358" font-size="12.5" fill="#3b3a36">　封装（7 周）继承（8 周）</text>
+    <text x="510" y="380" font-size="12.5" fill="#3b3a36">　多态（8 周）拷贝控制（9 周）</text>
+    <text x="510" y="420" font-size="12" fill="#8a8578">下周预告：第 10 周运算符重载与类型转换——</text>
+    <text x="510" y="440" font-size="12" fill="#8a8578">Fraction 分数类的 + - * /（算术变成日常）</text>
+    <text x="510" y="468" font-size="12" fill="#8a8578">（今天 append 返回 *this 的链式写法已是伏笔）</text>
+  </g>
+</svg>
