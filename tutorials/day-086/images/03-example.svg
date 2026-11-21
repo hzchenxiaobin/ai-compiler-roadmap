@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">桶地图、3.17 倍对决与选型战报</text>
+    <path d="M 350,58 Q 480,52 610,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 -std=c++17；-Wall 零警告）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,480 Q 248,485 26,480 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 291)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出</text>
+    <rect x="38" y="146" width="420" height="320" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./hb　（-Wall 零警告）</text>
+    <text x="54" y="200" font-size="12" fill="#9fb8a8">== 哈希原理 ==</text>
+    <text x="54" y="222" font-size="11.5" fill="#cfe8c6">bucket_count = 5</text>
+    <text x="54" y="242" font-size="11.5" fill="#cfe8c6">apple→桶1 banana→桶4</text>
+    <text x="54" y="262" font-size="11.5" fill="#f0c9c0">cherry→桶4（冲突！）</text>
+    <text x="54" y="284" font-size="11.5" fill="#cfe8c6">load_factor = 0.6</text>
+    <text x="54" y="312" font-size="12" fill="#9fb8a8">== 遍历无序 ==</text>
+    <text x="54" y="334" font-size="11.5" fill="#cfe8c6">插入 apple banana cherry</text>
+    <text x="54" y="354" font-size="11.5" fill="#f0c9c0">遍历 cherry banana apple</text>
+    <text x="54" y="374" font-size="11" fill="#9fb8a8">（按桶位不按字典序）</text>
+    <text x="54" y="404" font-size="12" fill="#9fb8a8">== 性能对决（10 万键） ==</text>
+    <text x="54" y="426" font-size="11.5" fill="#cfe8c6">map：209 ms（校验和 ✔）</text>
+    <text x="54" y="448" font-size="11.5" fill="#cfe8c6">unordered：66 ms（✔）</text>
+    <text x="54" y="472" font-size="12" fill="#f0c9c0">→ 3.17 倍速度优势！</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,480 Q 712,485 490,480 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 291)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">数字的解读（诚实账本）</text>
+    <rect x="502" y="146" width="420" height="320" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">3.17 倍是"这个规模这种负载"：</text>
+    <text x="514" y="198" font-size="11.5" fill="#cfe8c6">string 键的哈希有成本；树高 ~17</text>
+    <text x="514" y="218" font-size="11" fill="#9fb8a8">（10 万的 log）也不算高</text>
+    <text x="514" y="248" font-size="12" fill="#9fb8a8">换场景差距会变：</text>
+    <text x="514" y="270" font-size="11.5" fill="#cfe8c6">int 键（哈希几乎免费）→ 差距更大</text>
+    <text x="514" y="292" font-size="11.5" fill="#cfe8c6">小数据量（千级）→ 都瞬间完</text>
+    <text x="514" y="314" font-size="11.5" fill="#cfe8c6">最坏哈希（全冲突）→ 退化 O(n)</text>
+    <text x="514" y="346" font-size="12" fill="#9fb8a8">Day 84 的 v2 路线今天兑现：</text>
+    <text x="514" y="368" font-size="11.5" fill="#cfe8c6">词频统计换 unordered_map——</text>
+    <text x="514" y="388" font-size="11" fill="#9fb8a8">　计数场景它的主场（快而无序 OK）</text>
+    <text x="514" y="420" font-size="12.5" fill="#45703a">（86/144 = 59.7%）</text>
+    <text x="514" y="444" font-size="11.5" fill="#9fb8a8">本周剩：87 multimap/equal_range</text>
+    <text x="514" y="464" font-size="11.5" fill="#9fb8a8">　88 迭代器分类 → 89 项目日</text>
+
+    <path d="M 24,506 Q 470,500 905,507 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 543)"/>
+    <text x="46" y="532" font-size="15.5" font-weight="bold" fill="#9c5a22">速度与秩序的交换律</text>
+    <text x="46" y="560" font-size="12.5" fill="#3b3a36">unordered 用"无序"换 3 倍速度——大部分计数/缓存场景愿意换；要遍历有序就回去 map——知道自己要什么比追快重要</text>
+
+    <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 87 multimap/multiset 与 equal_range——学生按班级分组（计划指定练习）</text>
+  </g>
+</svg>
