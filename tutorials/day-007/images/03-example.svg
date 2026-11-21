@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">三个程序的真实输出对照</text>
+    <path d="M 340,58 Q 480,52 620,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,330 470,560 Q 248,565 26,560 Q 20,330 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 331)"/>
+    <text x="46" y="132" font-size="16.5" font-weight="bold" fill="#45703a">九九乘法表（内层只到 row 列）</text>
+    <rect x="38" y="146" width="420" height="180" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="12.5" fill="#cfe8c6">   1×1= 1</text>
+    <text x="54" y="192" font-size="12.5" fill="#cfe8c6">   1×2= 2   2×2= 4</text>
+    <text x="54" y="212" font-size="12.5" fill="#cfe8c6">   1×3= 3   2×3= 6   3×3= 9</text>
+    <text x="54" y="232" font-size="12.5" fill="#cfe8c6">   1×4= 4   2×4= 8   3×4=12   4×4=16</text>
+    <text x="54" y="252" font-size="12.5" fill="#cfe8c6">   …（下三角，共 45 项）</text>
+    <text x="54" y="272" font-size="12.5" fill="#cfe8c6">   1×9= 9   2×9=18  …  8×9=72   9×9=81</text>
+    <text x="54" y="308" font-size="12.5" fill="#9fb8a8">setw(4)+setw(2) 让列列对齐（Day 4 的阀门）</text>
+    <text x="46" y="356" font-size="15" fill="#45703a">关键行：for (int col = 1; col &lt;= row; ++col)</text>
+    <text x="46" y="382" font-size="12.5" fill="#6b675e">内层上限写 row 而不是 9：第 3 行只乘到 3，</text>
+    <text x="46" y="402" font-size="12.5" fill="#6b675e">内层条件"看外层脸色"就是嵌套的威力</text>
+    <text x="46" y="446" font-size="16.5" font-weight="bold" fill="#45703a">星号金字塔（两层分工）</text>
+    <rect x="38" y="462" width="420" height="80" rx="6" fill="#33413a"/>
+    <text x="220" y="486" text-anchor="middle" font-size="13" fill="#cfe8c6">    *</text>
+    <text x="220" y="504" text-anchor="middle" font-size="13" fill="#cfe8c6">   ***</text>
+    <text x="220" y="522" text-anchor="middle" font-size="13" fill="#cfe8c6">  ***** （共 5 行，最宽 9 星）</text>
+    <text x="46" y="570" font-size="12.5" fill="#6b675e">空格循环：height-row 个；星号循环：2*row-1 个</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,330 934,560 Q 712,565 490,560 Q 484,330 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 331)"/>
+    <text x="510" y="132" font-size="16.5" font-weight="bold" fill="#2c5a82">进度条：改一个参数看变化</text>
+    <rect x="502" y="146" width="420" height="200" rx="6" fill="#33413a"/>
+    <text x="516" y="176" font-size="13" fill="#cfe8c6">$ ./progress_bar</text>
+    <text x="516" y="200" font-size="13" fill="#cfe8c6">[#...................................]</text>
+    <text x="516" y="222" font-size="13" fill="#9fb8a8"> 7/144 天（今天）</text>
+    <text x="516" y="252" font-size="13" fill="#cfe8c6">[##################..................]</text>
+    <text x="516" y="274" font-size="13" fill="#9fb8a8"> 72/144 天（对折：18 格实心）</text>
+    <text x="516" y="304" font-size="13" fill="#cfe8c6">[####################################]</text>
+    <text x="516" y="326" font-size="13" fill="#9fb8a8"> 144/144 天（毕业：36 格全满）</text>
+    <text x="510" y="372" font-size="13" fill="#2c5a82">for (int i = 0; i &lt; 36; ++i)</text>
+    <text x="510" y="396" font-size="12.5" fill="#6b675e">一次循环扫一格：够 4 天画 #，否则画 .</text>
+    <text x="510" y="416" font-size="12.5" fill="#6b675e">每格代表 4 天：144 ÷ 36 = 4</text>
+    <path d="M 502,446 Q 711,440 922,447 L 919,530 Q 711,524 505,529 Z" fill="#fffdf7" stroke="#9db8cf" stroke-width="2" stroke-dasharray="8 5"/>
+    <text x="514" y="472" font-size="12.5" fill="#2c5a82">0 基循环（i=0 开始）配"格子里画什么"，</text>
+    <text x="514" y="492" font-size="12.5" fill="#2c5a82">1 基循环（row=1 开始）配"第几行/第几天"——</text>
+    <text x="514" y="512" font-size="12.5" fill="#6b675e">起点选 0 还是 1，跟着问题的自然编号走</text>
+    <text x="711" y="556" text-anchor="middle" font-size="12.5" fill="#8a8578">对照实验：只改 finished 一个数，实心格数随之变化</text>
+  </g>
+</svg>

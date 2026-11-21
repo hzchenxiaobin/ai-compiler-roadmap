@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 7 全貌：for 循环——把"重复"变成一行代码</text>
+    <path d="M 300,60 Q 480,52 660,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">Day 6 的 while(true) 是固定句式，今天开始把"循环"变成真本领</text>
+
+    <path d="M 40,116 Q 250,110 460,116 Q 464,170 460,224 Q 250,230 42,224 Q 36,170 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(-0.4 250 170)"/>
+    <text x="250" y="146" text-anchor="middle" font-size="16" font-weight="bold" fill="#2c5a82">for (int i = 1; i &lt;= 9; ++i)</text>
+    <rect x="60" y="160" width="115" height="30" fill="#f7e8a0" opacity="0.7"/>
+    <text x="117" y="180" text-anchor="middle" font-size="12.5" fill="#8a6d1a">① 起步</text>
+    <rect x="190" y="160" width="115" height="30" fill="#d8ecce" opacity="0.8"/>
+    <text x="247" y="180" text-anchor="middle" font-size="12.5" fill="#45703a">② 条件</text>
+    <rect x="320" y="160" width="115" height="30" fill="#f9d9b8" opacity="0.8"/>
+    <text x="377" y="180" text-anchor="middle" font-size="12.5" fill="#9c5a22">③ 步进</text>
+    <text x="250" y="212" text-anchor="middle" font-size="12.5" fill="#6b675e">三段式挤在一行，重复 9 次的身体只有一句</text>
+
+    <path d="M 470,170 Q 496,162 522,170" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+    <path d="M 514,162 Q 523,168 515,178" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+
+    <path d="M 526,116 Q 740,110 928,116 Q 932,170 928,224 Q 740,230 528,224 Q 522,170 526,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(0.4 727 170)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="16" font-weight="bold" fill="#45703a">今天的应用：144 天进度条</text>
+    <rect x="556" y="164" width="340" height="26" fill="#fffdf7" stroke="#7aa663" stroke-width="2"/>
+    <text x="572" y="182" font-size="13.5" fill="#45703a">#</text>
+    <text x="588" y="182" font-size="13.5" fill="#8a8578">...................................  7/144 天</text>
+    <text x="727" y="214" text-anchor="middle" font-size="12.5" fill="#6b675e">for 循环扫过 36 个格子：够 4 天画 #，不够画 .</text>
+
+    <path d="M 40,268 Q 460,260 905,269 L 901,342 Q 460,334 44,341 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.3 472 303)"/>
+    <text x="472" y="298" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#9c5a22">嵌套循环：外层走一格，内层跑一整圈</text>
+    <text x="472" y="326" text-anchor="middle" font-size="13" fill="#6b675e">九九乘法表：外层 9 行 × 内层最多 9 列；星号金字塔：空格循环 + 星号循环两连套</text>
+
+    <path d="M 60,410 Q 480,402 905,411" fill="none" stroke="#8a8578" stroke-width="3"/>
+    <text x="480" y="396" text-anchor="middle" font-size="14" font-weight="bold" fill="#3b3a36">第 1 周已收官，今天开启第 2 周</text>
+    <circle cx="120" cy="440" r="6" fill="#8a94a3"/>
+    <text x="120" y="466" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 1~6 ✓</text>
+    <text x="120" y="484" text-anchor="middle" font-size="11.5" fill="#8a8578">第 1 周 · 里程碑达成</text>
+    <circle cx="330" cy="440" r="13" fill="none" stroke="#c96a5a" stroke-width="2.2"/>
+    <circle cx="330" cy="440" r="6" fill="#5b8db8"/>
+    <text x="330" y="466" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#c96a5a">Day 7（今天）</text>
+    <text x="330" y="484" text-anchor="middle" font-size="11.5" fill="#8a8578">for 与嵌套</text>
+    <circle cx="510" cy="440" r="6" fill="#5b8db8"/>
+    <text x="510" y="466" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 8</text>
+    <text x="510" y="484" text-anchor="middle" font-size="11.5" fill="#8a8578">while / 猜数字</text>
+    <circle cx="670" cy="440" r="6" fill="#5b8db8"/>
+    <text x="670" y="466" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 9~11</text>
+    <text x="670" y="484" text-anchor="middle" font-size="11.5" fill="#8a8578">函数三部曲</text>
+    <circle cx="850" cy="440" r="6" fill="#e0955f"/>
+    <text x="850" y="466" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 12</text>
+    <text x="850" y="484" text-anchor="middle" font-size="11.5" fill="#8a8578">项目日 · 计算器</text>
+
+    <rect x="150" y="502" width="660" height="40" fill="#f7e8a0" opacity="0.5" transform="rotate(-0.3 480 522)"/>
+    <text x="480" y="528" text-anchor="middle" font-size="13.5" fill="#8a6d1a">上周边界：i &lt; 9 和 i &lt;= 9 只差一个等号——差一次执行，就是差一行输出</text>
+  </g>
+</svg>

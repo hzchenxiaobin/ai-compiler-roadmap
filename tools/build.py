@@ -16,7 +16,7 @@ GITHUB_REPO_URL = "https://github.com/hzchenxiaobin/ai-compiler-roadmap"
 SITE_URL = "https://hzchenxiaobin.github.io/ai-compiler-roadmap"
 SITE_NAME = "C++ 从基础到深入学习计划"
 SITE_TITLE = "C++ 144 天学习计划"
-TITLE_RE = re.compile(r"^#\s+第\s*(\d+)\s*天[：:]\s*(.+)$")
+TITLE_RE = re.compile(r"^#\s+第\s*(\d+)\s*天(（[^）]*）)?\s*[：:]\s*(.+)$")
 IMAGE_RE = re.compile(r"!\[[^\]]*\]\(([^)]+)\)")
 PHASE_RE = re.compile(r"^## 阶段([一二三四五六])：(.+?)（第 (\d+)~(\d+) 周）\s*$")
 WEEK_RE = re.compile(r"^### 第 (\d+)(?:~(\d+))? 周 · (.+?)\s*$")
@@ -63,7 +63,7 @@ def load_tutorials():
             {
                 "number": directory_day,
                 "slug": day_dir.name,
-                "title": f"第 {directory_day} 天：{match.group(2).strip()}",
+                "title": f"第 {directory_day} 天{match.group(2) or ''}：{match.group(3).strip()}",
                 "markdown": "\n".join(lines[1:]).strip(),
                 "source": day_dir,
             }
@@ -374,7 +374,7 @@ def build_home(tutorials, plan_text, phases):
             continue
         cards = []
         for day in days:
-            title = re.sub(r"^第\s*\d+\s*天[：:]\s*", "", day["title"])
+            title = re.sub(r"^第\s*\d+\s*天(（[^）]*）)?[：:]\s*", "", day["title"])
             goal = re.search(r"^> \*\*今日目标\*\*：(.+)$", day["markdown"], re.MULTILINE)
             summary = re.sub(r"[`*_]", "", goal.group(1)) if goal else "概念讲解、技术图解、动手实现与结果验证。"
             if len(summary) > 120:
