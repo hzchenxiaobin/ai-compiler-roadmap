@@ -3,7 +3,7 @@
   <g stroke-linecap="round" stroke-linejoin="round">
     <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 136 全貌：GoogleTest 入门——第一个测试用例（质量周开篇）</text>
     <path d="M 270,60 Q 480,52 690,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
-    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定"安装、写第一个测试用例"——brew 装好 1.18.0；7 个用例跑通（含 2 个故意的失败——看报告形态）；断言家族 + EXPECT/ASSERT 差异 + 过滤器</text>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定"安装+第一个测试用例"——brew 装好 1.18.0；7 用例跑通（含 2 个故意失败看形态）；断言家族+EXPECT/ASSERT+过滤器</text>
 
     <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
     <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">TEST 宏与断言家族</text>
