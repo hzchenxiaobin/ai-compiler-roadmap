@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">v1→v2 的重构账本与两个设计细节</text>
+    <path d="M 300,58 Q 480,52 660,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,330 Q 470,324 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 215)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">平铺五类 → 三层六类（代码量对照）</text>
+    <rect x="90" y="146" width="380" height="140" fill="#fffdf7" stroke="#5b8db8" stroke-width="2"/>
+    <text x="280" y="172" font-size="11.5" fill="#2c5a82">v1（Day 72）：Shape + 5 平铺类</text>
+    <text x="280" y="196" font-size="11" fill="#a33f2e">每个具体类都写一遍 name() 格式化</text>
+    <text x="280" y="216" font-size="11" fill="#a33f2e">　（5 处重复的标签拼接代码）</text>
+    <text x="280" y="240" font-size="11" fill="#6b675e">加第 6 种图形：再抄一遍设施</text>
+    <text x="280" y="266" font-size="10.5" fill="#8a8578">（约 130 行）</text>
+    <rect x="490" y="146" width="380" height="140" fill="#fffdf7" stroke="#7aa663" stroke-width="2"/>
+    <text x="680" y="172" font-size="11.5" fill="#45703a">v2（今天）：接口 + 公共基类 + 中间层</text>
+    <text x="680" y="196" font-size="11" fill="#45703a">设施在 LabeledShape 写一遍</text>
+    <text x="680" y="216" font-size="11" fill="#45703a">　（report/id_/dims_ 全类复用）</text>
+    <text x="680" y="240" font-size="11" fill="#45703a">加第 6 种图形：只填差异（约 10 行）</text>
+    <text x="680" y="266" font-size="10.5" fill="#8a8578">（约 150 行但增类边际成本骤降）</text>
+    <text x="472" y="316" font-size="12.5" fill="#45703a">重构判据达成：行为（排序结果/总面积 80.6991）与 v1 完全一致——结构变优、功能不丢</text>
+
+    <path d="M 40,354 Q 470,348 905,355 L 901,576 Q 470,570 44,575 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.2 472 465)"/>
+    <text x="472" y="384" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">两个设计细节（本周知识的落点）</text>
+    <rect x="150" y="402" width="660" height="70" fill="#33413a"/>
+    <text x="480" y="428" font-size="11.5" fill="#cfe8c6">①Square 的自报家门：Rect 提供 protected 带标签构造，</text>
+    <text x="480" y="450" font-size="11.5" fill="#9fb8a8">　Square(s) : Rect("正方形", s, s)——委托构造（Day 50）复用面积逻辑</text>
+    <rect x="150" y="486" width="660" height="70" fill="#33413a"/>
+    <text x="480" y="512" font-size="11.5" fill="#cfe8c6">②接口的最小面：纯 Shape* 只认 area/perimeter——</text>
+    <text x="480" y="534" font-size="11.5" fill="#9fb8a8">　report() 是 LabeledShape 的设施（要打印就用第二层的指针）</text>
+    <text x="472" y="566" font-size="11" fill="#8a8578">（接口窄 = 依赖少——"面向接口编程"的第一课）</text>
+  </g>
+</svg>

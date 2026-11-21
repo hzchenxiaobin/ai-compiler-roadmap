@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 76 项目日：图形库 v2——重新设计继承层次</text>
+    <path d="M 290,60 Q 480,52 670,61" fill="none" stroke="#e0955f" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定"抽出公共基类与接口"——v1 的平铺五类重构成三层：接口（Shape）→ 公共基类（LabeledShape）→ 具体</text>
+
+    <path d="M 40,116 Q 470,110 905,117 L 901,390 Q 470,384 44,389 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 253)"/>
+    <text x="472" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">v2 的三层层次图</text>
+    <rect x="330" y="162" width="300" height="44" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.2"/>
+    <text x="480" y="182" font-size="11" fill="#a33f2e">①接口 Shape：area/perimeter = 0（只定规矩）</text>
+    <text x="480" y="198" font-size="9.5" fill="#8a8578">（最小面——纯 Shape* 只认这两个）</text>
+    <rect x="330" y="216" width="300" height="44" fill="#f9d9b8" stroke="#e0955f" stroke-width="2.2"/>
+    <text x="480" y="236" font-size="11" fill="#9c5a22">②公共基类 LabeledShape：id_/dims_ + report()</text>
+    <text x="480" y="252" font-size="9.5" fill="#8a8578">（设施上提——杠杆打印吃虚函数的饭）</text>
+    <rect x="130" y="270" width="180" height="36" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
+    <text x="220" y="288" font-size="10" fill="#45703a">Polygon（直边中间层）</text>
+    <rect x="330" y="270" width="140" height="36" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
+    <text x="400" y="288" font-size="10" fill="#45703a">Circle</text>
+    <rect x="490" y="270" width="140" height="36" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
+    <text x="560" y="288" font-size="10" fill="#45703a">Ellipse</text>
+    <rect x="90" y="322" width="110" height="32" fill="#eef5e8" stroke="#7aa663" stroke-width="1.8"/>
+    <text x="145" y="342" font-size="9.5" fill="#45703a">Rect</text>
+    <rect x="215" y="322" width="110" height="32" fill="#eef5e8" stroke="#7aa663" stroke-width="1.8"/>
+    <text x="270" y="342" font-size="9.5" fill="#45703a">Triangle</text>
+    <rect x="130" y="366" width="80" height="26" fill="#f1f4f7" stroke="#8a94a3" stroke-width="1.6"/>
+    <text x="170" y="383" font-size="9" fill="#55606e">Square</text>
+    <path d="M 480,206 Q 480,212 480,214" fill="none" stroke="#3b3a36" stroke-width="1.8"/>
+    <path d="M 220,268 Q 300,258 330,244" fill="none" stroke="#3b3a36" stroke-width="1.6"/>
+    <path d="M 620,270 Q 660,250 630,238" fill="none" stroke="#3b3a36" stroke-width="1.6"/>
+    <path d="M 145,320 Q 150,308 190,304" fill="none" stroke="#3b3a36" stroke-width="1.6"/>
+    <path d="M 170,364 Q 160,350 150,320" fill="none" stroke="#3b3a36" stroke-width="1.6"/>
+
+    <path d="M 40,414 Q 470,408 905,415 L 901,500 Q 470,494 44,499 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.2 472 457)"/>
+    <text x="472" y="444" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">实测战报（全过 + 手算核对）</text>
+    <text x="70" y="472" font-size="13" fill="#3b3a36">接口视角 5 个 area ✔｜报表五格式齐全（Square 委托构造自报"正方形"）✔｜排序同 Day 72 ✔｜ASan 零报错 ✔</text>
+    <text x="70" y="494" font-size="12.5" fill="#6b675e">（总面积 80.6991 与 v1 完全一致——重构判据：行为不变、结构变优）</text>
+
+    <path d="M 60,514 Q 480,508 905,515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#e0955f"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#9c5a22">Day 76（项目日）</text>
+    <circle cx="660" cy="514" r="5" fill="#e0955f"/>
+    <text x="660" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 77 v3</text>
+    <circle cx="860" cy="514" r="5" fill="#e0955f"/>
+    <text x="860" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 78 里程碑</text>
+  </g>
+</svg>
