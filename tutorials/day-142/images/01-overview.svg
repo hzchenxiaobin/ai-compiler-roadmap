@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 142 全貌：CMake 入门——多平台构建的正式方式</text>
+    <path d="M 320,60 Q 480,52 640,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定"写 CMakeLists.txt、支持多平台"——三目标全通：demo（C++20 检测 ✔）/ tests（ctest 2/2 ✔）/ sanitize（消毒柜 ✔）——告别手敲 g++ 长命令</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">CMakeLists 的五段结构</text>
+    <text x="64" y="180" font-size="12" fill="#45703a">①project：名字/版本/语言</text>
+    <text x="64" y="208" font-size="12" fill="#45703a">②标准：C++20（STANDARD_REQUIRED）</text>
+    <text x="64" y="236" font-size="12" fill="#45703a">③警告：MSVC/GCC 各认各的（if 分支）</text>
+    <text x="64" y="264" font-size="12" fill="#45703a">④目标：add_executable ×3</text>
+    <text x="64" y="292" font-size="12" fill="#45703a">⑤集成：GTest 的 find_package + ctest</text>
+    <text x="64" y="326" font-size="12.5" fill="#6b675e">生成器表达式：&lt;$&lt;CXX_COMPILER_ID:MSVC&gt;…&gt;</text>
+    <text x="64" y="348" font-size="12" fill="#8a8578">（同一份清单——每个编译器拿到自己的旗子）</text>
+    <text x="64" y="378" font-size="11.5" fill="#8a8578">（~40 行的清单管三个目标+两平台）</text>
+
+    <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">实测战报（全流程）</text>
+    <rect x="572" y="164" width="320" height="190" fill="#33413a"/>
+    <text x="732" y="188" font-size="10.5" fill="#9fb8a8">$ cmake -S . -B build</text>
+    <text x="732" y="208" font-size="10" fill="#cfe8c8">　Found GTest / Threads ✔</text>
+    <text x="732" y="230" font-size="10.5" fill="#9fb8a8">$ cmake --build build</text>
+    <text x="732" y="250" font-size="10" fill="#cfe8c8">　三个目标 100% ✔（零警告）</text>
+    <text x="732" y="272" font-size="10.5" fill="#9fb8a8">$ ./build/json_demo</text>
+    <text x="732" y="292" font-size="10" fill="#f0c9c0">　C++20 检测 ✔</text>
+    <text x="732" y="314" font-size="10.5" fill="#9fb8a8">$ ctest：2/2 Passed ✔</text>
+    <text x="732" y="336" font-size="10.5" fill="#9fb8a8">$ ./build/json_sanitize</text>
+    <text x="732" y="356" font-size="10" fill="#cfe8c8">　无报告（干净）✔</text>
+
+    <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
+    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">为什么手敲 g++ 到头了</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">14 天的手敲命令（g++ -Wall -Wextra -std=c++20 … -lgtest -lgtest_main）每处都可能敲错；CMake 把配置固化成文件——任何人任何平台 cmake 三步得到同样的构建</text>
+    <text x="70" y="490" font-size="12.5" fill="#6b675e">（"我机器上能跑"的终结者——配置即代码、版本受控、平台自适应）</text>
+
+    <path d="M 60,514 Q 480,508 905 515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 136~141 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 142（今天）</text>
+    <circle cx="650" cy="514" r="5" fill="#5b8db8"/>
+    <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 143~144</text>
+    <circle cx="850" cy="514" r="5" fill="#e0955f"/>
+    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">毕业</text>
+  </g>
+</svg>

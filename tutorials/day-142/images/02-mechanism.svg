@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">配置到构建的三步流水与生成器表达式</text>
+    <path d="M 310,58 Q 480,52 650,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,340 Q 470,334 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 220)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">cmake 的三步流水（每个平台都这三步）</text>
+    <rect x="110" y="146" width="240" height="170" fill="#33413a"/>
+    <text x="230" y="172" font-size="10.5" fill="#9fb8a8">①配置：</text>
+    <text x="230" y="194" font-size="10" fill="#cfe8c8">cmake -S . -B build</text>
+    <text x="230" y="218" font-size="10" fill="#8a8578">（读 CMakeLists → 生成</text>
+    <text x="230" y="236" font-size="10" fill="#8a8578">　平台的构建文件：</text>
+    <text x="230" y="254" font-size="10" fill="#8a8578">　Mac 的 Make/Ninja、</text>
+    <text x="230" y="272" font-size="10" fill="#8a8578">　Win 的 VS 工程）</text>
+    <text x="230" y="300" font-size="10" fill="#8a8578">（一次配置多次构建）</text>
+    <rect x="370" y="146" width="240" height="170" fill="#33413a"/>
+    <text x="490" y="172" font-size="10.5" fill="#9fb8a8">②构建：</text>
+    <text x="490" y="194" font-size="10" fill="#cfe8c8">cmake --build build</text>
+    <text x="490" y="218" font-size="10" fill="#8a8578">（调平台的后端</text>
+    <text x="490" y="236" font-size="10" fill="#8a8578">　编译+链接</text>
+    <text x="490" y="254" font-size="10" fill="#8a8578">　只重编改动的）</text>
+    <text x="490" y="282" font-size="10" fill="#cfe8c8">（增量构建 ✔）</text>
+    <text x="490" y="300" font-size="10" fill="#8a8578">（--target xxx 选目标）</text>
+    <rect x="630" y="146" width="220" height="170" fill="#33413a"/>
+    <text x="740" y="172" font-size="10.5" fill="#9fb8a8">③测试：</text>
+    <text x="740" y="194" font-size="10" fill="#cfe8c8">ctest</text>
+    <text x="740" y="218" font-size="10" fill="#8a8578">（自动发现并跑</text>
+    <text x="740" y="236" font-size="10" fill="#8a8578">　gtest 的用例）</text>
+    <text x="740" y="264" font-size="10" fill="#cfe8c8">（ctest --output-on-failure）</text>
+    <text x="740" y="300" font-size="10" fill="#8a8578">（CI 的一行入口）</text>
+    <path d="M 352,230 Q 360,230 368,230" fill="none" stroke="#3b3a36" stroke-width="2"/>
+    <path d="M 612,230 Q 620,230 628,230" fill="none" stroke="#3b3a36" stroke-width="2"/>
+    <text x="472" y="334" font-size="11.5" fill="#8a8578">（-S 源目录 -B 构建目录——build/ 可整个删掉重来（不污染源码））</text>
+
+    <path d="M 40,364 Q 280,358 520,364 Q 524,480 520,576 Q 280,582 42,576 Q 36,480 40,364 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 470)"/>
+    <text x="280" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">生成器表达式（多平台的钥匙）</text>
+    <rect x="64" y="412" width="430" height="150" fill="#33413a"/>
+    <text x="279" y="436" font-size="10.5" fill="#9fb8a8">$&lt;$&lt;CXX_COMPILER_ID:MSVC&gt;:/W4&gt;</text>
+    <text x="279" y="458" font-size="10.5" fill="#9fb8a8">$&lt;$&lt;NOT:$&lt;CXX_COMPILER_ID:MSVC&gt;&gt;:-Wall&gt;</text>
+    <text x="279" y="484" font-size="10.5" fill="#cfe8c8">（MSVC → /W4；GCC/Clang → -Wall）</text>
+    <text x="279" y="508" font-size="10" fill="#8a8578">（构建时求值——每编译器拿自己的）</text>
+    <text x="279" y="534" font-size="10" fill="#8a8578">（sanitize 目标的完整应用见 CMakeLists）</text>
+
+    <path d="M 550,364 Q 730,358 905,364 Q 908,480 905,576 Q 730,582 552,576 Q 547,480 550,364 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 470)"/>
+    <text x="727" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">out-of-source 的纪律</text>
+    <rect x="572" y="412" width="320" height="150" fill="#33413a"/>
+    <text x="732" y="436" font-size="10.5" fill="#cfe8c8">构建产物全进 build/ 目录</text>
+    <text x="732" y="460" font-size="10.5" fill="#9fb8a8">（源码树保持干净——</text>
+    <text x="732" y="478" font-size="10" fill="#8a8578">　git status 不出现 .o/可执行）</text>
+    <text x="732" y="504" font-size="10.5" fill="#cfe8c8">删 build/ = 完全重来</text>
+    <text x="732" y="528" font-size="10" fill="#8a8578">（.gitignore 加一行 "build/"）</text>
+  </g>
+</svg>

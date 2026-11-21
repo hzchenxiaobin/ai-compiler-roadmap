@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">三目标全通、ctest 2/2 与消毒柜战报</text>
+    <path d="M 380,58 Q 480,52 580,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 + cmake 4.5.1 + GTest 1.18.0——配置/构建/测试/消毒四段全绿）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,490 Q 248,495 26,490 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 296)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出（节选）</text>
+    <rect x="38" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ cmake -S . -B build -DCMAKE_BUILD_TYPE=Release</text>
+    <text x="54" y="196" font-size="11" fill="#cfe8c8">-- Found Threads: TRUE ✔</text>
+    <text x="54" y="216" font-size="11" fill="#cfe8c8">-- Configuring done ✔</text>
+    <text x="54" y="240" font-size="11.5" fill="#9fb8a8">$ cmake --build build</text>
+    <text x="54" y="262" font-size="11" fill="#cfe8c8">[100%] 三个目标 Built ✔（零警告）</text>
+    <text x="54" y="288" font-size="11.5" fill="#9fb8a8">$ ./build/json_demo</text>
+    <text x="54" y="310" font-size="11" fill="#f0c9c0">C++ 标准：C++20 ✔（编译期检测）</text>
+    <text x="54" y="334" font-size="11.5" fill="#9fb8a8">$ ctest --output-on-failure</text>
+    <text x="54" y="356" font-size="11" fill="#cfe8c8">100% tests passed（2/2）✔</text>
+    <text x="54" y="380" font-size="11.5" fill="#9fb8a8">$ ./build/json_sanitize</text>
+    <text x="54" y="402" font-size="11" fill="#cfe8c8">sum = 6（无报告=干净）✔</text>
+    <text x="54" y="430" font-size="12" fill="#9fb8a8">== 三步流水 ==</text>
+    <text x="54" y="452" font-size="11" fill="#9fb8a8">（配置→构建→测试——3 命令</text>
+    <text x="54" y="470" font-size="11" fill="#9fb8a8">　替代手敲的长 g++）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,490 Q 712,495 490,490 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 296)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">工程化技能的毕业清单</text>
+    <rect x="502" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">24 周攒下的工程能力：</text>
+    <text x="514" y="198" font-size="11.5" fill="#cfe8c8">编译/警告档（126 的 -Wextra 全绿）</text>
+    <text x="514" y="218" font-size="11.5" fill="#cfe8c8">测试框架（136~138 的三层）</text>
+    <text x="514" y="238" font-size="11.5" fill="#cfe8c8">Sanitizer（140 的消毒柜）</text>
+    <text x="514" y="258" font-size="11.5" fill="#f0c9c0">构建系统（今天——最后一块）</text>
+    <text x="514" y="288" font-size="12" fill="#9fb8a8">CI 的就绪度（进阶的下一站）：</text>
+    <text x="514" y="310" font-size="11" fill="#8a8578">（CMake 三步 + ctest = 流水线的</text>
+    <text x="514" y="328" font-size="11" fill="#8a8578">　标准入口——GitHub Actions</text>
+    <text x="514" y="346" font-size="11" fill="#8a8578">　的 runner 就跑这些）</text>
+    <text x="514" y="378" font-size="12.5" fill="#45703a">（142/144 = 98.6%）</text>
+    <text x="514" y="408" font-size="11" fill="#9fb8a8">（剩 2 天：博客 + 毕业总结）</text>
+    <text x="514" y="438" font-size="11" fill="#9fb8a8">（教程仓库自己的构建是</text>
+    <text x="514" y="456" font-size="11" fill="#9fb8a8">　Python 的 tools/build.py——</text>
+    <text x="514" y="474" font-size="11" fill="#9fb8a8">　两世界今天会师）</text>
+
+    <path d="M 24,516 Q 470,510 905 517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>
+    <text x="46" y="542" font-size="15.5" font-weight="bold" fill="#9c5a22">配置即代码</text>
+    <text x="46" y="568" font-size="12.5" fill="#3b3a36">CMakeLists.txt 和源码一样进 git——配置的每次变更都有历史、有 review、可回滚；"我机器上能跑"从此变成"仓库里 checkout 就能跑"</text>
+
+    <path d="M 24,596 Q 470,590 905 597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 143 复盘博客——《我如何用 C++ 写了一个 JSON 解析器》（计划指定）</text>
+  </g>
+</svg>
