@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">四块内存的地址地图与自赋值的别名演示</text>
+    <path d="M 250,58 Q 480,52 710,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,320 Q 470,314 44,319 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 210)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">main 里四个对象的四块堆内存（实测）</text>
+    <rect x="90" y="146" width="190" height="40" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
+    <text x="185" y="164" font-size="10" fill="#45703a">a："hello"</text>
+    <text x="185" y="180" font-size="9" fill="#8a8578">0x…12c0</text>
+    <rect x="300" y="146" width="190" height="40" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
+    <text x="395" y="164" font-size="10" fill="#45703a">b = a（拷贝构造）</text>
+    <text x="395" y="180" font-size="9" fill="#8a8578">0x…12d0</text>
+    <rect x="510" y="146" width="190" height="40" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
+    <text x="605" y="164" font-size="10" fill="#45703a">c（赋值后）</text>
+    <text x="605" y="180" font-size="9" fill="#8a8578">0x…12e0</text>
+    <rect x="720" y="146" width="170" height="40" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
+    <text x="805" y="164" font-size="10" fill="#45703a">d(a)</text>
+    <text x="805" y="180" font-size="9" fill="#8a8578">0x…12f0</text>
+    <text x="472" y="216" font-size="12.5" fill="#3b3a36">四个地址全不同（…c0/…d0/…e0/…f0）——每对象一块，深拷贝的直接证据</text>
+    <text x="472" y="244" font-size="12.5" fill="#45703a">c 的地址没变（…e0 保持）——赋值是"就地翻新"（Day 56 的老结论复验）</text>
+    <text x="472" y="272" font-size="12" fill="#8a8578">（逆序析构 ×4 各还各的——ASan 零报错的地基）</text>
+    <text x="472" y="300" font-size="12" fill="#8a8578">（对比 Day 41 浅拷贝的两指针一块——今天的四块就是修复）</text>
+
+    <path d="M 40,344 Q 280,338 520,344 Q 524,470 520,576 Q 280,582 42,576 Q 36,470 40,344 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 460)"/>
+    <text x="280" y="374" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">自赋值的别名演示法</text>
+    <rect x="64" y="392" width="430" height="100" fill="#33413a"/>
+    <text x="279" y="418" font-size="11" fill="#9fb8a8">MyString&amp; a_alias = a;　// 引用别名</text>
+    <text x="279" y="440" font-size="11" fill="#cfe8c6">a = a_alias;　　　　　　// 语义上 = a = a</text>
+    <text x="279" y="462" font-size="10.5" fill="#9fb8a8">（-Wself-assign 不触发——但走的是同一条</text>
+    <text x="279" y="480" font-size="10.5" fill="#9fb8a8">　自赋值路径，①检查照样验证）</text>
+    <text x="64" y="516" font-size="12" fill="#8a8578">（演示"自赋值"而不吃警告的标准姿势——</text>
+    <text x="64" y="536" font-size="12" fill="#8a8578">　Day 56 的坑在项目日有了工程解法）</text>
+
+    <path d="M 550,344 Q 730,338 905,344 Q 908,470 905,576 Q 730,582 552,576 Q 547,470 550,344 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 460)"/>
+    <text x="727" y="374" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">v1 → v2 的分界线</text>
+    <text x="572" y="408" font-size="12.5" fill="#3b3a36">v1（今天）：构造/析构/拷贝正确</text>
+    <text x="572" y="430" font-size="12" fill="#8a8578">（计划原文的要求——不贪多）</text>
+    <text x="572" y="460" font-size="12.5" fill="#3b3a36">v2（Day 66）：运算符集/读写下标/拼接</text>
+    <text x="572" y="482" font-size="12" fill="#8a8578">（第 11 周学完运算符再回来扩）</text>
+    <text x="572" y="516" font-size="12.5" fill="#45703a">分界的智慧：先管对、再管全——</text>
+    <text x="572" y="538" font-size="12.5" fill="#45703a">　拷贝控制是地基，运算符是装修</text>
+  </g>
+</svg>

@@ -12,7 +12,7 @@ multi_file=0
 results=""
 
 # 教学预期的"故意翻车"文件（UB 实验室/自赋值演示——它们的报错就是教学内容）
-TEACHING_OK="tutorials/day-001/examples/warn_unused.cpp tutorials/day-002/examples/uninit.cpp tutorials/day-013/examples/out_of_bounds.cpp tutorials/day-015/examples/strcpy_danger.cpp tutorials/day-019/examples/nullptr_crash.cpp tutorials/day-039/examples/leak_lab.cpp tutorials/day-045/examples/error_museum.cpp tutorials/day-055/examples/shallow_crash.cpp tutorials/day-056/examples/copy_assign.cpp tutorials/day-056/examples/self_assign_trap.cpp tutorials/day-066/examples/mystring_v2.cpp"
+TEACHING_OK="tutorials/day-001/examples/warn_unused.cpp tutorials/day-002/examples/uninit.cpp tutorials/day-013/examples/out_of_bounds.cpp tutorials/day-015/examples/strcpy_danger.cpp tutorials/day-019/examples/nullptr_crash.cpp tutorials/day-039/examples/leak_lab.cpp tutorials/day-045/examples/error_museum.cpp tutorials/day-055/examples/shallow_crash.cpp tutorials/day-056/examples/copy_assign.cpp tutorials/day-056/examples/self_assign_trap.cpp tutorials/day-066/examples/mystring_v2.cpp tutorials/day-060/examples/mystring_v1.cpp"
 is_teaching() {
     case " $TEACHING_OK " in *" $1 "*) return 0;; esac
     return 1
