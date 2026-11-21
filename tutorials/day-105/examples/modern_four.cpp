@@ -5,8 +5,8 @@
 // ===== Day 105：nullptr / enum class / using / constexpr——四件套替换旧写法（计划指定） =====
 
 // ① nullptr：类型安全的空指针
-void take_ptr(int* p)  { std::cout << "  take_ptr(int*)：指针重载" << std::endl; }
-void take_ptr(int v)   { std::cout << "  take_ptr(int)：整数重载" << std::endl; }
+void take_ptr(int* p)  { (void)p; std::cout << "  take_ptr(int*)：指针重载" << std::endl; }
+void take_ptr(int v)   { (void)v; std::cout << "  take_ptr(int)：整数重载" << std::endl; }
 
 // ② enum class：带作用域的强类型枚举
 enum class Color { Red, Green, Blue };

@@ -22,11 +22,13 @@ public:
 
 // 值传递：参数是复印件（Day 9 的函数版验证）
 void take_by_value(Logger x) {
+    (void)x;  // 故意"不使用"——只看传参时的拷贝日志
     std::cout << "  函数内使用 " << "……" << std::endl;
 }
 
 // 引用传递：不拷贝
 void take_by_ref(const Logger& x) {
+    (void)x;  // 同上——参数只为触发/不触发拷贝日志
     std::cout << "  函数内使用（引用，无拷贝）" << std::endl;
 }
 

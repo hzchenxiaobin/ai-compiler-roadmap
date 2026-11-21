@@ -24,7 +24,7 @@ for f in tutorials/day-*/examples/*.cpp; do
     name=$(basename "$f" .cpp)
 
     # 编译检查（-Wall 零警告；有交互输入的会超时——用 </dev/null 饿死它们）
-    if ! g++ -Wall -std=c++17 "$f" -o "/tmp/scan_$name" 2> "/tmp/warn_$name"; then
+    if ! g++ -Wall -Wextra -std=c++20 "$f" -o "/tmp/scan_$name" 2> "/tmp/warn_$name"; then
         if is_teaching "$f"; then
             asan_skip=$((asan_skip + 1))   # 教学预期归入跳过
         else
@@ -43,7 +43,7 @@ for f in tutorials/day-*/examples/*.cpp; do
     fi
 
     # ASan 运行（10 秒超时防交互卡死；stdin 关闭饿死 cin）
-    if g++ -Wall -std=c++17 -fsanitize=address "$f" -o "/tmp/scan_asan_$name" 2>/dev/null; then
+    if g++ -Wall -Wextra -std=c++20 -fsanitize=address "$f" -o "/tmp/scan_asan_$name" 2>/dev/null; then
         if timeout 10 /tmp/scan_asan_$name </dev/null > /dev/null 2> "/tmp/asan_$name"; then
             :   # 干净通过
         else

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 126 里程碑：现代风格大重构 + 总复盘（阶段五收官）</text>
+    <path d="M 220,60 Q 480,52 740,61" fill="none" stroke="#c96a5a" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定"全部项目 -std=c++20 -Wall -Wextra 零警告"——scan 升级后 223 个源文件全绿；昨天重读的 14 条正是今天的 checklist</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">大重构的验收单（实测）</text>
+    <text x="64" y="180" font-size="12.5" fill="#45703a">-std=c++20：223 个源文件全编译通过</text>
+    <text x="64" y="202" font-size="12.5" fill="#45703a">-Wall -Wextra：非教学警告 0 ✔</text>
+    <text x="64" y="224" font-size="12" fill="#8a8578">（升级扫出 2 个 unused-param——修完归零）</text>
+    <text x="64" y="254" font-size="12.5" fill="#45703a">ASan 报错：0 ✔</text>
+    <text x="64" y="276" font-size="12" fill="#8a8578">（教学白名单 17（故意的）+ 多文件 20）</text>
+    <text x="64" y="310" font-size="12.5" fill="#6b675e">今天的两处修复实录：</text>
+    <text x="64" y="332" font-size="12" fill="#8a8578">（day-055 计时课的参数"故意不用"</text>
+    <text x="64" y="352" font-size="12" fill="#8a8578">　day-105 重载演示的 p/v——补 (void)）</text>
+    <text x="64" y="378" font-size="11.5" fill="#8a8578">（-Wextra 的新严格度被工具升级暴露）</text>
+
+    <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">五阶段总复盘</text>
+    <text x="572" y="180" font-size="12" fill="#3b3a36">一（1~6 周）：基础——语法到文件</text>
+    <text x="572" y="202" font-size="12" fill="#3b3a36">二（7~8 周）：指针内存——ASan 纪律</text>
+    <text x="572" y="224" font-size="12" fill="#3b3a36">三（9~13 周）：OOP——五法则+多态</text>
+    <text x="572" y="246" font-size="12" fill="#3b3a36">四（14~17 周）：STL——容器/算法/模板</text>
+    <text x="572" y="268" font-size="12" fill="#45703a">五（18~21 周）：现代 C++——今天收官</text>
+    <text x="572" y="298" font-size="12" fill="#6b675e">一条主线："约定进类型"（三法则→</text>
+    <text x="572" y="318" font-size="12" fill="#6b675e">　RAII→智能指针→optional/concepts）</text>
+    <text x="572" y="352" font-size="12.5" fill="#45703a">剩 18 天：并发 1 周 + 性能 + JSON</text>
+
+    <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
+    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">为什么"零警告"值得里程碑</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">警告是"未来的 bug"的利息——223 个文件在最高严格度（c++20+Wextra）下全绿 = 五个月写下的每个习惯都经得起最严的审视</text>
+    <text x="70" y="490" font-size="12.5" fill="#6b675e">（不是"没警告"是"警告都被当回事"——两次工具升级各抓出真问题）</text>
+
+    <path d="M 60,514 Q 480,508 905 515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#c96a5a"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 126（阶段五毕业）</text>
+    <circle cx="690" cy="514" r="5" fill="#5b8db8"/>
+    <text x="690" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">第 22 周 并发</text>
+    <circle cx="870" cy="514" r="5" fill="#e0955f"/>
+    <text x="870" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">JSON 项目</text>
+  </g>
+</svg>
