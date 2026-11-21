@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 132 全貌：Parser 骨架——递归下降的组装大戏</text>
+    <path d="M 300,60 Q 480,52 660,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定"object/array 的递归下降"——见 { 解析对象、见 [ 解析数组（值里递归调自己）：文法规则 = 函数结构一一对应</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">递归下降的三函数</text>
+    <rect x="64" y="164" width="440" height="120" fill="#33413a"/>
+    <text x="284" y="190" font-size="11" fill="#9fb8a8">value := obj | arr | str | num | lit（分派）</text>
+    <text x="284" y="214" font-size="11" fill="#cfe8c8">object := '{' str ':' value (',' …)* '}'</text>
+    <text x="284" y="238" font-size="11" fill="#cfe8c8">array := '[' value (',' value)* ']'</text>
+    <text x="284" y="266" font-size="10" fill="#8a8578">（★parse_value 里调 parse_object/array——它们又调 parse_value）</text>
+    <text x="64" y="312" font-size="12.5" fill="#45703a">嵌套的解法：递归（结构递归召唤算法递归）</text>
+    <text x="64" y="334" font-size="12" fill="#8a8578">（Day 128 的 depth() 是预演——今天全尺寸）</text>
+    <text x="64" y="366" font-size="11.5" fill="#8a8578">（[[[[1]]]] 四层数组实测 ✔）</text>
+
+    <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">四错场景（实测）</text>
+    <text x="572" y="180" font-size="12" fill="#a33f2e">缺冒号：{"n" "A"} → 期望':'</text>
+    <text x="572" y="208" font-size="12" fill="#a33f2e">缺闭括号：{"a":1 → 期望'}'</text>
+    <text x="572" y="236" font-size="12" fill="#a33f2e">尾逗号：[1,2,] → 此处应是值</text>
+    <text x="572" y="264" font-size="12" fill="#a33f2e">值后多余：1 2 → 多余内容</text>
+    <text x="572" y="298" font-size="12.5" fill="#45703a">expect 的报错模板："期望 X 遇到 Y"</text>
+    <text x="572" y="322" font-size="12" fill="#8a8578">（+ 行号——四场景各配实测）</text>
+    <text x="572" y="360" font-size="11.5" fill="#8a8578">（异常 unwind 树半成品自动回收——RAII）</text>
+
+    <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
+    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">三栈齐备后的今天</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">词法三栈（127 符号/129-130 字符串/131 数字）+ 数据结构（128）+ 今天的骨架 = 解析器的完整躯干；明天（133）打通全流程 + 错误完善</text>
+    <text x="70" y="490" font-size="12.5" fill="#6b675e">（五个月技能的现场会师：variant/unique_ptr/异常/递归/map 全用上）</text>
+
+    <path d="M 60,514 Q 480,508 905 515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 127~131 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 132（今天）</text>
+    <circle cx="650" cy="514" r="5" fill="#5b8db8"/>
+    <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 133</text>
+    <circle cx="850" cy="514" r="5" fill="#e0955f"/>
+    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 144 终点</text>
+  </g>
+</svg>

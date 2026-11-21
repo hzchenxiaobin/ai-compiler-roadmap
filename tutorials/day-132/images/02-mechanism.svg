@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">递归的调用栈与文法到函数的映射</text>
+    <path d="M 300,58 Q 480,52 660,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,340 Q 470,334 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 220)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">解析 {"team":[{"id":1}]} 的调用栈</text>
+    <rect x="110" y="146" width="360" height="170" fill="#33413a"/>
+    <text x="290" y="172" font-size="10.5" fill="#9fb8a8">parse_value（顶层）</text>
+    <text x="290" y="192" font-size="10.5" fill="#cfe8c8">└ parse_object：吃 '{' 读 "team" 吃 ':'</text>
+    <text x="290" y="212" font-size="10.5" fill="#cfe8c8">　└ parse_value（值的位置）</text>
+    <text x="290" y="232" font-size="10.5" fill="#cfe8c8">　　└ parse_array：吃 '['</text>
+    <text x="290" y="252" font-size="10.5" fill="#cfe8c8">　　　└ parse_value → parse_object</text>
+    <text x="290" y="272" font-size="10.5" fill="#cfe8c8">　　　　　（"id":1 → number 1）</text>
+    <text x="290" y="296" font-size="10" fill="#8a8578">（栈一层层展开——嵌套多深栈多深）</text>
+    <rect x="510" y="146" width="340" height="170" fill="#33413a"/>
+    <text x="680" y="172" font-size="11" fill="#9fb8a8">返回时树从叶到根长成：</text>
+    <text x="680" y="196" font-size="10.5" fill="#cfe8c8">最内层 object 先完整</text>
+    <text x="680" y="216" font-size="10.5" fill="#cfe8c8">→ 数组收到子树</text>
+    <text x="680" y="236" font-size="10.5" fill="#cfe8c8">→ 外层对象收到数组的树</text>
+    <text x="680" y="262" font-size="10.5" fill="#45703a">（unique_ptr 一路上移——</text>
+    <text x="680" y="282" font-size="10.5" fill="#45703a">　所有权从叶归到根）</text>
+    <text x="680" y="306" font-size="10" fill="#8a8578">（Day 37 讲的调用栈——今天亲眼用）</text>
+    <text x="472" y="334" font-size="11.5" fill="#8a8578">（递归深度 = 嵌套深度——超深 JSON 会栈溢出（生产级要改迭代+显式栈））</text>
+
+    <path d="M 40,364 Q 280,358 520,364 Q 524,480 520,576 Q 280,582 42,576 Q 36,480 40,364 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 470)"/>
+    <text x="280" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">文法 → 函数的映射表</text>
+    <rect x="64" y="412" width="430" height="150" fill="#33413a"/>
+    <text x="279" y="436" font-size="10.5" fill="#9fb8a8">value（六选一）→ parse_value 的 switch</text>
+    <text x="279" y="458" font-size="10.5" fill="#cfe8c8">object 文法 → parse_object 的循环</text>
+    <text x="279" y="480" font-size="10.5" fill="#cfe8c8">array 文法 → parse_array 的循环</text>
+    <text x="279" y="502" font-size="10.5" fill="#cfe8c8">expect(X) → 文法里的字面量 X</text>
+    <text x="279" y="530" font-size="10" fill="#8a8578">（每条文法规则一个函数——"下降"的由来）</text>
+
+    <path d="M 550,364 Q 730,358 905,364 Q 908,480 905,576 Q 730,582 552,576 Q 547,480 550,364 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 470)"/>
+    <text x="727" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">expect 的报错模板</text>
+    <rect x="572" y="412" width="320" height="150" fill="#33413a"/>
+    <text x="732" y="436" font-size="10.5" fill="#9fb8a8">throw ParseError{</text>
+    <text x="732" y="456" font-size="10.5" fill="#cfe8c8">　"期望 X，遇到 Y", line};</text>
+    <text x="732" y="484" font-size="10.5" fill="#f0c9c0">实测：期望':'，遇到 string</text>
+    <text x="732" y="506" font-size="10.5" fill="#f0c9c0">　期望'}'，遇到 EOF ✔</text>
+    <text x="732" y="534" font-size="10" fill="#8a8578">（两个"演员"都有名字——诊断直白）</text>
+  </g>
+</svg>
