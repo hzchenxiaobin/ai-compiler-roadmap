@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">四件套日志、移动搬家与 noexcept 战报</text>
+    <path d="M 350,58 Q 480,52 610,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 -std=c++17；-Wall 零警告 + ASan 零报错）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,490 Q 248,495 26,490 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 296)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出（节选）</text>
+    <rect x="38" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./mm　（-Wall 零警告）</text>
+    <text x="54" y="200" font-size="12" fill="#9fb8a8">== 补移动语义（计划指定） ==</text>
+    <text x="54" y="222" font-size="11.5" fill="#cfe8c8">b = a → [拷贝构造] 新分配+抄</text>
+    <text x="54" y="242" font-size="11.5" fill="#f0c9c0">c = move(a) → [移动构造] 偷指针</text>
+    <text x="54" y="266" font-size="12" fill="#9fb8a8">== 移动赋值 ==</text>
+    <text x="54" y="288" font-size="11.5" fill="#cfe8c8">x = move(y) → [移动赋值] ✔</text>
+    <text x="54" y="308" font-size="11" fill="#9fb8a8">　（x="new"——偷来了）</text>
+    <text x="54" y="332" font-size="12" fill="#9fb8a8">== vector 移动搬家 ==</text>
+    <text x="54" y="354" font-size="11.5" fill="#f0c9c0">第 3 个 push 触发扩容：</text>
+    <text x="54" y="374" font-size="11.5" fill="#cfe8c8">[移动构造] ×5（全偷指针）</text>
+    <text x="54" y="394" font-size="11" fill="#9fb8a8">　（旧元素 2 个搬家+新 1 个</text>
+    <text x="54" y="412" font-size="11" fill="#9fb8a8">　　+预构造 2——五次移动）</text>
+    <text x="54" y="436" font-size="12" fill="#9fb8a8">== noexcept 说明 ==</text>
+    <text x="54" y="458" font-size="11" fill="#9fb8a8">（抛异常的搬家风险 + 降级规则）</text>
+    <text x="54" y="484" font-size="11" fill="#9fb8a8">（ASan 零报错——掏空+析构全对）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,490 Q 712,495 490,490 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 296)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">三法则到五法则的演进</text>
+    <rect x="502" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">三法则（Day 57）：</text>
+    <text x="514" y="198" font-size="11.5" fill="#cfe8c6">拷贝构造/拷贝赋值/析构</text>
+    <text x="514" y="226" font-size="12" fill="#9fb8a8">五法则（C++11 起，明天正课）：</text>
+    <text x="514" y="250" font-size="11.5" fill="#cfe8c8">三件 + 移动构造 + 移动赋值</text>
+    <text x="514" y="278" font-size="12" fill="#9fb8a8">今天的 MyString 五件全齐：</text>
+    <text x="514" y="302" font-size="11" fill="#9fb8a8">　（实测四种日志 + 析构——全套）</text>
+    <text x="514" y="334" font-size="12" fill="#9fb8a8">历史回响：</text>
+    <text x="514" y="356" font-size="11.5" fill="#cfe8c8">Day 55 ShallowString 的 double free</text>
+    <text x="514" y="376" font-size="11" fill="#9fb8a8">　（掏空源正是防它的移动版）</text>
+    <text x="514" y="404" font-size="11.5" fill="#cfe8c8">Day 79 扩容搬家的"移动"预告</text>
+    <text x="514" y="424" font-size="11" fill="#9fb8a8">　（今天日志实证 [移动]×5）</text>
+    <text x="514" y="456" font-size="12.5" fill="#45703a">（111/144 = 77.1%）</text>
+    <text x="514" y="486" font-size="11" fill="#9fb8a8">（明天 112：五法则 + =default/=delete</text>
+    <text x="514" y="504" font-size="11" fill="#9fb8a8">　后天 113 完美转发 → 114 基准）</text>
+
+    <path d="M 24,516 Q 470,510 905,517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>
+    <text x="46" y="542" font-size="15.5" font-weight="bold" fill="#9c5a22">移动的本质</text>
+    <text x="46" y="568" font-size="12.5" fill="#3b3a36">"资源的搬家"而不是"资源的复制"——指针改挂（两个机器字）替代 new+memcpy（分配+逐字节）；快不是魔法是少干活</text>
+
+    <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 112 五法则完整版与 =default / =delete——MyVector 补齐五件套（计划指定）</text>
+  </g>
+</svg>

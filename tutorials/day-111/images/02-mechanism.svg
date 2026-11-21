@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">拷贝 vs 移动的内存对照与掏空的细节</text>
+    <path d="M 280,58 Q 480,52 680,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,340 Q 470,334 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 220)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">拷贝构造（左）vs 移动构造（右）</text>
+    <rect x="110" y="146" width="340" height="170" fill="#f9d9b8" stroke="#e0955f" stroke-width="2.2"/>
+    <text x="280" y="172" font-size="11" fill="#9c5a22">拷贝：MyString b = a;</text>
+    <rect x="150" y="188" width="90" height="34" fill="#d8ecce" stroke="#7aa663" stroke-width="1.8"/>
+    <text x="195" y="210" font-size="9" fill="#45703a">a: "hello"</text>
+    <rect x="290" y="188" width="90" height="34" fill="#d8ecce" stroke="#7aa663" stroke-width="1.8"/>
+    <text x="335" y="210" font-size="9" fill="#45703a">b: "hello"</text>
+    <path d="M 242,205 Q 265,205 288,205" fill="none" stroke="#9c5a22" stroke-width="2"/>
+    <text x="265" y="197" font-size="9" fill="#9c5a22">new+抄</text>
+    <text x="280" y="252" font-size="10" fill="#8a8578">（两块内存、两份数据——各过各的）</text>
+    <text x="280" y="278" font-size="10.5" fill="#9c5a22">成本：分配 6 字节 + 逐字节抄 6 次</text>
+    <rect x="510" y="146" width="340" height="170" fill="#d8ecce" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="680" y="172" font-size="11" fill="#45703a">移动：MyString c = move(a);</text>
+    <rect x="550" y="188" width="90" height="34" fill="#f1f4f7" stroke="#8a94a3" stroke-width="1.8" stroke-dasharray="4 3"/>
+    <text x="595" y="210" font-size="9" fill="#8a94a3">a: nullptr</text>
+    <rect x="690" y="188" width="90" height="34" fill="#d8ecce" stroke="#7aa663" stroke-width="1.8"/>
+    <text x="735" y="210" font-size="9" fill="#45703a">c: "hello"</text>
+    <path d="M 642,205 Q 665,205 688,205" fill="none" stroke="#45703a" stroke-width="2.4"/>
+    <text x="665" y="197" font-size="9" fill="#45703a">指针改挂</text>
+    <text x="680" y="252" font-size="10" fill="#8a8578">（一块内存——指针换主人）</text>
+    <text x="680" y="278" font-size="10.5" fill="#45703a">成本：改两个指针（掏空 + 挂上）</text>
+    <text x="472" y="334" font-size="11.5" fill="#8a8578">（实测日志：[拷贝构造] 带"新分配+抄"字样；[移动构造] 只有"偷指针"）</text>
+
+    <path d="M 40,364 Q 280,358 520,364 Q 524,480 520,576 Q 280,582 42,576 Q 36,480 40,364 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 470)"/>
+    <text x="280" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">掏空源的三个细节</text>
+    <text x="64" y="428" font-size="12" fill="#3b3a36">①为什么必须掏：不掏则两对象指向</text>
+    <text x="64" y="450" font-size="12" fill="#3b3a36">　同一块——析构时 double free！</text>
+    <text x="64" y="480" font-size="12" fill="#45703a">②delete[] nullptr 安全（标准保证）</text>
+    <text x="64" y="504" font-size="11.5" fill="#8a8578">（源的析构照常跑——掏空后是空操作）</text>
+    <text x="64" y="534" font-size="12" fill="#45703a">③自赋值检查照留（move 自己没意义</text>
+    <text x="64" y="554" font-size="11.5" fill="#8a8578">　但防御性写法不亏——移动赋值版）</text>
+
+    <path d="M 550,364 Q 730,358 905,364 Q 908,480 905,576 Q 730,582 552,576 Q 547,480 550,364 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 470)"/>
+    <text x="727" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">noexcept 没标的后果</text>
+    <rect x="572" y="412" width="320" height="140" fill="#33413a"/>
+    <text x="732" y="438" font-size="10.5" fill="#9fb8a8">MyString(MyString&amp;&amp; o) /* 没标 */</text>
+    <text x="732" y="462" font-size="10.5" fill="#f0c9c0">vector 扩容 → 检查 is_nothrow_move</text>
+    <text x="732" y="482" font-size="10.5" fill="#f0c9c0">　→ false → 退拷贝搬家（慢！）</text>
+    <text x="732" y="510" font-size="10.5" fill="#cfe8c6">标了 noexcept → 移动搬家（快 ✔）</text>
+    <text x="732" y="536" font-size="10" fill="#8a8578">（一句 noexcept 决定快慢——性价比之王）</text>
+  </g>
+</svg>
