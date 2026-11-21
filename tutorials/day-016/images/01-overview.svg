@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 16 全貌：std::string——自带管家的高级绳子</text>
+    <path d="M 290,60 Q 480,52 670,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">昨天数句号、算容量、防溢出，今天全部交给管家：长度自己记、容量自己扩</text>
+
+    <path d="M 40,110 Q 240,104 440,110 Q 444,190 440,270 Q 240,276 42,270 Q 36,190 40,110 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(-0.3 240 190)"/>
+    <text x="240" y="140" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">昨天的苦（C 字符串）</text>
+    <text x="64" y="172" font-size="12.5" fill="#3b3a36">长度不随行，strlen 每次从头数</text>
+    <text x="64" y="196" font-size="12.5" fill="#3b3a36">容量自己管，strcpy 一不小心就洒</text>
+    <text x="64" y="220" font-size="12.5" fill="#3b3a36">句号 '\0' 是唯一停车标志</text>
+    <text x="64" y="250" font-size="12" fill="#8a8578">（昨天三组实验的伤口还新鲜）</text>
+
+    <path d="M 470,110 Q 680,104 905,110 Q 909,190 905,270 Q 680,276 472,270 Q 466,190 470,110 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(0.3 687 190)"/>
+    <text x="687" y="140" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">今天的甜（std::string）</text>
+    <text x="492" y="172" font-size="12.5" fill="#3b3a36">size() 随口报数（管家记账，O(1)）</text>
+    <text x="492" y="196" font-size="12.5" fill="#3b3a36">+= 自动扩容（杯子自己长大）</text>
+    <text x="492" y="220" font-size="12.5" fill="#3b3a36">比较、拼接、substr、find 开箱即用</text>
+    <text x="492" y="250" font-size="12" fill="#8a8578">（句号还在幕后，但不用你操心）</text>
+
+    <path d="M 40,300 Q 470,294 905,301 L 901,442 Q 470,436 44,441 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 472 371)"/>
+    <text x="472" y="332" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#9c5a22">操作全家福（今天的四件兵器）</text>
+    <text x="70" y="366" font-size="13" fill="#3b3a36">拼接：s1 + ", " + s2　或　s += "!!"（实测 11 → 13 字符）</text>
+    <text x="70" y="394" font-size="13" fill="#3b3a36">substr(7, 3)：从下标 7 搬 3 个字符（实测得 "C++"）</text>
+    <text x="510" y="366" font-size="13" fill="#3b3a36">find("C++")：返回起点下标 7</text>
+    <text x="510" y="394" font-size="13" fill="#3b3a36">find("Java")：返回 npos（没找到的暗号）</text>
+    <text x="472" y="424" text-anchor="middle" font-size="12.5" fill="#6b675e">配上周三学的 size() 与 [i]，本周字符串三件套就齐了两件</text>
+
+    <path d="M 60,470 Q 480,464 905,471" fill="none" stroke="#8a8578" stroke-width="3"/>
+    <circle cx="170" cy="470" r="6" fill="#8a94a3"/>
+    <text x="170" y="496" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 13~15 ✓</text>
+    <circle cx="350" cy="471" r="13" fill="none" stroke="#c96a5a" stroke-width="2.2"/>
+    <circle cx="350" cy="471" r="6" fill="#5b8db8"/>
+    <text x="350" y="496" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#c96a5a">Day 16（今天）</text>
+    <circle cx="520" cy="470" r="6" fill="#5b8db8"/>
+    <text x="520" y="496" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 17 getline</text>
+    <circle cx="690" cy="471" r="6" fill="#e0955f"/>
+    <text x="690" y="496" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 18 项目日</text>
+    <circle cx="860" cy="470" r="6" fill="#5b8db8"/>
+    <text x="860" y="496" text-anchor="middle" font-size="12.5" fill="#3b3a36">第 4 周 指针</text>
+
+    <rect x="120" y="510" width="720" height="36" fill="#f7e8a0" opacity="0.5" transform="rotate(-0.3 480 528)"/>
+    <text x="480" y="533" text-anchor="middle" font-size="13" fill="#8a6d1a">今天的两个练习（元音统计、反转单词）正是周六文本统计器的核心零件</text>
+  </g>
+</svg>

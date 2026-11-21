@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">全家福、元音账本与词序反转</text>
+    <path d="M 340,58 Q 480,52 620,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,230 470,360 Q 248,365 26,360 Q 20,230 24,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(-0.3 247 231)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#2c5a82">实验 1：操作全家福</text>
+    <rect x="38" y="146" width="420" height="190" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="12.5" fill="#cfe8c6">joined = Hello, C++!　size() = 11</text>
+    <text x="54" y="196" font-size="12.5" fill="#cfe8c6">joined[0] = H</text>
+    <text x="54" y="220" font-size="12.5" fill="#cfe8c6">追加后 = Hello, C++!!!　size() = 13</text>
+    <text x="54" y="244" font-size="12.5" fill="#cfe8c6">substr(7, 3) = C++</text>
+    <text x="54" y="268" font-size="12.5" fill="#cfe8c6">find("C++") = 7</text>
+    <text x="54" y="292" font-size="12.5" fill="#f0c9c0">find("Java") = 18446744073709551615</text>
+    <text x="54" y="322" font-size="12" fill="#9fb8a8">+= 前后 11→13：管家扩容全程无感</text>
+    <text x="46" y="348" font-size="12.5" fill="#2c5a82">npos 那串天文数字 = 2^64−1（见机制图）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,230 934,360 Q 712,365 490,360 Q 484,230 488,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(0.3 711 231)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#45703a">实验 2：元音账本（练习一）</text>
+    <rect x="502" y="146" width="420" height="190" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="12" fill="#9fb8a8">句子：The quick brown fox jumps over the lazy dog</text>
+    <text x="566" y="200" text-anchor="middle" font-size="12.5" fill="#cfe8c6">a : 1　　　e : 3</text>
+    <text x="566" y="224" text-anchor="middle" font-size="12.5" fill="#cfe8c6">i : 1　　　o : 4</text>
+    <text x="566" y="248" text-anchor="middle" font-size="12.5" fill="#cfe8c6">u : 2</text>
+    <text x="514" y="280" font-size="12.5" fill="#cfe8c6">元音总数 : 11</text>
+    <text x="514" y="312" font-size="12" fill="#9fb8a8">大写先转小写再判（The 的 e 也算）</text>
+    <text x="514" y="332" font-size="12" fill="#9fb8a8">内层 for+break：找到一个元音就不再比</text>
+
+    <path d="M 24,386 Q 248,380 470,386 Q 474,470 470,600 Q 248,605 26,600 Q 20,470 24,386 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="3" transform="rotate(-0.3 247 495)"/>
+    <text x="46" y="416" font-size="16" font-weight="bold" fill="#9c5a22">实验 3：词序反转（练习二）</text>
+    <rect x="38" y="432" width="420" height="90" rx="6" fill="#33413a"/>
+    <text x="54" y="458" font-size="12.5" fill="#9fb8a8">原句：the quick brown fox</text>
+    <text x="54" y="484" font-size="12.5" fill="#cfe8c6">反转：fox brown quick the</text>
+    <text x="46" y="546" font-size="12.5" fill="#9c5a22">切词三件套：find(' ') 找缝 → substr 搬词 →</text>
+    <text x="46" y="566" font-size="12.5" fill="#6b675e">数组当词袋 → 倒序打印（Day 13 数组+Day 8 循环）</text>
+
+    <path d="M 488,386 Q 712,380 934,386 Q 938,470 934,600 Q 712,605 490,600 Q 484,470 488,386 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 711 495)"/>
+    <text x="510" y="416" font-size="15.5" font-weight="bold" fill="#55606e">本周零件进度表</text>
+    <text x="510" y="450" font-size="12.5" fill="#3b3a36">Day 13 数组 ✔　Day 15 C 串 ✔</text>
+    <text x="510" y="476" font-size="12.5" fill="#3b3a36">Day 16 std::string ✔（今天）</text>
+    <text x="510" y="502" font-size="12.5" fill="#6b675e">Day 17 getline / stringstream（待解锁）</text>
+    <text x="510" y="540" font-size="12.5" fill="#55606e">周六项目日：文本统计器</text>
+    <text x="510" y="562" font-size="12" fill="#8a8578">= 字符计数 + 单词切分 + 字母频率</text>
+    <text x="510" y="584" font-size="12" fill="#8a8578">　（今天的三个实验就是它的雏形）</text>
+  </g>
+</svg>

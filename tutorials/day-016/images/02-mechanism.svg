@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">管家 internals：记账、扩容与 npos</text>
+    <path d="M 330,58 Q 480,52 630,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 280,94 520,100 Q 524,200 520,300 Q 280,306 42,300 Q 36,200 40,100 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(-0.3 280 200)"/>
+    <text x="280" y="130" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">string 的账本结构</text>
+    <rect x="80" y="148" width="180" height="34" fill="#fffdf7" stroke="#9db8cf" stroke-width="2"/>
+    <text x="170" y="170" text-anchor="middle" font-size="12" fill="#3b3a36">字符缓冲（内容在这）</text>
+    <rect x="290" y="148" width="90" height="34" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
+    <text x="335" y="170" text-anchor="middle" font-size="12" fill="#45703a">size=11</text>
+    <rect x="400" y="148" width="90" height="34" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
+    <text x="445" y="170" text-anchor="middle" font-size="12" fill="#9c5a22">capacity</text>
+    <text x="80" y="204" font-size="12.5" fill="#3b3a36">问长度？查账本即可，O(1)</text>
+    <text x="80" y="228" font-size="12.5" fill="#6b675e">（C 字符串要数到句号，O(n)）</text>
+    <text x="80" y="258" font-size="12.5" fill="#3b3a36">+= 时容量不够？管家搬家：</text>
+    <text x="80" y="282" font-size="12.5" fill="#6b675e">申请新大房 → 整体搬迁 → 退租旧房</text>
+
+    <path d="M 550,100 Q 740,94 930,100 Q 934,200 930,300 Q 740,306 552,300 Q 546,200 550,100 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(0.3 740 200)"/>
+    <text x="740" y="130" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#a33f2e">npos：没找到的暗号</text>
+    <rect x="580" y="146" width="320" height="66" fill="#33413a"/>
+    <text x="740" y="172" text-anchor="middle" font-size="12" fill="#f0c9c0">find("Java") = 18446744073709551615</text>
+    <text x="740" y="196" text-anchor="middle" font-size="12" fill="#9fb8a8">= 2^64 − 1 = size_t 的最大值（实测）</text>
+    <text x="740" y="236" text-anchor="middle" font-size="12.5" fill="#3b3a36">判断"找到没有"永远写：</text>
+    <text x="740" y="260" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#a33f2e">if (pos == std::string::npos)</text>
+    <text x="740" y="288" text-anchor="middle" font-size="12" fill="#6b675e">千万别拿它当普通下标用（越界！）</text>
+
+    <path d="M 40,330 Q 470,324 905,331 L 901,450 Q 470,444 44,449 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.2 472 390)"/>
+    <text x="472" y="362" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">substr 与 find 的下标本</text>
+    <text x="70" y="394" font-size="13" fill="#3b3a36">"Hello, C++!!!"　0:H 1:e 2:l 3:l 4:o 5:, 6:(空格) 7:C 8:+ 9:+ 10:! 11:! 12:!</text>
+    <text x="70" y="424" font-size="13" fill="#3b3a36">substr(7, 3)：起点 7、长度 3 → "C++"　　find("C++")：起点 7 → 7（两兵器的坐标系一致）</text>
+
+    <path d="M 40,474 Q 470,468 905,475 L 901,576 Q 470,570 44,575 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(0.2 472 525)"/>
+    <text x="472" y="504" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#8a6d1a">与 C 字符串互操作（双向门）</text>
+    <text x="70" y="536" font-size="13" fill="#3b3a36">std::string → char*：s.c_str()（给老接口用；返回的指针第 4 周再深究）</text>
+    <text x="70" y="562" font-size="13" fill="#3b3a36">char* → std::string：直接赋值，管家自动量长度、安排句号</text>
+  </g>
+</svg>
