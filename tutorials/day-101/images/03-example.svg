@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">三盒子统一、注册表调用与诚实账本战报</text>
+    <path d="M 320,58 Q 480,52 640,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 -std=c++17；-Wall 零警告 + ASan 零报错）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,490 Q 248,495 26,490 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 296)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出</text>
+    <rect x="38" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./fu　（-Wall 零警告）</text>
+    <text x="54" y="200" font-size="12" fill="#9fb8a8">== 三种 callable 同盒 ==</text>
+    <text x="54" y="222" font-size="11.5" fill="#cfe8c6">f1(3,4) = 7（普通函数）✔</text>
+    <text x="54" y="242" font-size="11.5" fill="#cfe8c8">f2(3,4) = 21（仿函数 ×3）✔</text>
+    <text x="54" y="262" font-size="11.5" fill="#cfe8c6">f3(3,4) = 107（lambda+100）✔</text>
+    <text x="54" y="290" font-size="12" fill="#9fb8a8">== 回调注册表 ==</text>
+    <text x="54" y="312" font-size="11.5" fill="#cfe8c6">add(6,7)=13 ✔</text>
+    <text x="54" y="332" font-size="11.5" fill="#cfe8c6">triple(6,7)=39 ✔</text>
+    <text x="54" y="352" font-size="11.5" fill="#cfe8c8">biased(6,7)=113 ✔</text>
+    <text x="54" y="372" font-size="11.5" fill="#cfe8c6">mul(6,7)=42 ✔</text>
+    <text x="54" y="392" font-size="11.5" fill="#f0c9c0">div(6,7) → [未注册] ✔</text>
+    <text x="54" y="420" font-size="12" fill="#9fb8a8">== 诚实账本 ==</text>
+    <text x="54" y="442" font-size="11.5" fill="#cfe8c6">sizeof 指针 8 vs function 32</text>
+    <text x="54" y="462" font-size="11" fill="#9fb8a8">（类型擦除的包装成本）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,490 Q 712,495 490,490 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 296)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">模板周的收官拼图</text>
+    <rect x="502" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">第 17 周（模板与泛型）：</text>
+    <text x="514" y="198" font-size="11.5" fill="#cfe8c6">97 函数模板（推导/实例化）</text>
+    <text x="514" y="218" font-size="11.5" fill="#cfe8c6">98 类模板（MyVector&lt;T&gt;）</text>
+    <text x="514" y="238" font-size="11.5" fill="#cfe8c6">99 非类型参数（FixedStack）</text>
+    <text x="514" y="258" font-size="11.5" fill="#cfe8c6">100 lambda 捕获（十场景）</text>
+    <text x="514" y="278" font-size="11.5" fill="#cfe8c6">101 function 统一（今天）✔</text>
+    <text x="514" y="310" font-size="12" fill="#9fb8a8">三周半的泛型能力栈：</text>
+    <text x="514" y="332" font-size="11.5" fill="#cfe8c8">类型参数化 → 值参数化 →</text>
+    <text x="514" y="352" font-size="11.5" fill="#cfe8c8">　闭包 → 统一 callable</text>
+    <text x="514" y="384" font-size="12.5" fill="#45703a">（101/144 = 70.1%——过七成！）</text>
+    <text x="514" y="416" font-size="11.5" fill="#9fb8a8">明天里程碑：脱稿重写 LRU +</text>
+    <text x="514" y="436" font-size="11.5" fill="#9fb8a8">　讲清 map/unordered 底层差异</text>
+    <text x="514" y="466" font-size="11" fill="#9fb8a8">（Day 89/85 的知识要能白板输出）</text>
+
+    <path d="M 24,516 Q 470,510 905,517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>
+    <text x="46" y="542" font-size="15.5" font-weight="bold" fill="#9c5a22">统一的哲学</text>
+    <text x="46" y="568" font-size="12.5" fill="#3b3a36">接口相同的实现就该有共同的类型——函数指针/仿函数/lambda 都是"能调的东西"；function 把这个共性显式化——工程里的多态不止继承一条路</text>
+
+    <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 102 里程碑——脱稿重写 LRU 缓存 + 讲清 map 与 unordered_map 底层差异（阶段四毕业考）</text>
+  </g>
+</svg>

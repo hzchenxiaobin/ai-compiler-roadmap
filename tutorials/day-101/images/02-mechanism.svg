@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">类型擦除的盒子与统一调用的解剖</text>
+    <path d="M 280,58 Q 480,52 680,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,340 Q 470,334 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 220)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">function 盒子的内部（概念）</text>
+    <rect x="180" y="148" width="240" height="56" fill="#d8ecce" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="300" y="170" font-size="10.5" fill="#45703a">f1 = plain_add</text>
+    <text x="300" y="190" font-size="9.5" fill="#8a8578">（函数指针 8 字节）</text>
+    <rect x="460" y="148" width="240" height="56" fill="#f9d9b8" stroke="#e0955f" stroke-width="2.2"/>
+    <text x="580" y="170" font-size="10.5" fill="#9c5a22">f2 = Multiplier(3)</text>
+    <text x="580" y="190" font-size="9.5" fill="#8a8578">（对象 + factor 字段）</text>
+    <rect x="320" y="220" width="240" height="56" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.2"/>
+    <text x="440" y="242" font-size="10.5" fill="#a33f2e">f3 = [bias]lambda</text>
+    <text x="440" y="262" font-size="9.5" fill="#8a8578">（闭包对象 + 捕获）</text>
+    <rect x="180" y="292" width="520" height="36" fill="#eef5e8" stroke="#7aa663" stroke-width="2.4" transform="rotate(-0.2 440 310)"/>
+    <text x="440" y="315" font-size="11" fill="#45703a">std::function&lt;int(int,int)&gt;：三种东西都装（统一调用 interface(a,b)）</text>
+    <text x="472" y="352" font-size="11.5" fill="#8a8578">（"类型擦除"：盒子记住了"怎么调"但忘掉了"它是什么"——代价 32 字节换统一）</text>
+
+    <path d="M 40,376 Q 280,370 520,376 Q 524,480 520,576 Q 280,582 42,576 Q 36,480 40,376 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 476)"/>
+    <text x="280" y="406" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">与 Day 48/91 的会师</text>
+    <text x="64" y="440" font-size="12" fill="#3b3a36">Day 48：qsort 的函数指针比较器</text>
+    <text x="64" y="462" font-size="11.5" fill="#8a8578">（只能装普通函数——lambda 要 +[] 转换）</text>
+    <text x="64" y="492" font-size="12" fill="#3b3a36">Day 91~100：sort/find_if 的模板参数</text>
+    <text x="64" y="514" font-size="11.5" fill="#8a8578">（auto 推导——零开销但不统一）</text>
+    <text x="64" y="544" font-size="12" fill="#45703a">今天：function 的统一盒子</text>
+    <text x="64" y="564" font-size="11.5" fill="#8a8578">（要存起来/传多个——选它）</text>
+
+    <path d="M 550,376 Q 730,370 905,376 Q 908,480 905,576 Q 730,582 552,576 Q 547,480 550,376 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 476)"/>
+    <text x="727" y="406" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">身边的 function</text>
+    <text x="572" y="440" font-size="12" fill="#3b3a36">事件系统的 handler 表</text>
+    <text x="572" y="464" font-size="12" fill="#3b3a36">GUI 的按钮回调（onClick）</text>
+    <text x="572" y="488" font-size="12" fill="#3b3a36">任务队列的 job 包装</text>
+    <text x="572" y="512" font-size="12" fill="#3b3a36">插件的钩子注册</text>
+    <text x="572" y="546" font-size="11.5" fill="#8a8578">（"存起来稍后调"的需求 → function）</text>
+  </g>
+</svg>
