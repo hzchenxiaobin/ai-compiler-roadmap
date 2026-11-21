@@ -36,6 +36,6 @@
     <text x="732" y="450" font-size="10" fill="#f0c9c0">（从中间往外读——噩梦）</text>
     <text x="732" y="478" font-size="10" fill="#cfe8c6">using Cb = void (*)(int);</text>
     <text x="732" y="500" font-size="10" fill="#cfe8c6">（从左往右读——可读）</text>
-    <text x="732" y="528" font-size="10" fill="#8a8578">（模板别名：using Vec&lt;T&gt; = … typedef 做不到）</text>
+    <text x="732" y="528" font-size="9" fill="#8a8578">（模板别名 using Vec = … ——typedef 做不到）</text>
   </g>
 </svg>
