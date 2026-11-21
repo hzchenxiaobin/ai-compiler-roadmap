@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">五个重写的实测战报</text>
+    <path d="M 380,58 Q 480,52 580,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）——每个都能对上原周的记录</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,200 470,300 Q 248,305 26,300 Q 20,200 24,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(-0.3 247 201)"/>
+    <text x="46" y="130" font-size="14.5" font-weight="bold" fill="#2c5a82">重写一：swap 三版本</text>
+    <rect x="38" y="144" width="420" height="140" rx="6" fill="#33413a"/>
+    <text x="54" y="170" font-size="12" fill="#9fb8a8">$ ./rewrite_swap</text>
+    <text x="54" y="194" font-size="12.5" fill="#f0c9c0">值版本后：　x=1 y=2（不动）</text>
+    <text x="54" y="216" font-size="12.5" fill="#cfe8c6">指针版本后：x=2 y=1（换了）</text>
+    <text x="54" y="238" font-size="12.5" fill="#cfe8c6">引用版本后：x=1 y=2（换回）</text>
+    <text x="54" y="266" font-size="12" fill="#9fb8a8">三连节奏与 Day 21 一字不差——</text>
+    <text x="54" y="284" font-size="12" fill="#9fb8a8">两次交换回到初值即正确性自证</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,200 934,300 Q 712,305 490,300 Q 484,200 488,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(0.3 711 201)"/>
+    <text x="510" y="130" font-size="14.5" font-weight="bold" fill="#45703a">重写二：纯指针遍历</text>
+    <rect x="502" y="144" width="420" height="140" rx="6" fill="#33413a"/>
+    <text x="514" y="170" font-size="12" fill="#9fb8a8">$ ./rewrite_walk</text>
+    <text x="514" y="196" font-size="12.5" fill="#cfe8c6">总和 = 179，最大 = 35</text>
+    <text x="514" y="228" font-size="12" fill="#9fb8a8">哨兵 p != scores + WEEKS；</text>
+    <text x="514" y="248" font-size="12" fill="#9fb8a8">擂主 *scores 起步——</text>
+    <text x="514" y="272" font-size="12" fill="#9fb8a8">与 Day 13/20 双双对上（179/35）</text>
+
+    <path d="M 24,326 Q 248,320 470,326 Q 474,424 470,510 Q 248,515 26,510 Q 20,424 24,326 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="3" transform="rotate(-0.3 247 418)"/>
+    <text x="46" y="354" font-size="14.5" font-weight="bold" fill="#9c5a22">重写三：切词统计</text>
+    <rect x="38" y="368" width="420" height="120" rx="6" fill="#33413a"/>
+    <text x="54" y="392" font-size="12" fill="#9fb8a8">$ ./rewrite_split　输入含三个连续空格</text>
+    <text x="54" y="416" font-size="12.5" fill="#cfe8c6">词数 = 4，总字符 = 16</text>
+    <text x="54" y="448" font-size="12" fill="#9fb8a8">istringstream + while (ss &gt;&gt; word)</text>
+    <text x="54" y="468" font-size="12" fill="#9fb8a8">——连续空格自动免疫（Day 17）</text>
+
+    <path d="M 488,326 Q 712,320 934,326 Q 938,424 934,510 Q 712,515 490,510 Q 484,424 488,326 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="3" transform="rotate(0.3 711 418)"/>
+    <text x="510" y="354" font-size="14.5" font-weight="bold" fill="#a33f2e">重写四：卡片冒泡</text>
+    <rect x="502" y="368" width="420" height="120" rx="6" fill="#33413a"/>
+    <text x="514" y="392" font-size="12" fill="#9fb8a8">$ ./rewrite_sort</text>
+    <text x="514" y="416" font-size="12.5" fill="#cfe8c6">小丽：66　小红：78　小刚：85　小明：92</text>
+    <text x="514" y="448" font-size="12" fill="#9fb8a8">Student t 整卡交换——</text>
+    <text x="514" y="468" font-size="12" fill="#9fb8a8">三栏同步（Day 29 的标志动作）</text>
+
+    <path d="M 24,536 Q 470,530 905,537 L 901,630 Q 470,624 26,629 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(-0.2 464 583)"/>
+    <text x="46" y="562" font-size="14" font-weight="bold" fill="#55606e">重写五：存读盘闭环</text>
+    <text x="46" y="588" font-size="12.5" fill="#3b3a36">写出两行 → 读回「1: 第一行 / 2: 第二行 / 共 2 行」——ofstream/ifstream 的最小闭环（Day 31 缩微版）</text>
+    <text x="46" y="612" font-size="12.5" fill="#6b675e">五个全对 = 五周骨架在手；卡壳的那个 = 明天脱稿自测前的回炉坐标</text>
+  </g>
+</svg>

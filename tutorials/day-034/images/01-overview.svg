@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 34 复习日：闭卷重写五个最重要的程序</text>
+    <path d="M 290,60 Q 480,52 670,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">重读十遍不如重写一遍——提取记忆比再认记忆牢固得多（Day 24 自测日的放大版）</text>
+
+    <path d="M 40,116 Q 470,110 905,117 L 901,290 Q 470,284 44,289 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 203)"/>
+    <text x="472" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">五个重写目标（覆盖五周的核心骨架）</text>
+    <text x="70" y="180" font-size="13" fill="#3b3a36">①swap 三版本（Day 9/19/21）——值/指针/引用，传参三式一题写全</text>
+    <text x="70" y="208" font-size="13" fill="#3b3a36">②纯指针遍历（Day 20）——哨兵 + 解引用 + 擂主，179/35</text>
+    <text x="70" y="236" font-size="13" fill="#3b3a36">③切词统计（Day 17）——getline + stringstream，4 词 16 字符</text>
+    <text x="70" y="264" font-size="13" fill="#3b3a36">④卡片冒泡（Day 29）——struct + 整卡交换，66→92</text>
+    <text x="70" y="292" font-size="13" fill="#3b3a36">⑤存读盘闭环（Day 31）——ofstream/ifstream 两行进两行出</text>
+
+    <path d="M 40,314 Q 280,308 520,314 Q 524,420 520,500 Q 280,506 42,500 Q 36,420 40,314 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 407)"/>
+    <text x="280" y="344" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">复习方法论：为什么重写</text>
+    <text x="64" y="378" font-size="12.5" fill="#3b3a36">重读 = 再认（看到觉得眼熟）</text>
+    <text x="64" y="404" font-size="12.5" fill="#45703a">重写 = 提取（空白页默出来）</text>
+    <text x="64" y="436" font-size="12.5" fill="#6b675e">五个程序的选取标准：每个都</text>
+    <text x="64" y="458" font-size="12.5" fill="#6b675e">是后续内容的骨架零件——</text>
+    <text x="64" y="480" font-size="12.5" fill="#6b675e">写得出它们 = 六周的地基稳了</text>
+
+    <path d="M 550,314 Q 730,308 905,314 Q 908,420 905,500 Q 730,506 552,500 Q 547,420 550,314 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(0.3 727 407)"/>
+    <text x="727" y="344" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">笔记整理三问</text>
+    <text x="572" y="378" font-size="12.5" fill="#3b3a36">①哪五个知识点我翻笔记最勤？</text>
+    <text x="572" y="404" font-size="12.5" fill="#3b3a36">②哪些报错我重复犯过？</text>
+    <text x="572" y="430" font-size="12.5" fill="#3b3a36">③哪些概念还只能"背"不能"讲"？</text>
+    <text x="572" y="462" font-size="12.5" fill="#6b675e">答案写进 notes.md 的"疑问清单"——</text>
+    <text x="572" y="484" font-size="12.5" fill="#6b675e">随时回炉，不必等复习日</text>
+
+    <path d="M 60,520 Q 480,514 905,521" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="430" cy="520" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="430" cy="520" r="5" fill="#5b8db8"/>
+    <text x="430" y="540" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 34（今天）</text>
+    <circle cx="650" cy="520" r="5" fill="#5b8db8"/>
+    <text x="650" y="540" text-anchor="middle" font-size="12" fill="#3b3a36">Day 35 脱稿自测</text>
+    <circle cx="850" cy="520" r="5" fill="#e0955f"/>
+    <text x="850" y="540" text-anchor="middle" font-size="12" fill="#3b3a36">Day 36 里程碑</text>
+  </g>
+</svg>

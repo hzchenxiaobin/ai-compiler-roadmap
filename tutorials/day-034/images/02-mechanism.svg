@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">五周知识地图：从 Hello World 到持久化</text>
+    <path d="M 300,58 Q 480,52 660,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 250,94 460,100 Q 464,200 460,300 Q 250,306 42,300 Q 36,200 40,100 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 250 200)"/>
+    <text x="250" y="130" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#2c5a82">第 1~2 周：会写会拆</text>
+    <text x="60" y="160" font-size="11.5" fill="#3b3a36">变量类型/运算符（D1~3）</text>
+    <text x="60" y="182" font-size="11.5" fill="#3b3a36">输入输出与格式化（D4）</text>
+    <text x="60" y="204" font-size="11.5" fill="#3b3a36">分支 switch（D5）</text>
+    <text x="60" y="226" font-size="11.5" fill="#3b3a36">循环与嵌套（D7~8）</text>
+    <text x="60" y="248" font-size="11.5" fill="#3b3a36">函数三步曲（D9~11）</text>
+    <text x="60" y="276" font-size="11" fill="#8a8578">项目：换算器、计算器 v1</text>
+
+    <path d="M 490,100 Q 700,94 910,100 Q 913,200 910,300 Q 700,306 492,300 Q 486,200 490,100 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 700 200)"/>
+    <text x="700" y="130" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#45703a">第 3 周：会装数据</text>
+    <text x="510" y="160" font-size="11.5" fill="#3b3a36">一维数组 + 越界防线（D13）</text>
+    <text x="510" y="182" font-size="11.5" fill="#3b3a36">矩阵嵌套（D14）</text>
+    <text x="510" y="204" font-size="11.5" fill="#3b3a36">C 串与 '\0'（D15）</text>
+    <text x="510" y="226" font-size="11.5" fill="#3b3a36">std::string（D16）</text>
+    <text x="510" y="248" font-size="11.5" fill="#3b3a36">getline/stringstream（D17）</text>
+    <text x="510" y="276" font-size="11" fill="#8a8578">项目：文本统计器</text>
+
+    <path d="M 40,326 Q 250,320 460,326 Q 464,426 460,526 Q 250,532 42,526 Q 36,426 40,326 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.3 250 426)"/>
+    <text x="250" y="356" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#9c5a22">第 4 周：会指路</text>
+    <text x="60" y="386" font-size="11.5" fill="#3b3a36">指针门牌模型（D19）</text>
+    <text x="60" y="408" font-size="11.5" fill="#3b3a36">退化与步长（D20）</text>
+    <text x="60" y="430" font-size="11.5" fill="#3b3a36">引用别名（D21）</text>
+    <text x="60" y="452" font-size="11.5" fill="#3b3a36">const 四锁（D22）</text>
+    <text x="60" y="474" font-size="11.5" fill="#3b3a36">套娃与 argv（D23）</text>
+    <text x="60" y="502" font-size="11" fill="#8a8578">自测日：闭卷三题 + 讲稿</text>
+
+    <path d="M 490,326 Q 700,320 910,326 Q 913,426 910,526 Q 700,532 492,526 Q 486,426 490,326 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(0.3 700 426)"/>
+    <text x="700" y="356" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#a33f2e">第 5 周 + 第 6 周半程</text>
+    <text x="510" y="386" font-size="11.5" fill="#3b3a36">多文件三件套（D25）</text>
+    <text x="510" y="408" font-size="11.5" fill="#3b3a36">命名空间（D26）</text>
+    <text x="510" y="430" font-size="11.5" fill="#3b3a36">链接排查（D27）</text>
+    <text x="510" y="452" font-size="11.5" fill="#3b3a36">调试器（D28）</text>
+    <text x="510" y="474" font-size="11.5" fill="#3b3a36">struct/enum（D29）＋文件 I/O（D31）</text>
+    <text x="510" y="502" font-size="11" fill="#8a8578">项目：通讯录 v1 → v2</text>
+
+    <path d="M 40,550 Q 470,546 905,552 L 901,600 Q 470,596 44,601 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.6" transform="rotate(0.2 472 576)"/>
+    <text x="480" y="580" text-anchor="middle" font-size="13" fill="#8a6d1a">地图用法：闭卷重写卡壳的那个格子，就是你今天的回炉坐标——明天脱稿自测前补齐它</text>
+  </g>
+</svg>
