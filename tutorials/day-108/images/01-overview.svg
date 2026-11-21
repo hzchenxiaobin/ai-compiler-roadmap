@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 108 项目日：通讯录 v3——现代特性总装（第 18 周收官）</text>
+    <path d="M 240,60 Q 480,52 720,61" fill="none" stroke="#e0955f" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定"用现代特性重写通讯录 v3"——Day 12 的 char 数组版到今天：auto/{}/enum class/using/绑定/constexpr 六件全上场</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">六件套的上场位置</text>
+    <text x="64" y="180" font-size="12" fill="#45703a">auto + {} + init_list：批量录入</text>
+    <text x="64" y="202" font-size="11.5" fill="#8a8578">（Day 103/104——声明短+防窄化）</text>
+    <text x="64" y="230" font-size="12" fill="#45703a">enum class：查找双模式（Exact/Prefix）</text>
+    <text x="64" y="252" font-size="11.5" fill="#8a8578">（Day 105——作用域+强类型）</text>
+    <text x="64" y="280" font-size="12" fill="#45703a">using：ContactList 别名</text>
+    <text x="64" y="302" font-size="12" fill="#45703a">结构化绑定：遍历+insert 判重</text>
+    <text x="64" y="324" font-size="11.5" fill="#8a8578">（Day 106——[name, phone]/[it, inserted]）</text>
+    <text x="64" y="352" font-size="12" fill="#45703a">constexpr + static_assert：区号校验</text>
+    <text x="64" y="374" font-size="11.5" fill="#8a8578">（Day 107——编译期测试）</text>
+
+    <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">实测战报（全过）</text>
+    <text x="572" y="180" font-size="12" fill="#45703a">录入 4 人 ✔｜重名拒绝 ✔</text>
+    <text x="572" y="202" font-size="11.5" fill="#8a8578">（insert 绑定 [it, inserted] 立判）</text>
+    <text x="572" y="230" font-size="12" fill="#45703a">精确查 ✔｜前缀查 ✔｜未找到 nullptr ✔</text>
+    <text x="572" y="258" font-size="12" fill="#45703a">前缀删除 1 条 ✔（erase 接力）</text>
+    <text x="572" y="286" font-size="12" fill="#45703a">static_assert 区号双断言 ✔</text>
+    <text x="572" y="314" font-size="12" fill="#45703a">ASan 零报错 ✔</text>
+    <text x="572" y="352" font-size="11.5" fill="#8a8578">（map 的 lower_bound 前缀定位——Day 94 复用）</text>
+
+    <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
+    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">v1 → v3 的十周距离</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">Day 12（v1）：char 数组+下标循环+手写判重 → Day 108（v3）：map+绑定+insert 立判+编译期校验——同一功能的两种文明</text>
+    <text x="70" y="490" font-size="12.5" fill="#6b675e">（重写的本质：用更安全的工具表达同一个需求）</text>
+
+    <path d="M 60,514 Q 480,508 905 515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#e0955f"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#9c5a22">Day 108（第 18 周收官）</text>
+    <circle cx="690" cy="514" r="5" fill="#5b8db8"/>
+    <text x="690" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">第 19 周 智能指针</text>
+    <circle cx="870" cy="514" r="5" fill="#e0955f"/>
+    <text x="870" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">JSON 项目</text>
+  </g>
+</svg>

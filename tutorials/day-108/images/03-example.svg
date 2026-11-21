@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">录入判重、双模查找与第 18 周战绩</text>
+    <path d="M 370,58 Q 480,52 590,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 -std=c++17；-Wall 零警告 + ASan 零报错）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,490 Q 248,495 26,490 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 296)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出</text>
+    <rect x="38" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./cv3　（-Wall 零警告）</text>
+    <text x="54" y="200" font-size="12" fill="#9fb8a8">== 录入 ==</text>
+    <text x="54" y="222" font-size="11.5" fill="#cfe8c6">小明/小红/小刚/小鹏 全 ✔</text>
+    <text x="54" y="242" font-size="11.5" fill="#f0c9c0">再添加小明：✘（重名被拒）✔</text>
+    <text x="54" y="266" font-size="12" fill="#9fb8a8">== 双模查找 ==</text>
+    <text x="54" y="288" font-size="11.5" fill="#cfe8c8">精确查 小明 → 138…001 ✔</text>
+    <text x="54" y="308" font-size="11.5" fill="#cfe8c8">前缀查 "小" → 139…003 ✔</text>
+    <text x="54" y="328" font-size="11.5" fill="#cfe8c8">查 大王 → nullptr ✔</text>
+    <text x="54" y="352" font-size="12" fill="#9fb8a8">== 前缀删除 ==</text>
+    <text x="54" y="374" font-size="11.5" fill="#cfe8c8">删 小鹏* → 1 条；剩 3 人 ✔</text>
+    <text x="54" y="398" font-size="12" fill="#9fb8a8">== 现代化清单 ==</text>
+    <text x="54" y="420" font-size="11" fill="#9fb8a8">（六件套上场明细打印 ✔）</text>
+    <text x="54" y="448" font-size="11.5" fill="#9fb8a8">（ASan 零报错；static_assert</text>
+    <text x="54" y="466" font-size="11" fill="#9fb8a8">　双断言在编译期已通过）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,490 Q 712,495 490,490 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 296)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">第 18 周战绩（Day 103~108）</text>
+    <rect x="502" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">语言核心改进周五天：</text>
+    <text x="514" y="198" font-size="11.5" fill="#cfe8c6">103 auto/decltype（代理陷阱）</text>
+    <text x="514" y="218" font-size="11.5" fill="#cfe8c8">104 {} 统一初始化（窄化红线）</text>
+    <text x="514" y="238" font-size="11.5" fill="#cfe8c8">105 四件套（替换清单）</text>
+    <text x="514" y="258" font-size="11.5" fill="#cfe8c8">106 结构化绑定（四路拆）</text>
+    <text x="514" y="278" font-size="11.5" fill="#cfe8c8">107 if constexpr（裁剪）</text>
+    <text x="514" y="298" font-size="11.5" fill="#cfe8c8">108 通讯录 v3（今天）✔</text>
+    <text x="514" y="330" font-size="12" fill="#9fb8a8">Effective Modern C++ 同步：</text>
+    <text x="514" y="352" font-size="11" fill="#9fb8a8">　条款 6（auto 代理）等已覆盖</text>
+    <text x="514" y="384" font-size="12.5" fill="#45703a">（108/144 = 75%——四分之三！）</text>
+    <text x="514" y="416" font-size="11.5" fill="#9fb8a8">第 19 周起：智能指针（unique_ptr</text>
+    <text x="514" y="436" font-size="11" fill="#9fb8a8">　/shared_ptr）——RAII 的自动版</text>
+    <text x="514" y="466" font-size="11" fill="#9fb8a8">（手写三法则 5 周的兑现时刻）</text>
+
+    <path d="M 24,516 Q 470,510 905,517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>
+    <text x="46" y="542" font-size="15.5" font-weight="bold" fill="#9c5a22">重写的意义</text>
+    <text x="46" y="568" font-size="12.5" fill="#3b3a36">同一需求两代实现（v1 的裸数组 vs v3 的现代六件套）——重写是检验"学没学会新工具"的最诚实的考试</text>
+
+    <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 109——第 19 周开篇：unique_ptr 与所有权（RAII 的自动版）</text>
+  </g>
+</svg>
