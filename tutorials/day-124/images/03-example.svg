@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">concepts 通过、管道通过与惰性战报</text>
+    <path d="M 370,58 Q 480,52 590,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 -std=c++20；-Wall 零警告）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,490 Q 248,495 26,490 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 296)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出（节选）</text>
+    <rect x="38" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./t20　（-std=c++20 -Wall）</text>
+    <text x="54" y="200" font-size="12" fill="#9fb8a8">== concepts ==</text>
+    <text x="54" y="222" font-size="11.5" fill="#cfe8c8">add20(3,4)=7 ✔ add20(2.5,1.5)=4 ✔</text>
+    <text x="54" y="242" font-size="11.5" fill="#cfe8c8">print_line(42/"hello") ✔</text>
+    <text x="54" y="264" font-size="11" fill="#9fb8a8">（string 被拦——报错友好）</text>
+    <text x="54" y="290" font-size="12" fill="#9fb8a8">== ranges 管道 ==</text>
+    <text x="54" y="312" font-size="11.5" fill="#cfe8c8">8 3 10 1 7 5 9 2 →</text>
+    <text x="54" y="332" font-size="11.5" fill="#f0c9c0">filter/transform/take → 16 20 14 ✔</text>
+    <text x="54" y="358" font-size="12" fill="#9fb8a8">== 惰性 ==</text>
+    <text x="54" y="380" font-size="11.5" fill="#cfe8c8">iota 无穷 → 前 5 偶数：</text>
+    <text x="54" y="400" font-size="11.5" fill="#f0c9c0">2 4 6 8 10 ✔</text>
+    <text x="54" y="426" font-size="12" fill="#9fb8a8">== 三大件定位 ==</text>
+    <text x="54" y="448" font-size="11" fill="#9fb8a8">（concepts/ranges 跑通；协程认知）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,490 Q 712,495 490,490 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 296)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">标准演进的地图</text>
+    <rect x="502" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">C++11/14（第 18~19 周学的）：</text>
+    <text x="514" y="196" font-size="11.5" fill="#cfe8c8">auto/move/lambda/智能指针</text>
+    <text x="514" y="224" font-size="12" fill="#9fb8a8">C++17（第 21 周学的）：</text>
+    <text x="514" y="246" font-size="11.5" fill="#cfe8c8">optional/variant/string_view/filesystem</text>
+    <text x="514" y="274" font-size="12" fill="#9fb8a8">C++20（今天认知级）：</text>
+    <text x="514" y="296" font-size="11.5" fill="#cfe8c8">concepts/ranges/协程/格式化</text>
+    <text x="514" y="326" font-size="12" fill="#9fb8a8">路线图上的位置：</text>
+    <text x="514" y="348" font-size="11" fill="#9fb8a8">　JSON 项目（Day 127+）仍以</text>
+    <text x="514" y="366" font-size="11" fill="#9fb8a8">　17 为主（编译器生态稳定）</text>
+    <text x="514" y="396" font-size="12.5" fill="#45703a">（124/144 = 86.1%）</text>
+    <text x="514" y="426" font-size="11" fill="#9fb8a8">（明天 125：Effective 条款重读）</text>
+    <text x="514" y="446" font-size="11" fill="#9fb8a8">　后天 126 里程碑：现代风格</text>
+    <text x="514" y="464" font-size="11" fill="#9fb8a8">　大重构 + 总复盘）</text>
+
+    <path d="M 24,516 Q 470,510 905,517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>
+    <text x="46" y="542" font-size="15.5" font-weight="bold" fill="#9c5a22">演进的眼光</text>
+    <text x="46" y="568" font-size="12.5" fill="#3b3a36">今天写的 C++ 是一条演进路上的站点：11 奠基地、17 实用层、20 是未来——知道来路和去向，写 17 代码时也知道为什么这么设计</text>
+
+    <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 125 《Effective Modern C++》条款 1~14 重读笔记（现代特性的理论收口）</text>
+  </g>
+</svg>

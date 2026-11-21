@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">概念前置的报错对照与管道的数据流</text>
+    <path d="M 300,58 Q 480,52 660,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,340 Q 470,334 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 220)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">同一错误的两代报错</text>
+    <rect x="110" y="146" width="370" height="170" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.2"/>
+    <text x="295" y="172" font-size="11" fill="#a33f2e">Day 97 时代（无 concept）：</text>
+    <text x="295" y="196" font-size="10.5" fill="#8a8578">add20(string, string)</text>
+    <text x="295" y="218" font-size="10.5" fill="#a33f2e">→ error: no match for operator+</text>
+    <text x="295" y="238" font-size="10.5" fill="#a33f2e">　+ 几十行 candidate/notes</text>
+    <text x="295" y="266" font-size="10" fill="#8a8578">（真因埋在深处——要"从头往尾找"）</text>
+    <text x="295" y="296" font-size="10" fill="#8a8578">（Day 97 教的读报错技巧的根源）</text>
+    <rect x="510" y="146" width="340" height="170" fill="#d8ecce" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="680" y="172" font-size="11" fill="#45703a">C++20（有 concept）：</text>
+    <text x="680" y="196" font-size="10.5" fill="#45703a">add20(string, string)</text>
+    <text x="680" y="218" font-size="10.5" fill="#45703a">→ constraints not satisfied</text>
+    <text x="680" y="240" font-size="10.5" fill="#45703a">　（Numeric 概念未满足）</text>
+    <text x="680" y="268" font-size="10" fill="#8a8578">（直指要害——一两行说明白）</text>
+    <text x="680" y="296" font-size="10" fill="#8a8578">（实测：no matching function + constraint 提示）</text>
+    <text x="472" y="334" font-size="11.5" fill="#8a8578">（把"要求"从模板体内提到签名上——报错跟着提前）</text>
+
+    <path d="M 40,364 Q 280,358 520,364 Q 524,480 520,576 Q 280,582 42,576 Q 36,480 40,364 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 470)"/>
+    <text x="280" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">管道的数据流（实测）</text>
+    <rect x="64" y="412" width="430" height="150" fill="#33413a"/>
+    <text x="279" y="436" font-size="10" fill="#9fb8a8">原：8 3 10 1 7 5 9 2</text>
+    <text x="279" y="458" font-size="10" fill="#cfe8c8">filter(&gt;3)：8 10 7 5 9</text>
+    <text x="279" y="480" font-size="10" fill="#cfe8c8">transform(×2)：16 20 14 10 18</text>
+    <text x="279" y="502" font-size="10" fill="#f0c9c0">take(3)：16 20 14 ← 结果</text>
+    <text x="279" y="530" font-size="10" fill="#8a8578">（数据从左往右流过三站——无中间容器）</text>
+
+    <path d="M 550,364 Q 730,358 905,364 Q 908,480 905,576 Q 730,582 552,576 Q 547,480 550,364 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 470)"/>
+    <text x="727" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">和已学知识的连接</text>
+    <rect x="572" y="412" width="320" height="150" fill="#33413a"/>
+    <text x="732" y="436" font-size="10.5" fill="#9fb8a8">concepts ← Day 97 的 duck typing</text>
+    <text x="732" y="458" font-size="10" fill="#8a8578">（隐式要求 → 显式契约）</text>
+    <text x="732" y="484" font-size="10.5" fill="#9fb8a8">ranges ← Day 91 的迭代器对</text>
+    <text x="732" y="506" font-size="10" fill="#8a8578">（begin/end 参数 → 管道组合）</text>
+    <text x="732" y="532" font-size="10" fill="#8a8578">（Day 107 if constexpr + Day 113 forward</text>
+    <text x="732" y="550" font-size="10" fill="#8a8578">　的标准库后续都在这汇合）</text>
+  </g>
+</svg>
