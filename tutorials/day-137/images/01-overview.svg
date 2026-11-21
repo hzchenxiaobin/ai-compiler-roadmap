@@ -30,7 +30,7 @@
 
     <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
     <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">测试矩阵的设计观</text>
-    <text x="70" y="468" font-size="13" fill="#3b3a36">不是 28 个孤例——是按"输入类别 × 期望行为"的矩阵：合法的全该过、非法的全该拒（且消息对）、序列化幂等、访问精确；改一行代码跑 28 次 = 全面的回归</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">不是 28 个孤例——是"输入类别×期望行为"的矩阵：合法该过、非法该拒（消息对）、幂等、访问精确；改一行代码跑 28 次=全面回归</text>
     <text x="70" y="490" font-size="12.5" fill="#6b675e">（用例名的自解释：EmptyObject/RoundTrip/KeyMissingThrows——读名知测什么）</text>
 
     <path d="M 60,514 Q 480,508 905 515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
