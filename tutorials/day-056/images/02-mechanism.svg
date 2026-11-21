@@ -18,7 +18,7 @@
     <path d="M 272,174 Q 330,174 388,174" fill="none" stroke="#3b3a36" stroke-width="2.2"/>
     <path d="M 572,174 Q 630,174 688,174" fill="none" stroke="#3b3a36" stroke-width="2.2"/>
     <text x="472" y="234" font-size="12.5" fill="#3b3a36">若返回 void：第二段的左操作数没了——链断（只能 cout &lt;&lt; a; cout &lt;&lt; b; 两句）</text>
-    <text x="472" y="262" font-size="12.5" fill="#6b675e">若返回 ostream（值而非引用）：拷贝流对象——iostream 不可拷贝（=delete 的亲戚）→ 编译错</text>
+    <text x="472" y="262" text-anchor="middle" font-size="10.5" fill="#6b675e">若返回 ostream 值：流不可拷贝（=delete 亲戚）→ 编译错</text>
     <text x="472" y="290" font-size="12" fill="#8a8578">（所以签名锁定：ostream&amp; 返回 + ostream&amp; 参数——三处引用一处不能少）</text>
 
     <path d="M 40,334 Q 280,328 520,334 Q 524,450 520,576 Q 280,582 42,576 Q 36,450 40,334 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 455)"/>
