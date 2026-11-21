@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">四合法、六错误与一条 API 战报</text>
+    <path d="M 380,58 Q 480,52 580,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 -std=c++20 -Wall -Wextra；ASan 零报错）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,490 Q 248,495 26,490 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 296)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出（节选）</text>
+    <rect x="38" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./jf　（c++20 零警告）</text>
+    <text x="54" y="200" font-size="12" fill="#9fb8a8">== 四合法 ==</text>
+    <text x="54" y="222" font-size="11.5" fill="#cfe8c8">完整嵌套（对象+数组+嵌套）✔</text>
+    <text x="54" y="242" font-size="11.5" fill="#cfe8c8">含转义（\n+\u 中文）✔</text>
+    <text x="54" y="262" font-size="11.5" fill="#f0c9c0">emoji 代理对（\uD83D\uDE00）✔</text>
+    <text x="54" y="282" font-size="11.5" fill="#cfe8c8">多行（行号追踪正确）✔</text>
+    <text x="54" y="310" font-size="12" fill="#9fb8a8">== 六错误 ==</text>
+    <text x="54" y="332" font-size="11.5" fill="#f0c9c0">词法：@/未闭合/1.2.3 ✔</text>
+    <text x="54" y="352" font-size="11.5" fill="#f0c9c0">语法：缺冒号（第2行！）✔</text>
+    <text x="54" y="372" font-size="11.5" fill="#f0c9c0">　缺闭括/尾逗号 ✔</text>
+    <text x="54" y="400" font-size="12" fill="#9fb8a8">== API 总结 ==</text>
+    <text x="54" y="422" font-size="11.5" fill="#cfe8c8">parse→optional+err 统一报 ✔</text>
+    <text x="54" y="446" font-size="11" fill="#9fb8a8">（约 300 行的完整实现）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,490 Q 712,495 490,490 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 296)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">解析器的完成度与后续</text>
+    <rect x="502" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">今天做到（核心闭环）：</text>
+    <text x="514" y="198" font-size="11.5" fill="#cfe8c8">文本 → 记号 → 树（解析方向）✔</text>
+    <text x="514" y="218" font-size="11.5" fill="#cfe8c8">　错误统一（词法+语法）✔</text>
+    <text x="514" y="238" font-size="11.5" fill="#cfe8c8">　行号全程传递 ✔</text>
+    <text x="514" y="268" font-size="12" fill="#9fb8a8">后续（Day 134+）：</text>
+    <text x="514" y="290" font-size="11.5" fill="#8a8578">134 序列化（树 → 文本）</text>
+    <text x="514" y="310" font-size="11.5" fill="#8a8578">135 访问（get/operator[]）</text>
+    <text x="514" y="330" font-size="11.5" fill="#8a8578">136-138 测试（GoogleTest+边界+公开集）</text>
+    <text x="514" y="350" font-size="11.5" fill="#8a8578">139-144 性能/清理/CMake/复盘/毕业</text>
+    <text x="514" y="382" font-size="12.5" fill="#45703a">（133/144 = 92.4%）</text>
+    <text x="514" y="412" font-size="11" fill="#9fb8a8">（一条 API 的背后是十天的</text>
+    <text x="514" y="430" font-size="11" fill="#9fb8a8">　零件和五个月的技能——</text>
+    <text x="514" y="448" font-size="11" fill="#9fb8a8">　今天它们咬合成整体）</text>
+
+    <path d="M 24,516 Q 470,510 905,517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>
+    <text x="46" y="542" font-size="15.5" font-weight="bold" fill="#9c5a22">API 设计的完成感</text>
+    <text x="46" y="568" font-size="12.5" fill="#3b3a36">parse(src, err) → optional&lt;Value&gt;——Day 121 的词汇表（optional 表达失败）在真实 API 里落地：成功有值、失败有因（行号+消息）——用户不用读内部代码</text>
+
+    <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 134 序列化——dump() 与格式化输出（树 → 文本的反方向）</text>
+  </g>
+</svg>
