@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 41 全貌：深拷贝 vs 浅拷贝——指针成员的分叉点</text>
+    <path d="M 280,60 Q 480,52 680,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">昨天的矩阵塞进 struct 直接赋值会怎样？——计划指定练习：复现浅拷贝导致的 double-free</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#a33f2e">浅拷贝的三宗罪（实测）</text>
+    <text x="64" y="180" font-size="12.5" fill="#a33f2e">①共享：a.data == b.data（抄的是地址）</text>
+    <text x="64" y="202" font-size="12" fill="#8a8578">（实测改 b.data[0] 后 a 也变 "Xello"）</text>
+    <text x="64" y="232" font-size="12.5" fill="#a33f2e">②double free：两根指针各 delete 一次</text>
+    <text x="64" y="254" font-size="12" fill="#8a8578">（ASan 实测：attempting double-free）</text>
+    <text x="64" y="284" font-size="12.5" fill="#a33f2e">③无出路：不 delete b 又"泄漏"</text>
+    <text x="64" y="306" font-size="12" fill="#8a8578">（释放也错、不释放也错——结构坏了）</text>
+    <text x="64" y="348" font-size="12.5" fill="#6b675e">默认拷贝 = 逐成员复制——指针成员</text>
+    <text x="64" y="368" font-size="12.5" fill="#6b675e">　抄的是"地址"不是"内容"</text>
+
+    <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">深拷贝的两步修复（实测）</text>
+    <text x="572" y="180" font-size="12.5" fill="#45703a">①new char[len]——新开一块内存</text>
+    <text x="572" y="202" font-size="12" fill="#8a8578">（实测 a@…12c0、b@…12d0 分离）</text>
+    <text x="572" y="232" font-size="12.5" fill="#45703a">②memcpy——把内容抄过去</text>
+    <text x="572" y="254" font-size="12" fill="#8a8578">（改 b 后 a 仍 "hello"——独立 ✔）</text>
+    <text x="572" y="290" font-size="12.5" fill="#3b3a36">各自 delete[] 各自的块——</text>
+    <text x="572" y="312" font-size="12.5" fill="#3b3a36">　无 double free、无泄漏</text>
+    <text x="572" y="352" font-size="12" fill="#8a8578">（第 10 周拷贝构造/赋值的地基课）</text>
+
+    <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
+    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#8a6d1a">今天的桥梁地位</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">第 7 周内存模型（指针是什么）→ 今天（含指针成员的结构体怎么复制）→ 第 10 周拷贝控制（类版三法则）</text>
+    <text x="70" y="490" font-size="12.5" fill="#6b675e">（struct 版先看清"坑在哪"，Day 55~57 的 class 版把修复自动化）</text>
+
+    <path d="M 60,514 Q 480,508 905,515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 37~40 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 41（今天）</text>
+    <circle cx="660" cy="514" r="5" fill="#e0955f"/>
+    <text x="660" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 42 项目日</text>
+    <circle cx="860" cy="514" r="5" fill="#5b8db8"/>
+    <text x="860" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">第 9 周 类的基础</text>
+  </g>
+</svg>

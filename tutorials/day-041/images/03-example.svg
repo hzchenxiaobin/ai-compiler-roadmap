@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">共享证据、double-free 现形与深拷贝战报</text>
+    <path d="M 320,58 Q 480,52 640,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,280 470,460 Q 248,465 26,460 Q 20,280 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 281)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">实验 1+2：浅与深</text>
+    <rect x="38" y="146" width="420" height="300" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./ss（浅拷贝版）</text>
+    <text x="54" y="196" font-size="11.5" fill="#cfe8c6">a.data = 0x1027112c0："hello"</text>
+    <text x="54" y="216" font-size="11.5" fill="#f0c9c0">b.data = 0x1027112c0（同址！）</text>
+    <text x="54" y="240" font-size="11.5" fill="#f0c9c0">改 b 后 a = "Xello"（共享 ✔）</text>
+    <text x="54" y="270" font-size="11.5" fill="#9fb8a8">$ ./ds（深拷贝版）</text>
+    <text x="54" y="294" font-size="11.5" fill="#cfe8c6">a.data = 0x104b212c0</text>
+    <text x="54" y="314" font-size="11.5" fill="#cfe8c6">b.data = 0x104b212d0（分离 ✔）</text>
+    <text x="54" y="338" font-size="11.5" fill="#cfe8c6">改 b 后：a="hello"、b="Xello"</text>
+    <text x="54" y="368" font-size="11.5" fill="#f0c9c0">各自释放：ASan 零报错 ✔</text>
+    <text x="54" y="404" font-size="12" fill="#9fb8a8">（"Xello" 是同一份改动、</text>
+    <text x="54" y="422" font-size="12" fill="#9fb8a8">　"hello/Xello" 是两份独立）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,280 934,460 Q 712,465 490,460 Q 484,280 488,102 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="3" transform="rotate(0.3 711 281)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#a33f2e">实验 3：double-free</text>
+    <rect x="502" y="146" width="420" height="300" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="12" fill="#9fb8a8">打开 b 的 delete 注释后：</text>
+    <text x="514" y="200" font-size="12" fill="#9fb8a8">普通编译：</text>
+    <text x="514" y="222" font-size="11.5" fill="#cfe8c6">（打出前半段输出后静默结束</text>
+    <text x="514" y="240" font-size="11.5" fill="#cfe8c6">　exit=0——又骗了一次）</text>
+    <text x="514" y="274" font-size="12" fill="#9fb8a8">ASan 版：</text>
+    <text x="514" y="298" font-size="11" fill="#ffd7d0">ERROR: attempting double-free</text>
+    <text x="514" y="316" font-size="11" fill="#9fb8a8">　on 0x6020000009f0</text>
+    <text x="514" y="340" font-size="11" fill="#9fb8a8">SUMMARY: double-free in main+0x274</text>
+    <text x="514" y="376" font-size="12" fill="#9fb8a8">（定位精确到释放行）</text>
+    <text x="514" y="412" font-size="12" fill="#9fb8a8">计划指定练习完成：复现 + 定位 ✔</text>
+
+    <path d="M 24,486 Q 470,480 905,487 L 901,560 Q 470,554 26,559 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 523)"/>
+    <text x="46" y="512" font-size="15.5" font-weight="bold" fill="#9c5a22">第 7 周收官在即</text>
+    <text x="46" y="540" font-size="12.5" fill="#3b3a36">六天内存课的最后一块拼图——明天的项目日把本周全部能力装进手写动态数组 v1</text>
+
+    <path d="M 24,576 Q 470,570 905,577 L 901,640 Q 470,634 26,639 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 608)"/>
+    <text x="480" y="606" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 42（项目日）手写动态数组 v1——构造/析构/push_back/size/at（第 7 周毕业考）</text>
+  </g>
+</svg>
