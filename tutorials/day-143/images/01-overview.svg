@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 143 全貌：复盘博客——会做之后学会讲述</text>
+    <path d="M 330,60 Q 480,52 630,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定《我如何用 C++ 写了一个 JSON 解析器》——七节大纲生成器跑通（每节配钩子+要点）：讲故事不讲功能、数字要真实、承认局限</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">七节的结构（生成的）</text>
+    <text x="64" y="180" font-size="12" fill="#45703a">一 为什么写（试金石的空虚）</text>
+    <text x="64" y="208" font-size="12" fill="#45703a">二 设计（三模块流水线）</text>
+    <text x="64" y="236" font-size="12" fill="#a33f2e">三 踩过的坑（最有料！）</text>
+    <text x="64" y="264" font-size="12" fill="#45703a">四 测试（自出→外部考试）</text>
+    <text x="64" y="292" font-size="12" fill="#45703a">五 性能（三板斧+Amdahl）</text>
+    <text x="64" y="320" font-size="12" fill="#45703a">六 工程化（手敲→CMake）</text>
+    <text x="64" y="348" font-size="12" fill="#45703a">七 给后来者（你也可以）</text>
+    <text x="64" y="378" font-size="11.5" fill="#8a8578">（每节：钩子一句 + 要点 3-5 条——脚手架）</text>
+
+    <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">写作心法四条</text>
+    <text x="572" y="180" font-size="12.5" fill="#45703a">讲故事不讲功能</text>
+    <text x="572" y="202" font-size="12" fill="#8a8578">（"我卡了三小时因为…"有力）</text>
+    <text x="572" y="230" font-size="12.5" fill="#45703a">数字要真实</text>
+    <text x="572" y="252" font-size="12" fill="#8a8578">（1.77x、283/283 都可复现）</text>
+    <text x="572" y="280" font-size="12.5" fill="#45703a">承认局限</text>
+    <text x="572" y="302" font-size="12" fill="#8a8578">（2^53、教学从简的边界）</text>
+    <text x="572" y="330" font-size="12.5" fill="#45703a">钩子每节有</text>
+    <text x="572" y="352" font-size="12" fill="#8a8578">（读者为什么读这节的回答）</text>
+    <text x="572" y="378" font-size="11.5" fill="#8a8578">（诚实的文章比完美的可信）</text>
+
+    <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
+    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">为什么"会讲述"是必修</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">费曼技巧的反向应用：能讲清=真懂了；博客还是给他人的礼物（你的坑=别人的地图）+ 自己的存档（六个月后翻的自己就是"别人"）</text>
+    <text x="70" y="490" font-size="12.5" fill="#6b675e">（面试的"讲个项目"考的正是这个能力——今天的练习直接迁移）</text>
+
+    <path d="M 60,514 Q 480,508 905 515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 136~142 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 143（今天）</text>
+    <circle cx="660" cy="514" r="5" fill="#e0955f"/>
+    <text x="660" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 144 毕业</text>
+    <circle cx="850" cy="514" r="5" fill="#8a94a3"/>
+    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">下一阶段</text>
+  </g>
+</svg>

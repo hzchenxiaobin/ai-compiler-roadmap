@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">七节大纲、四条心法与收官前一天战报</text>
+    <path d="M 360,58 Q 480,52 600,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 -std=c++20 -Wall -Wextra——大纲生成器的完整输出）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,490 Q 248,495 26,490 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 296)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出（节选）</text>
+    <rect x="38" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ g++ … blog_outline.cpp &amp;&amp; ./bo</text>
+    <text x="54" y="200" font-size="12" fill="#9fb8a8">《我如何用 C++ 写了一个 JSON 解析器》</text>
+    <text x="54" y="222" font-size="11.5" fill="#cfe8c8">七节全出（每节钩子+要点）✔</text>
+    <text x="54" y="246" font-size="11" fill="#8a8578">（一 为什么/二 设计/三 坑★</text>
+    <text x="54" y="266" font-size="11" fill="#8a8578">　四 测试/五 性能/六 工程化/七 后来者）</text>
+    <text x="54" y="296" font-size="12" fill="#9fb8a8">== 高潮节的素材 ==</text>
+    <text x="54" y="318" font-size="11" fill="#f0c9c0">转义地狱（三处写错）✔</text>
+    <text x="54" y="338" font-size="11" fill="#f0c9c0">百万层爆栈（深度护栏）✔</text>
+    <text x="54" y="358" font-size="11" fill="#f0c9c0">测试自己错（剥层数）✔</text>
+    <text x="54" y="388" font-size="12" fill="#9fb8a8">== 心法四条 ==</text>
+    <text x="54" y="410" font-size="11" fill="#cfe8c8">讲故事/数字真实/承认局限/钩子 ✔</text>
+    <text x="54" y="438" font-size="11.5" fill="#9fb8a8">（生成器 102 行——骨架可执行）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,490 Q 712,495 490,490 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 296)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">明天：144 毕业总结</text>
+    <rect x="502" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">计划的收官三项：</text>
+    <text x="514" y="196" font-size="11.5" fill="#cfe8c8">24 周全部复盘（六阶段的回顾）</text>
+    <text x="514" y="216" font-size="11.5" fill="#cfe8c8">知识清单查漏补缺</text>
+    <text x="514" y="236" font-size="11.5" fill="#cfe8c8">制定下一阶段目标</text>
+    <text x="514" y="266" font-size="12" fill="#9fb8a8">这 144 天的数字档案：</text>
+    <text x="514" y="288" font-size="11.5" fill="#cfe8c8">144 篇教程（每天一篇不缺席）</text>
+    <text x="514" y="308" font-size="11.5" fill="#cfe8c8">400+ 张 SVG / 223+ 源文件全绿</text>
+    <text x="514" y="328" font-size="11.5" fill="#f0c9c0">21 个项目日 + 6 个毕业考</text>
+    <text x="514" y="348" font-size="11.5" fill="#cfe8c8">JSON 解析器 283/283 满分</text>
+    <text x="514" y="380" font-size="12.5" fill="#45703a">（143/144 = 99.3%）</text>
+    <text x="514" y="410" font-size="11" fill="#9fb8a8">（明天的毕业总结是本系列的</text>
+    <text x="514" y="428" font-size="11" fill="#9fb8a8">　最后一篇——收官之日）</text>
+    <text x="514" y="458" font-size="11" fill="#9fb8a8">（Effective 1~42 全部同步完成）</text>
+
+    <path d="M 24,516 Q 470,510 905 517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>
+    <text x="46" y="542" font-size="15.5" font-weight="bold" fill="#9c5a22">写作即学习</text>
+    <text x="46" y="568" font-size="12.5" fill="#3b3a36">写博客的过程逼你把"模糊地知道"变成"讲得清楚"——每个要展开的小节都是一次自查（哪里卡壳=哪里没真懂）；这就是费曼技巧</text>
+
+    <path d="M 24,596 Q 470,590 905 597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 144 毕业总结——24 周全部复盘、查漏补缺、下一阶段目标（系列的最后一篇）</text>
+  </g>
+</svg>
