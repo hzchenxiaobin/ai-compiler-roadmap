@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">三事故实录、ASan 判决与修正战报</text>
+    <path d="M 350,58 Q 480,52 610,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21；-Wall 零警告）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,480 Q 248,485 26,480 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 291)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出（节选）</text>
+    <rect x="38" y="146" width="420" height="320" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./il　（-Wall 零警告）</text>
+    <text x="54" y="198" font-size="12" fill="#9fb8a8">== 事故一：扩容搬家 ==</text>
+    <text x="54" y="220" font-size="11.5" fill="#cfe8c6">扩容前：data = 0x10145d2c0</text>
+    <text x="54" y="240" font-size="11.5" fill="#f0c9c0">扩容后：0x…12d0（搬家了！）</text>
+    <text x="54" y="260" font-size="11" fill="#9fb8a8">（旧迭代器全悬空）</text>
+    <text x="54" y="288" font-size="12" fill="#9fb8a8">== 事故二：erase 填坑 ==</text>
+    <text x="54" y="310" font-size="11.5" fill="#cfe8c6">删 20 前 *it2 = 30</text>
+    <text x="54" y="330" font-size="11.5" fill="#f0c9c0">删后 *it2 = 40（30 前移了）</text>
+    <text x="54" y="350" font-size="11" fill="#9fb8a8">w = 10 30 40 50</text>
+    <text x="54" y="378" font-size="12" fill="#9fb8a8">== 修正：erase 返回值接力 ==</text>
+    <text x="54" y="400" font-size="11.5" fill="#cfe8c6">1 2 3 4 5 6 → 删偶数 →</text>
+    <text x="54" y="420" font-size="11.5" fill="#f0c9c0">1 3 5 ✔（不跳不越界）</text>
+    <text x="54" y="450" font-size="11.5" fill="#9fb8a8">ASan 判决：</text>
+    <text x="54" y="472" font-size="10.5" fill="#ffd7d0">悬空 *it：heap-use-after-free</text>
+    <text x="54" y="490" font-size="10.5" fill="#ffd7d0">坏例边删：container-overflow</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,480 Q 712,485 490,480 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 291)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">失效规则速查表</text>
+    <rect x="502" y="146" width="420" height="320" rx="6" fill="#33413a"/>
+    <text x="514" y="176" font-size="12" fill="#9fb8a8">vector：</text>
+    <text x="514" y="200" font-size="11.5" fill="#f0c9c0">扩容 → 全部失效（搬家）</text>
+    <text x="514" y="222" font-size="11.5" fill="#f0c9c0">erase → 被删位置及之后失效</text>
+    <text x="514" y="244" font-size="11.5" fill="#cfe8c6">insert → 类似（之后的动/重分配）</text>
+    <text x="514" y="274" font-size="12" fill="#9fb8a8">list：</text>
+    <text x="514" y="298" font-size="11.5" fill="#cfe8c6">erase → 只有被删那个失效</text>
+    <text x="514" y="320" font-size="11.5" fill="#9fb8a8">（节点独立——其他人不动）</text>
+    <text x="514" y="350" font-size="12" fill="#9fb8a8">安全习惯：</text>
+    <text x="514" y="374" font-size="11.5" fill="#cfe8c6">①可能扩容的操作后重取迭代器</text>
+    <text x="514" y="396" font-size="11.5" fill="#cfe8c6">②循环里 erase 用返回值接力</text>
+    <text x="514" y="418" font-size="11.5" fill="#cfe8c6">③迭代器"用完即弃"不长期存</text>
+    <text x="514" y="448" font-size="11.5" fill="#9fb8a8">明天预告的预告：</text>
+    <text x="514" y="470" font-size="11" fill="#9fb8a8">Day 82 的 list 之所以插入删除快——</text>
+    <text x="514" y="490" font-size="11" fill="#9fb8a8">　"失效少"就是快的一部分</text>
+
+    <path d="M 24,506 Q 470,500 905,507 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 543)"/>
+    <text x="46" y="532" font-size="15.5" font-weight="bold" fill="#9c5a22">一句话心法</text>
+    <text x="46" y="560" font-size="12.5" fill="#3b3a36">迭代器是"位置的快照"——容器结构一变（搬家/填坑）快照就过期；操作后要么重拍（重取）要么用官方的接力（erase 返回值）</text>
+
+    <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 82 list/deque/array/forward_list——底层结构与增删改查对比</text>
+  </g>
+</svg>

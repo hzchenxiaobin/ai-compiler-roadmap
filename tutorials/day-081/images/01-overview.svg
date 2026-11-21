@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 81 全貌：迭代器失效——悬空事故与修正</text>
+    <path d="M 300,60 Q 480,52 660,61" fill="none" stroke="#c96a5a" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定"复现失效事故并修正"——扩容搬家、erase 填坑、边遍历边删的三大事故今天全部实测</text>
+
+    <path d="M 40,116 Q 290,110 540,116 Q 544,250 540,374 Q 290,380 42,374 Q 36,250 40,116 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.3 290 245)"/>
+    <text x="290" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#a33f2e">事故一：扩容搬家</text>
+    <text x="64" y="180" font-size="12.5" fill="#3b3a36">规则：扩容后**全部**迭代器失效</text>
+    <text x="64" y="208" font-size="12.5" fill="#a33f2e">实测：data 0x…12c0 → 0x…12d0（搬家！）</text>
+    <text x="64" y="230" font-size="12" fill="#8a8578">（旧内存已还——旧迭代器全悬空）</text>
+    <text x="64" y="262" font-size="12.5" fill="#a33f2e">ASan：*it = 99 → heap-use-after-free</text>
+    <text x="64" y="296" font-size="12.5" fill="#6b675e">为什么全部：搬家 = 换地址——</text>
+    <text x="64" y="318" font-size="12.5" fill="#6b675e">　指向旧地址的所有迭代器一起作废</text>
+    <text x="64" y="352" font-size="12" fill="#8a8578">（Day 79 的阶梯每次触发这里）</text>
+
+    <path d="M 570,116 Q 740,110 905,116 Q 908,250 905,374 Q 740,380 572,374 Q 567,250 570,116 Z" fill="#f9d9b8" stroke="#e0955f" stroke-width="2.8" transform="rotate(0.3 737 245)"/>
+    <text x="737" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#9c5a22">事故二：erase 填坑</text>
+    <text x="592" y="180" font-size="12.5" fill="#3b3a36">规则：被删位置**及之后**失效</text>
+    <text x="592" y="208" font-size="12.5" fill="#9c5a22">实测：it2 指 30，删 20 后 *it2 = 40</text>
+    <text x="592" y="230" font-size="12" fill="#8a8578">（30 前移填坑——it2 指向的内容变了）</text>
+    <text x="592" y="262" font-size="12.5" fill="#6b675e">为什么之后也失效：vector 连续——</text>
+    <text x="592" y="284" font-size="12.5" fill="#6b675e">　删除 = 后面全部前移（都动了）</text>
+    <text x="592" y="318" font-size="12.5" fill="#6b675e">之前的迭代器：不受影响（没动）</text>
+    <text x="592" y="350" font-size="12" fill="#8a8578">（list 的 erase 只失效被删那一个——结构优势）</text>
+
+    <path d="M 40,398 Q 470,392 905,399 L 901,500 Q 470,494 44,499 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.2 472 449)"/>
+    <text x="472" y="428" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">事故三与修正：边遍历边 erase</text>
+    <text x="70" y="458" font-size="13" fill="#a33f2e">坏例：erase 后 ++ 跳过下一个 + 末尾越过 end（ASan 实测 container-overflow）</text>
+    <text x="70" y="482" font-size="13" fill="#45703a">修正：it = erase(it)——返回值就是下一个有效位置（已推进）；没删才 ++（实测 1 3 5 ✔）</text>
+
+    <path d="M 60,514 Q 480,508 905 515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 79~80 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 81（今天）</text>
+    <circle cx="650" cy="514" r="5" fill="#5b8db8"/>
+    <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 82~83</text>
+    <circle cx="850" cy="514" r="5" fill="#e0955f"/>
+    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 84 项目日</text>
+  </g>
+</svg>
