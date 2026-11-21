@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 40 全貌：二维动态数组——两层楼的建造与拆除</text>
+    <path d="M 270,60 Q 480,52 690,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">Day 14 的二维数组搬到堆上：行列都运行期定；配对纪律升级成"逆依赖序"的拆除规程</text>
+
+    <path d="M 40,116 Q 470,110 905,117 L 901,390 Q 470,384 44,389 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 253)"/>
+    <text x="472" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">int** 的两层结构（锯齿阵）</text>
+    <rect x="140" y="164" width="240" height="56" fill="#d8ecce" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="260" y="186" text-anchor="middle" font-size="11.5" fill="#45703a">第一层：int** m（行指针数组）</text>
+    <text x="260" y="206" text-anchor="middle" font-size="10" fill="#8a8578">（实测 0x…52c0）</text>
+    <rect x="140" y="236" width="110" height="46" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
+    <text x="195" y="258" text-anchor="middle" font-size="10.5" fill="#9c5a22">m[0]→行0</text>
+    <text x="195" y="274" text-anchor="middle" font-size="9" fill="#8a8578">0x…52d0</text>
+    <rect x="270" y="236" width="110" height="46" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
+    <text x="325" y="258" text-anchor="middle" font-size="10.5" fill="#9c5a22">m[1]→行1</text>
+    <text x="325" y="274" text-anchor="middle" font-size="9" fill="#8a8578">0x…52e0</text>
+    <path d="M 195,234 Q 195,226 220,220" fill="none" stroke="#3b3a36" stroke-width="1.8"/>
+    <path d="M 325,234 Q 325,226 300,220" fill="none" stroke="#3b3a36" stroke-width="1.8"/>
+    <text x="480" y="180" font-size="11.5" fill="#6b675e">第二层：每行一个独立 new int[cols]{}</text>
+    <text x="480" y="202" font-size="11" fill="#8a8578">（行内连续、行间不必相邻——实测差 0x10）</text>
+    <text x="480" y="234" font-size="12" fill="#3b3a36">访问 m[i][j]：第一次 [] 解一层指针、</text>
+    <text x="480" y="254" font-size="12" fill="#3b3a36">　第二次 [] 到达元素（Day 19 的指针数组）</text>
+    <text x="472" y="300" font-size="12.5" fill="#45703a">创建：1 + rows 次分配（先指针数组后逐行）</text>
+    <text x="472" y="330" font-size="12.5" fill="#a33f2e">拆除：逆依赖序——先逐行 delete[] 再删指针数组</text>
+    <text x="472" y="352" font-size="12" fill="#8a8578">（顺序反了 = 先拆楼板再拆住户——悬空一片）</text>
+
+    <path d="M 40,414 Q 470,408 905,415 L 901,500 Q 470,494 44,499 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.2 472 457)"/>
+    <text x="472" y="444" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">实测战报（ASan 全过）</text>
+    <text x="70" y="472" font-size="13" fill="#3b3a36">乘法 a·e 手算核对 [58,64;139,154] ✔；a·I=a（单位矩阵）✔；5 次 free_matrix 全部正确——ASan 零报错 ✔</text>
+    <text x="70" y="494" font-size="12.5" fill="#6b675e">（两种布局对照：锯齿 3 次释放 vs 折叠 1 次——泄漏面差 3 倍）</text>
+
+    <path d="M 60,514 Q 480,508 905,515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 37~39 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 40（今天）</text>
+    <circle cx="660" cy="514" r="5" fill="#5b8db8"/>
+    <text x="660" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 41 深浅拷贝</text>
+    <circle cx="860" cy="514" r="5" fill="#e0955f"/>
+    <text x="860" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 42 项目日</text>
+  </g>
+</svg>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">乘法战报、单位矩阵与两种布局对照</text>
+    <path d="M 350,58 Q 480,52 610,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,280 470,460 Q 248,465 26,460 Q 20,280 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 281)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">实验 1：乘法 + 单位阵</text>
+    <rect x="38" y="146" width="420" height="300" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./m2　（-Wall 零警告）</text>
+    <text x="54" y="196" font-size="11.5" fill="#cfe8c6">a = [1 2 3; 4 5 6]　e = [7 8; 9 10; 11 12]</text>
+    <text x="54" y="228" font-size="12" fill="#9fb8a8">c = a·e（2×3 · 3×2）：</text>
+    <text x="54" y="250" font-size="12.5" fill="#f0c9c0">[ 58　64 ]</text>
+    <text x="54" y="270" font-size="12.5" fill="#f0c9c0">[139 154]</text>
+    <text x="54" y="296" font-size="11" fill="#9fb8a8">（手算：1·7+2·9+3·11=58 ✔ 四元素全对）</text>
+    <text x="54" y="330" font-size="12" fill="#9fb8a8">a · I(3) =</text>
+    <text x="54" y="352" font-size="12.5" fill="#cfe8c6">[1 2 3; 4 5 6]（= a ✔ 右乘单位不变）</text>
+    <text x="54" y="388" font-size="12" fill="#9fb8a8">释放：5 次 free_matrix</text>
+    <text x="54" y="410" font-size="11.5" fill="#cfe8c6">（a/e/c/i3/ai 各一次，逆依赖序）</text>
+    <text x="54" y="438" font-size="11.5" fill="#f0c9c0">ASan 版：零报错 ✔（全部正确归还）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,280 934,460 Q 712,465 490,460 Q 484,280 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 281)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">实验 2：两种布局</text>
+    <rect x="502" y="146" width="420" height="300" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="12" fill="#9fb8a8">锯齿阵（int**）：</text>
+    <text x="514" y="194" font-size="11.5" fill="#cfe8c6">jag = 0x…52c0（指针数组）</text>
+    <text x="514" y="214" font-size="11.5" fill="#cfe8c6">行0 = 0x…52d0　行1 = 0x…52e0</text>
+    <text x="514" y="236" font-size="11" fill="#9fb8a8">（行间有缝——两块独立分配）</text>
+    <text x="514" y="270" font-size="12" fill="#9fb8a8">一维折叠（int* + r*cols+c）：</text>
+    <text x="514" y="292" font-size="11.5" fill="#cfe8c6">flat = 0x…52f0 一整块 24 字节</text>
+    <text x="514" y="312" font-size="11.5" fill="#cfe8c6">at(1,2) = flat[5] = 6 ✔</text>
+    <text x="514" y="334" font-size="11" fill="#9fb8a8">（行行无缝 …f8→…fc 相邻）</text>
+    <text x="514" y="368" font-size="12" fill="#9fb8a8">对照结论：</text>
+    <text x="514" y="390" font-size="11.5" fill="#cfe8c6">锯齿 2+1 次分配 3 次释放｜行可不等长</text>
+    <text x="514" y="410" font-size="11.5" fill="#cfe8c6">折叠 1 次分配 1 次释放｜强制矩形</text>
+    <text x="514" y="436" font-size="11" fill="#9fb8a8">（Day 65 Matrix 类选折叠——泄漏面小）</text>
+
+    <path d="M 24,486 Q 470,480 905,487 L 901,560 Q 470,554 26,559 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 523)"/>
+    <text x="46" y="512" font-size="15.5" font-weight="bold" fill="#9c5a22">明天的伏笔</text>
+    <text x="46" y="540" font-size="12.5" fill="#3b3a36">今天的 int** 矩阵如果塞进 struct 直接赋值会怎样？——明天"深拷贝 vs 浅拷贝"用 double-free 现场回答</text>
+
+    <path d="M 24,576 Q 470,570 905,577 L 901,640 Q 470,634 26,639 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 608)"/>
+    <text x="480" y="606" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 41 深拷贝 vs 浅拷贝——复现浅拷贝导致的 double-free（计划指定练习）</text>
+  </g>
+</svg>
