@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 47 全貌：动态数组 v2——倍增的数学与 reserve 的先手</text>
+    <path d="M 250,60 Q 480,52 710,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">v1 的扩容今天有了名字和账本：为什么 ×2 不是 +1？reserve 什么时候值得？capacity 和 size 到底谁是边界？</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">倍增 vs 精确加一（账本）</text>
+    <text x="64" y="180" font-size="12.5" fill="#3b3a36">push 100 个（容量 4 起步）：</text>
+    <text x="64" y="208" font-size="12.5" fill="#45703a">倍增：5 次扩容、搬运 124 个元素</text>
+    <text x="64" y="230" font-size="12" fill="#8a8578">（4+8+16+32+64 = 124）</text>
+    <text x="64" y="260" font-size="12.5" fill="#a33f2e">精确加一：99 次扩容、搬运 4950 个</text>
+    <text x="64" y="282" font-size="12" fill="#8a8578">（1+2+…+99 = 4950）</text>
+    <text x="64" y="316" font-size="13" fill="#45703a">差 39.9 倍——N 个 push 的总搬运</text>
+    <text x="64" y="338" font-size="13" fill="#45703a">　倍增是 O(N)、加一是 O(N²)</text>
+    <text x="64" y="370" font-size="12" fill="#8a8578">（代价：多占内存——128 vs 100）</text>
+
+    <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">reserve：先手棋</text>
+    <text x="572" y="180" font-size="12.5" fill="#3b3a36">知道要装多少时提前 reserve：</text>
+    <text x="572" y="208" font-size="12.5" fill="#45703a">reserve(128) → push 100 个</text>
+    <text x="572" y="230" font-size="12" fill="#8a8578">（实测：0 次倍增、日志静默）</text>
+    <text x="572" y="264" font-size="12.5" fill="#6b675e">适用：读文件前知道行数、</text>
+    <text x="572" y="286" font-size="12.5" fill="#6b675e">　批量插入前知道条数</text>
+    <text x="572" y="320" font-size="12.5" fill="#a33f2e">注意：只扩大不缩小</text>
+    <text x="572" y="342" font-size="12" fill="#8a8578">（reserve(2) 对 cap=4 无效）</text>
+
+    <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
+    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">size 是唯一的边界</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">实测：push 1 个后 size=1、capacity=4——at(1) 被拦（1 >= 1）：空房对用户"不存在"；越界检查只认 size</text>
+    <text x="70" y="490" font-size="12.5" fill="#6b675e">（v1 的结论今天复验——capacity 是"余地"不是"边界"）</text>
+
+    <path d="M 60,514 Q 480,508 905,515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 37~46 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 47（今天）</text>
+    <circle cx="660" cy="514" r="5" fill="#e0955f"/>
+    <text x="660" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 48 自测日</text>
+    <circle cx="860" cy="514" r="5" fill="#5b8db8"/>
+    <text x="860" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">第 9 周 类的基础</text>
+  </g>
+</svg>
