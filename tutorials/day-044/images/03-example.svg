@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">绑定对照、多态动物园与抽象执法</text>
+    <path d="M 350,58 Q 480,52 610,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,230 470,360 Q 248,365 26,360 Q 20,230 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 231)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">实验 1：多态分发</text>
+    <rect x="38" y="146" width="420" height="200" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./poly</text>
+    <text x="54" y="196" font-size="12" fill="#9fb8a8">各自直调：圆 12.5664 / 矩形 12</text>
+    <text x="54" y="224" font-size="12.5" fill="#cfe8c6">基类指针 + describe：</text>
+    <text x="54" y="246" font-size="12.5" fill="#cfe8c6">　圆 的面积 = 12.5664</text>
+    <text x="54" y="266" font-size="12.5" fill="#cfe8c6">　矩形 的面积 = 12</text>
+    <text x="54" y="286" font-size="12.5" fill="#cfe8c6">　无名形状 的面积 = 0（基类保底）</text>
+    <text x="54" y="322" font-size="12" fill="#9fb8a8">同一个 describe()、同一句 area()——</text>
+    <text x="54" y="340" font-size="12" fill="#9fb8a8">行为跟着指针指向的对象变</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,230 934,360 Q 712,365 490,360 Q 484,230 488,102 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="3" transform="rotate(0.3 711 231)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#a33f2e">实验 2：无 virtual 对照</text>
+    <rect x="502" y="146" width="420" height="200" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="11.5" fill="#9fb8a8">$ ./nv</text>
+    <text x="514" y="196" font-size="12.5" fill="#cfe8c6">对象直调：d.who() = 派生类版本</text>
+    <text x="514" y="220" font-size="12.5" fill="#f0c9c0">指针调用：bp-&gt;who() = 基类版本 ✘</text>
+    <text x="514" y="248" font-size="12.5" fill="#cfe8c6">（virtual 版：vbp-&gt;who() = 虚派生类版本 ✔）</text>
+    <text x="514" y="284" font-size="12" fill="#9fb8a8">同一个派生类对象、同一个基类指针——</text>
+    <text x="514" y="304" font-size="12" fill="#9fb8a8">差别只在 virtual 一个关键字：</text>
+    <text x="514" y="330" font-size="12" fill="#9fb8a8">声明类型说了算 vs 实际对象说了算</text>
+
+    <path d="M 24,386 Q 470,380 905,387 L 901,490 Q 470,484 26,489 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 464 438)"/>
+    <text x="46" y="414" font-size="15.5" font-weight="bold" fill="#2c5a82">实验 3：多态动物园（抽象类 + 智能指针）</text>
+    <text x="46" y="444" font-size="12.5" fill="#3b3a36">圆 12.5664 + 矩形 12 + 三角形 15 → 总面积 39.5664；加 Triangle 零改循环——开闭雏形</text>
+    <text x="46" y="468" font-size="12.5" fill="#a33f2e">Shape s("x") → error: variable type 'Shape' is an abstract class（抽象类不许出生）</text>
+
+    <path d="M 24,510 Q 470,504 905,511 L 901,630 Q 470,624 26,629 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 570)"/>
+    <text x="480" y="540" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#55606e">明天的作业已备好</text>
+    <text x="480" y="570" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 45：纯虚函数深入 + Shape 抽象体系完善——今天动物园里瞥过的 = 0、override、unique_ptr 明天逐个讲透</text>
+    <text x="480" y="594" text-anchor="middle" font-size="12.5" fill="#6b675e">（Day 48 里程碑：图形库 v3——多态全家桶的组装大考）</text>
+  </g>
+</svg>

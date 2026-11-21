@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 44 全貌：虚函数——一个调用，多种行为</text>
+    <path d="M 320,60 Q 480,52 640,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">昨天基类指针"看不见派生类函数"的格子今天解锁：virtual 让调用看实际对象而不是声明类型</text>
+
+    <path d="M 40,116 Q 470,110 905,117 L 901,330 Q 470,324 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 223)"/>
+    <text x="472" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">virtual 的两种绑定（实测对照）</text>
+    <rect x="70" y="162" width="390" height="60" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.2"/>
+    <text x="265" y="186" text-anchor="middle" font-size="11.5" fill="#a33f2e">无 virtual（静态绑定）：bp-&gt;who() = 基类版本</text>
+    <text x="265" y="206" text-anchor="middle" font-size="11" fill="#8a8578">（指针看声明类型——谁声明的调谁的）</text>
+    <rect x="490" y="162" width="390" height="60" fill="#eef5e8" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="685" y="186" text-anchor="middle" font-size="11.5" fill="#45703a">有 virtual（动态绑定）：vbp-&gt;who() = 虚派生类版本</text>
+    <text x="685" y="206" text-anchor="middle" font-size="11" fill="#8a8578">（指针看实际对象——指谁调谁的）</text>
+    <text x="472" y="254" text-anchor="middle" font-size="12.5" fill="#3b3a36">describe() 里那一句 area() 不用改——指向圆算圆面积、指向矩形算矩形面积</text>
+    <text x="472" y="280" text-anchor="middle" font-size="12.5" fill="#45703a">（这就是"多态"：同一接口、行为随对象而变）</text>
+    <text x="472" y="314" text-anchor="middle" font-size="12" fill="#8a8578">（昨天 roster[0]-&gt;study() 被拦，今天 area() 通畅——差别就在 virtual）</text>
+
+    <path d="M 40,354 Q 280,348 520,354 Q 524,440 520,504 Q 280,510 42,504 Q 36,440 40,354 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 429)"/>
+    <text x="280" y="384" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">三件套语法</text>
+    <text x="64" y="414" font-size="12.5" fill="#3b3a36">①基类标 virtual：virtual double area() const</text>
+    <text x="64" y="438" font-size="12.5" fill="#3b3a36">②派生类标 override：编译器核对签名</text>
+    <text x="64" y="462" font-size="12.5" fill="#3b3a36">③虚析构：virtual ~Shape()（Day 46 专场）</text>
+    <text x="64" y="492" font-size="12" fill="#8a8578">（override 拼错签名会编译报错——免费的质检员）</text>
+
+    <path d="M 550,354 Q 730,348 905,354 Q 908,440 905,504 Q 730,510 552,504 Q 547,440 550,354 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(0.3 727 429)"/>
+    <text x="727" y="384" text-anchor="middle" font-size="15" font-weight="bold" fill="#8a6d1a">纯虚与抽象类</text>
+    <text x="572" y="414" font-size="12.5" fill="#3b3a36">= 0 结尾：纯虚函数</text>
+    <text x="572" y="438" font-size="12.5" fill="#3b3a36">　→ 含纯虚的类 = 抽象类</text>
+    <text x="572" y="462" font-size="12.5" fill="#a33f2e">Shape s("x") → 编译错误！</text>
+    <text x="572" y="486" font-size="12" fill="#6b675e">（"形状"本身没有面积——只当基类用）</text>
+
+    <path d="M 60,520 Q 480,514 905,521" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="520" r="5" fill="#8a94a3"/>
+    <text x="250" y="540" text-anchor="middle" font-size="12" fill="#3b3a36">Day 43 ✓</text>
+    <circle cx="440" cy="520" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="520" r="5" fill="#5b8db8"/>
+    <text x="440" y="540" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 44（今天）</text>
+    <circle cx="650" cy="520" r="5" fill="#5b8db8"/>
+    <text x="650" y="540" text-anchor="middle" font-size="12" fill="#3b3a36">Day 45~47 多态深入</text>
+    <circle cx="850" cy="520" r="5" fill="#e0955f"/>
+    <text x="850" y="540" text-anchor="middle" font-size="12" fill="#3b3a36">Day 48 里程碑</text>
+  </g>
+</svg>
