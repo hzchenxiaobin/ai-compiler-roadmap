@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">static_cast 的担保风险与 dynamic_cast 的验货流程</text>
+    <path d="M 230,58 Q 480,52 730,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,310 Q 470,304 44,309 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 205)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">担保错了的两种命运（实测）</text>
+    <rect x="90" y="146" width="380" height="70" fill="#33413a"/>
+    <text x="280" y="172" font-size="11.5" fill="#cfe8c6">a1（真狗）→ static_cast → fetch()</text>
+    <text x="280" y="194" font-size="11" fill="#9fb8a8">（担保对了：正常执行）</text>
+    <rect x="490" y="146" width="380" height="70" fill="#33413a"/>
+    <text x="680" y="172" font-size="11.5" fill="#f0c9c0">a2（猫！）→ static_cast → fetch()</text>
+    <text x="680" y="194" font-size="11" fill="#f0c9c0">（实测居然也"跑通"了——UB 的欺骗性！）</text>
+    <text x="472" y="248" font-size="12.5" fill="#a33f2e">为什么没崩？Cat 的内存布局碰巧没有立刻踩雷——但"这次没崩"不是"安全"，</text>
+    <text x="472" y="270" font-size="12.5" fill="#a33f2e">换个编译器/加个成员/换个调用就可能崩：UB 的定义就是"什么都可能"</text>
+    <text x="472" y="298" font-size="12" fill="#8a8578">（这就是 Day 22 探针实验同款道理——"能跑"不等于"对"）</text>
+
+    <path d="M 40,334 Q 470,328 905,335 L 901,576 Q 470,570 44,575 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.2 472 455)"/>
+    <text x="472" y="364" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">dynamic_cast 的验货流程（实测）</text>
+    <rect x="150" y="382" width="660" height="130" fill="#33413a"/>
+    <text x="480" y="410" text-anchor="middle" font-size="11.5" fill="#cfe8c6">Animal* a1 = &amp;dog;　→ dynamic_cast&lt;Dog*&gt;(a1)</text>
+    <text x="480" y="434" text-anchor="middle" font-size="11.5" fill="#cfe8c6">　运行期查 RTTI：a1 的实际类型是 Dog → 返回有效指针</text>
+    <text x="480" y="462" text-anchor="middle" font-size="11.5" fill="#cfe8c6">Animal* a2 = &amp;cat;　→ dynamic_cast&lt;Dog*&gt;(a2)</text>
+    <text x="480" y="486" text-anchor="middle" font-size="11.5" fill="#f0c9c0">　运行期查 RTTI：a2 是 Cat 不是 Dog → 返回 nullptr（不崩！）</text>
+    <text x="480" y="540" text-anchor="middle" font-size="12.5" fill="#45703a">代价：查 RTTI 有运行开销；好处：错误以 nullptr 而非 UB 呈现——可以 if 判空处理</text>
+  </g>
+</svg>
