@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 15 全貌：C 字符串——一串字符加一个句号</text>
+    <path d="M 300,60 Q 480,52 660,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">C 语言的字符串是"字符数组 + '\0' 终结符"——理解它，才能理解 std::string 替你挡了多少刀</text>
+
+    <text x="230" y="140" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">char greet[6] = "hello" 的真身</text>
+    <rect x="60" y="156" width="120" height="46" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.5"/>
+    <text x="120" y="184" text-anchor="middle" font-size="15" fill="#3b3a36">h</text>
+    <rect x="180" y="156" width="120" height="46" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.5"/>
+    <text x="240" y="184" text-anchor="middle" font-size="15" fill="#3b3a36">e</text>
+    <rect x="300" y="156" width="120" height="46" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.5"/>
+    <text x="360" y="184" text-anchor="middle" font-size="15" fill="#3b3a36">l</text>
+    <rect x="420" y="156" width="120" height="46" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.5"/>
+    <text x="480" y="184" text-anchor="middle" font-size="15" fill="#3b3a36">l</text>
+    <rect x="540" y="156" width="120" height="46" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.5"/>
+    <text x="600" y="184" text-anchor="middle" font-size="15" fill="#3b3a36">o</text>
+    <rect x="660" y="156" width="120" height="46" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(0.8 720 179)"/>
+    <text x="720" y="180" text-anchor="middle" font-size="13" font-weight="bold" fill="#a33f2e">\0</text>
+    <text x="720" y="198" text-anchor="middle" font-size="10.5" fill="#a33f2e">编码 0</text>
+    <text x="120" y="228" text-anchor="middle" font-size="12" fill="#8a8578">[0]</text>
+    <text x="240" y="228" text-anchor="middle" font-size="12" fill="#8a8578">[1]</text>
+    <text x="360" y="228" text-anchor="middle" font-size="12" fill="#8a8578">[2]</text>
+    <text x="480" y="228" text-anchor="middle" font-size="12" fill="#8a8578">[3]</text>
+    <text x="600" y="228" text-anchor="middle" font-size="12" fill="#8a8578">[4]</text>
+    <text x="720" y="228" text-anchor="middle" font-size="12" font-weight="bold" fill="#a33f2e">[5]</text>
+    <text x="840" y="178" font-size="12.5" fill="#55606e">sizeof = 6</text>
+    <text x="840" y="200" font-size="12.5" fill="#45703a">strlen = 5</text>
+
+    <path d="M 40,264 Q 460,258 905,265 L 901,384 Q 460,378 44,383 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(-0.2 472 323)"/>
+    <text x="472" y="296" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#55606e">关键设计：长度不跟着字符串走</text>
+    <text x="70" y="328" font-size="13" fill="#3b3a36">数组本身不带长度（Day 13 的老问题）——想知道有几个字符，只能从头数到 '\0'</text>
+    <text x="70" y="356" font-size="13" fill="#6b675e">于是 strlen 每次调用都要重新数一遍；丢了这个句号，就一直数到邻居家（越界）</text>
+
+    <path d="M 40,408 Q 460,402 905,409 L 901,496 Q 460,490 44,495 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.2 472 452)"/>
+    <text x="472" y="438" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">今天的练习与危险品</text>
+    <text x="70" y="470" font-size="13" fill="#3b3a36">手写 my_strlen / my_strcmp（和标准库逐位对照）　＋　strcpy 小杯倒大水的溢出现场（ASan 抓获）</text>
+
+    <path d="M 60,516 Q 480,510 905,517" fill="none" stroke="#8a8578" stroke-width="3"/>
+    <circle cx="170" cy="516" r="6" fill="#8a94a3"/>
+    <text x="170" y="540" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 13~14 ✓</text>
+    <circle cx="350" cy="517" r="13" fill="none" stroke="#c96a5a" stroke-width="2.2"/>
+    <circle cx="350" cy="517" r="6" fill="#5b8db8"/>
+    <text x="350" y="541" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#c96a5a">Day 15（今天）</text>
+    <circle cx="520" cy="516" r="6" fill="#5b8db8"/>
+    <text x="520" y="540" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 16 std::string</text>
+    <circle cx="700" cy="517" r="6" fill="#5b8db8"/>
+    <text x="700" y="540" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 17 getline</text>
+    <circle cx="860" cy="516" r="6" fill="#e0955f"/>
+    <text x="860" y="540" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 18 项目日</text>
+  </g>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'KaiTi SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">句号的工作原理与小杯倒大水</text>
+    <path d="M 320,58 Q 480,52 640,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 250,94 460,100 Q 464,200 460,300 Q 250,306 42,300 Q 36,200 40,100 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(-0.3 250 200)"/>
+    <text x="250" y="130" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">strlen：从头数到句号</text>
+    <rect x="80" y="146" width="44" height="36" fill="#fffdf7" stroke="#5b8db8" stroke-width="2"/>
+    <text x="102" y="170" text-anchor="middle" font-size="13" fill="#3b3a36">h</text>
+    <rect x="124" y="146" width="44" height="36" fill="#fffdf7" stroke="#5b8db8" stroke-width="2"/>
+    <text x="146" y="170" text-anchor="middle" font-size="13" fill="#3b3a36">e</text>
+    <rect x="168" y="146" width="44" height="36" fill="#fffdf7" stroke="#5b8db8" stroke-width="2"/>
+    <text x="190" y="170" text-anchor="middle" font-size="13" fill="#3b3a36">l</text>
+    <rect x="212" y="146" width="44" height="36" fill="#fffdf7" stroke="#5b8db8" stroke-width="2"/>
+    <text x="234" y="170" text-anchor="middle" font-size="13" fill="#3b3a36">l</text>
+    <rect x="256" y="146" width="44" height="36" fill="#fffdf7" stroke="#5b8db8" stroke-width="2"/>
+    <text x="278" y="170" text-anchor="middle" font-size="13" fill="#3b3a36">o</text>
+    <rect x="300" y="146" width="44" height="36" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.4"/>
+    <text x="322" y="170" text-anchor="middle" font-size="12" font-weight="bold" fill="#a33f2e">\0</text>
+    <path d="M 92,196 q 60,8 220,4" fill="none" stroke="#45703a" stroke-width="2.4" stroke-dasharray="7 5"/>
+    <text x="250" y="216" text-anchor="middle" font-size="12" fill="#45703a">数了 5 个，停——strlen 返回 5（实测）</text>
+    <path d="M 80,244 Q 250,238 420,245 L 417,290 Q 250,284 83,289 Z" fill="#fffdf7" stroke="#9db8cf" stroke-width="2" stroke-dasharray="8 5"/>
+    <text x="250" y="266" text-anchor="middle" font-size="12" fill="#a33f2e">若 '\0' 丢了：一直数下去，冲进邻居内存——</text>
+    <text x="250" y="284" text-anchor="middle" font-size="12" fill="#a33f2e">返回一个随机的"长度"（未定义行为）</text>
+
+    <path d="M 500,100 Q 710,94 920,100 Q 924,200 920,300 Q 710,306 502,300 Q 496,200 500,100 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="3" transform="rotate(0.3 710 200)"/>
+    <text x="710" y="130" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#9c5a22">strcpy：小杯倒大水</text>
+    <path d="M 560,170 q -20,60 0,100 q 30,8 60,0 q 18,-40 0,-100 z" fill="#cfe0f0" stroke="#5b8db8" stroke-width="2.4" transform="rotate(-6 590 220)"/>
+    <text x="588" y="296" text-anchor="middle" font-size="11.5" fill="#2c5a82">源：25 字节</text>
+    <path d="M 700,190 q -14,40 0,72 q 22,6 44,0 q 14,-32 0,-72 z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.4" transform="rotate(5 722 226)"/>
+    <text x="722" y="288" text-anchor="middle" font-size="11.5" fill="#a33f2e">目标：8 字节</text>
+    <path d="M 640,200 Q 680,186 700,196" fill="none" stroke="#3b3a36" stroke-width="2.4"/>
+    <text x="668" y="180" text-anchor="middle" font-size="11" fill="#8a8578">倒水</text>
+    <path d="M 760,196 l 10,10 m 0,-10 l -10,10 m 8,6 l 10,10 m 0,-10 l -10,10" stroke="#c96a5a" stroke-width="2.2" fill="none"/>
+    <text x="710" y="330" text-anchor="middle" font-size="12.5" fill="#a33f2e" transform="rotate(0 710 330)">17 字节溢出杯外（实测 ASan：WRITE of size 25）</text>
+
+    <path d="M 40,330 Q 460,324 905,331 L 901,442 Q 460,436 44,441 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.2 472 386)"/>
+    <text x="472" y="360" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#8a6d1a">sizeof 与 strlen：一对最容易混的尺子</text>
+    <text x="70" y="392" font-size="13" fill="#3b3a36">sizeof(greet) = 6：数组占的总字节数（含句号），编译期定死，零成本</text>
+    <text x="70" y="420" font-size="13" fill="#3b3a36">strlen(greet) = 5：不含句号的字符数，运行期从头数到句号，O(n)</text>
+
+    <path d="M 40,466 Q 460,460 905,467 L 901,576 Q 460,570 44,575 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.2 472 521)"/>
+    <text x="472" y="496" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">为什么还要学它？</text>
+    <text x="70" y="528" font-size="13" fill="#3b3a36">std::string 内部就含一截字符数组；接口、文件、老代码里 C 字符串无处不在</text>
+    <text x="70" y="556" font-size="13" fill="#6b675e">明天见分晓：std::string 自带长度、自动扩容、不溢出——今天受的苦都是明天的甜</text>
+  </g>
+</svg>

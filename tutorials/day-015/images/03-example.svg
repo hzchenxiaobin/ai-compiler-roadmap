@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">字节真身、手写对照与溢出现场</text>
+    <path d="M 340,58 Q 480,52 620,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,240 470,380 Q 248,385 26,380 Q 20,240 24,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(-0.3 247 241)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#2c5a82">实验 1：逐字节看清句号</text>
+    <rect x="38" y="146" width="420" height="200" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="12" fill="#9fb8a8">$ ./c_string_basics（节选）</text>
+    <text x="54" y="196" font-size="12.5" fill="#cfe8c6">sizeof(greet) = 6　strlen(greet) = 5</text>
+    <text x="54" y="220" font-size="12.5" fill="#cfe8c6">greet[4] = 'o' (编码 111)</text>
+    <text x="54" y="244" font-size="12.5" fill="#f0c9c0">greet[5] = ' ' (编码 0)　←句号本体</text>
+    <text x="54" y="268" font-size="12.5" fill="#cfe8c6">sizeof(shortcut) = 3，strlen = 2</text>
+    <text x="54" y="296" font-size="12" fill="#9fb8a8">字面量 "hi" 自动带句号：h、i、\0 共 3 字节</text>
+    <text x="54" y="326" font-size="12.5" fill="#cfe8c6">greet[0] = 'H' 后输出 Hello（字符数组可改）</text>
+    <text x="46" y="366" font-size="13" fill="#2c5a82">两把尺子差 1：差的正是那个句号</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,240 934,380 Q 712,385 490,380 Q 484,240 488,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(0.3 711 241)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#45703a">实验 2：手写版 vs 标准库</text>
+    <rect x="502" y="146" width="420" height="200" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="12.5" fill="#cfe8c6">my_strlen(apple) = 5，std::strlen = 5</text>
+    <text x="514" y="200" font-size="12.5" fill="#cfe8c6">apple vs banana：my = -1，std = -1</text>
+    <text x="514" y="224" font-size="12.5" fill="#cfe8c6">apple vs apple ：my = 0，std = 0</text>
+    <text x="514" y="248" font-size="12.5" fill="#cfe8c6">banana vs apple：my = 1，std = 1</text>
+    <text x="514" y="284" font-size="12" fill="#9fb8a8">strcmp 的契约：只看符号（负/零/正），</text>
+    <text x="514" y="304" font-size="12" fill="#9fb8a8">不承诺具体数值——两版符号一致即同结论</text>
+    <text x="514" y="334" font-size="12" fill="#9fb8a8">my_strcmp 核心：走到第一个不同字符求差</text>
+
+    <rect x="24" y="406" width="912" height="120" rx="8" fill="#33413a"/>
+    <text x="40" y="432" font-size="12.5" fill="#f0c9c0">实验 3：strcpy(small, big)——源 25 字节倒进 8 字节杯子</text>
+    <text x="40" y="458" font-size="12" fill="#ffd7d0">普通编译：三行照常打印、exit=0（静默溢出，最危险）</text>
+    <text x="40" y="482" font-size="12" fill="#ffd7d0">==21642==ERROR: AddressSanitizer: stack-buffer-overflow</text>
+    <text x="40" y="504" font-size="12" fill="#9fb8a8">WRITE of size 25 at ...　#0 strcpy+0x458　#1 main+0x1f0　←案发在 strcpy 内部</text>
+
+    <path d="M 24,544 Q 470,538 905,545 L 901,608 Q 470,602 26,607 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(-0.2 464 576)"/>
+    <text x="46" y="572" font-size="13.5" fill="#3b3a36">安全替代预告：std::string 赋值自动扩容（明天）；C 风格至少用 strncpy 并保证末位 '\0'</text>
+    <text x="46" y="596" font-size="12.5" fill="#6b675e">ASan 报告的 WRITE of size 25 与"24 字符 + 1 句号"严丝合缝——读报告也要会算账</text>
+  </g>
+</svg>
