@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">283/283 满分、三轮爬坡与质量周收官战报</text>
+    <path d="M 320,58 Q 480,52 640,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 -std=c++20 -Wall -Wextra + googletest 1.18.0 + ASan 零报错）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,490 Q 248,495 26,490 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 296)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出</text>
+    <rect x="38" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ git clone …/JSONTestSuite &amp;&amp; ./rs test_parsing</text>
+    <text x="54" y="200" font-size="12" fill="#9fb8a8">== 结果 ==</text>
+    <text x="54" y="224" font-size="11.5" fill="#cfe8c8">y_（95）：过 95 / 败 0 ✔</text>
+    <text x="54" y="248" font-size="11.5" fill="#cfe8c8">n_（188）：过 188 / 败 0 ✔</text>
+    <text x="54" y="272" font-size="11.5" fill="#9fb8a8">i_（35）：受 21 / 拒 14（不判）</text>
+    <text x="54" y="300" font-size="12" fill="#f0c9c0">总正确率（y+n）：100% ✔</text>
+    <text x="54" y="332" font-size="12" fill="#9fb8a8">== 修复的爬坡 ==</text>
+    <text x="54" y="354" font-size="11" fill="#9fb8a8">首跑 95%（败 13+崩 1）</text>
+    <text x="54" y="374" font-size="11" fill="#9fb8a8">修尾逗号/数字文法 → 99%</text>
+    <text x="54" y="394" font-size="11" fill="#9fb8a8">修负号前导零 → 100%</text>
+    <text x="54" y="424" font-size="12" fill="#9fb8a8">== 深度护栏 ==</text>
+    <text x="54" y="446" font-size="11" fill="#9fb8a8">百万层括号 → 500 层限制</text>
+    <text x="54" y="466" font-size="11" fill="#9fb8a8">（ASan 定位栈溢出后加）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,490 Q 712,495 490,490 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 296)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">质量周收官·项目状态</text>
+    <rect x="502" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">三天质量周：</text>
+    <text x="514" y="196" font-size="11.5" fill="#cfe8c8">136 入门（7 用例学框架）</text>
+    <text x="514" y="216" font-size="11.5" fill="#cfe8c8">137 自出题（28 矩阵全绿）</text>
+    <text x="514" y="236" font-size="11.5" fill="#f0c9c0">138 外部考试（283/283 满分）</text>
+    <text x="514" y="266" font-size="12" fill="#9fb8a8">解析器的最终状态：</text>
+    <text x="514" y="288" font-size="11.5" fill="#cfe8c8">解析+dump+访问 三面齐</text>
+    <text x="514" y="308" font-size="11.5" fill="#cfe8c8">内部 28 + 外部 283 双测试</text>
+    <text x="514" y="328" font-size="11.5" fill="#cfe8c8">ASan 零报错 + 深度护栏</text>
+    <text x="514" y="358" font-size="12.5" fill="#45703a">（138/144 = 95.8%）</text>
+    <text x="514" y="388" font-size="11" fill="#9fb8a8">（剩 6 天：性能/清理/CMake/</text>
+    <text x="514" y="406" font-size="11" fill="#9fb8a8">　博客/毕业——工程的收尾）</text>
+    <text x="514" y="436" font-size="11" fill="#9fb8a8">（Effective 15~42 同步中）</text>
+    <text x="514" y="464" font-size="11" fill="#9fb8a8">（今天的故事：外部考试让</text>
+    <text x="514" y="482" font-size="11" fill="#9fb8a8">　"全绿"变成真的可信）</text>
+
+    <path d="M 24,516 Q 470,510 905 517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>
+    <text x="46" y="542" font-size="15.5" font-weight="bold" fill="#9c5a22">满分的分量</text>
+    <text x="46" y="568" font-size="12.5" fill="#3b3a36">283 个用例是十年间全世界解析器作者踩过的坑——今天我们的解析器把它们全部答对；不是"我写的没问题"而是"世界的题库都过了"</text>
+
+    <path d="M 24,596 Q 470,590 905 597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 139 性能测试与优化——string_view、预留空间、减少拷贝（计划指定）</text>
+  </g>
+</svg>
