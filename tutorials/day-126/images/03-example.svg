@@ -3,7 +3,7 @@
   <g stroke-linecap="round" stroke-linejoin="round">
     <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">223 文件全绿、两处修复与五阶段毕业档案</text>
     <path d="M 300,58 Q 480,52 660,59" fill="none" stroke="#7aa663" stroke-width="3"/>
-    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21；scan_all.sh 升级至 -std=c++20 -Wall -Wextra -fsanitize=address）</text>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + clang 21；scan 升级至 -std=c++20 -Wall -Wextra + ASan）</text>
 
     <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,490 Q 248,495 26,490 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 296)"/>
     <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">里程碑验收输出</text>
@@ -41,7 +41,7 @@
 
     <path d="M 24,516 Q 470,510 905,517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>
     <text x="46" y="542" font-size="15.5" font-weight="bold" fill="#9c5a22">五个月的主线</text>
-    <text x="46" y="568" font-size="12.5" fill="#3b3a36">"把约定搬进类型"——三法则（手写所有权）→ RAII（作用域接管）→ 智能指针（类型即所有权）→ optional/concepts（失败和要求也进类型）——一条越来越安全也越来越省心的路</text>
+    <text x="46" y="568" font-size="12.5" fill="#3b3a36">"把约定搬进类型"——三法则（手写）→ RAII（作用域接管）→ 智能指针（类型即所有权）→ optional/concepts（失败和要求也进类型）——越来越安全越来越省心</text>
 
     <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
     <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 127——第 22 周开篇：thread 与并发基础（JSON 项目前的最后一门新知识）</text>
