@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 73 全貌：虚表机制——画图讲清一次虚调用</text>
+    <path d="M 300,60 Q 480,52 660,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划要求"概念性理解 + 画图"——今天不止画图：三个目击实验把 vptr、虚表槽位亲手摸出来（本机实测）</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">目击一：全类一张表</text>
+    <text x="64" y="180" font-size="12.5" fill="#45703a">d1/d2/d3 的 vptr 全是 0x102e20010 ✔</text>
+    <text x="64" y="202" font-size="12" fill="#8a8578">（三个对象、同一个地址——共享！）</text>
+    <text x="64" y="232" font-size="12.5" fill="#45703a">b（Base）的 vptr = 0x102e20068</text>
+    <text x="64" y="254" font-size="12" fill="#8a8578">（不同类不同表——Base 自己一张）</text>
+    <text x="64" y="290" font-size="12.5" fill="#6b675e">推论：每个对象只多 8 字节（vptr），</text>
+    <text x="64" y="312" font-size="12.5" fill="#6b675e">　"表"本身全类一份不随对象复制</text>
+    <text x="64" y="352" font-size="12" fill="#8a8578">（Day 68 说的成本账本——今天有地址证据）</text>
+
+    <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">目击三：槽位连续排列</text>
+    <text x="572" y="180" font-size="12.5" fill="#3b3a36">虚表 @ 0x102e20010：</text>
+    <text x="572" y="208" font-size="12" fill="#45703a">　[0] = 0x102e1ca48（who）</text>
+    <text x="572" y="230" font-size="12" fill="#45703a">　[1] = 0x102e1cd6c（extra）</text>
+    <text x="572" y="252" font-size="12" fill="#45703a">　[2] = 0x102e1c974（析构等）</text>
+    <text x="572" y="288" font-size="12.5" fill="#6b675e">槽位=代码段地址（0x102e1c……）——</text>
+    <text x="572" y="310" font-size="12.5" fill="#6b675e">　"表"是函数指针数组，真的存在</text>
+    <text x="572" y="352" font-size="12" fill="#8a8578">（Itanium ABI 的槽位含 this 调整——</text>
+    <text x="572" y="372" font-size="12" fill="#8a8578">　教学探针只看地址连续性）</text>
+
+    <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
+    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">一次虚调用的四步走（白板图）</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">①拿对象的 vptr　②到虚表　③按声明的槽位取函数地址　④跳转执行——静态调用少三步，这就是成本</text>
+    <text x="70" y="490" font-size="12.5" fill="#6b675e">（四步全是固定开销——绝大多数场景远小于一次缓存未命中）</text>
+
+    <path d="M 60,514 Q 480,508 905,515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 67~72 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 73（今天）</text>
+    <circle cx="650" cy="514" r="5" fill="#5b8db8"/>
+    <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 74~75</text>
+    <circle cx="860" cy="514" r="5" fill="#e0955f"/>
+    <text x="860" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 76 项目日</text>
+  </g>
+</svg>
