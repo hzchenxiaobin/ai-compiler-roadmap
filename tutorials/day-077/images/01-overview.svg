@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 77 项目日：图形库 v3——文件驱动 + 工厂 + 渲染</text>
+    <path d="M 280,60 Q 480,52 680,61" fill="none" stroke="#e0955f" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定"从文件读取图形描述、多态创建、渲染到文本界面"——第 6 周的文件 I/O 与本周的多态在项目里会师</text>
+
+    <path d="M 40,116 Q 470,110 905,117 L 901,390 Q 470,384 44,389 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 253)"/>
+    <text x="472" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">v3 的数据流水线</text>
+    <rect x="90" y="164" width="200" height="60" fill="#d8ecce" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="190" y="188" font-size="11" fill="#45703a">①shapes.txt（文本描述）</text>
+    <text x="190" y="206" font-size="9.5" fill="#8a8578">（7 行：含注释/坏行）</text>
+    <rect x="330" y="164" width="200" height="60" fill="#f9d9b8" stroke="#e0955f" stroke-width="2.2"/>
+    <text x="430" y="188" font-size="11" fill="#9c5a22">②工厂 make_shape()</text>
+    <text x="430" y="206" font-size="9.5" fill="#8a8578">（一行 → 一个多态对象）</text>
+    <rect x="570" y="164" width="200" height="60" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.2"/>
+    <text x="670" y="188" font-size="11" fill="#a33f2e">③容器收集 + 渲染</text>
+    <text x="670" y="206" font-size="9.5" fill="#8a8578">（报表/排序/总面积）</text>
+    <path d="M 292,194 Q 310,194 328,194" fill="none" stroke="#3b3a36" stroke-width="2.2"/>
+    <path d="M 532,194 Q 550,194 568,194" fill="none" stroke="#3b3a36" stroke-width="2.2"/>
+    <text x="472" y="252" font-size="12.5" fill="#3b3a36">容错三道闸：空行/注释跳过（#开头）、未知类型跳过、缺参数跳过——</text>
+    <text x="472" y="276" font-size="12.5" fill="#a33f2e">实测：7 行 → 跳 3（注释+hexagon+缺参 circle）→ 4 个图形存活</text>
+    <text x="472" y="310" font-size="12.5" fill="#45703a">工厂返回 LabeledShape 层（渲染要 report——依赖需要的面）</text>
+    <text x="472" y="334" font-size="12" fill="#8a8578">（Day 76"接口最小面"的实践：纯 Shape 不够用就上第二层）</text>
+    <text x="472" y="368" font-size="12" fill="#8a8578">（手算核对：12.5664+12+6+10 = 40.5664 ✔）</text>
+
+    <path d="M 40,414 Q 470,408 905,415 L 901,500 Q 470,494 44,499 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.2 472 457)"/>
+    <text x="472" y="444" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">实测战报（全过）</text>
+    <text x="70" y="472" font-size="13" fill="#3b3a36">文件读入 ✔（7 行真实 I/O）｜工厂创建 ✔（4 对象多态）｜容错 ✔（3 行优雅跳过）｜渲染+排序 ✔｜ASan 零报错 ✔</text>
+    <text x="70" y="494" font-size="12.5" fill="#6b675e">（-Wall 零警告；shapes.txt 由程序自生成——测试可重复）</text>
+
+    <path d="M 60,514 Q 480,508 905,515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 73~76 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#e0955f"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#9c5a22">Day 77（项目日）</text>
+    <circle cx="660" cy="514" r="5" fill="#e0955f"/>
+    <text x="660" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 78 里程碑</text>
+    <circle cx="860" cy="514" r="5" fill="#5b8db8"/>
+    <text x="860" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">第 14 周 STL</text>
+  </g>
+</svg>

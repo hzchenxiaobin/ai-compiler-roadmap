@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">工厂函数的解剖与容错三道闸</text>
+    <path d="M 340,58 Q 480,52 620,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,320 Q 470,314 44,319 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 210)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">"circle 2" → Circle(2) 的翻译过程</text>
+    <rect x="90" y="146" width="780" height="150" fill="#33413a"/>
+    <text x="480" y="174" font-size="11.5" fill="#cfe8c6">std::unique_ptr&lt;LabeledShape&gt; make_shape(const std::string&amp; line) {</text>
+    <text x="480" y="198" font-size="11.5" fill="#9fb8a8">　std::istringstream iss(line);　std::string kind;　iss &gt;&gt; kind;　// ①拆第一个词</text>
+    <text x="480" y="222" font-size="11.5" fill="#9fb8a8">　if (kind == "circle") { double r; if (iss &gt;&gt; r)　　// ②按词型取参</text>
+    <text x="480" y="246" font-size="11.5" fill="#cfe8c6">　　return std::make_unique&lt;Circle&gt;(r); }　　　　　　　// ③造多态对象</text>
+    <text x="480" y="272" font-size="11.5" fill="#9fb8a8">　…（rect/triangle 同款）　return nullptr;　}　　　　　　// ④都不匹配 → 空</text>
+    <text x="472" y="314" font-size="12" fill="#9fb8a8">（istringstream 的主场——Day 56 学的"字符串当流读"在工厂里落地）</text>
+
+    <path d="M 40,344 Q 280,338 520,344 Q 524,470 520,576 Q 280,582 42,576 Q 36,470 40,344 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 460)"/>
+    <text x="280" y="374" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">容错三道闸（实测）</text>
+    <text x="64" y="408" font-size="12.5" fill="#45703a">闸一：空行 / # 注释 → 直接跳</text>
+    <text x="64" y="430" font-size="12" fill="#8a8578">（实测第 3 行注释被跳 ✔）</text>
+    <text x="64" y="460" font-size="12.5" fill="#45703a">闸二：未知类型 → nullptr → 跳</text>
+    <text x="64" y="482" font-size="12" fill="#8a8578">（实测 "hexagon 6" 第 5 行被跳 ✔）</text>
+    <text x="64" y="512" font-size="12.5" fill="#45703a">闸三：缺参数 → 解析失败 → 跳</text>
+    <text x="64" y="534" font-size="12" fill="#8a8578">（实测 "circle" 第 6 行被跳 ✔）</text>
+    <text x="64" y="566" font-size="11.5" fill="#8a8578">（跳过都打日志——静默容错是坑）</text>
+
+    <path d="M 550,344 Q 730,338 905,344 Q 908,470 905,576 Q 730,582 552,576 Q 547,470 550,344 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 460)"/>
+    <text x="727" y="374" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">v1→v2→v3 的演进史</text>
+    <text x="572" y="408" font-size="12.5" fill="#3b3a36">v1（Day 72）：平铺五类，代码里写死</text>
+    <text x="572" y="434" font-size="12.5" fill="#3b3a36">v2（Day 76）：三层结构，设施单点</text>
+    <text x="572" y="460" font-size="12.5" fill="#45703a">v3（今天）：数据驱动——图形在</text>
+    <text x="572" y="482" font-size="12.5" fill="#45703a">　文件里，加图形改文件不改码</text>
+    <text x="572" y="516" font-size="12" fill="#8a8578">（这就是配置文件的雏形——</text>
+    <text x="572" y="536" font-size="12" fill="#8a8578">　"开闭原则"的完整兑现：加数据</text>
+    <text x="572" y="556" font-size="12" fill="#8a8578">　零改代码）</text>
+  </g>
+</svg>

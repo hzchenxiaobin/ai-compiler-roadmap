@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">容错跳过、渲染与排序战报</text>
+    <path d="M 390,58 Q 480,52 570,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21；-Wall 零警告）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,480 Q 248,485 26,480 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 291)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出（节选）</text>
+    <rect x="38" y="146" width="420" height="320" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./sv　（-Wall 零警告）</text>
+    <text x="54" y="198" font-size="11" fill="#f0c9c0">[跳过] 第 5 行："hexagon 6"（未知）</text>
+    <text x="54" y="216" font-size="11" fill="#f0c9c0">[跳过] 第 6 行："circle"（缺参数）</text>
+    <text x="54" y="244" font-size="12" fill="#9fb8a8">共 7 行，跳过 3 行，创建 4 个图形</text>
+    <text x="54" y="274" font-size="12" fill="#9fb8a8">== 渲染（LabeledShape 报表） ==</text>
+    <text x="54" y="296" font-size="11.5" fill="#cfe8c6">圆(r=2)：面积 12.5664，周长 12.5664</text>
+    <text x="54" y="316" font-size="11.5" fill="#cfe8c6">矩形(3×4)：面积 12，周长 14</text>
+    <text x="54" y="336" font-size="11.5" fill="#cfe8c6">三角形(3,4,5)：面积 6，周长 12</text>
+    <text x="54" y="356" font-size="11.5" fill="#cfe8c6">矩形(5×2)：面积 10，周长 14</text>
+    <text x="54" y="386" font-size="12" fill="#9fb8a8">== 按面积排序后 ==</text>
+    <text x="54" y="408" font-size="11.5" fill="#cfe8c6">三角(6)→矩形(10)→矩形(12)→圆(12.57)</text>
+    <text x="54" y="434" font-size="11.5" fill="#f0c9c0">总面积 = 40.5664（手算 ✔）</text>
+    <text x="54" y="458" font-size="11" fill="#9fb8a8">ASan：零报错 ✔</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,480 Q 712,485 490,480 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 291)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">本周收官与阶段大考</text>
+    <rect x="502" y="146" width="420" height="320" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">第 13 周（OOP 收尾）六天全过：</text>
+    <text x="514" y="198" font-size="11.5" fill="#cfe8c6">73 虚表 → 74 cast → 75 坏例重构</text>
+    <text x="514" y="218" font-size="11.5" fill="#cfe8c6">→ 76 v2 三层 → 77 v3 文件驱动（今天）</text>
+    <text x="514" y="250" font-size="12" fill="#9fb8a8">v3 用到的历史技能清单：</text>
+    <text x="514" y="272" font-size="11.5" fill="#cfe8c6">文件 I/O（第 6 周）+ istringstream（56）</text>
+    <text x="514" y="292" font-size="11.5" fill="#cfe8c6">　+ 多态容器（71）+ 工厂（本周新招）</text>
+    <text x="514" y="324" font-size="12" fill="#9fb8a8">明天 Day 78（里程碑）：</text>
+    <text x="514" y="346" font-size="11.5" fill="#cfe8c6">脱稿讲三法则/虚析构/RAII/深浅拷贝</text>
+    <text x="514" y="366" font-size="11" fill="#9fb8a8">　+ 整理复盘笔记——阶段三毕业礼</text>
+    <text x="514" y="400" font-size="12.5" fill="#45703a">图形库三部曲（v1→v2→v3）完成——</text>
+    <text x="514" y="422" font-size="12.5" fill="#45703a">　OOP 的完整实战闭环</text>
+    <text x="514" y="452" font-size="11" fill="#9fb8a8">（77/144 = 53.5%——过半！）</text>
+
+    <path d="M 24,506 Q 470,500 905,507 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 543)"/>
+    <text x="46" y="532" font-size="15.5" font-weight="bold" fill="#9c5a22">数据驱动的意义</text>
+    <text x="46" y="560" font-size="12.5" fill="#3b3a36">改 shapes.txt 就能换场景（不用重编译）——加图形、调参数都是数据操作；这是配置文件/关卡文件/场景描述的共同原理</text>
+
+    <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 78 里程碑——脱稿讲清四概念 + 复盘笔记整理（阶段三大自测）</text>
+  </g>
+</svg>
