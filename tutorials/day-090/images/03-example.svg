@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">频序全表、Top-5 与字典序战报</text>
+    <path d="M 380,58 Q 480,52 580,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 -std=c++17；-Wall 零警告 + ASan 零报错）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,490 Q 248,495 26,490 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 296)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出（节选）</text>
+    <rect x="38" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./wf2　（-Wall 零警告）</text>
+    <text x="54" y="198" font-size="11.5" fill="#cfe8c6">读了 38 词，去重 17 个</text>
+    <text x="54" y="224" font-size="12" fill="#9fb8a8">== 按频率排序（同频字典序） ==</text>
+    <text x="54" y="246" font-size="11.5" fill="#cfe8c6">the×7</text>
+    <text x="54" y="266" font-size="11.5" fill="#f0c9c0">dog×4 fox×4（同频→dog 前 ✔）</text>
+    <text x="54" y="286" font-size="11.5" fill="#cfe8c6">a×3 and×3 quick×3（同频三连）</text>
+    <text x="54" y="306" font-size="11.5" fill="#cfe8c6">brown×2 cat×2 lazy×2 …</text>
+    <text x="54" y="334" font-size="12" fill="#9fb8a8">== Top-5 ==</text>
+    <text x="54" y="356" font-size="11.5" fill="#cfe8c6">1.the×7 2.dog×4 3.fox×4</text>
+    <text x="54" y="376" font-size="11.5" fill="#cfe8c6">4.a×3 5.and×3 ✔</text>
+    <text x="54" y="404" font-size="12" fill="#9fb8a8">== 按字典序（前 10） ==</text>
+    <text x="54" y="426" font-size="11.5" fill="#cfe8c6">a×3 and×3 barks×1 brown×2</text>
+    <text x="54" y="446" font-size="11.5" fill="#cfe8c6">cat×2 chase×1 dog×4 fox×4…</text>
+    <text x="54" y="470" font-size="11" fill="#9fb8a8">（ASan 零报错；the 手数 7 次 ✔）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,490 Q 712,495 490,490 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 296)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">词频 v1 → v2 的全程</text>
+    <rect x="502" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">v1（Day 84）：map 计数 + 字典序</text>
+    <text x="514" y="196" font-size="11" fill="#9fb8a8">（当时埋 v2 路线：换哈希+Top-N）</text>
+    <text x="514" y="226" font-size="12" fill="#9fb8a8">v2（今天）的兑现：</text>
+    <text x="514" y="248" font-size="11.5" fill="#cfe8c6">unordered（86 的哈希）+ 复合比较器</text>
+    <text x="514" y="268" font-size="11.5" fill="#cfe8c6">　+ Top-N 截取 + 双视图保留</text>
+    <text x="514" y="298" font-size="12" fill="#9fb8a8">用到的本周技能：</text>
+    <text x="514" y="320" font-size="11.5" fill="#cfe8c6">map vs unordered 选型（85/86）</text>
+    <text x="514" y="340" font-size="11.5" fill="#cfe8c6">vector 搬运+sort（Day 84 同款）</text>
+    <text x="514" y="360" font-size="11.5" fill="#cfe8c6">复合 lambda（两级裁判）</text>
+    <text x="514" y="392" font-size="12.5" fill="#45703a">（90/144 = 62.5%——超过 5/8）</text>
+    <text x="514" y="424" font-size="11.5" fill="#9fb8a8">下周（第 16 周）：算法——sort 家族</text>
+    <text x="514" y="444" font-size="11.5" fill="#9fb8a8">　find/count_if/transform……</text>
+    <text x="514" y="464" font-size="11.5" fill="#9fb8a8">　今天手写的 sort 调用下周正式开课</text>
+
+    <path d="M 24,516 Q 470,510 905,517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>
+    <text x="46" y="542" font-size="15.5" font-weight="bold" fill="#9c5a22">Top-N 的世界</text>
+    <text x="46" y="568" font-size="12.5" fill="#3b3a36">热搜榜/销量榜/推荐位/热搜词——"从海量数据取最重要的 N 个"是产品的基础能力；今天的复合排序是它的最小完整版</text>
+
+    <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 91 sort 家族——std::sort/stable_sort/partial_sort 与自定义比较器（今天手写的下周正式开课）</text>
+  </g>
+</svg>

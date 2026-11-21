@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 90 项目日：词频统计 v2——Top-N 与双排序</text>
+    <path d="M 270,60 Q 480,52 690,61" fill="none" stroke="#e0955f" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定"Top-N 输出、支持按频率与字典序两种排序"——v1 的 map 版今天升级：unordered 提速 + 同频 tie-break + 双视图</text>
+
+    <path d="M 40,116 Q 470,110 905,117 L 901,390 Q 470,384 44,389 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 253)"/>
+    <text x="472" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">v1 → v2 的三个升级点</text>
+    <text x="70" y="180" font-size="13" fill="#45703a">①计数换 unordered_map（Day 86 兑现——快 3 倍）</text>
+    <text x="70" y="208" font-size="13" fill="#45703a">②搬进 vector + 复合比较器排序</text>
+    <text x="70" y="230" font-size="12" fill="#8a8578">（频序为主、同频字典序 tie-break——稳定的排行榜语义）</text>
+    <text x="70" y="262" font-size="13" fill="#45703a">③Top-N 截取 + 字典序视图保留</text>
+    <text x="70" y="284" font-size="12" fill="#8a8578">（v1 的输出不丢——双排序是计划原文要求）</text>
+    <text x="70" y="320" font-size="12.5" fill="#6b675e">容器协作链：unordered（快计）→ vector（可排）→</text>
+    <text x="70" y="342" font-size="12.5" fill="#6b675e">　两个 lambda（两种序）——三个容器各司其职</text>
+    <text x="70" y="376" font-size="12" fill="#8a8578">（Day 84 埋的 v2 路线今天全部兑现）</text>
+
+    <path d="M 40,414 Q 470,408 905,415 L 901,500 Q 470,494 44,499 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.2 472 457)"/>
+    <text x="472" y="444" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">实测战报（全过 + 手数核对）</text>
+    <text x="70" y="472" font-size="13" fill="#3b3a36">频序全表 17 词 ✔（the×7 dog×4 fox×4——同频 dog&lt;fox 字典序 ✔）｜Top-5 ✔｜字典序视图 ✔｜ASan 零报错 ✔</text>
+    <text x="70" y="494" font-size="12.5" fill="#6b675e">（the 在四行文本里出现 7 次——手数核对通过）</text>
+
+    <path d="M 60,514 Q 480,508 905 515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#e0955f"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#9c5a22">Day 90（项目日）</text>
+    <circle cx="690" cy="514" r="5" fill="#5b8db8"/>
+    <text x="690" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">第 16 周 算法</text>
+    <circle cx="870" cy="514" r="5" fill="#5b8db8"/>
+    <text x="870" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">……阶段四</text>
+  </g>
+</svg>
