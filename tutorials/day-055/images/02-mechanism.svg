@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">a + b 的翻译过程与约分的不变量保护</text>
+    <path d="M 280,58 Q 480,52 680,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,310 Q 470,304 44,309 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 205)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">表达式 → 函数调用的翻译（三步）</text>
+    <rect x="120" y="146" width="200" height="56" fill="#d8ecce" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="220" y="170" text-anchor="middle" font-size="12" fill="#45703a">源码：c = a + b;</text>
+    <text x="220" y="190" text-anchor="middle" font-size="10" fill="#8a8578">（人类的写法）</text>
+    <rect x="380" y="146" width="220" height="56" fill="#f9d9b8" stroke="#e0955f" stroke-width="2.2"/>
+    <text x="490" y="170" text-anchor="middle" font-size="11.5" fill="#9c5a22">编译器翻译：a.operator+(b)</text>
+    <text x="490" y="190" text-anchor="middle" font-size="10" fill="#8a8578">（成员函数调用）</text>
+    <rect x="660" y="146" width="200" height="56" fill="#eef5e8" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="760" y="170" text-anchor="middle" font-size="11" fill="#45703a">返回临时 Fraction</text>
+    <text x="760" y="190" text-anchor="middle" font-size="10" fill="#8a8578">→ 拷贝构造给 c</text>
+    <path d="M 322,174 Q 350,174 378,174" fill="none" stroke="#3b3a36" stroke-width="2.2"/>
+    <path d="M 602,174 Q 630,174 658,174" fill="none" stroke="#3b3a36" stroke-width="2.2"/>
+    <text x="472" y="234" font-size="12.5" fill="#3b3a36">运算符就是名字特殊的成员函数——operator+ 就是函数名（operator 是关键字、+ 是内容）</text>
+    <text x="472" y="262" font-size="12.5" fill="#6b675e">这就解释了：为什么返回 const Fraction 或 Fraction 都行、为什么参数是 const 引用（Day 21 的默认）</text>
+    <text x="472" y="290" font-size="12" fill="#8a8578">（&lt;&lt; 例外：左操作数是 ostream——只能非成员 friend 版）</text>
+
+    <path d="M 40,334 Q 280,328 520,334 Q 524,460 520,576 Q 280,582 42,576 Q 36,460 40,334 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 455)"/>
+    <text x="280" y="364" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">约分：不变量的自动维护</text>
+    <text x="64" y="398" font-size="12.5" fill="#3b3a36">Fraction(2, 4) 构造 → gcd(2,4)=2</text>
+    <text x="64" y="420" font-size="12.5" fill="#3b3a36">　→ num_/2=1, den_/2=2 → "1/2"</text>
+    <text x="64" y="452" font-size="12.5" fill="#45703a">每个运算符的返回都走构造函数</text>
+    <text x="64" y="474" font-size="12.5" fill="#45703a">　→ 每个结果都是最简（不变量</text>
+    <text x="64" y="494" font-size="12.5" fill="#45703a">　　被全链路自动维护）</text>
+    <text x="64" y="530" font-size="12" fill="#8a8578">（这就是 a == c 能直接比分子分母的底气——</text>
+    <text x="64" y="550" font-size="12" fill="#8a8578">　Day 37 "不变量保护"的运算符版）</text>
+
+    <path d="M 550,334 Q 730,328 905,334 Q 908,460 905,576 Q 730,582 552,576 Q 547,460 550,334 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 455)"/>
+    <text x="727" y="364" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">哪些能重载哪些不能</text>
+    <text x="572" y="398" font-size="12.5" fill="#45703a">能：+ - * / % == &lt; &gt; [] () -&gt;</text>
+    <text x="572" y="420" font-size="12.5" fill="#45703a">　　 &lt;&lt; &gt;&gt; ++ -- 等 40 多个</text>
+    <text x="572" y="452" font-size="12.5" fill="#a33f2e">不能：:: . .* ?: sizeof typeid</text>
+    <text x="572" y="474" font-size="12" fill="#8a8578">（语言核心结构，重载会破坏语法树）</text>
+    <text x="572" y="508" font-size="12.5" fill="#6b675e">守则：语义要自然（+ 就该像加法）、</text>
+    <text x="572" y="530" font-size="12.5" fill="#6b675e">不创造新运算符、不改变优先级</text>
+    <text x="572" y="560" font-size="12" fill="#8a8578">（守不住语义自然 → 起普通函数名更好）</text>
+  </g>
+</svg>
