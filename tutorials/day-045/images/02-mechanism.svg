@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">四案的内存图与报告三要素</text>
+    <path d="M 370,58 Q 480,52 590,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,330 Q 470,324 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 215)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">越界：踩进红区（案例一）</text>
+    <rect x="140" y="148" width="60" height="40" fill="#d8ecce" stroke="#7aa663" stroke-width="1.8"/>
+    <text x="170" y="173" font-size="10" fill="#45703a">10</text>
+    <rect x="200" y="148" width="60" height="40" fill="#d8ecce" stroke="#7aa663" stroke-width="1.8"/>
+    <text x="230" y="173" font-size="10" fill="#45703a">20</text>
+    <rect x="260" y="148" width="60" height="40" fill="#d8ecce" stroke="#7aa663" stroke-width="1.8"/>
+    <text x="290" y="173" font-size="10" fill="#45703a">30</text>
+    <rect x="320" y="148" width="90" height="40" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.2"/>
+    <text x="365" y="173" font-size="9.5" fill="#a33f2e">红区（毒值）</text>
+    <path d="M 380,168 Q 400,168 418,168" fill="none" stroke="#c96a5a" stroke-width="2.4"/>
+    <text x="520" y="158" font-size="11" fill="#3b3a36">a[3] 落在红区——</text>
+    <text x="520" y="178" font-size="11" fill="#a33f2e">读写立刻报警</text>
+    <text x="472" y="216" font-size="11.5" fill="#6b675e">（合法范围 a[0]~a[2]；红区是分配器围的"电网"）</text>
+    <text x="472" y="248" font-size="12.5" fill="#3b3a36">报告三要素：地址（0x…095c）+ 操作（读写/大小）+ 位置（SUMMARY 行）</text>
+    <text x="472" y="276" font-size="12" fill="#8a8578">（四案的报告全是这三件——读法统一是 Day 39 的遗产）</text>
+    <text x="472" y="304" font-size="12" fill="#8a8578">（栈越界也能抓：stack-buffer-overflow——本地数组同样有红区）</text>
+
+    <path d="M 40,354 Q 280,348 520,354 Q 524,470 520,576 Q 280,582 42,576 Q 36,470 40,354 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 465)"/>
+    <text x="280" y="384" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">UAF 与 double-free：隔离区（案例二/三）</text>
+    <rect x="90" y="402" width="400" height="110" fill="#33413a"/>
+    <text x="290" y="428" font-size="11" fill="#cfe8c6">delete 后内存不立即复用——进"隔离区"</text>
+    <text x="290" y="452" font-size="11" fill="#f0c9c0">案例二：*p 读隔离区 → use-after-free</text>
+    <text x="290" y="476" font-size="11" fill="#f0c9c0">案例三：再 delete 隔离区 → double-free</text>
+    <text x="290" y="500" font-size="10.5" fill="#9fb8a8">（同一块 0x…0950 两案都指向它）</text>
+    <text x="64" y="544" font-size="12" fill="#8a8578">（隔离策略是 ASan 抓"用已释放内存"的全部秘密）</text>
+
+    <path d="M 550,354 Q 730,348 905,354 Q 908,470 905,576 Q 730,582 552,576 Q 547,470 550,354 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 465)"/>
+    <text x="727" y="384" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">泄漏案的边界（案例四）</text>
+    <text x="572" y="418" font-size="12.5" fill="#3b3a36">泄漏 = 没人踩的"漏网之鱼"</text>
+    <text x="572" y="440" font-size="12" fill="#8a8578">（红区/隔离区都碰不到它）</text>
+    <text x="572" y="472" font-size="12.5" fill="#a33f2e">macOS：LeakSanitizer 不可用</text>
+    <text x="572" y="494" font-size="12" fill="#8a8578">（实测静默——四案中唯一没现形的）</text>
+    <text x="572" y="526" font-size="12.5" fill="#45703a">Linux：valgrind 或 LSAN 能抓</text>
+    <text x="572" y="550" font-size="12" fill="#8a8578">（根治仍是 RAII——Day 51 的正课）</text>
+  </g>
+</svg>
