@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">冻结执法、缓存生效与计数器呼吸</text>
+    <path d="M 350,58 Q 480,52 610,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,230 470,360 Q 248,365 26,360 Q 20,230 24,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(-0.3 247 231)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#2c5a82">实验 1：const 对象的边界</text>
+    <rect x="38" y="146" width="420" height="200" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./co</text>
+    <text x="54" y="196" font-size="12.5" fill="#cfe8c6">normal 面积 = 12　frozen 面积 = 200</text>
+    <text x="54" y="220" font-size="12.5" fill="#cfe8c6">normal 放大后宽 = 6</text>
+    <text x="54" y="244" font-size="12.5" fill="#cfe8c6">frozen 宽仍是 10（没被放大）</text>
+    <text x="54" y="276" font-size="11.5" fill="#9fb8a8">frozen.scale(2) 取消注释 →</text>
+    <text x="54" y="298" font-size="11" fill="#ffd7d0">error: 'this' argument to member function</text>
+    <text x="54" y="316" font-size="11" fill="#ffd7d0">'scale' has type 'const Rectangle',</text>
+    <text x="54" y="334" font-size="11" fill="#ffd7d0">but function is not marked const</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,230 934,360 Q 712,365 490,360 Q 484,230 488,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(0.3 711 231)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#45703a">实验 2：mutable 缓存</text>
+    <rect x="502" y="146" width="420" height="200" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="11.5" fill="#9fb8a8">$ ./mc（const Circle c(2)）</text>
+    <text x="514" y="196" font-size="12.5" fill="#cfe8c6">第一次 area() =　（首次计算并缓存）12.5664</text>
+    <text x="514" y="220" font-size="12.5" fill="#cfe8c6">第二次 area() = 12.5664（直接取缓存）</text>
+    <text x="514" y="244" font-size="12.5" fill="#cfe8c6">第三次 area() = 12.5664</text>
+    <text x="514" y="278" font-size="12.5" fill="#f0c9c0">area 被调了 3 次，但只算了一遍</text>
+    <text x="514" y="316" font-size="12" fill="#9fb8a8">const 对象 + const 函数 + mutable 缓存——</text>
+    <text x="514" y="336" font-size="12" fill="#9fb8a8">三方共存，观察行为（返回值）始终不变</text>
+
+    <path d="M 24,386 Q 470,380 905,387 L 901,500 Q 470,494 26,499 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 443)"/>
+    <text x="46" y="414" font-size="15.5" font-weight="bold" fill="#9c5a22">实验 3：实例计数器的呼吸（计划指定练习）</text>
+    <text x="46" y="444" font-size="12.5" fill="#3b3a36">开局 0 → +甲(1) +乙(2) +丙(3) → 块内 3 → -丙(2) -乙(1) → 出块 1 → +丁(2) → -丁(1) -甲(0)</text>
+    <text x="46" y="468" font-size="12.5" fill="#6b675e">数字精确呼应 Day 39 的逆序销毁——计数器像呼吸一样随作用域涨落</text>
+
+    <path d="M 24,520 Q 470,514 905,521 L 901,630 Q 470,624 26,629 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 575)"/>
+    <text x="480" y="550" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#55606e">通讯录的 next 预告</text>
+    <text x="480" y="580" text-anchor="middle" font-size="12.5" fill="#3b3a36">明天 Day 41 组合（has-a）：Engine + Car + Wheel——类做成员，比"全塞一个类"优雅在哪</text>
+    <text x="480" y="604" text-anchor="middle" font-size="12.5" fill="#6b675e">周六 Day 42 项目日：银行账户类（static 利率 + mutable 日志 + const 查询）——今天三件兵器全用上</text>
+  </g>
+</svg>
