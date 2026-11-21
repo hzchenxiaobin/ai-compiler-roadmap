@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 21 全貌：引用——同一间房间的第二个名字</text>
+    <path d="M 300,60 Q 480,52 660,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">昨天抄门牌，今天连门牌都不抄——直接给房间挂第二块名字牌，Day 9 的欠账今天还清</text>
+
+    <path d="M 60,130 Q 300,124 540,130 Q 544,230 540,330 Q 300,336 62,330 Q 56,230 60,130 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(-0.3 300 230)"/>
+    <rect x="220" y="160" width="160" height="70" fill="#fffdf7" stroke="#5b8db8" stroke-width="2.8"/>
+    <text x="300" y="190" text-anchor="middle" font-size="15" fill="#3b3a36">42</text>
+    <text x="300" y="212" text-anchor="middle" font-size="11" fill="#8a8578">一个房间（0x…d78）</text>
+    <path d="M 150,150 Q 190,158 218,168" fill="none" stroke="#2c5a82" stroke-width="2.6"/>
+    <path d="M 210,158 Q 220,166 212,176" fill="none" stroke="#2c5a82" stroke-width="2.6"/>
+    <rect x="60" y="118" width="90" height="34" fill="#d8ecce" stroke="#7aa663" stroke-width="2.4" transform="rotate(-2 105 135)"/>
+    <text x="105" y="140" text-anchor="middle" font-size="13" font-weight="bold" fill="#45703a">x（本名）</text>
+    <path d="M 450,150 Q 410,158 382,168" fill="none" stroke="#9c5a22" stroke-width="2.6"/>
+    <path d="M 390,158 Q 380,166 388,176" fill="none" stroke="#9c5a22" stroke-width="2.6"/>
+    <rect x="450" y="118" width="90" height="34" fill="#f9d9b8" stroke="#e0955f" stroke-width="2.4" transform="rotate(2 495 135)"/>
+    <text x="495" y="140" text-anchor="middle" font-size="13" font-weight="bold" fill="#9c5a22">r（别名）</text>
+    <text x="300" y="262" text-anchor="middle" font-size="13.5" fill="#2c5a82" font-weight="bold">int&amp; r = x; 之后 r 和 x 是同一个变量</text>
+    <text x="300" y="288" text-anchor="middle" font-size="12.5" fill="#45703a">实测 &amp;x = &amp;r = 0x16f6b6d78（同一门牌）</text>
+    <text x="300" y="312" text-anchor="middle" font-size="12.5" fill="#6b675e">改 r 即改 x，改 x 即变 r——没有"同步"，本来就是同一个</text>
+
+    <path d="M 570,130 Q 740,124 905,130 Q 908,230 905,330 Q 740,336 572,330 Q 567,230 570,130 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 737 230)"/>
+    <text x="737" y="160" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">引用的三条规矩</text>
+    <text x="594" y="196" font-size="12.5" fill="#3b3a36">1. 声明时必须初始化（绑谁写清楚）</text>
+    <text x="594" y="224" font-size="12.5" fill="#3b3a36">2. 一旦绑定不能换人（r 一辈子是 x 的名字）</text>
+    <text x="594" y="252" font-size="12.5" fill="#3b3a36">3. 没有空引用（对比指针的 nullptr）</text>
+    <path d="M 594,272 Q 737,266 880,273 L 877,316 Q 737,310 597,315 Z" fill="#fffdf7" stroke="#a8c494" stroke-width="2" stroke-dasharray="8 5"/>
+    <text x="737" y="294" text-anchor="middle" font-size="12" fill="#45703a">规矩多 = 用法简单：不会踩空、不会野、</text>
+    <text x="737" y="310" text-anchor="middle" font-size="12" fill="#45703a">解引用不用写 *</text>
+
+    <path d="M 40,360 Q 470,354 905,361 L 901,470 Q 470,464 44,469 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 472 415)"/>
+    <text x="472" y="390" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#9c5a22">今天的主角实验：swap 三版本大战</text>
+    <text x="70" y="422" font-size="13" fill="#3b3a36">值版本：swap(a, b) 传复印件——改了个寂寞（Day 9 复印实验的函数版）</text>
+    <text x="70" y="450" font-size="13" fill="#3b3a36">指针版本：swap(&amp;a, &amp;b) 传门牌——顺门牌改，生效；引用版本：swap(a, b) 传别名——直接改，同样生效</text>
+
+    <path d="M 60,496 Q 480,490 905,497" fill="none" stroke="#8a8578" stroke-width="3"/>
+    <circle cx="200" cy="496" r="6" fill="#8a94a3"/>
+    <text x="200" y="522" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 19~20 ✓</text>
+    <circle cx="400" cy="497" r="13" fill="none" stroke="#c96a5a" stroke-width="2.2"/>
+    <circle cx="400" cy="497" r="6" fill="#5b8db8"/>
+    <text x="400" y="522" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#c96a5a">Day 21（今天）</text>
+    <circle cx="590" cy="496" r="6" fill="#5b8db8"/>
+    <text x="590" y="522" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 22 const</text>
+    <circle cx="770" cy="497" r="6" fill="#5b8db8"/>
+    <text x="770" y="522" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 23~24</text>
+
+    <rect x="140" y="532" width="680" height="22" fill="#f7e8a0" opacity="0.5" transform="rotate(-0.3 480 543)"/>
+    <text x="480" y="548" text-anchor="middle" font-size="13" fill="#8a6d1a">从 Day 10 起函数参数里的 const std::string&amp; 今天终于可以完整读出："按引用传字符串，且承诺不改"</text>
+  </g>
+</svg>

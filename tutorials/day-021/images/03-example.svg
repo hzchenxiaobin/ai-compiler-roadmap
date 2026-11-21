@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">同址铁证、swap 大战与两条编译错误</text>
+    <path d="M 330,58 Q 480,52 630,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,220 470,340 Q 248,345 26,340 Q 20,220 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 221)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">实验 1：别名同址铁证</text>
+    <rect x="38" y="146" width="420" height="180" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="12" fill="#9fb8a8">$ ./ref_basics</text>
+    <text x="54" y="196" font-size="12.5" fill="#cfe8c6">x = 42，r = 42</text>
+    <text x="54" y="220" font-size="12.5" fill="#cfe8c6">&amp;x = 0x16f6b6d78</text>
+    <text x="54" y="244" font-size="12.5" fill="#f0c9c0">&amp;r = 0x16f6b6d78（同一个地址——同一个房间！）</text>
+    <text x="54" y="268" font-size="12.5" fill="#cfe8c6">r = 99 之后：x = 99</text>
+    <text x="54" y="292" font-size="12.5" fill="#cfe8c6">x = x + 1 之后：r = 100</text>
+    <text x="54" y="318" font-size="12" fill="#9fb8a8">别名不是"另一份同步的值"，是同一个变量的两个名字</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,220 934,340 Q 712,345 490,340 Q 484,220 488,102 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="3" transform="rotate(0.3 711 221)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#9c5a22">实验 2：swap 三版本战报</text>
+    <rect x="502" y="146" width="420" height="180" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="12" fill="#9fb8a8">$ ./swap_three（初始 x=1, y=2）</text>
+    <text x="514" y="198" font-size="12.5" fill="#f0c9c0">值版本之后：　x = 1，y = 2（纹丝不动）</text>
+    <text x="514" y="224" font-size="12.5" fill="#cfe8c6">指针版本之后：x = 2，y = 1（换了！）</text>
+    <text x="514" y="250" font-size="12.5" fill="#cfe8c6">引用版本之后：x = 1，y = 2（又换回来！）</text>
+    <text x="514" y="282" font-size="12" fill="#9fb8a8">三连实验自带对照组：指针和引用各换一次，</text>
+    <text x="514" y="300" font-size="12" fill="#9fb8a8">值版本夹在中间当反面教材——</text>
+    <text x="514" y="318" font-size="12" fill="#9fb8a8">两次交换后回到 1,2 也是正确性的一重验证</text>
+
+    <path d="M 24,366 Q 470,360 905,367 L 901,470 Q 470,464 26,469 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 464 418)"/>
+    <text x="46" y="394" font-size="15.5" font-weight="bold" fill="#a33f2e">实验 3：两条编译错误（规矩的执行力）</text>
+    <rect x="38" y="408" width="850" height="52" rx="6" fill="#33413a"/>
+    <text x="54" y="430" font-size="11.5" fill="#ffd7d0">int&amp; r2;　→ error: declaration of reference variable 'r2' requires an initializer</text>
+    <text x="54" y="450" font-size="11.5" fill="#ffd7d0">int&amp; r3 = nullptr;　→ error: non-const lvalue reference … cannot bind to a temporary of type 'std::nullptr_t'</text>
+
+    <path d="M 24,490 Q 470,484 905,491 L 901,610 Q 470,604 26,609 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 550)"/>
+    <text x="46" y="518" font-size="14" font-weight="bold" fill="#55606e">伏笔结算清单</text>
+    <text x="46" y="548" font-size="12.5" fill="#3b3a36">Day 9"复印件改不动原件"（欠账两笔）：指针还一笔（Day 19~20），引用今天还清 ✔</text>
+    <text x="46" y="576" font-size="12.5" fill="#3b3a36">Day 10 起"照抄的 const std::string&amp;"：今天能读全"按引用传、承诺不改"——明天 const 专场深挖</text>
+  </g>
+</svg>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">三种方式访问同一个房间</text>
+    <path d="M 340,58 Q 480,52 620,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 200,94 360,100 Q 364,210 360,320 Q 200,326 42,320 Q 36,210 40,100 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 200 210)"/>
+    <text x="200" y="130" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#2c5a82">值传递（复印件）</text>
+    <rect x="80" y="150" width="100" height="44" fill="#fffdf7" stroke="#5b8db8" stroke-width="2.2"/>
+    <text x="130" y="176" text-anchor="middle" font-size="12" fill="#3b3a36">x = 1</text>
+    <path d="M 184,172 Q 214,172 244,172" fill="none" stroke="#8a94a3" stroke-width="2.2" stroke-dasharray="6 5"/>
+    <rect x="248" y="150" width="100" height="44" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.2"/>
+    <text x="298" y="176" text-anchor="middle" font-size="12" fill="#55606e">副本 a=1</text>
+    <text x="200" y="226" text-anchor="middle" font-size="12" fill="#a33f2e">函数里改的是副本，</text>
+    <text x="200" y="246" text-anchor="middle" font-size="12" fill="#a33f2e">原件纹丝不动</text>
+    <text x="200" y="278" text-anchor="middle" font-size="11.5" fill="#8a8578">（Day 9 复印实验）</text>
+    <text x="200" y="304" text-anchor="middle" font-size="12" fill="#55606e">swap 值版本：实测 1,2 不变</text>
+
+    <path d="M 380,100 Q 540,94 700,100 Q 704,210 700,320 Q 540,326 382,320 Q 377,210 380,100 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(0.3 540 210)"/>
+    <text x="540" y="130" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#9c5a22">指针传递（门牌）</text>
+    <rect x="420" y="150" width="100" height="44" fill="#fffdf7" stroke="#5b8db8" stroke-width="2.2"/>
+    <text x="470" y="176" text-anchor="middle" font-size="12" fill="#3b3a36">x = 1</text>
+    <rect x="560" y="150" width="100" height="44" fill="#f9d9b8" stroke="#e0955f" stroke-width="2.2"/>
+    <text x="610" y="170" text-anchor="middle" font-size="9.5" fill="#9c5a22">&amp;x 门牌</text>
+    <text x="610" y="186" text-anchor="middle" font-size="9.5" fill="#9c5a22">0x…d78</text>
+    <path d="M 556,172 L 524,172" fill="none" stroke="#e0955f" stroke-width="2.2"/>
+    <path d="M 530,166 Q 522,172 530,179" fill="none" stroke="#e0955f" stroke-width="2.2"/>
+    <text x="540" y="226" text-anchor="middle" font-size="12" fill="#45703a">函数里 *a 改的是原件</text>
+    <text x="540" y="252" text-anchor="middle" font-size="12" fill="#9c5a22">调用要写 &amp;x——看得见"传地址"</text>
+    <text x="540" y="278" text-anchor="middle" font-size="12" fill="#6b675e">可能为空（要判 nullptr）</text>
+    <text x="540" y="304" text-anchor="middle" font-size="12" fill="#55606e">swap 指针版：实测 2,1 ✔</text>
+
+    <path d="M 720,100 Q 830,94 930,100 Q 933,210 930,320 Q 830,326 722,320 Q 717,210 720,100 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 825 210)"/>
+    <text x="825" y="130" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#45703a">引用传递（别名）</text>
+    <rect x="760" y="150" width="130" height="44" fill="#fffdf7" stroke="#5b8db8" stroke-width="2.2"/>
+    <text x="825" y="170" text-anchor="middle" font-size="11" fill="#3b3a36">x = 1</text>
+    <rect x="772" y="140" width="50" height="22" fill="#d8ecce" stroke="#7aa663" stroke-width="2" transform="rotate(-3 797 151)"/>
+    <text x="797" y="156" text-anchor="middle" font-size="9.5" fill="#45703a">a</text>
+    <text x="825" y="226" text-anchor="middle" font-size="12" fill="#45703a">函数里 a 就是 x 本尊</text>
+    <text x="825" y="252" text-anchor="middle" font-size="12" fill="#45703a">调用直接写 x——像值一样自然</text>
+    <text x="825" y="278" text-anchor="middle" font-size="12" fill="#6b675e">不可能为空（无空引用）</text>
+    <text x="825" y="304" text-anchor="middle" font-size="12" fill="#55606e">swap 引用版：实测 1,2 ✔</text>
+
+    <path d="M 40,350 Q 470,344 905,351 L 901,472 Q 470,466 44,471 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.2 472 411)"/>
+    <text x="472" y="380" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#8a6d1a">选型口诀</text>
+    <text x="70" y="412" font-size="13" fill="#3b3a36">只读不改、东西又小（int/double）→ 直接值传递，最简单</text>
+    <text x="70" y="440" font-size="13" fill="#3b3a36">要改调用者的变量 → 引用传递（首选）；可能"不指向"或要换绑 → 指针</text>
+    <text x="70" y="464" font-size="12.5" fill="#6b675e">大对象（string/vector…）只读 → const 引用（明天 const 专场的主角组合）</text>
+
+    <path d="M 40,492 Q 470,486 905,493 L 901,576 Q 470,570 44,575 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 472 534)"/>
+    <text x="472" y="522" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#55606e">函数签名对比（swap 的三种长相）</text>
+    <text x="70" y="554" font-size="12.5" fill="#3b3a36">swap_by_value(int a, int b)　　swap_by_ptr(int* a, int* b)　　swap_by_ref(int&amp; a, int&amp; b)</text>
+  </g>
+</svg>
