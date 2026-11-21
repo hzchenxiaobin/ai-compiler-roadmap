@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">三层链、字符串表与整行游标的实测</text>
+    <path d="M 300,58 Q 480,52 660,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,220 470,340 Q 248,345 26,340 Q 20,220 24,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(-0.3 247 221)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#2c5a82">实验 1：三级门牌链</text>
+    <rect x="38" y="146" width="420" height="180" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="12" fill="#9fb8a8">$ ./double_ptr</text>
+    <text x="54" y="196" font-size="12.5" fill="#cfe8c6">x = 42　　&amp;x = 0x16ee7ed88</text>
+    <text x="54" y="220" font-size="12.5" fill="#cfe8c6">p = 0x16ee7ed88　&amp;p = 0x16ee7ed80</text>
+    <text x="54" y="244" font-size="12.5" fill="#cfe8c6">pp = 0x16ee7ed80（就是 &amp;p）</text>
+    <text x="54" y="268" font-size="12.5" fill="#cfe8c6">*pp = 0x16ee7ed88　**pp = 42</text>
+    <text x="54" y="296" font-size="12.5" fill="#f0c9c0">**pp = 77 之后：x = 77</text>
+    <text x="54" y="320" font-size="12" fill="#9fb8a8">注意 x 和 p 的门牌只差 8：邻居关系可见</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,220 934,340 Q 712,345 490,340 Q 484,220 488,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(0.3 711 221)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#45703a">实验 2：指针数组（字符串表）</text>
+    <rect x="502" y="146" width="420" height="180" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="12" fill="#9fb8a8">$ ./ptr_array</text>
+    <text x="514" y="196" font-size="12.5" fill="#cfe8c6">sizeof(names) = 24（3 个指针 × 8 字节）</text>
+    <text x="514" y="220" font-size="12.5" fill="#cfe8c6">names[0] = 数组（门牌 0x1002ed214）</text>
+    <text x="514" y="244" font-size="12.5" fill="#cfe8c6">names[1] = 指针（门牌 0x1002ed21b）</text>
+    <text x="514" y="268" font-size="12.5" fill="#cfe8c6">names[2] = 字符串（门牌 0x1002ed222）</text>
+    <text x="514" y="298" font-size="12" fill="#9fb8a8">三个字面量门牌连续，间隔恰 7 字节——</text>
+    <text x="514" y="318" font-size="12" fill="#9fb8a8">字符串在只读区挨着放（Day 15 的老朋友）</text>
+
+    <path d="M 24,366 Q 470,360 905,367 L 901,470 Q 470,464 26,469 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 418)"/>
+    <text x="46" y="394" font-size="15.5" font-weight="bold" fill="#9c5a22">实验 3：数组指针按行走矩阵</text>
+    <rect x="38" y="408" width="850" height="52" rx="6" fill="#33413a"/>
+    <text x="54" y="430" font-size="12.5" fill="#cfe8c6">row[r][c] 走出 3×4 矩阵（1~12 与 Day 14 一致）；row = 0x16f45ad58 → row+1 = 0x16f45ad68（+16 字节 = 整行）</text>
+    <text x="54" y="450" font-size="12" fill="#9fb8a8">步长随"指向物"变：指向 int 走 4，指向整行走 16——Day 20 步长规则的放大版</text>
+
+    <path d="M 24,490 Q 470,484 905,491 L 901,610 Q 470,604 26,609 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 550)"/>
+    <text x="46" y="518" font-size="14" font-weight="bold" fill="#55606e">argv 彩蛋：main(int argc, char** argv)</text>
+    <text x="46" y="548" font-size="12.5" fill="#3b3a36">argv 就是指向字符指针的指针——命令行参数表；argv[0] 是程序名。今天之后，这个签名从"天书"变成"熟人"</text>
+    <text x="46" y="576" font-size="12.5" fill="#6b675e">试试：./ptr_array 你好 世界 —— 参数怎么进 argv？明天自测日的选做小实验</text>
+  </g>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">一个括号，两种身世</text>
+    <path d="M 380,58 Q 480,52 580,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 280,94 520,100 Q 524,230 520,360 Q 280,366 42,360 Q 36,230 40,100 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 230)"/>
+    <text x="280" y="130" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">int* names[3]（指针数组）</text>
+    <text x="70" y="160" font-size="13" fill="#2c5a82">names 先和 [3] 结合 → 它是数组</text>
+    <text x="70" y="186" font-size="13" fill="#3b3a36">剩下的 int* 是元素类型 → 装门牌的格子</text>
+    <rect x="90" y="206" width="80" height="44" fill="#fffdf7" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="130" y="232" text-anchor="middle" font-size="9.5" fill="#45703a">0x…214</text>
+    <rect x="170" y="206" width="80" height="44" fill="#fffdf7" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="210" y="232" text-anchor="middle" font-size="9.5" fill="#45703a">0x…21b</text>
+    <rect x="250" y="206" width="80" height="44" fill="#fffdf7" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="290" y="232" text-anchor="middle" font-size="9.5" fill="#45703a">0x…222</text>
+    <text x="280" y="278" text-anchor="middle" font-size="12" fill="#6b675e">三个字符串门牌，实测连续排布（每个 +7 字节）</text>
+    <text x="70" y="310" font-size="12.5" fill="#3b3a36">sizeof(names) = 24：格子数 × 指针大小</text>
+    <text x="70" y="338" font-size="12.5" fill="#45703a">names[i] 直接用：cout 输出字符串内容</text>
+
+    <path d="M 550,100 Q 740,94 930,100 Q 933,230 930,360 Q 740,366 552,360 Q 547,230 550,100 Z" fill="#f9d9b8" stroke="#e0955f" stroke-width="2.8" transform="rotate(0.3 740 230)"/>
+    <text x="740" y="130" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#9c5a22">int (*row)[4]（数组指针）</text>
+    <text x="572" y="160" font-size="13" fill="#9c5a22">括号抢先：(*row) 先结合 → 它是指针</text>
+    <text x="572" y="186" font-size="13" fill="#3b3a36">剩下的 int[4] 是指向物 → 一整行 4 个 int</text>
+    <rect x="600" y="206" width="280" height="44" fill="#fffdf7" stroke="#e0955f" stroke-width="2.2"/>
+    <text x="740" y="226" text-anchor="middle" font-size="10" fill="#9c5a22">row 指向：| 1　2　3　4 |（整行）</text>
+    <text x="740" y="242" text-anchor="middle" font-size="10" fill="#8a8578">row+1 跳到下一行（+16 字节，实测）</text>
+    <text x="572" y="278" font-size="12.5" fill="#6b675e">row[r][c]：先 r 行后 c 列，和 m[r][c] 一样用</text>
+    <text x="572" y="310" font-size="12.5" fill="#3b3a36">sizeof(row) = 8：它只是个指针</text>
+    <text x="572" y="338" font-size="12.5" fill="#9c5a22">二维数组按行走的专用游标</text>
+
+    <path d="M 40,386 Q 470,380 905,387 L 901,470 Q 470,464 44,469 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(-0.2 472 428)"/>
+    <text x="472" y="414" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">判断口诀：看谁先和名字结合</text>
+    <text x="70" y="444" font-size="13" fill="#3b3a36">名字先碰 [] → 是数组（元素是指针）；名字先被括号包住碰 * → 是指针（指向整行）</text>
+
+    <path d="M 40,490 Q 470,484 905,491 L 901,576 Q 470,570 44,575 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(0.2 472 533)"/>
+    <text x="472" y="520" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#8a6d1a">为什么"了解即可"？</text>
+    <text x="70" y="550" font-size="12.5" fill="#6b675e">二级指针多出现在老代码和 argv 场景；现代 C++ 用引用、vector、string_view 替代了大部分套娃——</text>
+    <text x="70" y="572" font-size="12.5" fill="#6b675e">会读图、能看懂别人的声明，就是今天的满分线；自己需要三层间接时，先想想是不是设计能简化</text>
+  </g>
+</svg>

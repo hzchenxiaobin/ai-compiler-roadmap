@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 23 全貌：门牌的门牌——套娃世界（了解级）</text>
+    <path d="M 290,60 Q 480,52 670,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划标注"了解即可"：目标是看懂别人的套娃代码，自己不必常写——画图通关，一步到位</text>
+
+    <path d="M 40,110 Q 470,104 905,111 L 901,300 Q 470,294 44,299 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 205)"/>
+    <text x="472" y="140" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">三层套娃：x ← p ← pp（实测地址链）</text>
+    <rect x="80" y="160" width="180" height="56" fill="#fffdf7" stroke="#5b8db8" stroke-width="2.4"/>
+    <text x="170" y="182" text-anchor="middle" font-size="12" fill="#3b3a36">x = 42</text>
+    <text x="170" y="202" text-anchor="middle" font-size="10.5" fill="#8a8578">门牌 0x…d88</text>
+    <rect x="390" y="160" width="180" height="56" fill="#eef5e8" stroke="#7aa663" stroke-width="2.4"/>
+    <text x="480" y="182" text-anchor="middle" font-size="10.5" fill="#45703a">p = 0x…d88（x 的门牌）</text>
+    <text x="480" y="202" text-anchor="middle" font-size="10.5" fill="#8a8578">p 自己的门牌 0x…d80</text>
+    <rect x="700" y="160" width="180" height="56" fill="#fcefe4" stroke="#e0955f" stroke-width="2.4"/>
+    <text x="790" y="182" text-anchor="middle" font-size="10.5" fill="#9c5a22">pp = 0x…d80（p 的门牌）</text>
+    <text x="790" y="202" text-anchor="middle" font-size="10.5" fill="#8a8578">门牌的门牌</text>
+    <path d="M 386,188 Q 350,188 264,188" fill="none" stroke="#7aa663" stroke-width="2.4"/>
+    <path d="M 272,180 Q 262,188 272,196" fill="none" stroke="#7aa663" stroke-width="2.4"/>
+    <path d="M 696,188 Q 660,188 574,188" fill="none" stroke="#e0955f" stroke-width="2.4"/>
+    <path d="M 582,180 Q 572,188 582,196" fill="none" stroke="#e0955f" stroke-width="2.4"/>
+    <text x="472" y="244" text-anchor="middle" font-size="13" fill="#3b3a36">读值链：pp → *pp（= p 的内容 = x 的门牌）→ **pp（= x 的值 42）</text>
+    <text x="472" y="270" text-anchor="middle" font-size="13" fill="#45703a">实测：**pp = 77 之后 x = 77（两层解引用仍直达本尊）</text>
+
+    <path d="M 40,324 Q 280,318 520,324 Q 524,420 520,500 Q 280,506 42,500 Q 36,420 40,324 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 412)"/>
+    <text x="280" y="354" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">指针数组 int* names[3]</text>
+    <text x="64" y="384" font-size="12.5" fill="#3b3a36">本质：数组（3 个格子，每格存门牌）</text>
+    <text x="64" y="410" font-size="12.5" fill="#6b675e">读法：[] 优先，先成数组，元素类型 int*</text>
+    <text x="64" y="436" font-size="12.5" fill="#3b3a36">sizeof = 24（3 指针 × 8）</text>
+    <text x="64" y="462" font-size="12.5" fill="#45703a">经典舞台：字符串表；argv 的近亲</text>
+    <text x="64" y="488" font-size="12" fill="#8a8578">实测：三个字面量门牌连续（+7 字节）</text>
+
+    <path d="M 550,324 Q 730,318 905,324 Q 908,420 905,500 Q 730,506 552,500 Q 547,420 550,324 Z" fill="#f9d9b8" stroke="#e0955f" stroke-width="2.8" transform="rotate(0.3 727 412)"/>
+    <text x="727" y="354" text-anchor="middle" font-size="15" font-weight="bold" fill="#9c5a22">数组指针 int (*row)[4]</text>
+    <text x="572" y="384" font-size="12.5" fill="#3b3a36">本质：指针（一个格子，指向整行）</text>
+    <text x="572" y="410" font-size="12.5" fill="#6b675e">读法：括号抢先，* 先行，是指针</text>
+    <text x="572" y="436" font-size="12.5" fill="#3b3a36">row + 1 跳整行 16 字节（实测）</text>
+    <text x="572" y="462" font-size="12.5" fill="#9c5a22">经典舞台：二维数组按行走</text>
+    <text x="572" y="488" font-size="12" fill="#8a8578">（Day 14 矩阵的另一种走法）</text>
+
+    <path d="M 60,522 Q 480,516 905,523" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="240" cy="522" r="5" fill="#8a94a3"/>
+    <text x="240" y="542" text-anchor="middle" font-size="12" fill="#3b3a36">Day 19~22 ✓</text>
+    <circle cx="430" cy="522" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="430" cy="522" r="5" fill="#5b8db8"/>
+    <text x="430" y="542" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 23（今天）</text>
+    <circle cx="620" cy="522" r="5" fill="#e0955f"/>
+    <text x="620" y="542" text-anchor="middle" font-size="12" fill="#3b3a36">Day 24 自测日</text>
+    <circle cx="810" cy="522" r="5" fill="#5b8db8"/>
+    <text x="810" y="542" text-anchor="middle" font-size="12" fill="#3b3a36">第 5 周 多文件</text>
+  </g>
+</svg>
