@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">卡片、排队与三档难度</text>
+    <path d="M 380,58 Q 480,52 580,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,220 470,340 Q 248,345 26,340 Q 20,220 24,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(-0.3 247 221)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#2c5a82">实验 1：卡片的读写</text>
+    <rect x="38" y="146" width="420" height="180" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="12" fill="#9fb8a8">$ ./struct_basics</text>
+    <text x="54" y="196" font-size="12.5" fill="#cfe8c6">小明：92 分，等级 A</text>
+    <text x="54" y="220" font-size="12.5" fill="#cfe8c6">小红：78 分，等级 C</text>
+    <text x="54" y="244" font-size="12.5" fill="#cfe8c6">改分后 小明：95</text>
+    <text x="54" y="272" font-size="12.5" fill="#f0c9c0">sizeof(Student) = 32（三样家当打包后的大小）</text>
+    <text x="54" y="296" font-size="12.5" fill="#cfe8c6">sizeof(s1) 与 sizeof(Student) 相同：是</text>
+    <text x="54" y="320" font-size="12" fill="#9fb8a8">两种初始化（花括号 / 逐成员）都好用</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,220 934,340 Q 712,345 490,340 Q 484,220 488,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(0.3 711 221)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#45703a">实验 2：整叠卡片排队</text>
+    <rect x="502" y="146" width="420" height="180" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="12" fill="#9fb8a8">$ ./student_sort（节选输出）</text>
+    <text x="514" y="196" font-size="12" fill="#9fb8a8">排序前：小明 92 / 小红 78 / 小刚 85 / 小丽 66 / 小强 59</text>
+    <text x="514" y="224" font-size="12.5" fill="#cfe8c6">按分数升序后：</text>
+    <text x="514" y="248" font-size="12.5" fill="#cfe8c6">小强：59（F）→ 小丽：66（D）→ 小红：78（C）</text>
+    <text x="514" y="272" font-size="12.5" fill="#cfe8c6">→ 小刚：85（B）→ 小明：92（A）</text>
+    <text x="514" y="300" font-size="12" fill="#9fb8a8">三栏同步换位——排的是卡片不是数字</text>
+
+    <path d="M 24,366 Q 248,360 470,366 Q 474,470 470,560 Q 248,565 26,560 Q 20,470 24,366 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.3 247 463)"/>
+    <text x="46" y="394" font-size="15.5" font-weight="bold" fill="#9c5a22">实验 3：枚举三档</text>
+    <rect x="38" y="408" width="420" height="140" rx="6" fill="#33413a"/>
+    <text x="54" y="432" font-size="12.5" fill="#cfe8c6">今天的练习难度：中等</text>
+    <text x="54" y="456" font-size="12.5" fill="#f0c9c0">它背后的数值：2（枚举本质是整数）</text>
+    <text x="54" y="480" font-size="12.5" fill="#cfe8c6">升级后：困难</text>
+    <text x="54" y="504" font-size="12.5" fill="#cfe8c6">难度 1：刷 10 题 / 难度 2：刷 20 题 / 难度 3：刷 30 题</text>
+    <text x="54" y="532" font-size="12" fill="#9fb8a8">switch 按枚举分发，代码里零魔法数字</text>
+
+    <path d="M 488,366 Q 712,360 934,366 Q 938,470 934,560 Q 712,565 490,560 Q 484,470 488,366 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 711 463)"/>
+    <text x="510" y="394" font-size="15.5" font-weight="bold" fill="#55606e">struct vs 数组 vs pair of 变量</text>
+    <text x="510" y="426" font-size="12.5" fill="#3b3a36">一堆独立变量：信息散落，传参要带一串</text>
+    <text x="510" y="452" font-size="12.5" fill="#3b3a36">数组：同类型连排——装不下"名字+分数"</text>
+    <text x="510" y="478" font-size="12.5" fill="#45703a">struct：异构打包、整卡传递、整卡交换 ✔</text>
+    <text x="510" y="516" font-size="12.5" fill="#55606e">明天的通讯录：Contact 卡片 + 卡片数组</text>
+    <text x="510" y="538" font-size="12" fill="#8a8578">+ 多文件 + 菜单——第 5 周零件全部到位</text>
+  </g>
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">一张卡片的内存真身与整卡交换</text>
+    <path d="M 310,58 Q 480,52 650,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,290 Q 470,284 44,289 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 195)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">sizeof(Student) = 32 的账本（实测）</text>
+    <rect x="100" y="148" width="240" height="36" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
+    <text x="220" y="171" text-anchor="middle" font-size="11.5" fill="#45703a">name（std::string，24 字节）</text>
+    <rect x="340" y="148" width="80" height="36" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
+    <text x="380" y="171" text-anchor="middle" font-size="11.5" fill="#9c5a22">score 4B</text>
+    <rect x="420" y="148" width="60" height="36" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2"/>
+    <text x="450" y="171" text-anchor="middle" font-size="11.5" fill="#a33f2e">grade 1B</text>
+    <rect x="480" y="148" width="80" height="36" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2" stroke-dasharray="5 4"/>
+    <text x="520" y="171" text-anchor="middle" font-size="11.5" fill="#8a8578">对齐垫 3B</text>
+    <text x="600" y="162" font-size="11.5" fill="#6b675e">24 + 4 + 1 = 29，为什么是 32？</text>
+    <text x="600" y="182" font-size="11.5" fill="#6b675e">内存对齐：结构体大小凑成成员</text>
+    <text x="600" y="202" font-size="11.5" fill="#6b675e">最大对齐值（8）的倍数——Day 44 专题</text>
+    <text x="70" y="222" font-size="12.5" fill="#3b3a36">结论：sizeof(struct) 不等于成员简单相加——永远现场 sizeof，别心算</text>
+    <text x="70" y="252" font-size="12.5" fill="#55606e">成员各自独立可改：s1.score = 95 只动分数栏，其他栏不动（实测）</text>
+
+    <path d="M 40,314 Q 470,308 905,315 L 901,420 Q 470,414 44,419 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.2 472 367)"/>
+    <text x="472" y="344" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">排序时交换什么？整张卡片！</text>
+    <rect x="90" y="360" width="180" height="44" fill="#fffdf7" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="180" y="378" text-anchor="middle" font-size="10.5" fill="#45703a">小明 | 92 | A</text>
+    <text x="180" y="394" text-anchor="middle" font-size="10" fill="#8a8578">roster[i]</text>
+    <rect x="330" y="360" width="180" height="44" fill="#fffdf7" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="420" y="378" text-anchor="middle" font-size="10.5" fill="#45703a">小红 | 78 | C</text>
+    <text x="420" y="394" text-anchor="middle" font-size="10" fill="#8a8578">roster[i+1]</text>
+    <path d="M 272,374 Q 300,366 328,374" fill="none" stroke="#c96a5a" stroke-width="2.2"/>
+    <path d="M 320,366 Q 329,372 321,382" fill="none" stroke="#c96a5a" stroke-width="2.2"/>
+    <path d="M 328,392 Q 300,400 272,392" fill="none" stroke="#c96a5a" stroke-width="2.2"/>
+    <path d="M 280,384 Q 271,390 279,400" fill="none" stroke="#c96a5a" stroke-width="2.2"/>
+    <text x="620" y="372" font-size="12" fill="#3b3a36">比较：只看 score 一栏</text>
+    <text x="620" y="392" font-size="12" fill="#a33f2e">交换：Student t 整张卡对调</text>
+    <text x="620" y="412" font-size="11.5" fill="#8a8578">（三栏同步走，绝不拆栏）</text>
+
+    <path d="M 40,444 Q 470,438 905,445 L 901,576 Q 470,570 44,575 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.2 472 510)"/>
+    <text x="472" y="474" text-anchor="middle" font-size="15" font-weight="bold" fill="#8a6d1a">enum 的双重身份（实测）</text>
+    <text x="70" y="506" font-size="13" fill="#3b3a36">名字身份：switch (lv) { case Easy: … } ——代码读起来是"人话"</text>
+    <text x="70" y="534" font-size="13" fill="#3b3a36">数值身份：cout << today 打印 2；for (int lv = Easy; lv <= Hard; ++lv) 直接当整数循环</text>
+    <text x="70" y="562" font-size="12.5" fill="#6b675e">这种"隐式变整数"很方便但不安全——第 15 周的 enum class 会加上围栏，今天先享受便利并知道边界</text>
+  </g>
+</svg>

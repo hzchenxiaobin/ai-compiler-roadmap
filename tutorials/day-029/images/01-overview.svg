@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 29 全貌：struct——把相关信息打成一张卡片</text>
+    <path d="M 300,60 Q 480,52 660,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">数组是"同款盒子连排"，struct 是"一张卡片多个栏目"——明天的通讯录就是一叠这样的卡片</text>
+
+    <path d="M 40,110 Q 280,104 520,110 Q 524,220 520,330 Q 280,336 42,330 Q 36,220 40,110 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 220)"/>
+    <text x="280" y="140" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">struct Student { … }</text>
+    <rect x="70" y="158" width="420" height="110" fill="#fffdf7" stroke="#9db8cf" stroke-width="2"/>
+    <text x="92" y="184" font-size="12.5" fill="#45703a">姓名栏　name　　（std::string）</text>
+    <text x="92" y="210" font-size="12.5" fill="#45703a">分数栏　score　　（int）</text>
+    <text x="92" y="236" font-size="12.5" fill="#45703a">等级栏　grade　　（char）</text>
+    <text x="280" y="292" text-anchor="middle" font-size="12.5" fill="#6b675e">三样家当各不同类型——这正是 struct 与数组的分工差异</text>
+    <text x="280" y="316" text-anchor="middle" font-size="12.5" fill="#8a8578">成员用 . 访问：s1.name、s1.score（实测 sizeof = 32）</text>
+
+    <path d="M 550,110 Q 730,104 905,110 Q 908,220 905,330 Q 730,336 552,330 Q 547,220 550,110 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 220)"/>
+    <text x="727" y="140" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">enum Level { Easy, Medium, Hard }</text>
+    <text x="572" y="176" font-size="12.5" fill="#3b3a36">给一组整数常量起名：Easy=1、Medium=2、Hard=3</text>
+    <text x="572" y="204" font-size="12.5" fill="#45703a">变量只能取列出的值，switch 分发不写魔法数字</text>
+    <text x="572" y="238" font-size="12.5" fill="#6b675e">本质仍是整数（实测打印 today 得 2）</text>
+    <text x="572" y="272" font-size="12.5" fill="#6b675e">预告：第 15 周的 enum class 更严格——</text>
+    <text x="572" y="294" font-size="12.5" fill="#6b675e">不许隐式当 int 用</text>
+    <text x="572" y="322" font-size="12" fill="#8a8578">（通讯录的菜单编号就是它的舞台）</text>
+
+    <path d="M 40,354 Q 470,348 905,355 L 901,470 Q 470,464 44,469 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 472 412)"/>
+    <text x="472" y="384" text-anchor="middle" font-size="15" font-weight="bold" fill="#9c5a22">今天的练习：整叠卡片按分数排队</text>
+    <text x="70" y="416" font-size="13" fill="#3b3a36">Student roster[5]：五张卡片一叠（struct 数组 = 数组的元素是卡片）</text>
+    <text x="70" y="444" font-size="13" fill="#3b3a36">冒泡排序比分数，交换时整张卡片一起走（name/score/grade 三栏同步）——实测 59 66 78 85 92 ✔</text>
+
+    <path d="M 60,494 Q 480,488 905,495" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="494" r="5" fill="#8a94a3"/>
+    <text x="250" y="514" text-anchor="middle" font-size="12" fill="#3b3a36">Day 25~28 ✓</text>
+    <circle cx="440" cy="494" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="494" r="5" fill="#5b8db8"/>
+    <text x="440" y="514" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 29（今天）</text>
+    <circle cx="640" cy="494" r="5" fill="#e0955f"/>
+    <text x="640" y="514" text-anchor="middle" font-size="12" fill="#3b3a36">Day 30 项目日</text>
+    <circle cx="820" cy="494" r="5" fill="#5b8db8"/>
+    <text x="820" y="514" text-anchor="middle" font-size="12" fill="#3b3a36">第 6 周 收尾</text>
+
+    <rect x="140" y="524" width="680" height="26" fill="#f7e8a0" opacity="0.5" transform="rotate(-0.3 480 537)"/>
+    <text x="480" y="542" text-anchor="middle" font-size="13" fill="#8a6d1a">明天通讯录 v1 = 今天的卡片 + Day 13 的定长数组 + Day 25 的多文件——第 5 周收官大组装</text>
+  </g>
+</svg>
