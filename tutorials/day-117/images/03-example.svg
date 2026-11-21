@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">泄漏实锤、weak 修复与 lock 双向战报</text>
+    <path d="M 340,58 Q 480,52 620,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 -std=c++17；-Wall 零警告）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,490 Q 248,495 26,490 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 296)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出（节选）</text>
+    <rect x="38" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./wc　（-Wall 零警告）</text>
+    <text x="54" y="200" font-size="12" fill="#9fb8a8">== 复现循环泄漏（计划指定） ==</text>
+    <text x="54" y="222" font-size="11.5" fill="#cfe8c8">互指前 count 1/1；互指后 2/2</text>
+    <text x="54" y="242" font-size="11.5" fill="#f0c9c0">块结束：无 [析构]！</text>
+    <text x="54" y="262" font-size="11.5" fill="#f0c9c0">leaked = 2（实锤）</text>
+    <text x="54" y="288" font-size="12" fill="#9fb8a8">== weak 修复（计划指定） ==</text>
+    <text x="54" y="310" font-size="11.5" fill="#cfe8c8">互指后 count 仍 1 ✔</text>
+    <text x="54" y="330" font-size="11.5" fill="#cfe8c8">lock 成功取到"丁" ✔</text>
+    <text x="54" y="350" font-size="11.5" fill="#cfe8c8">块结束 [析构] 丙丁 ✔ leaked=0</text>
+    <text x="54" y="376" font-size="12" fill="#9fb8a8">== lock 双向 ==</text>
+    <text x="54" y="398" font-size="11.5" fill="#cfe8c8">块内活（非空）｜块外死 ✔</text>
+    <text x="54" y="422" font-size="12" fill="#9fb8a8">== 使用纪律 ==</text>
+    <text x="54" y="444" font-size="11" fill="#9fb8a8">（观察/lock/破环三句 ✔）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,490 Q 712,495 490,490 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 296)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">身边的应用场景</text>
+    <rect x="502" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">父子结构（最常见）：</text>
+    <text x="514" y="198" font-size="11.5" fill="#cfe8c8">parent 持 shared → children</text>
+    <text x="514" y="218" font-size="11.5" fill="#cfe8c8">child 持 weak → parent（破环）</text>
+    <text x="514" y="246" font-size="12" fill="#9fb8a8">缓存：</text>
+    <text x="514" y="270" font-size="11.5" fill="#cfe8c8">map&lt;Key, weak_ptr&lt;T&gt;&gt;——不保活</text>
+    <text x="514" y="290" font-size="11" fill="#9fb8a8">（对象死了 lock 得 null——缓存失效）</text>
+    <text x="514" y="318" font-size="12" fill="#9fb8a8">观察者/回调表：</text>
+    <text x="514" y="342" font-size="11.5" fill="#cfe8c8">持 weak——观察对象生死</text>
+    <text x="514" y="370" font-size="12" fill="#9fb8a8">本机检测的诚实注脚：</text>
+    <text x="514" y="392" font-size="11" fill="#9fb8a8">（macOS 无 LSan——今天的泄漏由</text>
+    <text x="514" y="410" font-size="11" fill="#9fb8a8">　自写构造/析构计数器实锤 2 vs 0）</text>
+    <text x="514" y="442" font-size="12.5" fill="#45703a">（117/144 = 81.3%）</text>
+    <text x="514" y="472" font-size="11" fill="#9fb8a8">（Effective 同步：条款 20——</text>
+    <text x="514" y="490" font-size="11" fill="#9fb8a8">　weak 破环与悬空观察）</text>
+
+    <path d="M 24,516 Q 470,510 905,517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>
+    <text x="46" y="542" font-size="15.5" font-weight="bold" fill="#9c5a22">weak 的哲学</text>
+    <text x="46" y="568" font-size="12.5" fill="#3b3a36">"我想用它但不占有它"——一条会过期的观察证（lock 查有效期）；shared 的世界里 weak 是唯一能安全回答"它还活着吗"的角色</text>
+
+    <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 118 make_unique/make_shared 深入与自定义删除器——RAII 封装 FILE*（计划指定）</text>
+  </g>
+</svg>

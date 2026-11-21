@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 117 全貌：weak_ptr——打破循环引用的死结</text>
+    <path d="M 310,60 Q 480,52 650,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定"复现循环引用泄漏并用 weak_ptr 修复"——互指的计数永不归零（泄漏实锤）；weak 观察不拥有、lock 临时提升</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#a33f2e">问题：循环引用（实测）</text>
+    <rect x="64" y="164" width="200" height="60" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.2"/>
+    <text x="164" y="190" font-size="11" fill="#a33f2e">甲 (shared)</text>
+    <text x="164" y="210" font-size="9.5" fill="#8a8578">partner_ → 乙</text>
+    <rect x="284" y="164" width="200" height="60" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.2"/>
+    <text x="384" y="190" font-size="11" fill="#a33f2e">乙 (shared)</text>
+    <text x="384" y="210" font-size="9.5" fill="#8a8578">partner_ → 甲</text>
+    <path d="M 264,180 Q 306,166 282,180" fill="none" stroke="#c96a5a" stroke-width="2.4"/>
+    <path d="M 284,208 Q 244,222 262,208" fill="none" stroke="#c96a5a" stroke-width="2.4"/>
+    <text x="280" y="254" font-size="11.5" fill="#a33f2e">互指后：双计数 2——块结束各剩 1</text>
+    <text x="64" y="288" font-size="12.5" fill="#a33f2e">块结束 → 没有 [析构]！</text>
+    <text x="64" y="310" font-size="12" fill="#8a8578">（leaked = 2——自己的计数器实锤）</text>
+    <text x="64" y="344" font-size="12" fill="#8a8578">（macOS 无 LSan——构造/析构差</text>
+    <text x="64" y="364" font-size="12" fill="#8a8578">　是本机的泄漏观测法）</text>
+
+    <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">修复：weak 打破环（实测）</text>
+    <rect x="572" y="164" width="200" height="60" fill="#d8ecce" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="672" y="190" font-size="11" fill="#45703a">丙 (shared)</text>
+    <text x="672" y="210" font-size="9.5" fill="#8a8578">weak → 丁（不计数！）</text>
+    <rect x="792" y="164" width="90" height="60" fill="#d8ecce" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="837" y="196" font-size="11" fill="#45703a">丁</text>
+    <path d="M 774,194 Q 783,194 790,194" fill="none" stroke="#45703a" stroke-width="2" stroke-dasharray="4 3"/>
+    <text x="727" y="254" font-size="11.5" fill="#45703a">互指后 count 仍 1（环没成）</text>
+    <text x="572" y="288" font-size="12.5" fill="#45703a">块结束 → [析构] ✔ leaked = 0</text>
+    <text x="572" y="316" font-size="12" fill="#6b675e">lock：用时临时提升（活的给</text>
+    <text x="572" y="336" font-size="12" fill="#6b675e">　shared、死的 nullptr）</text>
+    <text x="572" y="366" font-size="11" fill="#8a8578">（观察者语义：不保活只看）</text>
+
+    <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
+    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">使用纪律（三句）</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">观察（cache/observer/回调表——不拥有只看）｜用时先 lock 再访问（临时拥有）｜破环把"一边"改 weak（通常子指父）</text>
+    <text x="70" y="490" font-size="12.5" fill="#6b675e">（weak 不是更好的 shared——是"不拥有"的独立语义）</text>
+
+    <path d="M 60,514 Q 480,508 905 515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 115~116 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 117（今天）</text>
+    <circle cx="650" cy="514" r="5" fill="#5b8db8"/>
+    <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 118~119</text>
+    <circle cx="850" cy="514" r="5" fill="#e0955f"/>
+    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 120 项目日</text>
+  </g>
+</svg>
