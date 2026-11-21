@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">转义的双向表与递归的镜像结构</text>
+    <path d="M 320,58 Q 480,52 640,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,340 Q 470,334 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 220)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">转义的双向（解码 ↔ 编码）</text>
+    <rect x="150" y="146" width="300" height="170" fill="#33413a"/>
+    <text x="300" y="172" font-size="11" fill="#9fb8a8">解码（Day 130，parse 方向）：</text>
+    <text x="300" y="196" font-size="10.5" fill="#cfe8c8">"\\n" → '\n'（真换行）</text>
+    <text x="300" y="216" font-size="10.5" fill="#cfe8c8">"\\" → '"'（真引号）</text>
+    <text x="300" y="236" font-size="10.5" fill="#cfe8c8">"\\\\" → '\'（真反斜杠）</text>
+    <text x="300" y="260" font-size="10.5" fill="#9fb8a8">（\uXXXX → 码点 → UTF-8）</text>
+    <text x="300" y="296" font-size="10" fill="#8a8578">（字符流 → 解码值）</text>
+    <rect x="500" y="146" width="300" height="170" fill="#33413a"/>
+    <text x="650" y="172" font-size="11" fill="#9fb8a8">编码（今天，dump 方向）：</text>
+    <text x="650" y="196" font-size="10.5" fill="#cfe8c8">'\n' → "\\n"（两字符）</text>
+    <text x="650" y="216" font-size="10.5" fill="#cfe8c8">'"' → "\\""（转义引号）</text>
+    <text x="650" y="236" font-size="10.5" fill="#cfe8c8">'\' → "\\\\"（转义反斜杠）</text>
+    <text x="650" y="260" font-size="10.5" fill="#9fb8a8">（UTF-8 字节直通——不编 \u）</text>
+    <text x="650" y="296" font-size="10" fill="#8a8578">（解码值 → 字符流）</text>
+    <path d="M 452,230 Q 470,230 488,230" fill="none" stroke="#3b3a36" stroke-width="2"/>
+    <text x="470" y="222" font-size="9" fill="#6b675e">镜像</text>
+    <text x="472" y="334" font-size="11.5" fill="#8a8578">（实测："a\nb" 的 dump 编回 "a\\nb"——往返一致的基础）</text>
+
+    <path d="M 40,364 Q 280,358 520,364 Q 524,480 520,576 Q 280,582 42,576 Q 36,480 40,364 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 470)"/>
+    <text x="280" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">递归的镜像（132 ↔ 今天）</text>
+    <rect x="64" y="412" width="430" height="150" fill="#33413a"/>
+    <text x="279" y="436" font-size="10.5" fill="#9fb8a8">parse（Day 132）：从上到下搭建</text>
+    <text x="279" y="458" font-size="10.5" fill="#cfe8c8">　parse_value → object → value…</text>
+    <text x="279" y="482" font-size="10.5" fill="#9fb8a8">dump（今天）：从上到下输出</text>
+    <text x="279" y="504" font-size="10.5" fill="#cfe8c8">　dump_to → array → dump_to…</text>
+    <text x="279" y="530" font-size="10" fill="#8a8578">（同一个树结构——两个方向的递归）</text>
+
+    <path d="M 550,364 Q 730,358 905,364 Q 908,480 905,576 Q 730,582 552,576 Q 547,480 550,364 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 470)"/>
+    <text x="727" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">数字的整数化</text>
+    <rect x="572" y="412" width="320" height="150" fill="#33413a"/>
+    <text x="732" y="436" font-size="10.5" fill="#9fb8a8">double 42.0 直接打 → "42.000000"</text>
+    <text x="732" y="458" font-size="10.5" fill="#cfe8c8">整数化检查：v == (long long)v</text>
+    <text x="732" y="478" font-size="10.5" fill="#cfe8c8">　&amp;&amp; |v| &lt; 1e15 → 打 "42"</text>
+    <text x="732" y="504" font-size="10.5" fill="#f0c9c0">实测：8080.0→8080 ✔ 42.0→42 ✔</text>
+    <text x="732" y="530" font-size="10" fill="#8a8578">（美观且无精度损失——解析回去同值）</text>
+  </g>
+</svg>

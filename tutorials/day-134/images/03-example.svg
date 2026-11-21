@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">紧凑/缩进双模式、整数化与转义战报</text>
+    <path d="M 330,58 Q 480,52 630,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 -std=c++20 -Wall -Wextra；ASan 零报错）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,490 Q 248,495 26,490 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 296)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出（节选）</text>
+    <rect x="38" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./dd　（c++20 零警告）</text>
+    <text x="54" y="200" font-size="12" fill="#9fb8a8">== 紧凑模式 ==</text>
+    <text x="54" y="222" font-size="10.5" fill="#cfe8c8">{…,"port":8080,"tags":[1,2.5,</text>
+    <text x="54" y="240" font-size="10.5" fill="#cfe8c8">　true,"含\n换行"]} ✔</text>
+    <text x="54" y="266" font-size="12" fill="#9fb8a8">== 格式化（indent=2） ==</text>
+    <text x="54" y="288" font-size="10.5" fill="#cfe8c8">{ / "name": "测试", / …✔</text>
+    <text x="54" y="308" font-size="10.5" fill="#cfe8c8">　（嵌套缩进 + ": " 空格）</text>
+    <text x="54" y="334" font-size="12" fill="#9fb8a8">== 数字整数化 ==</text>
+    <text x="54" y="356" font-size="11.5" fill="#f0c9c0">8080.0→8080｜42.0→42 ✔</text>
+    <text x="54" y="376" font-size="11.5" fill="#cfe8c8">3.14159→3.14159｜-0.5→-0.5 ✔</text>
+    <text x="54" y="402" font-size="12" fill="#9fb8a8">== 转义编码 ==</text>
+    <text x="54" y="424" font-size="11.5" fill="#cfe8c8">换行→\n｜引号→\"｜\→\\ ✔</text>
+    <text x="54" y="448" font-size="12" fill="#9fb8a8">== 空/单元素 ==</text>
+    <text x="54" y="470" font-size="11.5" fill="#cfe8c8">空数组 []｜空对象 {} ✔</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,490 Q 712,495 490,490 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 296)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">解析器的"另一半"完成</text>
+    <rect x="502" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">双向能力的对照：</text>
+    <text x="514" y="198" font-size="11.5" fill="#cfe8c8">parse：文本 → 树（127~133）✔</text>
+    <text x="514" y="220" font-size="11.5" fill="#f0c9c0">dump：树 → 文本（今天）✔</text>
+    <text x="514" y="250" font-size="12" fill="#9fb8a8">往返的闭环（Day 137 的测试基础）：</text>
+    <text x="514" y="272" font-size="11" fill="#9fb8a8">　parse(dump(x)) ≈ x —— 明天访问</text>
+    <text x="514" y="290" font-size="11" fill="#9fb8a8">　接口齐后可完整断言</text>
+    <text x="514" y="322" font-size="12" fill="#9fb8a8">后续路线（Day 135+）：</text>
+    <text x="514" y="344" font-size="11.5" fill="#8a8578">135 访问接口（get/operator[]）</text>
+    <text x="514" y="364" font-size="11.5" fill="#8a8578">136-138 测试（GoogleTest/边界/公开集）</text>
+    <text x="514" y="384" font-size="11.5" fill="#8a8578">139+ 性能/清理/CMake/复盘/毕业</text>
+    <text x="514" y="416" font-size="12.5" fill="#45703a">（134/144 = 93.1%）</text>
+    <text x="514" y="446" font-size="11" fill="#9fb8a8">（map 键序的兑现：dump 输出</text>
+    <text x="514" y="464" font-size="11" fill="#9fb8a8">　按键排序——测试可复现）</text>
+
+    <path d="M 24,516 Q 470,510 905,517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>
+    <text x="46" y="542" font-size="15.5" font-weight="bold" fill="#9c5a22">序列化的哲学</text>
+    <text x="46" y="568" font-size="12.5" fill="#3b3a36">"能读进来也要能写出去"——完整的解析器是双向的；dump 不是花瓶——它让"解析对了"变成可机器验证的命题（明天开始兑现）</text>
+
+    <path d="M 24,596 Q 470,590 905 597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 135 访问接口——get&lt;T&gt;()、operator[]、迭代（用起来更顺手）</text>
+  </g>
+</svg>
