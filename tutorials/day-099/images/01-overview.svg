@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 99 全貌：非类型模板参数——容量进类型</text>
+    <path d="M 300,60 Q 480,52 660,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定"固定容量 Stack&lt;int, 100&gt;"——模板参数不止类型：整数也能当参数（编译期常量）——std::array 的设计秘密</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">两种模板参数</text>
+    <rect x="64" y="164" width="440" height="80" fill="#33413a"/>
+    <text x="284" y="190" font-size="11" fill="#cfe8c6">template &lt;typename T, int MaxSize = 100&gt;</text>
+    <text x="284" y="212" font-size="10.5" fill="#9fb8a8">　↑类型参数　　　↑非类型参数（默认 100）</text>
+    <text x="64" y="270" font-size="12.5" fill="#45703a">T：元素类型（int/string/…）</text>
+    <text x="64" y="298" font-size="12.5" fill="#45703a">MaxSize：整数常量——编译期就定！</text>
+    <text x="64" y="320" font-size="12" fill="#8a8578">（数组直接开 T data_[MaxSize]——栈上零分配）</text>
+    <text x="64" y="356" font-size="12.5" fill="#6b675e">非类型参数的限制：整型/指针/枚举——</text>
+    <text x="64" y="376" font-size="12.5" fill="#6b675e">　double 不行（浮点不能当编译期常量）</text>
+
+    <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">容量进类型的后果</text>
+    <text x="572" y="180" font-size="12.5" fill="#45703a">Stack&lt;int,3&gt; 和 &lt;int,100&gt; 是两个类！</text>
+    <text x="572" y="202" font-size="12" fill="#8a8578">（sizeof 实测：16 vs 404——差 97 个 int）</text>
+    <text x="572" y="232" font-size="12.5" fill="#45703a">默认参数：FixedStack&lt;string&gt; = &lt;string,100&gt;</text>
+    <text x="572" y="254" font-size="12" fill="#8a8578">（不写容量就用默认——函数默认参同款）</text>
+    <text x="572" y="288" font-size="12.5" fill="#6b675e">std::array&lt;int,5&gt; 同款（Day 82 的 20 字节）</text>
+    <text x="572" y="352" font-size="12" fill="#8a8578">（编译期货 vs 运行期货的选型题）</text>
+  </g>
+</svg>

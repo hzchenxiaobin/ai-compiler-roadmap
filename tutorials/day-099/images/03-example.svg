@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">默认参数、满栈执法与 sizeof 战报</text>
+    <path d="M 380,58 Q 480,52 580,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 -std=c++17；-Wall 零警告 + ASan 零报错）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,490 Q 248,495 26,490 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 296)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出</text>
+    <rect x="38" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./fs　（-Wall 零警告）</text>
+    <text x="54" y="200" font-size="12" fill="#9fb8a8">== Stack&lt;int,100&gt;（计划指定） ==</text>
+    <text x="54" y="222" font-size="11.5" fill="#cfe8c6">capacity = 100 ✔</text>
+    <text x="54" y="242" font-size="11.5" fill="#cfe8c6">push 5 个 top=55；pop 后 44 ✔</text>
+    <text x="54" y="270" font-size="12" fill="#9fb8a8">== 满栈执法 ==</text>
+    <text x="54" y="292" font-size="11.5" fill="#cfe8c6">容量 3：push 1/2/3 成功</text>
+    <text x="54" y="312" font-size="11.5" fill="#f0c9c0">push 4：失败（满了！）✔</text>
+    <text x="54" y="332" font-size="11.5" fill="#cfe8c6">full() = true ✔</text>
+    <text x="54" y="360" font-size="12" fill="#9fb8a8">== 默认参数 ==</text>
+    <text x="54" y="382" font-size="11.5" fill="#cfe8c6">FixedStack&lt;string&gt; 容量 100 ✔</text>
+    <text x="54" y="402" font-size="11.5" fill="#cfe8c6">top = 参数 ✔</text>
+    <text x="54" y="430" font-size="12" fill="#9fb8a8">== sizeof ==</text>
+    <text x="54" y="452" font-size="11.5" fill="#f0c9c0">&lt;int,3&gt; = 16；&lt;int,100&gt; = 404</text>
+    <text x="54" y="472" font-size="11" fill="#9fb8a8">（差 97 个 int——容量进类型）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,490 Q 712,495 490,490 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 296)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">模板参数的完整图景</text>
+    <rect x="502" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">本周攒下的模板参数库：</text>
+    <text x="514" y="198" font-size="11.5" fill="#cfe8c6">typename T（Day 97/98）——类型</text>
+    <text x="514" y="218" font-size="11.5" fill="#cfe8c6">int MaxSize = 100（今天）——非类型</text>
+        <text x="514" y="238" font-size="11.5" fill="#cfe8c8">　+ 默认值</text>
+    <text x="514" y="268" font-size="12" fill="#9fb8a8">身边的组合：</text>
+    <text x="514" y="290" font-size="11.5" fill="#cfe8c6">std::map&lt;K, V, Cmp = less&lt;K&gt;&gt;（Day 85）</text>
+    <text x="514" y="310" font-size="11" fill="#9fb8a8">　（类型 + 类型 + 默认比较器）</text>
+    <text x="514" y="338" font-size="11.5" fill="#cfe8c6">std::stack&lt;T, Container = deque&lt;T&gt;&gt;（83）</text>
+    <text x="514" y="358" font-size="11" fill="#9fb8a8">　（默认底座——适配器的秘密）</text>
+    <text x="514" y="392" font-size="12.5" fill="#45703a">（99/144 = 68.8%）</text>
+    <text x="514" y="424" font-size="11.5" fill="#9fb8a8">本周剩：100 lambda 深入 →</text>
+    <text x="514" y="444" font-size="11.5" fill="#9fb8a8">　101 function → 102 里程碑</text>
+    <text x="514" y="474" font-size="11" fill="#9fb8a8">（里程碑要脱稿重写 LRU——</text>
+    <text x="514" y="492" font-size="11" fill="#9fb8a8">　Day 89 的代码今天起要能默写）</text>
+
+    <path d="M 24,516 Q 470,510 905,517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>
+    <text x="46" y="542" font-size="15.5" font-weight="bold" fill="#9c5a22">编译期力量的边界</text>
+    <text x="46" y="568" font-size="12.5" fill="#3b3a36">容量进类型换来零分配和满栈检查的确定性——代价是每种容量一份代码；"编译期权衡"从今天起是一句有实例的话</text>
+
+    <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 100 lambda 深入——值/引用/混合捕获与悬空陷阱（10 个小场景——计划指定）</text>
+  </g>
+</svg>
