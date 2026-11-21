@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">写读对照与三轮持久化实测</text>
+    <path d="M 340,58 Q 480,52 620,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,230 470,360 Q 248,365 26,360 Q 20,230 24,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(-0.3 247 231)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#2c5a82">实验 1：写出与验证</text>
+    <rect x="38" y="146" width="420" height="190" rx="6" fill="#33413a"/>
+    <text x="54" y="170" font-size="12" fill="#9fb8a8">$ ./fw &amp;&amp; cat notes.txt</text>
+    <text x="54" y="192" font-size="12" fill="#9fb8a8">已写入 notes.txt（用 cat 可以查看）</text>
+    <text x="54" y="214" font-size="12.5" fill="#cfe8c6">第 31 天学习笔记</text>
+    <text x="54" y="234" font-size="12.5" fill="#cfe8c6">1. ofstream 负责写文件</text>
+    <text x="54" y="254" font-size="12.5" fill="#cfe8c6">2. 文件在程序结束后依然存在</text>
+    <text x="54" y="288" font-size="12" fill="#9fb8a8">cat 是独立验证：文件真的在磁盘上，</text>
+    <text x="54" y="308" font-size="12" fill="#9fb8a8">且内容与程序写出的一致</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,230 934,360 Q 712,365 490,360 Q 484,230 488,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(0.3 711 231)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#45703a">实验 2：读回与守门</text>
+    <rect x="502" y="146" width="420" height="190" rx="6" fill="#33413a"/>
+    <text x="514" y="170" font-size="12" fill="#9fb8a8">$ ./fr</text>
+    <text x="514" y="192" font-size="12.5" fill="#cfe8c6">1: 第 31 天学习笔记</text>
+    <text x="514" y="212" font-size="12.5" fill="#cfe8c6">2: 1. ofstream 负责写文件</text>
+    <text x="514" y="232" font-size="12.5" fill="#cfe8c6">3: 2. 文件在程序结束后依然存在</text>
+    <text x="514" y="252" font-size="12.5" fill="#cfe8c6">共读到 3 行</text>
+    <text x="514" y="284" font-size="12" fill="#9fb8a8">$ 读不存在文件 →</text>
+    <text x="514" y="304" font-size="12.5" fill="#f0c9c0">不存在文件.txt 不存在（或打不开）</text>
+    <text x="514" y="326" font-size="12" fill="#9fb8a8">（if (!in) 守门员实测拦下）</text>
+
+    <path d="M 24,386 Q 470,380 905,387 L 901,490 Q 470,484 26,489 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 438)"/>
+    <text x="46" y="414" font-size="15.5" font-weight="bold" fill="#9c5a22">实验 3：三轮持久化（主角程序连跑三次）</text>
+    <rect x="38" y="428" width="850" height="52" rx="6" fill="#33413a"/>
+    <text x="54" y="450" font-size="12" fill="#9fb8a8">第 1 次：读到 0 位 → 写入 2 位　｜　第 2 次：读到 2 位 → 写入 4 位　｜　第 3 次：读到 4 位 → 写入 6 位</text>
+    <text x="54" y="470" font-size="11.5" fill="#cfe8c6">contacts.txt 内容随次数累积（程序每次固定追加张三/李四两位——明天 v2 改成交互增删）</text>
+
+    <path d="M 24,510 Q 470,504 905,511 L 901,630 Q 470,624 26,629 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 570)"/>
+    <text x="46" y="538" font-size="14" font-weight="bold" fill="#55606e">格式小账本（诚实记录）</text>
+    <text x="46" y="568" font-size="12.5" fill="#3b3a36">今天的 "姓名,电话" 是朴素 CSV：人能读、程序能切，但名字带逗号会切错</text>
+    <text x="46" y="594" font-size="12.5" fill="#6b675e">根治方案是结构化格式（JSON，第 22 周自己写解析器）——局限清单又添一条带出路口的账</text>
+  </g>
+</svg>

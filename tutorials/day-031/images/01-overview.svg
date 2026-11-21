@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 31 全貌：文件 I/O——让数据比程序活得久</text>
+    <path d="M 290,60 Q 480,52 670,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">昨天通讯录的局限清单第一条"退出即散"——今天的 ofstream/ifstream 正是解药</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,230 520,344 Q 280,350 42,344 Q 36,230 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 230)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">一对双胞胎流</text>
+    <rect x="70" y="166" width="420" height="56" fill="#33413a"/>
+    <text x="280" y="190" text-anchor="middle" font-size="12" fill="#cfe8c6">ofstream out("notes.txt");　out &lt;&lt; "内容";</text>
+    <text x="280" y="210" text-anchor="middle" font-size="11.5" fill="#9fb8a8">写文件——用法和 cout 一模一样，只是目的地换成磁盘</text>
+    <rect x="70" y="234" width="420" height="56" fill="#33413a"/>
+    <text x="280" y="258" text-anchor="middle" font-size="12" fill="#cfe8c6">ifstream in("notes.txt");　getline(in, line);</text>
+    <text x="280" y="278" text-anchor="middle" font-size="11.5" fill="#9fb8a8">读文件——黄金搭档照用，读行切词两不误</text>
+    <text x="280" y="322" text-anchor="middle" font-size="12.5" fill="#45703a">cin/cout 管键盘屏幕，ifstream/ofstream 管磁盘文件——同一套流思想</text>
+
+    <path d="M 550,116 Q 730,110 905,116 Q 908,230 905,344 Q 730,350 552,344 Q 547,230 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 230)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">数据的生命周期对比</text>
+    <text x="572" y="180" font-size="12.5" fill="#3b3a36">变量/数组：程序退出即蒸发（栈上回收）</text>
+    <text x="572" y="208" font-size="12.5" fill="#45703a">文件：程序结束后仍在磁盘上</text>
+    <text x="572" y="240" font-size="12.5" fill="#6b675e">实测：contact_persist 连跑三次，</text>
+    <text x="572" y="262" font-size="12.5" fill="#6b675e">联系人 0 → 2 → 4 → 6 持续累积</text>
+    <text x="572" y="298" font-size="12.5" fill="#6b675e">持久化 = 启动时读盘 + 收摊前存盘</text>
+    <text x="572" y="326" font-size="12" fill="#8a8578">（明天 v2 的完整闭环）</text>
+
+    <path d="M 40,370 Q 470,364 905,371 L 901,470 Q 470,464 44,469 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 420)"/>
+    <text x="472" y="400" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">两个必守的检查</text>
+    <text x="70" y="432" font-size="13" fill="#3b3a36">①打开就查：if (!in) ——文件不存在/没权限时流为"坏"，硬读是 UB 的近亲</text>
+    <text x="70" y="458" font-size="13" fill="#3b3a36">②存盘格式先设计：本教程用"每行一条：姓名,电话"——人能读、程序能切（Day 17 按逗号切）</text>
+
+    <path d="M 60,494 Q 480,488 905,495" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="494" r="5" fill="#8a94a3"/>
+    <text x="250" y="514" text-anchor="middle" font-size="12" fill="#3b3a36">Day 25~30 ✓</text>
+    <circle cx="440" cy="494" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="494" r="5" fill="#5b8db8"/>
+    <text x="440" y="514" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 31（今天）</text>
+    <circle cx="640" cy="494" r="5" fill="#e0955f"/>
+    <text x="640" y="514" text-anchor="middle" font-size="12" fill="#3b3a36">Day 32 项目日 v2</text>
+    <circle cx="830" cy="494" r="5" fill="#5b8db8"/>
+    <text x="830" y="514" text-anchor="middle" font-size="12" fill="#3b3a36">Day 33~36</text>
+
+    <rect x="140" y="524" width="680" height="26" fill="#f7e8a0" opacity="0.5" transform="rotate(-0.3 480 537)"/>
+    <text x="480" y="542" text-anchor="middle" font-size="13" fill="#8a6d1a">预告：ifstream 的 if(!in) 检查、getline(in,line) 循环——全是本周旧朋友换了个数据源</text>
+  </g>
+</svg>
