@@ -42,9 +42,11 @@ int main() {
     int loaded = load_contacts(contacts);      // 启动先读盘
     std::cout << "启动时从文件读到 " << loaded << " 位联系人" << std::endl;
 
-    contacts[loaded] = {"张三", "13800000001"};
-    contacts[loaded + 1] = {"李四", "13800000002"};
-    loaded += 2;                               // 内存里再加两位
+    if (loaded + 2 <= 100) {                   // 容量守卫：装得下才加（Day 13 军规）
+        contacts[loaded] = {"张三", "13800000001"};
+        contacts[loaded + 1] = {"李四", "13800000002"};
+        loaded += 2;                           // 内存里再加两位
+    }
 
     save_contacts(contacts, loaded);           // 收摊前存盘
     return 0;

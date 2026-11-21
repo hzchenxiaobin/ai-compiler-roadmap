@@ -34,9 +34,10 @@
     <text x="480" y="394" text-anchor="middle" font-size="11.5" fill="#cfe8c6">张三,13800000001</text>
     <text x="480" y="414" text-anchor="middle" font-size="11.5" fill="#cfe8c6">李四,13800000002</text>
     <text x="480" y="434" text-anchor="middle" font-size="10.5" fill="#9fb8a8">（cat 看得懂，程序切得开）</text>
-    <text x="70" y="392" font-size="12.5" fill="#3b3a36">读回时按逗号切两段：getline(ss, name, ',') + getline(ss, phone)</text>
-    <text x="70" y="420" font-size="12.5" fill="#6b675e">（Day 17 stringstream 的第三参数：自定义分隔符）</text>
-    <text x="70" y="446" font-size="12.5" fill="#a33f2e">格式的隐患先记账：名字里带逗号会切错——第 22 周 JSON 用结构化格式根治</text>
+    <text x="70" y="392" font-size="12.5" fill="#3b3a36">读回时按逗号切两段（右图）：</text>
+    <text x="70" y="414" font-size="11.5" fill="#6b675e">getline(ss, name, ',') 再 getline(ss, phone)</text>
+    <text x="70" y="440" font-size="11.5" fill="#a33f2e">格式隐患先记账：名字里带逗号会切错——</text>
+    <text x="70" y="456" font-size="11.5" fill="#a33f2e">第 22 周 JSON 用结构化格式根治</text>
 
     <path d="M 40,484 Q 470,478 905,485 L 901,576 Q 470,570 44,575 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 472 530)"/>
     <text x="472" y="514" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#55606e">持久化闭环（明天的 v2）</text>
