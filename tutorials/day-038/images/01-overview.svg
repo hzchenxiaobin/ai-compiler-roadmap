@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 38 全貌：构造函数——出生即就绪</text>
+    <path d="M 330,60 Q 480,52 630,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">昨天"忘了 set_size 就是垃圾值"的病根，今天从语言层面拔除：对象出生那一刻就初始化</text>
+
+    <path d="M 40,116 Q 290,110 540,116 Q 544,250 540,384 Q 290,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 290 250)"/>
+    <text x="290" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">构造函数的三条身份证</text>
+    <text x="64" y="182" font-size="13" fill="#3b3a36">①与类同名（Date 的构造函数叫 Date）</text>
+    <text x="64" y="210" font-size="13" fill="#3b3a36">②没有返回类型（连 void 都不写）</text>
+    <text x="64" y="238" font-size="13" fill="#3b3a36">③对象出生时自动调用（无法手动绕过）</text>
+    <text x="64" y="276" font-size="12.5" fill="#6b675e">对比 set_size：那是"出生后再打扮"，</text>
+    <text x="64" y="298" font-size="12.5" fill="#6b675e">构造是"从产房出来就穿戴整齐"</text>
+    <text x="64" y="334" font-size="12.5" fill="#45703a">可以重载（Day 10 的老朋友）：</text>
+    <text x="64" y="356" font-size="12.5" fill="#45703a">Date()、Date(y,m,d)、Date(y) 各管一种出生</text>
+
+    <path d="M 570,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 572,384 Q 567,250 570,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 737 250)"/>
+    <text x="737" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">初始化列表：冒号后面的账</text>
+    <rect x="594" y="162" width="290" height="60" fill="#33413a"/>
+    <text x="739" y="186" text-anchor="middle" font-size="11.5" fill="#cfe8c6">Date() : year_(2026), month_(1), day_(1)</text>
+    <text x="739" y="206" text-anchor="middle" font-size="10.5" fill="#9fb8a8">（冒号后逐个报账，花括号留空）</text>
+    <text x="594" y="246" font-size="12.5" fill="#3b3a36">成员"出生即带值"，不是"出生后再赋值"</text>
+    <text x="594" y="276" font-size="12.5" fill="#a33f2e">const 成员只认这条路——</text>
+    <text x="594" y="298" font-size="12.5" fill="#a33f2e">构造体内赋值 = 改 const，编译报错</text>
+    <text x="594" y="334" font-size="12" fill="#8a8578">（实测错误原文见 5.3；引用成员同理，</text>
+    <text x="594" y="356" font-size="12" fill="#8a8578">第 9 周还会回来深化）</text>
+
+    <path d="M 40,408 Q 470,402 905,409 L 901,494 Q 470,488 44,493 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.2 472 451)"/>
+    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#8a6d1a">委托构造：转包省重复</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">Date(int y) : Date(y, 1, 1) {}——单参构造把活转包给三参版；公共初始化只写一处（DRY 原则初现）</text>
+
+    <path d="M 60,514 Q 480,508 905,515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 37 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 38（今天）</text>
+    <circle cx="640" cy="514" r="5" fill="#5b8db8"/>
+    <text x="640" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 39 析构与 RAII</text>
+    <circle cx="840" cy="514" r="5" fill="#e0955f"/>
+    <text x="840" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 42 项目日</text>
+  </g>
+</svg>
