@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">派单记录、问候三姿势与二义性现场</text>
+    <path d="M 300,58 Q 480,52 660,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,220 470,338 Q 248,343 26,338 Q 20,220 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 220)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">实验 1：四个 print 的派单</text>
+    <rect x="38" y="146" width="420" height="130" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="12.5" fill="#9fb8a8">$ ./overload_print</text>
+    <text x="54" y="196" font-size="12.5" fill="#cfe8c6">[整数] 42　　←print(42)</text>
+    <text x="54" y="220" font-size="12.5" fill="#cfe8c6">[小数] 3.14　←print(3.14)</text>
+    <text x="54" y="244" font-size="12.5" fill="#cfe8c6">[字符] A　　←print('A')</text>
+    <text x="54" y="268" font-size="12.5" fill="#cfe8c6">[文本] Hello　←print("Hello")</text>
+    <text x="46" y="306" font-size="12.5" fill="#45703a">一个调用一句输出，四个分身各司其职——</text>
+    <text x="46" y="326" font-size="12.5" fill="#6b675e">调用者完全不用记 print_int / print_double 这类长名字</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,240 934,380 Q 712,385 490,380 Q 484,240 488,102 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="3" transform="rotate(0.3 711 241)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#9c5a22">实验 2：greet 的三种姿势</text>
+    <rect x="502" y="146" width="420" height="200" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="12" fill="#9fb8a8">$ ./greet_default</text>
+    <text x="514" y="196" font-size="12.5" fill="#cfe8c6">早上好，小明！　←三样全给，打 2 遍</text>
+    <text x="514" y="216" font-size="12.5" fill="#cfe8c6">早上好，小明！</text>
+    <text x="514" y="240" font-size="12.5" fill="#cfe8c6">晚上好，小红！　←省 times，默认 1 遍</text>
+    <text x="514" y="264" font-size="12.5" fill="#cfe8c6">你好，小刚！　　←连问候语也用默认</text>
+    <text x="514" y="298" font-size="12" fill="#9fb8a8">对照版 greet_full（无默认参数）：</text>
+    <text x="514" y="318" font-size="12" fill="#9fb8a8">少给一个参数就编译失败——</text>
+    <text x="514" y="338" font-size="12" fill="#9fb8a8">no matching function for call to 'greet'</text>
+
+    <path d="M 24,366 Q 248,360 470,366 Q 474,480 470,600 Q 248,605 26,600 Q 20,480 24,366 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="3" transform="rotate(0.3 247 485)"/>
+    <text x="46" y="396" font-size="16" font-weight="bold" fill="#a33f2e">实验 3：二义性事故现场（真实报错）</text>
+    <rect x="38" y="410" width="420" height="180" rx="6" fill="#33413a"/>
+    <text x="54" y="436" font-size="12" fill="#f0c9c0">$ g++ -Wall ambiguity.cpp</text>
+    <text x="54" y="460" font-size="12" fill="#ffd7d0">ambiguity.cpp:13:5:</text>
+    <text x="54" y="480" font-size="12" fill="#ffd7d0">error: call to 'f' is ambiguous</text>
+    <text x="54" y="504" font-size="12" fill="#9fb8a8">note: candidate function　f(float)</text>
+    <text x="54" y="524" font-size="12" fill="#9fb8a8">note: candidate function　f(double)</text>
+    <text x="54" y="556" font-size="12" fill="#cfe8c6">f(3) 的 int 两个都够不着，</text>
+    <text x="54" y="576" font-size="12" fill="#cfe8c6">转换等级相同——编译器拒绝掷硬币</text>
+
+    <path d="M 488,404 Q 712,398 934,404 Q 938,500 934,600 Q 712,605 490,600 Q 484,500 488,404 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(-0.3 711 504)"/>
+    <text x="510" y="434" font-size="16" font-weight="bold" fill="#55606e">重载 or 默认参数？选型口诀</text>
+    <text x="510" y="468" font-size="12.5" fill="#3b3a36">逻辑随类型变 → 重载（print 家族）</text>
+    <text x="510" y="492" font-size="12.5" fill="#3b3a36">逻辑一样只是省参数 → 默认（greet）</text>
+    <text x="510" y="520" font-size="12.5" fill="#3b3a36">两样都想要？通常说明该拆成两个函数</text>
+    <text x="510" y="560" font-size="12.5" fill="#55606e">iostream 的 operator&lt;&lt; 就是重载大户：</text>
+    <text x="510" y="580" font-size="12.5" fill="#8a8578">cout &lt;&lt; 42 和 cout &lt;&lt; 3.14 走的正是不同分身</text>
+  </g>
+</svg>

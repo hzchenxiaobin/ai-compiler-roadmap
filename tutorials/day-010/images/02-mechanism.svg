@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">重载解析：编译器的派单流程</text>
+    <path d="M 320,58 Q 480,52 640,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+
+    <rect x="60" y="96" width="280" height="52" fill="#33413a" rx="8"/>
+    <text x="76" y="120" font-size="13" fill="#cfe8c6">调用：print( 42 )　// int 实参</text>
+    <text x="76" y="140" font-size="11.5" fill="#9fb8a8">编译器：派谁去？</text>
+
+    <path d="M 340,122 Q 364,122 388,122" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+    <path d="M 380,114 Q 389,120 381,130" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+
+    <path d="M 392,86 L 500,122 L 392,158 Z" fill="#d8ecce" stroke="#7aa663" stroke-width="3" transform="rotate(-1 446 122)"/>
+    <text x="446" y="128" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#45703a">有精确匹配？</text>
+
+    <path d="M 508,122 Q 540,122 572,122" fill="none" stroke="#45703a" stroke-width="2.6"/>
+    <path d="M 564,114 Q 573,120 565,130" fill="none" stroke="#45703a" stroke-width="2.6"/>
+    <text x="540" y="106" text-anchor="middle" font-size="12" fill="#45703a">有</text>
+    <rect x="576" y="96" width="220" height="52" fill="#eef5e8" stroke="#7aa663" stroke-width="2.6"/>
+    <text x="686" y="118" text-anchor="middle" font-size="13" font-weight="bold" fill="#45703a">直接选它，完事</text>
+    <text x="686" y="138" text-anchor="middle" font-size="11.5" fill="#6b675e">print(int) 接单（实测）</text>
+
+    <path d="M 446,164 Q 446,190 446,208" fill="none" stroke="#c96a5a" stroke-width="2.6"/>
+    <path d="M 438,202 Q 446,212 455,203" fill="none" stroke="#c96a5a" stroke-width="2.6"/>
+    <text x="470" y="192" font-size="12" fill="#a33f2e">没有</text>
+
+    <path d="M 392,212 L 500,248 L 392,284 Z" fill="#f9d9b8" stroke="#e0955f" stroke-width="3" transform="rotate(-1 446 248)"/>
+    <text x="446" y="254" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#9c5a22">转换后能匹配？</text>
+
+    <path d="M 508,248 Q 540,248 572,248" fill="none" stroke="#e0955f" stroke-width="2.6"/>
+    <path d="M 564,240 Q 573,246 565,256" fill="none" stroke="#e0955f" stroke-width="2.6"/>
+    <text x="540" y="232" text-anchor="middle" font-size="12" fill="#9c5a22">恰好一家</text>
+    <rect x="576" y="222" width="220" height="52" fill="#fcefe4" stroke="#e0955f" stroke-width="2.6"/>
+    <text x="686" y="244" text-anchor="middle" font-size="13" font-weight="bold" fill="#9c5a22">勉为其难选它</text>
+    <text x="686" y="264" text-anchor="middle" font-size="11.5" fill="#6b675e">int→long 等提升/转换</text>
+
+    <path d="M 446,290 Q 446,316 446,334" fill="none" stroke="#c96a5a" stroke-width="2.6"/>
+    <path d="M 438,328 Q 446,338 455,329" fill="none" stroke="#c96a5a" stroke-width="2.6"/>
+    <text x="470" y="318" font-size="12" fill="#a33f2e">多家打成平手</text>
+
+    <rect x="336" y="338" width="220" height="52" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8"/>
+    <text x="446" y="360" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#a33f2e">error: call is ambiguous</text>
+    <text x="446" y="380" text-anchor="middle" font-size="11.5" fill="#6b675e">编译器拒绝猜，比人可靠</text>
+
+    <path d="M 60,410 Q 290,404 520,410 Q 524,490 520,570 Q 290,576 62,570 Q 56,490 60,410 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 290 490)"/>
+    <text x="290" y="442" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">默认参数的三条铁律</text>
+    <text x="80" y="474" font-size="12.5" fill="#3b3a36">1. 只能从右往左连续出现：</text>
+    <text x="96" y="494" font-size="12" fill="#6b675e">f(int a, int b=1, int c=2) ✔</text>
+    <text x="96" y="514" font-size="12" fill="#a33f2e">f(int a=1, int b) ✘ 左边有默认右边没有</text>
+    <text x="80" y="542" font-size="12.5" fill="#3b3a36">2. 声明里写默认值，定义里不再写</text>
+    <text x="80" y="562" font-size="12.5" fill="#3b3a36">3. 调用时也按从左往右省略，不能跳着省</text>
+
+    <path d="M 540,410 Q 730,404 920,410 Q 924,490 920,570 Q 730,576 542,570 Q 536,490 540,410 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(0.3 730 490)"/>
+    <text x="730" y="442" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#8a6d1a">真实实验两连（本机实测）</text>
+    <text x="560" y="476" font-size="12.5" fill="#3b3a36">去掉 print(int) 后调 print(42)：</text>
+    <text x="560" y="496" font-size="12.5" fill="#a33f2e">error: call to 'print' is ambiguous</text>
+    <text x="560" y="516" font-size="12" fill="#6b675e">（int→double 与 int→char 打成平手）</text>
+    <text x="560" y="546" font-size="12.5" fill="#3b3a36">print(int) 与 print(long) 并存时：</text>
+    <text x="560" y="566" font-size="12.5" fill="#45703a">print(42) 精确选 int，绝不犹豫</text>
+  </g>
+</svg>
