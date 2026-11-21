@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 18 项目日：文本统计器的总装图</text>
+    <path d="M 300,60 Q 480,52 660,61" fill="none" stroke="#e0955f" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">第 3 周收官：四本账一次结清——行数、字符数、单词数、字母频率</text>
+
+    <path d="M 40,110 Q 280,104 520,110 Q 524,200 520,290 Q 280,296 42,290 Q 36,200 40,110 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(-0.3 280 200)"/>
+    <text x="280" y="140" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">主循环：黄金搭档</text>
+    <rect x="70" y="158" width="420" height="80" fill="#33413a"/>
+    <text x="86" y="182" font-size="12" fill="#cfe8c6">while (getline(cin, line)) {</text>
+    <text x="106" y="202" font-size="12" fill="#cfe8c6">istringstream ss(line);</text>
+    <text x="106" y="222" font-size="12" fill="#cfe8c6">while (ss &gt;&gt; word) { … }</text>
+    <text x="280" y="268" text-anchor="middle" font-size="12" fill="#8a8578">（昨天的骨架原样上岗）</text>
+
+    <path d="M 550,110 Q 730,104 905,110 Q 908,200 905,290 Q 730,296 552,290 Q 547,200 550,110 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 200)"/>
+    <text x="727" y="140" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">四本账</text>
+    <text x="570" y="170" font-size="12.5" fill="#3b3a36">行数：getline 循环圈数</text>
+    <text x="570" y="194" font-size="12.5" fill="#3b3a36">字符数：每行 size() 累加（不含换行）</text>
+    <text x="570" y="218" font-size="12.5" fill="#3b3a36">单词数：内层切词计数</text>
+    <text x="570" y="242" font-size="12.5" fill="#3b3a36">字母频率：26 格数组过账</text>
+    <text x="727" y="274" text-anchor="middle" font-size="12" fill="#8a8578">（实测：3 行 / 59 字符 / 13 词）</text>
+
+    <path d="M 40,320 Q 470,314 905,321 L 901,450 Q 470,444 44,449 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(-0.2 472 385)"/>
+    <text x="472" y="350" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#55606e">零件来源清单（本周全家福）</text>
+    <text x="70" y="382" font-size="12.5" fill="#3b3a36">Day 13 数组：freq[26] 的 26 格账本　　　Day 15 C 串：字符编码比较（&gt;='A' 的老底子）</text>
+    <text x="70" y="410" font-size="12.5" fill="#3b3a36">Day 16 string：line.size() / [i] 逐字符　Day 17 黄金搭档：读行＋切词流水线</text>
+    <text x="70" y="438" font-size="12.5" fill="#6b675e">组装哲学（Day 6/12 一脉相承）：主循环管流程，四本账各自独立，验证靠 wc 独立核对</text>
+
+    <path d="M 60,478 Q 480,472 905,479" fill="none" stroke="#8a8578" stroke-width="3"/>
+    <circle cx="200" cy="478" r="6" fill="#8a94a3"/>
+    <text x="200" y="504" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 6 换算器 ✓</text>
+    <circle cx="380" cy="479" r="6" fill="#8a94a3"/>
+    <text x="380" y="504" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 12 计算器 ✓</text>
+    <circle cx="580" cy="478" r="13" fill="none" stroke="#c96a5a" stroke-width="2.2"/>
+    <circle cx="580" cy="478" r="6" fill="#5b8db8"/>
+    <text x="580" y="504" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#c96a5a">Day 18（今天）</text>
+    <circle cx="790" cy="479" r="6" fill="#5b8db8"/>
+    <text x="790" y="504" text-anchor="middle" font-size="12.5" fill="#3b3a36">第 4 周 指针</text>
+
+    <rect x="140" y="518" width="680" height="34" fill="#f7e8a0" opacity="0.5" transform="rotate(-0.3 480 535)"/>
+    <text x="480" y="540" text-anchor="middle" font-size="13" fill="#8a6d1a">里程碑：三个项目日全部通关——下周起进入 C++ 的深水区：指针与内存</text>
+  </g>
+</svg>

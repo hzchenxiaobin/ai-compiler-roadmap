@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">一行数据的旅程：进门、过账、出报表</text>
+    <path d="M 300,58 Q 480,52 660,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <rect x="60" y="96" width="320" height="50" fill="#33413a" rx="8"/>
+    <text x="80" y="118" font-size="12.5" fill="#9fb8a8">一行进门：『jumps over the lazy dog.』</text>
+    <text x="80" y="138" font-size="11.5" fill="#9fb8a8">（长度 24，getline 已吃掉行尾换行）</text>
+
+    <path d="M 220,150 Q 220,172 220,190" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+    <path d="M 212,184 Q 220,194 229,185" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+
+    <rect x="60" y="196" width="320" height="44" fill="#eef5e8" stroke="#7aa663" stroke-width="2.4"/>
+    <text x="220" y="216" text-anchor="middle" font-size="12.5" fill="#45703a">第一账：lines++ → 本行是第 2 行</text>
+    <text x="220" y="234" text-anchor="middle" font-size="12" fill="#8a8578">（循环圈数即行数）</text>
+
+    <path d="M 220,244 Q 220,262 220,278" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+    <path d="M 212,272 Q 220,282 229,273" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+
+    <rect x="60" y="284" width="320" height="44" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.4"/>
+    <text x="220" y="304" text-anchor="middle" font-size="12.5" fill="#2c5a82">第二账：chars_total += 24</text>
+    <text x="220" y="322" text-anchor="middle" font-size="12" fill="#8a8578">（line.size() 不含换行——口径写在注释里）</text>
+
+    <path d="M 220,332 Q 220,350 220,366" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+    <path d="M 212,360 Q 220,370 229,361" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+
+    <rect x="60" y="372" width="320" height="44" fill="#fcefe4" stroke="#e0955f" stroke-width="2.4"/>
+    <text x="220" y="392" text-anchor="middle" font-size="12.5" fill="#9c5a22">第三账：切词 words_total += 4</text>
+    <text x="220" y="410" text-anchor="middle" font-size="12" fill="#8a8578">（ss &gt;&gt; word 四圈：jumps/over/the/lazy）</text>
+
+    <path d="M 220,422 Q 220,440 220,456" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+    <path d="M 212,450 Q 220,460 229,451" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+
+    <rect x="60" y="462" width="320" height="64" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.4"/>
+    <text x="220" y="484" text-anchor="middle" font-size="12.5" fill="#8a6d1a">第四账：逐字符过频率表</text>
+    <text x="220" y="504" text-anchor="middle" font-size="11.5" fill="#8a8578">大写折算 c-'A'、小写 c-'a'，都对进 0~25 格</text>
+
+    <path d="M 440,120 Q 560,120 680,120" fill="none" stroke="#8a94a3" stroke-width="2" stroke-dasharray="6 5"/>
+    <path d="M 700,96 Q 900,90 930,96 Q 933,300 930,560 Q 900,566 702,560 Q 696,300 700,96 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.6" transform="rotate(0.3 815 325)"/>
+    <text x="815" y="128" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">26 格账本（实测样例恰好全亮）</text>
+    <rect x="730" y="146" width="170" height="330" fill="#fffdf7" stroke="#8a94a3" stroke-width="2"/>
+    <text x="745" y="172" font-size="11" fill="#3b3a36">a:1 b:1 c:1 d:4</text>
+    <text x="745" y="196" font-size="11" fill="#3b3a36">e:3 f:1 g:4 h:2</text>
+    <text x="745" y="220" font-size="11" fill="#3b3a36">i:1 j:1 k:1 l:1</text>
+    <text x="745" y="244" font-size="11" fill="#3b3a36">m:1 n:1 o:7 p:1</text>
+    <text x="745" y="268" font-size="11" fill="#3b3a36">q:1 r:2 s:1 t:2</text>
+    <text x="745" y="292" font-size="11" fill="#3b3a36">u:2 v:1 w:1 x:1</text>
+    <text x="745" y="316" font-size="11" fill="#3b3a36">y:1 z:1</text>
+    <text x="815" y="356" text-anchor="middle" font-size="12" fill="#a33f2e">o:7（dog 家族贡献最大）</text>
+    <text x="815" y="384" text-anchor="middle" font-size="12" fill="#55606e">为什么只列非零项？</text>
+    <text x="815" y="408" text-anchor="middle" font-size="11.5" fill="#6b675e">26 格全打太长；</text>
+    <text x="815" y="428" text-anchor="middle" font-size="11.5" fill="#6b675e">freq[k]&gt;0 才打印——</text>
+    <text x="815" y="448" text-anchor="middle" font-size="11.5" fill="#6b675e">输出跟着数据走，不硬凑格式</text>
+    <text x="815" y="496" text-anchor="middle" font-size="12" fill="#55606e">验证：d+o+g 各 4 次</text>
+    <text x="815" y="516" text-anchor="middle" font-size="12" fill="#6b675e">（dog. Dog dog DOG 四兄弟）</text>
+
+    <path d="M 60,548 Q 470,542 905,549" fill="none" stroke="#8a8578" stroke-width="2.6" stroke-dasharray="7 5"/>
+    <text x="472" y="580" text-anchor="middle" font-size="13" fill="#8a8578">EOF 出了主循环，报表一次打印——所有账本在循环里只加不印，收尾统一结账</text>
+  </g>
+</svg>

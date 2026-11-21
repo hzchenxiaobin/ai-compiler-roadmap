@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">真实战报：与 wc 逐项对账全胜</text>
+    <path d="M 330,58 Q 480,52 630,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,250 470,400 Q 248,405 26,400 Q 20,250 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 251)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">样例输入（三行，覆盖全部 26 字母）</text>
+    <rect x="38" y="146" width="420" height="90" rx="6" fill="#33413a"/>
+    <text x="248" y="172" text-anchor="middle" font-size="12.5" fill="#cfe8c6">The quick brown fox</text>
+    <text x="248" y="194" text-anchor="middle" font-size="12.5" fill="#cfe8c6">jumps over the lazy dog.</text>
+    <text x="248" y="216" text-anchor="middle" font-size="12.5" fill="#cfe8c6">Dog dog DOG 123!</text>
+    <text x="46" y="266" font-size="15" font-weight="bold" fill="#45703a">统计器输出</text>
+    <rect x="38" y="282" width="420" height="100" rx="6" fill="#33413a"/>
+    <text x="54" y="308" font-size="12.5" fill="#cfe8c6">行数：3　　字符数（不含换行）：59　　单词数：13</text>
+    <text x="54" y="334" font-size="12.5" fill="#cfe8c6">字母频率（节选）：d:4　e:3　g:4　o:7 …</text>
+    <text x="54" y="360" font-size="12" fill="#9fb8a8">（26 个字母全部出现——样例是"全字母句"变体）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,250 934,400 Q 712,405 490,400 Q 484,250 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 251)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">独立核对（wc 三连）</text>
+    <rect x="502" y="146" width="420" height="100" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="12" fill="#9fb8a8">wc -l：3 行</text>
+    <text x="514" y="196" font-size="12" fill="#9fb8a8">wc -c − wc -l：62 − 3 = 59 字符</text>
+    <text x="514" y="220" font-size="12" fill="#9fb8a8">wc -w：13 词</text>
+    <text x="514" y="244" font-size="12" fill="#9fb8a8">（62 是含换行的总字节数）</text>
+    <path d="M 502,262 Q 711,256 922,263 L 919,338 Q 711,332 505,337 Z" fill="#fffdf7" stroke="#9db8cf" stroke-width="2" stroke-dasharray="8 5"/>
+    <text x="711" y="288" text-anchor="middle" font-size="12.5" fill="#45703a">三个数字与统计器逐项一致 ✔</text>
+    <text x="711" y="310" text-anchor="middle" font-size="12" fill="#6b675e">频率表无 wc 可对，改用人工抽检：</text>
+    <text x="711" y="330" text-anchor="middle" font-size="12" fill="#6b675e">dog×4 家族 → d:4 g:4 各 4 次 ✔</text>
+    <text x="711" y="376" text-anchor="middle" font-size="12.5" fill="#55606e">对账哲学：能用现成工具核的绝不用眼睛核</text>
+
+    <path d="M 24,426 Q 470,420 905,427 L 901,490 Q 470,484 26,489 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 458)"/>
+    <text x="46" y="456" font-size="15" font-weight="bold" fill="#9c5a22">边界自测（都过了）</text>
+    <text x="46" y="482" font-size="12.5" fill="#3b3a36">空行：行数+1、字符+0、词数+0（getline 的空行也是行）　纯数字行：只进词数不进频率表</text>
+
+    <path d="M 24,510 Q 470,504 905,511 L 901,610 Q 470,604 26,609 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(0.2 464 560)"/>
+    <text x="46" y="540" font-size="15" font-weight="bold" fill="#8a6d1a">第 3 周里程碑自测</text>
+    <text x="46" y="572" font-size="12.5" fill="#3b3a36">□ 不看教程独立写出统计器　　□ -Wall 零警告　　□ 三个数字与 wc 对上</text>
+    <text x="46" y="596" font-size="12.5" fill="#3b3a36">□ 能说清每本账的口径　　□ 三个项目日（换算器/计算器/统计器）全部独立复现</text>
+  </g>
+</svg>
