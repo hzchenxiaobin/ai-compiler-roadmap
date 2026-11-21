@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">类是门禁的主人：friend 的登记与放行</text>
+    <path d="M 320,58 Q 480,52 640,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,300 Q 470,294 44,299 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 200)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">class Account 的门禁图</text>
+    <rect x="140" y="146" width="340" height="130" fill="#fffdf7" stroke="#5b8db8" stroke-width="2.2"/>
+    <rect x="160" y="160" width="300" height="30" fill="#f1f4f7" stroke="#8a94a3" stroke-width="1.6"/>
+    <text x="310" y="180" font-size="10" fill="#55606e">private：owner_ / balance_</text>
+    <rect x="160" y="198" width="300" height="30" fill="#eef5e8" stroke="#7aa663" stroke-width="1.6"/>
+    <text x="310" y="218" font-size="10" fill="#45703a">public：print_public()</text>
+    <rect x="160" y="236" width="300" height="30" fill="#fdf6dd" stroke="#d9b23a" stroke-width="1.6"/>
+    <text x="310" y="256" font-size="10" fill="#8a6d1a">friend：print_private / Auditor</text>
+    <path d="M 200,200 Q 220,190 240,192" fill="none" stroke="#8a94a3" stroke-width="1.6"/>
+    <rect x="530" y="146" width="150" height="40" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
+    <text x="605" y="164" font-size="10" fill="#9c5a22">成员函数</text>
+    <text x="605" y="178" font-size="9" fill="#8a8578">（自己人：全通）</text>
+    <rect x="530" y="196" width="150" height="40" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
+    <text x="605" y="214" font-size="10" fill="#45703a">友元</text>
+    <text x="605" y="228" font-size="9" fill="#8a8578">（受邀：private 可摸）</text>
+    <rect x="530" y="246" width="150" height="40" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2"/>
+    <text x="605" y="264" font-size="10" fill="#a33f2e">普通函数</text>
+    <text x="605" y="278" font-size="9" fill="#8a8578">（外人：只 public）</text>
+    <text x="740" y="170" font-size="11" fill="#6b675e">门禁规则的归属：</text>
+    <text x="740" y="192" font-size="11" fill="#6b675e">　friend 声明写在类里——</text>
+    <text x="740" y="212" font-size="11" fill="#6b675e">　"允许谁进"由类决定</text>
+    <text x="740" y="240" font-size="11" fill="#a33f2e">　外人不能自封友元！</text>
+    <text x="472" y="292" font-size="12" fill="#9fb8a8">（实测：普通函数摸 private 编译错误——门禁是编译期执法的）</text>
+
+    <path d="M 40,324 Q 470,318 905,325 L 901,576 Q 470,570 44,575 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.2 472 450)"/>
+    <text x="472" y="354" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">什么时候需要友元（决策树）</text>
+    <text x="90" y="390" font-size="12.5" fill="#3b3a36">问题：外部代码需要类的私有数据？</text>
+    <text x="90" y="416" font-size="12.5" fill="#45703a">→ 先问能不能走 public 接口（getter/成员函数）——能就不需要友元</text>
+    <text x="90" y="442" font-size="12.5" fill="#45703a">→ 运算符左操作数不是本类（operator&lt;&lt;）？→ 友元函数（Day 56 的场景）</text>
+    <text x="90" y="468" font-size="12.5" fill="#45703a">→ 两个类深度协作（容器和它的迭代器）？→ 友元类</text>
+    <text x="90" y="496" font-size="12.5" fill="#a33f2e">→ 只是为了少写 getter？→ 不要友元（破坏封装的借口）</text>
+    <text x="472" y="540" font-size="12" fill="#8a8578">（经验法则：友元是"接口表达不了"时的最后手段——不是偷懒的侧门）</text>
+  </g>
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 59 全貌：友元 friend——给外部函数开的侧门</text>
+    <path d="M 320,60 Q 480,52 640,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定练习"让外部函数访问私有成员"——private 的墙上有扇门，钥匙只发给声明过的函数/类</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">三种访问身份（实测对照）</text>
+    <text x="64" y="180" font-size="12.5" fill="#45703a">①成员函数：自己人（天然可访问）</text>
+    <text x="64" y="208" font-size="12.5" fill="#45703a">②友元函数：受邀客人（声明过就能摸 private）</text>
+    <text x="64" y="230" font-size="12" fill="#8a8578">（实测：直接打出 owner_ 和 balance_）</text>
+    <text x="64" y="262" font-size="12.5" fill="#a33f2e">③普通函数：只能走正门（public 接口）</text>
+    <text x="64" y="284" font-size="12" fill="#8a8578">（实测：直接摸 private 编译错误）</text>
+    <text x="64" y="322" font-size="12.5" fill="#6b675e">声明位置：friend 写在类里——</text>
+    <text x="64" y="344" font-size="12.5" fill="#6b675e">　"我允许谁进"由类说了算</text>
+    <text x="64" y="372" font-size="12" fill="#8a8578">（定义在类外、无 Account:: 前缀——不是成员！）</text>
+
+    <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">友元的两种形态</text>
+    <text x="572" y="180" font-size="12.5" fill="#3b3a36">友元函数：单个函数受邀</text>
+    <text x="572" y="202" font-size="12" fill="#8a8578">（friend void f(const T&amp;)）</text>
+    <text x="572" y="234" font-size="12.5" fill="#3b3a36">友元类：整个类受邀（所有成员函数）</text>
+    <text x="572" y="256" font-size="12" fill="#8a8578">（实测：Auditor 的 audit/compare 都能摸）</text>
+    <text x="572" y="296" font-size="12.5" fill="#45703a">最常见场景：operator&lt;&lt;</text>
+    <text x="572" y="318" font-size="12" fill="#8a8578">（左操作数是 ostream——非成员是唯一选择）</text>
+    <text x="572" y="352" font-size="12" fill="#8a8578">（Day 56 的流运算符正是友元的主场）</text>
+
+    <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
+    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">友元的三条性质</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">①单向的（A 友 B ≠ B 友 A）②不可传递（友元的友元不是友）③不被继承（子类不自动友）</text>
+    <text x="70" y="490" font-size="12.5" fill="#6b675e">（"门禁卡只发给登记的人"——登记在类里、范围明确）</text>
+
+    <path d="M 60,514 Q 480,508 905,515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 55~58 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 59（今天）</text>
+    <circle cx="660" cy="514" r="5" fill="#e0955f"/>
+    <text x="660" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 60 项目日</text>
+    <circle cx="860" cy="514" r="5" fill="#5b8db8"/>
+    <text x="860" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">第 11 周 运算符</text>
+  </g>
+</svg>
