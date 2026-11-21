@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">十场景实录与第 100 天纪念</text>
+    <path d="M 400,58 Q 480,52 560,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 -std=c++17；-Wall 零警告 + ASan 零报错）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,490 Q 248,495 26,490 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 296)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">十场景输出（节选）</text>
+    <rect x="38" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./lc　（-Wall 零警告）</text>
+    <text x="54" y="196" font-size="11" fill="#cfe8c6">1 []：全局 100 ✔</text>
+    <text x="54" y="216" font-size="11" fill="#cfe8c6">2 [x]：x 改 999 后仍 10 ✔（快照）</text>
+    <text x="54" y="236" font-size="11" fill="#cfe8c8">3 [&amp;x]：跟到 555 ✔（别名）</text>
+    <text x="54" y="256" font-size="11" fill="#cfe8c6">4 混合：y 被改 575 ✔</text>
+    <text x="54" y="276" font-size="11" fill="#cfe8c6">5 [&amp;] 300 最新｜[=] 575 快照 ✔</text>
+    <text x="54" y="296" font-size="11" fill="#cfe8c8">6 mutable：计数器第 3 次 = 3 ✔</text>
+    <text x="54" y="316" font-size="11" fill="#cfe8c6">7 [sum=x+y]：捕获时算好 300 ✔</text>
+    <text x="54" y="336" font-size="11" fill="#cfe8c8">8 [this]：score 77 → 154 ✔</text>
+    <text x="54" y="356" font-size="11" fill="#cfe8c6">9 悬空：注释保平安（值捕修法）</text>
+    <text x="54" y="376" font-size="11" fill="#cfe8c6">10 算法组合：&gt;4 的 4 个 ✔</text>
+    <text x="54" y="410" font-size="11.5" fill="#9fb8a8">（ASan 零报错）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,490 Q 712,495 490,490 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 296)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">第 100 天纪念</text>
+    <rect x="502" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12.5" fill="#45703a">100/144 = 69.4%——百天碑</text>
+    <text x="514" y="206" font-size="12" fill="#9fb8a8">百天走过：</text>
+    <text x="514" y="230" font-size="11.5" fill="#cfe8c6">基础六周 → 内存两周 → OOP 五周</text>
+    <text x="514" y="250" font-size="11.5" fill="#cfe8c6">→ STL 四周 → 模板（本周）</text>
+    <text x="514" y="280" font-size="12" fill="#9fb8a8">lambda 的学习轨迹：</text>
+    <text x="514" y="302" font-size="11.5" fill="#cfe8c6">Day 48 首用（比较器）→ 91 谓词</text>
+    <text x="514" y="322" font-size="11.5" fill="#cfe8c8">　→ 93 两级裁判 → 今天全家福</text>
+    <text x="514" y="354" font-size="12" fill="#9fb8a8">剩 44 天的路：</text>
+    <text x="514" y="376" font-size="11.5" fill="#cfe8c6">模板周收官 → 阶段五（智能指针/</text>
+    <text x="514" y="396" font-size="11.5" fill="#cfe8c8">　异常/并发/性能）→ JSON 项目</text>
+    <text x="514" y="428" font-size="12.5" fill="#45703a">（明天 101 function 统一可调用</text>
+    <text x="514" y="448" font-size="12.5" fill="#45703a">　→ 102 里程碑：脱稿重写 LRU）</text>
+
+    <path d="M 24,516 Q 470,510 905,517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>
+    <text x="46" y="542" font-size="15.5" font-weight="bold" fill="#9c5a22">捕获口诀</text>
+    <text x="46" y="568" font-size="12.5" fill="#3b3a36">"只读拷小用值、要改外部用引用、lambda 出了变量的作用域必须值捕获"——三句话覆盖日常九成的选择；拿不准就先想"谁活得久"</text>
+
+    <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 101 std::function 与可调用对象的统一——回调注册表（计划指定）</text>
+  </g>
+</svg>

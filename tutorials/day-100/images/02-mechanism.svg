@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">lambda 的真身（函数对象）与悬空的时序</text>
+    <path d="M 290,58 Q 480,52 670,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,340 Q 470,334 44,339 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 220)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">[x] 的编译器展开（函数对象的真身）</text>
+    <rect x="110" y="146" width="360" height="170" fill="#33413a"/>
+    <text x="290" y="172" font-size="11" fill="#9fb8a8">auto by_val = [x] { return x; };</text>
+    <text x="290" y="196" font-size="10.5" fill="#9fb8a8">↓ 编译器生成：</text>
+    <text x="290" y="220" font-size="11" fill="#cfe8c6">class __lambda {</text>
+    <text x="290" y="240" font-size="11" fill="#cfe8c6">　int x;　　　　　　// 捕贝的字段</text>
+    <text x="290" y="260" font-size="11" fill="#cfe8c6">　int operator()() const { return x; }</text>
+    <text x="290" y="280" font-size="11" fill="#cfe8c6">};</text>
+    <text x="290" y="304" font-size="10" fill="#8a8578">（"匿名函数对象"——Day 97 说的类）</text>
+    <rect x="500" y="146" width="350" height="170" fill="#33413a"/>
+    <text x="675" y="172" font-size="11" fill="#9fb8a8">auto by_ref = [&amp;x] { return x; };</text>
+    <text x="675" y="196" font-size="10.5" fill="#9fb8a8">↓ 编译器生成：</text>
+    <text x="675" y="220" font-size="11" fill="#cfe8c6">class __lambda2 {</text>
+    <text x="675" y="240" font-size="11" fill="#cfe8c6">　int&amp; x;　　　　　 // 引用字段！</text>
+    <text x="675" y="260" font-size="11" fill="#cfe8c6">　int operator()() const { return x; }</text>
+    <text x="675" y="280" font-size="11" fill="#cfe8c6">};</text>
+    <text x="675" y="304" font-size="10" fill="#f0c9c0">（引用字段——原变量死了它就悬空）</text>
+    <text x="472" y="336" font-size="11.5" fill="#8a8578">（值版有字段拷贝——独立存活；引用版只有一根线——线的另一头没了就 UB）</text>
+
+    <path d="M 40,364 Q 280,358 520,364 Q 524,470 520,576 Q 280,582 42,576 Q 36,470 40,364 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 470)"/>
+    <text x="280" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">悬空的时序图（场景 9）</text>
+    <rect x="64" y="412" width="430" height="140" fill="#33413a"/>
+    <text x="279" y="436" font-size="10.5" fill="#9fb8a8">t1：int local = 42;　　　local 出生</text>
+    <text x="279" y="458" font-size="10.5" fill="#9fb8a8">t2：[&amp;local]{...}　　　lambda 拿到引用</text>
+    <text x="279" y="480" font-size="10.5" fill="#f0c9c0">t3：函数返回 lambda——local 析构死亡</text>
+    <text x="279" y="502" font-size="10.5" fill="#f0c9c0">t4：lambda() → 读死变量 → UB！</text>
+    <text x="279" y="528" font-size="10.5" fill="#cfe8c6">（修法：[local] 值捕——拷贝跟 lambda 活）</text>
+
+    <path d="M 550,364 Q 730,358 905,364 Q 908,470 905,576 Q 730,582 552,576 Q 547,470 550,364 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 470)"/>
+    <text x="727" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">算法里的标准组合（场景 10）</text>
+    <rect x="572" y="412" width="320" height="140" fill="#33413a"/>
+    <text x="732" y="436" font-size="10.5" fill="#9fb8a8">[&amp;above, threshold](int n) {</text>
+    <text x="732" y="458" font-size="10.5" fill="#cfe8c6">　if (n &gt; threshold) { ++above; }</text>
+    <text x="732" y="478" font-size="10.5" fill="#9fb8a8">}</text>
+    <text x="732" y="504" font-size="10.5" fill="#cfe8c8">（above 引用——累计结果出去）</text>
+    <text x="732" y="522" font-size="10.5" fill="#cfe8c8">（threshold 值——只读参数快照）</text>
+    <text x="732" y="544" font-size="10" fill="#8a8578">（本周 for_each/count_if 的日常姿势）</text>
+  </g>
+</svg>
