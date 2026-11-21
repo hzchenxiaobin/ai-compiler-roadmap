@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 20 全貌：数组名是首格的门牌</text>
+    <path d="M 330,60 Q 480,52 630,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">Day 13 说"下标是偏移量"，今天揭晓下半句：数组名本身就是首元素的地址</text>
+
+    <text x="250" y="136" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">int scores[5]：五个连排格子</text>
+    <rect x="60" y="152" width="76" height="46" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.5"/>
+    <text x="98" y="180" text-anchor="middle" font-size="13" fill="#3b3a36">10</text>
+    <rect x="136" y="152" width="76" height="46" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.5"/>
+    <text x="174" y="180" text-anchor="middle" font-size="13" fill="#3b3a36">20</text>
+    <rect x="212" y="152" width="76" height="46" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.5"/>
+    <text x="250" y="180" text-anchor="middle" font-size="13" fill="#3b3a36">30</text>
+    <rect x="288" y="152" width="76" height="46" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.5"/>
+    <text x="326" y="180" text-anchor="middle" font-size="13" fill="#3b3a36">40</text>
+    <rect x="364" y="152" width="76" height="46" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.5"/>
+    <text x="402" y="180" text-anchor="middle" font-size="13" fill="#3b3a36">50</text>
+    <text x="98" y="218" text-anchor="middle" font-size="10.5" fill="#8a8578">…d60</text>
+    <text x="174" y="218" text-anchor="middle" font-size="10.5" fill="#8a8578">…d64</text>
+    <text x="250" y="218" text-anchor="middle" font-size="10.5" fill="#8a8578">…d68</text>
+    <text x="326" y="218" text-anchor="middle" font-size="10.5" fill="#8a8578">…d6c</text>
+    <text x="402" y="218" text-anchor="middle" font-size="10.5" fill="#8a8578">…d70</text>
+    <path d="M 470,175 Q 510,175 550,175" fill="none" stroke="#c96a5a" stroke-width="2.6"/>
+    <path d="M 542,167 Q 551,173 543,183" fill="none" stroke="#c96a5a" stroke-width="2.6"/>
+    <path d="M 560,136 Q 720,130 880,136 Q 884,200 880,264 Q 720,270 562,264 Q 556,200 560,136 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(0.3 720 200)"/>
+    <text x="720" y="164" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#a33f2e">退化：名字交出门牌</text>
+    <text x="582" y="194" font-size="12" fill="#3b3a36">scores 本身 = &amp;scores[0] = 0x16f75ed60</text>
+    <text x="582" y="218" font-size="12" fill="#3b3a36">（实测两者分毫不差）</text>
+    <text x="582" y="246" font-size="12" fill="#a33f2e">scores + 1 = 0x…d64：加 1 跳一个元素（4 字节），</text>
+    <text x="582" y="264" font-size="12" fill="#a33f2e">不是加 1 个字节——步长由类型决定</text>
+
+    <path d="M 40,296 Q 470,290 905,297 L 901,420 Q 470,414 44,419 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.2 472 358)"/>
+    <text x="472" y="326" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">步长实测：int 迈 4 字节，double 迈 8 字节</text>
+    <text x="70" y="358" font-size="13" fill="#3b3a36">&amp;ints[0] = 0x16d432d68　→　&amp;ints[1] = 0x16d432d6c（+4）</text>
+    <text x="70" y="386" font-size="13" fill="#3b3a36">&amp;dbls[0] = 0x16d432d50　→　&amp;dbls[1] = 0x16d432d58（+8）</text>
+    <text x="510" y="358" font-size="13" fill="#45703a">p + 1 的真实含义：门牌 + sizeof(元素)</text>
+    <text x="510" y="386" font-size="13" fill="#6b675e">编译器按 p 的类型自动算步长——这就是"带类型的门牌"</text>
+
+    <path d="M 40,444 Q 470,438 905,445 L 901,508 Q 470,502 44,507 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(0.2 472 476)"/>
+    <text x="472" y="472" text-anchor="middle" font-size="15" font-weight="bold" fill="#8a6d1a">sizeof 陷阱：数组 20 字节，指针 8 字节</text>
+    <text x="472" y="498" text-anchor="middle" font-size="12.5" fill="#6b675e">数组一旦传给函数就退化成指针——长度信息丢失，这就是"数组参数要另传 count"的根本原因（Day 13 伏笔回收）</text>
+
+    <path d="M 60,528 Q 480,522 905,529" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="200" cy="528" r="5" fill="#8a94a3"/>
+    <text x="200" y="548" text-anchor="middle" font-size="12" fill="#3b3a36">Day 19 ✓</text>
+    <circle cx="400" cy="528" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="400" cy="528" r="5" fill="#5b8db8"/>
+    <text x="400" y="548" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 20（今天）</text>
+    <circle cx="580" cy="528" r="5" fill="#5b8db8"/>
+    <text x="580" y="548" text-anchor="middle" font-size="12" fill="#3b3a36">Day 21 引用</text>
+    <circle cx="760" cy="528" r="5" fill="#5b8db8"/>
+    <text x="760" y="548" text-anchor="middle" font-size="12" fill="#3b3a36">Day 24 自测</text>
+  </g>
+</svg>

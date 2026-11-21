@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">指针走数组：一步一格，走到哨兵停</text>
+    <path d="M 300,58 Q 480,52 660,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,260 Q 470,254 44,259 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(-0.2 472 180)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">两种写法，同一条路（实测逐格相同）</text>
+    <rect x="80" y="148" width="370" height="44" fill="#eef5e8" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="265" y="176" text-anchor="middle" font-size="12.5" fill="#45703a">下标版：for (i = 0; i &lt; WEEKS; ++i) sum += scores[i];</text>
+    <rect x="490" y="148" width="390" height="44" fill="#fcefe4" stroke="#e0955f" stroke-width="2.2"/>
+    <text x="685" y="170" text-anchor="middle" font-size="12" fill="#9c5a22">指针版：for (p = scores; p != scores + WEEKS;</text>
+    <text x="685" y="186" text-anchor="middle" font-size="12" fill="#9c5a22">++p) sum += *p;</text>
+    <text x="472" y="228" text-anchor="middle" font-size="12.5" fill="#6b675e">scores[i] 本来就是 *(scores + i) 的语法糖——两条路在编译器眼里是同一条</text>
+    <text x="472" y="250" text-anchor="middle" font-size="12.5" fill="#6b675e">（实测等价验证：ints[i] 与 *(ints+i) 逐格相等）</text>
+
+    <path d="M 40,286 Q 470,280 905,287 L 901,452 Q 470,446 44,451 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.2 472 369)"/>
+    <text x="472" y="316" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">指针巡视实测（8 格，地址步长 4）</text>
+    <rect x="70" y="332" width="820" height="104" fill="#33413a"/>
+    <text x="90" y="358" font-size="11.5" fill="#cfe8c6">p = 0x16d59ad50，*p = 12　　p = 0x16d59ad54，*p = 25　　p = 0x16d59ad58，*p = 9　　p = 0x16d59ad5c，*p = 31</text>
+    <text x="90" y="382" font-size="11.5" fill="#cfe8c6">p = 0x16d59ad60，*p = 18　　p = 0x16d59ad64，*p = 27　　p = 0x16d59ad68，*p = 22　　p = 0x16d59ad6c，*p = 35</text>
+    <text x="90" y="414" font-size="12" fill="#9fb8a8">每圈 ++p：门牌恰好 +4（一个 int）——步长自动算好，你只管 ++</text>
+
+    <path d="M 40,478 Q 470,472 905,479 L 901,576 Q 470,570 44,575 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.2 472 527)"/>
+    <text x="472" y="508" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#8a6d1a">哨兵：scores + WEEKS</text>
+    <text x="70" y="540" font-size="13" fill="#3b3a36">循环条件 p != scores + WEEKS：这个"尾后位置"是第 9 格的门牌（数组外的第一格）</text>
+    <text x="70" y="566" font-size="12.5" fill="#6b675e">它像跑步的终点线——站在终点之外，只用来比较，绝不解引用（那格不存在内容）</text>
+  </g>
+</svg>

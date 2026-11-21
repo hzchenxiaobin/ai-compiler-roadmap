@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">退化对照、步长实测与双版求和</text>
+    <path d="M 340,58 Q 480,52 620,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,230 470,360 Q 248,365 26,360 Q 20,230 24,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(-0.3 247 231)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#2c5a82">实验 1：退化与 sizeof 陷阱</text>
+    <rect x="38" y="146" width="420" height="190" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="12" fill="#9fb8a8">$ ./array_decay</text>
+    <text x="54" y="196" font-size="12.5" fill="#cfe8c6">scores　　　= 0x16f75ed60</text>
+    <text x="54" y="216" font-size="12.5" fill="#cfe8c6">&amp;scores[0] = 0x16f75ed60（相同：退化）</text>
+    <text x="54" y="240" font-size="12.5" fill="#cfe8c6">scores + 1 = 0x16f75ed64 = &amp;scores[1]</text>
+    <text x="54" y="264" font-size="12.5" fill="#f0c9c0">sizeof(scores) = 20　sizeof(p) = 8</text>
+    <text x="54" y="292" font-size="12" fill="#9fb8a8">数组名在表达式里 = 首格门牌；</text>
+    <text x="54" y="312" font-size="12" fill="#9fb8a8">只有在 sizeof 和 &amp; 整体面前才保留"整个数组"身份</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,230 934,360 Q 712,365 490,360 Q 484,230 488,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(0.3 711 231)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#45703a">实验 2：步长与等价性</text>
+    <rect x="502" y="146" width="420" height="190" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="12" fill="#9fb8a8">$ ./ptr_arith</text>
+    <text x="514" y="196" font-size="12.5" fill="#cfe8c6">int：　…d68 → …d6c（+4 字节）</text>
+    <text x="514" y="220" font-size="12.5" fill="#cfe8c6">double：…d50 → …d58（+8 字节）</text>
+    <text x="514" y="248" font-size="12.5" fill="#cfe8c6">ints[0] = 1，*(ints + 0) = 1</text>
+    <text x="514" y="268" font-size="12.5" fill="#cfe8c6">ints[1] = 2，*(ints + 1) = 2</text>
+    <text x="514" y="288" font-size="12.5" fill="#cfe8c6">ints[2] = 3，*(ints + 2) = 3</text>
+    <text x="514" y="318" font-size="12" fill="#9fb8a8">下标是指针运算的语法糖——三格全等</text>
+
+    <path d="M 24,386 Q 470,380 905,387 L 901,470 Q 470,464 26,469 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 428)"/>
+    <text x="46" y="414" font-size="15.5" font-weight="bold" fill="#9c5a22">实验 3：双版求和（计划练习）</text>
+    <rect x="38" y="428" width="850" height="34" rx="6" fill="#33413a"/>
+    <text x="54" y="450" font-size="12.5" fill="#cfe8c6">下标版总和 = 179　　指针版总和 = 179　（与 Day 13 统计的总和一致 ✔）</text>
+
+    <path d="M 24,490 Q 470,484 905,491 L 901,610 Q 470,604 26,609 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 550)"/>
+    <text x="46" y="518" font-size="14" font-weight="bold" fill="#55606e">本周伏笔进度</text>
+    <text x="46" y="548" font-size="12.5" fill="#3b3a36">今天回收：Day 13"数组参数要另传 count"的根因（退化丢长度）　　Day 19"指针减法按元素计"的展开（步长）</text>
+    <text x="46" y="578" font-size="12.5" fill="#6b675e">明天预告：引用——不抄门牌也不复印，直接给变量起别名；swap 三版本大战一触即发</text>
+  </g>
+</svg>
