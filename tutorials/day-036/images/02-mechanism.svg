@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">验收会话全景：增删改查 + 持久化 + 安检</text>
+    <path d="M 290,58 Q 480,52 670,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,320 Q 470,314 44,319 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.2 472 210)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">最终版验收会话（本机实测，七回合）</text>
+    <rect x="70" y="146" width="820" height="160" fill="#33413a"/>
+    <text x="90" y="172" font-size="11.5" fill="#9fb8a8">启动读到 0 位 → 加张三/李四（当前 1 人 → 2 人）</text>
+    <text x="90" y="194" font-size="11.5" fill="#cfe8c6">列表 → 1. 张三　13800000001　2. 李四　13800000002</text>
+    <text x="90" y="216" font-size="11.5" fill="#cfe8c6">改号李四 → 已更新　删除张三 → 已删除</text>
+    <text x="90" y="238" font-size="11.5" fill="#cfe8c6">查李四 → 找到：李四　13911111111（新号生效 ✔）</text>
+    <text x="90" y="260" font-size="11.5" fill="#cfe8c6">再列表 → 1. 李四　13911111111（删除+改号都被记住）</text>
+    <text x="90" y="286" font-size="11.5" fill="#cfe8c6">退出 → 已保存 1 位联系人，再见！</text>
+
+    <path d="M 40,344 Q 280,338 520,344 Q 524,450 520,556 Q 280,562 42,556 Q 36,450 40,344 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 450)"/>
+    <text x="280" y="374" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">六周知识全用上了</text>
+    <text x="64" y="406" font-size="12" fill="#3b3a36">struct 卡片（第 5 周）+ 定长数组（第 3 周）</text>
+    <text x="64" y="430" font-size="12" fill="#3b3a36">+ 函数拆分（第 2 周）+ const 安检（第 4 周）</text>
+    <text x="64" y="454" font-size="12" fill="#3b3a36">+ 文件 I/O 持久化（第 6 周）</text>
+    <text x="64" y="486" font-size="12" fill="#6b675e">每一周的知识都在这台机器里</text>
+    <text x="64" y="508" font-size="12" fill="#6b675e">留下了可指认的零件——</text>
+    <text x="64" y="530" font-size="12" fill="#6b675e">这就是"里程碑产出"的含义</text>
+
+    <path d="M 550,344 Q 730,338 905,344 Q 908,450 905,556 Q 730,562 552,556 Q 547,450 550,344 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 450)"/>
+    <text x="727" y="374" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">复盘的两个格式</text>
+    <text x="572" y="406" font-size="12.5" fill="#3b3a36">收获 = 认知变化：</text>
+    <text x="572" y="428" font-size="12" fill="#6b675e">"我原来以为 X，现在明白 Y"</text>
+    <text x="572" y="456" font-size="12.5" fill="#3b3a36">疑问 = 具体场景 + 挂账：</text>
+    <text x="572" y="478" font-size="12" fill="#6b675e">"逗号切错名 → 第 22 周 JSON"</text>
+    <text x="572" y="510" font-size="12" fill="#55606e">示例复盘全文见</text>
+    <text x="572" y="530" font-size="12" fill="#55606e">examples/RETROSPECTIVE.md</text>
+  </g>
+</svg>

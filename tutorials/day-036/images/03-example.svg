@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">git 管理实录与六周战绩总表</text>
+    <path d="M 340,58 Q 480,52 620,59" fill="none" stroke="#7aa663" weight="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,250 470,400 Q 248,405 26,400 Q 20,250 24,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(-0.3 247 251)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#2c5a82">git 三部曲实录</text>
+    <rect x="38" y="146" width="420" height="240" rx="6" fill="#33413a"/>
+    <text x="54" y="174" font-size="11.5" fill="#9fb8a8">$ mkdir contact_repo &amp;&amp; cd contact_repo</text>
+    <text x="54" y="196" font-size="11.5" fill="#9fb8a8">$ cp …/contact.h contact.cpp main.cpp .</text>
+    <text x="54" y="218" font-size="11.5" fill="#9fb8a8">$ git init</text>
+    <text x="54" y="240" font-size="11.5" fill="#9fb8a8">$ git add contact.h contact.cpp main.cpp</text>
+    <text x="54" y="262" font-size="11.5" fill="#9fb8a8">$ git commit -m "通讯录最终版：…"</text>
+    <text x="54" y="292" font-size="11.5" fill="#9fb8a8">$ git log --oneline</text>
+    <text x="54" y="314" font-size="12" fill="#cfe8c6">68ccb28 通讯录最终版：持久化+</text>
+    <text x="54" y="332" font-size="12" fill="#cfe8c6">　　　　输入校验+增删改查</text>
+    <text x="54" y="362" font-size="11.5" fill="#9fb8a8">$ git status --short | wc -l</text>
+    <text x="54" y="382" font-size="12.5" fill="#cfe8c6">0　（工作区干净）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,250 934,400 Q 712,405 490,400 Q 484,250 488,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(0.3 711 251)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#45703a">六周战绩总表</text>
+    <rect x="502" y="146" width="420" height="240" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="11.5" fill="#cfe8c6">第 1 周：工具链 + 换算器　　✔</text>
+    <text x="514" y="196" font-size="11.5" fill="#cfe8c6">第 2 周：函数三部曲 + 计算器 v1　✔</text>
+    <text x="514" y="220" font-size="11.5" fill="#cfe8c6">第 3 周：数组字符串 + 文本统计器　✔</text>
+    <text x="514" y="244" font-size="11.5" fill="#cfe8c6">第 4 周：指针引用 + 闭卷自测　　✔</text>
+    <text x="514" y="268" font-size="11.5" fill="#cfe8c6">第 5 周：多文件调试 + 通讯录 v1　✔</text>
+    <text x="514" y="292" font-size="11.5" fill="#cfe8c6">第 6 周：文件 I/O + v2 + 最终版　✔</text>
+    <text x="514" y="326" font-size="12" fill="#9fb8a8">36/144 天完成（25%）；</text>
+    <text x="514" y="348" font-size="12" fill="#9fb8a8">五个项目日全胜、两次闭卷大考通过、</text>
+    <text x="514" y="370" font-size="12" fill="#9fb8a8">一次真实越界事故化教材</text>
+
+    <path d="M 24,426 Q 470,420 905,427 L 901,500 Q 470,494 26,499 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 463)"/>
+    <text x="46" y="454" font-size="14.5" font-weight="bold" fill="#9c5a22">最终版验收清单（全部实测 ✔）</text>
+    <text x="46" y="482" font-size="12.5" fill="#3b3a36">七回合会话（增删改查+改号生效+删除记住）｜三段持久化会话｜边界三连｜git 提交干净</text>
+
+    <path d="M 24,520 Q 470,514 905,521 L 901,630 Q 470,624 26,629 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(0.2 464 575)"/>
+    <text x="480" y="550" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#8a6d1a">下一站：第 7 周 · 面向对象</text>
+    <text x="480" y="578" text-anchor="middle" font-size="12.5" fill="#6b675e">类、构造函数、RAII——通讯录的 Contact 会升级成真正的类；今天的"三件套+四函数"</text>
+    <text x="480" y="600" text-anchor="middle" font-size="12.5" fill="#6b675e">就是第 49 天 Rectangle 类的直系前辈</text>
+  </g>
+</svg>

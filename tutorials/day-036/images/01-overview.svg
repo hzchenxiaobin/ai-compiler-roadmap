@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 36 里程碑：通讯录最终版提交</text>
+    <path d="M 320,60 Q 480,52 640,61" fill="none" stroke="#e0955f" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划第一阶段的里程碑产出正式交付——外加 git 管理和一份诚实的复盘</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,240 520,364 Q 280,370 42,364 Q 36,240 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 240)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">最终版构成（约 220 行）</text>
+    <text x="64" y="180" font-size="13" fill="#3b3a36">contact.h：Contact 卡片 + 八个函数名片</text>
+    <text x="64" y="208" font-size="13" fill="#3b3a36">contact.cpp：五项操作 + 存读盘 + 安检</text>
+    <text x="64" y="236" font-size="13" fill="#3b3a36">main.cpp：菜单循环 + 出口汇流</text>
+    <text x="64" y="270" font-size="12.5" fill="#6b675e">版本史：v1（D30 退出即散）</text>
+    <text x="64" y="292" font-size="12.5" fill="#6b675e">→ v2（D32 持久化+安检）</text>
+    <text x="64" y="314" font-size="12.5" fill="#6b675e">→ 最终版（D36 提交）</text>
+    <text x="64" y="348" font-size="12" fill="#8a8578">（局限清单同步更新：容量/查找仍是路标）</text>
+
+    <path d="M 550,116 Q 730,110 905,116 Q 908,240 905,364 Q 730,370 552,364 Q 547,240 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 240)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">git 管理（真实演示输出）</text>
+    <rect x="572" y="162" width="320" height="130" fill="#33413a"/>
+    <text x="588" y="188" font-size="11.5" fill="#9fb8a8">$ git init &amp;&amp; git add *.h *.cpp main.cpp</text>
+    <text x="588" y="210" font-size="11.5" fill="#9fb8a8">$ git commit -m "通讯录最终版……"</text>
+    <text x="588" y="234" font-size="11.5" fill="#cfe8c6">68ccb28 通讯录最终版：持久化+</text>
+    <text x="588" y="252" font-size="11.5" fill="#cfe8c6">　　　　输入校验+增删改查</text>
+    <text x="588" y="276" font-size="11.5" fill="#cfe8c6">status 0 行（工作区干净）</text>
+    <text x="727" y="316" font-size="12.5" fill="#45703a">从第 1 周就提交的好习惯，今天正式落地</text>
+    <text x="727" y="342" font-size="12" fill="#8a8578">（毕业时它就是你的作品集第一条）</text>
+
+    <path d="M 40,388 Q 470,382 905,389 L 901,490 Q 470,484 44,489 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 438)"/>
+    <text x="472" y="418" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">复盘：3 个收获 + 3 个疑问（模板见 examples/RETROSPECTIVE.md）</text>
+    <text x="70" y="450" font-size="13" fill="#3b3a36">收获格式："我原来以为……现在明白……"（写出认知变化，不是知识点抄写）</text>
+    <text x="70" y="476" font-size="13" fill="#3b3a36">疑问格式：具体场景 + 下一步计划（挂账到对应的周，不悬空）</text>
+
+    <path d="M 60,510 Q 480,504 905,511" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="430" cy="510" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="430" cy="510" r="5" fill="#e0955f"/>
+    <text x="430" y="530" text-anchor="middle" font-size="12" font-weight="bold" fill="#9c5a22">Day 36（第 6 周收官）</text>
+    <circle cx="660" cy="510" r="5" fill="#5b8db8"/>
+    <text x="660" y="530" text-anchor="middle" font-size="12" fill="#3b3a36">第 7 周 面向对象</text>
+    <circle cx="850" cy="510" r="5" fill="#5b8db8"/>
+    <text x="850" y="530" text-anchor="middle" font-size="12" fill="#3b3a36">……第 24 周</text>
+  </g>
+</svg>
