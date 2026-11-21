@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">文件头注释的解剖与"为什么"的原则</text>
+    <path d="M 300,58 Q 480,52 660,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,340 Q 470,334 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 220)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">tidy_check.cpp 的文件头（五行法）</text>
+    <rect x="110" y="146" width="740" height="170" fill="#33413a"/>
+    <text x="480" y="172" font-size="10.5" fill="#cfe8c8">// json.hpp —— JSON 解析器（教学版）　← 一句话定位</text>
+    <text x="480" y="196" font-size="10.5" fill="#cfe8c8">// 模块：Tokenizer / Parser / JsonValue　　　← 结构地图</text>
+    <text x="480" y="220" font-size="10.5" fill="#f0c9c0">// 特性：RFC 8259 子集；283/283；两 San 全绿 ← 能干嘛+证据</text>
+    <text x="480" y="244" font-size="10.5" fill="#f0c9c0">// 限制：double 的 2^53；深度 500　　　　　← 不能干嘛</text>
+    <text x="480" y="268" font-size="10.5" fill="#9fb8a8">// 天数：Day 127~140 的集大成　　　　　　　← 来历</text>
+    <text x="480" y="300" font-size="10" fill="#8a8578">（五行：定位/结构/特性/限制/来历——30 秒读完建立心智模型）</text>
+    <text x="472" y="334" font-size="11.5" fill="#8a8578">（"限制"行最重要：诚实声明边界=未来用户的期待管理）</text>
+
+    <path d="M 40,364 Q 280,358 520,364 Q 524,480 520,576 Q 280,582 42,576 Q 36,480 40,364 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 470)"/>
+    <text x="280" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">"为什么"原则的对照</text>
+    <rect x="64" y="412" width="430" height="150" fill="#33413a"/>
+    <text x="279" y="436" font-size="10.5" fill="#9fb8a8">坏注释（是什么）：</text>
+    <text x="279" y="458" font-size="10" fill="#8a8578">　i++;  // i 加一　← 代码自己说了</text>
+    <text x="279" y="484" font-size="10.5" fill="#9fb8a8">好注释（为什么）：</text>
+    <text x="279" y="506" font-size="10" fill="#cfe8c8">　if (++depth &gt; 500) 拒;  // 栈保护：</text>
+    <text x="279" y="524" font-size="10" fill="#cfe8c8">　　百万层括号会爆栈（实测）</text>
+    <text x="279" y="548" font-size="10" fill="#8a8578">（为什么 500？为什么不迭代？——答案所在）</text>
+
+    <path d="M 550,364 Q 730,358 905,364 Q 908,480 905,576 Q 730,582 552,576 Q 547,480 550,364 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 470)"/>
+    <text x="727" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">目录结构的审视</text>
+    <rect x="572" y="412" width="320" height="150" fill="#33413a"/>
+    <text x="732" y="436" font-size="10.5" fill="#9fb8a8">现状：tutorials/day-NNN/examples/</text>
+    <text x="732" y="458" font-size="10" fill="#cfe8c8">（每天自包含——教学特性）</text>
+    <text x="732" y="484" font-size="10.5" fill="#9fb8a8">发布的常规结构（对照）：</text>
+    <text x="732" y="506" font-size="10" fill="#8a8578">　include/json.hpp + src/ + test/</text>
+    <text x="732" y="526" font-size="10" fill="#8a8578">　（明天 CMake 的铺垫——保持两世界）</text>
+    <text x="732" y="548" font-size="10" fill="#8a8578">（整理=看清现状不是推翻现状）</text>
+  </g>
+</svg>
