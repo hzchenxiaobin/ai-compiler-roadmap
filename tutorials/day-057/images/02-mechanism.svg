@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">三种"感"的翻译过程</text>
+    <path d="M 400,58 Q 480,52 560,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,300 Q 470,294 44,299 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 200)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">写法 → 调用的翻译（Day 55 翻译法续）</text>
+    <rect x="90" y="146" width="250" height="130" fill="#fffdf7" stroke="#5b8db8" stroke-width="2"/>
+    <text x="215" y="172" font-size="11" fill="#2c5a82">box[3] = 7;</text>
+    <text x="215" y="196" font-size="10.5" fill="#6b675e">↓</text>
+    <text x="215" y="216" font-size="10.5" fill="#6b675e">box.operator[](3) = 7;</text>
+    <text x="215" y="240" font-size="10" fill="#8a8578">（返回 int&amp; 再赋值——</text>
+    <text x="215" y="258" font-size="10" fill="#8a8578">　引用是写入的通道）</text>
+    <rect x="370" y="146" width="250" height="130" fill="#fffdf7" stroke="#7aa663" stroke-width="2"/>
+    <text x="495" y="172" font-size="11" fill="#45703a">triple(7)</text>
+    <text x="495" y="196" font-size="10.5" fill="#6b675e">↓</text>
+    <text x="495" y="216" font-size="10.5" fill="#6b675e">triple.operator()(7)</text>
+    <text x="495" y="240" font-size="10" fill="#8a8578">（() 是运算符——</text>
+    <text x="495" y="258" font-size="10" fill="#8a8578">　参数表是它的"操作数"）</text>
+    <rect x="650" y="146" width="250" height="130" fill="#fffdf7" stroke="#e0955f" stroke-width="2"/>
+    <text x="775" y="172" font-size="11" fill="#9c5a22">cfg-&gt;port()</text>
+    <text x="775" y="196" font-size="10.5" fill="#6b675e">↓</text>
+    <text x="775" y="216" font-size="10.5" fill="#6b675e">(cfg.operator-&gt;())-&gt;port()</text>
+    <text x="775" y="240" font-size="10" fill="#8a8578">（-&gt; 返回指针，编译器</text>
+    <text x="775" y="258" font-size="10" fill="#8a8578">　自动再补一次真正的 -&gt;）</text>
+    <text x="472" y="288" font-size="12" fill="#9fb8a8">（三种写法三种翻译——本质都是"名字特殊的成员函数调用"）</text>
+
+    <path d="M 40,324 Q 280,318 520,324 Q 524,450 520,576 Q 280,582 42,576 Q 36,450 40,324 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 450)"/>
+    <text x="280" y="354" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">为什么 -&gt; 必须返回指针</text>
+    <text x="64" y="388" font-size="12.5" fill="#3b3a36">operator-&gt;() 返回 T*：</text>
+    <text x="64" y="410" font-size="12.5" fill="#3b3a36">　编译器拿这个指针继续完成</text>
+    <text x="64" y="430" font-size="12.5" fill="#3b3a36">　真正的成员访问（自动补 -&gt;）</text>
+    <text x="64" y="464" font-size="12.5" fill="#a33f2e">若返回 int 之类非指针：</text>
+    <text x="64" y="484" font-size="12" fill="#8a8578">（编译错——-&gt; 的后一半没法接）</text>
+    <text x="64" y="518" font-size="12.5" fill="#6b675e">这是唯一"返回值类型受限"</text>
+    <text x="64" y="538" font-size="12.5" fill="#6b675e">的运算符重载——</text>
+    <text x="64" y="558" font-size="12.5" fill="#6b675e">　编译器要拿它继续接力</text>
+
+    <path d="M 550,324 Q 730,318 905,324 Q 908,450 905,576 Q 730,582 552,576 Q 547,450 550,324 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 450)"/>
+    <text x="727" y="354" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">() 的多参数与状态</text>
+    <text x="572" y="388" font-size="12.5" fill="#3b3a36">() 参数个数不限（可 0 个可多个）：</text>
+    <text x="572" y="410" font-size="12" fill="#6b675e">　operator()(int a, int b)</text>
+    <text x="572" y="444" font-size="12.5" fill="#45703a">状态携带是它超越函数的地方：</text>
+    <text x="572" y="466" font-size="12" fill="#6b675e">　factor_ 存在对象里——</text>
+    <text x="572" y="486" font-size="12" fill="#6b675e">　同一个 triple 反复用、不用传 3.0</text>
+    <text x="572" y="520" font-size="12" fill="#8a8578">（第 11 周 STL：sort 的比较器、</text>
+    <text x="572" y="540" font-size="12" fill="#8a8578">　transform 的操作——全是仿函数）</text>
+  </g>
+</svg>

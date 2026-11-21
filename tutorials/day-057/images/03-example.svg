@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">三种"感"的实测战报</text>
+    <path d="M 390,58 Q 480,52 570,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,280 470,460 Q 248,465 26,460 Q 20,280 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 281)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出</text>
+    <rect x="38" y="146" width="420" height="300" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./co　（-Wall 零警告）</text>
+    <text x="54" y="200" font-size="12" fill="#9fb8a8">== []：可读可写 ==</text>
+    <text x="54" y="222" font-size="12.5" fill="#cfe8c6">box[0] = 10　box[1]~[3] = 0</text>
+    <text x="54" y="242" font-size="12.5" fill="#cfe8c6">box[4] = 50　（零初始化+两处写入）</text>
+    <text x="54" y="272" font-size="12" fill="#9fb8a8">== ()：仿函数 ==</text>
+    <text x="54" y="294" font-size="12.5" fill="#cfe8c6">triple(7) = 21</text>
+    <text x="54" y="314" font-size="12.5" fill="#cfe8c6">triple(2.5) = 7.5</text>
+    <text x="54" y="344" font-size="12" fill="#9fb8a8">== -&gt; 和 *：智能指针底层 ==</text>
+    <text x="54" y="366" font-size="12.5" fill="#cfe8c6">cfg-&gt;host() = localhost</text>
+    <text x="54" y="386" font-size="12.5" fill="#cfe8c6">cfg-&gt;port() = 8080</text>
+    <text x="54" y="406" font-size="12.5" fill="#f0c9c0">(*cfg).port() = 8080（两者等价）</text>
+    <text x="54" y="436" font-size="12" fill="#9fb8a8">（-&gt; 转发、* 解引用——手写 SmartPtr）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,280 934,460 Q 712,465 490,460 Q 484,280 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 281)"/>
+    <text x="510" y="132" font-size="15.5" font-weight="bold" fill="#2c5a82">三个"感"的定位表</text>
+    <rect x="502" y="146" width="420" height="200" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="11.5" fill="#cfe8c6">[]：容器类的门票（vector/map 都有）</text>
+    <text x="514" y="200" font-size="11.5" fill="#cfe8c6">()：策略/回调的载体（带状态）</text>
+    <text x="514" y="226" font-size="11.5" fill="#cfe8c6">-&gt;：包装指针的类（智能指针/迭代器）</text>
+    <text x="514" y="258" font-size="11.5" fill="#9fb8a8">（. 不能重载——所以 -&gt; 是</text>
+    <text x="514" y="278" font-size="11.5" fill="#9fb8a8">　包装类转发成员访问的唯一通道）</text>
+    <text x="510" y="322" font-size="12.5" fill="#3b3a36">本周清单：Day 55 算术、56 流、</text>
+    <text x="510" y="344" font-size="12.5" fill="#3b3a36">　今天容器族——运算符三大族齐了</text>
+    <text x="510" y="378" font-size="12" fill="#8a8578">（Day 58 类型转换是"看不见的</text>
+    <text x="510" y="398" font-size="12" fill="#8a8578">　运算符"——构造函数式转换）</text>
+
+    <path d="M 24,486 Q 470,480 905,487 L 901,560 Q 470,554 26,559 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 523)"/>
+    <text x="46" y="514" font-size="15.5" font-weight="bold" fill="#9c5a22">读写下标的返回值链条</text>
+    <text x="46" y="544" font-size="12.5" fill="#3b3a36">box[3] = 7 之所以能写：operator[] 返回 int&amp;——引用是"写入通道"；若返回 int（值），赋值写到副本、本体不动</text>
+
+    <path d="M 24,578 Q 470,572 905,579 L 901,640 Q 470,634 26,639 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 609)"/>
+    <text x="480" y="606" text-anchor="middle" font-size="13" fill="#55606e">明天预告：Day 58 类型转换运算符与 explicit——Fraction 隐式变 double 是福是祸</text>
+  </g>
+</svg>
