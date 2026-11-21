@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">三条退出路径、两道安检与一个闭环</text>
+    <path d="M 310,58 Q 480,52 650,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 280,94 520,100 Q 524,220 520,340 Q 280,346 42,340 Q 36,220 40,100 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 220)"/>
+    <text x="280" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">退出路径都通向存盘</text>
+    <text x="64" y="164" font-size="12.5" fill="#3b3a36">①菜单选 0：break 出循环 → 存盘</text>
+    <text x="64" y="192" font-size="12.5" fill="#3b3a36">②EOF（Ctrl+D/管道完）：break → 存盘</text>
+    <text x="64" y="220" font-size="12.5" fill="#a33f2e">③Ctrl+C 强杀：不存盘！（数据丢到上次保存）</text>
+    <text x="64" y="254" font-size="12.5" fill="#6b675e">关键设计：break 是唯一出口的"汇"，</text>
+    <text x="64" y="276" font-size="12.5" fill="#6b675e">save_contacts 放在汇之后——</text>
+    <text x="64" y="298" font-size="12.5" fill="#6b675e">1 和 2 两条路都必然经过它</text>
+    <text x="64" y="326" font-size="11.5" fill="#8a8578">（实测：空管道 EOF 退出也打印"已保存"）</text>
+
+    <path d="M 550,100 Q 740,94 930,100 Q 933,220 930,340 Q 740,346 552,340 Q 547,220 550,100 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 740 220)"/>
+    <text x="740" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">新增的安检流水线</text>
+    <rect x="572" y="146" width="320" height="40" fill="#33413a"/>
+    <text x="732" y="170" text-anchor="middle" font-size="11" fill="#cfe8c6">读入 name、phone</text>
+    <path d="M 732,190 Q 732,204 732,216" fill="none" stroke="#3b3a36" stroke-width="2.2"/>
+    <path d="M 725,210 Q 732,218 740,211" fill="none" stroke="#3b3a36" stroke-width="2.2"/>
+    <rect x="572" y="220" width="150" height="36" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2"/>
+    <text x="647" y="242" text-anchor="middle" font-size="10.5" fill="#a33f2e">is_valid_name？</text>
+    <rect x="742" y="220" width="150" height="36" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2"/>
+    <text x="817" y="242" text-anchor="middle" font-size="10.5" fill="#a33f2e">is_valid_phone？</text>
+    <path d="M 732,262 Q 732,282 732,298" fill="none" stroke="#45703a" stroke-width="2.2"/>
+    <path d="M 725,292 Q 732,300 740,293" fill="none" stroke="#45703a" stroke-width="2.2"/>
+    <rect x="572" y="302" width="320" height="30" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
+    <text x="732" y="322" text-anchor="middle" font-size="10.5" fill="#45703a">全过 → add_contact 入册</text>
+
+    <path d="M 40,364 Q 470,358 905,365 L 901,460 Q 470,454 44,459 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.2 472 412)"/>
+    <text x="472" y="392" text-anchor="middle" font-size="15" font-weight="bold" fill="#8a6d1a">持久化闭环的时刻表</text>
+    <text x="70" y="422" font-size="13" fill="#3b3a36">启动 → load（文件不存在得 0，合法起步）→ 菜单循环 → 任何正常出口 → save（覆盖式全量重写）</text>
+    <text x="70" y="448" font-size="12.5" fill="#6b675e">删除/改号在内存里完成，文件只在收摊时更新——"内存是工作台，磁盘是档案柜"</text>
+
+    <path d="M 40,484 Q 470,478 905,485 L 901,576 Q 470,570 44,575 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 472 530)"/>
+    <text x="472" y="512" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#55606e">本日翻车预警（来自 Day 31 的真实教训）</text>
+    <text x="70" y="542" font-size="12.5" fill="#3b3a36">读盘有 count &lt; 100 守卫，写侧同样要有容量检查——昨天 102 行文件实测越界写入，两头都要站岗</text>
+    <text x="70" y="566" font-size="12.5" fill="#6b675e">（v2 的 add_contact 沿用 v1 的满员拦截，读写在 load_contacts 内也卡了上限）</text>
+  </g>
+</svg>

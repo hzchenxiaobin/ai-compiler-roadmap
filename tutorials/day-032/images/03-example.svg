@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">三段会话的持久化全程实录</text>
+    <path d="M 350,58 Q 480,52 610,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21，管道喂入）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,250 470,400 Q 248,405 26,400 Q 20,250 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 251)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">会话一：建档</text>
+    <rect x="38" y="146" width="420" height="240" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">启动时从 contacts_v2.txt 读到 0 位联系人</text>
+    <text x="54" y="196" font-size="11.5" fill="#cfe8c6">已添加 张三（当前 1 人）</text>
+    <text x="54" y="216" font-size="11.5" fill="#cfe8c6">已添加 李四（当前 2 人）</text>
+    <text x="54" y="240" font-size="11.5" fill="#f0c9c0">（王五 电话 abc123）电话不合法（5~15 位纯数字）。</text>
+    <text x="54" y="264" font-size="11.5" fill="#9fb8a8">已保存 2 位联系人到 contacts_v2.txt，再见！</text>
+    <text x="54" y="296" font-size="11.5" fill="#9fb8a8">$ cat contacts_v2.txt</text>
+    <text x="54" y="316" font-size="11.5" fill="#cfe8c6">张三,13800000001</text>
+    <text x="54" y="334" font-size="11.5" fill="#cfe8c6">李四,13800000002</text>
+    <text x="54" y="366" font-size="12" fill="#9fb8a8">安检拦下王五；文件恰好两行；非法数据没进档案柜</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,250 934,400 Q 712,405 490,400 Q 484,250 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 251)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">会话二：用档（删一人）</text>
+    <rect x="502" y="146" width="420" height="240" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="11.5" fill="#9fb8a8">启动时从 contacts_v2.txt 读到 2 位联系人</text>
+    <text x="514" y="196" font-size="11.5" fill="#9fb8a8">列表 →</text>
+    <text x="514" y="216" font-size="11.5" fill="#cfe8c6">  1. 张三　13800000001</text>
+    <text x="514" y="234" font-size="11.5" fill="#cfe8c6">  2. 李四　13800000002</text>
+    <text x="514" y="258" font-size="11.5" fill="#9fb8a8">删除张三 → 已删除 张三</text>
+    <text x="514" y="282" font-size="11.5" fill="#9fb8a8">已保存 1 位联系人到 contacts_v2.txt，再见！</text>
+    <text x="514" y="314" font-size="12" fill="#9fb8a8">上一会话的成果完整接住；</text>
+    <text x="514" y="334" font-size="12" fill="#9fb8a8">删除走 v1 的移位术，收摊覆盖式重写</text>
+    <text x="514" y="366" font-size="12" fill="#9fb8a8">（文件从 2 行变 1 行——wc -l 可验）</text>
+
+    <path d="M 24,426 Q 248,420 470,426 Q 474,510 470,600 Q 248,605 26,600 Q 20,510 24,426 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.3 247 513)"/>
+    <text x="46" y="454" font-size="15.5" font-weight="bold" fill="#9c5a22">会话三：验档</text>
+    <rect x="38" y="468" width="420" height="120" rx="6" fill="#33413a"/>
+    <text x="54" y="492" font-size="11.5" fill="#9fb8a8">启动时读到 1 位联系人</text>
+    <text x="54" y="512" font-size="11.5" fill="#9fb8a8">列表 →</text>
+    <text x="54" y="530" font-size="11.5" fill="#cfe8c6">  1. 李四　13800000002</text>
+    <text x="54" y="556" font-size="11.5" fill="#9fb8a8">已保存 1 位联系人……再见！</text>
+    <text x="54" y="580" font-size="12" fill="#9fb8a8">张三的删除被"记住"了——持久化闭环严丝合缝</text>
+
+    <path d="M 488,426 Q 712,420 934,426 Q 938,510 934,600 Q 712,605 490,600 Q 484,510 488,426 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 711 513)"/>
+    <text x="510" y="454" font-size="15.5" font-weight="bold" fill="#55606e">里程碑自测</text>
+    <text x="510" y="486" font-size="12.5" fill="#3b3a36">□ 独立复现 v2（含读盘存盘两函数）</text>
+    <text x="510" y="510" font-size="12.5" fill="#3b3a36">□ 三段会话自己跑一遍全对上</text>
+    <text x="510" y="534" font-size="12.5" fill="#3b3a36">□ 安检漏斗两条各拦一次（实测）</text>
+    <text x="510" y="558" font-size="12.5" fill="#3b3a36">□ 能讲清"内存工作台/磁盘档案柜"</text>
+    <text x="510" y="590" font-size="12" fill="#8a8578">全勾 = 计划第 6 周前半程达成</text>
+  </g>
+</svg>
