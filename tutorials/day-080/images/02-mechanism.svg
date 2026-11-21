@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">迭代器是"广义指针"与半开区间的设计</text>
+    <path d="M 290,58 Q 480,52 670,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,320 Q 470,314 44,319 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 210)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">v = {10, 20, 30, 40, 50} 的区间图</text>
+    <rect x="140" y="148" width="60" height="40" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
+    <text x="170" y="172" font-size="11" fill="#45703a">10</text>
+    <rect x="200" y="148" width="60" height="40" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
+    <text x="230" y="172" font-size="11" fill="#45703a">20</text>
+    <rect x="260" y="148" width="60" height="40" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
+    <text x="290" y="172" font-size="11" fill="#45703a">30</text>
+    <rect x="320" y="148" width="60" height="40" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
+    <text x="350" y="172" font-size="11" fill="#45703a">40</text>
+    <rect x="380" y="148" width="60" height="40" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
+    <text x="410" y="172" font-size="11" fill="#45703a">50</text>
+    <rect x="440" y="148" width="50" height="40" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.2" stroke-dasharray="5 3"/>
+    <text x="465" y="168" font-size="9" fill="#8a94a3">end</text>
+    <text x="465" y="180" font-size="8" fill="#8a94a3">（尾后）</text>
+    <path d="M 170,206 L 170,196" fill="none" stroke="#45703a" stroke-width="2"/>
+    <text x="170" y="222" font-size="9" fill="#45703a">begin</text>
+    <path d="M 465,206 L 465,194" fill="none" stroke="#8a94a3" stroke-width="2"/>
+    <text x="600" y="172" font-size="11" fill="#3b3a36">[begin, end) 半开：</text>
+    <text x="600" y="192" font-size="11" fill="#6b675e">含 begin 不含 end</text>
+    <text x="600" y="216" font-size="11" fill="#6b675e">end - begin = 5 = size</text>
+    <text x="600" y="240" font-size="11" fill="#6b675e">*(end-1) = 50（最后元素）</text>
+    <text x="472" y="262" font-size="12" fill="#45703a">半开的好处：空容器 begin==end 自然成立——循环条件统一用 !=</text>
+    <text x="472" y="292" font-size="11.5" fill="#8a8578">（"到头了吗"所有容器都答得上来——下标 &lt; 在 list 上没意义）</text>
+
+    <path d="M 40,344 Q 280,338 520,344 Q 524,460 520,576 Q 280,582 42,576 Q 36,460 40,344 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 460)"/>
+    <text x="280" y="374" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">通用语言的实证</text>
+    <text x="64" y="408" font-size="12.5" fill="#3b3a36">同一段循环跑 vector 和 list：</text>
+    <text x="64" y="430" font-size="12" fill="#45703a">　求和都 = 15（代码一字不改）</text>
+    <text x="64" y="460" font-size="12.5" fill="#6b675e">这就是第 16 周算法的前置条件：</text>
+    <text x="64" y="482" font-size="12.5" fill="#6b675e">　std::sort/find 只认迭代器——</text>
+    <text x="64" y="504" font-size="12.5" fill="#6b675e">　不关心底下是什么容器</text>
+    <text x="64" y="540" font-size="11" fill="#8a8578">（算法 × 容器的解耦由迭代器完成）</text>
+
+    <path d="M 550,344 Q 730,338 905,344 Q 908,460 905,576 Q 730,582 552,576 Q 547,460 550,344 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 460)"/>
+    <text x="727" y="374" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">vector 迭代器的算术（实测）</text>
+    <rect x="572" y="392" width="320" height="140" fill="#33413a"/>
+    <text x="732" y="418" font-size="11" fill="#cfe8c6">it = begin()　→ *it = 10</text>
+    <text x="732" y="442" font-size="11" fill="#cfe8c6">it += 2　　　 → *it = 30（跳两格）</text>
+    <text x="732" y="466" font-size="11" fill="#cfe8c6">it[1]　　　　→ 40（下标版）</text>
+    <text x="732" y="490" font-size="11" fill="#cfe8c6">end - it　　 → 3（还差几步）</text>
+    <text x="732" y="516" font-size="10.5" fill="#9fb8a8">（随机访问特权——list 没有）</text>
+  </g>
+</svg>

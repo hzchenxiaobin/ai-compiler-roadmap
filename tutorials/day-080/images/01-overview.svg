@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 80 全貌：迭代器——所有容器的通用语言</text>
+    <path d="M 300,60 Q 480,52 660,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定"下标/迭代器/范围 for 对比"——Day 46 说范围 for 是语法糖，今天看清糖衣下的 begin/end 机制</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">四种遍历的分工（实测同输出）</text>
+    <text x="64" y="180" font-size="12.5" fill="#3b3a36">①下标：要位置信息时（v[i] + i）</text>
+    <text x="64" y="208" font-size="12.5" fill="#45703a">②迭代器：算法的接口语言（第 16 周主场）</text>
+    <text x="64" y="236" font-size="12.5" fill="#45703a">③范围 for：日常遍历（糖衣版②）</text>
+    <text x="64" y="264" font-size="12.5" fill="#45703a">④const_iterator：只读承诺（cbegin/cend）</text>
+    <text x="64" y="300" font-size="12.5" fill="#6b675e">四者输出一字不差（实测）——</text>
+    <text x="64" y="322" font-size="12.5" fill="#6b675e">　选型看需求不是看心情</text>
+    <text x="64" y="356" font-size="12" fill="#8a8578">（范围 for 的展开就是方式二——Day 46 的图今天补全）</text>
+
+    <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">begin/end 的身份（实测）</text>
+    <text x="572" y="180" font-size="12.5" fill="#45703a">begin()：指向首元素（* 得 10）</text>
+    <text x="572" y="208" font-size="12.5" fill="#a33f2e">end()：尾后哨兵——绝不 deref！</text>
+    <text x="572" y="230" font-size="12" fill="#8a8578">（*end() 是 UB——"过尾"不是元素）</text>
+    <text x="572" y="262" font-size="12.5" fill="#45703a">end - begin = 5（== size）</text>
+    <text x="572" y="284" font-size="12.5" fill="#45703a">最后元素 = *(end - 1) = 50</text>
+    <text x="572" y="322" font-size="12.5" fill="#6b675e">为什么 [begin, end) 半开区间：</text>
+    <text x="572" y="344" font-size="12" fill="#8a8578">（空容器也成立（begin==end）+</text>
+    <text x="572" y="364" font-size="12" fill="#8a8578">　循环条件统一用 !=）</text>
+
+    <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
+    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">能力分层：vector 能跳、list 只能走</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">vector 迭代器随机访问（it += n ✔）｜list 双向（++ ✔、+= 编译错——实测 error: no viable overloaded '+='）</text>
+    <text x="70" y="490" font-size="12.5" fill="#6b675e">（能力弱换插入快——明天讲失效、后天讲容器选型）</text>
+
+    <path d="M 60,514 Q 480,508 905,515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 79 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 80（今天）</text>
+    <circle cx="650" cy="514" r="5" fill="#5b8db8"/>
+    <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 81~83</text>
+    <circle cx="850" cy="514" r="5" fill="#e0955f"/>
+    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 84 项目日</text>
+  </g>
+</svg>
