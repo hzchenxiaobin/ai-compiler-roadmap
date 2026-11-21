@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">一关键字两种命运与泄漏账本</text>
+    <path d="M 350,58 Q 480,52 610,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,240 470,380 Q 248,385 26,380 Q 20,240 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 241)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">实验 1：两种 delete 对照</text>
+    <rect x="38" y="146" width="420" height="220" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./vd</text>
+    <text x="54" y="196" font-size="12" fill="#9fb8a8">场景一（非虚析构）：</text>
+    <text x="54" y="218" font-size="12" fill="#cfe8c6">　[Base 构造]→[Derived 构造]</text>
+    <text x="54" y="240" font-size="12" fill="#f0c9c0">　delete → [Base 析构]（只 1 个！）</text>
+    <text x="54" y="272" font-size="12" fill="#9fb8a8">场景二（虚析构）：</text>
+    <text x="54" y="294" font-size="12" fill="#cfe8c6">　[VBase 构造]→[VDerived 构造]</text>
+    <text x="54" y="316" font-size="12" fill="#cfe8c6">　delete → [VDerived 析构]→[VBase 析构]</text>
+    <text x="54" y="344" font-size="12" fill="#9fb8a8">（构造 2 析构 2——账对上了；</text>
+    <text x="54" y="360" font-size="12" fill="#9fb8a8">　场景一构造 2 析构 1——账缺了）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,240 934,380 Q 712,385 490,380 Q 484,240 488,102 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="3" transform="rotate(0.3 711 241)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#a33f2e">实验 2：泄漏账本</text>
+    <rect x="502" y="146" width="420" height="220" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="11.5" fill="#9fb8a8">$ ./ld</text>
+    <text x="514" y="196" font-size="12" fill="#cfe8c6">[Buffer 构造]</text>
+    <text x="514" y="218" font-size="12" fill="#cfe8c6">[BigBuffer 构造] 拿了 1000 字节</text>
+    <text x="514" y="240" font-size="12" fill="#f0c9c0">[Buffer 析构]　←BigBuffer 缺席</text>
+    <text x="514" y="270" font-size="12" fill="#9fb8a8">（上面缺了 [BigBuffer 析构]——</text>
+    <text x="514" y="288" font-size="12" fill="#9fb8a8">　1000 字节泄漏）</text>
+    <text x="514" y="324" font-size="12" fill="#9fb8a8">ASan 验证尝试（诚实记录）：</text>
+    <text x="514" y="346" font-size="11" fill="#f0c9c0">macOS 不支持 LeakSanitizer——</text>
+    <text x="514" y="362" font-size="11" fill="#f0c9c0">静默泄漏本身就是它的危险之处</text>
+
+    <path d="M 24,406 Q 470,400 905,407 L 901,510 Q 470,504 26,509 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 464 458)"/>
+    <text x="46" y="434" font-size="15.5" font-weight="bold" fill="#2c5a82">修复版验证</text>
+    <text x="46" y="464" font-size="12.5" fill="#3b3a36">Buffer 析构加 virtual 后重跑 leak_demo：[BigBuffer 析构] 释放了内存 → [Buffer 析构]——两行齐全，1000 字节回家</text>
+    <text x="46" y="488" font-size="12.5" fill="#6b675e">（一行 virtual 的差别——建议亲手做这个修复实验）</text>
+
+    <path d="M 24,530 Q 470,524 905,531 L 901,630 Q 470,624 26,629 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 580)"/>
+    <text x="480" y="560" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#55606e">明天预告</text>
+    <text x="480" y="590" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 47：类型转换（static_cast / dynamic_cast / const_cast）与组合 vs 继承的设计抉择——第 8 周收官前的最后一课</text>
+    <text x="480" y="612" text-anchor="middle" font-size="12.5" fill="#6b675e">（Day 48 项目日：图形库 v3——本周全部零件的总装大考）</text>
+  </g>
+</svg>
