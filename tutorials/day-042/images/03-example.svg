@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">完整战报：存取拦截、利率调整与档案</text>
+    <path d="M 350,58 Q 480,52 610,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,280 470,460 Q 248,465 26,460 Q 20,280 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 281)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">主会话（全程实录）</text>
+    <rect x="38" y="146" width="420" height="300" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./ba</text>
+    <text x="54" y="194" font-size="12.5" fill="#cfe8c6">当前全行利率 = 3%</text>
+    <text x="54" y="222" font-size="12.5" fill="#cfe8c6">小明余额 = 1300</text>
+    <text x="54" y="242" font-size="12.5" fill="#cfe8c6">银行余额 = 100000</text>
+    <text x="54" y="270" font-size="12.5" fill="#f0c9c0">（存500 / 取200 成功；</text>
+    <text x="54" y="290" font-size="12.5" fill="#f0c9c0">　透支 99999、负数 -50 被拦）</text>
+    <text x="54" y="318" font-size="12.5" fill="#cfe8c6">调整后全行利率 = 3.5%</text>
+    <text x="54" y="350" font-size="12.5" fill="#9fb8a8">小明的账户档案：</text>
+    <text x="54" y="372" font-size="12" fill="#9fb8a8">  操作日志（共 3 条）：</text>
+    <text x="54" y="392" font-size="11.5" fill="#cfe8c6">    1. 小明：开户，存入 1000.000000</text>
+    <text x="54" y="410" font-size="11.5" fill="#cfe8c6">    2. 小明：存入 500.000000，余额 1500…</text>
+    <text x="54" y="428" font-size="11.5" fill="#cfe8c6">    3. 小明：取出 200.000000，余额 1300…</text>
+    <text x="54" y="452" font-size="11.5" fill="#f0c9c0">  （本账户被查询过 1 次）←mutable</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,280 934,460 Q 712,465 490,460 Q 484,280 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 281)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">隔离与选型实验</text>
+    <rect x="502" y="146" width="420" height="160" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="12" fill="#9fb8a8">隔离（甲存 50，甲乙各打日志）：</text>
+    <text x="514" y="196" font-size="12.5" fill="#cfe8c6">　甲 日志 2 条　乙 日志 1 条 ✔</text>
+    <text x="514" y="224" font-size="12" fill="#9fb8a8">（log_ 每户一份——它不是 static）</text>
+    <text x="514" y="252" font-size="12" fill="#9fb8a8">查询计数与利率的分工：</text>
+    <text x="514" y="276" font-size="12.5" fill="#cfe8c6">　mutable 数户数、static 挂行牌</text>
+    <text x="510" y="340" font-size="12.5" fill="#3b3a36">常见追问：日志要不要也 static？</text>
+    <text x="510" y="364" font-size="12" fill="#6b675e">不要——日志是"每户一册"的档案；</text>
+    <text x="510" y="384" font-size="12" fill="#6b675e">全行共享的是利率（一行一牌）。</text>
+    <text x="510" y="416" font-size="12" fill="#8a8578">判断口诀：属于个体 → 普通成员；</text>
+    <text x="510" y="436" font-size="12" fill="#8a8578">属于全类 → static。</text>
+
+    <path d="M 488,476 Q 712,470 934,476 Q 938,540 934,610 Q 712,615 490,610 Q 484,540 488,476 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.3 711 543)"/>
+    <text x="711" y="502" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#8a6d1a">第 7 周收官 · 下周预告</text>
+    <text x="711" y="528" text-anchor="middle" font-size="12" fill="#6b675e">Day 43：继承基础——Person → Student</text>
+    <text x="711" y="550" text-anchor="middle" font-size="12" fill="#6b675e">今天的组合是 has-a，下周的继承是 is-a</text>
+    <text x="711" y="578" text-anchor="middle" font-size="12" fill="#8a8578">（42/144 天 = 29%，第 3 个项目周收官）</text>
+    <text x="711" y="600" text-anchor="middle" font-size="12" fill="#8a8578">六个项目日全胜的战绩继续</text>
+  </g>
+</svg>
