@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">一次成功、两种翻车的完整记录</text>
+    <path d="M 340,58 Q 480,52 620,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,210 470,320 Q 248,325 26,320 Q 20,210 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 211)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">成功版：三文件合体</text>
+    <rect x="38" y="146" width="420" height="160" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="12" fill="#9fb8a8">$ g++ -Wall main.cpp calc.cpp -o calc_split</text>
+    <text x="54" y="192" font-size="12" fill="#9fb8a8">$ ./calc_split</text>
+    <text x="54" y="216" font-size="12.5" fill="#cfe8c6">3 + 4 = 7</text>
+    <text x="54" y="240" font-size="12.5" fill="#cfe8c6">10 / 4 = 2.5</text>
+    <text x="54" y="264" font-size="12.5" fill="#cfe8c6">运算符 'x' 合法吗？否</text>
+    <text x="54" y="292" font-size="12" fill="#9fb8a8">分两步也过：-c 各编 .o 再链接，输出相同</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,210 934,320 Q 712,325 490,320 Q 484,210 488,102 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="3" transform="rotate(0.3 711 211)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#a33f2e">翻车一：漏带 calc.cpp</text>
+    <rect x="502" y="146" width="420" height="160" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="12" fill="#9fb8a8">$ g++ -Wall main.cpp -o broken</text>
+    <text x="514" y="196" font-size="11.5" fill="#ffd7d0">Undefined symbols for architecture arm64:</text>
+    <text x="514" y="216" font-size="11.5" fill="#ffd7d0">　"calc(double, char, double)", referenced from: _main</text>
+    <text x="514" y="236" font-size="11.5" fill="#ffd7d0">　"is_valid_op(char)", referenced from: _main</text>
+    <text x="514" y="264" font-size="12" fill="#9fb8a8">名片在手、机器缺席——第 4 站（链接）翻车</text>
+    <text x="514" y="288" font-size="12" fill="#9fb8a8">修复：把 calc.cpp 加进编译命令（或先编 .o）</text>
+
+    <path d="M 24,346 Q 248,340 470,346 Q 474,450 470,560 Q 248,565 26,560 Q 20,450 24,346 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="3" transform="rotate(-0.3 247 455)"/>
+    <text x="46" y="376" font-size="16" font-weight="bold" fill="#9c5a22">翻车二：无守护 + 重复包含</text>
+    <rect x="38" y="390" width="420" height="160" rx="6" fill="#33413a"/>
+    <text x="54" y="414" font-size="12" fill="#9fb8a8">无守护头文件（内含 const 定义）被 include 两次：</text>
+    <text x="54" y="438" font-size="11.5" fill="#ffd7d0">In file included from main.cpp:2:</text>
+    <text x="54" y="458" font-size="11.5" fill="#ffd7d0">./calc.h:2:14: error: redefinition of 'TAX_RATE'</text>
+    <text x="54" y="486" font-size="12" fill="#9fb8a8">粘贴两遍 → 常量定义出现两次 → 重定义</text>
+    <text x="54" y="510" font-size="12" fill="#9fb8a8">（纯函数声明可重复；定义不行）</text>
+    <text x="54" y="534" font-size="12" fill="#9fb8a8">加守护后同样写法编译通过、输出 3 ✔</text>
+
+    <path d="M 488,346 Q 712,340 934,346 Q 938,450 934,560 Q 712,565 490,560 Q 484,450 488,346 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 711 455)"/>
+    <text x="510" y="376" font-size="15.5" font-weight="bold" fill="#55606e">读链接错误的固定套路</text>
+    <text x="510" y="408" font-size="12.5" fill="#3b3a36">①看符号名：缺的是哪个函数/变量</text>
+    <text x="510" y="434" font-size="12.5" fill="#3b3a36">②看 referenced from：谁在用它</text>
+    <text x="510" y="460" font-size="12.5" fill="#3b3a36">③查编译命令：它的 .cpp 带上了吗</text>
+    <text x="510" y="496" font-size="12.5" fill="#55606e">常见诱因清单：</text>
+    <text x="510" y="520" font-size="12" fill="#6b675e">漏文件 / 函数名拼写不一致 / 声明与定义签名不同</text>
+    <text x="510" y="544" font-size="12" fill="#6b675e">——第 3 种最隐蔽：calc.h 声明 double，calc.cpp 写成 int</text>
+  </g>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">#include 是粘贴，守护是闸门</text>
+    <path d="M 320,58 Q 480,52 640,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 260,94 480,100 Q 484,210 480,320 Q 260,326 42,320 Q 36,210 40,100 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 260 210)"/>
+    <text x="260" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">预处理器：粘贴工</text>
+    <rect x="70" y="146" width="380" height="60" fill="#33413a"/>
+    <text x="86" y="170" font-size="11.5" fill="#9fb8a8">main.cpp 里写 #include "calc.h"</text>
+    <text x="86" y="192" font-size="11.5" fill="#cfe8c6">→ 编译前整份 calc.h 原地展开</text>
+    <path d="M 260,214 Q 260,232 260,246" fill="none" stroke="#3b3a36" stroke-width="2.4"/>
+    <path d="M 252,240 Q 260,250 269,241" fill="none" stroke="#3b3a36" stroke-width="2.4"/>
+    <rect x="70" y="254" width="380" height="52" fill="#f1f4f7" stroke="#8a94a3" stroke-width="1.8"/>
+    <text x="260" y="274" text-anchor="middle" font-size="11.5" fill="#55606e">包含两次 = 粘贴两遍（Day 1 四站流水线的第 1 站）</text>
+    <text x="260" y="294" text-anchor="middle" font-size="11.5" fill="#a33f2e">声明可重复，定义不行 → 需要闸门</text>
+
+    <path d="M 520,100 Q 730,94 930,100 Q 933,210 930,320 Q 730,326 522,320 Q 517,210 520,100 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 725 210)"/>
+    <text x="725" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">头文件守护：三行闸门</text>
+    <rect x="550" y="146" width="350" height="130" fill="#33413a"/>
+    <text x="566" y="170" font-size="11.5" fill="#cfe8c6">#ifndef CALC_H　　←第一次来？门没开过</text>
+    <text x="566" y="192" font-size="11.5" fill="#cfe8c6">#define CALC_H　　←现在挂上"已开门"牌子</text>
+    <text x="566" y="214" font-size="11.5" fill="#cfe8c6">……名片内容……</text>
+    <text x="566" y="236" font-size="11.5" fill="#cfe8c6">#endif　　　　　　←闸门结束</text>
+    <text x="566" y="262" font-size="11.5" fill="#9fb8a8">第二次包含：CALC_H 已定义 → 整段跳过</text>
+    <text x="725" y="300" text-anchor="middle" font-size="12" fill="#45703a">#pragma once 是等效的现代简写（二选一即可）</text>
+
+    <path d="M 40,350 Q 470,344 905,351 L 901,452 Q 470,446 44,451 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.2 472 401)"/>
+    <text x="472" y="380" text-anchor="middle" font-size="15" font-weight="bold" fill="#8a6d1a">分离编译时间线（今天实测）</text>
+    <text x="70" y="412" font-size="13" fill="#3b3a36">main.cpp ──编译──▶ main.o　　calc.cpp ──编译──▶ calc.o　　两个 .o ──链接──▶ 可执行文件</text>
+    <text x="70" y="438" font-size="12.5" fill="#6b675e">改 main 不用重编 calc（大项目提速的关键）；链接站找不到机器就报 Undefined symbols</text>
+
+    <path d="M 40,476 Q 470,470 905,477 L 901,576 Q 470,570 44,575 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 472 526)"/>
+    <text x="472" y="506" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#55606e">分工铁则（今天记牢）</text>
+    <text x="70" y="536" font-size="12.5" fill="#3b3a36">头文件放声明（类型、函数原型、常量）；源文件放定义（函数体）；main.cpp 只调度</text>
+    <text x="70" y="562" font-size="12.5" fill="#6b675e">尖括号 &lt;&gt; 找系统头，双引号 "" 先找当前目录——今天的 "calc.h" 是后者</text>
+  </g>
+</svg>

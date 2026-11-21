@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 25 全貌：名片、机器、调度各归其位</text>
+    <path d="M 300,60 Q 480,52 660,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">单文件时代结束：一个程序拆成名片区、机器区、调度区——Day 9 的伏笔全面展开</text>
+
+    <path d="M 40,116 Q 220,110 400,116 Q 404,220 400,324 Q 220,330 42,324 Q 36,220 40,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 220 220)"/>
+    <text x="220" y="146" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">calc.h（名片区）</text>
+    <rect x="64" y="162" width="320" height="90" fill="#33413a"/>
+    <text x="80" y="184" font-size="11" fill="#9fb8a8">#ifndef CALC_H</text>
+    <text x="80" y="202" font-size="11" fill="#cfe8c6">#define CALC_H</text>
+    <text x="80" y="224" font-size="11" fill="#cfe8c6">double calc(double, char, double);</text>
+    <text x="80" y="242" font-size="11" fill="#cfe8c6">bool is_valid_op(char);　#endif</text>
+    <text x="220" y="280" text-anchor="middle" font-size="12" fill="#6b675e">只有声明（名片），没有函数体</text>
+    <text x="220" y="302" text-anchor="middle" font-size="12" fill="#8a8578">头文件守护防重复粘贴</text>
+
+    <path d="M 430,116 Q 610,110 790,116 Q 794,220 790,324 Q 610,330 432,324 Q 426,220 430,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(0.3 610 220)"/>
+    <text x="610" y="146" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">calc.cpp（机器区）</text>
+    <rect x="454" y="162" width="320" height="90" fill="#33413a"/>
+    <text x="470" y="184" font-size="11" fill="#9fb8a8">#include "calc.h"</text>
+    <text x="470" y="206" font-size="11" fill="#cfe8c6">double calc(...) { …函数体… }</text>
+    <text x="470" y="228" font-size="11" fill="#cfe8c6">bool is_valid_op(...) { … }</text>
+    <text x="610" y="280" text-anchor="middle" font-size="12" fill="#6b675e">定义（机器本体），独立编译成 calc.o</text>
+    <text x="610" y="302" text-anchor="middle" font-size="12" fill="#8a8578">名片与机器一一对应</text>
+
+    <path d="M 40,350 Q 220,344 400,350 Q 404,440 400,524 Q 220,530 42,524 Q 36,440 40,350 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.3 220 437)"/>
+    <text x="220" y="380" text-anchor="middle" font-size="15" font-weight="bold" fill="#9c5a22">main.cpp（调度区）</text>
+    <rect x="64" y="396" width="320" height="70" fill="#33413a"/>
+    <text x="80" y="418" font-size="11" fill="#9fb8a8">#include &lt;iostream&gt;</text>
+    <text x="80" y="438" font-size="11" fill="#cfe8c6">#include "calc.h"</text>
+    <text x="80" y="458" font-size="11" fill="#cfe8c6">int main() { calc(3,'+',4) … }</text>
+    <text x="220" y="492" text-anchor="middle" font-size="12" fill="#6b675e">只管调度；不用知道机器在哪</text>
+
+    <path d="M 430,350 Q 610,344 790,350 Q 794,440 790,524 Q 610,530 432,524 Q 426,440 430,350 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 610 437)"/>
+    <text x="610" y="380" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">编译全景（实测命令）</text>
+    <text x="454" y="410" font-size="12" fill="#3b3a36">g++ -Wall main.cpp calc.cpp -o app</text>
+    <text x="454" y="436" font-size="12" fill="#6b675e">或分两步：-c 各自编 .o，再链接</text>
+    <text x="454" y="462" font-size="12" fill="#6b675e">calc.o 和 main.o 在第 4 站会师</text>
+    <text x="454" y="492" font-size="12" fill="#a33f2e">漏掉 calc.cpp → Undefined symbols</text>
+    <text x="454" y="512" font-size="12" fill="#a33f2e">（Day 1 埋的链接错误今天现身）</text>
+  </g>
+</svg>
