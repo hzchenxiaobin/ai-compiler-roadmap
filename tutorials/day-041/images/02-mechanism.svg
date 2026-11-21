@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">零件先就位，整车后组装</text>
+    <path d="M 350,58 Q 480,52 610,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,330 Q 470,324 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 215)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">组合版的构造流水线（实测顺序）</text>
+    <rect x="110" y="146" width="740" height="160" fill="#33413a"/>
+    <text x="130" y="174" font-size="12" fill="#9fb8a8">Car car("学步车 1.0", 75, 230); 触发：</text>
+    <text x="130" y="200" font-size="12.5" fill="#cfe8c6">　[Engine 构造] 75 马力　　　　　← 成员 1（按声明序）</text>
+    <text x="130" y="222" font-size="12.5" fill="#cfe8c6">　[Wheel 构造] ×4 胎压 230　　　 ← 成员 2（数组逐个）</text>
+    <text x="130" y="244" font-size="12.5" fill="#f0c9c0">　[Car 构造] 学步车 1.0 组装完成　← 最后是整车自己</text>
+    <text x="130" y="278" font-size="12" fill="#9fb8a8">析构严格反过来：先拆 Car，再拆轮子（逆序），最后拆发动机</text>
+    <text x="130" y="298" font-size="12" fill="#9fb8a8">（Day 39 铁律的类成员版：声明序进、逆序出）</text>
+
+    <path d="M 40,354 Q 470,348 905,355 L 901,460 Q 470,454 44,459 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.2 472 407)"/>
+    <text x="472" y="384" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">初始化列表：零件清单必须写在这</text>
+    <text x="70" y="414" font-size="13" fill="#3b3a36">Car(…) : model_(model), engine_(hp), wheels_{Wheel(p), Wheel(p), Wheel(p), Wheel(p)} { … }</text>
+    <text x="70" y="440" font-size="12.5" fill="#6b675e">组合成员没有默认构造时，列表是唯一通道（Day 38 红线的组合版）</text>
+
+    <path d="M 40,484 Q 470,478 905,485 L 901,576 Q 470,570 44,575 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(-0.2 472 530)"/>
+    <text x="472" y="514" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#55606e">组合 vs 继承（下周预告的分界线）</text>
+    <text x="70" y="544" font-size="12.5" fill="#3b3a36">组合 has-a：Car 有一台 Engine——零件可换、各自演进；继承 is-a：跑车是一辆 Car——共享血脉</text>
+    <text x="70" y="566" font-size="12.5" fill="#6b675e">口诀：能用组合就先用组合（今天练熟），继承留给真正的 is-a（第 8 周）</text>
+  </g>
+</svg>

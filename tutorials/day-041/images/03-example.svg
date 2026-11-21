@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">组装流水线、进出栈与拍平反例</text>
+    <path d="M 350,58 Q 480,52 610,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,230 470,360 Q 248,365 26,360 Q 20,230 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 231)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">实验 1：组装流水线</text>
+    <rect x="38" y="146" width="420" height="200" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./comp</text>
+    <text x="54" y="196" font-size="12.5" fill="#cfe8c6">[Engine 构造] 75 马力</text>
+    <text x="54" y="216" font-size="12.5" fill="#cfe8c6">[Wheel 构造] 胎压 230 ×4</text>
+    <text x="54" y="236" font-size="12.5" fill="#cfe8c6">[Car 构造] 学步车 1.0 组装完成</text>
+    <text x="54" y="266" font-size="12.5" fill="#cfe8c6">学步车 1.0：75 马力，胎压 230</text>
+    <text x="54" y="300" font-size="12" fill="#9fb8a8">engine_.horsepower() 两层访问：</text>
+    <text x="54" y="320" font-size="12" fill="#9fb8a8">先从 car 拿零件，再问零件的能力</text>
+    <text x="54" y="344" font-size="12" fill="#9fb8a8">（struct 嵌套的类版）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,230 934,360 Q 712,365 490,360 Q 484,230 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 231)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">实验 2：零件进出栈</text>
+    <rect x="502" y="146" width="420" height="200" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="11.5" fill="#9fb8a8">$ ./co</text>
+    <text x="514" y="196" font-size="12.5" fill="#cfe8c6">+A +B +C（零件按声明序）</text>
+    <text x="514" y="216" font-size="12.5" fill="#cfe8c6">[Whole 构造] 零件就位，整体组装</text>
+    <text x="514" y="236" font-size="12.5" fill="#9fb8a8">　……使用 w……</text>
+    <text x="514" y="256" font-size="12.5" fill="#cfe8c6">[Whole 析构] 整体拆解</text>
+    <text x="514" y="276" font-size="12.5" fill="#f0c9c0">-C -B -A（零件逆序）</text>
+    <text x="514" y="312" font-size="12" fill="#9fb8a8">整体先拆、零件逆序散——资源依赖</text>
+    <text x="514" y="332" font-size="12" fill="#9fb8a8">的拆解顺序天然正确</text>
+
+    <path d="M 24,386 Q 470,380 905,387 L 901,490 Q 470,484 26,489 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 464 438)"/>
+    <text x="46" y="414" font-size="15.5" font-weight="bold" fill="#a33f2e">实验 3：拍平反例</text>
+    <text x="46" y="444" font-size="12.5" fill="#3b3a36">FlatCar turbo 后 112.5 马力——功能能跑，但发动机逻辑长在车里：换台发动机要重写整车</text>
+    <text x="46" y="468" font-size="12.5" fill="#6b675e">（"能跑"不等于"好改"——工程价值在演进成本）</text>
+
+    <path d="M 24,510 Q 470,504 905,511 L 901,630 Q 470,624 26,629 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 570)"/>
+    <text x="480" y="540" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#55606e">明天的银行账户提前看</text>
+    <text x="480" y="570" text-anchor="middle" font-size="12.5" fill="#3b3a36">BankAccount 组合一个操作日志（vector&lt;string&gt; 成员）——今天的拼装术 + Day 40 三件兵器全上阵</text>
+    <text x="480" y="594" text-anchor="middle" font-size="12.5" fill="#6b675e">（项目日是第 7 周的毕业考：封装、构造、RAII、const/mutable/static、组合一条龙）</text>
+  </g>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 41 全貌：组合——用零件组装，不造巨无霸</text>
+    <path d="M 300,60 Q 480,52 660,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">Car 有一台 Engine 和四个轮子——"has-a"：类做成员，各自封装、整体拼装</text>
+
+    <path d="M 40,116 Q 470,110 905,117 L 901,300 Q 470,294 44,299 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 208)"/>
+    <text x="472" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">class Car 的三个成员</text>
+    <text x="70" y="178" font-size="13" fill="#3b3a36">std::string model_;　　（成员一：旧朋友）</text>
+    <text x="70" y="206" font-size="13" fill="#45703a">Engine engine_;　　　 （成员二：类对象——组合！）</text>
+    <text x="70" y="234" font-size="13" fill="#45703a">Wheel wheels_[4];　　（成员三：类对象数组）</text>
+    <text x="70" y="270" font-size="12.5" fill="#6b675e">初始化列表：engine_(hp) 和 wheels_{Wheel(p),…}——零件先就位，整车后组装</text>
+    <text x="70" y="292" font-size="12.5" fill="#6b675e">report() 里 engine_.horsepower()：一层 . 选零件，再一层选能力（两层访问）</text>
+
+    <path d="M 40,324 Q 280,318 520,324 Q 524,430 520,500 Q 280,506 42,500 Q 36,430 40,324 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 412)"/>
+    <text x="280" y="354" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">组合的三个红利</text>
+    <text x="64" y="386" font-size="12.5" fill="#3b3a36">①封装不破：engine_ 是 private，</text>
+    <text x="64" y="408" font-size="12.5" fill="#3b3a36">　外界只能经 Car 的接口摸到它</text>
+    <text x="64" y="436" font-size="12.5" fill="#3b3a36">②复用自然：Engine 换个车主照用</text>
+    <text x="64" y="464" font-size="12.5" fill="#3b3a36">③演进局部化：发动机加功能改 Engine，</text>
+    <text x="64" y="486" font-size="12.5" fill="#3b3a36">　Car 一行不动（对照反例见红卡）</text>
+
+    <path d="M 550,324 Q 730,318 905,324 Q 908,430 905,500 Q 730,506 552,500 Q 547,430 550,324 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(0.3 727 412)"/>
+    <text x="727" y="354" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">反例：拍平的"上帝类"</text>
+    <text x="572" y="386" font-size="12.5" fill="#3b3a36">FlatCar 把 horsepower_、</text>
+    <text x="572" y="408" font-size="12.5" fill="#3b3a36">wheel_pressure_[4] 全拍平搬进来</text>
+    <text x="572" y="436" font-size="12.5" fill="#a33f2e">改发动机要动车架；换轮胎逻辑</text>
+    <text x="572" y="458" font-size="12.5" fill="#a33f2e">也写在这一个类里——</text>
+    <text x="572" y="480" font-size="12.5" fill="#a33f2e">类越长越像巨无霸，改一处惊全身</text>
+
+    <path d="M 60,520 Q 480,514 905,521" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="520" r="5" fill="#8a94a3"/>
+    <text x="250" y="540" text-anchor="middle" font-size="12" fill="#3b3a36">Day 37~40 ✓</text>
+    <circle cx="440" cy="520" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="520" r="5" fill="#5b8db8"/>
+    <text x="440" y="540" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 41（今天）</text>
+    <circle cx="650" cy="520" r="5" fill="#e0955f"/>
+    <text x="650" y="540" text-anchor="middle" font-size="12" fill="#3b3a36">Day 42 项目日</text>
+    <circle cx="840" cy="520" r="5" fill="#5b8db8"/>
+    <text x="840" y="540" text-anchor="middle" font-size="12" fill="#3b3a36">第 8 周 继承</text>
+  </g>
+</svg>
