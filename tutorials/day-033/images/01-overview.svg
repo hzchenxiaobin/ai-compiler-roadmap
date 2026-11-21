@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 33 算法练习日：旧知识，新衣服</text>
+    <path d="M 340,60 Q 480,52 620,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">五周攒的兵器今天去陌生题里遛一圈——每道题背后都是老朋友</text>
+
+    <path d="M 40,110 Q 250,104 460,110 Q 464,200 460,290 Q 250,296 42,290 Q 36,200 40,110 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 250 200)"/>
+    <text x="250" y="140" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">题一：两数之和（LC#1）</text>
+    <text x="64" y="172" font-size="12.5" fill="#3b3a36">考察：嵌套循环（Day 7）+ 数组遍历</text>
+    <text x="64" y="198" font-size="12.5" fill="#6b675e">要点：j 从 i+1 起步，不重复配对</text>
+    <text x="64" y="232" font-size="12.5" fill="#45703a">实测：9 → 2+7；21 → 15+6</text>
+    <text x="64" y="264" font-size="12" fill="#8a8578">（引用输出参数：Day 21 的 min_max 同款）</text>
+
+    <path d="M 490,110 Q 700,104 910,110 Q 913,200 910,290 Q 700,296 492,290 Q 486,200 490,110 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 700 200)"/>
+    <text x="700" y="140" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">题二：FizzBuzz（LC#412）</text>
+    <text x="514" y="172" font-size="12.5" fill="#3b3a36">考察：取余（Day 3）+ 条件顺序</text>
+    <text x="514" y="198" font-size="12.5" fill="#6b675e">要点：%15 判断必须排最前</text>
+    <text x="514" y="232" font-size="12.5" fill="#45703a">实测：1 2 Fizz 4 Buzz … 14 FizzBuzz</text>
+    <text x="514" y="264" font-size="12" fill="#8a8578">（to_string：数字转字符串小工具）</text>
+
+    <path d="M 40,316 Q 250,310 460,316 Q 464,406 460,496 Q 250,502 42,496 Q 36,406 40,316 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.3 250 406)"/>
+    <text x="250" y="346" text-anchor="middle" font-size="15" font-weight="bold" fill="#9c5a22">题三：字母异位词（LC#242）</text>
+    <text x="64" y="378" font-size="12.5" fill="#3b3a36">考察：26 格频率表（Day 18 统计器）</text>
+    <text x="64" y="404" font-size="12.5" fill="#6b675e">要点：a 计 +1、b 计 −1，一次循环两清</text>
+    <text x="64" y="438" font-size="12.5" fill="#45703a">实测：listen/silent 是；rat/car 否</text>
+    <text x="64" y="470" font-size="12" fill="#8a8578">（长度先卡一道：短路省工夫）</text>
+
+    <path d="M 490,316 Q 700,310 910,316 Q 913,406 910,496 Q 700,502 492,496 Q 486,406 490,316 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(0.3 700 406)"/>
+    <text x="700" y="346" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">题四：最长公共前缀（LC#14）</text>
+    <text x="514" y="378" font-size="12.5" fill="#3b3a36">考察：string 下标比较 + substr（Day 16）</text>
+    <text x="514" y="404" font-size="12.5" fill="#6b675e">要点：候选逐词截短，空了提前收工</text>
+    <text x="514" y="438" font-size="12.5" fill="#45703a">实测：flower/flow/flight →「fl」</text>
+    <text x="514" y="470" font-size="12" fill="#8a8578">（无公共前缀返回空串：边界自测过）</text>
+
+    <path d="M 60,516 Q 480,510 905,517" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="430" cy="516" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="430" cy="516" r="5" fill="#5b8db8"/>
+    <text x="430" y="536" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 33（今天）</text>
+    <circle cx="660" cy="516" r="5" fill="#5b8db8"/>
+    <text x="660" y="536" text-anchor="middle" font-size="12" fill="#3b3a36">Day 34~35 复习</text>
+    <circle cx="850" cy="516" r="5" fill="#e0955f"/>
+    <text x="850" y="536" text-anchor="middle" font-size="12" fill="#3b3a36">Day 36 里程碑</text>
+
+    <rect x="140" y="540" width="680" height="18" fill="#f7e8a0" opacity="0.5" transform="rotate(-0.3 480 549)"/>
+    <text x="480" y="553" text-anchor="middle" font-size="12" fill="#8a6d1a">四道题零超纲：数组、循环、取余、频率表、string——五周的基本功全部够用</text>
+  </g>
+</svg>

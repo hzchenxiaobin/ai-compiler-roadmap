@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">解题四步法：从读题到验收</text>
+    <path d="M 360,58 Q 480,52 600,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 220,94 400,100 Q 404,180 400,260 Q 220,266 42,260 Q 36,180 40,100 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 220 180)"/>
+    <text x="220" y="130" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#2c5a82">①读题 + 手算小例</text>
+    <text x="60" y="162" font-size="12" fill="#3b3a36">不写代码先在纸上过样例：</text>
+    <text x="60" y="184" font-size="12" fill="#6b675e">两数之和 target=9，</text>
+    <text x="60" y="204" font-size="12" fill="#6b675e">眼睛扫一遍 2+7=9 ✔</text>
+    <text x="60" y="236" font-size="11.5" fill="#8a8578">（手算通了才动键盘）</text>
+
+    <path d="M 430,100 Q 610,94 790,100 Q 794,180 790,260 Q 610,266 432,260 Q 426,180 430,100 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 610 180)"/>
+    <text x="610" y="130" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#45703a">②认出旧朋友</text>
+    <text x="450" y="162" font-size="12" fill="#3b3a36">这道题在考什么？</text>
+    <text x="450" y="184" font-size="12" fill="#6b675e">异位词 → 频率表（Day 18）；</text>
+    <text x="450" y="204" font-size="12" fill="#6b675e">公共前缀 → string 下标（Day 16）</text>
+    <text x="450" y="236" font-size="11.5" fill="#8a8578">（认出来 = 成功一半）</text>
+
+    <path d="M 40,290 Q 220,284 400,290 Q 404,370 400,450 Q 220,456 42,450 Q 36,370 40,290 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.3 220 370)"/>
+    <text x="220" y="320" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#9c5a22">③写 + 立即跑样例</text>
+    <text x="60" y="352" font-size="12" fill="#3b3a36">写完先跑题目的样例，</text>
+    <text x="60" y="374" font-size="12" fill="#6b675e">再跑自己造的小例：</text>
+    <text x="60" y="394" font-size="12" fill="#6b675e">same/same →「same」（全同）</text>
+    <text x="60" y="426" font-size="11.5" fill="#8a8578">（-Wall 全程开着）</text>
+
+    <path d="M 430,290 Q 610,284 790,290 Q 794,370 790,450 Q 610,456 432,450 Q 426,370 430,290 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(0.3 610 370)"/>
+    <text x="610" y="320" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#a33f2e">④造边界自测</text>
+    <text x="450" y="352" font-size="12" fill="#3b3a36">今天做过的边界：</text>
+    <text x="450" y="374" font-size="12" fill="#6b675e">aab/abb（同长度不同词）→ 否</text>
+    <text x="450" y="394" font-size="12" fill="#6b675e">dog/racecar/car →「」（空前缀）</text>
+    <text x="450" y="426" font-size="11.5" fill="#8a8578">（边界对了才算真对）</text>
+
+    <path d="M 40,474 Q 470,468 905,475 L 901,576 Q 470,570 44,575 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.2 472 525)"/>
+    <text x="472" y="502" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#8a6d1a">刷题的定位（本周心态）</text>
+    <text x="70" y="532" font-size="12.5" fill="#3b3a36">今天是"语法层面的简单题"——练手感、练读题、练自测，不是背算法套路</text>
+    <text x="70" y="558" font-size="12.5" fill="#6b675e">真正的算法训练在第 16 周（sort/堆/二分专场）——今天的暴力解就是那时的对照组</text>
+  </g>
+</svg>

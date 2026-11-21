@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">四题战报（含边界与陷阱）</text>
+    <path d="M 380,58 Q 480,52 580,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,220 470,340 Q 248,345 26,340 Q 20,220 24,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(-0.3 247 221)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#2c5a82">题一：两数之和</text>
+    <rect x="38" y="146" width="420" height="180" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./two_sum　数组 {2,7,11,15,3,6}</text>
+    <text x="54" y="198" font-size="12.5" fill="#cfe8c6">target=9　→ nums[0]+nums[1] = 2+7 = 9</text>
+    <text x="54" y="224" font-size="12.5" fill="#cfe8c6">target=21　→ nums[3]+nums[5] = 15+6 = 21</text>
+    <text x="54" y="258" font-size="12" fill="#9fb8a8">j 从 i+1 起：同一元素不配自己，</text>
+    <text x="54" y="278" font-size="12" fill="#9fb8a8">也避免 (0,1)(1,0) 重复报同一对</text>
+    <text x="54" y="308" font-size="12" fill="#9fb8a8">暴力双循环 15 次比较——第 16 周</text>
+    <text x="54" y="326" font-size="12" fill="#9fb8a8">的哈希表一次遍历是它的升级版</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,220 934,340 Q 712,345 490,340 Q 484,220 488,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(0.3 711 221)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#45703a">题二：FizzBuzz</text>
+    <rect x="502" y="146" width="420" height="180" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="11.5" fill="#9fb8a8">$ ./fizzbuzz（1~15）</text>
+    <text x="514" y="198" font-size="12.5" fill="#cfe8c6">1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz</text>
+    <text x="514" y="218" font-size="12.5" fill="#cfe8c6">11 Fizz 13 14 FizzBuzz</text>
+    <text x="514" y="252" font-size="12" fill="#9fb8a8">陷阱：if 顺序——%15 不排最前，</text>
+    <text x="514" y="272" font-size="12" fill="#9fb8a8">15 会被 %3 先截走，永远到不了 Buzz</text>
+    <text x="514" y="306" font-size="12" fill="#9fb8a8">条件重叠时"最特殊的先判"——</text>
+    <text x="514" y="326" font-size="12" fill="#9fb8a8">Day 5 瀑布顺序的实战应用</text>
+
+    <path d="M 24,366 Q 248,360 470,366 Q 474,480 470,600 Q 248,605 26,600 Q 20,480 24,366 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="3" transform="rotate(-0.3 247 483)"/>
+    <text x="46" y="396" font-size="16" font-weight="bold" fill="#9c5a22">题三：字母异位词</text>
+    <rect x="38" y="410" width="420" height="180" rx="6" fill="#33413a"/>
+    <text x="54" y="436" font-size="11.5" fill="#9fb8a8">$ ./anagram</text>
+    <text x="54" y="460" font-size="12.5" fill="#cfe8c6">listen / silent → 是</text>
+    <text x="54" y="480" font-size="12.5" fill="#f0c9c0">anagram / nagarat → 否</text>
+    <text x="54" y="500" font-size="12.5" fill="#f0c9c0">rat / car　→ 否　aab / abb → 否</text>
+    <text x="54" y="530" font-size="12" fill="#9fb8a8">一次循环两清：a 的字母 +1、b 的 −1，</text>
+    <text x="54" y="550" font-size="12" fill="#9fb8a8">26 格全归零即异位——</text>
+    <text x="54" y="570" font-size="12" fill="#9fb8a8">Day 18 字母频率的变奏</text>
+
+    <path d="M 488,366 Q 712,360 934,366 Q 938,480 934,600 Q 712,605 490,600 Q 484,480 488,366 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="3" transform="rotate(0.3 711 483)"/>
+    <text x="510" y="396" font-size="16" font-weight="bold" fill="#a33f2e">题四：最长公共前缀</text>
+    <rect x="502" y="410" width="420" height="180" rx="6" fill="#33413a"/>
+    <text x="514" y="436" font-size="11.5" fill="#9fb8a8">$ ./common_prefix</text>
+    <text x="514" y="460" font-size="12.5" fill="#cfe8c6">flower/flow/flight →「fl」</text>
+    <text x="514" y="480" font-size="12.5" fill="#f0c9c0">dog/racecar/car　　→「」（无公共）</text>
+    <text x="514" y="500" font-size="12.5" fill="#cfe8c6">same/same　　　　　→「same」</text>
+    <text x="514" y="530" font-size="12" fill="#9fb8a8">候选逐词截短：prefix 只会越比越短；</text>
+    <text x="514" y="550" font-size="12" fill="#9fb8a8">空了就 break——不再浪费比较</text>
+    <text x="514" y="580" font-size="12" fill="#9fb8a8">（substr + 下标：Day 16 兵器出鞘）</text>
+  </g>
+</svg>
