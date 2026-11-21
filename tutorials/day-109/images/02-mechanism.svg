@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">拷贝消除的惊喜与值类别的判定树</text>
+    <path d="M 330,58 Q 480,52 630,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,340 Q 470,334 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 220)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">实测日志 vs 教科书预期（拷贝消除）</text>
+    <rect x="110" y="146" width="370" height="170" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
+    <text x="295" y="172" font-size="10.5" fill="#45703a">Traced t3 = Traced(3);</text>
+    <text x="295" y="196" font-size="10.5" fill="#8a8578">教科书：构造+拷贝+析构×2</text>
+    <text x="295" y="220" font-size="10.5" fill="#45703a">实测：只有 [构造][析构] 各一次！</text>
+    <text x="295" y="248" font-size="10" fill="#8a8578">（C++17 保证的拷贝消除——</text>
+    <text x="295" y="266" font-size="10" fill="#8a8578">　临时直接在 t3 的位置构造）</text>
+    <text x="295" y="296" font-size="10" fill="#45703a">（"省了一次"——编译器的合法优化）</text>
+    <rect x="510" y="146" width="340" height="170" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
+    <text x="680" y="172" font-size="10.5" fill="#9c5a22">Traced t2 = t1;（左值源）</text>
+    <text x="680" y="196" font-size="10.5" fill="#9c5a22">实测：[拷贝][析构] 老老实实</text>
+    <text x="680" y="224" font-size="10.5" fill="#6b675e">（左值不会消失——必须拷贝）</text>
+    <text x="680" y="252" font-size="10" fill="#8a8578">（同写法不同源：右值省拷贝、</text>
+    <text x="680" y="270" font-size="10" fill="#8a8578">　左值老实用——值类别的力量）</text>
+    <text x="472" y="334" font-size="11.5" fill="#8a8578">（移动语义的预告：右值既然要消失——资源可以直接"偷"——明天 std::move）</text>
+
+    <path d="M 40,364 Q 280,358 520,364 Q 524,480 520,576 Q 280,582 42,576 Q 36,480 40,364 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 470)"/>
+    <text x="280" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">值类别判定树</text>
+    <rect x="64" y="412" width="430" height="140" fill="#33413a"/>
+    <text x="279" y="438" font-size="10.5" fill="#9fb8a8">表达式 e：</text>
+    <text x="279" y="460" font-size="10.5" fill="#cfe8c6">有名字 / 能 &amp;e？ → 是 → 左值</text>
+    <text x="279" y="482" font-size="10.5" fill="#cfe8c8">　否 ↓</text>
+    <text x="279" y="504" font-size="10.5" fill="#cfe8c6">字面量/临时/计算结果 → 纯右值</text>
+    <text x="279" y="526" font-size="10.5" fill="#cfe8c6">std::move(x) → 将亡值</text>
+
+    <path d="M 550,364 Q 730,358 905,364 Q 908,480 905,576 Q 730,582 552,576 Q 547,480 550,364 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 470)"/>
+    <text x="727" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">为什么移动语义需要它</text>
+    <text x="572" y="428" font-size="12" fill="#3b3a36">移动的前提：识别"将亡"</text>
+    <text x="572" y="452" font-size="11.5" fill="#6b675e">（拷贝构造分不出源会不会消失）</text>
+    <text x="572" y="482" font-size="12" fill="#45703a">右值 = 安全偷资源的许可证</text>
+    <text x="572" y="504" font-size="11.5" fill="#8a8578">（反正要死——资源带走别浪费）</text>
+    <text x="572" y="536" font-size="11" fill="#8a8578">（本周：识别（今天）→ move（明天）</text>
+    <text x="572" y="556" font-size="11" fill="#8a8578">　→ 移动构造（111）→ 五法则（112））</text>
+  </g>
+</svg>

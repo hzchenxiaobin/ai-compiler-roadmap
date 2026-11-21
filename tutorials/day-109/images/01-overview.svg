@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 109 全貌：左值与右值——值类别的心智地图</text>
+    <path d="M 310,60 Q 480,52 650,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定"写日志观察临时对象"——移动语义周的地基：谁能取地址（左值）、谁将消失（右值）、临时的生死线在哪</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">三分法速览</text>
+    <text x="64" y="180" font-size="12.5" fill="#45703a">左值（lvalue）：有名字有地址</text>
+    <text x="64" y="202" font-size="12" fill="#8a8578">（a、t1——&amp;a 合法）</text>
+    <text x="64" y="232" font-size="12.5" fill="#45703a">纯右值（prvalue）：字面量/临时</text>
+    <text x="64" y="254" font-size="12" fill="#8a8578">（10、Traced(3)、a+1——&amp;(10) ✘）</text>
+    <text x="64" y="284" font-size="12.5" fill="#45703a">将亡值（xvalue）：临终表达式</text>
+    <text x="64" y="306" font-size="12" fill="#8a8578">（std::move(a)——明天主角）</text>
+    <text x="64" y="344" font-size="12.5" fill="#6b675e">判定口诀：能取地址、有名字 → 左值；</text>
+    <text x="64" y="364" font-size="12.5" fill="#6b675e">　读完就消失的 → 右值（后两类合称）</text>
+
+    <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">临时对象的生死线（实测）</text>
+    <rect x="572" y="164" width="320" height="170" fill="#33413a"/>
+    <text x="732" y="190" font-size="10.5" fill="#9fb8a8">take_by_value(Traced(5));</text>
+    <text x="732" y="214" font-size="10.5" fill="#cfe8c6">[构造] Traced(5)</text>
+    <text x="732" y="236" font-size="10.5" fill="#cfe8c6">[函数] 收到 5</text>
+    <text x="732" y="258" font-size="10.5" fill="#cfe8c8">[析构] ~Traced(5)</text>
+    <text x="732" y="288" font-size="10" fill="#8a8578">（构造→用→析构：语句是生命周期）</text>
+    <text x="732" y="310" font-size="10" fill="#8a8578">（C++17 直接在参数位构造——零拷贝！）</text>
+
+    <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
+    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">const&amp; 延长生命 vs 非 const ✘</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">const string&amp; ref = string("临时")——临时活到引用作用域 ✔｜string&amp; bad = string("x")——编译错（非 const 不能绑右值）</text>
+    <text x="70" y="490" font-size="12.5" fill="#6b675e">（这是 Day 100 捕获规则的近亲——引用绑定有类别门槛）</text>
+
+    <path d="M 60,514 Q 480,508 905 515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 103~108 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 109（移动语义周开篇）</text>
+    <circle cx="650" cy="514" r="5" fill="#5b8db8"/>
+    <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 110~113</text>
+    <circle cx="850" cy="514" r="5" fill="#e0955f"/>
+    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 114 项目日</text>
+  </g>
+</svg>
