@@ -13,7 +13,7 @@
     <text x="280" y="248" font-size="11" fill="#9fb8a8">（vector 的全部 public 接口约 50 个——全暴露）</text>
     <rect x="500" y="146" width="380" height="130" fill="#33413a"/>
     <text x="690" y="172" font-size="11.5" fill="#cfe8c6">实测绕过不变量：</text>
-    <text x="690" y="196" font-size="12" fill="#f0c9c0">s.insert(s.begin(), 99);　← Stack 没这个语义！</text>
+    <text x="690" y="196" font-size="10.5" fill="#f0c9c0">s.insert(begin, 99); ←Stack 没这语义！</text>
     <text x="690" y="218" font-size="12" fill="#f0c9c0">s[0] = 42;　　　　　　　←随机改值！</text>
     <text x="690" y="244" font-size="11" fill="#9fb8a8">（两个都编译执行成功——不变量失守）</text>
     <text x="472" y="298" font-size="12" fill="#9fb8a8">（"后进先出"是行为承诺——继承版的承诺靠使用者自觉）</text>

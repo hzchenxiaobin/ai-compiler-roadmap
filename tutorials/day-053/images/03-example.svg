@@ -36,7 +36,7 @@
 
     <path d="M 24,530 Q 470,524 905,531 L 901,630 Q 470,624 26,629 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 580)"/>
     <text x="480" y="560" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#55606e">明天项目日预告</text>
-    <text x="480" y="590" font-size="12.5" fill="#3b3a36">Day 54：MyString v2——手写动态数组的完整拷贝控制（三法则 + 运算符集 + 自测清单），第 9 周收官</text>
+    <text x="480" y="590" text-anchor="middle" font-size="11" fill="#3b3a36">Day 54：MyString v2——手写动态数组的完整拷贝控制（三法则＋运算符集＋自测），第 9 周收官</text>
     <text x="480" y="612" font-size="12.5" fill="#6b675e">（今天三问 + 本周三件套 + Day 50 运算符全部上阵）</text>
   </g>
 </svg>
