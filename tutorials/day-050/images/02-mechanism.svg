@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">赋值的三步解剖与自赋值的踩雷路径</text>
+    <path d="M 290,58 Q 480,52 670,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,300 Q 470,294 44,299 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 200)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">c = a 的三步（正常路径）</text>
+    <rect x="120" y="146" width="180" height="50" fill="#fffdf7" stroke="#5b8db8" stroke-width="2.2"/>
+    <text x="210" y="168" text-anchor="middle" font-size="10.5" fill="#2c5a82">对象 c（旧："target"）</text>
+    <text x="210" y="186" text-anchor="middle" font-size="9.5" fill="#8a8578">data_ @ 0x…92e0</text>
+    <rect x="390" y="146" width="180" height="50" fill="#eef5e8" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="480" y="168" text-anchor="middle" font-size="10.5" fill="#45703a">对象 a（源："hello"）</text>
+    <text x="480" y="186" text-anchor="middle" font-size="9.5" fill="#8a8578">data_ @ 0x…92c0</text>
+    <path d="M 300,164 Q 345,150 388,160" fill="none" stroke="#3b3a36" stroke-width="2.2"/>
+    <path d="M 380,152 Q 390,158 382,168" fill="none" stroke="#3b3a36" stroke-width="2.2"/>
+    <text x="345" y="142" font-size="9.5" fill="#8a8578">赋值</text>
+    <text x="472" y="222" font-size="12" fill="#a33f2e">②delete[] 0x…92e0（旧内存释放）→ ③new 得 0x…92e0 碰巧复用 → memcpy "hello"</text>
+    <text x="472" y="248" font-size="12.5" fill="#45703a">实测：c 换了内容、地址仍 0x…92e0（与 Day 49 拷贝构造的新地址不同）</text>
+    <text x="472" y="278" font-size="12" fill="#8a8578">（这就是赋值和拷贝构造的本质差：老对象就地翻新 vs 新对象出生）</text>
+
+    <path d="M 40,324 Q 470,318 905,325 L 901,576 Q 470,570 44,575 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(0.2 472 450)"/>
+    <text x="472" y="354" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">a = a 的踩雷路径（不写①）</text>
+    <rect x="330" y="372" width="300" height="56" fill="#33413a"/>
+    <text x="480" y="396" font-size="11.5" fill="#f0c9c0">delete[] data_;（把自己的 "hello" 释放了！）</text>
+    <text x="480" y="416" font-size="11.5" fill="#f0c9c0">memcpy(data_, other.data_, …);（other 就是自己 → 读已释放内存）</text>
+    <text x="472" y="452" font-size="12.5" fill="#a33f2e">普通编译实测：打出空串 ""（UB 的又一种呈现）</text>
+    <text x="472" y="478" font-size="12.5" fill="#a33f2e">ASan 实测：heap-buffer-overflow（READ of size 7）</text>
+    <text x="472" y="516" font-size="12.5" fill="#45703a">①自赋值检查一行根治：if (this == &amp;other) return *this;</text>
+    <text x="472" y="544" font-size="12" fill="#8a8578">（-Wall 还会警告显式 a = a——但 a[i]=a[j] 隐式撞车只有检查能拦）</text>
+  </g>
+</svg>

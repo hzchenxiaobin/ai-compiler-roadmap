@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 50 全貌：拷贝赋值——d = a 的正确写法</text>
+    <path d="M 310,60 Q 480,52 650,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">昨天拷贝构造管"出生时复制"，今天拷贝赋值管"活着时替换"——自赋值 a = a 是头号陷阱</text>
+
+    <path d="M 40,116 Q 290,110 540,116 Q 544,250 540,374 Q 290,380 42,374 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 290 245)"/>
+    <text x="290" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">拷贝赋值 vs 拷贝构造</text>
+    <text x="64" y="180" font-size="12.5" fill="#45703a">拷贝构造：T b = a;（新对象出生）</text>
+    <text x="64" y="202" font-size="12.5" fill="#45703a">拷贝赋值：d = a;（老对象替换内容）</text>
+    <text x="64" y="236" font-size="12.5" fill="#6b675e">赋值多两件事：释放旧内存 + 自赋值检查</text>
+    <text x="64" y="264" font-size="12.5" fill="#3b3a36">签名：T&amp; operator=(const T&amp; other)</text>
+    <text x="64" y="286" font-size="12" fill="#8a8578">（返回 T&amp; 而非 void——支持 c = b = a 链式）</text>
+    <text x="64" y="316" font-size="12.5" fill="#6b675e">-Wself-assign-overloaded 会警告显式</text>
+    <text x="64" y="336" font-size="12.5" fill="#6b675e">自赋值（a = a）——但隐式的仍要靠检查</text>
+    <text x="64" y="364" font-size="12" fill="#8a8578">（a[i] = a[j] 且 i==j 时编译器看不见）</text>
+
+    <path d="M 570,116 Q 740,110 905,116 Q 908,250 905,374 Q 740,380 572,374 Q 567,250 570,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 737 245)"/>
+    <text x="737" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">三步式（教科书版）</text>
+    <text x="592" y="180" font-size="12.5" fill="#a33f2e">①if (this == &amp;other) return *this;</text>
+    <text x="592" y="202" font-size="12" fill="#8a8578">（自赋值：地址相同 → 直接走）</text>
+    <text x="592" y="232" font-size="12.5" fill="#3b3a36">②delete[] data_;（释放旧内存）</text>
+    <text x="592" y="262" font-size="12.5" fill="#3b3a36">③new + memcpy（开新 + 抄内容）</text>
+    <text x="592" y="292" font-size="12.5" fill="#45703a">return *this;（支持链式）</text>
+    <text x="592" y="330" font-size="12" fill="#8a8578">（copy-and-swap 简化版见选做）</text>
+    <text x="592" y="358" font-size="12" fill="#8a8578">（自赋值安全 + 异常安全一次到位）</text>
+
+    <path d="M 40,398 Q 470,392 905,399 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 449)"/>
+    <text x="472" y="428" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">自赋值陷阱（实测：不写①会怎样）</text>
+    <text x="70" y="458" font-size="13" fill="#3b3a36">delete[] data_ → memcpy(data_, other.data_, …)——other 就是 *this，源已被自己释放！</text>
+    <text x="70" y="482" font-size="12.5" fill="#a33f2e">实测：普通编译打出空串（UB）；ASan 报 heap-buffer-overflow（读已释放内存）</text>
+
+    <path d="M 60,514 Q 480,508 905,515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 49 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 50（今天）</text>
+    <circle cx="650" cy="514" r="5" fill="#5b8db8"/>
+    <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 51~53</text>
+    <circle cx="850" cy="514" r="5" fill="#e0955f"/>
+    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 54 项目日</text>
+  </g>
+</svg>
