@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">一轮菜单的生命周期：输入的四种命运</text>
+    <path d="M 280,58 Q 480,52 680,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <rect x="60" y="96" width="300" height="60" fill="#33413a" rx="8"/>
+    <text x="76" y="120" font-size="13" fill="#cfe8c6">请选择：_</text>
+    <text x="76" y="142" font-size="12" fill="#9fb8a8">（cin &gt;&gt; choice 正在等输入）</text>
+
+    <path d="M 380,126 Q 420,118 460,126" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+    <path d="M 452,118 Q 461,124 453,134" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+    <path d="M 470,90 L 560,126 L 470,162 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-1 515 126)"/>
+    <text x="515" y="122" text-anchor="middle" font-size="13" font-weight="bold" fill="#8a6d1a">读取</text>
+    <text x="515" y="142" text-anchor="middle" font-size="13" font-weight="bold" fill="#8a6d1a">成功？</text>
+
+    <path d="M 600,86 Q 680,80 760,86 Q 764,150 760,212 Q 680,218 604,212 Q 598,150 600,86 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(0.4 680 149)"/>
+    <text x="680" y="114" text-anchor="middle" font-size="14" font-weight="bold" fill="#a33f2e">失败（输的是 abc）</text>
+    <text x="680" y="142" text-anchor="middle" font-size="12" fill="#3b3a36">cin.clear() 降旗</text>
+    <text x="680" y="164" text-anchor="middle" font-size="12" fill="#3b3a36">cin.ignore() 冲残料</text>
+    <text x="680" y="186" text-anchor="middle" font-size="12" fill="#3b3a36">continue; 回菜单</text>
+    <text x="680" y="206" text-anchor="middle" font-size="11.5" fill="#8a8578">（真实输出：看不懂这个选项…）</text>
+
+    <path d="M 570,126 Q 600,134 610,170" fill="none" stroke="#8a94a3" stroke-width="2" stroke-dasharray="6 5"/>
+
+    <path d="M 520,146 Q 520,168 520,186" fill="none" stroke="#45703a" stroke-width="2.6"/>
+    <path d="M 512,180 Q 520,190 529,181" fill="none" stroke="#45703a" stroke-width="2.6"/>
+    <text x="540" y="170" font-size="12" fill="#45703a">成功</text>
+
+    <path d="M 440,206 L 600,206 L 600,254 L 440,254 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.6 520 230)"/>
+    <text x="520" y="238" text-anchor="middle" font-size="14" font-weight="bold" fill="#8a6d1a">choice 是几？</text>
+
+    <path d="M 60,290 Q 200,284 340,290 Q 343,356 340,420 Q 200,426 62,420 Q 57,356 60,290 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.4 200 355)"/>
+    <text x="200" y="320" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#a33f2e">choice == 0</text>
+    <text x="200" y="348" text-anchor="middle" font-size="12.5" fill="#3b3a36">输出"再见！"</text>
+    <text x="200" y="372" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#a33f2e">break; 跳出循环</text>
+    <text x="200" y="398" text-anchor="middle" font-size="12" fill="#8a8578">程序结束，exit=0</text>
+
+    <path d="M 360,290 Q 520,284 680,290 Q 683,356 680,420 Q 520,426 362,420 Q 357,356 360,290 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.4 520 355)"/>
+    <text x="520" y="320" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#45703a">choice 是 1 / 2 / 3</text>
+    <text x="520" y="348" text-anchor="middle" font-size="12.5" fill="#3b3a36">再读一个数值 → 套公式输出</text>
+    <text x="520" y="372" text-anchor="middle" font-size="12" fill="#6b675e">37℃ → 98.60 ℉（真实输出）</text>
+    <text x="520" y="394" text-anchor="middle" font-size="12" fill="#6b675e">5 km → 3.11 英里；100 元 → 13.89 美元</text>
+
+    <path d="M 700,290 Q 840,284 930,290 Q 933,356 930,420 Q 840,426 702,420 Q 697,356 700,290 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.4 815 355)"/>
+    <text x="815" y="320" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#2c5a82">其他（如 9）</text>
+    <text x="815" y="348" text-anchor="middle" font-size="12.5" fill="#3b3a36">default: 没有这个选项</text>
+    <text x="815" y="372" text-anchor="middle" font-size="12" fill="#6b675e">不崩溃、不退出，</text>
+    <text x="815" y="392" text-anchor="middle" font-size="12" fill="#6b675e">回到菜单再给机会</text>
+
+    <path d="M 520,436 Q 520,470 520,494" fill="none" stroke="#45703a" stroke-width="2.8"/>
+    <path d="M 512,488 Q 520,498 529,489" fill="none" stroke="#45703a" stroke-width="2.8"/>
+    <path d="M 200,436 Q 200,470 380,480" fill="none" stroke="#c96a5a" stroke-width="2" stroke-dasharray="6 5"/>
+    <path d="M 815,436 Q 815,470 660,480" fill="none" stroke="#5b8db8" stroke-width="2" stroke-dasharray="6 5"/>
+
+    <path d="M 380,486 Q 520,478 660,486 Q 663,522 660,552 Q 520,558 382,552 Q 378,522 380,486 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="3" transform="rotate(-0.3 520 520)"/>
+    <text x="520" y="512" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#9c5a22">回到循环开头：菜单再次显示</text>
+    <text x="520" y="540" text-anchor="middle" font-size="12.5" fill="#6b675e">只有 0 号出口能离开这个环</text>
+
+    <text x="480" y="596" text-anchor="middle" font-size="13.5" fill="#8a8578">这张图就是"菜单循环"四个字的全部含义——Day 8 学 while 后回来重看，会有恍然大悟感</text>
+  </g>
+</svg>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">四个真实实验：除法、取余、自增、溢出</text>
+    <path d="M 290,58 Q 480,52 670,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,225 470,342 Q 248,347 26,342 Q 20,225 24,102 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="3" transform="rotate(-0.4 247 222)"/>
+    <text x="46" y="132" font-size="17" font-weight="bold" fill="#9c5a22">实验 1：整数除法的坑</text>
+    <rect x="38" y="146" width="420" height="72" rx="6" fill="#fbfaf6" stroke="#d8d2c4" stroke-width="1.5"/>
+    <text x="50" y="170" font-size="13.5" fill="#3b3a36">2 / 144           = 0</text>
+    <text x="50" y="192" font-size="13.5" fill="#3b3a36">2 * 100.0 / 144   = 1.38889</text>
+    <path d="M 38,232 Q 247,226 470,233 L 467,300 Q 247,294 41,299 Z" fill="#fffdf7" stroke="#e0955f" stroke-width="2.2" stroke-dasharray="8 5"/>
+    <text x="50" y="256" font-size="12.5" fill="#a33f2e">bug 现象：progress = 2 / 144 时进度条永远 0%</text>
+    <text x="50" y="278" font-size="12.5" fill="#6b675e">修复：先乘 100.0，或直接写 2.0 / 144.0</text>
+    <text x="46" y="330" font-size="13.5" fill="#9c5a22">口诀：整数÷整数=整数，小数部分直接扔掉</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,225 934,342 Q 712,347 490,342 Q 484,225 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.4 711 222)"/>
+    <text x="510" y="132" font-size="17" font-weight="bold" fill="#2c5a82">实验 2：取余的符号</text>
+    <rect x="502" y="146" width="420" height="72" rx="6" fill="#fbfaf6" stroke="#d8d2c4" stroke-width="1.5"/>
+    <text x="514" y="170" font-size="13.5" fill="#3b3a36">7 % 3  = 1　　-7 % 3 = -1</text>
+    <text x="514" y="192" font-size="13.5" fill="#3b3a36">7 % -3 = 1</text>
+    <path d="M 502,232 Q 711,226 922,233 L 919,300 Q 711,294 505,299 Z" fill="#fffdf7" stroke="#9db8cf" stroke-width="2.2" stroke-dasharray="8 5"/>
+    <text x="514" y="256" font-size="12.5" fill="#2c5a82">规则（C++11 起）：商向零取整</text>
+    <text x="514" y="278" font-size="12.5" fill="#6b675e">余数的符号跟随被除数（左边的数）</text>
+    <text x="510" y="330" font-size="13.5" fill="#2c5a82">用途：奇偶判断、每 7 天分一周</text>
+
+    <path d="M 24,366 Q 248,361 470,366 Q 474,489 470,606 Q 248,611 26,606 Q 20,489 24,366 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(0.4 247 488)"/>
+    <text x="46" y="396" font-size="17" font-weight="bold" fill="#45703a">实验 3：i++ 与 ++i 的时间线</text>
+    <rect x="38" y="410" width="420" height="72" rx="6" fill="#fbfaf6" stroke="#d8d2c4" stroke-width="1.5"/>
+    <text x="50" y="434" font-size="13.5" fill="#3b3a36">int a = i++;　→ a = 5, i = 6</text>
+    <text x="50" y="456" font-size="13.5" fill="#3b3a36">int b = ++i;　→ b = 7, i = 7</text>
+    <path d="M 502,486" fill="none"/>
+    <path d="M 50,486 Q 160,480 260,487 L 257,530 Q 160,524 53,529 Z" fill="#fffdf7" stroke="#a8c494" stroke-width="2.2" stroke-dasharray="8 5" transform="rotate(-0.2 155 507)"/>
+    <text x="60" y="508" font-size="12.5" fill="#45703a">i++ 后置：先把旧值交出去，自己再 +1</text>
+    <text x="60" y="526" font-size="12.5" fill="#45703a">++i 前置：先 +1，再把新值交出去</text>
+    <text x="46" y="566" font-size="13" fill="#6b675e">单独一句 i++; 与 ++i; 效果相同，</text>
+    <text x="46" y="586" font-size="13" fill="#6b675e">差别只在"表达式的值"被别人用到时</text>
+
+    <path d="M 488,366 Q 712,361 934,366 Q 938,489 934,606 Q 712,611 490,606 Q 484,489 488,366 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="3" transform="rotate(-0.4 711 488)"/>
+    <text x="510" y="396" font-size="17" font-weight="bold" fill="#a33f2e">实验 4：INT_MAX + 1 溢出</text>
+    <rect x="502" y="410" width="420" height="72" rx="6" fill="#fbfaf6" stroke="#d8d2c4" stroke-width="1.5"/>
+    <text x="514" y="434" font-size="13.5" fill="#3b3a36">big = 2147483647</text>
+    <text x="514" y="456" font-size="13.5" fill="#3b3a36">big + 1 = -2147483648（绕回最小值）</text>
+    <path d="M 502,486 Q 711,480 922,487 L 919,566 Q 711,560 505,565 Z" fill="#33413a"/>
+    <text x="514" y="510" font-size="11.5" fill="#f0c9c0">$ ./overflow_ubsan</text>
+    <text x="514" y="528" font-size="11" fill="#ffd7d0">runtime error: signed integer overflow:</text>
+    <text x="514" y="544" font-size="11" fill="#ffd7d0">2147483647 + 1 cannot be represented in type 'int'</text>
+    <text x="510" y="592" font-size="12.5" fill="#a33f2e">平时悄悄绕回 ≠ 合法：这是未定义行为，UBSan 一开就现形</text>
+  </g>
+</svg>

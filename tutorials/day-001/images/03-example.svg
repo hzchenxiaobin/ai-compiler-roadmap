@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">同一个程序的四次编译：1 次成功，3 次失败</text>
+    <path d="M 285,58 Q 480,52 675,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+
+    <path d="M 24,80 Q 248,75 470,80 Q 474,208 470,336 Q 248,341 26,336 Q 20,208 24,80 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.4 247 208)"/>
+    <text x="46" y="110" font-size="17" font-weight="bold" fill="#45703a">✔ hello.cpp：一次通过</text>
+    <rect x="38" y="124" width="420" height="64" rx="6" fill="#fbfaf6" stroke="#d8d2c4" stroke-width="1.5"/>
+    <text x="50" y="148" font-size="13.5" fill="#3b3a36">std::cout &lt;&lt; "Hello, C++!" &lt;&lt; std::endl;</text>
+    <text x="50" y="170" font-size="13.5" fill="#3b3a36">const int total_days = 144;</text>
+    <rect x="38" y="200" width="420" height="88" rx="6" fill="#33413a"/>
+    <text x="52" y="224" font-size="13" fill="#cfe8c6">$ ./hello</text>
+    <text x="52" y="246" font-size="13" fill="#cfe8c6">Hello, C++!</text>
+    <text x="52" y="268" font-size="13" fill="#cfe8c6">Today is Day 1 of 144.</text>
+    <path d="M 46,306 Q 247,301 460,307" fill="none" stroke="#a8c494" stroke-width="2"/>
+    <text x="46" y="328" font-size="13.5" fill="#45703a">exit=0 且无任何输出——编译期的安静就是好消息</text>
+
+    <path d="M 488,80 Q 712,75 934,80 Q 938,208 934,336 Q 712,341 490,336 Q 484,208 488,80 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="3" transform="rotate(0.4 711 208)"/>
+    <text x="510" y="110" font-size="17" font-weight="bold" fill="#a33f2e">✘ 版本一：漏了分号</text>
+    <rect x="502" y="124" width="420" height="64" rx="6" fill="#fbfaf6" stroke="#d8d2c4" stroke-width="1.5"/>
+    <text x="514" y="148" font-size="13.5" fill="#3b3a36">std::cout &lt;&lt; "Hello, C++!" &lt;&lt; std::endl</text>
+    <ellipse cx="872" cy="144" rx="7" ry="8" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <text x="514" y="170" font-size="12.5" fill="#8a8578">↑ 第 5 行末尾少了分号（画出圈的位置）</text>
+    <path d="M 502,200 Q 712,194 922,201 L 919,286 Q 712,280 505,285 Z" fill="#fffdf7" stroke="#c96a5a" stroke-width="2.2" stroke-dasharray="8 5"/>
+    <text x="516" y="226" font-size="12.5" fill="#a33f2e">error1_missing_semicolon.cpp:5:44:</text>
+    <text x="516" y="248" font-size="13" font-weight="bold" fill="#a33f2e">error: expected ';' after expression</text>
+    <text x="516" y="270" font-size="12.5" fill="#6b675e">^ 指到第 44 列，下一行直接给出补 ; 的提示</text>
+    <text x="510" y="328" font-size="13.5" fill="#a33f2e">读报错顺序：文件:行:列 → error 描述 → ^ 位置</text>
+
+    <path d="M 24,366 Q 248,361 470,366 Q 474,494 470,606 Q 248,611 26,606 Q 20,494 24,366 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="3" transform="rotate(0.4 247 488)"/>
+    <text x="46" y="396" font-size="17" font-weight="bold" fill="#a33f2e">✘ 版本二：漏了右引号</text>
+    <rect x="38" y="410" width="420" height="64" rx="6" fill="#fbfaf6" stroke="#d8d2c4" stroke-width="1.5"/>
+    <text x="50" y="434" font-size="13.5" fill="#3b3a36">std::cout &lt;&lt; "Hello, C++! &lt;&lt; std::endl;</text>
+    <ellipse cx="298" cy="430" rx="7" ry="8" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <text x="50" y="456" font-size="12.5" fill="#8a8578">↑ 引号没闭合，后面整行都被当成文字</text>
+    <path d="M 38,486 Q 248,480 458,487 L 455,562 Q 248,556 41,561 Z" fill="#fffdf7" stroke="#c96a5a" stroke-width="2.2" stroke-dasharray="8 5"/>
+    <text x="52" y="512" font-size="12.5" fill="#a33f2e">warning: missing terminating '"' character</text>
+    <text x="52" y="534" font-size="13" font-weight="bold" fill="#a33f2e">error: expected expression</text>
+    <text x="52" y="554" font-size="12.5" fill="#6b675e">1 warning 和 1 error 同时出现</text>
+    <text x="46" y="596" font-size="13.5" fill="#a33f2e">先修第一个报错，后面的常跟着一起消失</text>
+
+    <path d="M 488,366 Q 712,361 934,366 Q 938,494 934,606 Q 712,611 490,606 Q 484,494 488,366 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="3" transform="rotate(-0.4 711 488)"/>
+    <text x="510" y="396" font-size="17" font-weight="bold" fill="#a33f2e">✘ 版本三：main 拼成 maim</text>
+    <rect x="502" y="410" width="420" height="64" rx="6" fill="#fbfaf6" stroke="#d8d2c4" stroke-width="1.5"/>
+    <text x="514" y="434" font-size="13.5" fill="#3b3a36">int maim() {</text>
+    <ellipse cx="576" cy="430" rx="16" ry="9" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <text x="514" y="456" font-size="12.5" fill="#8a8578">↑ 每一行语法都正确，编译站全部放行</text>
+    <path d="M 502,486 Q 712,480 922,487 L 919,562 Q 712,556 505,561 Z" fill="#fffdf7" stroke="#c96a5a" stroke-width="2.2" stroke-dasharray="8 5"/>
+    <text x="516" y="512" font-size="12.5" fill="#a33f2e">Undefined symbols for architecture arm64:</text>
+    <text x="516" y="534" font-size="13" font-weight="bold" fill="#a33f2e">"_main", referenced from: ...</text>
+    <text x="516" y="554" font-size="12.5" fill="#6b675e">ld: symbol(s) not found（ld 就是链接器）</text>
+    <text x="510" y="596" font-size="13.5" fill="#a33f2e">语法全对也能失败——错误藏在最后一站：链接</text>
+  </g>
+</svg>

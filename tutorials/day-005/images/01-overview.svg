@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 5 全貌：程序来到第一个十字路口</text>
+    <path d="M 310,60 Q 480,52 650,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">前四天程序只会一条道走到黑，今天它学会"看情况办事"</text>
+
+    <path d="M 30,150 Q 150,144 266,150 Q 270,196 266,240 Q 150,246 32,240 Q 26,196 30,150 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(-0.4 148 195)"/>
+    <text x="148" y="180" text-anchor="middle" font-size="16" font-weight="bold" fill="#2c5a82">输入 score</text>
+    <rect x="64" y="192" width="168" height="32" fill="#fffdf7" stroke="#9db8cf" stroke-width="2"/>
+    <text x="148" y="213" text-anchor="middle" font-size="13" fill="#3b3a36">75（举例）</text>
+
+    <path d="M 276,195 Q 310,187 344,195" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+    <path d="M 336,187 Q 345,193 337,203" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+
+    <path d="M 352,140 L 470,195 L 352,250 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="3" transform="rotate(-1 411 195)"/>
+    <text x="384" y="192" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#8a6d1a">score</text>
+    <text x="384" y="212" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#8a6d1a">≥ 90 ?</text>
+    <text x="446" y="158" font-size="12" fill="#45703a">真</text>
+    <text x="446" y="244" font-size="12" fill="#a33f2e">假</text>
+
+    <path d="M 478,150 Q 530,142 580,150" fill="none" stroke="#7aa663" stroke-width="2.6"/>
+    <path d="M 572,142 Q 581,148 573,158" fill="none" stroke="#7aa663" stroke-width="2.6"/>
+    <path d="M 584,122 Q 700,116 830,122 Q 834,152 830,182 Q 700,188 586,182 Q 580,152 584,122 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.5"/>
+    <text x="708" y="146" text-anchor="middle" font-size="14" font-weight="bold" fill="#45703a">等级 A：优秀</text>
+    <text x="708" y="170" text-anchor="middle" font-size="12" fill="#6b675e">命中即跳出整条链</text>
+
+    <path d="M 478,240 Q 512,248 544,268" fill="none" stroke="#c96a5a" stroke-width="2.6"/>
+    <path d="M 536,272 Q 546,274 551,264" fill="none" stroke="#c96a5a" stroke-width="2.6"/>
+    <path d="M 500,282 Q 560,276 620,282 Q 623,330 620,376 Q 560,381 502,376 Q 498,330 500,282 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(0.6 560 330)"/>
+    <text x="560" y="314" text-anchor="middle" font-size="13" font-weight="bold" fill="#8a6d1a">score ≥ 80 ?</text>
+    <text x="560" y="340" text-anchor="middle" font-size="12" fill="#8a8578">又一个菱形……</text>
+    <text x="560" y="362" text-anchor="middle" font-size="12" fill="#8a8578">直到 else 兜底</text>
+
+    <path d="M 630,330 Q 680,322 730,330" fill="none" stroke="#7aa663" stroke-width="2.6"/>
+    <path d="M 722,322 Q 731,328 723,338" fill="none" stroke="#7aa663" stroke-width="2.6"/>
+    <path d="M 734,306 Q 836,300 928,306 Q 931,336 928,364 Q 836,369 736,364 Q 732,336 734,306 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.5"/>
+    <text x="831" y="330" text-anchor="middle" font-size="14" font-weight="bold" fill="#45703a">等级 B：良好</text>
+    <text x="831" y="354" text-anchor="middle" font-size="12" fill="#6b675e">75 的归宿（真实输出）</text>
+
+    <path d="M 30,420 Q 470,412 905,421" fill="none" stroke="#8a8578" stroke-width="3"/>
+    <circle cx="90" cy="420" r="6" fill="#8a94a3"/>
+    <text x="90" y="447" text-anchor="middle" font-size="13" fill="#3b3a36">Day 1 ✓</text>
+    <circle cx="170" cy="421" r="6" fill="#8a94a3"/>
+    <text x="170" y="447" text-anchor="middle" font-size="13" fill="#3b3a36">Day 2 ✓</text>
+    <circle cx="250" cy="420" r="6" fill="#8a94a3"/>
+    <text x="250" y="447" text-anchor="middle" font-size="13" fill="#3b3a36">Day 3 ✓</text>
+    <circle cx="330" cy="421" r="6" fill="#8a94a3"/>
+    <text x="330" y="447" text-anchor="middle" font-size="13" fill="#3b3a36">Day 4 ✓</text>
+    <circle cx="440" cy="420" r="13" fill="none" stroke="#c96a5a" stroke-width="2.2"/>
+    <circle cx="440" cy="420" r="6" fill="#5b8db8"/>
+    <text x="440" y="447" text-anchor="middle" font-size="13" font-weight="bold" fill="#c96a5a">Day 5（今天）</text>
+    <circle cx="590" cy="421" r="6" fill="#e0955f"/>
+    <text x="590" y="447" text-anchor="middle" font-size="13" fill="#3b3a36">Day 6 项目日</text>
+    <circle cx="760" cy="420" r="6" fill="#5b8db8"/>
+    <text x="760" y="447" text-anchor="middle" font-size="13" fill="#3b3a36">第 2 周 循环</text>
+    <circle cx="890" cy="421" r="6" fill="#5b8db8"/>
+    <text x="890" y="447" text-anchor="middle" font-size="13" fill="#3b3a36">…</text>
+
+    <rect x="80" y="480" width="800" height="56" fill="#f7e8a0" opacity="0.5" transform="rotate(-0.3 480 508)"/>
+    <text x="480" y="506" text-anchor="middle" font-size="14.5" fill="#8a6d1a">里程碑预告：明天的项目日要把 Day 4 的问答 + 今天的分支拼成"换算器"</text>
+    <text x="480" y="528" text-anchor="middle" font-size="13" fill="#8a8578">计划里的"菜单循环"会先以固定句式登场，第 8 天正式讲原理</text>
+  </g>
+</svg>

@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 3 全貌：一个表达式，从纸上到得数</text>
+    <path d="M 310,60 Q 480,52 650,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">昨天学会了装数据的盒子，今天让盒子们互相运算</text>
+
+    <path d="M 30,113 Q 153,108 276,113 Q 281,190 276,267 Q 153,272 32,267 Q 26,190 30,113 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(-0.4 153 190)"/>
+    <text x="153" y="142" text-anchor="middle" font-size="17" font-weight="bold" fill="#2c5a82">源代码里的表达式</text>
+    <text x="48" y="172" font-size="13" fill="#3b3a36">remaining / 7</text>
+    <text x="48" y="194" font-size="13" fill="#3b3a36">2 * 100.0 / 144</text>
+    <text x="48" y="216" font-size="13" fill="#3b3a36">-7 % 3</text>
+    <text x="48" y="238" font-size="13" fill="#3b3a36">i++　与　++i</text>
+    <text x="48" y="258" font-size="11.5" fill="#8a8578">（今天四个实验的主角）</text>
+
+    <path d="M 288,190 Q 312,182 336,190" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+    <path d="M 328,182 Q 337,188 329,198" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+    <text x="312" y="168" text-anchor="middle" font-size="13.5" fill="#55606e">送到第 2 站</text>
+
+    <path d="M 340,135 Q 430,130 520,135 Q 524,190 520,245 Q 430,250 342,245 Q 336,190 340,135 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(0.5 430 190)"/>
+    <text x="430" y="162" text-anchor="middle" font-size="16.5" font-weight="bold" fill="#45703a">编译站：排班＋转换</text>
+    <text x="430" y="188" text-anchor="middle" font-size="13" fill="#3b3a36">按优先级排计算顺序</text>
+    <text x="430" y="210" text-anchor="middle" font-size="13" fill="#3b3a36">需要时插入隐式转换</text>
+    <text x="430" y="232" text-anchor="middle" font-size="13" fill="#3b3a36">类型不搭直接报 error</text>
+
+    <path d="M 532,190 Q 556,182 580,190" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+    <path d="M 572,182 Q 581,188 573,198" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+    <text x="556" y="168" text-anchor="middle" font-size="13.5" fill="#55606e">运行期</text>
+
+    <path d="M 584,113 Q 742,108 900,113 Q 905,190 900,267 Q 742,272 586,267 Q 580,190 584,113 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="3" transform="rotate(-0.3 742 190)"/>
+    <text x="742" y="142" text-anchor="middle" font-size="17" font-weight="bold" fill="#9c5a22">一步步算出得数</text>
+    <text x="604" y="172" font-size="12.5" fill="#3b3a36">141 / 7 → 20，余 1</text>
+    <text x="604" y="196" font-size="12.5" fill="#3b3a36">2 * 100.0 → 200.0（int 升 double）</text>
+    <text x="604" y="220" font-size="12.5" fill="#3b3a36">200.0 / 144 → 1.38889</text>
+    <text x="604" y="244" font-size="12.5" fill="#3b3a36">i++ 先交旧值，++i 先自增</text>
+
+    <text x="480" y="316" text-anchor="middle" font-size="18" font-weight="bold" fill="#3b3a36">第 1 周内的位置（放大镜）</text>
+
+    <path d="M 60,414 Q 480,406 905,415" fill="none" stroke="#8a8578" stroke-width="3"/>
+
+    <circle cx="100" cy="412" r="7" fill="#8a94a3"/>
+    <text x="100" y="442" text-anchor="middle" font-size="14" fill="#3b3a36">Day 1 ✓</text>
+    <text x="100" y="460" text-anchor="middle" font-size="12" fill="#6b675e">工具链</text>
+
+    <circle cx="230" cy="414" r="7" fill="#8a94a3"/>
+    <text x="230" y="442" text-anchor="middle" font-size="14" fill="#3b3a36">Day 2 ✓</text>
+    <text x="230" y="460" text-anchor="middle" font-size="12" fill="#6b675e">变量与类型</text>
+
+    <rect x="352" y="336" width="150" height="28" fill="#f7e8a0" opacity="0.65" transform="rotate(-1.5 427 350)"/>
+    <text x="427" y="357" text-anchor="middle" font-size="16" font-weight="bold" fill="#c96a5a">今天：Day 3</text>
+    <path d="M 427,370 Q 426,382 424,394" fill="none" stroke="#c96a5a" stroke-width="2.5"/>
+    <path d="M 418,389 Q 424,398 432,391" fill="none" stroke="#c96a5a" stroke-width="2.5"/>
+    <circle cx="424" cy="412" r="14" fill="none" stroke="#c96a5a" stroke-width="2.2"/>
+    <circle cx="424" cy="412" r="7" fill="#5b8db8"/>
+    <text x="424" y="442" text-anchor="middle" font-size="14" font-weight="bold" fill="#c96a5a">运算符与转换</text>
+    <text x="424" y="460" text-anchor="middle" font-size="12" fill="#6b675e">今天的主角</text>
+
+    <circle cx="610" cy="414" r="7" fill="#5b8db8"/>
+    <text x="610" y="444" text-anchor="middle" font-size="14" fill="#3b3a36">Day 4</text>
+    <text x="610" y="462" text-anchor="middle" font-size="12" fill="#6b675e">cin / cout</text>
+
+    <circle cx="760" cy="412" r="7" fill="#5b8db8"/>
+    <text x="760" y="442" text-anchor="middle" font-size="14" fill="#3b3a36">Day 5</text>
+    <text x="760" y="460" text-anchor="middle" font-size="12" fill="#6b675e">分支</text>
+
+    <circle cx="890" cy="412" r="7" fill="#e0955f"/>
+    <text x="890" y="442" text-anchor="middle" font-size="14" fill="#3b3a36">Day 6</text>
+    <text x="890" y="460" text-anchor="middle" font-size="12" fill="#6b675e">项目日</text>
+
+    <text x="480" y="516" text-anchor="middle" font-size="13.5" fill="#8a8578">运算符是数据的"动词"——动词用错，盒子再对也没用</text>
+  </g>
+</svg>

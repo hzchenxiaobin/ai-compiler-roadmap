@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 4 全貌：程序第一次和你对话</text>
+    <path d="M 320,60 Q 480,52 640,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">前三天程序只会自说自话，今天它长出了耳朵（cin）和嗓门（cout）</text>
+
+    <path d="M 30,140 Q 110,134 190,140 Q 194,186 190,230 Q 110,236 32,230 Q 26,186 30,140 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(-0.5 110 185)"/>
+    <text x="110" y="168" text-anchor="middle" font-size="16" font-weight="bold" fill="#2c5a82">键盘输入</text>
+    <text x="110" y="196" text-anchor="middle" font-size="12.5" fill="#6b675e">你敲下的字符</text>
+    <text x="110" y="216" text-anchor="middle" font-size="12.5" fill="#6b675e">先排队进缓冲区</text>
+
+    <path d="M 200,185 Q 224,177 248,185" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+    <path d="M 240,177 Q 249,183 241,193" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+
+    <path d="M 252,140 Q 360,134 468,140 Q 472,186 468,230 Q 360,236 254,230 Q 248,186 252,140 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.5" transform="rotate(0.4 360 185)"/>
+    <text x="360" y="166" text-anchor="middle" font-size="16" font-weight="bold" fill="#55606e">输入缓冲区</text>
+    <rect x="300" y="180" width="24" height="24" fill="#fffdf7" stroke="#8a94a3" stroke-width="2"/>
+    <rect x="324" y="180" width="24" height="24" fill="#fffdf7" stroke="#8a94a3" stroke-width="2"/>
+    <rect x="348" y="180" width="24" height="24" fill="#fffdf7" stroke="#8a94a3" stroke-width="2"/>
+    <rect x="372" y="180" width="24" height="24" fill="#fffdf7" stroke="#8a94a3" stroke-width="2"/>
+    <text x="312" y="197" text-anchor="middle" font-size="12" fill="#3b3a36">x</text>
+    <text x="336" y="197" text-anchor="middle" font-size="12" fill="#3b3a36">i</text>
+    <text x="360" y="197" text-anchor="middle" font-size="12" fill="#3b3a36">a</text>
+    <text x="384" y="197" text-anchor="middle" font-size="12" fill="#3b3a36">o</text>
+    <text x="412" y="197" font-size="12" fill="#8a8578">→</text>
+    <text x="360" y="222" text-anchor="middle" font-size="11.5" fill="#8a8578">一条先来后到的传送带</text>
+
+    <path d="M 478,185 Q 502,177 526,185" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+    <path d="M 518,177 Q 527,183 519,193" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+    <text x="502" y="160" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#2c5a82">cin &gt;&gt;</text>
+
+    <path d="M 530,140 Q 650,134 770,140 Q 774,186 770,230 Q 650,236 532,230 Q 526,186 530,140 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.4 650 185)"/>
+    <text x="650" y="166" text-anchor="middle" font-size="16" font-weight="bold" fill="#45703a">变量盒子</text>
+    <rect x="590" y="180" width="120" height="26" fill="#fffdf7" stroke="#7aa663" stroke-width="2"/>
+    <text x="650" y="199" text-anchor="middle" font-size="13" fill="#3b3a36">name = "xiao"</text>
+
+    <path d="M 30,290 Q 110,284 190,290 Q 194,336 190,380 Q 110,386 32,380 Q 26,336 30,290 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="3" transform="rotate(0.5 110 335)"/>
+    <text x="110" y="318" text-anchor="middle" font-size="16" font-weight="bold" fill="#9c5a22">程序加工</text>
+    <text x="110" y="346" text-anchor="middle" font-size="12.5" fill="#6b675e">算进度、拼句子</text>
+    <text x="110" y="366" text-anchor="middle" font-size="12.5" fill="#6b675e">（Day 3 的运算符）</text>
+
+    <path d="M 200,335 Q 224,327 248,335" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+    <path d="M 240,327 Q 249,333 241,343" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+
+    <path d="M 252,290 Q 360,284 468,290 Q 472,336 468,380 Q 360,386 254,380 Q 248,336 252,290 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.4 360 335)"/>
+    <text x="360" y="316" text-anchor="middle" font-size="16" font-weight="bold" fill="#8a6d1a">cout 格式化阀门</text>
+    <text x="360" y="344" text-anchor="middle" font-size="12.5" fill="#6b675e">fixed / setprecision / setw</text>
+    <text x="360" y="364" text-anchor="middle" font-size="12.5" fill="#6b675e">只改显示，不改内存里的值</text>
+
+    <path d="M 478,335 Q 502,327 526,335" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+    <path d="M 518,327 Q 527,333 519,343" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+
+    <path d="M 530,290 Q 650,284 770,290 Q 774,336 770,380 Q 650,386 532,380 Q 526,336 530,290 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="3" transform="rotate(0.4 650 335)"/>
+    <rect x="548" y="304" width="204" height="62" rx="6" fill="#33413a"/>
+    <text x="560" y="328" font-size="13" fill="#cfe8c6">你好，xiao！</text>
+    <text x="560" y="350" font-size="13" fill="#cfe8c6">进度 2.78 %</text>
+
+    <path d="M 790,335 Q 816,327 842,335" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+    <path d="M 834,327 Q 843,333 835,343" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+    <text x="870" y="341" text-anchor="middle" font-size="15" fill="#8a8578">屏幕</text>
+
+    <path d="M 60,474 Q 480,468 905,475" fill="none" stroke="#8a8578" stroke-width="3"/>
+    <circle cx="90" cy="473" r="6" fill="#8a94a3"/>
+    <text x="90" y="500" text-anchor="middle" font-size="13" fill="#3b3a36">Day 1 ✓</text>
+    <circle cx="190" cy="474" r="6" fill="#8a94a3"/>
+    <text x="190" y="500" text-anchor="middle" font-size="13" fill="#3b3a36">Day 2 ✓</text>
+    <circle cx="290" cy="473" r="6" fill="#8a94a3"/>
+    <text x="290" y="500" text-anchor="middle" font-size="13" fill="#3b3a36">Day 3 ✓</text>
+    <circle cx="410" cy="473" r="13" fill="none" stroke="#c96a5a" stroke-width="2.2"/>
+    <circle cx="410" cy="473" r="6" fill="#5b8db8"/>
+    <text x="410" y="500" text-anchor="middle" font-size="13" font-weight="bold" fill="#c96a5a">Day 4（今天）</text>
+    <circle cx="560" cy="474" r="6" fill="#5b8db8"/>
+    <text x="560" y="500" text-anchor="middle" font-size="13" fill="#3b3a36">Day 5 分支</text>
+    <circle cx="710" cy="473" r="6" fill="#5b8db8"/>
+    <text x="710" y="500" text-anchor="middle" font-size="13" fill="#3b3a36">Day 6 项目日</text>
+    <circle cx="860" cy="474" r="6" fill="#e0955f"/>
+    <text x="860" y="500" text-anchor="middle" font-size="13" fill="#3b3a36">第 2 周</text>
+
+    <text x="480" y="540" text-anchor="middle" font-size="13.5" fill="#8a8578">周六的换算器项目（Day 6）将把今天的问答 + 明天的分支组合起来</text>
+  </g>
+</svg>

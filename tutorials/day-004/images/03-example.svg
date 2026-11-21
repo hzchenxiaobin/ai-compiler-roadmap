@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">四组真实对照：对话、格式、列宽、校验</text>
+    <path d="M 290,58 Q 480,52 670,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,225 470,342 Q 248,347 26,342 Q 20,225 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.4 247 222)"/>
+    <text x="46" y="132" font-size="17" font-weight="bold" fill="#45703a">✔ 实验 1：交互问答全流程</text>
+    <rect x="38" y="146" width="420" height="120" rx="6" fill="#33413a"/>
+    <text x="50" y="170" font-size="12.5" fill="#cfe8c6">$ printf 'xiaoming\n4\n' | ./interview</text>
+    <text x="50" y="192" font-size="12.5" fill="#9fb8a8">你叫什么名字？ 你已经学到第几天？</text>
+    <text x="50" y="214" font-size="12.5" fill="#cfe8c6">你好，xiaoming！</text>
+    <text x="50" y="234" font-size="12.5" fill="#cfe8c6">第 4 天 / 共 144 天，进度 2.78 %</text>
+    <text x="50" y="254" font-size="12.5" fill="#cfe8c6">剩下的 140 天，我们一起走完。</text>
+    <text x="46" y="292" font-size="12.5" fill="#6b675e">管道喂输入时屏幕不回显你"敲"的内容，</text>
+    <text x="46" y="312" font-size="12.5" fill="#6b675e">所以两个问题挤在一行；自己运行时会正常显示</text>
+    <text x="46" y="336" font-size="13" fill="#45703a">fixed + setprecision(2)：2.777… 显示成 2.78</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,225 934,342 Q 712,347 490,342 Q 484,225 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.4 711 222)"/>
+    <text x="510" y="132" font-size="17" font-weight="bold" fill="#2c5a82">实验 2：同一个小数的四副面孔</text>
+    <rect x="502" y="146" width="420" height="120" rx="6" fill="#fbfaf6" stroke="#d8d2c4" stroke-width="1.5"/>
+    <text x="514" y="172" font-size="13" fill="#3b3a36">默认　　　　　2.08333</text>
+    <text x="514" y="196" font-size="13" fill="#3b3a36">fixed + (2)　　2.08</text>
+    <text x="514" y="220" font-size="13" fill="#3b3a36">fixed + (10)　3.1415926536（换 pi 演示）</text>
+    <text x="514" y="248" font-size="12.5" fill="#6b675e">默认按有效数字（6 位），fixed 后按小数位数</text>
+    <path d="M 502,282 Q 711,276 922,283 L 919,322 Q 711,316 505,321 Z" fill="#fffdf7" stroke="#9db8cf" stroke-width="2" stroke-dasharray="8 5"/>
+    <text x="514" y="308" font-size="12.5" fill="#2c5a82">Day 2 的悬念揭晓：progress = 0.0138889 的 6 位就是这么来的</text>
+
+    <path d="M 24,366 Q 248,361 470,366 Q 474,489 470,606 Q 248,611 26,606 Q 20,489 24,366 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="3" transform="rotate(0.4 247 488)"/>
+    <text x="46" y="396" font-size="17" font-weight="bold" fill="#9c5a22">实验 3：setw(10) 的粘连事故</text>
+    <rect x="38" y="410" width="420" height="72" rx="6" fill="#fbfaf6" stroke="#d8d2c4" stroke-width="1.5"/>
+    <text x="50" y="434" font-size="12.5" fill="#3b3a36">第一版 setw(10)：　　　　1  0.6900000000</text>
+    <text x="50" y="456" font-size="12.5" fill="#a33f2e">看起来像 10.69！其实是 1 和 0.69 粘在一起</text>
+    <rect x="38" y="494" width="420" height="62" rx="6" fill="#fbfaf6" stroke="#d8d2c4" stroke-width="1.5"/>
+    <text x="50" y="518" font-size="12.5" fill="#3b3a36">改成 setw(14)：</text>
+    <text x="50" y="540" font-size="12.5" fill="#45703a">　　　　　 1  0.6900000000（列列对齐）</text>
+    <text x="46" y="584" font-size="12.5" fill="#9c5a22">setw 是"最小宽度"，内容超宽时不截断、不换行</text>
+
+    <path d="M 488,366 Q 712,361 934,366 Q 938,489 934,606 Q 712,611 490,606 Q 484,489 488,366 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="3" transform="rotate(-0.4 711 488)"/>
+    <text x="510" y="396" font-size="17" font-weight="bold" fill="#a33f2e">实验 4：输入校验的两条路</text>
+    <rect x="502" y="410" width="420" height="76" rx="6" fill="#fbfaf6" stroke="#d8d2c4" stroke-width="1.5"/>
+    <text x="514" y="434" font-size="12.5" fill="#45703a">echo "20"  | ./input_check → 收到，年龄 = 20（exit=0）</text>
+    <text x="514" y="458" font-size="12.5" fill="#a33f2e">echo "abc" | ./input_check → 读取失败！（exit=1）</text>
+    <text x="514" y="478" font-size="12" fill="#6b675e">同一程序，输入不同，命运不同</text>
+    <path d="M 502,500 Q 711,494 922,501 L 919,566 Q 711,560 505,565 Z" fill="#fffdf7" stroke="#dda79b" stroke-width="2" stroke-dasharray="8 5"/>
+    <text x="514" y="524" font-size="12.5" fill="#a33f2e">if (!(std::cin &gt;&gt; age)) 先把住关；</text>
+    <text x="514" y="544" font-size="12.5" fill="#6b675e">失败后用 cin.clear() + cin.ignore() 复位，</text>
+    <text x="514" y="560" font-size="12.5" fill="#6b675e">Day 8 学完循环就能做成"问到对为止"</text>
+    <text x="510" y="596" font-size="12.5" fill="#a33f2e">exit 码也是信号：0 = 一切正常，非 0 = 出了状况</text>
+  </g>
+</svg>

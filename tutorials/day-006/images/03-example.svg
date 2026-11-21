@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">真实运行记录：六个来回的完整对话</text>
+    <path d="M 300,58 Q 480,52 660,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">输出摘自本机真实运行（macOS arm64 + Apple clang 21，管道喂入 1 37 / 2 5 / 9 / abc / 3 100 / 0）</text>
+
+    <rect x="24" y="102" width="912" height="270" rx="8" fill="#33413a"/>
+    <text x="40" y="128" font-size="12.5" fill="#9fb8a8">=== 小小换算器 === 请选择：输入摄氏温度：37.00 ℃ = 98.60 ℉</text>
+    <text x="40" y="152" font-size="12.5" fill="#9fb8a8">=== 小小换算器 === 请选择：输入千米数：5.00 km = 3.11 英里</text>
+    <text x="40" y="176" font-size="12.5" fill="#f0c9c0">=== 小小换算器 === 请选择：没有这个选项：9</text>
+    <text x="40" y="200" font-size="12.5" fill="#f0c9c0">=== 小小换算器 === 请选择：看不懂这个选项，请输入数字 0~3。　←输入了 abc</text>
+    <text x="40" y="224" font-size="12.5" fill="#9fb8a8">=== 小小换算器 === 请选择：输入人民币金额：100.00 元 ≈ 13.89 美元（示例汇率）</text>
+    <text x="40" y="248" font-size="12.5" fill="#cfe8c6">=== 小小换算器 === 请选择：再见！　（exit=0）</text>
+    <text x="40" y="296" font-size="12" fill="#8a8578">菜单完整显示了 6 次；每次操作后都回到开头——这就是 while (true) 的效果</text>
+    <text x="40" y="320" font-size="12" fill="#8a8578">非法数字 9 被 default 接住；字母 abc 触发失败旗，被 clear+ignore 抢救后重显菜单</text>
+    <text x="40" y="344" font-size="12" fill="#8a8578">金额全程两位小数：fixed + setprecision(2) 在 main 开头一次拧好</text>
+
+    <path d="M 24,396 Q 250,390 470,396 Q 474,490 470,580 Q 250,586 26,580 Q 20,490 24,396 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.4 247 488)"/>
+    <text x="46" y="428" font-size="16" font-weight="bold" fill="#45703a">三个换算公式（核心资产）</text>
+    <text x="46" y="464" font-size="13.5" fill="#3b3a36">温度：℉ = ℃ × 9.0 / 5.0 + 32.0</text>
+    <text x="46" y="492" font-size="13.5" fill="#3b3a36">长度：英里 = km × 0.621371</text>
+    <text x="46" y="520" font-size="13.5" fill="#3b3a36">货币：美元 = 元 ÷ 7.2（示例常数）</text>
+    <text x="46" y="556" font-size="12" fill="#6b675e">注意 9.0 / 5.0 写成浮点：Day 3 的教训</text>
+    <text x="46" y="574" font-size="12" fill="#6b675e">直接搬生活会翻车</text>
+
+    <path d="M 488,396 Q 713,390 934,396 Q 938,490 934,580 Q 713,586 490,580 Q 484,490 488,396 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.4 711 488)"/>
+    <text x="510" y="428" font-size="16" font-weight="bold" fill="#2c5a82">里程碑自测（计划原文要求）</text>
+    <text x="510" y="460" font-size="13" fill="#3b3a36">□ 关掉教程，从空文件独立写出</text>
+    <text x="510" y="486" font-size="13" fill="#3b3a36">□ 编译零警告（-Wall 全程开着）</text>
+    <text x="510" y="512" font-size="13" fill="#3b3a36">□ 五种输入都能体面应对</text>
+    <text x="510" y="538" font-size="13" fill="#3b3a36">□ 能说清每个零件来自哪一天</text>
+    <text x="510" y="566" font-size="12" fill="#8a8578">全部打勾，才算通过本周里程碑</text>
+
+    <text x="480" y="628" text-anchor="middle" font-size="13.5" fill="#8a8578">从明天起进入第 2 周：循环与函数——while 的原理、以及把这台机器拆成小零件（函数）的方法</text>
+  </g>
+</svg>

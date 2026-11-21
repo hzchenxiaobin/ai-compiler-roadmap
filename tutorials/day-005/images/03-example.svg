@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">五路输入与一次漏 break 事故</text>
+    <path d="M 320,58 Q 480,52 640,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,320 470,540 Q 248,545 26,540 Q 20,320 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 323)"/>
+    <text x="46" y="132" font-size="17" font-weight="bold" fill="#45703a">同一个程序，五路输入</text>
+    <rect x="38" y="148" width="420" height="376" rx="6" fill="#33413a"/>
+    <text x="50" y="176" font-size="12.5" fill="#9fb8a8">$ echo "95" | ./grade_if　→ 等级 A：优秀（exit=0）</text>
+    <text x="50" y="204" font-size="12.5" fill="#9fb8a8">$ echo "75" | ./grade_if　→ 等级 C：中等（exit=0）</text>
+    <text x="50" y="232" font-size="12.5" fill="#f0c9c0">$ echo "105" | ./grade_if → 成绩必须在 0~100 之间！（exit=1）</text>
+    <text x="50" y="260" font-size="12.5" fill="#f0c9c0">$ echo "-3" | ./grade_if　→ 成绩必须在 0~100 之间！（exit=1）</text>
+    <text x="50" y="288" font-size="12.5" fill="#f0c9c0">$ echo "abc" | ./grade_if → 输入的不是整数！（exit=1）</text>
+    <text x="50" y="326" font-size="12.5" fill="#cfe8c6">两道关卡（真实代码顺序）：</text>
+    <text x="50" y="350" font-size="12" fill="#cfe8c6">① if (!(std::cin &gt;&gt; score))　拦住非整数</text>
+    <text x="50" y="374" font-size="12" fill="#cfe8c6">② if (score &lt; 0 || score &gt; 100)　拦住越界</text>
+    <text x="50" y="398" font-size="12" fill="#cfe8c6">③ 才轮到 if 链判等级</text>
+    <text x="50" y="436" font-size="12.5" fill="#cfe8c6">95 走到第一个菱形就命中；</text>
+    <text x="50" y="458" font-size="12.5" fill="#cfe8c6">75 掉过两个菱形在第三个命中；</text>
+    <text x="50" y="480" font-size="12.5" fill="#cfe8c6">105 和 abc 根本进不了瀑布</text>
+    <text x="50" y="512" font-size="12.5" fill="#9fb8a8">exit 码：合法 0，被拦 1</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,270 934,420 Q 712,425 490,420 Q 484,270 488,102 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="3" transform="rotate(0.3 711 261)"/>
+    <text x="510" y="132" font-size="17" font-weight="bold" fill="#a33f2e">事故：case 'B' 漏了 break</text>
+    <rect x="502" y="148" width="420" height="120" rx="6" fill="#fbfaf6" stroke="#d8d2c4" stroke-width="1.5"/>
+    <text x="514" y="174" font-size="12.5" fill="#3b3a36">$ ./grade_switch　（grade = 'B'）</text>
+    <text x="514" y="200" font-size="13" fill="#a33f2e">良好！稳步前进</text>
+    <text x="514" y="224" font-size="13" fill="#a33f2e">中等！加把劲　←多出来的一行！</text>
+    <text x="514" y="250" font-size="12" fill="#6b675e">B 的输出"漏"进了 C 的房间</text>
+    <path d="M 502,282 Q 711,276 922,283 L 919,352 Q 711,346 505,351 Z" fill="#fffdf7" stroke="#dda79b" stroke-width="2" stroke-dasharray="8 5"/>
+    <text x="514" y="308" font-size="12.5" fill="#a33f2e">switch 的规则：命中 case 后一直往下执行，</text>
+    <text x="514" y="328" font-size="12.5" fill="#a33f2e">直到遇见 break 才停下——这是特性不是 bug，</text>
+    <text x="514" y="346" font-size="12.5" fill="#6b675e">多个 case 共享一段代码时正好利用它</text>
+    <rect x="502" y="368" width="420" height="34" rx="6" fill="#fbfaf6" stroke="#d8d2c4" stroke-width="1.5"/>
+    <text x="514" y="390" font-size="12.5" fill="#45703a">$ ./grade_switch_fixed　补上 break 后只打一行</text>
+
+    <path d="M 488,444 Q 712,439 934,444 Q 938,492 934,540 Q 712,545 490,540 Q 484,492 488,444 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 711 492)"/>
+    <text x="711" y="474" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5a82">故意留白的共享 case（正确用法）</text>
+    <text x="711" y="500" text-anchor="middle" font-size="12.5" fill="#3b3a36">case 'D':　← 不写输出，故意漏下去</text>
+    <text x="711" y="522" text-anchor="middle" font-size="12.5" fill="#3b3a36">case 'F':　两个等级共用同一句评语</text>
+  </g>
+</svg>

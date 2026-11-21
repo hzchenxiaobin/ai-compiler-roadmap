@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">内存是一排字节格子，类型是读格子的说明书</text>
+    <path d="M 240,58 Q 480,52 720,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <text x="240" y="96" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">内存：每个格子恰好 1 字节（byte）</text>
+    <rect x="40" y="108" width="52" height="34" fill="#fffdf7" stroke="#8a94a3" stroke-width="2"/>
+    <rect x="92" y="108" width="52" height="34" fill="#fffdf7" stroke="#8a94a3" stroke-width="2"/>
+    <rect x="144" y="108" width="52" height="34" fill="#fffdf7" stroke="#8a94a3" stroke-width="2"/>
+    <rect x="196" y="108" width="52" height="34" fill="#fffdf7" stroke="#8a94a3" stroke-width="2"/>
+    <rect x="248" y="108" width="52" height="34" fill="#fffdf7" stroke="#8a94a3" stroke-width="2"/>
+    <rect x="300" y="108" width="52" height="34" fill="#fffdf7" stroke="#8a94a3" stroke-width="2"/>
+    <rect x="352" y="108" width="52" height="34" fill="#fffdf7" stroke="#8a94a3" stroke-width="2"/>
+    <text x="66" y="130" text-anchor="middle" font-size="12" fill="#8a8578">0x0</text>
+    <text x="118" y="130" text-anchor="middle" font-size="12" fill="#8a8578">0x1</text>
+    <text x="170" y="130" text-anchor="middle" font-size="12" fill="#8a8578">0x2</text>
+    <text x="222" y="130" text-anchor="middle" font-size="12" fill="#8a8578">0x3</text>
+    <text x="420" y="130" font-size="13" fill="#8a8578">……（亿万个格子，地址依次递增）</text>
+    <text x="600" y="96" font-size="14" fill="#55606e">变量 = 从某个格子开始的连续几格</text>
+
+    <text x="300" y="192" text-anchor="middle" font-size="16" font-weight="bold" fill="#2c5a82">各类型占几格（本机 macOS arm64 实测）</text>
+    <text x="60" y="222" font-size="14" fill="#3b3a36">char（1 字节）</text>
+    <rect x="210" y="206" width="42" height="24" fill="#cfe0f0" stroke="#5b8db8" stroke-width="2.2"/>
+    <text x="60" y="256" font-size="14" fill="#3b3a36">bool（1 字节）</text>
+    <rect x="210" y="240" width="42" height="24" fill="#cfe0f0" stroke="#5b8db8" stroke-width="2.2"/>
+    <text x="60" y="290" font-size="14" fill="#3b3a36">short（2 字节）</text>
+    <rect x="210" y="274" width="84" height="24" fill="#d8ecce" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="60" y="324" font-size="14" fill="#3b3a36">int（4 字节）</text>
+    <rect x="210" y="308" width="168" height="24" fill="#f9d9b8" stroke="#e0955f" stroke-width="2.2"/>
+    <text x="60" y="358" font-size="14" fill="#3b3a36">float（4 字节）</text>
+    <rect x="210" y="342" width="168" height="24" fill="#f9d9b8" stroke="#e0955f" stroke-width="2.2"/>
+    <text x="60" y="392" font-size="14" fill="#3b3a36">long（8 字节）</text>
+    <rect x="210" y="376" width="336" height="24" fill="#f3ccc4" stroke="#c96a5a" stroke-width="2.2"/>
+    <text x="60" y="426" font-size="14" fill="#3b3a36">double（8 字节）</text>
+    <rect x="210" y="410" width="336" height="24" fill="#f3ccc4" stroke="#c96a5a" stroke-width="2.2"/>
+    <text x="60" y="458" font-size="12.5" fill="#8a8578">每格宽 = 1 字节；同色 = 同量级：蓝 1、绿 2、橙 4、红 8</text>
+
+    <path d="M 552,232 Q 572,224 590,232" fill="none" stroke="#3b3a36" stroke-width="2.6"/>
+    <path d="M 582,224 Q 591,230 583,240" fill="none" stroke="#3b3a36" stroke-width="2.6"/>
+
+    <path d="M 594,178 Q 756,173 918,178 Q 922,310 918,440 Q 756,445 596,440 Q 590,310 594,178 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(0.4 756 309)"/>
+    <text x="756" y="208" text-anchor="middle" font-size="16" font-weight="bold" fill="#45703a">同一串比特，三种解读</text>
+    <rect x="644" y="224" width="28" height="28" fill="#fffdf7" stroke="#45703a" stroke-width="2"/>
+    <rect x="672" y="224" width="28" height="28" fill="#fffdf7" stroke="#45703a" stroke-width="2"/>
+    <rect x="700" y="224" width="28" height="28" fill="#fffdf7" stroke="#45703a" stroke-width="2"/>
+    <rect x="728" y="224" width="28" height="28" fill="#fffdf7" stroke="#45703a" stroke-width="2"/>
+    <rect x="756" y="224" width="28" height="28" fill="#fffdf7" stroke="#45703a" stroke-width="2"/>
+    <rect x="784" y="224" width="28" height="28" fill="#fffdf7" stroke="#45703a" stroke-width="2"/>
+    <rect x="812" y="224" width="28" height="28" fill="#fffdf7" stroke="#45703a" stroke-width="2"/>
+    <rect x="840" y="224" width="28" height="28" fill="#fffdf7" stroke="#45703a" stroke-width="2"/>
+    <text x="658" y="243" text-anchor="middle" font-size="13" fill="#3b3a36">0</text>
+    <text x="686" y="243" text-anchor="middle" font-size="13" fill="#3b3a36">1</text>
+    <text x="714" y="243" text-anchor="middle" font-size="13" fill="#3b3a36">0</text>
+    <text x="742" y="243" text-anchor="middle" font-size="13" fill="#3b3a36">0</text>
+    <text x="770" y="243" text-anchor="middle" font-size="13" fill="#3b3a36">0</text>
+    <text x="798" y="243" text-anchor="middle" font-size="13" fill="#3b3a36">0</text>
+    <text x="826" y="243" text-anchor="middle" font-size="13" fill="#3b3a36">0</text>
+    <text x="854" y="243" text-anchor="middle" font-size="13" fill="#3b3a36">1</text>
+
+    <path d="M 690,258 Q 680,268 676,280" fill="none" stroke="#8a94a3" stroke-width="2"/>
+    <path d="M 756,258 Q 756,268 756,280" fill="none" stroke="#8a94a3" stroke-width="2"/>
+    <path d="M 822,258 Q 832,268 836,280" fill="none" stroke="#8a94a3" stroke-width="2"/>
+    <text x="756" y="300" text-anchor="middle" font-size="14.5" fill="#3b3a36">当 char 读 → <tspan font-weight="bold" fill="#2c5a82">'A'（字符编码 65）</tspan></text>
+    <text x="756" y="334" text-anchor="middle" font-size="14.5" fill="#3b3a36">当 int 读 → <tspan font-weight="bold" fill="#9c5a22">65</tspan></text>
+    <text x="756" y="368" text-anchor="middle" font-size="14.5" fill="#3b3a36">当 bool 读 → <tspan font-weight="bold" fill="#45703a">true（非 0 即真）</tspan></text>
+    <path d="M 610,386 Q 756,380 902,387 L 899,428 Q 756,422 613,427 Z" fill="#fffdf7" stroke="#a8c494" stroke-width="2" stroke-dasharray="7 5"/>
+    <text x="756" y="412" text-anchor="middle" font-size="13.5" fill="#45703a">类型三件事：占几格 · 怎么解读 · 能做什么运算</text>
+
+    <path d="M 60,472 Q 478,466 902,473 L 898,548 Q 478,542 64,547 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.5" transform="rotate(-0.2 480 507)"/>
+    <text x="480" y="500" text-anchor="middle" font-size="15" font-weight="bold" fill="#8a6d1a">本机实测提醒（macOS arm64 + Apple clang 21）</text>
+    <text x="480" y="524" text-anchor="middle" font-size="13.5" fill="#6b675e">long 是 8 字节、long double 也是 8 字节；Linux x86-64 上 long double 是 16 字节</text>
+    <text x="480" y="544" text-anchor="middle" font-size="13.5" fill="#6b675e">跨平台代码用 sizeof 现场问机器，不要背某个平台的答案</text>
+  </g>
+</svg>

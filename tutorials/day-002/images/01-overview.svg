@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 2 全貌：变量是带类型的盒子</text>
+    <path d="M 330,60 Q 480,52 630,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">昨天让程序跑起来，今天开始往程序里装数据</text>
+
+    <path d="M 30,113 Q 153,108 276,113 Q 281,185 276,257 Q 153,262 32,257 Q 26,185 30,113 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(-0.4 153 185)"/>
+    <text x="153" y="140" text-anchor="middle" font-size="17" font-weight="bold" fill="#2c5a82">源代码里的声明</text>
+    <text x="46" y="168" font-size="13" fill="#3b3a36">int today = 2;</text>
+    <text x="46" y="190" font-size="13" fill="#3b3a36">double progress = 0.0139;</text>
+    <text x="46" y="212" font-size="13" fill="#3b3a36">char grade = 'B';</text>
+    <text x="46" y="234" font-size="13" fill="#3b3a36">bool finished = false;</text>
+    <text x="46" y="252" font-size="11.5" fill="#8a8578">（昨天只见过 int，今天认识全家）</text>
+
+    <path d="M 288,185 Q 312,177 336,185" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+    <path d="M 328,177 Q 337,183 329,193" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+    <text x="312" y="163" text-anchor="middle" font-size="13.5" fill="#55606e">送到第 2 站</text>
+
+    <path d="M 340,143 Q 430,138 520,143 Q 524,185 520,227 Q 430,232 342,227 Q 336,185 340,143 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(0.5 430 185)"/>
+    <text x="430" y="170" text-anchor="middle" font-size="17" font-weight="bold" fill="#45703a">编译站：类型检查</text>
+    <text x="430" y="196" text-anchor="middle" font-size="13.5" fill="#3b3a36">盒子多大、能装什么，</text>
+    <text x="430" y="216" text-anchor="middle" font-size="13.5" fill="#3b3a36">编译时就被确定下来</text>
+
+    <path d="M 532,185 Q 556,177 580,185" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+    <path d="M 572,177 Q 581,183 573,193" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+    <text x="556" y="163" text-anchor="middle" font-size="13.5" fill="#55606e">运行时</text>
+
+    <path d="M 584,113 Q 742,108 900,113 Q 905,185 900,257 Q 742,262 586,257 Q 580,185 584,113 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="3" transform="rotate(-0.3 742 185)"/>
+    <text x="742" y="138" text-anchor="middle" font-size="17" font-weight="bold" fill="#9c5a22">内存里得到真正的盒子</text>
+    <text x="600" y="164" font-size="12.5" fill="#3b3a36">int</text>
+    <rect x="636" y="152" width="26" height="22" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
+    <rect x="662" y="152" width="26" height="22" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
+    <rect x="688" y="152" width="26" height="22" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
+    <rect x="714" y="152" width="26" height="22" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
+    <text x="752" y="168" font-size="12" fill="#6b675e">4 字节</text>
+    <text x="600" y="200" font-size="12.5" fill="#3b3a36">double</text>
+    <rect x="636" y="186" width="26" height="22" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
+    <rect x="662" y="186" width="26" height="22" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
+    <rect x="688" y="186" width="26" height="22" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
+    <rect x="714" y="186" width="26" height="22" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
+    <rect x="740" y="186" width="26" height="22" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
+    <rect x="766" y="186" width="26" height="22" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
+    <rect x="792" y="186" width="26" height="22" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
+    <rect x="818" y="186" width="26" height="22" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
+    <text x="852" y="202" font-size="12" fill="#6b675e">8 字节</text>
+    <text x="600" y="236" font-size="12.5" fill="#3b3a36">char/bool</text>
+    <rect x="680" y="222" width="26" height="22" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
+    <rect x="706" y="222" width="26" height="22" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
+    <text x="744" y="238" font-size="12" fill="#6b675e">各 1 字节</text>
+
+    <text x="480" y="316" text-anchor="middle" font-size="18" font-weight="bold" fill="#3b3a36">第 1 周内的位置（放大镜）</text>
+
+    <path d="M 60,414 Q 480,406 905,415" fill="none" stroke="#8a8578" stroke-width="3"/>
+
+    <circle cx="100" cy="412" r="7" fill="#8a94a3"/>
+    <text x="100" y="442" text-anchor="middle" font-size="14" fill="#3b3a36">Day 1 ✓</text>
+    <text x="100" y="460" text-anchor="middle" font-size="12" fill="#6b675e">工具链已通关</text>
+
+    <rect x="228" y="336" width="150" height="28" fill="#f7e8a0" opacity="0.65" transform="rotate(-1.5 303 350)"/>
+    <text x="303" y="357" text-anchor="middle" font-size="16" font-weight="bold" fill="#c96a5a">今天：Day 2</text>
+    <path d="M 303,370 Q 302,382 300,394" fill="none" stroke="#c96a5a" stroke-width="2.5"/>
+    <path d="M 294,389 Q 300,398 308,391" fill="none" stroke="#c96a5a" stroke-width="2.5"/>
+    <circle cx="300" cy="412" r="14" fill="none" stroke="#c96a5a" stroke-width="2.2"/>
+    <circle cx="300" cy="412" r="7" fill="#5b8db8"/>
+    <text x="300" y="442" text-anchor="middle" font-size="14" font-weight="bold" fill="#c96a5a">变量与类型</text>
+    <text x="300" y="460" text-anchor="middle" font-size="12" fill="#6b675e">数据的盒子</text>
+
+    <circle cx="480" cy="414" r="7" fill="#5b8db8"/>
+    <text x="480" y="444" text-anchor="middle" font-size="14" fill="#3b3a36">Day 3</text>
+    <text x="480" y="462" text-anchor="middle" font-size="12" fill="#6b675e">运算符与转换</text>
+
+    <circle cx="640" cy="412" r="7" fill="#5b8db8"/>
+    <text x="640" y="442" text-anchor="middle" font-size="14" fill="#3b3a36">Day 4</text>
+    <text x="640" y="460" text-anchor="middle" font-size="12" fill="#6b675e">cin / cout</text>
+
+    <circle cx="770" cy="414" r="7" fill="#5b8db8"/>
+    <text x="770" y="444" text-anchor="middle" font-size="14" fill="#3b3a36">Day 5</text>
+    <text x="770" y="462" text-anchor="middle" font-size="12" fill="#6b675e">分支</text>
+
+    <circle cx="890" cy="412" r="7" fill="#e0955f"/>
+    <text x="890" y="442" text-anchor="middle" font-size="14" fill="#3b3a36">Day 6</text>
+    <text x="890" y="460" text-anchor="middle" font-size="12" fill="#6b675e">项目日</text>
+
+    <text x="480" y="516" text-anchor="middle" font-size="13.5" fill="#8a8578">类型还决定了每种数据能参加哪些运算——那是明天（Day 3）的主角</text>
+  </g>
+</svg>

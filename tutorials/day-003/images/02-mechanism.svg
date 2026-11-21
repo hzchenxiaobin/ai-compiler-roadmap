@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">隐式转换：只向更宽的楼梯上走，从不回头</text>
+    <path d="M 250,58 Q 480,52 710,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <text x="230" y="106" text-anchor="middle" font-size="16" font-weight="bold" fill="#2c5a82">类型阶梯（低 → 高）</text>
+
+    <path d="M 90,180 Q 230,175 370,180 Q 374,222 370,262 Q 230,267 92,262 Q 86,222 90,180 Z" fill="#f3ccc4" stroke="#c96a5a" stroke-width="3" transform="rotate(-0.4 230 221)"/>
+    <text x="230" y="210" text-anchor="middle" font-size="16" font-weight="bold" fill="#a33f2e">double / long double</text>
+    <text x="230" y="236" text-anchor="middle" font-size="12.5" fill="#6b675e">最宽的小数盒，精度最高</text>
+
+    <path d="M 236,274 Q 230,290 230,304" fill="none" stroke="#8a94a3" stroke-width="2.6"/>
+    <path d="M 223,298 Q 230,307 238,299" fill="none" stroke="#8a94a3" stroke-width="2.6"/>
+
+    <path d="M 90,310 Q 230,305 370,310 Q 374,352 370,392 Q 230,397 92,392 Q 86,352 90,310 Z" fill="#f9d9b8" stroke="#e0955f" stroke-width="3" transform="rotate(0.4 230 351)"/>
+    <text x="230" y="340" text-anchor="middle" font-size="16" font-weight="bold" fill="#9c5a22">long（8 字节整数）</text>
+    <text x="230" y="366" text-anchor="middle" font-size="12.5" fill="#6b675e">装更大的整数</text>
+
+    <path d="M 236,404 Q 230,420 230,434" fill="none" stroke="#8a94a3" stroke-width="2.6"/>
+    <path d="M 223,428 Q 230,437 238,429" fill="none" stroke="#8a94a3" stroke-width="2.6"/>
+
+    <path d="M 90,440 Q 230,435 370,440 Q 374,482 370,522 Q 230,527 92,522 Q 86,482 90,440 Z" fill="#d8ecce" stroke="#7aa663" stroke-width="3" transform="rotate(-0.4 230 481)"/>
+    <text x="230" y="470" text-anchor="middle" font-size="16" font-weight="bold" fill="#45703a">int（4 字节整数）</text>
+    <text x="230" y="496" text-anchor="middle" font-size="12.5" fill="#6b675e">'A'、true 参与运算时先变成 int</text>
+
+    <path d="M 382,221 Q 420,221 438,300" fill="none" stroke="#8a94a3" stroke-width="2" stroke-dasharray="6 5"/>
+    <text x="404" y="200" font-size="12.5" fill="#8a8578">混合运算时</text>
+    <text x="404" y="218" font-size="12.5" fill="#8a8578">低处自动升到高处</text>
+
+    <path d="M 460,130 Q 700,125 930,130 Q 934,330 930,470 Q 700,475 462,470 Q 456,330 460,130 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(0.3 695 300)"/>
+    <text x="695" y="162" text-anchor="middle" font-size="16.5" font-weight="bold" fill="#45703a">同一组数字，两种写法，两个命运</text>
+
+    <text x="695" y="196" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#45703a">写法 A：2 * 100.0 / 144</text>
+    <path d="M 500,216 Q 695,210 880,216 L 877,296 Q 695,290 503,295 Z" fill="#fffdf7" stroke="#a8c494" stroke-width="2" transform="rotate(-0.3 690 255)"/>
+    <text x="516" y="240" font-size="13" fill="#3b3a36">第 1 步：2 * 100.0</text>
+    <text x="516" y="260" font-size="12.5" fill="#2c5a82">int 的 2 被提升为 2.0 → 200.0</text>
+    <text x="516" y="284" font-size="13" fill="#3b3a36">第 2 步：200.0 / 144 → <tspan font-weight="bold" fill="#45703a">1.38889</tspan></text>
+
+    <text x="695" y="330" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#a33f2e">写法 B：2 / 144 * 100.0</text>
+    <path d="M 500,350 Q 695,344 880,350 L 877,430 Q 695,424 503,429 Z" fill="#fffdf7" stroke="#dda79b" stroke-width="2" transform="rotate(0.3 690 389)"/>
+    <text x="516" y="374" font-size="13" fill="#3b3a36">第 1 步：2 / 144</text>
+    <text x="516" y="394" font-size="12.5" fill="#a33f2e">两个都是 int → 整数除法 → 0（已截断！）</text>
+    <text x="516" y="418" font-size="13" fill="#3b3a36">第 2 步：0 * 100.0 → <tspan font-weight="bold" fill="#a33f2e">0</tspan></text>
+
+    <text x="695" y="458" text-anchor="middle" font-size="13.5" fill="#6b675e">差别只在一处：截断发生在转换之前还是之后</text>
+
+    <path d="M 60,556 Q 478,550 902,557 L 898,596 Q 478,590 64,595 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.2" transform="rotate(-0.2 480 573)"/>
+    <text x="480" y="582" text-anchor="middle" font-size="13.5" fill="#8a6d1a">优先级决定运算顺序，运算顺序决定转换发生在哪一步；拿不准就加括号，让意图一目了然</text>
+  </g>
+</svg>

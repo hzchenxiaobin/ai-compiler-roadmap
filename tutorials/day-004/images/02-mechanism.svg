@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">cin 收发室：传送带、取件规则和失败旗</text>
+    <path d="M 250,58 Q 480,52 710,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 60,120 Q 340,114 620,120 Q 624,180 620,236 Q 340,242 62,236 Q 56,180 60,120 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(-0.3 340 178)"/>
+    <text x="340" y="148" text-anchor="middle" font-size="16" font-weight="bold" fill="#55606e">输入缓冲区（一条传送带）</text>
+    <rect x="200" y="166" width="34" height="34" fill="#fffdf7" stroke="#8a94a3" stroke-width="2"/>
+    <rect x="234" y="166" width="34" height="34" fill="#fffdf7" stroke="#8a94a3" stroke-width="2"/>
+    <rect x="268" y="166" width="34" height="34" fill="#fffdf7" stroke="#8a94a3" stroke-width="2"/>
+    <rect x="302" y="166" width="34" height="34" fill="#fffdf7" stroke="#8a94a3" stroke-width="2"/>
+    <text x="217" y="189" text-anchor="middle" font-size="15" fill="#3b3a36">2</text>
+    <text x="251" y="189" text-anchor="middle" font-size="15" fill="#3b3a36">0</text>
+    <text x="285" y="189" text-anchor="middle" font-size="15" fill="#3b3a36">x</text>
+    <text x="319" y="189" text-anchor="middle" font-size="15" fill="#3b3a36">↵</text>
+    <text x="360" y="189" font-size="13" fill="#8a8578">← 已经排队等着的内容</text>
+
+    <text x="340" y="234" text-anchor="middle" font-size="13.5" fill="#2c5a82">cin &gt;&gt; age（age 是 int）的取件四步：</text>
+
+    <path d="M 60,268 Q 170,262 280,268 Q 283,316 280,362 Q 170,367 62,362 Q 57,316 60,268 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.5" transform="rotate(-0.4 170 315)"/>
+    <text x="74" y="296" font-size="13.5" font-weight="bold" fill="#2c5a82">① 跳过空白</text>
+    <text x="74" y="318" font-size="12" fill="#6b675e">空格、换行直接</text>
+    <text x="74" y="336" font-size="12" fill="#6b675e">迈过去不碰</text>
+    <text x="74" y="358" font-size="12" fill="#8a8578">（本例：无空白可跳）</text>
+
+    <path d="M 290,268 Q 400,262 510,268 Q 513,316 510,362 Q 400,367 292,362 Q 287,316 290,268 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.5" transform="rotate(0.4 400 315)"/>
+    <text x="304" y="296" font-size="13.5" font-weight="bold" fill="#45703a">② 收集字符</text>
+    <text x="304" y="318" font-size="12" fill="#6b675e">能当 int 读就一直取：</text>
+    <text x="304" y="336" font-size="12" fill="#6b675e">吃掉 2、0，吃到 x 停</text>
+    <text x="304" y="358" font-size="12" fill="#8a8578">（x 留在带上）</text>
+
+    <path d="M 520,268 Q 630,262 740,268 Q 743,316 740,362 Q 630,367 522,362 Q 517,316 520,268 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.5" transform="rotate(-0.4 630 315)"/>
+    <text x="534" y="296" font-size="13.5" font-weight="bold" fill="#9c5a22">③ 装进盒子</text>
+    <text x="534" y="318" font-size="12" fill="#6b675e">收集到的 "20" 转成</text>
+    <text x="534" y="336" font-size="12" fill="#6b675e">整数 20 放入 age</text>
+    <text x="534" y="358" font-size="12" fill="#8a8578">（真实输出：收到，年龄=20）</text>
+
+    <path d="M 750,268 Q 850,262 930,268 Q 933,316 930,362 Q 850,367 752,362 Q 747,316 750,268 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.5" transform="rotate(0.4 840 315)"/>
+    <text x="764" y="296" font-size="13.5" font-weight="bold" fill="#a33f2e">④ 换成 abc 试试</text>
+    <text x="764" y="318" font-size="12" fill="#6b675e">第一个字符就不是数字</text>
+    <text x="764" y="336" font-size="12" fill="#6b675e">→ 什么也不取，</text>
+    <text x="764" y="354" font-size="12" fill="#a33f2e">失败旗 fail 立起来！</text>
+
+    <path d="M 60,396 Q 478,390 900,397 L 896,470 Q 478,464 64,469 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.5" transform="rotate(-0.2 480 430)"/>
+    <text x="480" y="424" text-anchor="middle" font-size="15" font-weight="bold" fill="#8a6d1a">失败旗立起来之后？</text>
+    <text x="480" y="450" text-anchor="middle" font-size="13" fill="#6b675e">cin 进入失败状态：后续所有读取立刻失败，坏字符一直躺在传送带上</text>
+
+    <path d="M 60,494 Q 478,488 900,495 L 896,568 Q 478,562 64,567 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.5" transform="rotate(0.2 480 530)"/>
+    <text x="480" y="522" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">标准抢救句式（今天先背下来，Day 8 学循环后升级成重试）</text>
+    <text x="480" y="548" text-anchor="middle" font-size="13.5" fill="#3b3a36">std::cin.clear();　// 降下失败旗</text>
+    <text x="480" y="566" text-anchor="middle" font-size="13.5" fill="#3b3a36">std::cin.ignore(很大数, '\n');　// 把这一行残料冲走</text>
+  </g>
+</svg>
