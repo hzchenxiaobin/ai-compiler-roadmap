@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">转置与乘法：行列的两个魔法</text>
+    <path d="M 320,58 Q 480,52 640,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 260,94 480,100 Q 484,220 480,340 Q 260,346 42,340 Q 36,220 40,100 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(-0.3 260 220)"/>
+    <text x="260" y="130" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">转置：沿对角线照镜子</text>
+    <text x="90" y="162" font-size="13" fill="#3b3a36">原 3×4：　1　2　3　4</text>
+    <text x="140" y="184" font-size="13" fill="#3b3a36">　　　　 5　6　7　8</text>
+    <text x="140" y="206" font-size="13" fill="#3b3a36">　　　　 9 10 11 12</text>
+    <path d="M 300,220 Q 340,220 380,220" fill="none" stroke="#e0955f" stroke-width="2.8"/>
+    <path d="M 372,212 Q 381,218 373,228" fill="none" stroke="#e0955f" stroke-width="2.8"/>
+    <text x="340" y="204" text-anchor="middle" font-size="12" fill="#9c5a22">t[c][r]=m[r][c]</text>
+    <text x="90" y="252" font-size="13" fill="#3b3a36">转置 4×3：1 5 9</text>
+    <text x="158" y="274" font-size="13" fill="#3b3a36">　　　　　2 6 10</text>
+    <text x="158" y="296" font-size="13" fill="#3b3a36">　　　　　3 7 11</text>
+    <text x="158" y="318" font-size="13" fill="#3b3a36">　　　　　4 8 12</text>
+    <text x="260" y="336" text-anchor="middle" font-size="12" fill="#8a8578">（全部本机实测输出）</text>
+
+    <path d="M 520,100 Q 730,94 930,100 Q 934,340 930,560 Q 730,566 522,560 Q 516,340 520,100 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(0.3 725 330)"/>
+    <text x="725" y="130" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">乘法：行与列的点积</text>
+    <text x="545" y="164" font-size="13" fill="#3b3a36">A（2×3）　　　B（3×2）</text>
+    <text x="560" y="192" font-size="13" fill="#3b3a36">1 2 3　　　　 7　8</text>
+    <text x="560" y="214" font-size="13" fill="#3b3a36">4 5 6　　　　 9 10</text>
+    <text x="700" y="214" font-size="13" fill="#3b3a36">11 12</text>
+    <text x="725" y="248" text-anchor="middle" font-size="13" fill="#45703a">C[i][j] = A 第 i 行 · B 第 j 列</text>
+    <rect x="550" y="264" width="150" height="24" fill="#f7e8a0" opacity="0.7"/>
+    <text x="625" y="281" text-anchor="middle" font-size="11.5" fill="#8a6d1a">A 第 0 行：1 2 3</text>
+    <rect x="740" y="264" width="150" height="24" fill="#f7e8a0" opacity="0.7"/>
+    <text x="815" y="281" text-anchor="middle" font-size="11.5" fill="#8a6d1a">B 第 0 列：7 9 11</text>
+    <text x="725" y="316" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#45703a">C[0][0] = 1×7 + 2×9 + 3×11 = 58</text>
+    <text x="725" y="344" text-anchor="middle" font-size="13" fill="#3b3a36">四个格子同理 → C = | 58　64 |</text>
+    <text x="745" y="366" text-anchor="middle" font-size="13" fill="#3b3a36">　　　　　　　 | 139 154 |</text>
+    <path d="M 545,396 Q 725,390 905,397 L 902,462 Q 725,456 548,461 Z" fill="#fffdf7" stroke="#a8c494" stroke-width="2" stroke-dasharray="8 5"/>
+    <text x="725" y="422" text-anchor="middle" font-size="12.5" fill="#45703a">三重循环：外两层定结果格子（i, j），</text>
+    <text x="725" y="444" text-anchor="middle" font-size="12.5" fill="#45703a">最内层 k 完成 K 对相乘求和</text>
+    <text x="725" y="488" text-anchor="middle" font-size="13" fill="#a33f2e">合法性铁则：A 的列数 = B 的行数</text>
+    <text x="725" y="510" text-anchor="middle" font-size="12.5" fill="#6b675e">（K 这一根"接力棒"两边必须一样长）</text>
+    <text x="725" y="544" text-anchor="middle" font-size="12" fill="#8a8578">乘法无交换律：A×B ≠ B×A，</text>
+    <text x="725" y="562" text-anchor="middle" font-size="12" fill="#8a8578">连形状都可能不同（2×2 vs 3×3）</text>
+
+    <path d="M 40,370 Q 260,364 480,370 Q 484,460 480,552 Q 260,558 42,552 Q 36,460 40,370 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.3 260 461)"/>
+    <text x="260" y="400" text-anchor="middle" font-size="15" font-weight="bold" fill="#8a6d1a">双重循环的三条军规</text>
+    <text x="60" y="432" font-size="12.5" fill="#3b3a36">1. 换行在外层身体内（Day 7 老规矩）</text>
+    <text x="60" y="458" font-size="12.5" fill="#3b3a36">2. 内层上限可以"看外层脸色"</text>
+    <text x="60" y="484" font-size="12.5" fill="#3b3a36">3. 下标双双从 0 到"长度减一"</text>
+    <text x="60" y="522" font-size="12.5" fill="#a33f2e">军规 3 的反面教材：m[3][4] 的</text>
+    <text x="60" y="542" font-size="12.5" fill="#a33f2e">合法下标是 [0..2][0..3]——</text>
+    <text x="60" y="560" font-size="12.5" fill="#6b675e">和昨天一样，越界不报警</text>
+  </g>
+</svg>

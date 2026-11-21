@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 14 全貌：二维数组——给集装箱加装楼层</text>
+    <path d="M 300,60 Q 480,52 660,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">昨天的盒子排成一排，今天排成一栋楼：行选层、列选房间</text>
+
+    <text x="230" y="136" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">int m[3][4]：3 层楼，每层 4 个 int 盒子</text>
+    <rect x="80" y="150" width="70" height="40" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.4"/>
+    <text x="115" y="176" text-anchor="middle" font-size="14" fill="#3b3a36">1</text>
+    <rect x="150" y="150" width="70" height="40" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.4"/>
+    <text x="185" y="176" text-anchor="middle" font-size="14" fill="#3b3a36">2</text>
+    <rect x="220" y="150" width="70" height="40" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.4"/>
+    <text x="255" y="176" text-anchor="middle" font-size="14" fill="#3b3a36">3</text>
+    <rect x="290" y="150" width="70" height="40" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.4"/>
+    <text x="325" y="176" text-anchor="middle" font-size="14" fill="#3b3a36">4</text>
+    <rect x="80" y="190" width="70" height="40" fill="#d8ecce" stroke="#7aa663" stroke-width="2.4"/>
+    <text x="115" y="216" text-anchor="middle" font-size="14" fill="#3b3a36">5</text>
+    <rect x="150" y="190" width="70" height="40" fill="#d8ecce" stroke="#7aa663" stroke-width="2.4"/>
+    <text x="185" y="216" text-anchor="middle" font-size="14" fill="#3b3a36">6</text>
+    <rect x="220" y="190" width="70" height="40" fill="#d8ecce" stroke="#7aa663" stroke-width="2.4"/>
+    <text x="255" y="216" text-anchor="middle" font-size="14" fill="#3b3a36">7</text>
+    <rect x="290" y="190" width="70" height="40" fill="#d8ecce" stroke="#7aa663" stroke-width="2.4"/>
+    <text x="325" y="216" text-anchor="middle" font-size="14" fill="#3b3a36">8</text>
+    <rect x="80" y="230" width="70" height="40" fill="#f9d9b8" stroke="#e0955f" stroke-width="2.4"/>
+    <text x="115" y="256" text-anchor="middle" font-size="14" fill="#3b3a36">9</text>
+    <rect x="150" y="230" width="70" height="40" fill="#f9d9b8" stroke="#e0955f" stroke-width="2.4"/>
+    <text x="185" y="256" text-anchor="middle" font-size="14" fill="#3b3a36">10</text>
+    <rect x="220" y="230" width="70" height="40" fill="#f9d9b8" stroke="#e0955f" stroke-width="2.4"/>
+    <text x="255" y="256" text-anchor="middle" font-size="14" fill="#3b3a36">11</text>
+    <rect x="290" y="230" width="70" height="40" fill="#f9d9b8" stroke="#e0955f" stroke-width="2.4"/>
+    <text x="325" y="256" text-anchor="middle" font-size="14" fill="#3b3a36">12</text>
+    <text x="55" y="176" text-anchor="middle" font-size="12" fill="#8a8578">r=0</text>
+    <text x="55" y="216" text-anchor="middle" font-size="12" fill="#8a8578">r=1</text>
+    <text x="55" y="256" text-anchor="middle" font-size="12" fill="#8a8578">r=2</text>
+    <text x="115" y="288" text-anchor="middle" font-size="12" fill="#8a8578">c=0</text>
+    <text x="185" y="288" text-anchor="middle" font-size="12" fill="#8a8578">c=1</text>
+    <text x="255" y="288" text-anchor="middle" font-size="12" fill="#8a8578">c=2</text>
+    <text x="325" y="288" text-anchor="middle" font-size="12" fill="#8a8578">c=3</text>
+
+    <path d="M 420,200 Q 470,200 520,200" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+    <path d="M 512,192 Q 521,198 513,208" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+    <text x="470" y="186" text-anchor="middle" font-size="12.5" fill="#55606e">存储时摊平</text>
+
+    <path d="M 530,136 Q 730,130 930,136 Q 934,220 930,300 Q 730,306 532,300 Q 526,220 530,136 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 730 218)"/>
+    <text x="730" y="166" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">内存真相：还是一排盒子</text>
+    <text x="552" y="198" font-size="12.5" fill="#3b3a36">1 2 3 4 5 6 7 8 9 10 11 12</text>
+    <text x="730" y="232" text-anchor="middle" font-size="12.5" fill="#6b675e">"行优先"：整层整层连续铺</text>
+    <text x="730" y="260" text-anchor="middle" font-size="12.5" fill="#2c5a82">m[1][2] 的定位：</text>
+    <text x="730" y="284" text-anchor="middle" font-size="12.5" fill="#2c5a82">跳过 1 整层（4 盒）再数 2 盒 → 第 7 个</text>
+
+    <path d="M 40,330 Q 470,324 905,331 L 901,442 Q 470,436 44,441 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.2 472 386)"/>
+    <text x="472" y="362" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">今天的三台戏：打印、转置、乘法</text>
+    <text x="70" y="396" font-size="13" fill="#3b3a36">双重循环打印：外层选层（r），内层选房（c），打完一层换行</text>
+    <text x="70" y="422" font-size="13" fill="#3b3a36">转置：行列对调 t[c][r] = m[r][c]，3×4 变 4×3（实测）</text>
+    <text x="510" y="396" font-size="13" fill="#3b3a36">乘法：A 的行 × B 的列，对应相乘再求和</text>
+    <text x="510" y="422" font-size="13" fill="#6b675e">2×3 乘 3×2 = 2×2：58 64 / 139 154（实测＋手算双核对）</text>
+
+    <path d="M 60,470 Q 480,464 905,471" fill="none" stroke="#8a8578" stroke-width="3"/>
+    <circle cx="170" cy="470" r="6" fill="#8a94a3"/>
+    <text x="170" y="496" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 13 ✓</text>
+    <circle cx="350" cy="471" r="13" fill="none" stroke="#c96a5a" stroke-width="2.2"/>
+    <circle cx="350" cy="471" r="6" fill="#5b8db8"/>
+    <text x="350" y="496" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#c96a5a">Day 14（今天）</text>
+    <circle cx="520" cy="470" r="6" fill="#5b8db8"/>
+    <text x="520" y="496" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 15~17</text>
+    <circle cx="690" cy="471" r="6" fill="#5b8db8"/>
+    <text x="690" y="496" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 18 项目日</text>
+    <circle cx="860" cy="470" r="6" fill="#e0955f"/>
+    <text x="860" y="496" text-anchor="middle" font-size="12.5" fill="#3b3a36">第 4 周 指针</text>
+
+    <rect x="140" y="512" width="680" height="34" fill="#f7e8a0" opacity="0.5" transform="rotate(-0.3 480 529)"/>
+    <text x="480" y="534" text-anchor="middle" font-size="13" fill="#8a6d1a">三维以上同理（层数·行·列），但先练熟二维——下周的字符串就是"字符的楼层"减一层</text>
+  </g>
+</svg>

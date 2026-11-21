@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">三台戏的真实输出与手算核对</text>
+    <path d="M 330,58 Q 480,52 630,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,220 470,338 Q 248,343 26,338 Q 20,220 24,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(-0.3 247 220)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#2c5a82">戏一：双重循环打印（3×4）</text>
+    <rect x="38" y="146" width="420" height="110" rx="6" fill="#33413a"/>
+    <text x="200" y="172" text-anchor="middle" font-size="13" fill="#cfe8c6">   1   2   3   4</text>
+    <text x="200" y="194" text-anchor="middle" font-size="13" fill="#cfe8c6">   5   6   7   8</text>
+    <text x="200" y="216" text-anchor="middle" font-size="13" fill="#cfe8c6">   9  10  11  12</text>
+    <text x="200" y="244" text-anchor="middle" font-size="12" fill="#9fb8a8">setw(4) 对齐，换行在外层（Day 7 军规）</text>
+    <text x="46" y="290" font-size="13" fill="#2c5a82">戏二：转置（3×4 → 4×3，实测）</text>
+    <rect x="38" y="304" width="420" height="0" fill="none"/>
+    <text x="46" y="326" font-size="12.5" fill="#3b3a36">1 5 9 / 2 6 10 / 3 7 11 / 4 8 12（完整输出见程序）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,220 934,338 Q 712,343 490,338 Q 484,220 488,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(0.3 711 220)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#45703a">戏三：矩阵乘法（2×3 × 3×2）</text>
+    <rect x="502" y="146" width="420" height="90" rx="6" fill="#33413a"/>
+    <text x="680" y="176" text-anchor="middle" font-size="13" fill="#cfe8c6">C = A × B：</text>
+    <text x="680" y="200" text-anchor="middle" font-size="13" fill="#cfe8c6">    58    64</text>
+    <text x="680" y="222" text-anchor="middle" font-size="13" fill="#cfe8c6">   139   154</text>
+    <path d="M 502,252 Q 711,246 922,253 L 919,326 Q 711,320 505,325 Z" fill="#fffdf7" stroke="#a8c494" stroke-width="2" stroke-dasharray="8 5"/>
+    <text x="514" y="278" font-size="12.5" fill="#45703a">手算核对（shell 算术逐格验算）：　</text>
+    <text x="514" y="300" font-size="12" fill="#6b675e">C[0][0]=1×7+2×9+3×11=58 ✔ C[0][1]=1×8+2×10+3×12=64 ✔</text>
+    <text x="514" y="320" font-size="12" fill="#6b675e">C[1][0]=4×7+5×9+6×11=139 ✔ C[1][1]=4×8+5×10+6×12=154 ✔</text>
+
+    <path d="M 24,366 Q 470,360 905,367 L 901,500 Q 470,494 26,499 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 433)"/>
+    <text x="46" y="396" font-size="15.5" font-weight="bold" fill="#9c5a22">三重循环的账本（乘法的成本）</text>
+    <text x="46" y="428" font-size="13" fill="#3b3a36">本例：2×2 个结果格子 × 每个 3 次乘加 = 12 次乘加运算</text>
+    <text x="46" y="454" font-size="13" fill="#3b3a36">推广：M×N×K 次——若三者各 1000，就是 10 亿次乘加</text>
+    <text x="46" y="482" font-size="12.5" fill="#6b675e">这就是后面"算法复杂度"的第一颗种子：循环层数直接决定计算量</text>
+
+    <path d="M 24,522 Q 470,516 905,523 L 901,610 Q 470,604 26,609 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 566)"/>
+    <text x="46" y="552" font-size="15.5" font-weight="bold" fill="#55606e">今天与本周后面的连接</text>
+    <text x="46" y="584" font-size="13" fill="#3b3a36">明天 Day 15：C 风格字符串；Day 18 项目日：文本统计器</text>
+    <text x="540" y="584" font-size="13" fill="#6b675e">第 14 周 vector 将重写今天的矩阵</text>
+  </g>
+</svg>
