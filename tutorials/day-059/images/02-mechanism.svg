@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">一维存储 × 二维接口与乘法的坐标</text>
+    <path d="M 290,58 Q 480,52 670,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,310 Q 470,304 44,309 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 205)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">一维数组怎么装二维矩阵（r*cols + c）</text>
+    <rect x="100" y="146" width="60" height="40" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
+    <text x="130" y="171" text-anchor="middle" font-size="10" fill="#45703a">1</text>
+    <rect x="160" y="146" width="60" height="40" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
+    <text x="190" y="171" text-anchor="middle" font-size="10" fill="#45703a">2</text>
+    <rect x="220" y="146" width="60" height="40" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
+    <text x="250" y="171" text-anchor="middle" font-size="10" fill="#45703a">3</text>
+    <rect x="280" y="146" width="60" height="40" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
+    <text x="310" y="171" text-anchor="middle" font-size="10" fill="#9c5a22">4</text>
+    <rect x="340" y="146" width="60" height="40" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
+    <text x="370" y="171" text-anchor="middle" font-size="10" fill="#9c5a22">5</text>
+    <rect x="400" y="146" width="60" height="40" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
+    <text x="430" y="171" text-anchor="middle" font-size="10" fill="#9c5a22">6</text>
+    <text x="490" y="160" font-size="10.5" fill="#6b675e">data_ 一维 6 格：</text>
+    <text x="490" y="178" font-size="10" fill="#8a8578">[1,2,3,4,5,6]</text>
+    <text x="100" y="216" font-size="11.5" fill="#3b3a36">a[1][2]=6 的落点：r=1,c=2 → 1×3+2 = 5 → data_[5]</text>
+    <text x="100" y="240" font-size="11.5" fill="#45703a">（绿=行0，橙=行1——r*cols+c 把二维坐标折进一维）</text>
+    <text x="472" y="278" font-size="12.5" fill="#6b675e">这个折叠公式 Day 14 的二维数组在做的就是它——今天把它写进自己的类</text>
+    <text x="472" y="302" font-size="12" fill="#8a8578">（Row 代理不存数据、只存 (矩阵指针, 行号)——轻量定位器）</text>
+
+    <path d="M 40,334 Q 280,328 520,334 Q 524,460 520,576 Q 280,582 42,576 Q 36,460 40,334 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 455)"/>
+    <text x="280" y="364" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">矩阵乘法的坐标图</text>
+    <text x="64" y="398" font-size="12.5" fill="#3b3a36">f[i][j] = Σ(k) a[i][k] × e[k][j]</text>
+    <text x="64" y="424" font-size="12" fill="#6b675e">　f[0][0] = a[0][0]·e[0][0] +</text>
+    <text x="64" y="444" font-size="12" fill="#6b675e">　　a[0][1]·e[1][0] + a[0][2]·e[2][0]</text>
+    <text x="64" y="464" font-size="12" fill="#6b675e">　　= 1·7 + 2·9 + 3·11 = 58 ✔</text>
+    <text x="64" y="498" font-size="12" fill="#8a8578">（a 的行 · e 的列——三重循环 i/j/k）</text>
+    <text x="64" y="530" font-size="12.5" fill="#45703a">手算四个元素全对：</text>
+    <text x="64" y="552" font-size="12.5" fill="#45703a">　[58, 64; 139, 154] ✔</text>
+
+    <path d="M 550,334 Q 730,328 905,334 Q 908,460 905,576 Q 730,582 552,576 Q 547,460 550,334 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 455)"/>
+    <text x="727" y="364" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">断言：形状的守卫</text>
+    <rect x="572" y="382" width="320" height="90" fill="#33413a"/>
+    <text x="732" y="406" font-size="10.5" fill="#9fb8a8">assert(rows_ == rhs.rows_ &amp;&amp;</text>
+    <text x="732" y="424" font-size="10.5" fill="#9fb8a8">　　　 cols_ == rhs.cols_);</text>
+    <text x="732" y="448" font-size="10.5" fill="#cfe8c6">（2×3 + 3×2 直接崩——教学版简洁）</text>
+    <text x="572" y="498" font-size="12.5" fill="#6b675e">真实库抛异常（带信息恢复）——</text>
+    <text x="572" y="518" font-size="12.5" fill="#6b675e">　第 12 周的改进方向</text>
+    <text x="572" y="552" font-size="12" fill="#8a8578">（不变量"同型才可加"的守卫形态）</text>
+  </g>
+</svg>
