@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">两级裁判的裁决流程与三版排序的对照</text>
+    <path d="M 260,58 Q 480,52 700,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,330 Q 470,324 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 215)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">比较 (Bob,85) vs (Charlie,85) 的裁决</text>
+    <rect x="180" y="148" width="240" height="56" fill="#f9d9b8" stroke="#e0955f" stroke-width="2.2"/>
+    <text x="300" y="170" font-size="11" fill="#9c5a22">①主裁：85 != 85？</text>
+    <text x="300" y="190" font-size="10.5" fill="#8a8578">（相等——主裁弃权）</text>
+    <rect x="460" y="148" width="240" height="56" fill="#d8ecce" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="580" y="170" font-size="11" fill="#45703a">②副裁："Bob" &lt; "Charlie"？</text>
+    <text x="580" y="190" font-size="10.5" fill="#45703a">（是！B 在 C 前 → Bob 排前）✔</text>
+    <path d="M 422,176 Q 440,176 458,176" fill="none" stroke="#3b3a36" stroke-width="2"/>
+    <text x="472" y="236" font-size="12" fill="#3b3a36">同分 → 主裁说"不小于也不大于"（弃权）→ 副裁出场（字典序）——两级流水线</text>
+    <text x="472" y="268" font-size="12" fill="#6b675e">不同分 → 主裁直接裁决（副裁不参与）——92 vs 85 一锤定音</text>
+    <text x="472" y="306" font-size="11.5" fill="#8a8578">（这正是 Day 90 词频 v2 比较器的结构化复述——那天两行今天全景）</text>
+
+    <path d="M 40,354 Q 280,348 520,354 Q 524,470 520,576 Q 280,582 42,576 Q 36,470 40,354 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 465)"/>
+    <text x="280" y="384" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">三版排序实测对照</text>
+    <rect x="64" y="402" width="430" height="150" fill="#33413a"/>
+    <text x="279" y="428" font-size="10.5" fill="#9fb8a8">原序：Charlie Alice Bob David Eve</text>
+    <text x="279" y="452" font-size="10.5" fill="#cfe8c6">两级裁判：Alice Eve Bob Charlie David</text>
+    <text x="279" y="472" font-size="10" fill="#9fb8a8">　（同分组名字字典序）</text>
+    <text x="279" y="496" font-size="10.5" fill="#f0c9c0">stable_sort：Alice Eve Charlie Bob David</text>
+    <text x="279" y="516" font-size="10" fill="#9fb8a8">　（同分组保插入序 Charlie 先）</text>
+    <text x="279" y="540" font-size="10.5" fill="#cfe8c6">sort 单裁：同组顺序不保证</text>
+
+    <path d="M 550,354 Q 730,348 905,354 Q 908,470 905,576 Q 730,582 552,576 Q 547,470 550,354 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 465)"/>
+    <text x="727" y="384" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">Day 90 钩子的正式兑现</text>
+    <text x="572" y="418" font-size="12" fill="#3b3a36">Day 90 词频 v2 的两级裁判——</text>
+    <text x="572" y="440" font-size="12" fill="#6b675e">　当时是"先用着"，今天讲透原理</text>
+    <text x="572" y="472" font-size="12" fill="#3b3a36">为什么两级而不是一级：</text>
+    <text x="572" y="494" font-size="11.5" fill="#6b675e">　（单裁 = 同分顺序不定 = 榜面随机</text>
+    <text x="572" y="514" font-size="11.5" fill="#6b675e">　　两级 = 全序 = 结果唯一确定）</text>
+    <text x="572" y="550" font-size="11" fill="#8a8578">（is_sorted 复用同一比较器做验收 ✔）</text>
+  </g>
+</svg>

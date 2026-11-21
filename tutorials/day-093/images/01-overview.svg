@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 93 全貌：sort 家族——两级裁判与稳定排序</text>
+    <path d="M 300,60 Q 480,52 660,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定"多字段排序（分数降序、同分按姓名）"——Day 90 的两级裁判正式开课 + stable_sort 的稳定语义实测</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">多字段比较器（计划指定）</text>
+    <rect x="64" y="164" width="440" height="90" fill="#33413a"/>
+    <text x="284" y="190" font-size="10.5" fill="#9fb8a8">if (a.score != b.score)</text>
+    <text x="284" y="210" font-size="10.5" fill="#cfe8c6">　return a.score &gt; b.score;　←主裁：分数降序</text>
+    <text x="284" y="232" font-size="10.5" fill="#cfe8c6">return a.name &lt; b.name;　←副裁：同分姓名升序</text>
+    <text x="64" y="280" font-size="12.5" fill="#45703a">实测：Alice(92) Eve(92) ✔、Bob(85) Charlie(85) ✔</text>
+    <text x="64" y="302" font-size="12" fill="#8a8578">（同分组内名字字典序——榜面确定可复现）</text>
+    <text x="64" y="336" font-size="12.5" fill="#6b675e">严格弱序红线（Day 48 老规矩）：比较器</text>
+    <text x="64" y="356" font-size="12.5" fill="#6b675e">　不许写 &lt;=（相等也真 = 自相矛盾 → 崩）</text>
+
+    <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">stable_sort：稳定的含义</text>
+    <text x="572" y="180" font-size="12.5" fill="#3b3a36">"稳定"：比较器判相等的元素</text>
+    <text x="572" y="202" font-size="12.5" fill="#45703a">　保持原相对序</text>
+    <text x="572" y="232" font-size="12" fill="#8a8578">（实测：Charlie(85) 仍在 Bob(85) 前——</text>
+    <text x="572" y="252" font-size="12" fill="#8a8578">　和插入序一致（Charlie 先插入））</text>
+    <text x="572" y="284" font-size="12.5" fill="#6b675e">std::sort 不保证稳定（本次碰巧 Charlie 前</text>
+    <text x="572" y="306" font-size="12.5" fill="#6b675e">　但换数据/编译器可能变——实测的诚实注脚）</text>
+    <text x="572" y="344" font-size="12" fill="#8a8578">（稳定 = 归并排序；不稳定 = 快排变种更快）</text>
+
+    <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
+    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">选型：三种"同分"处理</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">要字典序（榜面复现）→ 两级裁判　｜要保原序（插入序有意义）→ stable_sort 单裁　｜不在乎 → sort 单裁（最快）</text>
+    <text x="70" y="490" font-size="12.5" fill="#6b675e">（is_sorted 是免费的验收工具——实测通过）</text>
+
+    <path d="M 60,514 Q 480,508 905,515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 91~92 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 93（今天）</text>
+    <circle cx="650" cy="514" r="5" fill="#5b8db8"/>
+    <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 94~95</text>
+    <circle cx="850" cy="514" r="5" fill="#e0955f"/>
+    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 96 项目日</text>
+  </g>
+</svg>

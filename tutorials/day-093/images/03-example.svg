@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">三版排序、两级裁决与验收战报</text>
+    <path d="M 370,58 Q 480,52 590,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 -std=c++17；-Wall 零警告）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,480 Q 248,485 26,480 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 291)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出</text>
+    <rect x="38" y="146" width="420" height="320" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./sf　（-Wall 零警告）</text>
+    <text x="54" y="200" font-size="12" fill="#9fb8a8">== 原序 ==</text>
+    <text x="54" y="220" font-size="11.5" fill="#cfe8c6">Charlie(85) Alice(92) Bob(85)</text>
+    <text x="54" y="238" font-size="11.5" fill="#cfe8c6">David(78) Eve(92)</text>
+    <text x="54" y="266" font-size="12" fill="#9fb8a8">== 两级裁判（计划指定） ==</text>
+    <text x="54" y="288" font-size="11.5" fill="#cfe8c6">Alice(92) Eve(92) Bob(85)</text>
+    <text x="54" y="306" font-size="11.5" fill="#cfe8c6">Charlie(85) David(78)</text>
+    <text x="54" y="328" font-size="11" fill="#f0c9c0">（92: Alice&lt;Eve ✔ 85: Bob&lt;Charlie ✔）</text>
+    <text x="54" y="356" font-size="12" fill="#9fb8a8">== stable_sort（只比分数） ==</text>
+    <text x="54" y="378" font-size="11.5" fill="#cfe8c6">Alice(92) Eve(92) Charlie(85)</text>
+    <text x="54" y="396" font-size="11.5" fill="#cfe8c6">Bob(85) David(78)</text>
+    <text x="54" y="418" font-size="11" fill="#f0c9c0">（85: Charlie 仍先——保插入序 ✔）</text>
+    <text x="54" y="446" font-size="12" fill="#9fb8a8">== sort 单裁对照 ==</text>
+    <text x="54" y="468" font-size="11" fill="#9fb8a8">（碰巧同 stable——但不保证！）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,480 Q 712,485 490,480 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 291)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">本周的知识串联</text>
+    <rect x="502" y="146" width="420" height="320" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">谓词三部曲（本周主线）：</text>
+    <text x="514" y="198" font-size="11.5" fill="#cfe8c6">91 find_if 的查找谓词</text>
+    <text x="514" y="218" font-size="11.5" fill="#cfe8c6">92 remove_if 的删除谓词</text>
+    <text x="514" y="238" font-size="11.5" fill="#cfe8c6">93 sort 的比较谓词（今天）</text>
+    <text x="514" y="268" font-size="12" fill="#9fb8a8">历史回响：</text>
+    <text x="514" y="290" font-size="11.5" fill="#cfe8c6">Day 16 首次手写 sort 比较器</text>
+    <text x="514" y="310" font-size="11" fill="#9fb8a8">　（当时 sort(v.rbegin(), v.rend())）</text>
+    <text x="514" y="338" font-size="11.5" fill="#cfe8c6">Day 48 起多项目反复用两级裁判</text>
+    <text x="514" y="358" font-size="11" fill="#9fb8a8">　（图形库 sort/词频 v2）——今天正名</text>
+    <text x="514" y="392" font-size="12.5" fill="#45703a">（93/144 = 64.6%——</text>
+    <text x="514" y="412" font-size="12.5" fill="#45703a">　阶段四 STL 的核心周过半）</text>
+    <text x="514" y="444" font-size="11.5" fill="#9fb8a8">明天：lower_bound/upper_bound/堆</text>
+    <text x="514" y="464" font-size="11" fill="#9fb8a8">（二分边界的手测——计划指定）</text>
+
+    <path d="M 24,516 Q 470,510 905,517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>
+    <text x="46" y="542" font-size="15.5" font-weight="bold" fill="#9c5a22">面试高频场景</text>
+    <text x="46" y="568" font-size="12.5" fill="#3b3a36">"按 XX 排序、相同的按 YY"——多字段排序是业务系统最常见的排序需求（成绩/销量/时间+ID）；两级裁判 + stable_sort 是标准答案的两条路</text>
+
+    <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 94 lower_bound/upper_bound 与堆算法——手测二分边界行为（计划指定练习）</text>
+  </g>
+</svg>
