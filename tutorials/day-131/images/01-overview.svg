@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 131 全貌：数字解析——strtod 的严格文法</text>
+    <path d="M 310,60 Q 480,52 650,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定"整数/浮点/科学计数法"——词法层的第二道防线：strtod 吃一半=畸形（Day 129 的"1.2.3"遗留今天解决）</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">合法九形态（全吃 ✔）</text>
+    <text x="64" y="180" font-size="12" fill="#45703a">整数：0 / -1 / 42</text>
+    <text x="64" y="208" font-size="12" fill="#45703a">小数：3.14 / -0.5</text>
+    <text x="64" y="236" font-size="12" fill="#45703a">科学计数：1e5 / 2.5E-3</text>
+    <text x="64" y="264" font-size="12" fill="#45703a">物理常数：1.602e-19 / 6.02e23</text>
+    <text x="64" y="296" font-size="12" fill="#6b675e">strtod 全吃 = 合法（吃 N/N）</text>
+    <text x="64" y="330" font-size="12.5" fill="#a33f2e">畸形：吃一半 → 拒</text>
+    <text x="64" y="352" font-size="12" fill="#8a8578">（"1.2.3"剩".3"/"1e"剩"e"）</text>
+
+    <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#a33f2e">strtod 认但 JSON 不认</text>
+    <text x="572" y="180" font-size="12" fill="#a33f2e">前导零：01 → JSON 拒</text>
+    <text x="572" y="208" font-size="12" fill="#a33f2e">+/./ 结尾形态：+1 .5 5. → 拒</text>
+    <text x="572" y="236" font-size="12" fill="#a33f2e">十六进制：0x1A → JSON 没有</text>
+    <text x="572" y="264" font-size="12" fill="#a33f2e">infinity / nan → JSON 没有</text>
+    <text x="572" y="296" font-size="12.5" fill="#6b675e">双重防线：strtod 认 ≠ JSON 认</text>
+    <text x="572" y="318" font-size="12" fill="#8a8578">（json_extra_check 补四条）</text>
+    <text x="572" y="352" font-size="11.5" fill="#8a8578">（溢出：1e400 → inf 报 ERANGE）</text>
+
+    <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
+    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">double 的取舍（诚实账本）</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">整数也存 double：2^53（≈9千万亿）之内无损｜2^53+1 损失（实测 9007199254740993 → 9.0072e+15）｜JSON 规范允许——教学解析器的取舍</text>
+    <text x="70" y="490" font-size="12.5" fill="#6b675e">（要任意精度整数的生产级解析器得分开存 int64/变长整）</text>
+
+    <path d="M 60,514 Q 480,508 905 515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 127~130 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 131（今天）</text>
+    <circle cx="650" cy="514" r="5" fill="#5b8db8"/>
+    <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 132~133</text>
+    <circle cx="850" cy="514" r="5" fill="#e0955f"/>
+    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 144 终点</text>
+  </g>
+</svg>
