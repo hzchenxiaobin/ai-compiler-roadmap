@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">完整会话、淘汰实录与 15 周战绩</text>
+    <path d="M 340,58 Q 480,52 620,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 -std=c++17；-Wall 零警告 + ASan 零报错）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,480 Q 248,485 26,480 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 291)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出</text>
+    <rect x="38" y="146" width="420" height="320" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./lru　（-Wall 零警告）</text>
+    <text x="54" y="200" font-size="12" fill="#9fb8a8">== 基本流程（容量 2） ==</text>
+    <text x="54" y="222" font-size="11.5" fill="#cfe8c6">put(1)：[1]</text>
+    <text x="54" y="240" font-size="11.5" fill="#cfe8c6">put(2)：[2 1]</text>
+    <text x="54" y="260" font-size="11.5" fill="#f0c9c0">get(1)=100（命中——1 移头）</text>
+    <text x="54" y="278" font-size="11.5" fill="#cfe8c6">get(1) 后：[1 2]</text>
+    <text x="54" y="300" font-size="11.5" fill="#f0c9c0">put(3)：满 → 淘汰尾 2 → [3 1]</text>
+    <text x="54" y="320" font-size="11.5" fill="#cfe8c6">get(2)=-1（已被淘汰）✔</text>
+    <text x="54" y="350" font-size="12" fill="#9fb8a8">== 更新已有键 ==</text>
+    <text x="54" y="372" font-size="11.5" fill="#cfe8c6">put(1,111) 后：[1 3]</text>
+    <text x="54" y="390" font-size="11.5" fill="#cfe8c6">get(1)=111（新值 ✔）</text>
+    <text x="54" y="410" font-size="11.5" fill="#f0c9c0">put(4)：淘汰 3 → [4 1]</text>
+    <text x="54" y="430" font-size="11.5" fill="#cfe8c6">get(3)=-1、get(4)=400 ✔</text>
+    <text x="54" y="458" font-size="11" fill="#9fb8a8">（ASan 全场景零报错）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,480 Q 712,485 490,480 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 291)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">第 15 周战绩（Day 85~89）</text>
+    <rect x="502" y="146" width="420" height="320" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">关联容器周五天：</text>
+    <text x="514" y="198" font-size="11.5" fill="#cfe8c6">85 map/set（红黑树/有序）</text>
+    <text x="514" y="218" font-size="11.5" fill="#cfe8c6">86 unordered（哈希/3.17 倍）</text>
+    <text x="514" y="238" font-size="11.5" fill="#cfe8c6">87 multimap/equal_range（分组）</text>
+    <text x="514" y="258" font-size="11.5" fill="#cfe8c6">88 迭代器五级分类（收网表）</text>
+    <text x="514" y="278" font-size="11.5" fill="#cfe8c6">89 LRU 缓存（今天）✔</text>
+    <text x="514" y="310" font-size="12" fill="#9fb8a8">LRU 用到的两周技能：</text>
+    <text x="514" y="332" font-size="11.5" fill="#cfe8c6">list 的 splice/pop_back（82）</text>
+    <text x="514" y="352" font-size="11.5" fill="#cfe8c6">unordered 的 find（86）</text>
+    <text x="514" y="372" font-size="11.5" fill="#cfe8c6">迭代器做 map 的值（80）</text>
+    <text x="514" y="404" font-size="12.5" fill="#45703a">（89/144 = 61.8%——14 个项目日全胜）</text>
+    <text x="514" y="436" font-size="11.5" fill="#9fb8a8">下周（第 16 周）：算法——sort/find/</text>
+    <text x="514" y="456" font-size="11.5" fill="#9fb8a8">　transform……迭代器分类表的兑现周</text>
+
+    <path d="M 24,506 Q 470,500 905,507 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 543)"/>
+    <text x="46" y="532" font-size="15.5" font-weight="bold" fill="#9c5a22">LRU 的现实身影</text>
+    <text x="46" y="560" font-size="12.5" fill="#3b3a36">浏览器后退页的淘汰、Redis 的 maxmemory 策略、CPU 缓存行的替换、数据库的缓冲池——"最近最少使用"无处不在</text>
+
+    <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 90（周六）阶段自测日——白板讲清哈希原理/红黑树/迭代器分类（阶段四中段检验）</text>
+  </g>
+</svg>

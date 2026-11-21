@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 89 项目日：LRU 缓存——list + unordered_map</text>
+    <path d="M 270,60 Q 480,52 690,61" fill="none" stroke="#e0955f" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">面试高频经典题——两周容器知识的总装：list 管序（摘节点 O(1)）+ 哈希管查（定位 O(1)）= 全操作 O(1) 的淘汰策略</text>
+
+    <path d="M 40,116 Q 470,110 905,117 L 901,390 Q 470,384 44,389 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 253)"/>
+    <text x="472" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">双结构分工（本周知识的会师）</text>
+    <text x="70" y="180" font-size="13" fill="#3b3a36">list&lt;pair&gt; 管序：头=最近用、尾=最久没用</text>
+    <text x="70" y="202" font-size="12" fill="#8a8578">（splice 摘节点接头部——O(1)，Day 82 的链结构优势）</text>
+    <text x="70" y="232" font-size="13" fill="#3b3a36">unordered_map 管查：key → 链表位置（迭代器）</text>
+    <text x="70" y="254" font-size="12" fill="#8a8578">（find 一步定位——O(1)，Day 86 的哈希优势）</text>
+    <text x="70" y="288" font-size="13" fill="#45703a">get：map 定位 → splice 移头 → 返回值（全 O(1)）</text>
+    <text x="70" y="316" font-size="13" fill="#45703a">put：存在则更新+移头；不存在则——</text>
+    <text x="70" y="338" font-size="12" fill="#8a8578">　满：淘汰链尾 + 同步删 map；新项进头</text>
+    <text x="70" y="372" font-size="12" fill="#8a8578">（两个容器各干最擅长的事——协作不是竞争（Day 84 教训））</text>
+
+    <path d="M 40,414 Q 470,408 905,415 L 901,500 Q 470,494 44,499 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.2 472 457)"/>
+    <text x="472" y="444" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">实测战报（全过 + ASan 零报错）</text>
+    <text x="70" y="472" font-size="13" fill="#3b3a36">容量 2：put(1) put(2) → get(1)=100 命中移头 ✔ → put(3) 淘汰 2 ✔ → get(2)=-1 ✔</text>
+    <text x="70" y="494" font-size="12.5" fill="#6b675e">更新已有键不占名额（get(1)=111 ✔）；链表视图全程可 dump 复核</text>
+
+    <path d="M 60,514 Q 480,508 905 515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#e0955f"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#9c5a22">Day 89（第 15 周收官）</text>
+    <circle cx="690" cy="514" r="5" fill="#5b8db8"/>
+    <text x="690" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">第 16 周 算法</text>
+    <circle cx="870" cy="514" r="5" fill="#5b8db8"/>
+    <text x="870" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">……阶段四</text>
+  </g>
+</svg>
