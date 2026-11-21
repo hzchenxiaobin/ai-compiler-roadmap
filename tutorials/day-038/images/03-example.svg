@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">申请释放全记录与三种初始化战报</text>
+    <path d="M 340,58 Q 480,52 620,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,270 470,440 Q 248,445 26,440 Q 20,270 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 271)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">实验 1：动态 int/数组</text>
+    <rect x="38" y="146" width="420" height="280" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./nd　（-Wall 零警告）</text>
+    <text x="54" y="198" font-size="12" fill="#9fb8a8">未初始化：*p = 0（本机碰巧是 0）</text>
+    <text x="54" y="218" font-size="11" fill="#9fb8a8">（垃圾值——恰好零也是垃圾的一种）</text>
+    <text x="54" y="244" font-size="12.5" fill="#cfe8c6">new int(7)：*q = 7 ✔</text>
+    <text x="54" y="264" font-size="12.5" fill="#cfe8c6">new int{}：*z = 0（零初始化）✔</text>
+    <text x="54" y="294" font-size="12" fill="#9fb8a8">动态数组（n=5 运行期定）：</text>
+    <text x="54" y="316" font-size="11.5" fill="#cfe8c6">arr[i] = 0,1,4,9,16（i²）</text>
+    <text x="54" y="336" font-size="11.5" fill="#cfe8c6">@ …12c0/12c4/12c8/12cc/12d0</text>
+    <text x="54" y="362" font-size="12" fill="#9fb8a8">相邻差 4、地址连续；delete[] 收摊 ✔</text>
+    <text x="54" y="398" font-size="12" fill="#9fb8a8">（堆地址 0x1029e… 与昨天静态区</text>
+    <text x="54" y="416" font-size="12" fill="#9fb8a8">　同段——都在低地址区）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,270 934,440 Q 712,445 490,440 Q 484,270 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 271)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">实验 2：三种错误形态</text>
+    <rect x="502" y="146" width="420" height="280" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="11.5" fill="#9fb8a8">$ ./pd</text>
+    <text x="514" y="198" font-size="12" fill="#f0c9c0">错误一：忘记 delete</text>
+    <text x="514" y="218" font-size="11" fill="#9fb8a8">（400 字节静默泄漏——不报错）</text>
+    <text x="514" y="248" font-size="12" fill="#f0c9c0">错误二：悬空指针</text>
+    <text x="514" y="268" font-size="11" fill="#9fb8a8">（delete 后 *p 是 UB；置空是好习惯）</text>
+    <text x="514" y="298" font-size="12" fill="#f0c9c0">错误三：new[] 配 delete</text>
+    <text x="514" y="318" font-size="11" fill="#9fb8a8">（正确配对演示 + 错配的 -Wall 警告）</text>
+    <text x="514" y="352" font-size="12" fill="#cfe8c6">三形态都不当场爆炸——</text>
+    <text x="514" y="372" font-size="12" fill="#9fb8a8">这是堆错误"静默性"的初印象</text>
+    <text x="514" y="408" font-size="12" fill="#9fb8a8">（明天 ASan/valgrind 专治"静默"）</text>
+
+    <path d="M 24,466 Q 470,460 905,467 L 901,540 Q 470,534 26,539 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 503)"/>
+    <text x="46" y="492" font-size="15.5" font-weight="bold" fill="#9c5a22">本周期路线</text>
+    <text x="46" y="520" font-size="12.5" fill="#3b3a36">今天钥匙到手 → 明天抓泄漏（工具课）→ 后天二维数组 → 深浅拷贝 → 动态数组 v1 项目日</text>
+
+    <path d="M 24,556 Q 470,550 905,557 L 901,640 Q 470,634 26,639 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 598)"/>
+    <text x="480" y="586" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#55606e">明天预告</text>
+    <text x="480" y="614" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 39：内存泄漏与悬空指针——ASan 实战：写一个泄漏程序并用工具定位（计划指定练习）</text>
+  </g>
+</svg>
