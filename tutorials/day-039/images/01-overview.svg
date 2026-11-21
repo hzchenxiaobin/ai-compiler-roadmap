@@ -25,7 +25,7 @@
     <text x="727" y="300" font-size="12.5" fill="#45703a">普通版同款代码打出 *d = 3/4</text>
     <text x="727" y="322" font-size="12" fill="#8a8578">（旧值的假象——"能读"不等于"合法"）</text>
     <text x="727" y="356" font-size="12.5" fill="#6b675e">macOS 限制：LeakSanitizer 不可用</text>
-    <text x="727" y="374" font-size="12" fill="#8a8578">（泄漏检测在 Linux/valgrind 补——诚实记录）</text>
+    <text x="727" y="374" text-anchor="middle" font-size="10" fill="#8a8578">（泄漏检测在 Linux/valgrind 补）</text>
 
     <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
     <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">根治方案：RAII（修复版实测零泄漏）</text>
