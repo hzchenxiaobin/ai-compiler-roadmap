@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">符号表观察与三病因的现场记录</text>
+    <path d="M 330,58 Q 480,52 630,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,220 470,340 Q 248,345 26,340 Q 20,220 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 221)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">符号对上了（成功版）</text>
+    <rect x="38" y="146" width="420" height="180" rx="6" fill="#33413a"/>
+    <text x="54" y="170" font-size="11.5" fill="#9fb8a8">$ nm main.o | grep calc</text>
+    <text x="54" y="192" font-size="11.5" fill="#f0c9c0">　　　　　　 U __Z4calcdcd</text>
+    <text x="54" y="214" font-size="11.5" fill="#9fb8a8">$ nm calc.o | grep calc</text>
+    <text x="54" y="236" font-size="11.5" fill="#cfe8c6">0000000000000000 T __Z4calcdcd</text>
+    <text x="54" y="264" font-size="12" fill="#9fb8a8">$ g++ calc.o main.o -o app &amp;&amp; ./app</text>
+    <text x="54" y="288" font-size="12.5" fill="#cfe8c6">3 + 4 = 7　10 / 4 = 2.5　运算符 'x' 合法吗？否</text>
+    <text x="54" y="316" font-size="12" fill="#9fb8a8">要的 U 和供的 T 修饰名一致 → 拼装成功</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,220 934,340 Q 712,345 490,340 Q 484,220 488,102 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="3" transform="rotate(0.3 711 221)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#a33f2e">病因②：参数类型改了</text>
+    <rect x="502" y="146" width="420" height="180" rx="6" fill="#33413a"/>
+    <text x="514" y="170" font-size="11.5" fill="#9fb8a8">把定义里 double b 改成 int b 后：</text>
+    <text x="514" y="192" font-size="11.5" fill="#f0c9c0">main.o 要：　U __Z4calc d c d</text>
+    <text x="514" y="214" font-size="11.5" fill="#cfe8c6">mismatch 供：T __Z4calc d c i</text>
+    <text x="514" y="242" font-size="11.5" fill="#ffd7d0">Undefined symbols for architecture arm64:</text>
+    <text x="514" y="262" font-size="11.5" fill="#ffd7d0">　"calc(double, char, double)", referenced from:</text>
+    <text x="514" y="282" font-size="11.5" fill="#ffd7d0">　　_main in main.o</text>
+    <text x="514" y="312" font-size="12" fill="#9fb8a8">修饰名差最后一位（d→i）——肉眼可查的铁证</text>
+
+    <path d="M 24,366 Q 248,360 470,366 Q 474,460 470,560 Q 248,565 26,560 Q 20,460 24,366 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.3 247 463)"/>
+    <text x="46" y="394" font-size="15.5" font-weight="bold" fill="#9c5a22">病因③：定义拼错名</text>
+    <rect x="38" y="408" width="420" height="140" rx="6" fill="#33413a"/>
+    <text x="54" y="432" font-size="11.5" fill="#9fb8a8">calc.cpp 里把 calc 写成 clac：</text>
+    <text x="54" y="454" font-size="11.5" fill="#cfe8c6">calc_typo.o 供：T __Z4clacdcd</text>
+    <text x="54" y="478" font-size="11.5" fill="#f0c9c0">main.o 要：　　__Z4calcdcd（差一个字母）</text>
+    <text x="54" y="506" font-size="12" fill="#9fb8a8">同样报 Undefined symbols——</text>
+    <text x="54" y="526" font-size="12" fill="#9fb8a8">修复：逐字比对声明与定义的名字</text>
+
+    <path d="M 488,366 Q 712,360 934,366 Q 938,460 934,560 Q 712,565 490,560 Q 484,460 488,366 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 711 463)"/>
+    <text x="510" y="394" font-size="15.5" font-weight="bold" fill="#55606e">病因①：漏文件（最常见）</text>
+    <rect x="502" y="408" width="420" height="140" rx="6" fill="#33413a"/>
+    <text x="514" y="432" font-size="11.5" fill="#9fb8a8">$ g++ main.o -o broken　（忘了 calc.o）</text>
+    <text x="514" y="456" font-size="11.5" fill="#ffd7d0">Undefined symbols for architecture arm64:</text>
+    <text x="514" y="476" font-size="11.5" fill="#ffd7d0">　"is_valid_op(char)", referenced from: _main in main.o</text>
+    <text x="514" y="506" font-size="12" fill="#9fb8a8">病因①②③症状相同、药方不同：</text>
+    <text x="514" y="526" font-size="12" fill="#9fb8a8">漏文件补命令行；签名/名字错改代码</text>
+
+    <path d="M 24,582 Q 470,576 905,583 L 901,634 Q 470,628 26,633 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.2" transform="rotate(0.2 464 608)"/>
+    <text x="480" y="602" text-anchor="middle" font-size="12" fill="#8a6d1a">nm 是免费 X 光机：修饰名对不上时，U/T 两行一摆，病灶肉眼可见</text>
+    <text x="480" y="622" text-anchor="middle" font-size="12" fill="#8a8578">（IDE 的链接报错本质就是帮你做了这件事）</text>
+  </g>
+</svg>

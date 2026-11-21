@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 27 全貌：链接站——按名片拼装整台机器</text>
+    <path d="M 280,60 Q 480,52 680,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">昨天拆好的三文件今天进车间：每个 .cpp 独立成 .o，链接器拿着符号表对暗号</text>
+
+    <path d="M 40,116 Q 260,110 480,116 Q 484,230 480,344 Q 260,350 42,344 Q 36,230 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 260 230)"/>
+    <text x="260" y="146" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">.o 工厂：一编译单元一目标文件</text>
+    <text x="64" y="178" font-size="12.5" fill="#3b3a36">main.cpp ──g++ -c──▶ main.o</text>
+    <text x="64" y="204" font-size="12.5" fill="#3b3a36">calc.cpp ──g++ -c──▶ calc.o</text>
+    <text x="64" y="236" font-size="12.5" fill="#6b675e">各自独立编译，互不知晓——</text>
+    <text x="64" y="258" font-size="12.5" fill="#6b675e">main.o 只带着"名片存根"</text>
+    <text x="64" y="296" font-size="12.5" fill="#45703a">改 main.cpp 只重编 main.o（Day 25 埋的</text>
+    <text x="64" y="318" font-size="12.5" fill="#45703a">提速红利，今天看清原理）</text>
+
+    <path d="M 520,116 Q 720,110 905,116 Q 908,230 905,344 Q 720,350 522,344 Q 517,230 520,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 712 230)"/>
+    <text x="712" y="146" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">符号表：要的与供的</text>
+    <rect x="544" y="162" width="340" height="160" fill="#33413a"/>
+    <text x="560" y="186" font-size="11.5" fill="#9fb8a8">$ nm main.o（节选）</text>
+    <text x="560" y="208" font-size="11.5" fill="#f0c9c0">U __Z4calcdcd　　←要（未解析）</text>
+    <text x="560" y="228" font-size="11.5" fill="#9fb8a8">$ nm calc.o（节选）</text>
+    <text x="560" y="250" font-size="11.5" fill="#cfe8c6">T __Z4calcdcd　　←供（已定义）</text>
+    <text x="560" y="280" font-size="11.5" fill="#9fb8a8">U= Undefined（等链接）</text>
+    <text x="560" y="300" font-size="11.5" fill="#9fb8a8">T= Text（机器在档）</text>
+    <text x="712" y="326" text-anchor="middle" font-size="11.5" fill="#8a8578">修饰名一致 → 拼装成功（实测 ./app ✔）</text>
+
+    <path d="M 40,370 Q 470,364 905,371 L 901,470 Q 470,464 44,469 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 420)"/>
+    <text x="472" y="400" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">Undefined symbols 的三大病因（今天全部实测）</text>
+    <text x="70" y="432" font-size="13" fill="#3b3a36">①漏文件：calc.o 没上桌　　②签名不一致：参数类型变→修饰名变　　③名字拼错：calc→clac</text>
+    <text x="70" y="458" font-size="12.5" fill="#6b675e">统一症状：编译全绿、最后一步报 Undefined——因为编译只看名片、链接才对暗号</text>
+
+    <path d="M 60,496 Q 480,490 905,497" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="240" cy="496" r="5" fill="#8a94a3"/>
+    <text x="240" y="516" text-anchor="middle" font-size="12" fill="#3b3a36">Day 25~26 ✓</text>
+    <circle cx="430" cy="496" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="430" cy="496" r="5" fill="#5b8db8"/>
+    <text x="430" y="516" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 27（今天）</text>
+    <circle cx="620" cy="496" r="5" fill="#5b8db8"/>
+    <text x="620" y="516" text-anchor="middle" font-size="12" fill="#3b3a36">Day 28 调试器</text>
+    <circle cx="800" cy="496" r="5" fill="#e0955f"/>
+    <text x="800" y="516" text-anchor="middle" font-size="12" fill="#3b3a36">Day 30 项目日</text>
+
+    <rect x="140" y="526" width="680" height="24" fill="#f7e8a0" opacity="0.5" transform="rotate(-0.3 480 538)"/>
+    <text x="480" y="543" text-anchor="middle" font-size="13" fill="#8a6d1a">明天预告：代码没报错但结果不对怎么办——调试器让你隔着玻璃看变量跳舞</text>
+  </g>
+</svg>
