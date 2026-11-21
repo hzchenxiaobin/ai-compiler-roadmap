@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">三件套的联动与漏风模型</text>
+    <path d="M 380,58 Q 480,52 580,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,290 Q 470,284 44,289 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 195)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">一个 Buffer 的完整生命周期（实测日志）</text>
+    <rect x="120" y="146" width="720" height="120" fill="#33413a"/>
+    <text x="480" y="172" font-size="11.5" fill="#cfe8c6">Buffer a("hello");　　　　　　→ [构造] hello</text>
+    <text x="480" y="194" font-size="11.5" fill="#cfe8c6">Buffer b = a;　　　　　　　　→ [拷贝构造] hello　　←①</text>
+    <text x="480" y="216" font-size="11.5" fill="#cfe8c6">Buffer c("world"); c = a;　　→ [拷贝赋值] hello　　←②</text>
+    <text x="480" y="238" font-size="11.5" fill="#f0c9c0">return 0;　　　　　　　　　　→ [析构] ×3 逆序释放　←③</text>
+    <text x="472" y="272" font-size="12" fill="#9fb8a8">（三个特殊函数在一次 main 里全部登场——环环相扣）</text>
+
+    <path d="M 40,314 Q 280,308 520,314 Q 524,450 520,576 Q 280,582 42,576 Q 36,450 40,314 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.3 280 445)"/>
+    <text x="280" y="344" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">漏风模型（缺哪件漏什么）</text>
+    <text x="64" y="380" font-size="12.5" fill="#a33f2e">缺①拷贝构造：默认浅拷贝 → double free</text>
+    <text x="64" y="402" font-size="12" fill="#8a8578">（Day 49 的 ShallowString 实测）</text>
+    <text x="64" y="436" font-size="12.5" fill="#a33f2e">缺②拷贝赋值：默认浅赋值 + 无自赋值检查</text>
+    <text x="64" y="458" font-size="12" fill="#8a8578">（Day 50 的 NoCheck 实测）</text>
+    <text x="64" y="492" font-size="12.5" fill="#a33f2e">缺③析构：内存泄漏</text>
+    <text x="64" y="514" font-size="12" fill="#8a8578">（Day 46 的静默泄漏同款）</text>
+    <text x="64" y="550" font-size="12.5" fill="#45703a">三件全写：三天的坑一次补齐</text>
+
+    <path d="M 550,314 Q 730,308 905,314 Q 908,450 905,576 Q 730,582 552,576 Q 547,450 550,314 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 445)"/>
+    <text x="727" y="344" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">=delete 的执法（实测）</text>
+    <rect x="572" y="362" width="320" height="130" fill="#33413a"/>
+    <text x="732" y="388" font-size="10.5" fill="#9fb8a8">NoCopy(const NoCopy&amp;) = delete;</text>
+    <text x="732" y="412" font-size="11" fill="#ffd7d0">NoCopy n2 = n1; →</text>
+    <text x="732" y="430" font-size="10.5" fill="#ffd7d0">error: call to deleted constructor</text>
+    <text x="732" y="456" font-size="10.5" fill="#9fb8a8">n3 = n1; → no matching constructor</text>
+    <text x="732" y="476" font-size="10.5" fill="#9fb8a8">（赋值版同样被拦）</text>
+    <text x="727" y="520" font-size="12" fill="#45703a">意图写进类型：调用方编译期就知道</text>
+    <text x="727" y="544" font-size="12" fill="#8a8578">（比文档约定"请不要拷贝"硬一万倍）</text>
+  </g>
+</svg>
