@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">参考实现的两段会话实录</text>
+    <path d="M 360,58 Q 480,52 600,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21，管道喂入）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,250 470,400 Q 248,405 26,400 Q 20,250 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 251)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">会话一：建档（新增×2 → 查 → 列表）</text>
+    <rect x="38" y="146" width="420" height="240" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./mini_contacts test.txt</text>
+    <text x="54" y="192" font-size="11.5" fill="#9fb8a8">启动读到 0 位联系人</text>
+    <text x="54" y="216" font-size="12" fill="#9fb8a8">新增 张三/李四 →</text>
+    <text x="54" y="236" font-size="12.5" fill="#cfe8c6">已添加 ×2</text>
+    <text x="54" y="260" font-size="12" fill="#9fb8a8">查李四 →</text>
+    <text x="54" y="280" font-size="12.5" fill="#cfe8c6">　找到：李四　13800000002</text>
+    <text x="54" y="304" font-size="12" fill="#9fb8a8">列表 →</text>
+    <text x="54" y="324" font-size="12.5" fill="#cfe8c6">  1. 张三　13800000001</text>
+    <text x="54" y="344" font-size="12.5" fill="#cfe8c6">  2. 李四　13800000002</text>
+    <text x="54" y="368" font-size="12.5" fill="#cfe8c6">已保存 2 位联系人，再见</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,250 934,400 Q 712,405 490,400 Q 484,250 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 251)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">会话二：验档（读盘 + 查无）</text>
+    <rect x="502" y="146" width="420" height="240" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="11.5" fill="#9fb8a8">$ ./mini_contacts test.txt（第二次运行）</text>
+    <text x="514" y="192" font-size="12.5" fill="#cfe8c6">启动读到 2 位联系人</text>
+    <text x="514" y="216" font-size="12" fill="#9fb8a8">列表 →</text>
+    <text x="514" y="236" font-size="12.5" fill="#cfe8c6">  1. 张三　13800000001</text>
+    <text x="514" y="256" font-size="12.5" fill="#cfe8c6">  2. 李四　13800000002</text>
+    <text x="514" y="284" font-size="12" fill="#9fb8a8">查王五 →</text>
+    <text x="514" y="304" font-size="12.5" fill="#f0c9c0">　没找到</text>
+    <text x="514" y="328" font-size="12.5" fill="#cfe8c6">已保存 2 位联系人，再见</text>
+    <text x="514" y="366" font-size="12" fill="#9fb8a8">EOF（选 0）出口汇流存盘 ✔</text>
+
+    <path d="M 24,426 Q 470,420 905,427 L 901,510 Q 470,504 26,509 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 468)"/>
+    <text x="46" y="454" font-size="15" font-weight="bold" fill="#9c5a22">对账三证（写完自查）</text>
+    <text x="46" y="482" font-size="12.5" fill="#3b3a36">① g++ -Wall 零警告　② 两段会话输出与上图一致　③ cat 数据文件恰好两行"姓名,电话"</text>
+
+    <path d="M 24,530 Q 470,524 905,531 L 901,630 Q 470,624 26,629 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 580)"/>
+    <text x="46" y="558" font-size="14" font-weight="bold" fill="#55606e">选做加强（时间富余再做）</text>
+    <text x="46" y="586" font-size="12.5" fill="#3b3a36">删除（移位覆盖 + count--）与改号（找到改栏）——v2 的完整五项；能顺手写出 = 第 7 周面向对象的地基超出合格线</text>
+    <text x="46" y="612" font-size="12.5" fill="#6b675e">明天里程碑：最终版提交 + 复盘三收获三疑问——今天的自测成绩就是复盘的第一手材料</text>
+  </g>
+</svg>

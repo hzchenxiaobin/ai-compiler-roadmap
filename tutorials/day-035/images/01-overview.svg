@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 35 阶段自测：从空文件到会记事的通讯录</text>
+    <path d="M 280,60 Q 480,52 680,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">昨天重写了骨架，今天盖整栋楼——不看任何资料，核心功能一次写成</text>
+
+    <path d="M 40,116 Q 470,110 905,117 L 901,290 Q 470,284 44,289 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 203)"/>
+    <text x="472" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">自测范围（核心功能子集）</text>
+    <text x="70" y="180" font-size="13" fill="#3b3a36">struct Contact（卡片）+ 定长数组 + count 计数（Day 29/13/30）</text>
+    <text x="70" y="208" font-size="13" fill="#3b3a36">读盘与存盘（"姓名,电话" 每行一条，Day 31）</text>
+    <text x="70" y="236" font-size="13" fill="#3b3a36">新增（查重 + 满员拦截）、查找、列表（Day 30）</text>
+    <text x="70" y="264" font-size="13" fill="#3b3a36">菜单循环 + EOF 出口汇流到存盘（Day 8/32）</text>
+    <text x="70" y="292" font-size="12.5" fill="#6b675e">（删除和改号是选做——核心闭环是"启动读盘 → 增查列 → 存盘告别"）</text>
+
+    <path d="M 40,314 Q 280,308 520,314 Q 524,420 520,500 Q 280,506 42,500 Q 36,420 40,314 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 407)"/>
+    <text x="280" y="344" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">评分标准（先定后写）</text>
+    <text x="64" y="378" font-size="12.5" fill="#3b3a36">90 分钟内独立完成 → 优秀</text>
+    <text x="64" y="404" font-size="12.5" fill="#3b3a36">120 分钟 + 回炉 ≤2 次 → 良好</text>
+    <text x="64" y="430" font-size="12.5" fill="#3b3a36">看资料 ≤3 次 → 及格（记坐标）</text>
+    <text x="64" y="462" font-size="12.5" fill="#6b675e">验收三证：编译零警告、</text>
+    <text x="64" y="484" font-size="12.5" fill="#6b675e">两段会话输出正确、文件两行</text>
+
+    <path d="M 550,314 Q 730,308 905,314 Q 908,420 905,500 Q 730,506 552,500 Q 547,420 550,314 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(0.3 727 407)"/>
+    <text x="727" y="344" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">卡壳急救站（按频率排序）</text>
+    <text x="572" y="378" font-size="12.5" fill="#3b3a36">getline 第三参数忘了 → D31</text>
+    <text x="572" y="404" font-size="12.5" fill="#3b3a36">读盘没查 if (!in) → D31</text>
+    <text x="572" y="430" font-size="12.5" fill="#3b3a36">EOF 直接 return 忘存盘 → D32</text>
+    <text x="572" y="456" font-size="12.5" fill="#3b3a36">同名/满员漏拦截 → D30</text>
+    <text x="572" y="486" font-size="11.5" fill="#8a8578">（卡壳不是失败，是回炉坐标）</text>
+
+    <path d="M 60,520 Q 480,514 905,521" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="430" cy="520" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="430" cy="520" r="5" fill="#5b8db8"/>
+    <text x="430" y="540" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 35（今天）</text>
+    <circle cx="660" cy="520" r="5" fill="#e0955f"/>
+    <text x="660" y="540" text-anchor="middle" font-size="12" fill="#3b3a36">Day 36 里程碑</text>
+    <circle cx="850" cy="520" r="5" fill="#5b8db8"/>
+    <text x="850" y="540" text-anchor="middle" font-size="12" fill="#3b3a36">第 7 周 面向对象</text>
+  </g>
+</svg>
