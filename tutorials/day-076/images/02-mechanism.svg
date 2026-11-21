@@ -18,7 +18,7 @@
     <text x="680" y="216" font-size="11" fill="#45703a">　（report/id_/dims_ 全类复用）</text>
     <text x="680" y="240" font-size="11" fill="#45703a">加第 6 种图形：只填差异（约 10 行）</text>
     <text x="680" y="266" font-size="10.5" fill="#8a8578">（约 150 行但增类边际成本骤降）</text>
-    <text x="472" y="316" font-size="12.5" fill="#45703a">重构判据达成：行为（排序结果/总面积 80.6991）与 v1 完全一致——结构变优、功能不丢</text>
+    <text x="472" y="316" text-anchor="middle" font-size="10.5" fill="#45703a">重构判据达成：排序/总面积 80.6991 与 v1 完全一致——结构变优</text>
 
     <path d="M 40,354 Q 470,348 905,355 L 901,576 Q 470,570 44,575 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.2 472 465)"/>
     <text x="472" y="384" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">两个设计细节（本周知识的落点）</text>
