@@ -3,7 +3,7 @@
   <g stroke-linecap="round" stroke-linejoin="round">
     <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 143 全貌：复盘博客——会做之后学会讲述</text>
     <path d="M 330,60 Q 480,52 630,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
-    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定《我如何用 C++ 写了一个 JSON 解析器》——七节大纲生成器跑通（每节配钩子+要点）：讲故事不讲功能、数字要真实、承认局限</text>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">《我如何用 C++ 写了一个 JSON 解析器》——七节大纲生成器跑通：讲故事不讲功能、数字要真实、承认局限</text>
 
     <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
     <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">七节的结构（生成的）</text>
