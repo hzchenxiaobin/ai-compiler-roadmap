@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 48 自测日：白板讲栈堆 + 全项目 ASan 扫描</text>
+    <path d="M 280,60 Q 480,52 680,61" fill="none" stroke="#e0955f" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">阶段二（指针与内存）八周的毕业验收——两项任务都配真实证据：五维对照的演示程序 + 167 个文件的全量扫描</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,260 520,384 Q 280,390 42,384 Q 36,260 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">任务一：栈和堆的五维白板</text>
+    <text x="64" y="180" font-size="12.5" fill="#45703a">申请：栈自动（声明即分配）｜堆手动（new）</text>
+    <text x="64" y="208" font-size="12.5" fill="#45703a">回收：栈出块即走（零成本）｜堆 delete（忘了=泄漏）</text>
+    <text x="64" y="236" font-size="12.5" fill="#45703a">大小：栈编译期+1~8MB｜堆运行期+大</text>
+    <text x="64" y="264" font-size="12.5" fill="#45703a">生命期：栈块内｜堆跨块（到 delete）</text>
+    <text x="64" y="292" font-size="12.5" fill="#45703a">速度：栈快（移指针）｜堆慢（走分配器）</text>
+    <text x="64" y="330" font-size="12" fill="#8a8578">（每个维度都有程序化证据——实测地址、</text>
+    <text x="64" y="350" font-size="12" fill="#8a8578">　100 万元素的 vector、悬空返回演示）</text>
+
+    <path d="M 550,116 Q 740,110 905,116 Q 908,260 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">任务二：全项目 ASan 扫描</text>
+    <text x="572" y="180" font-size="12.5" fill="#3b3a36">扫描源文件：167 个（tutorials 全部）</text>
+    <text x="572" y="208" font-size="12.5" fill="#45703a">非教学预期警告：0</text>
+    <text x="572" y="236" font-size="12.5" fill="#45703a">非教学预期 ASan 报错：0</text>
+    <text x="572" y="264" font-size="12.5" fill="#6b675e">多文件项目（需联合编译）：18 个</text>
+    <text x="572" y="292" font-size="12.5" fill="#6b675e">教学预期（故意翻车演示）：17 个</text>
+    <text x="572" y="330" font-size="12" fill="#8a8578">（扫描还抓出一处真实瑕疵并修复——</text>
+    <text x="572" y="350" font-size="12" fill="#8a8578">　day-074 的未用变量：扫描的价值实证）</text>
+
+    <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
+    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">验收结论（实测盖章）</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">全部项目 -Wall 零警告且无 ASan 报错——阶段二的代码资产干净交付；多文件项目抽样联合编译通过（day-027/036 验证）</text>
+    <text x="70" y="490" font-size="12.5" fill="#6b675e">（"教学预期"文件白名单在 scan_all.sh 里明示——分诊透明不藏账）</text>
+
+    <path d="M 60,514 Q 480,508 905,515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">第 1~7 周 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#e0955f"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#9c5a22">Day 48（阶段二收官）</text>
+    <circle cx="680" cy="514" r="5" fill="#5b8db8"/>
+    <text x="680" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">第 9 周 类的基础</text>
+    <circle cx="860" cy="514" r="5" fill="#5b8db8"/>
+    <text x="860" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">……Day 78 里程碑</text>
+  </g>
+</svg>

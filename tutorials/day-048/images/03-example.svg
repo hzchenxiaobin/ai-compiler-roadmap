@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">五维输出与扫描报告全实录</text>
+    <path d="M 390,58 Q 480,52 570,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,480 Q 248,485 26,480 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 291)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">两项任务的实测</text>
+    <rect x="38" y="146" width="420" height="320" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./sv（五维白板演示）</text>
+    <text x="54" y="196" font-size="11" fill="#9fb8a8">维度一：栈 a @ 0x16f252d50（自动）</text>
+    <text x="54" y="214" font-size="11" fill="#9fb8a8">　堆 *p @ 0x1013652c0（手动）</text>
+    <text x="54" y="240" font-size="11" fill="#9fb8a8">维度二：vector 百万元素 @ 0x722e404000</text>
+    <text x="54" y="258" font-size="11" fill="#9fb8a8">　（4MB 在堆——栈放不下）</text>
+    <text x="54" y="284" font-size="11" fill="#9fb8a8">维度三：栈地址返回悬空 0x16f252bec</text>
+    <text x="54" y="302" font-size="11" fill="#9fb8a8">　堆指针跨块存活等 delete</text>
+    <text x="54" y="328" font-size="11" fill="#cfe8c6">白板总结五维对照打印齐全 ✔</text>
+    <text x="54" y="360" font-size="11.5" fill="#9fb8a8">$ ./scan_all.sh（全项目扫描）</text>
+    <text x="54" y="384" font-size="11.5" fill="#cfe8c6">扫描源文件：167 个</text>
+    <text x="54" y="406" font-size="11.5" fill="#f0c9c0">非教学预期警告：0 ✔</text>
+    <text x="54" y="426" font-size="11.5" fill="#f0c9c0">非教学预期 ASan 报错：0 ✔</text>
+    <text x="54" y="448" font-size="11" fill="#9fb8a8">多文件 18（联合编译复验过）/教学 17</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,480 Q 712,485 490,480 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 291)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">扫描发现与分诊实录</text>
+    <rect x="502" y="146" width="420" height="320" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">初扫发现三类条目：</text>
+    <text x="514" y="200" font-size="11.5" fill="#cfe8c6">①day-074 未用变量——真实瑕疵→修复 ✔</text>
+    <text x="514" y="226" font-size="11.5" fill="#cfe8c6">②12 个多文件项目——联合编译复验 ✔</text>
+    <text x="514" y="250" font-size="11" fill="#9fb8a8">（day-027/036 抽样联合编译通过）</text>
+    <text x="514" y="276" font-size="11.5" fill="#cfe8c6">③早期教学文件（教警告/教崩溃的</text>
+    <text x="514" y="296" font-size="11.5" fill="#9fb8a8">　就是内容）→白名单分类 ✔</text>
+    <text x="514" y="330" font-size="12" fill="#9fb8a8">分诊哲学：</text>
+    <text x="514" y="354" font-size="12.5" fill="#45703a">　扫描要灵敏，结论要诚实——</text>
+    <text x="514" y="376" font-size="12.5" fill="#45703a">　不藏账、不假绿</text>
+    <text x="514" y="410" font-size="12" fill="#9fb8a8">（scan_all.sh 入库——以后每周</text>
+    <text x="514" y="430" font-size="12" fill="#9fb8a8">　项目日都能一键复扫）</text>
+
+    <path d="M 24,506 Q 470,500 905,507 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 543)"/>
+    <text x="46" y="532" font-size="15.5" font-weight="bold" fill="#9c5a22">阶段二收官（48/144 = 33%）</text>
+    <text x="46" y="560" font-size="12.5" fill="#3b3a36">指针与内存的八周：从"变量住在哪"到"手写 vector 级容器 + 四案全绿代码资产"——地基打完，明天起盖楼</text>
+
+    <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 49 类的基础——Rectangle（面积/周长）：阶段三（面向对象）开航</text>
+  </g>
+</svg>

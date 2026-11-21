@@ -47,7 +47,7 @@ int main() {
     std::cout << "== const_cast ==" << std::endl;
     const int original = 42;
     const int* cp = &original;
-    int* mutable_p = const_cast<int*>(cp);    // 编译过了……
+    (void)const_cast<int*>(cp);               // 编译过了……（演示用，不落变量）
     // *mutable_p = 99;                        // 但写它仍是 UB（original 是 const 对象！）
     std::cout << "original = " << original << "（没敢写——const 对象本来就不许改）" << std::endl;
     return 0;
