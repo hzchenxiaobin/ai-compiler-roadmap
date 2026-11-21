@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">编译期检测、能力实测与执法记录</text>
+    <path d="M 350,58 Q 480,52 610,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,320 Q 470,314 44,319 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 210)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">iterator_traits：类别标签的编译期读取</text>
+    <rect x="90" y="146" width="780" height="150" fill="#33413a"/>
+    <text x="480" y="174" font-size="11" fill="#9fb8a8">template &lt;typename It&gt;</text>
+    <text x="480" y="196" font-size="11" fill="#cfe8c6">void show_category(const char* name) {</text>
+    <text x="480" y="218" font-size="11" fill="#9fb8a8">　using Cat = typename std::iterator_traits&lt;It&gt;::iterator_category;</text>
+    <text x="480" y="240" font-size="11" fill="#9fb8a8">　if constexpr (std::is_same_v&lt;Cat, std::random_access_iterator_tag&gt;) { … }</text>
+    <text x="480" y="262" font-size="11" fill="#cfe8c6">}</text>
+    <text x="480" y="288" font-size="10.5" fill="#9fb8a8">（迭代器自带"类别标签"——traits 在编译期读出来；if constexpr 按标签选分支）</text>
+
+    <path d="M 40,344 Q 280,338 520,344 Q 524,470 520,576 Q 280,582 42,576 Q 36,470 40,344 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 460)"/>
+    <text x="280" y="374" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">两条编译执法（实测）</text>
+    <rect x="64" y="392" width="430" height="80" fill="#33413a"/>
+    <text x="279" y="418" font-size="10.5" fill="#9fb8a8">list 迭代器 += 1（要随机访问）：</text>
+    <text x="279" y="440" font-size="11" fill="#ffd7d0">error: no viable overloaded '+='</text>
+    <rect x="64" y="482" width="430" height="80" fill="#33413a"/>
+    <text x="279" y="508" font-size="10.5" fill="#9fb8a8">forward_list 迭代器 --（要双向）：</text>
+    <text x="279" y="530" font-size="10.5" fill="#ffd7d0">error: cannot decrement value of</text>
+    <text x="279" y="548" font-size="10.5" fill="#9fb8a8">　type 'iterator'（单向不能回头）</text>
+
+    <path d="M 550,344 Q 730,338 905,344 Q 908,470 905,576 Q 730,582 552,576 Q 547,470 550,344 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 460)"/>
+    <text x="727" y="374" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">advance：万金油的原理</text>
+    <text x="572" y="408" font-size="12" fill="#3b3a36">std::advance(it, n)：</text>
+    <text x="572" y="432" font-size="11.5" fill="#45703a">随机访问 → it += n（一步 O(1)）</text>
+    <text x="572" y="454" font-size="11.5" fill="#6b675e">双向/前向 → 逐个 ++（n 步 O(n)）</text>
+    <text x="572" y="486" font-size="11.5" fill="#6b675e">（编译期按标签选实现——</text>
+    <text x="572" y="506" font-size="11.5" fill="#6b675e">　Day 17 周模板的 if constexpr 预告）</text>
+    <text x="572" y="540" font-size="11.5" fill="#8a8578">（实测 list 上 advance(it,2) → 30 ✔）</text>
+  </g>
+</svg>

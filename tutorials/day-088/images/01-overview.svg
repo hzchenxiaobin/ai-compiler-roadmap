@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 88 全貌：迭代器分类——五级能力阶梯</text>
+    <path d="M 320,60 Q 480,52 640,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定"做一张对照表"——Day 80 埋的能力分层、Day 82 的结构决定能力，今天收网成五级阶梯 + 编译期检测</text>
+
+    <path d="M 40,116 Q 470,110 905,117 L 901,410 Q 470,404 44,409 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 263)"/>
+    <text x="472" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">五级能力阶梯（下含上：高级全兼容低级）</text>
+    <rect x="90" y="164" width="780" height="42" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.2"/>
+    <text x="480" y="182" font-size="11.5" fill="#a33f2e">输入（input）：读一次、走一遍——istream_iterator</text>
+    <text x="480" y="198" font-size="9.5" fill="#8a8578">（能力：*读 / ++ / ==）</text>
+    <rect x="90" y="212" width="780" height="42" fill="#f9d9b8" stroke="#e0955f" stroke-width="2.2"/>
+    <text x="480" y="230" font-size="11.5" fill="#9c5a22">前向（forward）：多遍扫描、只能 ++——forward_list</text>
+    <text x="480" y="246" font-size="9.5" fill="#8a8578">（新增：多遍有效）</text>
+    <rect x="90" y="260" width="780" height="42" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.2"/>
+    <text x="480" y="278" font-size="11.5" fill="#8a6d1a">双向（bidirectional）：可回头 ——list / map / set / multimap</text>
+    <text x="480" y="294" font-size="9.5" fill="#8a8578">（新增：--）</text>
+    <rect x="90" y="308" width="780" height="42" fill="#d8ecce" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="480" y="326" font-size="11.5" fill="#45703a">随机访问（random access）：一步到位——vector / deque / array / string</text>
+    <text x="480" y="342" font-size="9.5" fill="#8a8578">（新增：+=n / it[n] / end-begin / 比较大小）</text>
+    <rect x="90" y="356" width="780" height="36" fill="#eef5e8" stroke="#7aa663" stroke-width="2.4"/>
+    <text x="480" y="379" font-size="11" fill="#45703a">（输出 output：只写不读——back_inserter，第 16 周见）</text>
+    <text x="472" y="408" font-size="10.5" fill="#9fb8a8">（兼容含义：要"双向"的算法收"随机访问"没问题——vector 的迭代器也全能）</text>
+
+    <path d="M 40,434 Q 470,428 905,435 L 901,500 Q 470,494 44,499 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.2 472 467)"/>
+    <text x="472" y="462" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">为什么分类：算法的入场券</text>
+    <text x="70" y="490" font-size="13" fill="#3b3a36">std::sort 要随机访问（list 进不了场→用成员 l.sort()）；advance 是万金油（随机 O(1)、其他逐走 O(n)）——分类即接口契约</text>
+
+    <path d="M 60,514 Q 480,508 905 515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 85~87 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 88（今天）</text>
+    <circle cx="660" cy="514" r="5" fill="#e0955f"/>
+    <text x="660" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 89 项目日</text>
+    <circle cx="860" cy="514" r="5" fill="#5b8db8"/>
+    <text x="860" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">第 16 周 算法</text>
+  </g>
+</svg>
