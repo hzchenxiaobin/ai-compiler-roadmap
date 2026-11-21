@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 116 全貌：shared_ptr——引用计数下的共享</text>
+    <path d="M 310,60 Q 480,52 650,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定"观察 use_count 变化"——拷贝 +1、析构 -1、归零才销毁；计数是原子的但对象不是（线程安全的边界）</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">use_count 的涨落（实测）</text>
+    <text x="64" y="180" font-size="12.5" fill="#45703a">创建：make_shared → 1（唯一）</text>
+    <text x="64" y="208" font-size="12.5" fill="#45703a">拷贝：auto b = a → 2（+1）</text>
+    <text x="64" y="230" font-size="12" fill="#8a8578">（从 a 或 b 看都是 2——同一计数）</text>
+    <text x="64" y="258" font-size="12.5" fill="#45703a">析构：块结束/reset → 1（-1）</text>
+    <text x="64" y="286" font-size="12.5" fill="#a33f2e">归零：最后一个 reset → [销毁]</text>
+    <text x="64" y="308" font-size="12" fill="#8a8578">（销毁日志紧贴 reset——实测）</text>
+    <text x="64" y="344" font-size="12.5" fill="#6b675e">拷贝 vs 移动：拷贝 +1、移动不变</text>
+    <text x="64" y="366" font-size="12.5" fill="#6b675e">（份额转手——Day 110 的语义在此）</text>
+
+    <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">共享的代价与边界</text>
+    <text x="572" y="180" font-size="12" fill="#6b675e">计数块要额外内存（控制块）</text>
+    <text x="572" y="202" font-size="11.5" fill="#8a8578">（make_shared 把对象和计数打包一次分配）</text>
+    <text x="572" y="232" font-size="12" fill="#45703a">计数原子操作（多线程增减安全）</text>
+    <text x="572" y="254" font-size="11.5" fill="#8a8578">（atomic——不加锁也不乱）</text>
+    <text x="572" y="284" font-size="12" fill="#a33f2e">对象本身不线程安全！</text>
+    <text x="572" y="306" font-size="11.5" fill="#8a8578">（并发读写 Doc 要自己加锁——后天展开）</text>
+    <text x="572" y="344" font-size="12" fill="#6b675e">循环引用的陷阱 → 明天 weak_ptr</text>
+    <text x="572" y="366" font-size="11.5" fill="#8a8578">（两个 shared 互指 = 计数永不归零）</text>
+
+    <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
+    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">unique vs shared 的选型</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">默认 unique（零开销、意图清晰）｜确实要共享（缓存/多观察者/跨线程传对象）才 shared｜能用 unique 就别 shared（计数的钱不白花）</text>
+    <text x="70" y="490" font-size="12.5" fill="#6b675e">（shared 是"共享的理由"成立时的工具——不是默认升级）</text>
+
+    <path d="M 60,514 Q 480,508 905 515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 115 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 116（今天）</text>
+    <circle cx="650" cy="514" r="5" fill="#5b8db8"/>
+    <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 117~119</text>
+    <circle cx="850" cy="514" r="5" fill="#e0955f"/>
+    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 120 项目日</text>
+  </g>
+</svg>

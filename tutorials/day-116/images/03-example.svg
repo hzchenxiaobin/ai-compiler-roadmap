@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">use_count 涨落、归零销毁与容器战报</text>
+    <path d="M 350,58 Q 480,52 610,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 -std=c++17；-Wall 零警告 + ASan 零报错）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,490 Q 248,495 26,490 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 296)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出（节选）</text>
+    <rect x="38" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./sc　（-Wall 零警告）</text>
+    <text x="54" y="200" font-size="12" fill="#9fb8a8">== use_count 生命周期 ==</text>
+    <text x="54" y="222" font-size="11.5" fill="#cfe8c8">创建后 1（唯一）✔</text>
+    <text x="54" y="242" font-size="11.5" fill="#cfe8c8">b = a 后 2；块结束回 1 ✔</text>
+    <text x="54" y="262" font-size="11.5" fill="#cfe8c8">c/d 加入 3；reset×2 回 1 ✔</text>
+    <text x="54" y="288" font-size="12" fill="#9fb8a8">== 归零销毁 ==</text>
+    <text x="54" y="310" font-size="11.5" fill="#f0c9c0">最后 reset → [销毁] 紧贴 ✔</text>
+    <text x="54" y="334" font-size="12" fill="#9fb8a8">== 拷贝 vs 移动 ==</text>
+    <text x="54" y="356" font-size="11.5" fill="#cfe8c8">拷贝后 2；move 后仍 2 ✔</text>
+    <text x="54" y="376" font-size="11" fill="#9fb8a8">（x 变空——份额转手）</text>
+    <text x="54" y="400" font-size="12" fill="#9fb8a8">== 容器共享 ==</text>
+    <text x="54" y="422" font-size="11.5" fill="#cfe8c8">原始+容器 2 个 = 3 ✔</text>
+    <text x="54" y="442" font-size="11.5" fill="#cfe8c8">clear 后回 1 ✔</text>
+    <text x="54" y="466" font-size="11" fill="#9fb8a8">（线程安全边界说明 ✔）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,490 Q 712,495 490,490 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 296)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">智能指针周的推进</text>
+    <rect x="502" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">115 unique（独占）✓</text>
+    <text x="514" y="198" font-size="11.5" fill="#cfe8c8">116 shared（计数共享——今天）</text>
+    <text x="514" y="218" font-size="11" fill="#9fb8a8">　（use_count/归零/线程边界）</text>
+    <text x="514" y="246" font-size="11.5" fill="#cfe8c8">117 weak（破循环）</text>
+    <text x="514" y="266" font-size="11.5" fill="#cfe8c8">118 make_*/删除器</text>
+    <text x="514" y="286" font-size="11.5" fill="#cfe8c8">119 容器/多态配合</text>
+    <text x="514" y="306" font-size="11.5" fill="#cfe8c8">120 项目日</text>
+    <text x="514" y="338" font-size="12" fill="#9fb8a8">本日开发插曲（诚实记录）：</text>
+    <text x="514" y="360" font-size="11" fill="#9fb8a8">　unique() 在 C++17 弃用——</text>
+    <text x="514" y="378" font-size="11" fill="#9fb8a8">　-Wall 报 deprecation 警告</text>
+    <text x="514" y="396" font-size="11" fill="#9fb8a8">　→ 改 use_count()==1（零警告）</text>
+    <text x="514" y="428" font-size="12.5" fill="#45703a">（116/144 = 80.6%——过八成！）</text>
+    <text x="514" y="458" font-size="11" fill="#9fb8a8">（Effective 同步：条款 19/21</text>
+    <text x="514" y="476" font-size="11" fill="#9fb8a8">　——shared 管理与 make_shared）</text>
+
+    <path d="M 24,516 Q 470,510 905,517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>
+    <text x="46" y="542" font-size="15.5" font-weight="bold" fill="#9c5a22">共享的哲学</text>
+    <text x="46" y="568" font-size="12.5" fill="#3b3a36">"资源没有唯一主人时谁来删？"——计数回答：最后一个放手的人；共享的代价（控制块+原子操作）买的是"删除责任的自动化分摊"</text>
+
+    <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 117 weak_ptr——复现循环引用泄漏并用 weak_ptr 修复（计划指定练习）</text>
+  </g>
+</svg>

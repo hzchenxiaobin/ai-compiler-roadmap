@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">控制块的解剖与计数涨落的时间线</text>
+    <path d="M 290,58 Q 480,52 670,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,340 Q 470,334 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 220)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">shared_ptr 的两块结构</text>
+    <rect x="150" y="148" width="300" height="150" fill="#33413a"/>
+    <text x="300" y="178" font-size="11" fill="#9fb8a8">shared_ptr 句柄（16 字节）：</text>
+    <rect x="190" y="192" width="100" height="32" fill="#d8ecce" stroke="#7aa663" stroke-width="1.8"/>
+    <text x="240" y="213" font-size="9.5" fill="#45703a">T* ptr</text>
+    <rect x="300" y="192" width="110" height="32" fill="#f9d9b8" stroke="#e0955f" stroke-width="1.8"/>
+    <text x="355" y="213" font-size="9.5" fill="#9c5a22">CtrlBlk*</text>
+    <text x="300" y="252" font-size="10" fill="#8a8578">（两个指针：对象 + 控制块）</text>
+    <text x="300" y="278" font-size="10" fill="#8a8578">（拷贝：两指针都抄 + 计数+1）</text>
+    <rect x="510" y="148" width="300" height="150" fill="#33413a"/>
+    <text x="660" y="178" font-size="11" fill="#9fb8a8">控制块（堆上另开）：</text>
+    <rect x="540" y="192" width="240" height="70" fill="#f9d9b8" stroke="#e0955f" stroke-width="1.8"/>
+    <text x="660" y="212" font-size="10" fill="#9c5a22">strong_count（强计数）</text>
+    <text x="660" y="230" font-size="10" fill="#9c5a22">weak_count（弱计数——明天）</text>
+    <text x="660" y="248" font-size="9.5" fill="#8a8578">（deleter 等管理信息）</text>
+    <text x="660" y="284" font-size="10" fill="#8a8578">（make_shared：对象和控制块一锅端）</text>
+    <text x="472" y="334" font-size="11.5" fill="#8a8578">（归零 → 控制块调 deleter 销毁对象；两计数都归零 → 控制块本身也回收）</text>
+
+    <path d="M 40,364 Q 280,358 520,364 Q 524,480 520,576 Q 280,582 42,576 Q 36,480 40,364 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 470)"/>
+    <text x="280" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">计数时间线（实测对照）</text>
+    <rect x="64" y="412" width="430" height="150" fill="#33413a"/>
+    <text x="279" y="438" font-size="10.5" fill="#9fb8a8">make_shared ─→ count = 1</text>
+    <text x="279" y="460" font-size="10.5" fill="#cfe8c8">auto b = a ───→ count = 2（+1）</text>
+    <text x="279" y="482" font-size="10.5" fill="#cfe8c8">块结束 ─────→ count = 1（-1）</text>
+    <text x="279" y="504" font-size="10.5" fill="#cfe8c8">c/d 分享 ───→ count = 3</text>
+    <text x="279" y="526" font-size="10.5" fill="#f0c9c0">reset×2+最后 ─→ 0 → [销毁]！</text>
+
+    <path d="M 550,364 Q 730,358 905,364 Q 908,480 905,576 Q 730,582 552,576 Q 547,480 550,364 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 470)"/>
+    <text x="727" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">拷贝 vs 移动的计数语义</text>
+    <rect x="572" y="412" width="320" height="150" fill="#33413a"/>
+    <text x="732" y="438" font-size="10.5" fill="#9fb8a8">auto y = x;　　　（拷贝）</text>
+    <text x="732" y="460" font-size="10.5" fill="#cfe8c8">→ count +1（多一个主人）</text>
+    <text x="732" y="488" font-size="10.5" fill="#9fb8a8">auto z = move(x); （移动）</text>
+    <text x="732" y="510" font-size="10.5" fill="#cfe8c8">→ count 不变（份额转手）</text>
+    <text x="732" y="538" font-size="10" fill="#8a8578">（实测：拷贝后 2；move 后仍 2、x 空）</text>
+  </g>
+</svg>
