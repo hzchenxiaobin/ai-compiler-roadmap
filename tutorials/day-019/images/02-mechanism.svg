@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">&amp; 与 *：门牌与钥匙的一来一回</text>
+    <path d="M 310,58 Q 480,52 650,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 260,94 480,100 Q 484,210 480,320 Q 260,326 42,320 Q 36,210 40,100 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(-0.3 260 210)"/>
+    <text x="260" y="130" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">房间与钥匙的双向转换</text>
+    <rect x="80" y="148" width="150" height="56" fill="#fffdf7" stroke="#5b8db8" stroke-width="2.4"/>
+    <text x="155" y="172" text-anchor="middle" font-size="12" fill="#3b3a36">变量 x = 42</text>
+    <text x="155" y="192" text-anchor="middle" font-size="10.5" fill="#8a8578">（有内容的房间）</text>
+    <rect x="290" y="148" width="150" height="56" fill="#eef5e8" stroke="#7aa663" stroke-width="2.4"/>
+    <text x="365" y="172" text-anchor="middle" font-size="12" fill="#45703a">地址 0x…d78</text>
+    <text x="365" y="192" text-anchor="middle" font-size="10.5" fill="#8a8578">（房间的门牌）</text>
+    <path d="M 232,160 Q 260,148 288,160" fill="none" stroke="#2c5a82" stroke-width="2.6"/>
+    <path d="M 280,152 Q 289,158 281,168" fill="none" stroke="#2c5a82" stroke-width="2.6"/>
+    <text x="260" y="142" text-anchor="middle" font-size="12" fill="#2c5a82">&amp;：房间→门牌</text>
+    <path d="M 288,192 Q 260,204 232,192" fill="none" stroke="#45703a" stroke-width="2.6"/>
+    <path d="M 240,184 Q 231,190 239,200" fill="none" stroke="#45703a" stroke-width="2.6"/>
+    <text x="260" y="222" text-anchor="middle" font-size="12" fill="#45703a">*：门牌→房间</text>
+    <path d="M 80,244 Q 260,238 440,245 L 437,308 Q 260,302 83,307 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2" stroke-dasharray="8 5"/>
+    <text x="260" y="270" text-anchor="middle" font-size="12" fill="#8a6d1a">*&amp;x 就是 x 本身（先取门牌再开门，绕一圈回到原点）</text>
+    <text x="260" y="296" text-anchor="middle" font-size="12" fill="#6b675e">同理 &amp;(*p) 还是 p——两把操作互为逆运算</text>
+
+    <path d="M 520,100 Q 730,94 930,100 Q 933,210 930,320 Q 730,326 522,320 Q 517,210 520,100 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(0.3 725 210)"/>
+    <text x="725" y="130" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">栈上邻居实测（今天的惊喜）</text>
+    <rect x="550" y="146" width="350" height="90" fill="#33413a"/>
+    <text x="725" y="170" text-anchor="middle" font-size="11.5" fill="#cfe8c6">&amp;a = 0x16b472d78</text>
+    <text x="725" y="190" text-anchor="middle" font-size="11.5" fill="#cfe8c6">&amp;b = 0x16b472d74　&amp;c = 0x16b472d70</text>
+    <text x="725" y="216" text-anchor="middle" font-size="11.5" fill="#9fb8a8">连续声明 → 门牌紧挨着，一次差 4 字节</text>
+    <text x="725" y="256" text-anchor="middle" font-size="12.5" fill="#45703a">&amp;b − &amp;a = −1 个 int（不是 −4！）</text>
+    <text x="725" y="282" text-anchor="middle" font-size="12" fill="#6b675e">指针减法按"元素个数"计——明天指针运算的预告片</text>
+    <text x="725" y="308" text-anchor="middle" font-size="11.5" fill="#8a8578">（编译器把栈上变量按声明序倒着摆，也是本次实测所见）</text>
+
+    <path d="M 40,350 Q 470,344 905,351 L 901,560 Q 470,554 44,559 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 455)"/>
+    <text x="472" y="382" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#a33f2e">nullptr：踩空现场（本机实测双记录）</text>
+    <text x="70" y="416" font-size="13" fill="#3b3a36">普通运行：打印 p = 0 后 Segmentation fault: 11，exit=139（128+11：被信号 11 击落）</text>
+    <text x="70" y="446" font-size="13" fill="#3b3a36">ASan 雷达：SEGV on unknown address 0x000000000000，The signal is caused by a READ memory access</text>
+    <text x="70" y="482" font-size="12.5" fill="#6b675e">为什么崩：地址 0 是操作系统划定的"谁都不许碰"区——解引用不是读出垃圾，而是直接被拦截</text>
+    <text x="70" y="512" font-size="12.5" fill="#a33f2e">习惯铁则：解引用前先确认 p 不是 nullptr（if (p != nullptr) { … }）</text>
+    <text x="70" y="540" font-size="12.5" fill="#55606e">nullptr 打印为 0——它是"明确的不指向"，比未初始化的野指针安全得多（那才是随机踩）</text>
+  </g>
+</svg>

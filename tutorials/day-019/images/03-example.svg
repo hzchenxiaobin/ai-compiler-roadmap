@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">指针改值、邻居门牌与踩空记录</text>
+    <path d="M 340,58 Q 480,52 620,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,230 470,360 Q 248,365 26,360 Q 20,230 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 231)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">实验 1：指针改值全记录</text>
+    <rect x="38" y="146" width="420" height="190" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="12" fill="#9fb8a8">$ ./pointer_basics</text>
+    <text x="54" y="196" font-size="12.5" fill="#cfe8c6">x 的值：42</text>
+    <text x="54" y="216" font-size="12.5" fill="#cfe8c6">x 的地址 &amp;x：0x16d812d78</text>
+    <text x="54" y="236" font-size="12.5" fill="#cfe8c6">指针 p 自己存的值：0x16d812d78</text>
+    <text x="54" y="256" font-size="12.5" fill="#cfe8c6">解引用 *p：42</text>
+    <text x="54" y="280" font-size="12.5" fill="#f0c9c0">*p = 99 之后：x 的值：99（被指针改掉了！）</text>
+    <text x="54" y="304" font-size="12.5" fill="#cfe8c6">x = x + 1 之后：*p 读到的：100</text>
+    <text x="54" y="328" font-size="12" fill="#9fb8a8">两个方向都通：改 *p 即改 x，改 x 即变 *p</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,230 934,360 Q 712,365 490,360 Q 484,230 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 231)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">实验 2：邻居的门牌</text>
+    <rect x="502" y="146" width="420" height="190" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="12" fill="#9fb8a8">$ ./neighbor_addresses</text>
+    <text x="514" y="196" font-size="12.5" fill="#cfe8c6">&amp;a = 0x16b472d78</text>
+    <text x="514" y="216" font-size="12.5" fill="#cfe8c6">&amp;b = 0x16b472d74</text>
+    <text x="514" y="236" font-size="12.5" fill="#cfe8c6">&amp;c = 0x16b472d70</text>
+    <text x="514" y="260" font-size="12.5" fill="#cfe8c6">&amp;b - &amp;a 相差 -1 个 int（不是字节数！）</text>
+    <text x="514" y="280" font-size="12.5" fill="#cfe8c6">换成字节：(char*)&amp;b - (char*)&amp;a = -4 字节</text>
+    <text x="514" y="310" font-size="12" fill="#9fb8a8">地址用 16 进制打印；a、b、c 门牌紧挨、</text>
+    <text x="514" y="328" font-size="12" fill="#9fb8a8">按声明序倒着排——栈布局亲眼所见</text>
+
+    <path d="M 24,386 Q 470,380 905,387 L 901,470 Q 470,464 26,469 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 464 428)"/>
+    <text x="46" y="414" font-size="15.5" font-weight="bold" fill="#a33f2e">实验 3：解引用 nullptr（预期崩溃）</text>
+    <rect x="38" y="428" width="850" height="34" rx="6" fill="#33413a"/>
+    <text x="54" y="450" font-size="12" fill="#ffd7d0">p = 0（nullptr 打印为 0）　→　Segmentation fault: 11　exit=139</text>
+
+    <rect x="24" y="490" width="912" height="80" rx="8" fill="#33413a"/>
+    <text x="40" y="516" font-size="12" fill="#f0c9c0">ASan 雷达记录：AddressSanitizer: SEGV on unknown address 0x000000000000</text>
+    <text x="40" y="538" font-size="12" fill="#9fb8a8">The signal is caused by a READ memory access　←那次 *p 是读操作</text>
+    <text x="40" y="560" font-size="12" fill="#9fb8a8">普通崩溃与 ASan 报告互相印证：地址 0 是禁区，踩空必被拦</text>
+
+    <path d="M 24,586 Q 470,580 905,587 L 901,630 Q 470,624 26,629 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.2" transform="rotate(0.2 464 608)"/>
+    <text x="480" y="614" text-anchor="middle" font-size="12.5" fill="#8a6d1a">exit=139 的读法：128 + 信号 11（SIGSEGV 段错误）——崩溃也能读出信息</text>
+  </g>
+</svg>
