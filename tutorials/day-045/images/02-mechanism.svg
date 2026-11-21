@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">抽象的传导与混合设计的分层</text>
+    <path d="M 320,58 Q 480,52 640,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,290 Q 470,284 44,289 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 195)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">抽象的传导规则（实测两条线）</text>
+    <rect x="90" y="146" width="180" height="60" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.4"/>
+    <text x="180" y="172" text-anchor="middle" font-size="11.5" fill="#a33f2e">Shape s; ✘</text>
+    <text x="180" y="192" text-anchor="middle" font-size="10" fill="#8a8578">（含纯虚 → 抽象）</text>
+    <rect x="330" y="146" width="180" height="60" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.4"/>
+    <text x="420" y="172" text-anchor="middle" font-size="11.5" fill="#a33f2e">class Blob {} ✘</text>
+    <text x="420" y="192" text-anchor="middle" font-size="10" fill="#8a8578">（漏实现 → 仍抽象）</text>
+    <rect x="570" y="146" width="180" height="60" fill="#d8ecce" stroke="#7aa663" stroke-width="2.4"/>
+    <text x="660" y="172" text-anchor="middle" font-size="11.5" fill="#45703a">Circle ✔</text>
+    <text x="660" y="192" text-anchor="middle" font-size="10" fill="#8a8578">（三个全实现 → 具体）</text>
+    <text x="472" y="240" text-anchor="middle" font-size="12.5" fill="#3b3a36">传导规则：只要有一个纯虚没实现，整类就是抽象的——层层往下压，直到全实现才解禁</text>
+    <text x="472" y="268" text-anchor="middle" font-size="12" fill="#8a8578">（编译器是合同监理：少一条条款都不给开工许可）</text>
+
+    <path d="M 40,314 Q 470,308 905,315 L 901,576 Q 470,570 44,575 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.2 472 445)"/>
+    <text x="472" y="344" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">混合设计的分层（实测 hybrid_design）</text>
+    <rect x="330" y="362" width="300" height="60" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.4"/>
+    <text x="480" y="388" text-anchor="middle" font-size="12" fill="#a33f2e">Shape（纯抽象接口）</text>
+    <text x="480" y="408" text-anchor="middle" font-size="10.5" fill="#8a8578">area/name/describe 全 = 0</text>
+    <rect x="200" y="442" width="280" height="56" fill="#f9d9b8" stroke="#e0955f" stroke-width="2.4"/>
+    <text x="340" y="466" text-anchor="middle" font-size="11.5" fill="#9c5a22">NamedShape（默认实现层）</text>
+    <text x="340" y="486" text-anchor="middle" font-size="10" fill="#8a8578">name 用 final 锁定；describe 通用版</text>
+    <rect x="500" y="442" width="140" height="56" fill="#d8ecce" stroke="#7aa663" stroke-width="2.4"/>
+    <text x="570" y="466" text-anchor="middle" font-size="11.5" fill="#45703a">Square</text>
+    <text x="570" y="486" text-anchor="middle" font-size="10" fill="#8a8578">只实现 area</text>
+    <rect x="660" y="442" width="140" height="56" fill="#d8ecce" stroke="#7aa663" stroke-width="2.4"/>
+    <text x="730" y="466" text-anchor="middle" font-size="11.5" fill="#45703a">Circle</text>
+    <text x="730" y="486" text-anchor="middle" font-size="10" fill="#8a8578">只实现 area</text>
+    <path d="M 480,424 Q 480,432 480,440" fill="none" stroke="#3b3a36" stroke-width="2.2"/>
+    <path d="M 473,434 Q 480,442 488,435" fill="none" stroke="#3b3a36" stroke-width="2.2"/>
+    <text x="472" y="530" text-anchor="middle" font-size="12.5" fill="#45703a">派生类只填差异（area），公共代码（name/describe）只写一遍</text>
+    <text x="472" y="556" text-anchor="middle" font-size="12" fill="#8a8578">（模板方法模式的雏形——Day 75 设计模式周再回来点题）</text>
+  </g>
+</svg>
