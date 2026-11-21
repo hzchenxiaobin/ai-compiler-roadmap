@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">LRU 六步轨迹与两容器的结构对照</text>
+    <path d="M 280,58 Q 480,52 680,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,340 Q 470,334 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 220)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">容量 3 的 LRU 六步（实测快照）</text>
+    <rect x="90" y="146" width="330" height="36" fill="#d8ecce" stroke="#7aa663" stroke-width="1.8"/>
+    <text x="255" y="169" font-size="10.5" fill="#45703a">①put(1,2,3)：[3 2 1]</text>
+    <rect x="440" y="146" width="330" height="36" fill="#f9d9b8" stroke="#e0955f" stroke-width="1.8"/>
+    <text x="605" y="169" font-size="10.5" fill="#9c5a22">②get(1) 命中移头：[1 3 2]</text>
+    <rect x="90" y="192" width="330" height="36" fill="#f9e9e5" stroke="#c96a5a" stroke-width="1.8"/>
+    <text x="255" y="215" font-size="10.5" fill="#a33f2e">③put(4)：满 → 淘汰尾 2：[4 1 3]</text>
+    <rect x="440" y="192" width="330" height="36" fill="#d8ecce" stroke="#7aa663" stroke-width="1.8"/>
+    <text x="605" y="215" font-size="10.5" fill="#45703a">④get(2)=-1；get(4)=400</text>
+    <rect x="265" y="238" width="330" height="36" fill="#d8ecce" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="430" y="261" font-size="10.5" fill="#45703a">⑤put(1,111) 更新不占名额：[1 4 3]</text>
+    <text x="472" y="308" font-size="12" fill="#3b3a36">手推六步和 dump 全对——重写过关的判定标准（先预测再跑）</text>
+    <text x="472" y="334" font-size="11.5" fill="#8a8578">（splice 移头/两处同步删/更新分支——三个考点全踩到）</text>
+
+    <path d="M 40,364 Q 280,358 520,364 Q 524,480 520,576 Q 280,582 42,576 Q 36,480 40,364 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 470)"/>
+    <text x="280" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">map 的结构（红黑树）</text>
+    <circle cx="280" cy="424" r="20" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2"/>
+    <text x="280" y="428" font-size="9.5" fill="#a33f2e">banana</text>
+    <circle cx="220" cy="474" r="18" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
+    <text x="220" y="478" font-size="9" fill="#45703a">apple</text>
+    <circle cx="340" cy="474" r="18" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
+    <text x="340" y="478" font-size="9" fill="#45703a">cherry</text>
+    <path d="M 262,440 Q 238,458 230,462" fill="none" stroke="#3b3a36" stroke-width="1.6"/>
+    <path d="M 298,440 Q 322,458 330,462" fill="none" stroke="#3b3a36" stroke-width="1.6"/>
+    <text x="280" y="516" font-size="10.5" fill="#6b675e">中序（左根右）：apple→banana→cherry</text>
+    <text x="280" y="540" font-size="10.5" fill="#45703a">= 字典序 ✔（Day 85 的原理）</text>
+
+    <path d="M 550,364 Q 730,358 905,364 Q 908,480 905,576 Q 730,582 552,576 Q 547,480 550,364 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 470)"/>
+    <text x="727" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">unordered 的结构（哈希桶）</text>
+    <rect x="600" y="412" width="70" height="28" fill="#f1f4f7" stroke="#8a94a3" stroke-width="1.6"/>
+    <text x="635" y="431" font-size="9" fill="#8a94a3">桶0</text>
+    <rect x="680" y="412" width="70" height="28" fill="#d8ecce" stroke="#7aa663" stroke-width="1.8"/>
+    <text x="715" y="431" font-size="9" fill="#45703a">桶1:apple</text>
+    <rect x="760" y="412" width="70" height="28" fill="#f1f4f7" stroke="#8a94a3" stroke-width="1.6"/>
+    <text x="795" y="431" font-size="9" fill="#8a94a3">桶2</text>
+    <rect x="600" y="452" width="70" height="28" fill="#f1f4f7" stroke="#8a94a3" stroke-width="1.6"/>
+    <text x="635" y="471" font-size="9" fill="#8a94a3">桶3</text>
+    <rect x="680" y="452" width="150" height="28" fill="#f9d9b8" stroke="#e0955f" stroke-width="1.8"/>
+    <text x="755" y="471" font-size="9" fill="#9c5a22">桶4:banana→cherry（冲突链）</text>
+    <text x="727" y="516" font-size="10.5" fill="#6b675e">遍历=桶号序——语义层面无序</text>
+    <text x="727" y="540" font-size="10.5" fill="#a33f2e">（本次"像有序"是巧合——别被骗）</text>
+  </g>
+</svg>
