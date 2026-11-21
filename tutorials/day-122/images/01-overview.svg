@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 122 全貌：string_view——零拷贝的甜与悬空的险</text>
+    <path d="M 310,60 Q 480,52 650,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定"轻量分词器"——16 字节的窗口（指针+长度）：切片零拷贝、三种来源通吃；但不拥有、不看将死之物、不当 C 串用</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">view 的本质：窗口不是副本</text>
+    <rect x="64" y="164" width="440" height="70" fill="#33413a"/>
+    <text x="284" y="190" font-size="11" fill="#9fb8a8">sizeof(string_view) = 16 字节</text>
+    <text x="284" y="212" font-size="11" fill="#cfe8c8">（指针 data() + 长度 size()——没有缓冲区）</text>
+    <text x="64" y="260" font-size="12.5" fill="#45703a">切片 substr：零拷贝（改指针和长度）</text>
+    <text x="64" y="282" font-size="12" fill="#8a8578">（实测：4 个 token 无一次字符串分配）</text>
+    <text x="64" y="312" font-size="12.5" fill="#45703a">三种来源通吃：string/字面量/C 串</text>
+    <text x="64" y="334" font-size="12" fill="#8a8578">（函数参数收 view——隐式转换全兼容）</text>
+    <text x="64" y="366" font-size="11.5" fill="#8a8578">（Day 121 的 parse_int 参数就该是 view——进阶）</text>
+
+    <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#a33f2e">三个危险点（今天的主题）</text>
+    <text x="572" y="180" font-size="12" fill="#a33f2e">①悬空：临时 string 的 view</text>
+    <text x="572" y="202" font-size="11.5" fill="#8a8578">（ASan 实测：stack-use-after-scope）</text>
+    <text x="572" y="232" font-size="12" fill="#a33f2e">②不保证 null 结尾（切片后）</text>
+    <text x="572" y="254" font-size="11.5" fill="#8a8578">（data() 传 printf %s 危险）</text>
+    <text x="572" y="284" font-size="12" fill="#a33f2e">③容器/成员存 view：跨调用持有</text>
+    <text x="572" y="306" font-size="11.5" fill="#8a8578">（所看数据的生命期谁保证？）</text>
+    <text x="572" y="344" font-size="12.5" fill="#45703a">安全三律：不做所有者/不看将死/</text>
+    <text x="572" y="366" font-size="12.5" fill="#45703a">　不当 C 串用</text>
+
+    <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
+    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">开发插曲：substr 的双重身份（本日实录）</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">full.substr(0,4) 返回临时 string——view 指它照样悬空（-Wdangling 警告抓到）；正解 string_view(full).substr(0,4)——view 的 substr 才是零拷贝切片</text>
+    <text x="70" y="490" font-size="12.5" fill="#6b675e">（同名方法的"string 版 vs view 版"语义差——本教程自己踩了一次）</text>
+
+    <path d="M 60,514 Q 480,508 905 515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 121 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 122（今天）</text>
+    <circle cx="650" cy="514" r="5" fill="#5b8db8"/>
+    <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 123~125</text>
+    <circle cx="850" cy="514" r="5" fill="#e0955f"/>
+    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 126 里程碑</text>
+  </g>
+</svg>

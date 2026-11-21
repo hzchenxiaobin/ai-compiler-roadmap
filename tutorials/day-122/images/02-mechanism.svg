@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">窗口的几何与悬空的时间线</text>
+    <path d="M 340,58 Q 480,52 620,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,340 Q 470,334 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 220)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">view 切片的几何（分词器内部）</text>
+    <rect x="110" y="150" width="60" height="34" fill="#d8ecce" stroke="#7aa663" stroke-width="1.6"/>
+    <text x="140" y="172" font-size="9" fill="#45703a">a</text>
+    <rect x="170" y="150" width="60" height="34" fill="#d8ecce" stroke="#7aa663" stroke-width="1.6"/>
+    <text x="200" y="172" font-size="9" fill="#45703a">p</text>
+    <rect x="230" y="150" width="60" height="34" fill="#d8ecce" stroke="#7aa663" stroke-width="1.6"/>
+    <text x="260" y="172" font-size="9" fill="#45703a">p</text>
+    <rect x="290" y="150" width="60" height="34" fill="#d8ecce" stroke="#7aa663" stroke-width="1.6"/>
+    <text x="320" y="172" font-size="9" fill="#45703a">l</text>
+    <rect x="350" y="150" width="60" height="34" fill="#d8ecce" stroke="#7aa663" stroke-width="1.6"/>
+    <text x="380" y="172" font-size="9" fill="#45703a">e</text>
+    <rect x="410" y="150" width="30" height="34" fill="#f1f4f7" stroke="#8a94a3" stroke-width="1.4"/>
+    <text x="425" y="172" font-size="9" fill="#8a94a3">,</text>
+    <rect x="440" y="150" width="60" height="34" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
+    <text x="470" y="172" font-size="9" fill="#9c5a22">b…</text>
+    <path d="M 110,196 Q 240,240 410,240 Q 470,240 410,196" fill="none" stroke="#45703a" stroke-width="2.2"/>
+    <text x="280" y="258" font-size="10.5" fill="#45703a">token[0] = view(指针→a, 长度5)——零拷贝窗口</text>
+    <text x="472" y="300" font-size="12" fill="#3b3a36">string 的 substr：分配新缓冲区+逐字符抄（贵）</text>
+    <text x="472" y="324" font-size="12" fill="#45703a">view 的 substr：改两个整数（指针+长度）——免费</text>
+
+    <path d="M 40,364 Q 280,358 520,364 Q 524,480 520,576 Q 280,582 42,576 Q 36,480 40,364 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.3 280 470)"/>
+    <text x="280" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">悬空的时间线（实测）</text>
+    <rect x="64" y="412" width="430" height="150" fill="#33413a"/>
+    <text x="279" y="438" font-size="10.5" fill="#9fb8a8">t1：string temp = "…";（栈上）</text>
+    <text x="279" y="460" font-size="10.5" fill="#9fb8a8">t2：view = temp;（窗口对着 temp）</text>
+    <text x="279" y="482" font-size="10.5" fill="#f0c9c0">t3：}（temp 析构——内存归还）</text>
+    <text x="279" y="504" font-size="10.5" fill="#f0c9c0">t4：用 view → 读已死内存 = UB！</text>
+    <text x="279" y="532" font-size="10" fill="#ffd7d0">ASan: stack-use-after-scope（实测报）</text>
+
+    <path d="M 550,364 Q 730,358 905,364 Q 908,480 905,576 Q 730,582 552,576 Q 547,480 550,364 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 470)"/>
+    <text x="727" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">和 Day 117 weak 的神似</text>
+    <rect x="572" y="412" width="320" height="150" fill="#33413a"/>
+    <text x="732" y="438" font-size="10.5" fill="#9fb8a8">weak_ptr：不拥有（观察）</text>
+    <text x="732" y="458" font-size="10.5" fill="#8a8578">（对象死→lock 得 null——安全检测）</text>
+    <text x="732" y="486" font-size="10.5" fill="#9fb8a8">string_view：不拥有（窗口）</text>
+    <text x="732" y="506" font-size="10.5" fill="#f0c9c0">（数据死→用是 UB——没有保护！）</text>
+    <text x="732" y="534" font-size="10" fill="#8a8578">（同样的"不拥有"——view 连失败检测都没有）</text>
+  </g>
+</svg>

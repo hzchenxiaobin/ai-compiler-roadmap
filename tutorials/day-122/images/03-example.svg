@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">分词器实录、三种通吃与悬空执法战报</text>
+    <path d="M 340,58 Q 480,52 620,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 -std=c++17；-Wall 零警告 + ASan 悬空探针执法）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,490 Q 248,495 26,490 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 296)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出（节选）</text>
+    <rect x="38" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./vtw　（-Wall 零警告）</text>
+    <text x="54" y="200" font-size="12" fill="#9fb8a8">== 分词器（计划指定） ==</text>
+    <text x="54" y="222" font-size="11.5" fill="#cfe8c8">apple/banana//cherry 四 token ✔</text>
+    <text x="54" y="242" font-size="11" fill="#9fb8a8">（含空串——零拷贝）</text>
+    <text x="54" y="264" font-size="11.5" fill="#cfe8c8">sizeof(view)=16（string 24）✔</text>
+    <text x="54" y="288" font-size="12" fill="#9fb8a8">== 三种来源通吃 ==</text>
+    <text x="54" y="310" font-size="11.5" fill="#cfe8c8">string/字面量/C 串 → 都 10 ✔</text>
+    <text x="54" y="334" font-size="12" fill="#9fb8a8">== 三危险点 ==</text>
+    <text x="54" y="356" font-size="11.5" fill="#f0c9c0">悬空：ASan stack-use-after-scope</text>
+    <text x="54" y="376" font-size="11.5" fill="#f0c9c0">null 结尾：data() 不保证 ✔</text>
+    <text x="54" y="396" font-size="11.5" fill="#cfe8c8">容器持有：三律劝退 ✔</text>
+    <text x="54" y="422" font-size="12" fill="#9fb8a8">== 开发插曲（本日实录） ==</text>
+    <text x="54" y="444" font-size="11" fill="#9fb8a8">（full.substr(0,4) 的临时悬空</text>
+    <text x="54" y="462" font-size="11" fill="#9fb8a8">　——Wdangling 警告抓到后改</text>
+    <text x="54" y="480" font-size="11" fill="#9fb8a8">　string_view(full).substr 正解）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,490 Q 712,495 490,490 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 296)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">view 的合理疆域</text>
+    <rect x="502" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">参数传递（最大用途）：</text>
+    <text x="514" y="196" font-size="11.5" fill="#cfe8c8">f(string_view)——三种来源免拷贝</text>
+    <text x="514" y="216" font-size="11" fill="#9fb8a8">（比 const string&amp; 还省——字面量</text>
+    <text x="514" y="234" font-size="11" fill="#9fb8a8">　不构造临时 string）</text>
+    <text x="514" y="262" font-size="12" fill="#9fb8a8">解析/分词（今天）：</text>
+    <text x="514" y="284" font-size="11.5" fill="#cfe8c8">token 全是原串的窗口</text>
+    <text x="514" y="312" font-size="12" fill="#9fb8a8">禁区（三律之外）：</text>
+    <text x="514" y="334" font-size="11.5" fill="#f0c9c0">长期存储（成员/缓存/容器跨调用）</text>
+    <text x="514" y="354" font-size="11" fill="#9fb8a8">（要持有→拷成 string）</text>
+    <text x="514" y="384" font-size="12.5" fill="#45703a">（122/144 = 84.7%）</text>
+    <text x="514" y="414" font-size="11" fill="#9fb8a8">（Effective 同步：条款 17</text>
+    <text x="514" y="432" font-size="11" fill="#9fb8a8">　——view 的便利与生命期）</text>
+    <text x="514" y="462" font-size="11" fill="#9fb8a8">（明天 123：filesystem 目录遍历）</text>
+
+    <path d="M 24,516 Q 470,510 905,517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>
+    <text x="46" y="542" font-size="15.5" font-weight="bold" fill="#9c5a22">view 的哲学</text>
+    <text x="46" y="568" font-size="12.5" fill="#3b3a36">"借看一眼"——不为这眼买下整本书（零拷贝）；但借的书要还（数据要活着）、借条不是书（不是 C 串）——三律是借物的礼数</text>
+
+    <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 123 &lt;filesystem&gt;——递归遍历目录统计文件大小（计划指定）</text>
+  </g>
+</svg>
