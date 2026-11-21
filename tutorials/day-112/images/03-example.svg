@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">六件齐、五段日志与 =delete 执法战报</text>
+    <path d="M 340,58 Q 480,52 620,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 -std=c++17；-Wall 零警告 + ASan 零报错）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,490 Q 248,495 26,490 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 296)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出（节选）</text>
+    <rect x="38" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./rf　（-Wall 零警告）</text>
+    <text x="54" y="200" font-size="12" fill="#9fb8a8">== Probe 六件 ==</text>
+    <text x="54" y="222" font-size="11.5" fill="#cfe8c8">默认/拷构/移构/拷赋/移赋 ✔</text>
+    <text x="54" y="246" font-size="12" fill="#9fb8a8">== MyVector 五法则（计划指定） ==</text>
+    <text x="54" y="268" font-size="11.5" fill="#cfe8c8">①拷贝构造 ✔（深拷贝）</text>
+    <text x="54" y="288" font-size="11.5" fill="#f0c9c0">②移动构造 ✔（偷+掏空）</text>
+    <text x="54" y="308" font-size="11.5" fill="#cfe8c8">③拷贝赋值 ✔　④移动赋值 ✔</text>
+    <text x="54" y="330" font-size="11.5" fill="#cfe8c8">v5 还有 3 个（一路传下来）✔</text>
+    <text x="54" y="352" font-size="11" fill="#9fb8a8">　（v1/v3 掏空——析构安全）</text>
+    <text x="54" y="376" font-size="12" fill="#9fb8a8">== =delete 演示 ==</text>
+    <text x="54" y="398" font-size="11.5" fill="#cfe8c8">n2 = move(n1) ✔（默认移动）</text>
+    <text x="54" y="418" font-size="11.5" fill="#f0c9c0">n3 = n2 → 编译错！</text>
+    <text x="54" y="442" font-size="11.5" fill="#9fb8a8">尾部：⑤析构 ×5（size 3/3/0/3/0）✔</text>
+    <text x="54" y="466" font-size="11" fill="#9fb8a8">（ASan 零报错）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,490 Q 712,495 490,490 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 296)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">法则的学习史（三→五）</text>
+    <rect x="502" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">Day 57：三法则（C++98 时代）</text>
+    <text x="514" y="196" font-size="11" fill="#9fb8a8">　拷贝构造/拷贝赋值/析构</text>
+    <text x="514" y="224" font-size="12" fill="#9fb8a8">Day 78：里程碑脱稿讲三法则</text>
+    <text x="514" y="246" font-size="11" fill="#9fb8a8">　（深浅拷贝是它的动因）</text>
+    <text x="514" y="274" font-size="12" fill="#9fb8a8">今天：五法则（C++11 升级）</text>
+    <text x="514" y="296" font-size="11" fill="#9fb8a8">　+移动构造/移动赋值</text>
+    <text x="514" y="324" font-size="12" fill="#9fb8a8">手写的全程：</text>
+    <text x="514" y="346" font-size="11.5" fill="#cfe8c8">MyString×2（55/111）+ IntArray×2</text>
+    <text x="514" y="366" font-size="11.5" fill="#cfe8c8">　（42/47）+ MyVector×2（98/今天）</text>
+    <text x="514" y="398" font-size="12.5" fill="#45703a">（112/144 = 77.8%）</text>
+    <text x="514" y="428" font-size="11" fill="#9fb8a8">明天 113：完美转发（forward）</text>
+    <text x="514" y="448" font-size="11" fill="#9fb8a8">　→ 114 基准测试收官周</text>
+    <text x="514" y="478" font-size="11" fill="#9fb8a8">（Effective 同步：条款 17</text>
+    <text x="514" y="496" font-size="11" fill="#9fb8a8">　特殊成员函数的生成规则）</text>
+
+    <path d="M 24,516 Q 470,510 905,517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>
+    <text x="46" y="542" font-size="15.5" font-weight="bold" fill="#9c5a22">法则的精神</text>
+    <text x="46" y="568" font-size="12.5" fill="#3b3a36">"管资源的类要一起管好五件事"——拷贝怎么复制、移动怎么偷、析构怎么还；=delete 是说"这类资源不许复制"的诚实声明</text>
+
+    <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 113 完美转发——万能引用与 std::forward（emplace_back 简化版——计划指定）</text>
+  </g>
+</svg>
