@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">一轮计算的生命线：从问数到问继续</text>
+    <path d="M 290,58 Q 480,52 670,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,110 Q 190,104 340,110 Q 344,190 340,268 Q 190,274 42,268 Q 36,190 40,110 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.4 190 189)"/>
+    <text x="190" y="140" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5a82">read_number("第一个数")</text>
+    <path d="M 60,160 Q 190,152 320,161" fill="none" stroke="#c96a5a" stroke-width="2.2" stroke-dasharray="6 5"/>
+    <text x="190" y="184" text-anchor="middle" font-size="11.5" fill="#a33f2e">读失败？clear+ignore 重问</text>
+    <text x="190" y="204" text-anchor="middle" font-size="11.5" fill="#a33f2e">EOF？exit 收工（暗门）</text>
+    <text x="190" y="234" text-anchor="middle" font-size="12.5" fill="#45703a">问到合法的数才 return</text>
+    <text x="190" y="256" text-anchor="middle" font-size="11.5" fill="#8a8578">abc → 重试 → 10（实测）</text>
+
+    <path d="M 350,189 Q 374,189 398,189" fill="none" stroke="#3b3a36" stroke-width="2.6"/>
+    <path d="M 390,181 Q 399,187 391,197" fill="none" stroke="#3b3a36" stroke-width="2.6"/>
+
+    <path d="M 402,110 Q 550,104 690,110 Q 694,190 690,268 Q 550,274 404,268 Q 398,190 402,110 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.4 546 189)"/>
+    <text x="546" y="140" text-anchor="middle" font-size="14" font-weight="bold" fill="#45703a">read_op() 与闸门</text>
+    <text x="420" y="170" font-size="12" fill="#3b3a36">运算符只认 + - * /</text>
+    <text x="420" y="192" font-size="12" fill="#3b3a36">非法字符打回重问</text>
+    <text x="420" y="222" font-size="12" fill="#3b3a36">is_div_zero(op, b)：</text>
+    <text x="420" y="242" font-size="12" fill="#a33f2e">5 / 0 → "本次作废"（实测）</text>
+
+    <path d="M 700,189 Q 724,189 748,189" fill="none" stroke="#3b3a36" stroke-width="2.6"/>
+    <path d="M 740,181 Q 749,187 741,197" fill="none" stroke="#3b3a36" stroke-width="2.6"/>
+
+    <path d="M 752,110 Q 850,104 930,110 Q 933,190 930,268 Q 850,274 754,268 Q 749,190 752,110 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.4 841 189)"/>
+    <text x="841" y="140" text-anchor="middle" font-size="14" font-weight="bold" fill="#9c5a22">calc(a, op, b)</text>
+    <text x="841" y="174" text-anchor="middle" font-size="12" fill="#3b3a36">纯计算，不看输入</text>
+    <text x="841" y="200" text-anchor="middle" font-size="12.5" fill="#45703a">12 + 30 = 42</text>
+    <text x="841" y="222" text-anchor="middle" font-size="12.5" fill="#45703a">7 / 2 = 3.5</text>
+    <text x="841" y="250" text-anchor="middle" font-size="11.5" fill="#8a8578">（进闸门前已排雷）</text>
+
+    <path d="M 480,282 Q 480,300 480,314" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+    <path d="M 472,308 Q 480,318 489,309" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+
+    <path d="M 200,318 L 620,318 L 620,352 L 200,352 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.4 410 335)"/>
+    <text x="410" y="341" text-anchor="middle" font-size="14" font-weight="bold" fill="#8a6d1a">继续吗？(y/n)：— 不答 y 就 break 收工</text>
+
+    <path d="M 200,335 Q 120,335 110,240 Q 104,180 120,150" fill="none" stroke="#45703a" stroke-width="2.6"/>
+    <path d="M 114,158 Q 108,148 122,146" fill="none" stroke="#45703a" stroke-width="2.6"/>
+    <text x="88" y="316" font-size="12" fill="#45703a">答 y</text>
+    <text x="66" y="336" font-size="12" fill="#45703a">↺ 回到开头</text>
+
+    <path d="M 620,335 Q 740,335 760,380 Q 772,410 760,436" fill="none" stroke="#c96a5a" stroke-width="2.6"/>
+    <path d="M 752,430 Q 760,441 770,434" fill="none" stroke="#c96a5a" stroke-width="2.6"/>
+    <text x="742" y="392" font-size="12" fill="#a33f2e">其他任何回答</text>
+
+    <path d="M 660,440 Q 800,434 920,440 Q 923,480 920,516 Q 800,521 662,516 Q 658,480 660,440 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.6" transform="rotate(0.3 790 478)"/>
+    <text x="790" y="470" text-anchor="middle" font-size="14" font-weight="bold" fill="#a33f2e">break → "收工！"</text>
+    <text x="790" y="498" text-anchor="middle" font-size="12" fill="#6b675e">exit=0，正门离场（实测）</text>
+
+    <path d="M 40,380 Q 300,374 560,381 L 557,502 Q 300,496 43,501 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 300 440)"/>
+    <text x="300" y="412" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">两个容易漏的暗门（Day 8 教训）</text>
+    <text x="60" y="444" font-size="12.5" fill="#3b3a36">1. read_number 里 EOF：管道喂完时体面退出，</text>
+    <text x="60" y="464" font-size="12.5" fill="#3b3a36">　 不然重试环变死循环刷屏</text>
+    <text x="60" y="492" font-size="12.5" fill="#3b3a36">2. "继续吗"读取失败也当退出处理（|| 短路）</text>
+
+    <text x="480" y="560" text-anchor="middle" font-size="13.5" fill="#8a8578">calc 里没有输入、read_number 里没有算术——单向依赖让每台机器都能单独测试</text>
+    <text x="480" y="588" text-anchor="middle" font-size="13" fill="#8a8578">明天起进入第 3 周：数组和字符串——一次装 144 天数据的"集装箱"即将到货</text>
+  </g>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">真实会话：五回合混合输入全记录</text>
+    <path d="M 330,58 Q 480,52 630,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">本机真实运行（macOS arm64 + Apple clang 21），管道喂入，提示与回显挤行属正常</text>
+
+    <rect x="24" y="102" width="912" height="270" rx="8" fill="#33413a"/>
+    <text x="40" y="128" font-size="12" fill="#9fb8a8">$ printf '12 + 30 / 7 2 / 5 0 / abc 10 * 4 / n' | ./calc_v1　（实际逐行喂入）</text>
+    <text x="40" y="156" font-size="12.5" fill="#cfe8c6">第一个数：运算符：第二个数：12 + 30 = 42</text>
+    <text x="40" y="182" font-size="12.5" fill="#cfe8c6">继续吗？(y/n)：第一个数：运算符：第二个数：7 / 2 = 3.5</text>
+    <text x="40" y="208" font-size="12.5" fill="#f0c9c0">继续吗？(y/n)：第一个数：运算符：第二个数：除数不能为 0，本次作废。</text>
+    <text x="40" y="234" font-size="12.5" fill="#f0c9c0">继续吗？(y/n)：第一个数：这不是一个数，再试一次。　←abc 被拦</text>
+    <text x="40" y="260" font-size="12.5" fill="#cfe8c6">第一个数：运算符：第二个数：10 * 4 = 40</text>
+    <text x="40" y="286" font-size="12.5" fill="#cfe8c6">继续吗？(y/n)：收工！　（exit=0）</text>
+    <text x="40" y="330" font-size="12" fill="#9fb8a8">五回合里出现两次"红色事件"（除零、非法数），都被体面接住——流程没崩、会话没死</text>
+    <text x="40" y="352" font-size="12" fill="#9fb8a8">7 / 2 = 3.5：浮点除法生效（Day 3 的 9.0/5.0 教训在这里天然安全，因为全程 double）</text>
+
+    <path d="M 24,396 Q 248,390 470,396 Q 474,490 470,590 Q 248,595 26,590 Q 20,490 24,396 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 493)"/>
+    <text x="46" y="426" font-size="15.5" font-weight="bold" fill="#45703a">四台机器的验收单</text>
+    <text x="46" y="458" font-size="12.5" fill="#3b3a36">read_number：abc 打回、10 放行 ✔</text>
+    <text x="46" y="482" font-size="12.5" fill="#3b3a36">read_op：非法字符打回（选做可自测）✔</text>
+    <text x="46" y="506" font-size="12.5" fill="#3b3a36">is_div_zero：5/0 拦下、7/2 放行 ✔</text>
+    <text x="46" y="530" font-size="12.5" fill="#3b3a36">calc：42、3.5、40 三单全对 ✔</text>
+    <text x="46" y="566" font-size="12" fill="#8a8578">每台都能被单独调用测试——</text>
+    <text x="46" y="586" font-size="12" fill="#8a8578">拆分换来的自由，项目日第一次兑现</text>
+
+    <path d="M 488,396 Q 712,390 934,396 Q 938,490 934,590 Q 712,595 490,590 Q 484,490 488,396 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(0.3 711 493)"/>
+    <text x="711" y="426" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#8a6d1a">第 2 周里程碑自测</text>
+    <text x="711" y="458" text-anchor="middle" font-size="12.5" fill="#3b3a36">□ 不看教程从空文件写出 calc_v1</text>
+    <text x="711" y="482" text-anchor="middle" font-size="12.5" fill="#3b3a36">□ -Wall 全程零警告</text>
+    <text x="711" y="506" text-anchor="middle" font-size="12.5" fill="#3b3a36">□ 除零/非法数/EOF 三种事故都体面</text>
+    <text x="711" y="530" text-anchor="middle" font-size="12.5" fill="#3b3a36">□ 能说出每台机器的职责边界</text>
+    <text x="711" y="566" text-anchor="middle" font-size="12" fill="#8a8578">全部打勾，第 2 周正式收官——</text>
+    <text x="711" y="586" text-anchor="middle" font-size="12" fill="#8a8578">下周一（Day 13）开箱"集装箱"：数组</text>
+  </g>
+</svg>

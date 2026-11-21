@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 12 项目日：计算器 v1 的车间布局</text>
+    <path d="M 300,60 Q 480,52 660,61" fill="none" stroke="#e0955f" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">第 2 周收官：把函数三部曲＋循环＋校验组装成第一台多函数机器</text>
+
+    <path d="M 40,130 Q 240,124 440,130 Q 444,200 440,270 Q 240,276 42,270 Q 36,200 40,130 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(-0.4 240 200)"/>
+    <text x="240" y="160" text-anchor="middle" font-size="16" font-weight="bold" fill="#2c5a82">main：总调度（主循环）</text>
+    <text x="240" y="192" text-anchor="middle" font-size="12.5" fill="#3b3a36">读两个数、拿运算符、</text>
+    <text x="240" y="212" text-anchor="middle" font-size="12.5" fill="#3b3a36">查除零、调 calc、问继续</text>
+    <text x="240" y="244" text-anchor="middle" font-size="12" fill="#8a8578">自己不算数，只管流程（Day 6 经验）</text>
+
+    <path d="M 470,110 Q 690,104 910,110 Q 914,190 910,270 Q 690,276 472,270 Q 466,190 470,110 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 690 190)"/>
+    <text x="690" y="138" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">四台函数机器（各司其职）</text>
+    <text x="490" y="168" font-size="12.5" fill="#3b3a36">read_number(prompt)　问数，问到对为止</text>
+    <text x="490" y="192" font-size="12.5" fill="#3b3a36">read_op()　　　　　问运算符，非法打回</text>
+    <text x="490" y="216" font-size="12.5" fill="#3b3a36">is_div_zero(op, b)　除零闸门（真/假）</text>
+    <text x="490" y="240" font-size="12.5" fill="#3b3a36">calc(a, op, b)　　　纯计算，出货 double</text>
+    <text x="490" y="262" font-size="11.5" fill="#8a8578">（Day 9 拆分 + Day 11 各管各的变量）</text>
+
+    <path d="M 240,278 Q 380,288 460,240" fill="none" stroke="#8a94a3" stroke-width="2.2" stroke-dasharray="7 5"/>
+    <path d="M 452,246 Q 462,242 456,232" fill="none" stroke="#8a94a3" stroke-width="2.2"/>
+
+    <path d="M 40,304 Q 470,296 905,305 L 901,424 Q 470,416 44,423 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(-0.2 472 362)"/>
+    <text x="472" y="336" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#55606e">零件来源清单（组装前的备料核对）</text>
+    <text x="90" y="372" font-size="12.5" fill="#3b3a36">Day 3：7/2 = 3.5（浮点除法，不是整数除法的 3）</text>
+    <text x="90" y="398" font-size="12.5" fill="#3b3a36">Day 5：|| 与 &amp;&amp; 组合出除零闸门和继续判断</text>
+    <text x="510" y="372" font-size="12.5" fill="#3b3a36">Day 8：while(true) 主循环 + 重试环 + EOF 出口</text>
+    <text x="510" y="398" font-size="12.5" fill="#3b3a36">Day 9~11：函数拆分 / 声明放前 / 作用域隔离</text>
+
+    <path d="M 60,456 Q 480,450 905,457" fill="none" stroke="#8a8578" stroke-width="3"/>
+    <circle cx="170" cy="456" r="6" fill="#8a94a3"/>
+    <text x="170" y="482" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 6 换算器 ✓</text>
+    <circle cx="350" cy="457" r="13" fill="none" stroke="#c96a5a" stroke-width="2.2"/>
+    <circle cx="350" cy="457" r="6" fill="#5b8db8"/>
+    <text x="350" y="482" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#c96a5a">Day 12（今天）</text>
+    <circle cx="530" cy="456" r="6" fill="#5b8db8"/>
+    <text x="530" y="482" text-anchor="middle" font-size="12.5" fill="#3b3a36">第 3 周 数组</text>
+    <circle cx="700" cy="457" r="6" fill="#5b8db8"/>
+    <text x="700" y="482" text-anchor="middle" font-size="12.5" fill="#3b3a36">第 4 周 指针</text>
+    <circle cx="870" cy="456" r="6" fill="#e0955f"/>
+    <text x="870" y="482" text-anchor="middle" font-size="12.5" fill="#3b3a36">第 5 周 多文件</text>
+
+    <rect x="120" y="502" width="720" height="40" fill="#f7e8a0" opacity="0.5" transform="rotate(-0.3 480 522)"/>
+    <text x="480" y="521" text-anchor="middle" font-size="13.5" fill="#8a6d1a">对照 Day 6：换算器的 switch 菜单换成了字符运算符分发，</text>
+    <text x="480" y="538" text-anchor="middle" font-size="13" fill="#8a8578">每台机器能独立测试——这就是"拆分"换来的自由</text>
+  </g>
+</svg>
