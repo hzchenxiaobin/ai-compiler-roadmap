@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">lldb 会话解剖：每一段输出都在说话</text>
+    <path d="M 310,58 Q 480,52 650,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,300 Q 470,294 44,299 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(-0.2 472 200)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">一段真实会话（loop_trace 实测节选）</text>
+    <rect x="70" y="146" width="820" height="140" fill="#33413a"/>
+    <text x="86" y="170" font-size="11.5" fill="#cfe8c6">(lldb) breakpoint set --file loop_trace.cpp --line 9</text>
+    <text x="86" y="190" font-size="11.5" fill="#9fb8a8">Breakpoint 1: where = loop_trace`main + 52 at loop_trace.cpp:9:16</text>
+    <text x="86" y="210" font-size="11.5" fill="#cfe8c6">(lldb) run　→ stop reason = breakpoint 1.1</text>
+    <text x="86" y="230" font-size="11.5" fill="#ffd7d0">-&gt; 9　　　　　 sum += i;　　←箭头指"将要执行"的行</text>
+    <text x="86" y="250" font-size="11.5" fill="#cfe8c6">(lldb) frame variable　→ (int) sum = 0　(int) product = 1　(int) i = 1</text>
+    <text x="86" y="270" font-size="11.5" fill="#9fb8a8">(lldb) thread step-over → 再查：sum = 1（第 9 行已执行完毕）</text>
+
+    <path d="M 40,324 Q 280,318 520,324 Q 524,430 520,536 Q 280,542 42,536 Q 36,430 40,324 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 430)"/>
+    <text x="280" y="354" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">读输出的四个要点</text>
+    <text x="64" y="386" font-size="12.5" fill="#3b3a36">① -&gt; 箭头：停在的这一行还没执行</text>
+    <text x="64" y="414" font-size="12.5" fill="#3b3a36">② stop reason：为什么停（断点/单步）</text>
+    <text x="64" y="442" font-size="12.5" fill="#3b3a36">③ frame variable：当前作用域全体变量</text>
+    <text x="64" y="470" font-size="12.5" fill="#3b3a36">④ 上下文代码：-&gt; 附近几行原样显示</text>
+    <text x="64" y="506" font-size="12" fill="#8a8578">step-over 的语义：把当前行执行完，</text>
+    <text x="64" y="526" font-size="12" fill="#8a8578">停在下一行——所以"查值"要看箭头行的左侧效应</text>
+
+    <path d="M 550,324 Q 730,318 905,324 Q 908,430 905,536 Q 730,542 552,536 Q 547,430 550,324 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 430)"/>
+    <text x="727" y="354" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">条件断点：精准狙击</text>
+    <rect x="572" y="370" width="320" height="90" fill="#33413a"/>
+    <text x="732" y="396" text-anchor="middle" font-size="10.5" fill="#cfe8c6">breakpoint set --line 8</text>
+    <text x="732" y="414" text-anchor="middle" font-size="10.5" fill="#cfe8c6">--condition 'i == 9'</text>
+    <text x="732" y="438" text-anchor="middle" font-size="10.5" fill="#9fb8a8">九圈循环只停第九圈</text>
+    <text x="572" y="486" font-size="12.5" fill="#45703a">比连按八次 continue 高效得多</text>
+    <text x="572" y="512" font-size="12" fill="#6b675e">（今天的抓虫就是它一击命中）</text>
+  </g>
+</svg>

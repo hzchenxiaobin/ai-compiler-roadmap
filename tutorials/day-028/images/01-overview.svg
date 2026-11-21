@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 28 全貌：调试器——隔着玻璃看变量跳舞</text>
+    <path d="M 300,60 Q 480,52 660,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">编译不报错、运行不崩溃、结果就是不对——这第三类 bug 要靠"看"而不是"猜"</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,230 520,344 Q 280,350 42,344 Q 36,230 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 230)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">调试器三件套</text>
+    <text x="64" y="180" font-size="13" fill="#3b3a36">断点 breakpoint：在第几行装红绿灯</text>
+    <text x="64" y="208" font-size="13" fill="#3b3a36">单步 step-over：一行一行往前走</text>
+    <text x="64" y="236" font-size="13" fill="#3b3a36">查看 frame variable：当前每个变量的值</text>
+    <text x="64" y="272" font-size="12.5" fill="#6b675e">今天用 macOS 自带的 lldb（Linux 装 gdb，</text>
+    <text x="64" y="294" font-size="12.5" fill="#6b675e">命令几乎同义：break/next/print）</text>
+    <text x="64" y="326" font-size="12.5" fill="#45703a">入场券：编译时加 -g（调试信息）</text>
+
+    <path d="M 550,116 Q 730,110 905,116 Q 908,230 905,344 Q 730,350 552,344 Q 547,230 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 230)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">对比：cout 打印法</text>
+    <text x="572" y="180" font-size="12.5" fill="#3b3a36">cout 法：改代码 → 重编译 → 重跑 → 删打印</text>
+    <text x="572" y="208" font-size="12.5" fill="#6b675e">（四步循环，看漏了还得再来一轮）</text>
+    <text x="572" y="240" font-size="12.5" fill="#45703a">调试器法：不改一行代码，随时停下查看</text>
+    <text x="572" y="268" font-size="12.5" fill="#45703a">想看哪个变量就 print 哪个</text>
+    <text x="572" y="302" font-size="12" fill="#8a8578">两者互补：小问题 cout 快，逻辑迷宫调试器强</text>
+
+    <path d="M 40,370 Q 470,364 905,371 L 901,470 Q 470,464 44,469 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 420)"/>
+    <text x="472" y="400" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">今天的抓虫实战（实测）</text>
+    <text x="70" y="432" font-size="13" fill="#3b3a36">buggy_sum 想算 1+2+…+10，输出 45——不猜！条件断点 i == 9 停下：亲眼看到 i 最后一次是 9，</text>
+    <text x="70" y="458" font-size="13" fill="#3b3a36">10 从未被加 → 条件 `i &lt; 10` 改 `i &lt;= 10` → 55 ✔（Day 7 的 off-by-one 换了件调试器的武器）</text>
+
+    <path d="M 60,496 Q 480,490 905,497" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="240" cy="496" r="5" fill="#8a94a3"/>
+    <text x="240" y="516" text-anchor="middle" font-size="12" fill="#3b3a36">Day 25~27 ✓</text>
+    <circle cx="430" cy="496" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="430" cy="496" r="5" fill="#5b8db8"/>
+    <text x="430" y="516" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 28（今天）</text>
+    <circle cx="620" cy="496" r="5" fill="#5b8db8"/>
+    <text x="620" y="516" text-anchor="middle" font-size="12" fill="#3b3a36">Day 29 struct</text>
+    <circle cx="800" cy="496" r="5" fill="#e0955f"/>
+    <text x="800" y="516" text-anchor="middle" font-size="12" fill="#3b3a36">Day 30 项目日</text>
+
+    <rect x="140" y="526" width="680" height="24" fill="#f7e8a0" opacity="0.5" transform="rotate(-0.3 480 538)"/>
+    <text x="480" y="543" text-anchor="middle" font-size="13" fill="#8a6d1a">周六通讯录 v1 出厂标准：ASan 零报错＋调试器能单步讲清每一条链路</text>
+  </g>
+</svg>
