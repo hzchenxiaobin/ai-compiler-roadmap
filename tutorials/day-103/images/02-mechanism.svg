@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">值/引用分野与代理类型的解剖</text>
+    <path d="M 330,58 Q 480,52 630,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,330 Q 470,324 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 215)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">v[0] 的三种接法（实测对照）</text>
+    <rect x="110" y="146" width="250" height="150" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
+    <text x="235" y="172" font-size="10.5" fill="#45703a">auto x = v[0];</text>
+    <rect x="130" y="190" width="70" height="40" fill="#f9e9e5" stroke="#c96a5a" stroke-width="1.6"/>
+    <text x="165" y="215" font-size="9" fill="#a33f2e">拷贝 x=1</text>
+    <rect x="210" y="190" width="70" height="40" fill="#f1f4f7" stroke="#8a94a3" stroke-width="1.4"/>
+    <text x="245" y="215" font-size="9" fill="#8a94a3">v[0] 仍 1</text>
+    <text x="235" y="256" font-size="9.5" fill="#8a8578">（x=999 不影响 v）</text>
+    <text x="235" y="280" font-size="10" fill="#45703a">（值语义——安全默认）</text>
+    <rect x="400" y="146" width="250" height="150" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
+    <text x="525" y="172" font-size="10.5" fill="#9c5a22">auto&amp; r = v[0];</text>
+    <rect x="420" y="190" width="70" height="40" fill="#f9e9e5" stroke="#c96a5a" stroke-width="1.6"/>
+    <text x="455" y="215" font-size="9" fill="#a33f2e">r</text>
+    <path d="M 490,210 Q 510,210 528,210" fill="none" stroke="#9c5a22" stroke-width="2.4"/>
+    <rect x="530" y="190" width="70" height="40" fill="#d8ecce" stroke="#7aa663" stroke-width="1.8"/>
+    <text x="565" y="215" font-size="9" fill="#45703a">v[0]→777</text>
+    <text x="525" y="256" font-size="9.5" fill="#8a8578">（r 是别名——改 r 即改 v）</text>
+    <text x="525" y="280" font-size="10" fill="#9c5a22">（要引用必须写 &amp;）</text>
+    <text x="472" y="322" font-size="11.5" fill="#8a8578">（auto 脱引用：v[0] 是 int&amp; 但 auto 丢 &amp; 拷贝——模板实参推导同款规则）</text>
+
+    <path d="M 40,354 Q 280,348 520,354 Q 524,470 520,576 Q 280,582 42,576 Q 36,470 40,354 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 465)"/>
+    <text x="280" y="384" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">vector&lt;bool&gt; 的代理</text>
+    <text x="64" y="418" font-size="12" fill="#3b3a36">vector&lt;bool&gt; 按位存——operator[]</text>
+    <text x="64" y="440" font-size="12" fill="#3b3a36">　不能返回 bit 的真引用！</text>
+    <text x="64" y="468" font-size="12" fill="#a33f2e">返回代理对象（reference）——</text>
+    <text x="64" y="490" font-size="12" fill="#a33f2e">　auto 推出它（不是 bool）</text>
+    <text x="64" y="520" font-size="11.5" fill="#45703a">（修法：显式 bool real_b = flags[0];）</text>
+    <text x="64" y="552" font-size="11" fill="#8a8578">（Effective Modern C++ 条款 6 原案例）</text>
+
+    <path d="M 550,354 Q 730,348 905,354 Q 908,470 905,576 Q 730,582 552,576 Q 547,470 550,354 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 465)"/>
+    <text x="727" y="384" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">什么时候不用 auto</text>
+    <text x="572" y="418" font-size="12" fill="#3b3a36">代理类型场景（vector&lt;bool&gt;/</text>
+    <text x="572" y="440" font-size="12" fill="#3b3a36">　表达式的临时视图）→ 显式类型</text>
+    <text x="572" y="470" font-size="12" fill="#3b3a36">接口边界的"自 documenting"：</text>
+    <text x="572" y="492" font-size="11.5" fill="#8a8578">（公共 API 的返回类型写明更好读）</text>
+    <text x="572" y="522" font-size="11.5" fill="#6b675e">（其他场景：auto 省字符+重构友好</text>
+    <text x="572" y="542" font-size="11.5" fill="#6b675e">　——改容器类型不用改一串声明）</text>
+  </g>
+</svg>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 103 全貌：auto / decltype——类型推导的双刃剑</text>
+    <path d="M 300,60 Q 480,52 660,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">阶段五（现代 C++）开篇——计划指定"用 auto 重写旧代码"：省 30 字符的便利和三个坑（拷贝语义/代理类型/decltype 的时机）</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">auto 的推导规则</text>
+    <text x="64" y="180" font-size="12.5" fill="#45703a">auto x = expr; → 值语义（拷贝）</text>
+    <text x="64" y="202" font-size="12" fill="#8a8578">（v[0] 是引用也退化成值）</text>
+    <text x="64" y="232" font-size="12.5" fill="#45703a">auto&amp; r = expr; → 左值引用</text>
+    <text x="64" y="254" font-size="12" fill="#8a8578">（要改外部必须写 &amp;）</text>
+    <text x="64" y="284" font-size="12.5" fill="#45703a">auto&amp;&amp; u = expr; → 万能引用</text>
+    <text x="64" y="306" font-size="12" fill="#8a8578">（进阶——移动语义周细讲）</text>
+    <text x="64" y="344" font-size="12.5" fill="#6b675e">实测：auto x=v[0] 改 x 后 v[0] 不动；</text>
+    <text x="64" y="364" font-size="12.5" fill="#6b675e">　auto&amp; 改后 v[0]=777 ✔</text>
+
+    <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">decltype：查类型不求值</text>
+    <text x="572" y="180" font-size="12.5" fill="#45703a">decltype(a) another = 20;</text>
+    <text x="572" y="202" font-size="12" fill="#8a8578">（another 的类型 = a 的类型）</text>
+    <text x="572" y="232" font-size="12.5" fill="#45703a">decltype(a + 1) → 表达式类型</text>
+    <text x="572" y="254" font-size="12" fill="#8a8578">（只查不执行——零运行时）</text>
+    <text x="572" y="288" font-size="12.5" fill="#45703a">尾置返回：auto f(T a, U b)</text>
+    <text x="572" y="308" font-size="12.5" fill="#45703a">　-&gt; decltype(a + b)</text>
+    <text x="572" y="332" font-size="11.5" fill="#8a8578">（Day 97 myMax2 窄化坑的正确解）</text>
+    <text x="572" y="364" font-size="11.5" fill="#8a8578">（Day 88 的 iterator_traits 是它的前辈）</text>
+
+    <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
+    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">代理类型陷阱（vector&lt;bool&gt; 经典）</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">auto f = flags[0] 推出的是 vector&lt;bool&gt;::reference（代理对象）不是 bool——Effective 条款 6：宁可显式 bool</text>
+    <text x="70" y="490" font-size="12.5" fill="#6b675e">（代理类型离开表达式可能悬空——隐式转换的坑）</text>
+
+    <path d="M 60,514 Q 480,508 905 515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 79~102 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 103（阶段五开篇）</text>
+    <circle cx="650" cy="514" r="5" fill="#5b8db8"/>
+    <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 104~108</text>
+    <circle cx="850" cy="514" r="5" fill="#e0955f"/>
+    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 109 项目日</text>
+  </g>
+</svg>
