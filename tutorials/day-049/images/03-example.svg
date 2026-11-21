@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">五个触发场景、double free 现形与深拷贝战报</text>
+    <path d="M 290,58 Q 480,52 670,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,250 470,400 Q 248,405 26,400 Q 20,250 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 251)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">实验 1：触发时机</text>
+    <rect x="38" y="146" width="420" height="240" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./ct</text>
+    <text x="54" y="196" font-size="12" fill="#9fb8a8">①b = a →</text>
+    <text x="54" y="214" font-size="11.5" fill="#cfe8c6">　[拷贝构造] 从 原始 复制出新对象</text>
+    <text x="54" y="240" font-size="12" fill="#9fb8a8">②值传参 take_by_value(a) →</text>
+    <text x="54" y="258" font-size="11.5" fill="#cfe8c6">　[拷贝构造] + 函数结束[析构]复印件</text>
+    <text x="54" y="284" font-size="12" fill="#9fb8a8">③引用传参 →（无拷贝日志）✔</text>
+    <text x="54" y="308" font-size="12" fill="#9fb8a8">④make_logger() 返回 →</text>
+    <text x="54" y="326" font-size="11.5" fill="#cfe8c6">　只[构造]一次（RVO 零拷贝）✔</text>
+    <text x="54" y="352" font-size="12" fill="#9fb8a8">⑤d = a 赋值 →（无拷贝构造日志）✔</text>
+    <text x="54" y="376" font-size="12" fill="#9fb8a8">（五个场景的边界一目了然）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,250 934,400 Q 712,405 490,400 Q 484,250 488,102 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="3" transform="rotate(0.3 711 251)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#a33f2e">实验 2：double free 现形</text>
+    <rect x="502" y="146" width="420" height="240" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="12" fill="#9fb8a8">浅拷贝版（默认拷贝构造）：</text>
+    <text x="514" y="196" font-size="11.5" fill="#cfe8c6">　[构造] 拿了 0x…92c0</text>
+    <text x="514" y="216" font-size="11.5" fill="#cfe8c6">　拷贝后两对象指向同一地址</text>
+    <text x="514" y="240" font-size="11.5" fill="#f0c9c0">　[析构] 释放 0x…92c0（第一次）</text>
+    <text x="514" y="262" font-size="12" fill="#9fb8a8">普通编译：静默过（exit=0 又骗了一次）</text>
+    <text x="514" y="292" font-size="12" fill="#9fb8a8">ASan 版：</text>
+    <text x="514" y="314" font-size="11" fill="#ffd7d0">ERROR: attempting double-free on 0x…</text>
+    <text x="514" y="334" font-size="11" fill="#9fb8a8">SUMMARY: double-free in ~ShallowString()</text>
+    <text x="514" y="366" font-size="12" fill="#9fb8a8">（Day 46 的静默泄漏姊妹篇——雷达有时要换台）</text>
+
+    <path d="M 24,426 Q 470,420 905,427 L 901,510 Q 470,504 26,509 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 464 468)"/>
+    <text x="46" y="454" font-size="15.5" font-weight="bold" fill="#2c5a82">实验 3：深拷贝修复战报</text>
+    <text x="46" y="484" font-size="12.5" fill="#3b3a36">[深拷贝] 新地址 0x…92d0（源 0x…92c0）——内容各印一份、地址各自独立、析构各自安全（exit=0）✔</text>
+
+    <path d="M 24,530 Q 470,524 905,531 L 901,630 Q 470,624 26,629 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 580)"/>
+    <text x="480" y="560" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#55606e">明天预告</text>
+    <text x="480" y="590" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 50：拷贝赋值运算符、自赋值处理——d = a 那个"不是拷贝构造"的操作明天开学</text>
+    <text x="480" y="612" text-anchor="middle" font-size="12.5" fill="#6b675e">（两兄弟加上析构凑成 Day 57 的"三法则"——含指针成员的类必须三件套一起写）</text>
+  </g>
+</svg>

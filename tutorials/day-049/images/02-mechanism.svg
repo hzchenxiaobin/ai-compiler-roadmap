@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">浅拷贝的内存图与深拷贝的修复对照</text>
+    <path d="M 280,58 Q 480,52 680,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,320 Q 470,314 44,319 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 210)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">浅拷贝：两个对象一根线</text>
+    <rect x="120" y="148" width="140" height="50" fill="#fffdf7" stroke="#5b8db8" stroke-width="2.2"/>
+    <text x="190" y="170" text-anchor="middle" font-size="11" fill="#2c5a82">对象 a</text>
+    <text x="190" y="188" text-anchor="middle" font-size="10" fill="#8a8578">data_ = 0x…92c0</text>
+    <rect x="420" y="148" width="140" height="50" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.2"/>
+    <text x="490" y="170" text-anchor="middle" font-size="11" fill="#55606e">对象 b（= a）</text>
+    <text x="490" y="188" text-anchor="middle" font-size="10" fill="#a33f2e">data_ = 0x…92c0</text>
+    <path d="M 262,174 Q 330,160 398,172" fill="none" stroke="#c96a5a" stroke-width="2.4"/>
+    <path d="M 262,190 Q 330,204 398,188" fill="none" stroke="#c96a5a" stroke-width="2.4"/>
+    <rect x="650" y="156" width="140" height="40" fill="#f9d9b8" stroke="#e0955f" stroke-width="2.4"/>
+    <text x="720" y="180" text-anchor="middle" font-size="10.5" fill="#9c5a22">堆内存 0x…92c0："hello"</text>
+    <path d="M 562,174 Q 610,174 648,176" fill="none" stroke="#8a94a3" stroke-width="2.2" stroke-dasharray="6 4"/>
+    <text x="472" y="240" font-size="12.5" fill="#a33f2e">两根指针、一块内存——析构两次 = double free</text>
+    <text x="472" y="268" font-size="12.5" fill="#3b3a36">ASan 实测：attempting double-free on 0x…92c0</text>
+    <text x="472" y="296" font-size="12" fill="#8a8578">（普通编译这次静默通过——又见"能跑不等于对"）</text>
+
+    <path d="M 40,344 Q 470,338 905,345 L 901,576 Q 470,570 44,575 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.2 472 460)"/>
+    <text x="472" y="374" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">深拷贝：两个对象两块内存</text>
+    <rect x="120" y="392" width="140" height="50" fill="#fffdf7" stroke="#5b8db8" stroke-width="2.2"/>
+    <text x="190" y="414" text-anchor="middle" font-size="11" fill="#2c5a82">对象 a</text>
+    <text x="190" y="432" text-anchor="middle" font-size="10" fill="#8a8578">data_ = 0x…92c0</text>
+    <rect x="420" y="392" width="140" height="50" fill="#fffdf7" stroke="#5b8db8" stroke-width="2.2"/>
+    <text x="490" y="414" text-anchor="middle" font-size="11" fill="#2c5a82">对象 b（深拷贝）</text>
+    <text x="490" y="432" text-anchor="middle" font-size="10" fill="#45703a">data_ = 0x…92d0</text>
+    <rect x="610" y="386" width="120" height="36" fill="#f9d9b8" stroke="#e0955f" stroke-width="2.2"/>
+    <text x="670" y="408" text-anchor="middle" font-size="9.5" fill="#9c5a22">0x…92c0："hello"</text>
+    <rect x="610" y="436" width="120" height="36" fill="#d8ecce" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="670" y="458" text-anchor="middle" font-size="9.5" fill="#45703a">0x…92d0："hello"</text>
+    <path d="M 262,418 Q 440,404 608,404" fill="none" stroke="#8a94a3" stroke-width="2" stroke-dasharray="6 4"/>
+    <path d="M 562,440 Q 590,448 608,452" fill="none" stroke="#8a94a3" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="472" y="506" font-size="12.5" fill="#45703a">拷贝构造里两步：new 同大小 → memcpy 抄内容</text>
+    <text x="472" y="530" font-size="12.5" fill="#45703a">实测地址分离（…92c0 / …92d0），各自安全析构 ✔</text>
+    <text x="472" y="558" font-size="12" fill="#8a8578">（内容一样、地址独立——"复印文件"而非"共用原件"）</text>
+  </g>
+</svg>
