@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">贴标签到真移动的因果链与两版 push_back</text>
+    <path d="M 270,58 Q 480,52 690,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,340 Q 470,334 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 220)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">从 move 到移动构造的三步链</text>
+    <rect x="110" y="146" width="240" height="56" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
+    <text x="230" y="170" font-size="10.5" fill="#45703a">① std::move(a)</text>
+    <text x="230" y="188" font-size="9.5" fill="#8a8578">（标记：a 现在是右值）</text>
+    <rect x="370" y="146" width="240" height="56" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
+    <text x="490" y="170" font-size="10.5" fill="#9c5a22">② 重载决议选移动构造</text>
+    <text x="490" y="188" font-size="9.5" fill="#8a8578">（右值源 → T(T&amp;&amp;) 版）</text>
+    <rect x="630" y="146" width="220" height="56" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2"/>
+    <text x="740" y="170" font-size="10.5" fill="#a33f2e">③ 移动构造偷资源</text>
+    <text x="740" y="188" font-size="9.5" fill="#8a8578">（[移动] 日志在这！）</text>
+    <path d="M 352,174 Q 360,174 368,174" fill="none" stroke="#3b3a36" stroke-width="2"/>
+    <path d="M 612,174 Q 620,174 628,174" fill="none" stroke="#3b3a36" stroke-width="2"/>
+    <text x="472" y="234" font-size="11.5" fill="#3b3a36">move 是"许可证"（允许偷）——移动构造是"行动"（真的偷）——分开理解才不会误用</text>
+    <text x="472" y="266" font-size="11.5" fill="#6b675e">同款对照：拷贝不需要许可证（左值默认可拷）——移动要显式授权（右值才许偷）</text>
+    <text x="472" y="306" font-size="11.5" fill="#8a8578">（实测：Traced c = move(a) → [移动] 日志；Traced b = a → [拷贝] 日志）</text>
+
+    <path d="M 40,364 Q 280,358 520,364 Q 524,480 520,576 Q 280,582 42,576 Q 36,480 40,364 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 470)"/>
+    <text x="280" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">push_back 的两版（实测）</text>
+    <rect x="64" y="412" width="430" height="150" fill="#33413a"/>
+    <text x="279" y="438" font-size="10.5" fill="#9fb8a8">string tmp = "一批数据";</text>
+    <text x="279" y="462" font-size="10.5" fill="#cfe8c6">v.push_back(tmp);　　　// 拷贝（tmp 还要用）</text>
+    <text x="279" y="486" font-size="10.5" fill="#cfe8c6">v.push_back(move(tmp2)); // 移动（tmp2 不要了）</text>
+    <text x="279" y="514" font-size="10" fill="#8a8578">（决策：源还要不要？要→不 move，不要→move）</text>
+
+    <path d="M 550,364 Q 730,358 905,364 Q 908,480 905,576 Q 730,582 552,576 Q 547,480 550,364 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 470)"/>
+    <text x="727" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">误用清单</text>
+    <text x="572" y="428" font-size="12" fill="#a33f2e">①const 对象 move → 退回拷贝（静默）</text>
+    <text x="572" y="452" font-size="11.5" fill="#8a8578">（const&amp;&amp; 匹配不上移动构造）</text>
+    <text x="572" y="482" font-size="12" fill="#a33f2e">②move 后继续读源 = 未指定</text>
+    <text x="572" y="506" font-size="11.5" fill="#8a8578">（只许赋新值或析构）</text>
+    <text x="572" y="536" font-size="12" fill="#a33f2e">③还要用的对象 move = 掏空自己</text>
+    <text x="572" y="558" font-size="11.5" fill="#8a8578">（"源还要不要"是唯一决策问题）</text>
+  </g>
+</svg>
