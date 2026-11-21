@@ -17,8 +17,8 @@
     <text x="760" y="190" text-anchor="middle" font-size="10" fill="#8a8578">→ 拷贝构造给 c</text>
     <path d="M 322,174 Q 350,174 378,174" fill="none" stroke="#3b3a36" stroke-width="2.2"/>
     <path d="M 602,174 Q 630,174 658,174" fill="none" stroke="#3b3a36" stroke-width="2.2"/>
-    <text x="472" y="234" font-size="12.5" fill="#3b3a36">运算符就是名字特殊的成员函数——operator+ 就是函数名（operator 是关键字、+ 是内容）</text>
-    <text x="472" y="262" font-size="12.5" fill="#6b675e">这就解释了：为什么返回 const Fraction 或 Fraction 都行、为什么参数是 const 引用（Day 21 的默认）</text>
+    <text x="472" y="234" text-anchor="middle" font-size="11" fill="#3b3a36">运算符就是名字特殊的成员函数——operator+ 就是函数名</text>
+    <text x="472" y="262" text-anchor="middle" font-size="10.5" fill="#6b675e">返回值类型和参数用 const 引用（Day 21 的默认）都有了解释</text>
     <text x="472" y="290" font-size="12" fill="#8a8578">（&lt;&lt; 例外：左操作数是 ostream——只能非成员 friend 版）</text>
 
     <path d="M 40,334 Q 280,328 520,334 Q 524,460 520,576 Q 280,582 42,576 Q 36,460 40,334 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 455)"/>
