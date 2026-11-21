@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">伪删除、惯用法与三连去重战报</text>
+    <path d="M 350,58 Q 480,52 610,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 -std=c++17；-Wall 零警告 + ASan 零报错）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,490 Q 248,495 26,490 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 296)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出（节选）</text>
+    <rect x="38" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./ma　（-Wall 零警告）</text>
+    <text x="54" y="200" font-size="12" fill="#9fb8a8">== copy / back_inserter ==</text>
+    <text x="54" y="222" font-size="11.5" fill="#cfe8c6">两版都 1 2 3 4 5 4 3 ✔</text>
+    <text x="54" y="248" font-size="12" fill="#9fb8a8">== transform ==</text>
+    <text x="54" y="270" font-size="11.5" fill="#cfe8c6">×2 → 2 4 6 8 10 8 6 ✔</text>
+    <text x="54" y="290" font-size="11.5" fill="#cfe8c6">a+b → 11 22 33 ✔（二元版）</text>
+    <text x="54" y="318" font-size="12" fill="#9fb8a8">== remove 伪删除 ==</text>
+    <text x="54" y="340" font-size="11.5" fill="#f0c9c0">remove(4) 后：1 2 3 5 3 |4 3</text>
+    <text x="54" y="358" font-size="11" fill="#9fb8a8">　size 仍 7！垃圾区 [5,7)</text>
+    <text x="54" y="386" font-size="12" fill="#9fb8a8">== erase-remove ==</text>
+    <text x="54" y="408" font-size="11.5" fill="#cfe8c6">erase 后 1 2 3 5 3（size 5）✔</text>
+    <text x="54" y="430" font-size="11.5" fill="#cfe8c6">remove_if 版删偶 → 1 3 5 3 ✔</text>
+    <text x="54" y="458" font-size="12" fill="#9fb8a8">== unique 三连 ==</text>
+    <text x="54" y="480" font-size="11.5" fill="#f0c9c0">直接 unique → 1 2 3 1（漏 1！）</text>
+    <text x="54" y="500" font-size="11.5" fill="#cfe8c6">sort 后 unique → 1 2 3 ✔</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,490 Q 712,495 490,490 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 296)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">知识连接与本周位置</text>
+    <rect x="502" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">Day 81 的 erase 返回值：</text>
+    <text x="514" y="196" font-size="11.5" fill="#cfe8c6">今天的惯用法正是它的批量版</text>
+    <text x="514" y="218" font-size="11" fill="#9fb8a8">　（erase(new_end, v.end()) 切一段）</text>
+    <text x="514" y="248" font-size="12" fill="#9fb8a8">Day 88 的输出迭代器：</text>
+    <text x="514" y="270" font-size="11.5" fill="#cfe8c6">back_inserter 就是那个"只写"的</text>
+    <text x="514" y="290" font-size="11" fill="#9fb8a8">　第五类——今天正式上岗</text>
+    <text x="514" y="320" font-size="12" fill="#9fb8a8">Day 91 的谓词：</text>
+    <text x="514" y="342" font-size="11.5" fill="#cfe8c6">remove_if 的第三参同款</text>
+    <text x="514" y="374" font-size="12.5" fill="#45703a">（92/144 = 63.9%）</text>
+    <text x="514" y="406" font-size="11.5" fill="#9fb8a8">本周路线：91 只读 ✓ → 92 修改（今天）</text>
+    <text x="514" y="426" font-size="11.5" fill="#9fb8a8">　→ 93 sort → 94 二分/堆 → 95 数值</text>
+    <text x="514" y="446" font-size="11.5" fill="#9fb8a8">　→ 96 项目日</text>
+    <text x="514" y="478" font-size="11" fill="#9fb8a8">（惯用法是 C++98 时代的设计——</text>
+    <text x="514" y="496" font-size="11" fill="#9fb8a8">　C++20 的 std::erase_if 正在简化它）</text>
+
+    <path d="M 24,516 Q 470,510 905,517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>
+    <text x="46" y="542" font-size="15.5" font-weight="bold" fill="#9c5a22">惯用法的肌肉记忆</text>
+    <text x="46" y="568" font-size="12.5" fill="#3b3a36">"删元素 = erase(remove(…), end())"——写十遍形成手指记忆；面试里能默写并讲出"为什么两步"（算法无权删 size）就是加分项</text>
+
+    <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 93 sort 家族——std::sort/stable_sort 与多字段自定义比较器（计划指定练习）</text>
+  </g>
+</svg>

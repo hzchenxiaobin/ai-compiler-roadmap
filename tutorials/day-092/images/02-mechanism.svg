@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">remove 的前移机制与垃圾区的解剖</text>
+    <path d="M 280,58 Q 480,52 680,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,340 Q 470,334 44,339 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 220)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">remove(v, 4) 的前后对照（实测）</text>
+    <rect x="100" y="148" width="700" height="40" fill="#33413a"/>
+    <text x="450" y="173" font-size="11" fill="#cfe8c6">remove 前：[1][2][3][4][5][4][3]　size=7</text>
+    <rect x="100" y="200" width="500" height="40" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
+    <text x="350" y="225" font-size="11" fill="#45703a">remove 后逻辑区：[1][2][3][5][3]　（留下的前移）</text>
+    <rect x="600" y="200" width="200" height="40" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.2" stroke-dasharray="6 3"/>
+    <text x="700" y="225" font-size="10.5" fill="#a33f2e">垃圾区 [5,7)：4 3（遗留）</text>
+    <text x="472" y="268" font-size="12" fill="#3b3a36">size 仍 7！remove 只做两件事：把非 4 前移 + 返回新逻辑尾（位置 5）</text>
+    <text x="472" y="296" font-size="12" fill="#a33f2e">垃圾区的内容是"未指定"——erase(new_end, v.end()) 一刀切掉才是真删</text>
+    <text x="472" y="324" font-size="11" fill="#8a8578">（实测：erase 后 size=5 [1 2 3 5 3] ✔）</text>
+
+    <path d="M 40,364 Q 280,358 520,364 Q 524,480 520,576 Q 280,582 42,576 Q 36,480 40,364 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 470)"/>
+    <text x="280" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">为什么 remove 不删</text>
+    <text x="64" y="428" font-size="12" fill="#3b3a36">算法只拿迭代器区间——</text>
+    <text x="64" y="450" font-size="12" fill="#6b675e">　它不知道容器是谁（可能是数组！）</text>
+    <text x="64" y="480" font-size="12" fill="#3b3a36">增删 size 是容器的权限——</text>
+    <text x="64" y="502" font-size="12" fill="#6b675e">　erase 是成员函数（Day 81 的老朋友）</text>
+    <text x="64" y="536" font-size="11.5" fill="#8a8578">（算法 × 容器的解耦——代价是惯用法两步）</text>
+
+    <path d="M 550,364 Q 730,358 905,364 Q 908,480 905,576 Q 730,582 552,576 Q 547,480 550,364 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 470)"/>
+    <text x="727" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">unique 的相邻限定</text>
+    <rect x="572" y="412" width="320" height="120" fill="#33413a"/>
+    <text x="732" y="438" font-size="10.5" fill="#9fb8a8">{1,1,2,2,2,3,1,1}</text>
+    <text x="732" y="462" font-size="10.5" fill="#cfe8c6">unique+erase → {1,2,3,1}</text>
+    <text x="732" y="482" font-size="10" fill="#f0c9c0">（尾部的 1 没去——和头部的 1 不相邻！）</text>
+    <text x="732" y="508" font-size="10.5" fill="#cfe8c6">sort 后再 unique → {1,2,3} ✔</text>
+    <text x="727" y="560" font-size="11" fill="#8a8578">（全量去重 = sort+unique+erase 三连）</text>
+  </g>
+</svg>
