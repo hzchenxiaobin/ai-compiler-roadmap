@@ -3,7 +3,7 @@
   <g stroke-linecap="round" stroke-linejoin="round">
     <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 138 全貌：JSONTestSuite 外部考试——283/283 全对（100%）</text>
     <path d="M 230,60 Q 480,52 730,61" fill="none" stroke="#e0955f" stroke-width="3"/>
-    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定"用公开测试集验证"——nst/JSONTestSuite 的 318 个用例：y_ 95/95 ✔ n_ 188/188 ✔（i_ 35 个实现自定不判）——外部考试抓出 15 个真 bug 后满分</text>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">nst/JSONTestSuite 318 用例：y_ 95/95 ✔ n_ 188/188 ✔（i_ 35 自定不判）——外部考试抓出 15 个真 bug 后满分</text>
 
     <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
     <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">测试集的三类用例</text>
