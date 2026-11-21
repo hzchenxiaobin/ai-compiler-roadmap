@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">substr 的两种代价与 vector 的翻倍陷阱</text>
+    <path d="M 310,58 Q 480,52 650,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,340 Q 470,334 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 220)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">每次 substr 的成本账</text>
+    <rect x="110" y="146" width="360" height="170" fill="#33413a"/>
+    <text x="290" y="172" font-size="10.5" fill="#9fb8a8">string::substr(pos, n)：</text>
+    <text x="290" y="196" font-size="10.5" fill="#f0c9c0">①分配堆内存（n 字节）</text>
+    <text x="290" y="218" font-size="10.5" fill="#f0c9c0">②逐字节复制（memcpy）</text>
+    <text x="290" y="240" font-size="10.5" fill="#8a8578">③生命期管理（析构回收）</text>
+    <text x="290" y="268" font-size="10.5" fill="#9fb8a8">× 40000 词段/轮（键+值）</text>
+    <text x="290" y="296" font-size="10" fill="#8a8578">（6 万次分配+复制/轮——A 版的大头）</text>
+    <rect x="510" y="146" width="340" height="170" fill="#33413a"/>
+    <text x="680" y="172" font-size="10.5" fill="#9fb8a8">string_view::substr：</text>
+    <text x="680" y="196" font-size="10.5" fill="#cfe8c8">①记指针+长度（16B 栈上）</text>
+    <text x="680" y="218" font-size="10.5" fill="#cfe8c8">②零堆分配、零复制</text>
+    <text x="680" y="240" font-size="10.5" fill="#8a8578">③不管理生命期（借看）</text>
+    <text x="680" y="268" font-size="10.5" fill="#45703a">× 40000 次 = 0 分配</text>
+    <text x="680" y="296" font-size="10" fill="#8a8578">（这就是 1.53x 的来源）</text>
+    <path d="M 472,222 Q 472,230 472,238" fill="none" stroke="#3b3a36" stroke-width="2"/>
+    <text x="472" y="334" font-size="11.5" fill="#8a8578">（前提：原串活着——解析期内 src 一直在（Day 122 三律①的正当用法））</text>
+
+    <path d="M 40,364 Q 280,358 520,364 Q 524,480 520,576 Q 280,582 42,576 Q 36,480 40,364 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 470)"/>
+    <text x="280" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">vector 的翻倍增长（reserve 省的）</text>
+    <rect x="64" y="412" width="430" height="150" fill="#33413a"/>
+    <text x="279" y="436" font-size="10.5" fill="#9fb8a8">无 reserve：1→2→4→8→…（log₂ 轮）</text>
+    <text x="279" y="458" font-size="10.5" fill="#f0c9c0">每轮：新分配 + 全员搬家 + 旧回收</text>
+    <text x="279" y="480" font-size="10.5" fill="#8a8578">（6 万元素的最后一轮搬家最贵）</text>
+    <text x="279" y="506" font-size="10.5" fill="#cfe8c8">reserve(预估)：一次到位</text>
+    <text x="279" y="528" font-size="10" fill="#8a8578">（src.size()/6 的启发式——键值对的均长）</text>
+
+    <path d="M 550,364 Q 730,358 905,364 Q 908,480 905,576 Q 730,582 552,576 Q 547,480 550,364 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 470)"/>
+    <text x="727" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">为什么 view 只拿 1.53x 不是 10x</text>
+    <rect x="572" y="412" width="320" height="150" fill="#33413a"/>
+    <text x="732" y="436" font-size="10.5" fill="#9fb8a8">词法只是解析的一段：</text>
+    <text x="732" y="458" font-size="10.5" fill="#8a8578">（扫描循环/分支判断/计数器</text>
+    <text x="732" y="476" font-size="10.5" fill="#8a8578">　这些不受 view 影响）</text>
+    <text x="732" y="502" font-size="10.5" fill="#cfe8c8">省的只是"拷贝那部分"</text>
+    <text x="732" y="524" font-size="10.5" fill="#8a8578">（Amdahl 定律——优化受限于占比）</text>
+    <text x="732" y="548" font-size="10" fill="#8a8578">（诚实：1.53x 是合理量级）</text>
+  </g>
+</svg>
