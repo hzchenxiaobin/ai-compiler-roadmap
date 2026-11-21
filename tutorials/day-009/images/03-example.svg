@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">三个程序的真实输出：重构、复印、回收</text>
+    <path d="M 290,58 Q 480,52 670,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,240 470,378 Q 248,383 26,378 Q 20,240 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 240)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">重构：乘法表 + 进度条变函数</text>
+    <rect x="38" y="146" width="420" height="190" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="12.5" fill="#cfe8c6">   1×1= 1</text>
+    <text x="54" y="192" font-size="12.5" fill="#cfe8c6">   1×2= 2   2×2= 4</text>
+    <text x="54" y="212" font-size="12.5" fill="#cfe8c6">   …（九行下三角，与 Day 7 逐字节一致）</text>
+    <text x="54" y="240" font-size="12.5" fill="#cfe8c6">[##..................................] 9/144 天</text>
+    <text x="54" y="262" font-size="12.5" fill="#cfe8c6">[##################..................] 72/144 天</text>
+    <text x="54" y="298" font-size="12" fill="#9fb8a8">main 只有 3 行调用；同一台进度条机器</text>
+    <text x="54" y="318" font-size="12" fill="#9fb8a8">换了参数就用第二遍——这就是复用</text>
+    <text x="46" y="356" font-size="13" fill="#45703a">关键结构：print_mult_table 内部调用 print_row，</text>
+    <text x="46" y="376" font-size="13" fill="#6b675e">函数调函数，和 main 调函数是同一回事</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,240 934,378 Q 712,383 490,378 Q 484,240 488,102 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="3" transform="rotate(0.3 711 240)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#9c5a22">复印实验：double_it(21)</text>
+    <rect x="502" y="146" width="420" height="110" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="12.5" fill="#cfe8c6">调用前 x = 21</text>
+    <text x="514" y="196" font-size="12.5" fill="#f0c9c0">函数内 n = 42　←复印件翻倍了</text>
+    <text x="514" y="220" font-size="12.5" fill="#cfe8c6">调用后 x = 21　←原件纹丝不动</text>
+    <text x="514" y="246" font-size="12" fill="#9fb8a8">（真实输出，一行未改）</text>
+    <path d="M 502,272 Q 711,266 922,273 L 919,342 Q 711,336 505,341 Z" fill="#fffdf7" stroke="#e5b28c" stroke-width="2" stroke-dasharray="8 5"/>
+    <text x="514" y="296" font-size="12.5" fill="#9c5a22">这不是 bug，是"值传递"的定义：</text>
+    <text x="514" y="316" font-size="12.5" fill="#6b675e">参数是副本，函数与外界互不干扰——</text>
+    <text x="514" y="334" font-size="12.5" fill="#6b675e">默认的隔离带，恰恰是大型程序的安全感来源</text>
+
+    <path d="M 24,404 Q 248,398 470,404 Q 474,500 470,600 Q 248,605 26,600 Q 20,500 24,404 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 247 504)"/>
+    <text x="46" y="434" font-size="16" font-weight="bold" fill="#2c5a82">回收：Day 5 的 if 链装进函数</text>
+    <rect x="38" y="450" width="420" height="130" rx="6" fill="#33413a"/>
+    <text x="54" y="476" font-size="12.5" fill="#cfe8c6">95 分 → 等级 A</text>
+    <text x="54" y="500" font-size="12.5" fill="#cfe8c6">75 分 → 等级 C</text>
+    <text x="54" y="524" font-size="12.5" fill="#cfe8c6">60 分 → 等级 D</text>
+    <text x="54" y="548" font-size="12.5" fill="#cfe8c6">42 分 → 等级 F</text>
+    <text x="46" y="582" font-size="12.5" fill="#2c5a82">声明在 main 前、定义在 main 后，四个调用点共用一台机器</text>
+
+    <path d="M 488,404 Q 712,398 934,404 Q 938,500 934,600 Q 712,605 490,600 Q 484,500 488,404 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(-0.3 711 504)"/>
+    <text x="510" y="434" font-size="16" font-weight="bold" fill="#55606e">今天的函数清单</text>
+    <text x="510" y="466" font-size="12.5" fill="#3b3a36">print_row(int row)　　　　void，打一行</text>
+    <text x="510" y="492" font-size="12.5" fill="#3b3a36">print_mult_table(int n)　　void，打整表</text>
+    <text x="510" y="518" font-size="12.5" fill="#3b3a36">print_progress_bar(...)　　void，打进度条</text>
+    <text x="510" y="544" font-size="12.5" fill="#3b3a36">double_it(int n)　　　　　void，改副本</text>
+    <text x="510" y="570" font-size="12.5" fill="#3b3a36">grade_of(int score)　　　char，返回等级</text>
+    <text x="510" y="594" font-size="12" fill="#8a8578">注意最后一个：有返回值的机器才"出货"</text>
+  </g>
+</svg>

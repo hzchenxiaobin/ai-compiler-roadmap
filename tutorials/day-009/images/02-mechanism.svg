@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">值传递：交给函数的是复印件</text>
+    <path d="M 330,58 Q 480,52 630,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,110 Q 240,104 440,110 Q 444,190 440,270 Q 240,276 42,270 Q 36,190 40,110 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(-0.3 240 190)"/>
+    <text x="240" y="140" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">main 的地盘</text>
+    <rect x="100" y="158" width="120" height="34" fill="#fffdf7" stroke="#5b8db8" stroke-width="2.2"/>
+    <text x="160" y="180" text-anchor="middle" font-size="13" fill="#3b3a36">x = 21</text>
+    <text x="160" y="218" text-anchor="middle" font-size="12" fill="#6b675e">原件：调用前 21</text>
+    <text x="160" y="240" text-anchor="middle" font-size="12" fill="#6b675e">调用后还是 21（实测）</text>
+
+    <path d="M 240,175 Q 330,167 420,175" fill="none" stroke="#3b3a36" stroke-width="2.8" stroke-dasharray="8 6"/>
+    <path d="M 412,167 Q 421,173 413,183" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+    <rect x="298" y="132" width="156" height="26" fill="#f7e8a0" opacity="0.7" transform="rotate(-1.2 376 145)"/>
+    <text x="376" y="150" text-anchor="middle" font-size="12" fill="#8a6d1a">double_it(x) 复印一份</text>
+
+    <path d="M 520,110 Q 720,104 920,110 Q 924,190 920,270 Q 720,276 522,270 Q 516,190 520,110 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(0.3 720 190)"/>
+    <text x="720" y="140" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">double_it 的地盘</text>
+    <rect x="580" y="158" width="120" height="34" fill="#fffdf7" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="640" y="180" text-anchor="middle" font-size="13" fill="#3b3a36">n = 21</text>
+    <text x="720" y="218" text-anchor="middle" font-size="12" fill="#6b675e">复印件进门是 21</text>
+    <text x="720" y="240" text-anchor="middle" font-size="12" fill="#a33f2e">× 2 后变 42，改的只是它</text>
+
+    <path d="M 40,300 Q 480,294 920,301 L 916,384 Q 480,378 44,383 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.6" transform="rotate(-0.2 480 342)"/>
+    <text x="480" y="330" text-anchor="middle" font-size="15" font-weight="bold" fill="#8a6d1a">真实输出（本机实测）</text>
+    <text x="480" y="358" text-anchor="middle" font-size="13.5" fill="#3b3a36">调用前 x = 21　→　函数内 n = 42　→　调用后 x = 21</text>
+    <text x="480" y="378" text-anchor="middle" font-size="12.5" fill="#8a8578">想让函数改原件？第 3 周的"引用传参"专治此症（swap 三连实验在 Day 21）</text>
+
+    <path d="M 40,410 Q 290,404 540,410 Q 544,490 540,570 Q 290,576 42,570 Q 36,490 40,410 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 290 490)"/>
+    <text x="290" y="440" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">声明与定义分离</text>
+    <text x="60" y="472" font-size="12.5" fill="#3b3a36">char grade_of(int score);　←声明（原型）：</text>
+    <text x="60" y="492" font-size="12.5" fill="#6b675e">　递给编译器一张"名片"，先保证 main 能叫到它</text>
+    <text x="60" y="522" font-size="12.5" fill="#3b3a36">int main() { … grade_of(95) … }</text>
+    <text x="60" y="552" font-size="12.5" fill="#3b3a36">char grade_of(int score) { … }　←定义：</text>
+    <text x="60" y="562" font-size="12" fill="#8a8578"></text>
+
+    <path d="M 560,410 Q 740,404 920,410 Q 924,490 920,570 Q 740,576 562,570 Q 556,490 560,410 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 740 490)"/>
+    <text x="740" y="440" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">为什么要分离？</text>
+    <text x="740" y="472" text-anchor="middle" font-size="12.5" fill="#3b3a36">今天：定义放 main 后面也能编译通过</text>
+    <text x="740" y="498" text-anchor="middle" font-size="12.5" fill="#3b3a36">第 5 周：声明进头文件 .h（名片公开发放）</text>
+    <text x="740" y="524" text-anchor="middle" font-size="12.5" fill="#3b3a36">　　　　定义进源文件 .cpp（机器锁在库房）</text>
+    <text x="740" y="554" text-anchor="middle" font-size="12.5" fill="#8a8578">undefined reference 报错的伏笔也埋在今天</text>
+  </g>
+</svg>
