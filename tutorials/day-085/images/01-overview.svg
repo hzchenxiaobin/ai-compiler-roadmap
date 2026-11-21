@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 85 全貌：map 与 set——会排序的容器</text>
+    <path d="M 320,60 Q 480,52 640,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">昨天 ++freq[w] 的甜头今天讲原理——红黑树怎么维持有序、键唯一的覆盖语义、operator[] 的插入陷阱</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">map 的三特性（实测）</text>
+    <text x="64" y="180" font-size="12.5" fill="#45703a">①键唯一：ages["小明"]=16 覆盖 15</text>
+    <text x="64" y="202" font-size="12" fill="#8a8578">（实测 size 仍 3）</text>
+    <text x="64" y="232" font-size="12.5" fill="#45703a">②有序：插入乱序、遍历字典序</text>
+    <text x="64" y="254" font-size="12" fill="#8a8578">（实测：小刚→小明→小红）</text>
+    <text x="64" y="284" font-size="12.5" fill="#a33f2e">③operator[] 会插入！</text>
+    <text x="64" y="306" font-size="12" fill="#8a8578">（实测：查"小王"后 3→4）</text>
+    <text x="64" y="344" font-size="12.5" fill="#6b675e">查而不改用 count/find——</text>
+    <text x="64" y="364" font-size="12.5" fill="#6b675e">　operator[] 留给"确定要建"的场景</text>
+
+    <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">set：只有键的集合</text>
+    <text x="572" y="180" font-size="12.5" fill="#45703a">去重：apple 二次 insert 被拒</text>
+    <text x="572" y="202" font-size="12" fill="#8a8578">（insert 返回 pair&lt;it, bool&gt;）</text>
+    <text x="572" y="232" font-size="12.5" fill="#45703a">排序：遍历即字典序</text>
+    <text x="572" y="254" font-size="12" fill="#8a8578">（apple banana cherry）</text>
+    <text x="572" y="290" font-size="12.5" fill="#6b675e">场景：已见集合（去重）/</text>
+    <text x="572" y="312" font-size="12.5" fill="#6b675e">　停用词表/黑名单</text>
+    <text x="572" y="352" font-size="12" fill="#8a8578">（Day 84 选做练习的 stopwords 就是它）</text>
+
+    <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
+    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">红黑树：有序的代价与回报</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">插入/查找/删除全部 O(log n)（树高平衡）；遍历 O(n) 天然有序——昨天词频的字典序输出免费的原因</text>
+    <text x="70" y="490" font-size="12.5" fill="#6b675e">（明天 unordered 用哈希 O(1)——但无序：两族的取舍明日实测）</text>
+
+    <path d="M 60,514 Q 480,508 905,515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 79~84 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 85（今天）</text>
+    <circle cx="650" cy="514" r="5" fill="#5b8db8"/>
+    <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 86~88</text>
+    <circle cx="850" cy="514" r="5" fill="#e0955f"/>
+    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 89 项目日</text>
+  </g>
+</svg>

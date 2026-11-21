@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">覆盖、陷阱、去重与词频战报</text>
+    <path d="M 370,58 Q 480,52 590,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 -std=c++17；-Wall 零警告）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,480 Q 248,485 26,480 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 291)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出（节选）</text>
+    <rect x="38" y="146" width="420" height="320" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./ms　（-Wall 零警告）</text>
+    <text x="54" y="200" font-size="12" fill="#9fb8a8">== map 三特性 ==</text>
+    <text x="54" y="222" font-size="11.5" fill="#cfe8c6">遍历：小刚(16) 小明(16) 小红(14)</text>
+    <text x="54" y="242" font-size="11" fill="#9fb8a8">（插入乱序、遍历字典序 ✔）</text>
+    <text x="54" y="264" font-size="11.5" fill="#cfe8c6">size = 3（小明 15→16 覆盖）</text>
+    <text x="54" y="294" font-size="12" fill="#9fb8a8">== 查找 ==</text>
+    <text x="54" y="316" font-size="11.5" fill="#cfe8c6">count(小明)=1 find(小红)→14 ✔</text>
+    <text x="54" y="340" font-size="11.5" fill="#f0c9c0">operator[] 陷阱：查"小王"前 3 后 4</text>
+    <text x="54" y="360" font-size="11" fill="#9fb8a8">（被插入了！）</text>
+    <text x="54" y="390" font-size="12" fill="#9fb8a8">== set 去重 ==</text>
+    <text x="54" y="412" font-size="11.5" fill="#cfe8c6">apple×2 → 第二次被拒 ✔</text>
+    <text x="54" y="432" font-size="11.5" fill="#cfe8c6">遍历：apple banana cherry</text>
+    <text x="54" y="460" font-size="12" fill="#9fb8a8">== 词频（计划指定） ==</text>
+    <text x="54" y="482" font-size="11.5" fill="#cfe8c6">brown→dog→fox→lazy→quick</text>
+    <text x="54" y="500" font-size="11.5" fill="#cfe8c6">→the×3（字典序 ✔）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,480 Q 712,485 490,480 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 291)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">昨天与今天的连接</text>
+    <rect x="502" y="146" width="420" height="320" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">Day 84 的 ++freq[w]：</text>
+    <text x="514" y="198" font-size="11.5" fill="#cfe8c6">"不存在→建 0→++" 的三合一</text>
+    <text x="514" y="218" font-size="11" fill="#9fb8a8">　今天知道是 operator[] 的两副面孔</text>
+    <text x="514" y="248" font-size="12" fill="#9fb8a8">Day 84 的字典序输出：</text>
+    <text x="514" y="272" font-size="11.5" fill="#cfe8c6">今天知道是红黑树的中序遍历</text>
+    <text x="514" y="298" font-size="12" fill="#9fb8a8">Day 82 的 list 失效少：</text>
+    <text x="514" y="320" font-size="11" fill="#9fb8a8">（节点结构——和树的节点一脉相承）</text>
+    <text x="514" y="352" font-size="12" fill="#9fb8a8">本周路线：</text>
+    <text x="514" y="374" font-size="11.5" fill="#cfe8c6">85 map/set（今天）→ 86 哈希族</text>
+    <text x="514" y="394" font-size="11.5" fill="#cfe8c6">→ 87 multimap → 88 迭代器分类</text>
+    <text x="514" y="414" font-size="11.5" fill="#cfe8c6">→ 89 项目日</text>
+    <text x="514" y="448" font-size="12.5" fill="#45703a">（85/144 = 59%——</text>
+    <text x="514" y="468" font-size="12.5" fill="#45703a">　关联容器周开篇）</text>
+
+    <path d="M 24,506 Q 470,500 905,507 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 543)"/>
+    <text x="46" y="532" font-size="15.5" font-weight="bold" fill="#9c5a22">什么时候选 map/set</text>
+    <text x="46" y="560" font-size="12.5" fill="#3b3a36">需要有序遍历（字典序输出/范围查询）/需要按键的顺序统计/键值映射或去重集合——三场景选树族；只要快选哈希（明天）</text>
+
+    <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 86 unordered_map/set——哈希原理与性能对比实验（计划指定）</text>
+  </g>
+</svg>

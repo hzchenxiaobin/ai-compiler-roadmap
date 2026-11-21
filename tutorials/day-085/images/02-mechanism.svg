@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">红黑树的样子（概念图）与中序遍历</text>
+    <path d="M 300,58 Q 480,52 660,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,350 Q 470,344 44,349 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 225)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">存 {小明, 小刚, 小红} 的树（概念示意）</text>
+    <circle cx="480" cy="160" r="26" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.2"/>
+    <text x="480" y="165" font-size="10" fill="#a33f2e">小明</text>
+    <circle cx="350" cy="230" r="26" fill="#d8ecce" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="350" y="235" font-size="10" fill="#45703a">小刚</text>
+    <circle cx="610" cy="230" r="26" fill="#d8ecce" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="610" y="235" font-size="10" fill="#45703a">小红</text>
+    <path d="M 458,178 Q 400,205 372,222" fill="none" stroke="#3b3a36" stroke-width="2"/>
+    <path d="M 502,178 Q 560,205 588,222" fill="none" stroke="#3b3a36" stroke-width="2"/>
+    <text x="350" y="280" font-size="10.5" fill="#6b675e">左子树 &lt; 根 &lt; 右子树</text>
+    <text x="610" y="280" font-size="10.5" fill="#6b675e">（二叉搜索树性质）</text>
+    <text x="472" y="308" font-size="12.5" fill="#45703a">中序遍历（左→根→右）：小刚 → 小明 → 小红 = 字典序！</text>
+    <text x="472" y="336" font-size="11.5" fill="#8a8578">（红黑树 = 自平衡的二叉搜索树：插入删除后旋转/重染保持树高 ~log n）</text>
+
+    <path d="M 40,374 Q 280,368 520,374 Q 524,480 520,576 Q 280,582 42,576 Q 36,480 40,374 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 475)"/>
+    <text x="280" y="404" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">查找的路径（O(log n)）</text>
+    <rect x="64" y="422" width="430" height="120" fill="#33413a"/>
+    <text x="279" y="448" font-size="11" fill="#9fb8a8">find("小红")：</text>
+    <text x="279" y="470" font-size="11" fill="#cfe8c6">根=小明 → 小红 &gt; 小明 → 走右</text>
+    <text x="279" y="492" font-size="11" fill="#cfe8c6">到小红 ✔（2 步 = 树高）</text>
+    <text x="279" y="518" font-size="10.5" fill="#9fb8a8">（100 万元素的树高约 20——</text>
+    <text x="279" y="536" font-size="10.5" fill="#9fb8a8">　20 步内找到任意键）</text>
+
+    <path d="M 550,374 Q 730,368 905,374 Q 908,480 905,576 Q 730,582 552,576 Q 547,480 550,374 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 475)"/>
+    <text x="727" y="404" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">operator[] 的两副面孔</text>
+    <text x="572" y="438" font-size="12" fill="#45703a">写入：ages["小明"] = 16;</text>
+    <text x="572" y="460" font-size="11.5" fill="#6b675e">（键存在→覆盖；不存在→建 0 再赋）</text>
+    <text x="572" y="490" font-size="12" fill="#a33f2e">读取：cout &lt;&lt; ages["小王"];</text>
+    <text x="572" y="512" font-size="11.5" fill="#a33f2e">（"小王"不存在→被插入 0！）</text>
+    <text x="572" y="542" font-size="11.5" fill="#8a8578">（查而不改用 find/count——今天的实测）</text>
+  </g>
+</svg>
