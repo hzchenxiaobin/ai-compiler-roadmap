@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">六阶段、十指标、查漏与下一阶段战报</text>
+    <path d="M 340,58 Q 480,52 620,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 -std=c++20 -Wall -Wextra——毕业档案生成器的完整输出）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,490 Q 248,495 26,490 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 296)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出（节选）</text>
+    <rect x="38" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./gr　（毕业档案生成器）</text>
+    <text x="54" y="200" font-size="12" fill="#9fb8a8">== 六阶段复盘 ==</text>
+    <text x="54" y="222" font-size="11" fill="#cfe8c8">一~六全出（各配代表作）✔</text>
+    <text x="54" y="246" font-size="12" fill="#9fb8a8">== 十项数字档案 ==</text>
+    <text x="54" y="268" font-size="11" fill="#f0c9c0">144 篇｜244 文件｜432 图 ✔</text>
+    <text x="54" y="288" font-size="11" fill="#f0c9c0">13387 行零警告｜21 项目日 ✔</text>
+    <text x="54" y="308" font-size="11" fill="#cfe8c8">6 毕业考｜283 满分｜1.77x ✔</text>
+    <text x="54" y="328" font-size="11" fill="#cfe8c8">两 San 全绿｜CMake 三目标 ✔</text>
+    <text x="54" y="354" font-size="12" fill="#9fb8a8">== 查漏（诚实版） ==</text>
+    <text x="54" y="376" font-size="11" fill="#cfe8c8">✔ 扎实 6 项｜△ 需深 3 项｜○ 边界 ✔</text>
+    <text x="54" y="400" font-size="12" fill="#9fb8a8">== 下一阶段 ==</text>
+    <text x="54" y="422" font-size="11" fill="#cfe8c8">并发/开源/项目二/CI ✔</text>
+    <text x="54" y="448" font-size="11.5" fill="#9fb8a8">（每项数字都注出处——</text>
+    <text x="54" y="466" font-size="11" fill="#9fb8a8">　可复现的档案才有分量）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,490 Q 712,495 490,490 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 296)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">🎉 144 天 · 毕业快乐</text>
+    <rect x="502" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">这个系列教会我的：</text>
+    <text x="514" y="198" font-size="11.5" fill="#cfe8c8">每天 60 分钟 &gt; 周末 8 小时（复利）</text>
+    <text x="514" y="218" font-size="11.5" fill="#cfe8c8">声称之前先测（探针的习惯）</text>
+    <text x="514" y="238" font-size="11.5" fill="#cfe8c8">承认局限是自信不是示弱</text>
+    <text x="514" y="258" font-size="11.5" fill="#cfe8c8">会做+会构建+会讲述=完整</text>
+    <text x="514" y="288" font-size="12" fill="#9fb8a8">教程仓库的最终状态：</text>
+    <text x="514" y="310" font-size="11.5" fill="#cfe8c8">144/144 篇全部 check 通过</text>
+    <text x="514" y="330" font-size="11.5" fill="#cfe8c8">每篇 ≥3 SVG + 可运行示例</text>
+    <text x="514" y="350" font-size="11.5" fill="#f0c9c0">每天真实输出（无一虚构）</text>
+    <text x="514" y="380" font-size="12.5" fill="#45703a">（144/144 = 100% ✓ 完）</text>
+    <text x="514" y="410" font-size="11" fill="#9fb8a8">（从 Hello World 到满分解析器</text>
+    <text x="514" y="428" font-size="11" fill="#9fb8a8">　——这条路被走通了）</text>
+    <text x="514" y="458" font-size="11" fill="#9fb8a8">（毕业不是终点——下一阶段的</text>
+    <text x="514" y="476" font-size="11" fill="#9fb8a8">　四目标已在档案里立好）</text>
+
+    <path d="M 24,516 Q 470,510 905 517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>
+    <text x="46" y="542" font-size="15.5" font-weight="bold" fill="#9c5a22">给自己的信</text>
+    <text x="46" y="568" font-size="12.5" fill="#3b3a36">未来某天想放弃时回来翻这页：144 天前你连 makefile 都看不懂；坚持不是意志力是习惯——而习惯已经长成了</text>
+
+    <path d="M 24,596 Q 470,590 905 597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">系列完结——Day 1 到 Day 144，每一天都算数。下一阶段见。</text>
+  </g>
+</svg>
