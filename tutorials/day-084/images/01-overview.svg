@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 84 项目日：词频统计 v1——第 14 周收官</text>
+    <path d="M 290,60 Q 480,52 670,61" fill="none" stroke="#e0955f" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定"读文本文件 → 计数 → 输出"——++freq[w] 一行搞定计数：这就是关联容器的威力（下周正课的前菜）</text>
+
+    <path d="M 40,116 Q 470,110 905,117 L 901,380 Q 470,374 44,379 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 248)"/>
+    <text x="472" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">三段流水线（本周技能会师）</text>
+    <text x="70" y="180" font-size="13" fill="#3b3a36">①读文件：ifstream + `in >> word` 自动分词（第 6 周）</text>
+    <text x="70" y="208" font-size="13" fill="#3b3a36">②清洗：clean_word 转小写去标点（Day 77 工厂同款思路）</text>
+    <text x="70" y="236" font-size="13" fill="#45703a">③计数：++freq[w]——键不存在自动建 0、再 ++（今天的主角）</text>
+    <text x="70" y="264" font-size="13" fill="#3b3a36">④输出一：按字典序（map 天然有序——免排序）</text>
+    <text x="70" y="292" font-size="13" fill="#3b3a36">⑤输出二：按频次 Top 5（map→vector→sort 协作）</text>
+    <text x="70" y="330" font-size="12.5" fill="#6b675e">结构化绑定 for (const auto&amp; [w, n] : freq)——C++17 的语法糖</text>
+    <text x="70" y="356" font-size="12" fill="#8a8578">（实测：24 词去重 13 个；the×4 居首）</text>
+
+    <path d="M 40,404 Q 470,398 905,405 L 901,500 Q 470,494 44,499 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.2 472 452)"/>
+    <text x="472" y="434" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">实测战报（全过）</text>
+    <text x="70" y="464" font-size="13" fill="#3b3a36">字典序 13 词全列 ✔（a→the 有序）｜Top 5：the×4/dog×3/fox×3/a×2/brown×2 ✔｜ASan 零报错 ✔</text>
+    <text x="70" y="488" font-size="12.5" fill="#6b675e">（map 有序版——unordered_map 更快但无序；下周讲完关联容器后 v2 再换）</text>
+
+    <path d="M 60,514 Q 480,508 905,515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#e0955f"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#9c5a22">Day 84（第 14 周收官）</text>
+    <circle cx="690" cy="514" r="5" fill="#5b8db8"/>
+    <text x="690" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">第 15 周 关联容器</text>
+    <circle cx="870" cy="514" r="5" fill="#5b8db8"/>
+    <text x="870" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">……阶段四</text>
+  </g>
+</svg>

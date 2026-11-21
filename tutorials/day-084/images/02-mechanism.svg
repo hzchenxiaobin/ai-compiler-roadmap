@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">++freq[w] 的魔法与两种输出的协作</text>
+    <path d="M 310,58 Q 480,52 650,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,330 Q 470,324 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 215)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">map：键→值的自动管理</text>
+    <rect x="110" y="146" width="740" height="150" fill="#33413a"/>
+    <text x="480" y="176" font-size="12.5" fill="#cfe8c6">std::map&lt;std::string, int&gt; freq;　　// 键=单词 值=次数</text>
+    <text x="480" y="206" font-size="12" fill="#9fb8a8">++freq["the"];　// 第一次："the" 不存在 → 自动建 ("the", 0) → ++ 得 1</text>
+    <text x="480" y="228" font-size="12" fill="#9fb8a8">　　　　　　　 // 第二次："the" 已存在 → 直接 ++ 得 2</text>
+    <text x="480" y="256" font-size="12" fill="#f0c9c0">（一行替代：查有没有→没有就插→有就加——手写三步变一步！）</text>
+    <text x="480" y="284" font-size="11.5" fill="#9fb8a8">（这就是第 15 周关联容器课的核心预告——今天先尝到甜头）</text>
+
+    <path d="M 40,354 Q 280,348 520,354 Q 524,470 520,576 Q 280,582 42,576 Q 36,470 40,354 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 465)"/>
+    <text x="280" y="384" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">两种输出的协作</text>
+    <text x="64" y="418" font-size="12.5" fill="#3b3a36">输出一（字典序）：map 天然有序——</text>
+    <text x="64" y="440" font-size="12" fill="#8a8578">　直接范围 for 就是 a→the</text>
+    <text x="64" y="472" font-size="12.5" fill="#3b3a36">输出二（频次序）：map 不会按值排——</text>
+    <text x="64" y="494" font-size="12" fill="#45703a">　搬进 vector（pair 数组）再 sort</text>
+    <text x="64" y="526" font-size="11.5" fill="#8a8578">（容器各有所长：map 管键序、</text>
+    <text x="64" y="546" font-size="11.5" fill="#8a8578">　vector+sort 管任意序）</text>
+
+    <path d="M 550,354 Q 730,348 905,354 Q 908,470 905,576 Q 730,582 552,576 Q 547,470 550,354 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 465)"/>
+    <text x="727" y="384" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">v1 的诚实边界</text>
+    <text x="572" y="418" font-size="12" fill="#3b3a36">清洗把 don't 拆成 don t——</text>
+    <text x="572" y="440" font-size="12" fill="#8a8578">（简化处理，诚实记录）</text>
+    <text x="572" y="470" font-size="12" fill="#3b3a36">map（有序 O(logn)）vs 计划指定的</text>
+    <text x="572" y="492" font-size="12" fill="#3b3a36">　unordered_map（哈希 O(1) 无序）</text>
+    <text x="572" y="516" font-size="11.5" fill="#8a8578">（下周学完哈希原理后 v2 换——</text>
+    <text x="572" y="536" font-size="11.5" fill="#8a8578">　今天 map 的有序输出更直观）</text>
+  </g>
+</svg>
