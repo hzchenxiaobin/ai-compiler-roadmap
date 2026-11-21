@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">四件套实测、隐式转换执法与替换清单战报</text>
+    <path d="M 290,58 Q 480,52 670,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 -std=c++17；-Wall 零警告）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,490 Q 248,495 26,490 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 296)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出（节选）</text>
+    <rect x="38" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./mf　（-Wall 零警告）</text>
+    <text x="54" y="200" font-size="12" fill="#9fb8a8">== nullptr ==</text>
+    <text x="54" y="222" font-size="11.5" fill="#cfe8c8">nullptr → 指针重载 ✔</text>
+    <text x="54" y="242" font-size="11.5" fill="#cfe8c8">0 → 整数重载 ✔</text>
+    <text x="54" y="266" font-size="12" fill="#9fb8a8">== enum class ==</text>
+    <text x="54" y="288" font-size="11.5" fill="#cfe8c8">Color::Red + Traffic::Red 共存 ✔</text>
+    <text x="54" y="308" font-size="11.5" fill="#cfe8c8">static_cast(Green)=1 ✔</text>
+    <text x="54" y="328" font-size="11" fill="#9fb8a8">执法：int x = c → 编译错！</text>
+    <text x="54" y="352" font-size="12" fill="#9fb8a8">== using ==</text>
+    <text x="54" y="374" font-size="11.5" fill="#cfe8c8">别名当类型用 ✔</text>
+    <text x="54" y="398" font-size="12" fill="#9fb8a8">== constexpr ==</text>
+    <text x="54" y="420" font-size="11.5" fill="#cfe8c8">编译期 120；运行期 720 ✔</text>
+    <text x="54" y="442" font-size="11.5" fill="#f0c9c0">arr[factorial(4)] → 24 个 ✔</text>
+    <text x="54" y="466" font-size="11" fill="#9fb8a8">（四对替换清单打印 ✔）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,490 Q 712,495 490,490 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 296)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">四件套的知识回响</text>
+    <rect x="502" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">nullptr：</text>
+    <text x="514" y="196" font-size="11.5" fill="#cfe8c8">Day 19 起的指针判空 if (p) 不变——</text>
+    <text x="514" y="216" font-size="11" fill="#9fb8a8">　变的只是"空"的写法</text>
+    <text x="514" y="244" font-size="12" fill="#9fb8a8">enum class：</text>
+    <text x="514" y="266" font-size="11.5" fill="#cfe8c8">Day 53 的三问清单（暴露面最小化）</text>
+    <text x="514" y="286" font-size="11" fill="#9fb8a8">　在语言层的同款思想</text>
+    <text x="514" y="314" font-size="12" fill="#9fb8a8">constexpr：</text>
+    <text x="514" y="336" font-size="11.5" fill="#cfe8c8">Day 99 的非类型参数（MaxSize）</text>
+    <text x="514" y="356" font-size="11" fill="#9fb8a8">　要求编译期常量——constexpr 供货</text>
+    <text x="514" y="384" font-size="12" fill="#9fb8a8">using：</text>
+    <text x="514" y="406" font-size="11.5" fill="#cfe8c8">Day 98 MyVector 的 using iterator = T*</text>
+    <text x="514" y="426" font-size="11" fill="#9fb8a8">　（当时就在用——今天正名）</text>
+    <text x="514" y="458" font-size="12.5" fill="#45703a">（105/144 = 72.9%）</text>
+    <text x="514" y="488" font-size="11" fill="#9fb8a8">明天结构化绑定 → 后天 if constexpr</text>
+    <text x="514" y="508" font-size="11" fill="#9fb8a8">　→ 周六项目日重写通讯录 v3</text>
+
+    <path d="M 24,516 Q 470,510 905,517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>
+    <text x="46" y="542" font-size="15.5" font-weight="bold" fill="#9c5a22">现代化的主线</text>
+    <text x="46" y="568" font-size="12.5" fill="#3b3a36">"类型更安全"（nullptr/enum class 把歧义和隐式转换堵死）+"编译期更早"（constexpr 把计算提前）——四件套是同一场革命的四个侧翼</text>
+
+    <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 106 结构化绑定——遍历 map 的简化写法（计划指定练习）</text>
+  </g>
+</svg>

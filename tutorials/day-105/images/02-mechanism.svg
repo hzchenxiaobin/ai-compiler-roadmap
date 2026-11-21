@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">NULL 的重载事故与 constexpr 的两用性</text>
+    <path d="M 300,58 Q 480,52 660,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,330 Q 470,334 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 215)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">take_ptr 的重载选择（实测）</text>
+    <rect x="150" y="148" width="300" height="140" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.2"/>
+    <text x="300" y="174" font-size="11" fill="#a33f2e">take_ptr(NULL) 旧时代：</text>
+    <text x="300" y="198" font-size="10.5" fill="#8a8578">NULL 是 0（整数宏）</text>
+    <rect x="200" y="212" width="200" height="34" fill="#f1f4f7" stroke="#8a94a3" stroke-width="1.6"/>
+    <text x="300" y="234" font-size="10" fill="#8a94a3">→ 选 take_ptr(int) ✘</text>
+    <text x="300" y="272" font-size="10" fill="#a33f2e">（想传"空指针"却进了整数门）</text>
+    <rect x="510" y="148" width="300" height="140" fill="#d8ecce" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="660" y="174" font-size="11" fill="#45703a">take_ptr(nullptr) 现代：</text>
+    <text x="660" y="198" font-size="10.5" fill="#8a8578">nullptr 是指针类型</text>
+    <rect x="560" y="212" width="200" height="34" fill="#d8ecce" stroke="#7aa663" stroke-width="1.8"/>
+    <text x="660" y="234" font-size="10" fill="#45703a">→ 选 take_ptr(int*) ✔</text>
+    <text x="660" y="272" font-size="10" fill="#45703a">（类型即意图——重载不再歧义）</text>
+    <text x="472" y="318" font-size="11.5" fill="#8a8578">（实测：nullptr 走指针版、0 走整数版——同一函数两个门，类型决定进哪个）</text>
+
+    <path d="M 40,354 Q 280,348 520,354 Q 524,470 520,576 Q 280,582 42,576 Q 36,470 40,354 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 465)"/>
+    <text x="280" y="384" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">constexpr 的两用性</text>
+    <rect x="64" y="402" width="430" height="150" fill="#33413a"/>
+    <text x="279" y="428" font-size="10.5" fill="#9fb8a8">constexpr int f5 = factorial(5);</text>
+    <text x="279" y="450" font-size="10.5" fill="#cfe8c6">→ 编译期算好（120 进指令）</text>
+    <text x="279" y="478" font-size="10.5" fill="#9fb8a8">int f6 = factorial(n);</text>
+    <text x="279" y="500" font-size="10.5" fill="#cfe8c6">→ 运行期调用（同函数两用）</text>
+    <text x="279" y="528" font-size="10" fill="#8a8578">（int arr[factorial(4)]——编译期值当数组大小）</text>
+
+    <path d="M 550,354 Q 730,348 905,354 Q 908,470 905,576 Q 730,582 552,576 Q 547,470 550,354 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 465)"/>
+    <text x="727" y="384" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">using vs typedef 对照</text>
+    <rect x="572" y="402" width="320" height="150" fill="#33413a"/>
+    <text x="732" y="428" font-size="10" fill="#9fb8a8">typedef void (*OldCb)(int);</text>
+    <text x="732" y="450" font-size="10" fill="#f0c9c0">（从中间往外读——噩梦）</text>
+    <text x="732" y="478" font-size="10" fill="#cfe8c6">using Cb = void (*)(int);</text>
+    <text x="732" y="500" font-size="10" fill="#cfe8c6">（从左往右读——可读）</text>
+    <text x="732" y="528" font-size="10" fill="#8a8578">（模板别名：using Vec&lt;T&gt; = … typedef 做不到）</text>
+  </g>
+</svg>
