@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">六段演示、三文件与 16 周战绩</text>
+    <path d="M 380,58 Q 480,52 580,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 -std=c++17；-Wall 零警告 + ASan 零报错）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,490 Q 248,495 26,490 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 296)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出（节选）</text>
+    <rect x="38" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./sms　（main+stats 联合编译）</text>
+    <text x="54" y="200" font-size="12" fill="#9fb8a8">== 排序（两级裁判） ==</text>
+    <text x="54" y="222" font-size="11.5" fill="#cfe8c6">Grace(95) Alice(92) David(92)</text>
+    <text x="54" y="240" font-size="11.5" fill="#cfe8c6">Charlie(85) Frank(85) Bob(78)…✔</text>
+    <text x="54" y="268" font-size="12" fill="#9fb8a8">== 查找/统计 ==</text>
+    <text x="54" y="290" font-size="11.5" fill="#cfe8c6">首个及格：Grace(95) ✔</text>
+    <text x="54" y="310" font-size="11.5" fill="#cfe8c6">优秀 3 人、不及格 0 人 ✔</text>
+    <text x="54" y="338" font-size="12" fill="#9fb8a8">== stats 模块 ==</text>
+    <text x="54" y="360" font-size="11.5" fill="#f0c9c0">μ=83.375 var=88.4844</text>
+    <text x="54" y="380" font-size="11.5" fill="#cfe8c6">最高 95 最低 66 ✔</text>
+    <text x="54" y="408" font-size="12" fill="#9fb8a8">== 筛选/二分/积分 ==</text>
+    <text x="54" y="430" font-size="11.5" fill="#cfe8c6">及格 8 人（copy_if）✔</text>
+    <text x="54" y="450" font-size="11.5" fill="#cfe8c6">lower_bound(85) → 下标 3 ✔</text>
+    <text x="54" y="470" font-size="11.5" fill="#cfe8c6">前 3 加权积分 = 935 ✔</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,490 Q 712,495 490,490 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 296)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">第 16 周战绩（Day 91~96）</text>
+    <rect x="502" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">算法库周六天：</text>
+    <text x="514" y="198" font-size="11.5" fill="#cfe8c6">91 只读（find/count/三兄弟）</text>
+    <text x="514" y="218" font-size="11.5" fill="#cfe8c6">92 修改（erase-remove 惯用法）</text>
+    <text x="514" y="238" font-size="11.5" fill="#cfe8c6">93 sort 家族（两级裁判）</text>
+    <text x="514" y="258" font-size="11.5" fill="#cfe8c6">94 二分/堆（七档边界）</text>
+    <text x="514" y="278" font-size="11.5" fill="#cfe8c6">95 数值（折叠/初值坑）</text>
+    <text x="514" y="298" font-size="11.5" fill="#cfe8c6">96 成绩管理系统（今天）✔</text>
+    <text x="514" y="330" font-size="12" fill="#9fb8a8">今天的会师阵容：</text>
+    <text x="514" y="352" font-size="11.5" fill="#cfe8c8">五族算法 + 多文件 + 降序二分新招</text>
+    <text x="514" y="384" font-size="12.5" fill="#45703a">（96/144 = 66.7%——三分之二！</text>
+    <text x="514" y="404" font-size="12.5" fill="#45703a">　16 个项目日全胜）</text>
+    <text x="514" y="436" font-size="11.5" fill="#9fb8a8">下周（第 17 周）：模板与泛型——</text>
+    <text x="514" y="456" font-size="11.5" fill="#9fb8a8">　函数/类模板（Day 79 起多处预告的兑现）</text>
+
+    <path d="M 24,516 Q 470,510 905,507 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>
+    <text x="46" y="542" font-size="15.5" font-weight="bold" fill="#9c5a22">多文件的意义</text>
+    <text x="46" y="568" font-size="12.5" fill="#3b3a36">数据/接口/实现三分——改一处不牵全身；这是从"练习题"到"工程项目"的组织跨越（第 5 周函数分解的文件级版本）</text>
+
+    <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 97（周日）复盘日——算法周笔记整理（阶段四第三周收官）</text>
+  </g>
+</svg>
