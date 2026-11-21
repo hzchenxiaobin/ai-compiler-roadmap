@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">模板的代码生成与 duck typing 的边界</text>
+    <path d="M 260,58 Q 480,52 700,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,340 Q 470,334 44,339 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 220)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">一份模板 → 多份实例（编译期雕刻）</text>
+    <rect x="110" y="146" width="340" height="150" fill="#33413a"/>
+    <text x="280" y="176" font-size="11.5" fill="#9fb8a8">template &lt;typename T&gt;</text>
+    <text x="280" y="198" font-size="11.5" fill="#cfe8c6">T myMax(const T&amp; a, const T&amp; b) {</text>
+    <text x="280" y="220" font-size="11.5" fill="#cfe8c6">　return (a &gt; b) ? a : b;</text>
+    <text x="280" y="242" font-size="11.5" fill="#9fb8a8">}</text>
+    <text x="280" y="272" font-size="10.5" fill="#8a8578">（T 未定——蓝图不是函数）</text>
+    <path d="M 460,220 Q 490,220 515,220" fill="none" stroke="#e0955f" stroke-width="2.6"/>
+    <text x="490" y="208" font-size="10" fill="#9c5a22">用到才刻</text>
+    <rect x="520" y="146" width="170" height="66" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
+    <text x="605" y="172" font-size="10" fill="#45703a">myMax&lt;int&gt;：int 版</text>
+    <text x="605" y="192" font-size="9.5" fill="#8a8578">（myMax(3,7) 触发）</text>
+    <rect x="520" y="226" width="170" height="66" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
+    <text x="605" y="252" font-size="10" fill="#9c5a22">myMax&lt;double&gt;：double 版</text>
+    <text x="605" y="272" font-size="9.5" fill="#8a8578">（myMax(2.5,1.5) 触发）</text>
+    <text x="730" y="180" font-size="10.5" fill="#6b675e">两份独立机器码</text>
+    <text x="730" y="200" font-size="10.5" fill="#6b675e">（零运行时开销——</text>
+    <text x="730" y="220" font-size="10.5" fill="#6b675e">　没有虚表的间接跳转）</text>
+    <text x="472" y="322" font-size="11.5" fill="#8a8578">（对比 Day 73 的虚函数：模板 = 编译期多态（静态分派）、virtual = 运行期多态（查虚表））</text>
+
+    <path d="M 40,364 Q 280,358 520,364 Q 524,480 520,576 Q 280,582 42,576 Q 36,480 40,364 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 470)"/>
+    <text x="280" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">mySum 的接口选择</text>
+    <rect x="64" y="412" width="430" height="140" fill="#33413a"/>
+    <text x="279" y="438" font-size="11" fill="#9fb8a8">template &lt;typename It&gt;</text>
+    <text x="279" y="460" font-size="11" fill="#cfe8c6">auto mySum(It first, It last) { … }</text>
+    <text x="279" y="488" font-size="10.5" fill="#9fb8a8">（迭代器做接口——vector/list 通吃</text>
+    <text x="279" y="508" font-size="10.5" fill="#9fb8a8">　区间 [first, last) 半开——Day 80 语言）</text>
+    <text x="279" y="536" font-size="10.5" fill="#cfe8c6">（std::accumulate 的同款设计！）</text>
+
+    <path d="M 550,364 Q 730,358 905,364 Q 908,480 905,576 Q 730,582 552,576 Q 547,480 550,364 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 470)"/>
+    <text x="727" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">duck typing 的边界</text>
+    <text x="572" y="428" font-size="12" fill="#3b3a36">print_any(T)：只要有 operator&lt;&lt;</text>
+    <text x="572" y="448" font-size="12" fill="#6b675e">　就能印（42/3.14/"hello"/'x' 全过）</text>
+    <text x="572" y="478" font-size="12" fill="#a33f2e">但没有 &lt;&lt; 的类型 → 实例化失败</text>
+    <text x="572" y="500" font-size="11.5" fill="#8a8578">（报错长篇大论——模板报难的根源）</text>
+    <text x="572" y="534" font-size="11.5" fill="#6b675e">（"要求写在脸上"：concept 是</text>
+    <text x="572" y="554" font-size="11.5" fill="#6b675e">　C++20 的改进——进阶预告）</text>
+  </g>
+</svg>
