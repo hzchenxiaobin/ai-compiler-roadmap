@@ -31,6 +31,6 @@
     <text x="480" y="444" font-size="12" fill="#cfe8c6">const char* b = "world";　→ 0x100605592</text>
     <text x="480" y="468" font-size="12" fill="#f0c9c0">const char* c = "hello";　→ 0x10060545c（与 a 相同——已合并！）</text>
     <text x="472" y="516" font-size="12.5" fill="#3b3a36">合并 = 省内存；代价是"改一个等于改所有"——所以语言干脆禁止改（写入即崩）</text>
-    <text x="472" y="544" font-size="12.5" fill="#6b675e">（第 1 周说过的"字符串字面量只读"今天有了地址证据；char a[] = "hello" 是拷贝进栈——可改）</text>
+    <text x="472" y="544" text-anchor="middle" font-size="10.5" fill="#6b675e">（第 1 周"字面量只读"有了地址证据；char a[] = "hello" 拷贝进栈——可改）</text>
   </g>
 </svg>
