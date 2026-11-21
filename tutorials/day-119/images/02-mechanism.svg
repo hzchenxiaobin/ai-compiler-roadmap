@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">多态容器的销毁链与 shared_from_this 的正反写法</text>
+    <path d="M 230,58 Q 480,52 730,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,340 Q 470,334 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 220)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">vector&lt;unique_ptr&lt;Shape&gt;&gt; 的析构链</text>
+    <rect x="150" y="146" width="300" height="170" fill="#33413a"/>
+    <text x="300" y="176" font-size="11" fill="#9fb8a8">容器析构（出块）：</text>
+    <text x="300" y="200" font-size="10.5" fill="#cfe8c8">①逐元素调 unique_ptr 析构</text>
+    <text x="300" y="222" font-size="10.5" fill="#cfe8c8">②unique_ptr delete 指针</text>
+    <text x="300" y="246" font-size="10.5" fill="#cfe8c8">③虚析构 → ~Circle() 先跑</text>
+    <text x="300" y="268" font-size="10.5" fill="#cfe8c8">④~Shape() 后跑（两层清）</text>
+    <text x="300" y="296" font-size="10" fill="#8a8578">（虚析构是链条的关键一环——Day 69）</text>
+    <rect x="520" y="146" width="290" height="170" fill="#33413a"/>
+    <text x="665" y="176" font-size="11" fill="#9fb8a8">为什么必须指针容器：</text>
+    <text x="665" y="200" font-size="10.5" fill="#cfe8c8">vector&lt;Shape&gt;（值）会切片！</text>
+    <text x="665" y="222" font-size="10.5" fill="#8a8578">（Day 53 的老坑——存基类值</text>
+    <text x="665" y="240" font-size="10.5" fill="#8a8578">　派生部分被切掉）</text>
+    <text x="665" y="268" font-size="10.5" fill="#cfe8c8">指针容器 = 多态的正解</text>
+    <text x="665" y="296" font-size="10" fill="#8a8578">（智能指针 = 正解的安全版）</text>
+    <text x="472" y="334" font-size="11.5" fill="#8a8578">（三件套配合：容器管集合、指针管所有权、虚析构管正确销毁）</text>
+
+    <path d="M 40,364 Q 280,358 520,364 Q 524,480 520,576 Q 280,582 42,576 Q 36,480 40,364 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 470)"/>
+    <text x="280" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">shared_from_this 的正反写法</text>
+    <rect x="64" y="412" width="430" height="150" fill="#33413a"/>
+    <text x="279" y="438" font-size="10.5" fill="#cfe8c8">✓ 对：shared_from_this()</text>
+    <text x="279" y="460" font-size="10.5" fill="#8a8578">　（weak 提升——找到真控制块）</text>
+    <text x="279" y="488" font-size="10.5" fill="#f0c9c0">✗ 错：shared_ptr&lt;T&gt;(this)</text>
+    <text x="279" y="510" font-size="10.5" fill="#f0c9c0">　（新建第二计数——双删！）</text>
+    <text x="279" y="538" font-size="10" fill="#8a8578">（原理：enable_shared_from_this 藏了个 weak）</text>
+
+    <path d="M 550,364 Q 730,358 905,364 Q 908,480 905,576 Q 730,582 552,576 Q 547,480 550,364 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 470)"/>
+    <text x="727" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">典型用途（保活场景）</text>
+    <text x="572" y="428" font-size="12" fill="#3b3a36">异步回调：任务里存自己的 shared</text>
+    <text x="572" y="452" font-size="11.5" fill="#8a8578">（任务跑完前对象不死）</text>
+    <text x="572" y="482" font-size="12" fill="#3b3a36">事件订阅：handler 持发送者</text>
+    <text x="572" y="506" font-size="11.5" fill="#8a8578">（今天的 registry 演示同款）</text>
+    <text x="572" y="536" font-size="11" fill="#8a8578">（前提：对象必须已被 shared 管理）</text>
+  </g>
+</svg>
