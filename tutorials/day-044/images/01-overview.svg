@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 44 全貌：内存对齐与字节序——CPU 的轨道规则</text>
+    <path d="M 280,60 Q 480,52 680,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">alignof 打印对齐值（计划指定练习）+ 字节序了解级——为什么 struct 里藏着看不见的填充字节</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">对齐值实测（arm64）</text>
+    <text x="64" y="180" font-size="12.5" fill="#3b3a36">char=1　short=2　int=4</text>
+    <text x="64" y="202" font-size="12.5" fill="#3b3a36">long=8　double=8　void*=8</text>
+    <text x="64" y="234" font-size="12.5" fill="#6b675e">规则：alignof(T) 通常 = sizeof(T)</text>
+    <text x="64" y="256" font-size="12" fill="#8a8578">（k 字节的类型要放在 k 的倍数地址上）</text>
+    <text x="64" y="292" font-size="12.5" fill="#45703a">struct 的对齐 = 最大成员的对齐</text>
+    <text x="64" y="314" font-size="12" fill="#8a8578">（实测 Big{char,double,int} 的 align=8）</text>
+    <text x="64" y="348" font-size="12.5" fill="#6b675e">为什么：CPU 按字长读内存——</text>
+    <text x="64" y="368" font-size="12.5" fill="#6b675e">　没对齐的 double 要两次读（慢）或崩</text>
+
+    <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">填充字节（Big 实测地址）</text>
+    <text x="572" y="180" font-size="12.5" fill="#3b3a36">Big{char,double,int} size=24：</text>
+    <rect x="572" y="192" width="30" height="26" fill="#d8ecce" stroke="#7aa663" stroke-width="1.6"/>
+    <text x="587" y="210" font-size="9" fill="#45703a">a</text>
+    <rect x="602" y="192" width="84" height="26" fill="#f1f4f7" stroke="#8a94a3" stroke-width="1.6"/>
+    <text x="644" y="210" font-size="9" fill="#8a94a3">填充×7</text>
+    <rect x="686" y="192" width="96" height="26" fill="#f9d9b8" stroke="#e0955f" stroke-width="1.6"/>
+    <text x="734" y="210" font-size="9" fill="#9c5a22">d（偏移8）</text>
+    <rect x="782" y="192" width="48" height="26" fill="#d8ecce" stroke="#7aa663" stroke-width="1.6"/>
+    <text x="806" y="210" font-size="9" fill="#45703a">i(16)</text>
+    <rect x="830" y="192" width="48" height="26" fill="#f1f4f7" stroke="#8a94a3" stroke-width="1.6"/>
+    <text x="854" y="210" font-size="9" fill="#8a94a3">填×4</text>
+    <text x="572" y="250" font-size="12" fill="#8a8578">（实测偏移：a=0、d=8、i=16——填充看得见！）</text>
+    <text x="572" y="284" font-size="12.5" fill="#45703a">成员顺序影响大小：</text>
+    <text x="572" y="306" font-size="12" fill="#6b675e">　{char,int}=8 vs {int,char}=8（都要填）</text>
+    <text x="572" y="326" font-size="12" fill="#6b675e">　但 {char,double,char} vs 排序后差更多</text>
+    <text x="572" y="360" font-size="12" fill="#8a8578">（大成员靠前排序可省填充——进阶优化）</text>
+
+    <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
+    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#8a6d1a">字节序（了解级）：本机实测小端</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">0x01020304 在内存里是 04 03 02 01（低位字节在低地址）——同一机器写读一致所以平时不用管；跨机字节流（网络/文件）才要管</text>
+    <text x="70" y="490" font-size="12.5" fill="#6b675e">（网络字节序规定大端——htons/htonl 的由来；memcpy 按字节拷不受影响——实测 258→258）</text>
+
+    <path d="M 60,514 Q 480,508 905,515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 37~43 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 44（今天）</text>
+    <circle cx="650" cy="514" r="5" fill="#5b8db8"/>
+    <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 45~47</text>
+    <circle cx="850" cy="514" r="5" fill="#e0955f"/>
+    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 48 自测日</text>
+  </g>
+</svg>

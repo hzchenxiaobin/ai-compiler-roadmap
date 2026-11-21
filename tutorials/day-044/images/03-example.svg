@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">对齐值表、填充地址与小端判定战报</text>
+    <path d="M 350,58 Q 480,52 610,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,280 470,470 Q 248,475 26,470 Q 20,280 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 286)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">两实验完整输出</text>
+    <rect x="38" y="146" width="420" height="310" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./ap　（-Wall 零警告）</text>
+    <text x="54" y="196" font-size="11.5" fill="#cfe8c6">char=1 short=2 int=4</text>
+    <text x="54" y="214" font-size="11.5" fill="#cfe8c6">long=8 double=8 void*=8</text>
+    <text x="54" y="242" font-size="11.5" fill="#cfe8c6">Packed1: align=1 size=1</text>
+    <text x="54" y="260" font-size="11.5" fill="#cfe8c6">Packed2: align=1 size=2</text>
+    <text x="54" y="282" font-size="11.5" fill="#cfe8c6">MixA{char,int}: 4/8（1+填3+4）</text>
+    <text x="54" y="300" font-size="11.5" fill="#cfe8c6">MixB{int,char}: 4/8（4+1+填3）</text>
+    <text x="54" y="322" font-size="11.5" fill="#f0c9c0">Big{char,double,int}: 8/24</text>
+    <text x="54" y="344" font-size="11" fill="#9fb8a8">偏移实测：a=0、d=8、i=16</text>
+    <text x="54" y="362" font-size="11" fill="#9fb8a8">（中间 7 字节填充看得见！）</text>
+    <text x="54" y="394" font-size="11.5" fill="#9fb8a8">$ ./ec</text>
+    <text x="54" y="418" font-size="11.5" fill="#cfe8c6">0x01020304 → 04 03 02 1</text>
+    <text x="54" y="440" font-size="11.5" fill="#f0c9c0">低地址放低位字节 → 小端 ✔</text>
+    <text x="54" y="458" font-size="11" fill="#9fb8a8">memcpy: 258→258（字节序无感）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,280 934,470 Q 712,475 490,470 Q 484,280 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 286)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">三个认知的落点</text>
+    <rect x="502" y="146" width="420" height="310" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">①对齐是性能契约：</text>
+    <text x="514" y="196" font-size="11.5" fill="#cfe8c6">　alignof(T)≈sizeof(T)；struct 取最大</text>
+    <text x="514" y="216" font-size="11" fill="#9fb8a8">（今天打印的就是计划指定练习）</text>
+    <text x="514" y="248" font-size="12" fill="#9fb8a8">②填充是常见事实：</text>
+    <text x="514" y="270" font-size="11.5" fill="#cfe8c6">　sizeof 比成员总和大——差在填充</text>
+    <text x="514" y="290" font-size="11" fill="#9fb8a8">（Day 37 栈数组差 8 的悬案今天破案！）</text>
+    <text x="514" y="322" font-size="12" fill="#9fb8a8">③字节序是跨机话题：</text>
+    <text x="514" y="344" font-size="11.5" fill="#cfe8c6">　单机无感；网络/文件才管</text>
+    <text x="514" y="366" font-size="11" fill="#9fb8a8">（了解级——第 22 周网络编程再见）</text>
+    <text x="514" y="400" font-size="12.5" fill="#45703a">破案注解：Day 37 的 stack_arr</text>
+    <text x="514" y="422" font-size="12" fill="#9fb8a8">　相邻元素差 8 不是 4——因为后面</text>
+    <text x="514" y="440" font-size="12" fill="#9fb8a8">　跟了 8 字节对齐的变量（当时记为</text>
+    <text x="514" y="458" font-size="12" fill="#9fb8a8">　"含对齐"——今天有了完整解释）</text>
+
+    <path d="M 24,496 Q 470,490 905,497 L 901,570 Q 470,564 26,569 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 533)"/>
+    <text x="46" y="522" font-size="15.5" font-weight="bold" fill="#9c5a22">明天的错误案例课的地基</text>
+    <text x="46" y="550" font-size="12.5" fill="#3b3a36">越界写不仅改数据还可能踩坏对齐信息——明天四个内存错误案例的 ASan 实验会反复用到今天的概念</text>
+
+    <path d="M 24,586 Q 470,580 905,587 L 901,648 Q 470,642 26,647 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 617)"/>
+    <text x="480" y="621" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 45 内存错误案例集中剖析——越界/use-after-free/double-free/泄漏各配 ASan 实验一次</text>
+  </g>
+</svg>
