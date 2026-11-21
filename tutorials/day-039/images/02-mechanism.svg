@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">悬空指针的三幕剧与 ASan 的雷达原理</text>
+    <path d="M 270,58 Q 480,52 690,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,310 Q 470,304 44,309 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 205)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">make_dangling() 的三幕（实测）</text>
+    <rect x="110" y="146" width="220" height="60" fill="#d8ecce" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="220" y="170" text-anchor="middle" font-size="11" fill="#45703a">第一幕：new int(42)</text>
+    <text x="220" y="190" text-anchor="middle" font-size="9.5" fill="#8a8578">（0x…5300 拿到合法内存）</text>
+    <rect x="380" y="146" width="220" height="60" fill="#f9d9b8" stroke="#e0955f" stroke-width="2.2"/>
+    <text x="490" y="170" text-anchor="middle" font-size="11" fill="#9c5a22">第二幕：delete p</text>
+    <text x="490" y="190" text-anchor="middle" font-size="9.5" fill="#8a8578">（内存归还——但 p 的值不变）</text>
+    <rect x="650" y="146" width="220" height="60" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.2"/>
+    <text x="760" y="170" text-anchor="middle" font-size="11" fill="#a33f2e">第三幕：return p 后读 *d</text>
+    <text x="760" y="190" text-anchor="middle" font-size="9.5" fill="#8a8578">（读已释放区——UB）</text>
+    <path d="M 332,176 Q 355,176 378,176" fill="none" stroke="#3b3a36" stroke-width="2"/>
+    <path d="M 602,176 Q 625,176 648,176" fill="none" stroke="#3b3a36" stroke-width="2"/>
+    <text x="472" y="234" font-size="12.5" fill="#3b3a36">实测普通版：*d = 3（另一次 4）——旧值的假象，"能读"不等于"合法"（又见 UB 欺骗性）</text>
+    <text x="472" y="262" font-size="12.5" fill="#a33f2e">ASan 版：heap-use-after-free on 0x…09d0 + SUMMARY 定位 main+0x198</text>
+    <text x="472" y="292" font-size="12" fill="#8a8578">（被释放的内存进"隔离区"——读它立刻报警，这就是雷达原理）</text>
+
+    <path d="M 40,334 Q 280,328 520,334 Q 524,460 520,576 Q 280,582 42,576 Q 36,460 40,334 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 455)"/>
+    <text x="280" y="364" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">ASan 是怎么工作的</text>
+    <text x="64" y="398" font-size="12.5" fill="#3b3a36">①每次分配围上"红区"（毒值）</text>
+    <text x="64" y="420" font-size="12" fill="#8a8578">（越界读写先踩红区——立刻报警）</text>
+    <text x="64" y="450" font-size="12.5" fill="#3b3a36">②释放的内存进隔离区不立即复用</text>
+    <text x="64" y="472" font-size="12" fill="#8a8578">（悬空读写撞隔离——heap-use-after-free）</text>
+    <text x="64" y="502" font-size="12.5" fill="#3b3a36">③报告带完整调用栈定位</text>
+    <text x="64" y="524" font-size="12" fill="#8a8578">（main+0x198 直接指到行）</text>
+    <text x="64" y="556" font-size="12" fill="#45703a">（代价：内存约 ×2、速度约 ×2——</text>
+    <text x="64" y="574" font-size="12" fill="#8a8578">　测试期开、发布版关）</text>
+
+    <path d="M 550,334 Q 730,328 905,334 Q 908,460 905,576 Q 730,582 552,576 Q 547,460 550,334 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 455)"/>
+    <text x="727" y="364" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">工具箱的分工</text>
+    <text x="572" y="398" font-size="12.5" fill="#45703a">ASan：越界/悬空/use-after-free</text>
+    <text x="572" y="420" font-size="12" fill="#8a8578">（编译加 -fsanitize=address 即用）</text>
+    <text x="572" y="450" font-size="12.5" fill="#45703a">valgrind：泄漏检测的 heavyweight</text>
+    <text x="572" y="472" font-size="12" fill="#8a8578">（本机 macOS 无——Linux 部署环境用）</text>
+    <text x="572" y="502" font-size="12.5" fill="#45703a">-Wall：编译期的免费前哨</text>
+    <text x="572" y="524" font-size="12" fill="#8a8578">（昨天错配警告的教训：先过编译关）</text>
+    <text x="572" y="556" font-size="12" fill="#8a8578">（三者互补：编译期→运行期→泄漏</text>
+    <text x="572" y="574" font-size="12" fill="#8a8578">　三层防线）</text>
+  </g>
+</svg>
