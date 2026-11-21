@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">编译期阶乘、双语义裁剪与断言执法战报</text>
+    <path d="M 290,58 Q 480,52 670,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 -std=c++17；-Wall 零警告）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,490 Q 248,495 26,490 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 296)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出（节选）</text>
+    <rect x="38" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./ct　（-Wall 零警告）</text>
+    <text x="54" y="200" font-size="12" fill="#9fb8a8">== 编译期阶乘 ==</text>
+    <text x="54" y="222" font-size="11.5" fill="#cfe8c6">5! = 120 ✔（static_assert 过）</text>
+    <text x="54" y="242" font-size="11.5" fill="#cfe8c8">8! = 40320 ✔</text>
+    <text x="54" y="266" font-size="12" fill="#9fb8a8">== if constexpr 裁剪 ==</text>
+    <text x="54" y="288" font-size="11.5" fill="#cfe8c6">describe(10)=11（int+1）✔</text>
+    <text x="54" y="308" font-size="11.5" fill="#cfe8c8">describe(2.0)=2.5（double+0.5）✔</text>
+    <text x="54" y="332" font-size="12" fill="#9fb8a8">== safe_half 双语义 ==</text>
+    <text x="54" y="354" font-size="11.5" fill="#f0c9c0">half(9)=4（整除）｜half(9.0)=4.5 ✔</text>
+    <text x="54" y="378" font-size="12" fill="#9fb8a8">== 运行期 if 对照 ==</text>
+    <text x="54" y="400" font-size="11" fill="#9fb8a8">（两分支都进二进制）</text>
+    <text x="54" y="424" font-size="12" fill="#9fb8a8">== Day 88 现代重写 ==</text>
+    <text x="54" y="446" font-size="11.5" fill="#cfe8c8">泛型求和 = 15 ✔</text>
+    <text x="54" y="470" font-size="11" fill="#9fb8a8">（static_assert 执法另测：</text>
+    <text x="54" y="488" font-size="10.5" fill="#ffd7d0">写错版 error: assertion failed ✔）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,490 Q 712,495 490,490 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 296)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">语言核心周的收官</text>
+    <rect x="502" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">第 18 周（语言核心）五天：</text>
+    <text x="514" y="198" font-size="11.5" fill="#cfe8c6">103 auto/decltype（推导规则）</text>
+    <text x="514" y="218" font-size="11.5" fill="#cfe8c8">104 {} 统一初始化（窄化红线）</text>
+    <text x="514" y="238" font-size="11.5" fill="#cfe8c8">105 四件套（nullptr/enum/using/constexpr）</text>
+    <text x="514" y="258" font-size="11.5" fill="#cfe8c8">106 结构化绑定（四路拆）</text>
+    <text x="514" y="278" font-size="11.5" fill="#cfe8c8">107 if constexpr（今天）✔</text>
+    <text x="514" y="308" font-size="12" fill="#9fb8a8">明天项目日：通讯录 v3 重写</text>
+    <text x="514" y="330" font-size="11" fill="#9fb8a8">（现代特性的综合应用——周五天全用上）</text>
+    <text x="514" y="360" font-size="12.5" fill="#45703a">（107/144 = 74.3%）</text>
+    <text x="514" y="392" font-size="11.5" fill="#9fb8a8">Effective 同步：条款 6/15 等</text>
+    <text x="514" y="412" font-size="11" fill="#9fb8a8">　（auto/constexpr 相关的几条）</text>
+    <text x="514" y="442" font-size="11" fill="#9fb8a8">编译期的三件套今天齐了：</text>
+    <text x="514" y="462" font-size="11" fill="#9fb8a8">　计算（constexpr）+ 验证（assert）</text>
+    <text x="514" y="482" font-size="11" fill="#9fb8a8">　+ 分发（if constexpr）</text>
+
+    <path d="M 24,516 Q 470,510 905,517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>
+    <text x="46" y="542" font-size="15.5" font-weight="bold" fill="#9c5a22">编译期的哲学</text>
+    <text x="46" y="568" font-size="12.5" fill="#3b3a36">"能在编译期做的就别留到运行期"——错误提前暴露（assert）、计算提前完成（constexpr）、代码提前裁剪（if constexpr）——三早原则</text>
+
+    <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 108（项目日）——用现代特性重写通讯录 v3（本周五天所学全部上场）</text>
+  </g>
+</svg>

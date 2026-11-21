@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 107 全貌：if constexpr——分支的编译期裁剪</text>
+    <path d="M 310,60 Q 480,52 650,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定"编译期阶乘"——constexpr 函数 + static_assert 组成编译期测试；if constexpr 让模板按类型只编译真的分支</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">编译期计算的层次</text>
+    <text x="64" y="180" font-size="12.5" fill="#45703a">constexpr 函数：factorial(5)</text>
+    <text x="64" y="202" font-size="12" fill="#8a8578">（编译期算好 120 进指令）</text>
+    <text x="64" y="232" font-size="12.5" fill="#45703a">static_assert：编译期断言</text>
+    <text x="64" y="254" font-size="12" fill="#8a8578">（写错编译不过——编译期测试！）</text>
+    <text x="64" y="284" font-size="12.5" fill="#45703a">if constexpr：按类型裁剪分支</text>
+    <text x="64" y="306" font-size="12" fill="#8a8578">（false 的分支不编译不进二进制）</text>
+    <text x="64" y="344" font-size="12.5" fill="#6b675e">三件套合起来：计算、验证、</text>
+    <text x="64" y="364" font-size="12.5" fill="#6b675e">　分发全搬到编译期</text>
+
+    <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">两种 if 的本质差异</text>
+    <rect x="572" y="164" width="320" height="90" fill="#33413a"/>
+    <text x="732" y="190" font-size="10.5" fill="#9fb8a8">运行期 if (cond)：</text>
+    <text x="732" y="212" font-size="10.5" fill="#cfe8c8">两个分支都编译都进二进制</text>
+    <text x="732" y="234" font-size="10" fill="#8a8578">（运行时才选——都有类型检查）</text>
+    <rect x="572" y="266" width="320" height="90" fill="#33413a"/>
+    <text x="732" y="292" font-size="10.5" fill="#9fb8a8">if constexpr (cond)：</text>
+    <text x="732" y="314" font-size="10.5" fill="#cfe8c8">只编译 true 分支——false 不实例化</text>
+    <text x="732" y="336" font-size="10" fill="#8a8578">（false 里有类型错误也不报！）</text>
+    <text x="572" y="374" font-size="11.5" fill="#45703a">（Day 88 标签分发的现代替身）</text>
+
+    <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
+    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">safe_half 的同码双语义（实测）</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">safe_half(9) = 4（整数除法截断）｜safe_half(9.0) = 4.5（浮点乘精确）——一个模板两种语义，按类型自动裁剪</text>
+    <text x="70" y="490" font-size="12.5" fill="#6b675e">（不用重载两个函数——if constexpr 一处搞定）</text>
+
+    <path d="M 60,514 Q 480,508 905 515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 103~106 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 107（今天）</text>
+    <circle cx="650" cy="514" r="5" fill="#e0955f"/>
+    <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 108 项目日</text>
+    <circle cx="850" cy="514" r="5" fill="#5b8db8"/>
+    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">第 19 周 智能指针</text>
+  </g>
+</svg>
