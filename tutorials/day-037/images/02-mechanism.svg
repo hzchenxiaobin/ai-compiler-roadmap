@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">this：每个成员函数里都藏着的"我"</text>
+    <path d="M 330,58 Q 480,52 630,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,300 Q 470,294 44,299 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 200)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">r.area() 背后发生了什么（实测地址）</text>
+    <rect x="90" y="148" width="180" height="60" fill="#d8ecce" stroke="#7aa663" stroke-width="2.4"/>
+    <text x="180" y="172" text-anchor="middle" font-size="11.5" fill="#45703a">对象 a（#1）</text>
+    <text x="180" y="192" text-anchor="middle" font-size="10" fill="#8a8578">this = 0x…ed78</text>
+    <rect x="390" y="148" width="180" height="60" fill="#d8ecce" stroke="#7aa663" stroke-width="2.4"/>
+    <text x="480" y="172" text-anchor="middle" font-size="11.5" fill="#45703a">对象 b（#2）</text>
+    <text x="480" y="192" text-anchor="middle" font-size="10" fill="#8a8578">this = 0x…ed74</text>
+    <rect x="660" y="148" width="200" height="60" fill="#f9d9b8" stroke="#e0955f" stroke-width="2.4"/>
+    <text x="760" y="172" text-anchor="middle" font-size="11.5" fill="#9c5a22">area() 的函数体</text>
+    <text x="760" y="192" text-anchor="middle" font-size="10.5" fill="#8a8578">（全类只有一份机器码）</text>
+    <path d="M 274,178 Q 480,150 658,172" fill="none" stroke="#45703a" stroke-width="2.2"/>
+    <path d="M 650,164 Q 660,170 652,180" fill="none" stroke="#45703a" stroke-width="2.2"/>
+    <path d="M 572,178 Q 620,196 658,186" fill="none" stroke="#45703a" stroke-width="2.2" stroke-dasharray="6 4"/>
+    <text x="472" y="240" text-anchor="middle" font-size="13" fill="#3b3a36">a.area() 和 b.area() 调的是同一份机器码——差别只在隐含参数 this 指向谁</text>
+    <text x="472" y="268" text-anchor="middle" font-size="12.5" fill="#6b675e">（类比 Day 21 引用传参：area(this) 像编译器替你传好的"我自己"）</text>
+
+    <path d="M 40,324 Q 280,318 520,324 Q 524,440 520,556 Q 280,562 42,556 Q 36,440 40,324 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 440)"/>
+    <text x="280" y="354" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">this 的三个用法（全实测）</text>
+    <text x="64" y="388" font-size="12.5" fill="#3b3a36">①看自己：cout &lt;&lt; this（打印对象地址）</text>
+    <text x="64" y="416" font-size="12.5" fill="#3b3a36">②比身份：this == &amp;other（同一对象？）</text>
+    <text x="64" y="444" font-size="12.5" fill="#3b3a36">③链式：return *this（scale(10).scale(3)）</text>
+    <text x="64" y="482" font-size="12.5" fill="#45703a">实测：a.scale(10).scale(3)</text>
+    <text x="64" y="504" font-size="12.5" fill="#45703a">后 id = 30——第一步返回 *this，</text>
+    <text x="64" y="526" font-size="12.5" fill="#45703a">第二步接着调（cout 链式同理）</text>
+
+    <path d="M 550,324 Q 730,318 905,324 Q 908,440 905,556 Q 730,562 552,556 Q 547,440 550,324 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(0.3 727 440)"/>
+    <text x="727" y="354" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">private 的执法记录</text>
+    <rect x="572" y="370" width="320" height="100" fill="#33413a"/>
+    <text x="588" y="396" font-size="11" fill="#9fb8a8">main 里写 r.width_（private 成员）：</text>
+    <text x="588" y="420" font-size="11" fill="#ffd7d0">error: 'width_' is a private</text>
+    <text x="588" y="438" font-size="11" fill="#ffd7d0">member of 'SafeRect'</text>
+    <text x="588" y="462" font-size="10.5" fill="#9fb8a8">（编译期拦截——非法访问进不了可执行文件）</text>
+    <text x="727" y="502" font-size="12.5" fill="#a33f2e">不变量实测：set_size(-1,5) 被拒、</text>
+    <text x="727" y="524" font-size="12.5" fill="#a33f2e">面积仍是 12——脏数据进不了对象</text>
+  </g>
+</svg>

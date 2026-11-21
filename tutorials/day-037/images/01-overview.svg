@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 37 全貌：类——数据和行为的合租屋</text>
+    <path d="M 320,60 Q 480,52 640,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">六周的 Contact 卡片今天升级：数据（成员）+ 行为（成员函数）同住一个类型里，数据还上了锁</text>
+
+    <path d="M 40,116 Q 290,110 540,116 Q 544,250 540,394 Q 290,400 42,394 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 290 255)"/>
+    <text x="290" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">class Rectangle { … }</text>
+    <path d="M 70,166 Q 290,160 510,167 L 507,376 Q 290,370 73,375 Z" fill="#fffdf7" stroke="#9db8cf" stroke-width="2"/>
+    <text x="90" y="196" font-size="13" font-weight="bold" fill="#a33f2e">private:（默认）</text>
+    <text x="110" y="222" font-size="12.5" fill="#3b3a36">double width_;　double height_;</text>
+    <text x="110" y="246" font-size="12" fill="#8a8578">（数据成员——尾缀 _ 是常见命名法）</text>
+    <text x="90" y="282" font-size="13" font-weight="bold" fill="#45703a">public:</text>
+    <text x="110" y="308" font-size="12.5" fill="#3b3a36">void set_size(double, double);</text>
+    <text x="110" y="332" font-size="12.5" fill="#3b3a36">double area() const;　double perimeter() const;</text>
+    <text x="110" y="360" font-size="12" fill="#8a8578">（const 承诺不改成员——Day 22 的锁搬进了类）</text>
+
+    <path d="M 570,116 Q 740,110 905,116 Q 908,250 905,394 Q 740,400 572,394 Q 567,250 570,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 737 255)"/>
+    <text x="737" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">与 struct 的两点差别</text>
+    <text x="594" y="180" font-size="12.5" fill="#3b3a36">①默认访问：class 私有、struct 公有</text>
+    <text x="594" y="208" font-size="12.5" fill="#6b675e">（Day 29 的 struct 全裸奔；class 默认上锁）</text>
+    <text x="594" y="240" font-size="12.5" fill="#3b3a36">②习惯分工：纯数据聚合用 struct，</text>
+    <text x="594" y="262" font-size="12.5" fill="#3b3a36">有行为有不变量的用 class</text>
+    <text x="594" y="298" font-size="12.5" fill="#45703a">通讯录的 Contact + 四函数</text>
+    <text x="594" y="320" font-size="12.5" fill="#45703a">= class 的前夜——今天正式搬家</text>
+    <text x="594" y="360" font-size="12" fill="#8a8578">（语言层面几乎等价，是设计意图的分野）</text>
+
+    <path d="M 40,418 Q 470,412 905,419 L 901,490 Q 470,484 44,489 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
+    <text x="472" y="446" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">为什么要藏数据（private 的价值）</text>
+    <text x="70" y="476" font-size="13" fill="#3b3a36">不变量保护：实测 set_size(-1, 5) 被拒、面积仍是 12——非法状态根本进不了对象；私访则编译期拦截</text>
+
+    <path d="M 60,510 Q 480,504 905,511" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="510" r="5" fill="#8a94a3"/>
+    <text x="250" y="530" text-anchor="middle" font-size="12" fill="#3b3a36">第 1~6 周 ✓</text>
+    <circle cx="440" cy="510" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="510" r="5" fill="#5b8db8"/>
+    <text x="440" y="530" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 37（今天）</text>
+    <circle cx="640" cy="510" r="5" fill="#5b8db8"/>
+    <text x="640" y="530" text-anchor="middle" font-size="12" fill="#3b3a36">Day 38 构造函数</text>
+    <circle cx="840" cy="510" r="5" fill="#e0955f"/>
+    <text x="840" y="530" text-anchor="middle" font-size="12" fill="#3b3a36">Day 42 项目日</text>
+  </g>
+</svg>
