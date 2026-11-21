@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">三曲线完整实录与阶段四开航</text>
+    <path d="M 390,58 Q 480,52 570,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 / libc++；-Wall 零警告）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,300 470,490 Q 248,495 26,490 Q 20,300 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 296)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出</text>
+    <rect x="38" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./cc　（-Wall 零警告）</text>
+    <text x="54" y="198" font-size="12" fill="#9fb8a8">== 曲线一：逐个 push ==</text>
+    <text x="54" y="220" font-size="11.5" fill="#cfe8c6">size=1：cap 0→1</text>
+    <text x="54" y="238" font-size="11.5" fill="#cfe8c6">size=2：1→2　size=3：2→4</text>
+    <text x="54" y="256" font-size="11.5" fill="#cfe8c6">size=5：4→8　size=9：8→16</text>
+    <text x="54" y="274" font-size="11.5" fill="#cfe8c6">size=17：16→32　size=33：32→64</text>
+    <text x="54" y="296" font-size="11.5" fill="#f0c9c0">最终 size=40，capacity=64</text>
+    <text x="54" y="324" font-size="12" fill="#9fb8a8">== 曲线二：reserve ==</text>
+    <text x="54" y="346" font-size="11.5" fill="#cfe8c6">reserve(64)：cap=64</text>
+    <text x="54" y="364" font-size="11.5" fill="#cfe8c6">push 40 个：全程零扩容日志！</text>
+    <text x="54" y="392" font-size="12" fill="#9fb8a8">== 曲线三：emplace ==</text>
+    <text x="54" y="414" font-size="11.5" fill="#cfe8c6">push_back：构造 1 + 拷贝 1</text>
+    <text x="54" y="434" font-size="11.5" fill="#f0c9c0">emplace_back：拷贝没增加（0！）</text>
+    <text x="54" y="462" font-size="11" fill="#9fb8a8">（7 次扩容、40 push、</text>
+    <text x="54" y="480" font-size="11" fill="#9fb8a8">　总搬运 63 ＜ 80——摊还 ✔）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,300 934,490 Q 712,495 490,490 Q 484,300 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 296)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">阶段四开航（第 14 周）</text>
+    <rect x="502" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">本周（顺序容器）路线：</text>
+    <text x="514" y="198" font-size="11.5" fill="#cfe8c6">79 vector 深入（今天）→ 80 迭代器</text>
+    <text x="514" y="218" font-size="11.5" fill="#cfe8c6">→ 81 迭代器失效 → 82 四容器对比</text>
+    <text x="514" y="238" font-size="11.5" fill="#cfe8c6">→ 83 容器选择+适配器 → 84 项目日</text>
+    <text x="514" y="270" font-size="12" fill="#9fb8a8">阶段四（STL 与泛型）：</text>
+    <text x="514" y="292" font-size="11.5" fill="#cfe8c6">第 14 周顺序容器 / 15 关联容器</text>
+    <text x="514" y="312" font-size="11.5" fill="#cfe8c6">第 16 周算法 / 17 模板与泛型</text>
+    <text x="514" y="344" font-size="12" fill="#9fb8a8">手写经验的应用点：</text>
+    <text x="514" y="366" font-size="11.5" fill="#cfe8c6">v2 的倍增/摊还 → 今天的曲线</text>
+    <text x="514" y="386" font-size="11.5" fill="#cfe8c6">MyString 的三法则 → 官方版内幕</text>
+    <text x="514" y="406" font-size="11.5" fill="#cfe8c6">v3 的工厂 → 算法的谓词（预告）</text>
+    <text x="514" y="440" font-size="12.5" fill="#45703a">（79/144 = 54.9%——后半程</text>
+    <text x="514" y="460" font-size="12.5" fill="#45703a">　第一课从"看懂官方"开始）</text>
+
+    <path d="M 24,516 Q 470,510 905,517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>
+    <text x="46" y="542" font-size="15.5" font-weight="bold" fill="#9c5a22">官方版的意义</text>
+    <text x="46" y="568" font-size="12.5" fill="#3b3a36">不再需要自己写 IntArray——但你知道它的每一行为什么那样；这份"我知道为什么"正是手写五周换来的底气</text>
+
+    <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 80 迭代器——begin/end 与四种遍历方式对比（下标/迭代器/范围 for）</text>
+  </g>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 79 全貌：vector 深入——官方版的增长曲线</text>
+    <path d="M 300,60 Q 480,52 660,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">手写过 v1/v2 再看官方版：capacity 阶梯（计划指定练习）、reserve 先手、emplace_back 的零拷贝魔法</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">实测增长曲线（libc++）</text>
+    <text x="64" y="180" font-size="12.5" fill="#45703a">0→1→2→4→8→16→32→64</text>
+    <text x="64" y="202" font-size="12" fill="#8a8578">（40 个 push 触发 7 次扩容——</text>
+    <text x="64" y="222" font-size="12" fill="#8a8578">　起步 1、倍增到 64）</text>
+    <text x="64" y="254" font-size="12.5" fill="#3b3a36">扩容时机：size==capacity 时</text>
+    <text x="64" y="276" font-size="12" fill="#8a8578">（size 1/2/3/5/9/17/33 处——</text>
+    <text x="64" y="296" font-size="12" fill="#8a8578">　每次翻倍）</text>
+    <text x="64" y="330" font-size="12.5" fill="#6b675e">手写 v2 的曲线：4→8→16→32→64</text>
+    <text x="64" y="352" font-size="12.5" fill="#6b675e">（同款倍增、不同起步——细节是</text>
+    <text x="64" y="372" font-size="12.5" fill="#6b675e">　实现选择，摊还魔法同源）</text>
+
+    <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">emplace_back 的记账实测</text>
+    <text x="572" y="180" font-size="12.5" fill="#3b3a36">push_back(Big())：</text>
+    <text x="572" y="202" font-size="12" fill="#8a8578">构造 1 + 拷贝 1（临时对象进容器）</text>
+    <text x="572" y="232" font-size="12.5" fill="#45703a">emplace_back()：</text>
+    <text x="572" y="254" font-size="12" fill="#45703a">构造 +1、拷贝 +0——原地构造！</text>
+    <text x="572" y="288" font-size="12.5" fill="#6b675e">原理：把构造参数转发进容器</text>
+    <text x="572" y="310" font-size="12" fill="#8a8578">（在最终位置直接造，省一次拷贝）</text>
+    <text x="572" y="344" font-size="12.5" fill="#6b675e">用法口诀：有参数就地转发——</text>
+    <text x="572" y="366" font-size="12" fill="#8a8578">emplace_back("name", 42) 等价于</text>
+    <text x="572" y="384" font-size="12" fill="#8a8578">push_back(T("name", 42)) 但零拷贝</text>
+
+    <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
+    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">reserve 实测（先手棋）</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">reserve(64) 后 push 40 个：capacity 全程 64、零扩容日志——知道数量就先手（Day 47 的结论在官方版复验）</text>
+    <text x="70" y="490" font-size="12.5" fill="#6b675e">（只扩不缩；shrink_to_fit 是反向操作——进阶话题）</text>
+
+    <path d="M 60,514 Q 480,508 905,515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 1~78 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 79（今天）</text>
+    <circle cx="650" cy="514" r="5" fill="#5b8db8"/>
+    <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 80~83</text>
+    <circle cx="850" cy="514" r="5" fill="#e0955f"/>
+    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 84 项目日</text>
+  </g>
+</svg>

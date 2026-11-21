@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">capacity 阶梯图与 emplace 的搬运路径</text>
+    <path d="M 280,58 Q 480,52 680,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,340 Q 470,334 44,339 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 220)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">40 个 push 的 capacity 阶梯（实测）</text>
+    <rect x="90" y="146" width="40" height="20" fill="#d8ecce" stroke="#7aa663" stroke-width="1.6"/>
+    <text x="110" y="161" font-size="8" fill="#45703a">1</text>
+    <rect x="140" y="146" width="40" height="20" fill="#d8ecce" stroke="#7aa663" stroke-width="1.6"/>
+    <text x="160" y="161" font-size="8" fill="#45703a">2</text>
+    <rect x="190" y="146" width="50" height="20" fill="#d8ecce" stroke="#7aa663" stroke-width="1.6"/>
+    <text x="215" y="161" font-size="8" fill="#45703a">4</text>
+    <rect x="250" y="146" width="60" height="20" fill="#f9d9b8" stroke="#e0955f" stroke-width="1.6"/>
+    <text x="280" y="161" font-size="8" fill="#9c5a22">8</text>
+    <rect x="320" y="146" width="70" height="20" fill="#f9d9b8" stroke="#e0955f" stroke-width="1.6"/>
+    <text x="355" y="161" font-size="8" fill="#9c5a22">16</text>
+    <rect x="400" y="146" width="80" height="20" fill="#f9d9b8" stroke="#e0955f" stroke-width="1.6"/>
+    <text x="440" y="161" font-size="8" fill="#9c5a22">32</text>
+    <rect x="490" y="146" width="90" height="20" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2"/>
+    <text x="535" y="161" font-size="8" fill="#a33f2e">64</text>
+    <text x="640" y="161" font-size="10" fill="#8a8578">（size=40 住 64 格）</text>
+    <text x="472" y="200" font-size="12" fill="#6b675e">每次翻倍 → 扩容次数 log₂(40) ≈ 6 次阶梯</text>
+    <text x="472" y="222" font-size="12" fill="#6b675e">（总搬运 1+2+4+8+16+32 = 63 ＜ 40×2——</text>
+    <text x="472" y="242" font-size="12" fill="#6b675e">　摊还保证平均每次 push O(1)）</text>
+    <text x="472" y="280" font-size="12" fill="#3b3a36">扩容的搬运用移动而非拷贝（Day 111 的预告）——</text>
+    <text x="472" y="300" font-size="12" fill="#3b3a36">　字符串等大对象的搬迁成本更低</text>
+    <text x="472" y="330" font-size="11" fill="#8a8578">（这也是 size/capacity 分离设计的回报——Day 47/42）</text>
+
+    <path d="M 40,364 Q 280,358 520,364 Q 524,480 520,576 Q 280,582 42,576 Q 36,480 40,364 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 470)"/>
+    <text x="280" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">push_back vs emplace_back</text>
+    <rect x="64" y="412" width="210" height="90" fill="#33413a"/>
+    <text x="169" y="436" font-size="10" fill="#9fb8a8">push_back(Big())：</text>
+    <text x="169" y="456" font-size="10" fill="#cfe8c6">栈上构造临时 → 拷贝进容器</text>
+    <text x="169" y="476" font-size="10" fill="#f0c9c0">（构造 1 + 拷贝 1）</text>
+    <rect x="294" y="412" width="210" height="90" fill="#33413a"/>
+    <text x="399" y="436" font-size="10" fill="#9fb8a8">emplace_back()：</text>
+    <text x="399" y="456" font-size="10" fill="#cfe8c6">容器里原地构造</text>
+    <text x="399" y="476" font-size="10" fill="#f0c9c0">（构造 1 + 拷贝 0！）</text>
+    <text x="280" y="530" font-size="12" fill="#45703a">选型：已有对象→push；现场造→emplace</text>
+    <text x="280" y="554" font-size="11" fill="#8a8578">（emplace 把参数包转发给构造函数——模板进阶的预告）</text>
+
+    <path d="M 550,364 Q 730,358 905,364 Q 908,480 905,576 Q 730,582 552,576 Q 547,480 550,364 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 470)"/>
+    <text x="727" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">官方版 vs 手写 v2 对照表</text>
+    <text x="572" y="428" font-size="12" fill="#3b3a36">增长：0→1→2×（libc++）| 4→2×（v2）</text>
+    <text x="572" y="452" font-size="12" fill="#3b3a36">接口：size/capacity/reserve 同款 ✔</text>
+    <text x="572" y="476" font-size="12" fill="#3b3a36">官方多：emplace/shrink/数据指针等</text>
+    <text x="572" y="506" font-size="12" fill="#45703a">结论：手写版抓到了核心机制——</text>
+    <text x="572" y="528" font-size="12" fill="#45703a">　本周起放心用官方版</text>
+    <text x="572" y="556" font-size="11" fill="#8a8578">（"我知道为什么"的底气）</text>
+  </g>
+</svg>
