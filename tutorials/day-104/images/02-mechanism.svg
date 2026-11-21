@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">窄化的红线与 initializer_list 的解剖</text>
+    <path d="M 330,58 Q 480,52 630,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,330 Q 470,334 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 215)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">同一条转换的两种待遇</text>
+    <rect x="150" y="148" width="300" height="150" fill="#f9d9b8" stroke="#e0955f" stroke-width="2.2"/>
+    <text x="300" y="176" font-size="11.5" fill="#9c5a22">= 版（拷贝初始化）：</text>
+    <rect x="200" y="192" width="80" height="40" fill="#d8ecce" stroke="#7aa663" stroke-width="1.8"/>
+    <text x="240" y="217" font-size="10" fill="#45703a">3.14</text>
+    <path d="M 284,212 Q 305,212 324,212" fill="none" stroke="#9c5a22" stroke-width="2.2"/>
+    <rect x="326" y="192" width="80" height="40" fill="#f9e9e5" stroke="#c96a5a" stroke-width="1.8"/>
+    <text x="366" y="212" font-size="9.5" fill="#a33f2e">int 3</text>
+    <text x="366" y="228" font-size="8.5" fill="#a33f2e">（丢了 .14）</text>
+    <text x="300" y="266" font-size="10.5" fill="#9c5a22">静默通过——坑埋下了</text>
+    <rect x="510" y="148" width="300" height="150" fill="#d8ecce" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="660" y="176" font-size="11.5" fill="#45703a">{} 版（列表初始化）：</text>
+    <rect x="560" y="192" width="80" height="40" fill="#d8ecce" stroke="#7aa663" stroke-width="1.8"/>
+    <text x="600" y="217" font-size="10" fill="#45703a">3.14</text>
+    <path d="M 644,212 Q 665,212 684,212" fill="none" stroke="#c96a5a" stroke-width="2.4"/>
+    <text x="665" y="204" font-size="10" fill="#c96a5a">✘</text>
+    <text x="660" y="252" font-size="10.5" fill="#a33f2e">编译错：cannot be narrowed</text>
+    <text x="660" y="272" font-size="10.5" fill="#45703a">（红线拦在编译期！）</text>
+    <text x="472" y="322" font-size="11.5" fill="#8a8578">（同一条 double→int：= 埋坑、{} 报警——现代 C++ 把坑变成编译错）</text>
+
+    <path d="M 40,354 Q 280,348 520,354 Q 524,470 520,576 Q 280,582 42,576 Q 36,470 40,354 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 465)"/>
+    <text x="280" y="384" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">initializer_list 的工作</text>
+    <rect x="64" y="402" width="430" height="150" fill="#33413a"/>
+    <text x="279" y="428" font-size="11" fill="#9fb8a8">void take_list(std::initializer_list&lt;int&gt; lst) {</text>
+    <text x="279" y="450" font-size="11" fill="#cfe8c6">　for (int v : lst) { … }</text>
+    <text x="279" y="472" font-size="11" fill="#9fb8a8">}</text>
+    <text x="279" y="498" font-size="10.5" fill="#cfe8c6">take_list({1, 2, 3});　take_list({10,20,30,40});</text>
+    <text x="279" y="522" font-size="10.5" fill="#8a8578">（{...} 变成一个轻量列表对象传进去）</text>
+
+    <path d="M 550,354 Q 730,348 905,354 Q 908,470 905,576 Q 730,582 552,576 Q 547,470 550,354 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 465)"/>
+    <text x="727" y="384" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">vector 的双构造之谜</text>
+    <text x="572" y="418" font-size="12" fill="#3b3a36">vector&lt;int&gt; 有两个相关构造：</text>
+    <text x="572" y="442" font-size="11.5" fill="#6b675e">　vector(size_t n)——"n 个 0"</text>
+    <text x="572" y="464" font-size="11.5" fill="#6b675e">　vector(init_list)——"列表内容"</text>
+    <text x="572" y="494" font-size="12" fill="#a33f2e">v(3) 走前者 → 3 个 0</text>
+    <text x="572" y="516" font-size="12" fill="#45703a">v{3} 优先后者 → 一个 3</text>
+    <text x="572" y="548" font-size="11" fill="#8a8578">（{} 见到 init_list 构造就优先匹配——</text>
+    <text x="572" y="566" font-size="11" fill="#8a8578">　vector 的历史设计要专门记）</text>
+  </g>
+</svg>
