@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">转发链的类别保持图与两个易混点</text>
+    <path d="M 320,58 Q 480,52 640,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,340 Q 470,334 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 220)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">两条转发链的对照（实测）</text>
+    <rect x="110" y="146" width="360" height="170" fill="#d8ecce" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="290" y="172" font-size="11" fill="#45703a">有 forward 的链（左值来）：</text>
+    <rect x="150" y="186" width="90" height="34" fill="#d8ecce" stroke="#7aa663" stroke-width="1.6"/>
+    <text x="195" y="207" font-size="9.5" fill="#45703a">s（左值）</text>
+    <path d="M 242,203 Q 265,203 288,203" fill="none" stroke="#45703a" stroke-width="2"/>
+    <rect x="290" y="186" width="90" height="34" fill="#f9d9b8" stroke="#e0955f" stroke-width="1.6"/>
+    <text x="335" y="207" font-size="9.5" fill="#9c5a22">relay(T&amp;&amp;)</text>
+    <path d="M 382,203 Q 405,203 428,203" fill="none" stroke="#45703a" stroke-width="2"/>
+    <rect x="290" y="228" width="90" height="34" fill="#d8ecce" stroke="#7aa663" stroke-width="1.6"/>
+    <text x="335" y="249" font-size="9.5" fill="#45703a">process&amp; ✔</text>
+    <text x="290" y="288" font-size="10" fill="#45703a">（类别保持：左值进左值出）</text>
+    <rect x="510" y="146" width="340" height="170" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.2"/>
+    <text x="680" y="172" font-size="11" fill="#a33f2e">没 forward 的链（右值来）：</text>
+    <rect x="550" y="186" width="90" height="34" fill="#d8ecce" stroke="#7aa663" stroke-width="1.6"/>
+    <text x="595" y="207" font-size="9.5" fill="#45703a">临时（右值）</text>
+    <path d="M 642,203 Q 665,203 688,203" fill="none" stroke="#9c5a22" stroke-width="2"/>
+    <rect x="690" y="186" width="80" height="34" fill="#f9d9b8" stroke="#e0955f" stroke-width="1.6"/>
+    <text x="730" y="207" font-size="9.5" fill="#9c5a22">relay_wrong</text>
+    <path d="M 772,203 Q 790,203 808,203" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <rect x="690" y="228" width="120" height="34" fill="#f9e9e5" stroke="#c96a5a" stroke-width="1.6"/>
+    <text x="750" y="249" font-size="9.5" fill="#a33f2e">process&amp; ✘（降级！）</text>
+    <text x="680" y="288" font-size="10" fill="#a33f2e">（arg 有名字→左值→类别丢失）</text>
+    <text x="472" y="334" font-size="11.5" fill="#8a8578">（实测：relay 的两路全对；relay_wrong 的右值路降到 &amp; 版）</text>
+
+    <path d="M 40,364 Q 280,358 520,364 Q 524,480 520,576 Q 280,582 42,576 Q 36,480 40,364 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 470)"/>
+    <text x="280" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">万能引用的判定</text>
+    <rect x="64" y="412" width="430" height="150" fill="#33413a"/>
+    <text x="279" y="438" font-size="10.5" fill="#9fb8a8">是万能引用：</text>
+    <text x="279" y="460" font-size="10.5" fill="#cfe8c8">template&lt;typename T&gt; void f(T&amp;&amp;)</text>
+    <text x="279" y="480" font-size="10.5" fill="#cfe8c8">auto&amp;&amp; x = expr;</text>
+    <text x="279" y="504" font-size="10.5" fill="#f0c9c0">不是：void f(Widget&amp;&amp;)（具体类型）</text>
+    <text x="279" y="524" font-size="10" fill="#8a8578">（不推导的 &amp;&amp; 就是普通右值引用）</text>
+
+    <path d="M 550,364 Q 730,358 905,364 Q 908,480 905,576 Q 730,582 552,576 Q 547,480 550,354 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 470)"/>
+    <text x="727" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">move 与 forward 的分工</text>
+    <rect x="572" y="412" width="320" height="150" fill="#33413a"/>
+    <text x="732" y="438" font-size="10.5" fill="#9fb8a8">std::move(x)：无条件变右值</text>
+    <text x="732" y="460" font-size="10.5" fill="#8a8578">（"我不要了"——显式转换）</text>
+    <text x="732" y="486" font-size="10.5" fill="#9fb8a8">std::forward&lt;T&gt;(x)：有条件保持</text>
+    <text x="732" y="508" font-size="10.5" fill="#8a8578">（T 是 &amp; 就传左值、是值就传右值）</text>
+    <text x="732" y="536" font-size="10" fill="#cfe8c8">（转发的场合用 forward——别滥用 move）</text>
+  </g>
+</svg>
