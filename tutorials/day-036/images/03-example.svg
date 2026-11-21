@@ -37,8 +37,8 @@
     <text x="46" y="482" font-size="12.5" fill="#3b3a36">七回合会话（增删改查+改号生效+删除记住）｜三段持久化会话｜边界三连｜git 提交干净</text>
 
     <path d="M 24,520 Q 470,514 905,521 L 901,630 Q 470,624 26,629 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(0.2 464 575)"/>
-    <text x="480" y="550" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#8a6d1a">下一站：第 7 周 · 面向对象</text>
+    <text x="480" y="550" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#8a6d1a">下一站：第 9 周 · 面向对象</text>
     <text x="480" y="578" text-anchor="middle" font-size="12.5" fill="#6b675e">类、构造函数、RAII——通讯录的 Contact 会升级成真正的类；今天的"三件套+四函数"</text>
-    <text x="480" y="600" text-anchor="middle" font-size="12.5" fill="#6b675e">就是第 49 天 Rectangle 类的直系前辈</text>
+    <text x="480" y="600" text-anchor="middle" font-size="12.5" fill="#6b675e">就是第 55 天 Rectangle 类的直系前辈</text>
   </g>
 </svg>

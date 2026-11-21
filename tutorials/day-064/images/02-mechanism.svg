@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">隐式通道的两端：转出与转入</text>
+    <path d="M 340,58 Q 480,52 620,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,300 Q 470,294 44,299 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 200)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">转换的两条路（一出一进）</text>
+    <rect x="90" y="146" width="380" height="130" fill="#fffdf7" stroke="#5b8db8" stroke-width="2.2"/>
+    <text x="280" y="172" font-size="12" fill="#2c5a82">转出：operator double()</text>
+    <text x="280" y="196" font-size="11" fill="#6b675e">Fraction → double</text>
+    <text x="280" y="220" font-size="10.5" fill="#8a8578">（类自己开的"出口"——</text>
+    <text x="280" y="238" font-size="10.5" fill="#8a8578">　走到哪都能被隐式触发）</text>
+    <text x="280" y="262" font-size="10.5" fill="#a33f2e">关法：加 explicit（C++11 起）</text>
+    <rect x="490" y="146" width="380" height="130" fill="#fffdf7" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="680" y="172" font-size="12" fill="#45703a">转入：单参构造 Width(double)</text>
+    <text x="680" y="196" font-size="11" fill="#6b675e">double → Width</text>
+    <text x="680" y="220" font-size="10.5" fill="#8a8578">（构造函数兼任"入口"——</text>
+    <text x="680" y="238" font-size="10.5" fill="#8a8578">　实参类型能一步转进类）</text>
+    <text x="680" y="262" font-size="10.5" fill="#a33f2e">关法：构造前加 explicit</text>
+    <text x="472" y="290" font-size="12" fill="#9fb8a8">（两端都可能"自作主张"——explicit 两处都能上锁）</text>
+
+    <path d="M 40,324 Q 280,318 520,324 Q 524,440 520,556 Q 280,562 42,556 Q 36,440 40,324 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.3 280 440)"/>
+    <text x="280" y="354" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">cout &lt;&lt; f 的决策链</text>
+    <rect x="64" y="372" width="430" height="140" fill="#33413a"/>
+    <text x="279" y="396" font-size="11" fill="#9fb8a8">①找 operator&lt;&lt;(ostream, Fraction)：</text>
+    <text x="279" y="414" font-size="11" fill="#f0c9c0">　没有！（今天故意不写）</text>
+    <text x="279" y="438" font-size="11" fill="#9fb8a8">②重载决议找别的路：</text>
+    <text x="279" y="456" font-size="11" fill="#9fb8a8">　Fraction → double 通道开着 → 走！</text>
+    <text x="279" y="480" font-size="11" fill="#9fb8a8">③operator&lt;&lt;(ostream, double) 打印 0.5</text>
+    <text x="279" y="502" font-size="10.5" fill="#9fb8a8">（"退而求其次"的转换——用户没要求）</text>
+    <text x="280" y="540" font-size="12" fill="#a33f2e">教训：开通道前想清所有会被触发的地方</text>
+
+    <path d="M 550,324 Q 730,318 905,324 Q 908,440 905,556 Q 730,562 552,556 Q 547,440 550,324 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 440)"/>
+    <text x="727" y="354" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">explicit 的三问决策</text>
+    <text x="572" y="390" font-size="12.5" fill="#3b3a36">①转换语义自然吗？（米→ double：自然）</text>
+    <text x="572" y="414" font-size="12" fill="#8a8578">　→ 不自然就直接不写转换运算符</text>
+    <text x="572" y="444" font-size="12.5" fill="#3b3a36">②隐式触发会出意外吗？</text>
+    <text x="572" y="468" font-size="12" fill="#6b675e">　→ 会（cout 打 0.5 那种）→ explicit</text>
+    <text x="572" y="498" font-size="12.5" fill="#3b3a36">③单参构造是"凑巧一个参数"？</text>
+    <text x="572" y="522" font-size="12" fill="#6b675e">　→ 是（Meters 只是包了个数）→ explicit</text>
+    <text x="572" y="550" font-size="12" fill="#45703a">（经验法则：单参构造默认加 explicit）</text>
+  </g>
+</svg>

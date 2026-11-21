@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 61 全貌：运算符重载——让类用上 + - * /</text>
+    <path d="M 290,60 Q 480,52 670,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">Day 66 的 append 链式已是伏笔——今天 Fraction 分数类让算术变成日常：a + b 不再是函数调用，是加法本法</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,260 520,384 Q 280,390 42,384 Q 36,260 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">operator+ 的解剖</text>
+    <rect x="64" y="164" width="440" height="90" fill="#33413a"/>
+    <text x="284" y="192" font-size="12" fill="#cfe8c6">Fraction operator+(const Fraction&amp; rhs) const {</text>
+    <text x="284" y="216" font-size="11.5" fill="#9fb8a8">　return Fraction(num_*rhs.den_ + rhs.num_*den_, den_*rhs.den_);</text>
+    <text x="284" y="238" font-size="11.5" fill="#9fb8a8">}</text>
+    <text x="64" y="284" font-size="12.5" fill="#3b3a36">a + b 的真身：a.operator+(b)——</text>
+    <text x="64" y="306" font-size="12.5" fill="#3b3a36">　编译器把 + 翻译成成员函数调用</text>
+    <text x="64" y="338" font-size="12.5" fill="#6b675e">返回值是 Fraction（新对象）——</text>
+    <text x="64" y="358" font-size="12.5" fill="#6b675e">　链式 (a+b)+c 自然成立</text>
+
+    <path d="M 550,116 Q 740,110 905,116 Q 908,260 905,384 Q 740,390 552,384 Q 547,260 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">Fraction 的两个不变量</text>
+    <text x="572" y="180" font-size="12.5" fill="#45703a">①最简分数：构造时约分（gcd）</text>
+    <text x="572" y="202" font-size="12" fill="#8a8578">（实测：Fraction(2,4) → 1/2）</text>
+    <text x="572" y="232" font-size="12.5" fill="#45703a">②分母非零且恒正</text>
+    <text x="572" y="254" font-size="12" fill="#8a8578">（实测：Fraction(1,0) 被拦、-1/-2 → 1/2）</text>
+    <text x="572" y="288" font-size="12.5" fill="#6b675e">不变量 + 运算符 = 数学正确性：</text>
+    <text x="572" y="310" font-size="12.5" fill="#6b675e">　a == c 直接比分子分母（最简保证）</text>
+    <text x="572" y="344" font-size="12" fill="#8a8578">（Day 33 的 gcd 回锅——工具函数的复用）</text>
+
+    <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
+    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">成员版 vs 非成员版（实测对照）</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">成员版：左操作数必须是本类（v * 3 ✔）；非成员版：左边任意（3 * v ✔）——对称运算符要非成员版（交换律的代码化）</text>
+    <text x="70" y="490" font-size="12.5" fill="#6b675e">（&lt;&lt; 必须非成员：左操作数是 ostream 不是本类——friend 让它摸私有成员）</text>
+
+    <path d="M 60,514 Q 480,508 905,515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 55~58 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 61（今天）</text>
+    <circle cx="650" cy="514" r="5" fill="#5b8db8"/>
+    <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 62~60 运算符/转换</text>
+    <circle cx="850" cy="514" r="5" fill="#e0955f"/>
+    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 60 项目日</text>
+  </g>
+</svg>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">坏例失守实录与重构锁死的战报</text>
+    <path d="M 350,58 Q 480,52 610,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,240 470,380 Q 248,385 26,380 Q 20,240 24,102 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="3" transform="rotate(-0.3 247 241)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#a33f2e">实验 1：坏例失守</text>
+    <rect x="38" y="146" width="420" height="220" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./bi（BadStack : vector）</text>
+    <text x="54" y="196" font-size="12.5" fill="#cfe8c6">pop = 3　（基本功能正常）</text>
+    <text x="54" y="228" font-size="12" fill="#9fb8a8">然后"犯规"操作：</text>
+    <text x="54" y="252" font-size="12.5" fill="#f0c9c0">s.insert(begin, 99);　←编译+执行通过</text>
+    <text x="54" y="274" font-size="12.5" fill="#f0c9c0">s[0] = 42;　　　　　←编译+执行通过</text>
+    <text x="54" y="302" font-size="12.5" fill="#f0c9c0">s[0] = 42，size = 3</text>
+    <text x="54" y="330" font-size="12" fill="#9fb8a8">（"只能顶端进出"的不变量已被绕过）</text>
+    <text x="54" y="356" font-size="12" fill="#9fb8a8">（没有任何报错——隐患静默潜伏）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,240 934,380 Q 712,385 490,380 Q 484,240 488,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(0.3 711 241)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#45703a">实验 2：重构锁死</text>
+    <rect x="502" y="146" width="420" height="220" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="11.5" fill="#9fb8a8">$ ./gc（GoodStack 有 vector）</text>
+    <text x="514" y="196" font-size="12.5" fill="#cfe8c6">pop = 3　（同样的正常功能）</text>
+    <text x="514" y="222" font-size="12.5" fill="#cfe8c6">size = 2，empty = 否</text>
+    <text x="514" y="252" font-size="12" fill="#9fb8a8">同样的"犯规"操作：</text>
+    <text x="514" y="276" font-size="11" fill="#ffd7d0">s.insert(...) → error: no member</text>
+    <text x="514" y="294" font-size="11" fill="#ffd7d0">　named 'insert' in 'GoodStack'</text>
+    <text x="514" y="320" font-size="11" fill="#ffd7d0">s[0]=42 → no subscript operator</text>
+    <text x="514" y="350" font-size="12" fill="#9fb8a8">（编译期拦截——不变量锁死）</text>
+
+    <path d="M 24,406 Q 470,400 905,407 L 901,510 Q 470,504 26,509 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 464 458)"/>
+    <text x="46" y="434" font-size="15.5" font-weight="bold" fill="#2c5a82">功能对照（重构不改行为）</text>
+    <text x="46" y="464" font-size="12.5" fill="#3b3a36">两版 pop 都得 3、都能正常工作——重构判据：该有的功能一样不少、不该有的接口一个不多</text>
+    <text x="46" y="488" font-size="12.5" fill="#6b675e">（Day 34 复习日的"功能不变的 重构"标准在第 10 周再次适用）</text>
+
+    <path d="M 24,530 Q 470,524 905,531 L 901,630 Q 470,624 26,629 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 580)"/>
+    <text x="480" y="560" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#55606e">明天项目日预告</text>
+    <text x="480" y="590" text-anchor="middle" font-size="11" fill="#3b3a36">Day 66：MyString v2——手写动态数组的完整拷贝控制（三法则＋运算符集＋自测），第 10 周收官</text>
+    <text x="480" y="612" font-size="12.5" fill="#6b675e">（今天三问 + 本周三件套 + Day 56 运算符全部上阵）</text>
+  </g>
+</svg>

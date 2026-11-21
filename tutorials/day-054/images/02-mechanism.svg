@@ -1,36 +1,37 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
   <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
   <g stroke-linecap="round" stroke-linejoin="round">
-    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">append 的扩容解剖与深拷贝的独立性证据</text>
-    <path d="M 270,58 Q 480,52 690,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">一个类里的五层防护与一份共享</text>
+    <path d="M 330,58 Q 480,52 630,59" fill="none" stroke="#e0955f" stroke-width="3"/>
 
     <path d="M 40,100 Q 470,94 905,101 L 901,330 Q 470,324 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 215)"/>
-    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">append("cd") 的四步（实测 d = "ab" → "abcd"）</text>
-    <rect x="90" y="146" width="780" height="160" fill="#33413a"/>
-    <text x="480" y="174" font-size="12" fill="#cfe8c6">①new char[2+2+1]（开 5 字节大块）　　"ab\0???"</text>
-    <text x="480" y="200" font-size="12" fill="#cfe8c6">②memcpy(bigger, data_, 2)（旧内容搬入）"ab\0??"</text>
-    <text x="480" y="226" font-size="12" fill="#cfe8c6">③memcpy(bigger+2, "cd", 3)（新内容接上）"abcd\0"</text>
-    <text x="480" y="252" font-size="12" fill="#f0c9c0">④delete[] data_; data_ = bigger;（放旧换新）</text>
-    <text x="480" y="286" font-size="11.5" fill="#9fb8a8">（返回 *this → 链式 append("ef") 再走一遍 → "abcdef"）</text>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">数据与行为的布局（实测数据流）</text>
+    <rect x="70" y="144" width="400" height="70" fill="#fffdf7" stroke="#9db8cf" stroke-width="2"/>
+    <text x="270" y="168" text-anchor="middle" font-size="11.5" fill="#2c5a82">private：owner_ / balance_ / log_ / query_count_</text>
+    <text x="270" y="190" text-anchor="middle" font-size="11" fill="#8a8578">（四样家当全上锁）</text>
+    <rect x="490" y="144" width="400" height="70" fill="#eef5e8" stroke="#7aa663" stroke-width="2"/>
+    <text x="690" y="168" text-anchor="middle" font-size="11.5" fill="#45703a">public：deposit / withdraw / balance / print_log</text>
+    <text x="690" y="190" text-anchor="middle" font-size="11" fill="#8a8578">＋static：interest_rate / set_interest_rate</text>
+    <text x="70" y="244" font-size="12.5" fill="#3b3a36">存 500 的路径：deposit(500) → 校验 → balance_ += 500 → record() 入 log_</text>
+    <text x="70" y="270" font-size="12.5" fill="#3b3a36">透支的路径：withdraw(99999) → 校验失败 → return false（balance_ 纹丝不动）</text>
+    <text x="70" y="296" font-size="12.5" fill="#a33f2e">隔离实测：甲存 50 后甲日志 2 条、乙日志 1 条——log_ 是每账户一份（非 static）</text>
+    <text x="70" y="320" font-size="12.5" fill="#45703a">利率实测：3% → set(0.035) → 3.5%——interest_rate_ 全类一份（static）</text>
 
-    <path d="M 40,354 Q 280,348 520,354 Q 524,470 520,576 Q 280,582 42,576 Q 36,470 40,354 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 465)"/>
-    <text x="280" y="384" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">深拷贝独立性（实测）</text>
-    <text x="64" y="418" font-size="12.5" fill="#3b3a36">b = a 后：a @ …92c0、b @ …92d0（两块）</text>
-    <text x="64" y="442" font-size="12.5" fill="#3b3a36">b[0] = 'H' 后：b = "Hello"</text>
-    <text x="64" y="466" font-size="12.5" fill="#45703a">a 仍是 "hello" ←互不影响 ✔</text>
-    <text x="64" y="500" font-size="12" fill="#8a8578">（Day 49 的深拷贝在 v2 里的价值：改副本</text>
-    <text x="64" y="520" font-size="12" fill="#8a8578">　不动原件——"复印文件"语义完整兑现）</text>
-    <text x="64" y="556" font-size="12" fill="#8a8578">（顺带：operator[] 读写双版——const</text>
-    <text x="64" y="574" font-size="12" fill="#8a8578">　MyString 只能读，普通版可写）</text>
+    <path d="M 40,354 Q 280,348 520,354 Q 524,470 520,556 Q 280,562 42,556 Q 36,470 40,354 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 455)"/>
+    <text x="280" y="384" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">mutable 与 static 的对位</text>
+    <text x="64" y="416" font-size="12.5" fill="#3b3a36">query_count_（mutable）：每个对象</text>
+    <text x="64" y="438" font-size="12.5" fill="#3b3a36">　一份，const 函数里可改</text>
+    <text x="64" y="466" font-size="12.5" fill="#3b3a36">interest_rate_（static）：全类</text>
+    <text x="64" y="488" font-size="12.5" fill="#3b3a36">　一份，免对象调用</text>
+    <text x="64" y="520" font-size="12" fill="#8a8578">（一个"每户一册"，一个"全行一牌"——</text>
+    <text x="64" y="540" font-size="12" fill="#8a8578">　Day 52 两概念在同一类里的分工）</text>
 
-    <path d="M 550,354 Q 730,348 905,354 Q 908,470 905,576 Q 730,582 552,576 Q 547,470 550,354 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(0.3 727 465)"/>
-    <text x="727" y="384" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">ASan 的两份报告</text>
-    <text x="572" y="418" font-size="12.5" fill="#45703a">①全场景跑 ASan：零报错 ✔</text>
-    <text x="572" y="440" font-size="12" fill="#8a8578">（三件套正确性的机器盖章）</text>
-    <text x="572" y="474" font-size="12.5" fill="#a33f2e">②故意越界 b[99]：</text>
-    <text x="572" y="496" font-size="11" fill="#ffd7d0">heap-buffer-overflow 现形</text>
-    <text x="572" y="514" font-size="11" fill="#9fb8a8">（operator[] 不查边界——教学版</text>
-    <text x="572" y="532" font-size="11" fill="#9fb8a8">　如实记录；std::string 的 at() 会抛）</text>
-    <text x="572" y="562" font-size="12" fill="#8a8578">（诚实账本：边界检查留作练习）</text>
+    <path d="M 550,354 Q 730,348 905,354 Q 908,470 905,556 Q 730,562 552,556 Q 547,470 550,354 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 455)"/>
+    <text x="727" y="384" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">日志的 to_string 小账本</text>
+    <text x="572" y="416" font-size="12.5" fill="#3b3a36">std::to_string(1300) 打印</text>
+    <text x="572" y="438" font-size="12.5" fill="#6b675e">"1300.000000"（默认 6 位小数）</text>
+    <text x="572" y="466" font-size="12.5" fill="#3b3a36">真实银行要定点两位——</text>
+    <text x="572" y="488" font-size="12.5" fill="#6b675e">sstream + setprecision 或 sprintf</text>
+    <text x="572" y="516" font-size="12" fill="#8a8578">（诚实记账：显示层优化留作练习）</text>
   </g>
 </svg>

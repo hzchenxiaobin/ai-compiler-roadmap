@@ -1,37 +1,35 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
   <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
   <g stroke-linecap="round" stroke-linejoin="round">
-    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 56 全貌：流运算符——链式的命脉与格式的守卫</text>
-    <path d="M 270,60 Q 480,52 690,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
-    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">cout &lt;&lt; a &lt;&lt; b 为什么能连写？>> 读到 "3x4" 为什么能拦住？——今天一次讲透</text>
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 56 全貌：拷贝赋值——d = a 的正确写法</text>
+    <path d="M 310,60 Q 480,52 650,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">昨天拷贝构造管"出生时复制"，今天拷贝赋值管"活着时替换"——自赋值 a = a 是头号陷阱</text>
 
-    <path d="M 40,116 Q 280,110 520,116 Q 524,260 520,384 Q 280,390 42,384 Q 36,260 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
-    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">输出侧：链式的命脉</text>
-    <rect x="64" y="164" width="440" height="76" fill="#33413a"/>
-    <text x="284" y="192" font-size="11.5" fill="#cfe8c6">cout &lt;&lt; a &lt;&lt; b 的真身：</text>
-    <text x="284" y="214" font-size="11" fill="#9fb8a8">operator&lt;&lt;(operator&lt;&lt;(cout, a), b)</text>
-    <text x="284" y="230" font-size="10.5" fill="#9fb8a8">（里层的返回值 → 外层的左操作数）</text>
-    <text x="64" y="270" font-size="12.5" fill="#a33f2e">返回 ostream&amp; 是关键——</text>
-    <text x="64" y="292" font-size="12.5" fill="#6b675e">　返回 void 则链断（只能写一个）</text>
-    <text x="64" y="320" font-size="12.5" fill="#6b675e">返回值是引用：流对象本体只有</text>
-    <text x="64" y="340" font-size="12.5" fill="#6b675e">　一个（cout 全局单例——Day 52 亲戚）</text>
-    <text x="64" y="372" font-size="12" fill="#8a8578">（与 Day 37 scale 返回 *this 链式同理）</text>
+    <path d="M 40,116 Q 290,110 540,116 Q 544,250 540,374 Q 290,380 42,374 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 290 245)"/>
+    <text x="290" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">拷贝赋值 vs 拷贝构造</text>
+    <text x="64" y="180" font-size="12.5" fill="#45703a">拷贝构造：T b = a;（新对象出生）</text>
+    <text x="64" y="202" font-size="12.5" fill="#45703a">拷贝赋值：d = a;（老对象替换内容）</text>
+    <text x="64" y="236" font-size="12.5" fill="#6b675e">赋值多两件事：释放旧内存 + 自赋值检查</text>
+    <text x="64" y="264" font-size="12.5" fill="#3b3a36">签名：T&amp; operator=(const T&amp; other)</text>
+    <text x="64" y="286" font-size="12" fill="#8a8578">（返回 T&amp; 而非 void——支持 c = b = a 链式）</text>
+    <text x="64" y="316" font-size="12.5" fill="#6b675e">-Wself-assign-overloaded 会警告显式</text>
+    <text x="64" y="336" font-size="12.5" fill="#6b675e">自赋值（a = a）——但隐式的仍要靠检查</text>
+    <text x="64" y="364" font-size="12" fill="#8a8578">（a[i] = a[j] 且 i==j 时编译器看不见）</text>
 
-    <path d="M 550,116 Q 740,110 905,116 Q 908,260 905,384 Q 740,390 552,384 Q 547,260 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
-    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">输入侧：格式三道闸</text>
-    <text x="572" y="180" font-size="12.5" fill="#45703a">①is >> n >> slash >> d 后查 !is</text>
-    <text x="572" y="202" font-size="12" fill="#8a8578">（"hello" → 流置错 → 拦截 ✔）</text>
-    <text x="572" y="232" font-size="12.5" fill="#45703a">②slash != '/' → 格式错</text>
-    <text x="572" y="254" font-size="12" fill="#8a8578">（"3x4" → 读到 x → 拦截 ✔）</text>
-    <text x="572" y="284" font-size="12.5" fill="#45703a">③走构造函数：约分 + 分母非零</text>
-    <text x="572" y="306" font-size="12" fill="#8a8578">（"5/10" → 1/2 ✔）</text>
-    <text x="572" y="340" font-size="12.5" fill="#6b675e">失败时对象保持默认值（0/1）——</text>
-    <text x="572" y="360" font-size="12.5" fill="#6b675e">　半成品不进对象（Day 38 精神）</text>
+    <path d="M 570,116 Q 740,110 905,116 Q 908,250 905,374 Q 740,380 572,374 Q 567,250 570,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 737 245)"/>
+    <text x="737" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">三步式（教科书版）</text>
+    <text x="592" y="180" font-size="12.5" fill="#a33f2e">①if (this == &amp;other) return *this;</text>
+    <text x="592" y="202" font-size="12" fill="#8a8578">（自赋值：地址相同 → 直接走）</text>
+    <text x="592" y="232" font-size="12.5" fill="#3b3a36">②delete[] data_;（释放旧内存）</text>
+    <text x="592" y="262" font-size="12.5" fill="#3b3a36">③new + memcpy（开新 + 抄内容）</text>
+    <text x="592" y="292" font-size="12.5" fill="#45703a">return *this;（支持链式）</text>
+    <text x="592" y="330" font-size="12" fill="#8a8578">（copy-and-swap 简化版见选做）</text>
+    <text x="592" y="358" font-size="12" fill="#8a8578">（自赋值安全 + 异常安全一次到位）</text>
 
-    <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
-    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#8a6d1a">为什么 >> 的对象参数不是 const</text>
-    <text x="70" y="468" font-size="13" fill="#3b3a36">>> 要往对象里写数据（f = Fraction(n,d)）——参数是 Fraction&amp;（非 const）；&lt;&lt; 只读——const Fraction&amp;</text>
-    <text x="70" y="490" font-size="12.5" fill="#6b675e">（一对镜像：const 的有无就是读写之别——Day 22 的锁在运算符上的位置）</text>
+    <path d="M 40,398 Q 470,392 905,399 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 449)"/>
+    <text x="472" y="428" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">自赋值陷阱（实测：不写①会怎样）</text>
+    <text x="70" y="458" font-size="13" fill="#3b3a36">delete[] data_ → memcpy(data_, other.data_, …)——other 就是 *this，源已被自己释放！</text>
+    <text x="70" y="482" font-size="12.5" fill="#a33f2e">实测：普通编译打出空串（UB）；ASan 报 heap-buffer-overflow（读已释放内存）</text>
 
     <path d="M 60,514 Q 480,508 905,515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
     <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
@@ -40,8 +38,8 @@
     <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
     <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 56（今天）</text>
     <circle cx="650" cy="514" r="5" fill="#5b8db8"/>
-    <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 57~59</text>
+    <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 57~75</text>
     <circle cx="850" cy="514" r="5" fill="#e0955f"/>
-    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 60 项目日</text>
+    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 66 项目日</text>
   </g>
 </svg>

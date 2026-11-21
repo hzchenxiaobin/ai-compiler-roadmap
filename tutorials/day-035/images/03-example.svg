@@ -38,7 +38,7 @@
 
     <path d="M 24,530 Q 470,524 905,531 L 901,630 Q 470,624 26,629 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 580)"/>
     <text x="46" y="558" font-size="14" font-weight="bold" fill="#55606e">选做加强（时间富余再做）</text>
-    <text x="46" y="586" font-size="12.5" fill="#3b3a36">删除（移位覆盖 + count--）与改号（找到改栏）——v2 的完整五项；能顺手写出 = 第 7 周面向对象的地基超出合格线</text>
+    <text x="46" y="586" font-size="12.5" fill="#3b3a36">删除（移位覆盖 + count--）与改号（找到改栏）——v2 的完整五项；能顺手写出 = 第 9 周面向对象的地基超出合格线</text>
     <text x="46" y="612" font-size="12.5" fill="#6b675e">明天里程碑：最终版提交 + 复盘三收获三疑问——今天的自测成绩就是复盘的第一手材料</text>
   </g>
 </svg>

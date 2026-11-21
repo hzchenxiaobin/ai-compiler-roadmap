@@ -9,7 +9,7 @@
     <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">实验 1：统计四件套</text>
     <rect x="38" y="146" width="420" height="170" rx="6" fill="#33413a"/>
     <text x="54" y="172" font-size="12.5" fill="#cfe8c6">8 周成绩：12 25 9 31 18 27 22 35</text>
-    <text x="54" y="196" font-size="12.5" fill="#cfe8c6">最大 = 35（第 8 周）</text>
+    <text x="54" y="196" font-size="12.5" fill="#cfe8c6">最大 = 35（第 12 周）</text>
     <text x="54" y="220" font-size="12.5" fill="#cfe8c6">最小 = 9（第 3 周）</text>
     <text x="54" y="244" font-size="12.5" fill="#cfe8c6">总和 = 179</text>
     <text x="54" y="268" font-size="12.5" fill="#cfe8c6">平均 = 22.375</text>

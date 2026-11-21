@@ -36,7 +36,7 @@
     <circle cx="430" cy="510" r="5" fill="#e0955f"/>
     <text x="430" y="530" text-anchor="middle" font-size="12" font-weight="bold" fill="#9c5a22">Day 36（第 6 周收官）</text>
     <circle cx="660" cy="510" r="5" fill="#5b8db8"/>
-    <text x="660" y="530" text-anchor="middle" font-size="12" fill="#3b3a36">第 7 周 面向对象</text>
+    <text x="660" y="530" text-anchor="middle" font-size="12" fill="#3b3a36">第 9 周 面向对象</text>
     <circle cx="850" cy="510" r="5" fill="#5b8db8"/>
     <text x="850" y="530" text-anchor="middle" font-size="12" fill="#3b3a36">……第 24 周</text>
   </g>

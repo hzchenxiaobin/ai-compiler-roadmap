@@ -1,37 +1,35 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
   <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
   <g stroke-linecap="round" stroke-linejoin="round">
-    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 58 全貌：类型转换——看不见的运算符</text>
-    <path d="M 310,60 Q 480,52 650,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
-    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">operator double() 让 Fraction 悄悄变 0.5——是福（写起来顺）是祸（打出 0.5 不是 1/2）？explicit 是把关的锁</text>
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 58 全貌：=delete 的设计应用——单例与守卫</text>
+    <path d="M 280,60 Q 480,52 680,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">昨天的语法今天变成设计工具：全局唯一怎么造（单例）、唯一资源怎么守（守卫）——=delete 是两者的命根子</text>
 
-    <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
-    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">类型转换运算符</text>
-    <rect x="64" y="164" width="440" height="70" fill="#33413a"/>
-    <text x="284" y="190" font-size="11.5" fill="#cfe8c6">operator double() const {</text>
-    <text x="284" y="210" font-size="11.5" fill="#9fb8a8">　return static_cast&lt;double&gt;(num_) / den_;</text>
-    <text x="284" y="228" font-size="11.5" fill="#9fb8a8">}</text>
-    <text x="64" y="266" font-size="12.5" fill="#3b3a36">签名特点：operator + 目标类型（无返回值</text>
-    <text x="64" y="286" font-size="12.5" fill="#3b3a36">　类型标注——类型名本身就是返回类型）</text>
-    <text x="64" y="318" font-size="12.5" fill="#45703a">实测三种触发：</text>
-    <text x="64" y="338" font-size="12" fill="#8a8578">（static_cast 显式 / 赋值隐式 / 混合运算隐式）</text>
-    <text x="64" y="368" font-size="12" fill="#8a8578">（Day 47 的 cast 是"你怎么转"；今天是"类自己开通道"）</text>
+    <path d="M 40,116 Q 280,110 520,116 Q 524,260 520,384 Q 280,390 42,384 Q 36,260 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">单例 Logger 的三道门</text>
+    <text x="64" y="180" font-size="12.5" fill="#a33f2e">①构造私有：外界不能自己 new Logger</text>
+    <text x="64" y="202" font-size="12" fill="#8a8578">（实测：Logger l; → calling a private constructor）</text>
+    <text x="64" y="232" font-size="12.5" fill="#a33f2e">②禁拷贝：=delete 拷贝构造/赋值</text>
+    <text x="64" y="254" font-size="12" fill="#8a8578">（实测：拷贝 → call to deleted constructor）</text>
+    <text x="64" y="284" font-size="12.5" fill="#45703a">③静态访问点：instance() 内 static 实例</text>
+    <text x="64" y="306" font-size="12" fill="#8a8578">（首次调用创建、进程结束销毁）</text>
+    <text x="64" y="340" font-size="12.5" fill="#6b675e">函数内 static（Day 11 埋过伏笔）：</text>
+    <text x="64" y="362" font-size="12.5" fill="#6b675e">　static Logger the_one; 一行搞定唯一性</text>
 
-    <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
-    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">explicit：单参构造的锁</text>
-    <text x="572" y="180" font-size="12.5" fill="#3b3a36">非 explicit：Width(double) 开着隐式通道</text>
-    <text x="572" y="202" font-size="12" fill="#8a8578">（实测：print_width(3.14) 编译通过——暗地构造）</text>
-    <text x="572" y="232" font-size="12.5" fill="#a33f2e">explicit：Meters(double) 上锁</text>
-    <text x="572" y="254" font-size="12" fill="#8a8578">（实测：print_meters(3.14) 编译错误——</text>
-    <text x="572" y="274" font-size="12" fill="#8a8578">　no known conversion from 'double'）</text>
-    <text x="572" y="308" font-size="12.5" fill="#45703a">锁的是"一步隐式"——明写仍可：</text>
-    <text x="572" y="330" font-size="12" fill="#8a8578">（Meters(3.14) / static_cast&lt;Meters&gt;(2.0) ✔）</text>
-    <text x="572" y="364" font-size="12" fill="#8a8578">（Day 37 的 explicit Probe 已见过——今天讲透为什么）</text>
+    <path d="M 550,116 Q 740,110 905,116 Q 908,260 905,384 Q 740,390 552,384 Q 547,260 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">守卫的两种用法（实测）</text>
+    <text x="572" y="180" font-size="12.5" fill="#45703a">引用传递：process(f)——不出守卫权</text>
+    <text x="572" y="202" font-size="12" fill="#8a8578">（f 出块自己关，唯一性保持 ✔）</text>
+    <text x="572" y="232" font-size="12.5" fill="#45703a">移动移交：g = std::move(f)</text>
+    <text x="572" y="254" font-size="12" fill="#8a8578">（守卫权转给 g，f 变空守卫不重复关）</text>
+    <text x="572" y="290" font-size="12.5" fill="#a33f2e">为什么禁拷贝？两个守卫关同一文件</text>
+    <text x="572" y="312" font-size="12.5" fill="#a33f2e">= double close（和 Day 55 double free 同理）</text>
+    <text x="572" y="350" font-size="12" fill="#8a8578">（移动是 Day 111 的预告——今天先看懂行为）</text>
 
     <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
-    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">意外现场（实测）</text>
-    <text x="70" y="468" font-size="13" fill="#3b3a36">cout &lt;&lt; f 想打印分数却打出 0.5——Fraction 没有 operator&lt;&lt;，cout 顺着 double 通道就走了：隐式转换的"自作主张"</text>
-    <text x="70" y="490" font-size="12.5" fill="#6b675e">（教训：开转换通道前想想它会在哪里被"善意滥用"）</text>
+    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">设计原则：唯一性用类型表达</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">注释说"请勿拷贝"是约定（可被违反）；=delete 是物理禁止（编译期拦截）——唯一性交给类型系统才可靠</text>
+    <text x="70" y="490" font-size="12.5" fill="#6b675e">（单例、守卫、锁——资源唯一性的类都是这个套路）</text>
 
     <path d="M 60,514 Q 480,508 905,515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
     <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
@@ -40,8 +38,8 @@
     <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
     <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 58（今天）</text>
     <circle cx="650" cy="514" r="5" fill="#5b8db8"/>
-    <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 59 Matrix</text>
+    <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 75 组合/继承回顾</text>
     <circle cx="850" cy="514" r="5" fill="#e0955f"/>
-    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 60 项目日</text>
+    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 66 项目日</text>
   </g>
 </svg>

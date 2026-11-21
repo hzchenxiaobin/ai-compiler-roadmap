@@ -23,7 +23,7 @@ int main() {
         std::cout << scores[i] << " ";
     }
     std::cout << std::endl;
-    std::cout << "最大 = " << max_val << "（第 8 周）" << std::endl;
+    std::cout << "最大 = " << max_val << "（第 12 周）" << std::endl;
     std::cout << "最小 = " << min_val << "（第 3 周）" << std::endl;
     std::cout << "总和 = " << sum << std::endl;
     std::cout << "平均 = " << sum * 1.0 / WEEKS << std::endl;   // 乘 1.0 变浮点（Day 3）

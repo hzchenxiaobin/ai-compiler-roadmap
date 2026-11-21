@@ -1,36 +1,36 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
   <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
   <g stroke-linecap="round" stroke-linejoin="round">
-    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 57 全貌：容器族运算符——[] () -&gt;</text>
-    <path d="M 320,60 Q 480,52 640,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
-    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">数组感（[]）、函数感（()）、指针感（-&gt;）——三个运算符让对象分别像三种老朋友</text>
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 57 全貌：三法则——含指针成员的类的三件套</text>
+    <path d="M 280,60 Q 480,52 680,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">析构＋拷贝构造＋拷贝赋值要一起写——少一件就漏风：不写析构泄漏、不写拷贝 double free、不写赋值踩自雷</text>
 
     <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
-    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">[]：数组感</text>
-    <rect x="64" y="164" width="440" height="56" fill="#33413a"/>
-    <text x="284" y="188" font-size="11.5" fill="#cfe8c6">int&amp; operator[](std::size_t i)　　　←可写</text>
-    <text x="284" y="208" font-size="11.5" fill="#9fb8a8">const int&amp; operator[](size_t) const　←只读</text>
-    <text x="64" y="248" font-size="12.5" fill="#3b3a36">读写双版：非 const 版返回可改引用、</text>
-    <text x="64" y="268" font-size="12.5" fill="#3b3a36">　const 版让 const 对象也能下标</text>
-    <text x="64" y="300" font-size="12" fill="#8a8578">（Day 54 MyString 双版的复习 +）</text>
-    <text x="64" y="330" font-size="12.5" fill="#6b675e">实测：box[0]=10、box[4]=50 写入；</text>
-    <text x="64" y="350" font-size="12.5" fill="#6b675e">　循环读全 5 格（零初始化 { }）</text>
+    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">三件套清单（缺一漏风）</text>
+    <rect x="64" y="164" width="440" height="70" fill="#eef5e8" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="284" y="188" font-size="12" fill="#45703a">①拷贝构造 Buffer(const Buffer&amp;) ——Day 55</text>
+    <text x="284" y="210" font-size="12" fill="#8a8578">（不写 → 默认浅拷贝 → double free）</text>
+    <rect x="64" y="246" width="440" height="70" fill="#eef5e8" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="284" y="270" font-size="12" fill="#45703a">②拷贝赋值 operator=(const Buffer&amp;) ——Day 56</text>
+    <text x="284" y="292" font-size="12" fill="#8a8578">（不写 → 默认浅赋值 + 无自赋值检查）</text>
+    <rect x="64" y="328" width="440" height="46" fill="#eef5e8" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="284" y="348" font-size="12" fill="#45703a">③析构 ~Buffer() ——Day 51/46</text>
+    <text x="284" y="366" font-size="12" fill="#8a8578">（不写 → 泄漏）</text>
 
     <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
-    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">()：函数感（仿函数）</text>
-    <rect x="572" y="164" width="320" height="56" fill="#33413a"/>
-    <text x="732" y="188" font-size="11.5" fill="#cfe8c6">double operator()(double x) const {</text>
-    <text x="732" y="208" font-size="11.5" fill="#9fb8a8">　return x * factor_;</text>
-    <text x="727" y="248" font-size="12.5" fill="#3b3a36">对象携带状态（factor_）+</text>
-    <text x="727" y="268" font-size="12.5" fill="#3b3a36">　像函数一样被调用</text>
-    <text x="727" y="300" font-size="12" fill="#45703a">实测：triple(7)=21、(2.5)=7.5</text>
-    <text x="727" y="332" font-size="12.5" fill="#6b675e">普通函数不带状态；仿函数带——</text>
-    <text x="727" y="352" font-size="12.5" fill="#6b675e">　STL 算法的钥匙（第 11 周预告）</text>
+    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">什么时候需要三件套？</text>
+    <text x="572" y="182" font-size="13" fill="#a33f2e">类有裸指针成员（自己 new/delete）</text>
+    <text x="572" y="210" font-size="13" fill="#45703a">类只有值成员（string/vector/无指针）</text>
+    <text x="572" y="230" font-size="12" fill="#8a8578">→ 默认版就够（Rule of Zero）</text>
+    <text x="572" y="264" font-size="12.5" fill="#6b675e">判断法：类里出现 new → 三件套启动；</text>
+    <text x="572" y="286" font-size="12.5" fill="#6b675e">能用 string/vector 替代裸指针 → 零法则</text>
+    <text x="572" y="324" font-size="12" fill="#8a8578">（第一防线优先——Day 55 的选做已实证）</text>
+    <text x="572" y="366" font-size="12" fill="#8a8578">（五法则含移动——Day 111 展开）</text>
 
     <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
-    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#8a6d1a">-&gt; 和 *：指针感（智能指针的底层）</text>
-    <text x="70" y="468" font-size="13" fill="#3b3a36">T* operator-&gt;() 把成员访问转发给内部指针；T&amp; operator*() 解引用——cfg-&gt;port() 和 (*cfg).port() 实测等价</text>
-    <text x="70" y="490" font-size="12.5" fill="#6b675e">（unique_ptr/shared_ptr 的日常用法就是这两个运算符——Day 71 正课）</text>
+    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#8a6d1a">=default 与 =delete：精确控制</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">=default：要编译器的默认版（显式声明意图）；=delete：禁止某操作（NoCopy 禁拷贝——实测编译拦截）</text>
+    <text x="70" y="490" font-size="12.5" fill="#6b675e">（Day 51 的 FileGuard 想禁拷贝时用过 =delete 的思想——今天正式命名）</text>
 
     <path d="M 60,514 Q 480,508 905,515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
     <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
@@ -39,8 +39,8 @@
     <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
     <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 57（今天）</text>
     <circle cx="650" cy="514" r="5" fill="#5b8db8"/>
-    <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 58~59</text>
+    <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 58~75</text>
     <circle cx="850" cy="514" r="5" fill="#e0955f"/>
-    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 60 项目日</text>
+    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 66 项目日</text>
   </g>
 </svg>

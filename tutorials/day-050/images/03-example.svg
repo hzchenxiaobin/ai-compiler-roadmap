@@ -1,45 +1,43 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
   <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
   <g stroke-linecap="round" stroke-linejoin="round">
-    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">三步式战报与踩雷实录</text>
-    <path d="M 380,58 Q 480,52 580,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">四种出生、一张时刻表与一条红线</text>
+    <path d="M 350,58 Q 480,52 610,59" fill="none" stroke="#7aa663" stroke-width="3"/>
     <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
 
-    <path d="M 24,102 Q 248,97 470,102 Q 474,260 470,420 Q 248,425 26,420 Q 20,260 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 261)"/>
-    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">实验 1：三步式全家福</text>
-    <rect x="38" y="146" width="420" height="260" rx="6" fill="#33413a"/>
-    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./ca</text>
-    <text x="54" y="196" font-size="12" fill="#9fb8a8">== 普通赋值 c = a ==</text>
-    <text x="54" y="214" font-size="11.5" fill="#cfe8c6">　[赋值] 逐字面三步式</text>
-    <text x="54" y="232" font-size="11.5" fill="#cfe8c6">　"hello"@…92c0 / "hello"@…92e0（深赋值✔）</text>
-    <text x="54" y="262" font-size="12" fill="#9fb8a8">== 自赋值 a = a ==</text>
-    <text x="54" y="280" font-size="11.5" fill="#cfe8c6">　[赋值] 逐字面三步式</text>
-    <text x="54" y="298" font-size="11.5" fill="#f0c9c0">　自赋值，直接返回（①拦下）✔</text>
-    <text x="54" y="328" font-size="12" fill="#9fb8a8">== 链式 c = b = a ==</text>
-    <text x="54" y="346" font-size="11.5" fill="#cfe8c6">　[赋值]×2（b=a 再 c=b）✔</text>
-    <text x="54" y="376" font-size="12" fill="#9fb8a8">析构：逆序释放三块各自内存 ✔</text>
+    <path d="M 24,102 Q 248,97 470,102 Q 474,230 470,360 Q 248,365 26,360 Q 20,230 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 231)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">实验 1：Date 四种出生</text>
+    <rect x="38" y="146" width="420" height="200" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./dc</text>
+    <text x="54" y="196" font-size="12.5" fill="#cfe8c6">d1（默认）　：2026-1-1</text>
+    <text x="54" y="218" font-size="12.5" fill="#cfe8c6">d2（三参）　：2026-11-22</text>
+    <text x="54" y="240" font-size="12.5" fill="#cfe8c6">d3（委托）　：2026-1-1</text>
+    <text x="54" y="262" font-size="12.5" fill="#f0c9c0">d4（非法）　：2026-1-1（13月99日被拦）</text>
+    <text x="54" y="296" font-size="12" fill="#9fb8a8">非法日期退回安全默认——不变量从出生</text>
+    <text x="54" y="316" font-size="12" fill="#9fb8a8">就保住（Day 49 的 set_size 校验搬进了</text>
+    <text x="54" y="336" font-size="12" fill="#9fb8a8">产房）</text>
 
-    <path d="M 488,102 Q 712,97 934,102 Q 938,260 934,420 Q 712,425 490,420 Q 484,260 488,102 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="3" transform="rotate(0.3 711 261)"/>
-    <text x="510" y="132" font-size="16" font-weight="bold" fill="#a33f2e">实验 2：踩雷实录</text>
-    <rect x="502" y="146" width="420" height="260" rx="6" fill="#33413a"/>
-    <text x="514" y="172" font-size="12" fill="#9fb8a8">$ ./sat（无自赋值检查版）</text>
-    <text x="514" y="200" font-size="12.5" fill="#cfe8c6">赋值前："hello"</text>
-    <text x="514" y="228" font-size="12.5" fill="#f0c9c0">自赋值后：""（读已释放内存）</text>
-    <text x="514" y="262" font-size="12" fill="#9fb8a8">ASan 版：</text>
-    <text x="514" y="286" font-size="11" fill="#ffd7d0">ERROR: heap-buffer-overflow</text>
-    <text x="514" y="304" font-size="11" fill="#ffd7d0">READ of size 7（strlen 读已释放区）</text>
-    <text x="514" y="340" font-size="12" fill="#9fb8a8">-Wall 的额外提醒：</text>
-    <text x="514" y="362" font-size="11" fill="#9fb8a8">warning: explicitly assigning value</text>
-    <text x="514" y="380" font-size="11" fill="#9fb8a8">of variable to itself [-Wself-assign]</text>
-    <text x="514" y="402" font-size="12" fill="#9fb8a8">（显式 a=a 警告；隐式的仍靠①）</text>
+    <path d="M 488,102 Q 712,97 934,102 Q 938,230 934,360 Q 712,365 490,360 Q 484,230 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 231)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">实验 2：出生销毁时刻表</text>
+    <rect x="502" y="146" width="420" height="200" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="11.5" fill="#9fb8a8">$ ./co（Logger 日志，节选）</text>
+    <text x="514" y="194" font-size="12" fill="#cfe8c6">进入 main → 出生a → 出生b</text>
+    <text x="514" y="216" font-size="12" fill="#f0c9c0">出块 → 销毁b → 销毁a（逆序）</text>
+    <text x="514" y="238" font-size="12" fill="#cfe8c6">出生数组[0] → 出生数组[1]</text>
+    <text x="514" y="260" font-size="12" fill="#f0c9c0">return 0 → 销毁[1] → 销毁[0]</text>
+    <text x="514" y="292" font-size="12" fill="#9fb8a8">析构函数 ~Logger() 已出场客串——</text>
+    <text x="514" y="312" font-size="12" fill="#9fb8a8">明天的主角今天先混脸熟</text>
+    <text x="514" y="336" font-size="12" fill="#9fb8a8">（逆序销毁 = 栈的后进先出）</text>
 
-    <path d="M 24,446 Q 470,440 905,447 L 901,530 Q 470,524 26,529 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 464 488)"/>
-    <text x="46" y="474" font-size="15.5" font-weight="bold" fill="#2c5a82">两兄弟的对照表</text>
-    <text x="46" y="504" font-size="12.5" fill="#3b3a36">拷贝构造（Day 49）：新对象出生，无旧内存要释放、无自赋值问题　|　拷贝赋值（今天）：老对象翻新，②旧内存 + ①自赋值</text>
+    <path d="M 24,386 Q 470,380 905,387 L 901,490 Q 470,484 26,489 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 464 438)"/>
+    <text x="46" y="414" font-size="15.5" font-weight="bold" fill="#a33f2e">实验 3：初始化列表的红线</text>
+    <rect x="38" y="428" width="850" height="52" rx="6" fill="#33413a"/>
+    <text x="54" y="450" font-size="11.5" fill="#9fb8a8">正确版（列表）→ id = 7，value = 100 ✔</text>
+    <text x="54" y="470" font-size="11.5" fill="#ffd7d0">赋值版 → error: constructor … must explicitly initialize the const member 'id_'</text>
 
-    <path d="M 24,550 Q 470,544 905,551 L 901,630 Q 470,624 26,629 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 590)"/>
-    <text x="480" y="580" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#55606e">明天预告</text>
-    <text x="480" y="608" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 51：三法则完整版——析构 + 拷贝构造 + 拷贝赋值三件套一起写，加上 =default / =delete</text>
-    <text x="480" y="626" text-anchor="middle" font-size="12.5" fill="#6b675e">（含指针成员的类少一件就漏风——明天的 Matrix 类完整示范）</text>
+    <path d="M 24,510 Q 470,504 905,511 L 901,630 Q 470,624 26,629 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 570)"/>
+    <text x="480" y="540" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#55606e">昨天问题的今日答卷</text>
+    <text x="480" y="570" text-anchor="middle" font-size="12.5" fill="#3b3a36">Rectangle r; 之后忘了 set_size 就 area() 出垃圾？——给 Rectangle 加构造函数后</text>
+    <text x="480" y="594" text-anchor="middle" font-size="12.5" fill="#3b3a36">"声明即就绪"，忘了初始化这件事从语言层面不存在了（明天的 RAII 把这招推向巅峰）</text>
   </g>
 </svg>

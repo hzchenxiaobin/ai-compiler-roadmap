@@ -1,185 +1,201 @@
-# 第 58 天：类型转换运算符与 explicit——看不见的运算符
+# 第 58 天：=delete 的设计应用——不可拷贝的单例雏形
 
-> **今日目标**：完成本教程后，你能做到：写出类型转换运算符（`operator double()`）并说出它的三种触发场景；解释隐式转换的"意外现场"（cout << f 打出 0.5 而不是 1/2 的决策链）；用 explicit 锁住单参构造的隐式通道（实测编译拦截）；背出"单参构造默认加 explicit"的白名单思维。
+> **今日目标**：完成本教程后，你能做到：实现三道门的单例（私有构造 + `=delete` 拷贝 + 静态访问点）并实测唯一性；说出"函数内 static"保证唯一性的原理；用引用和移动两种方式正确使用禁拷贝的守卫；解释"唯一性交给类型系统"为什么比文档约定可靠。
 > **预计时间**：学习 20 分钟＋实践 45 分钟
-> **前置准备**：完成 Day 55~57（运算符三大族齐了——今天是"看不见的"第四类）。
-> **今日产出**：Fraction → double 的隐式通道实测（含意外现场）、explicit 上锁/解锁对照、一条经验法则。
+> **前置准备**：完成 Day 57（`=delete` 语法昨天学、今天用）。
+> **今日产出**：单例 Logger（唯一性实测——一次出生/计数连续/进程结束销毁）、FileGuard 武器化版（引用与移动两路线）、两条执法线实测。
 
 ## 1. 今天解决什么问题？
 
-运算符三族（算术/流/容器）之外还有一类**看不见的运算符**：类型转换。它有两个方向——**转出**（`operator double()` 让 Fraction 变 0.5）和**转入**（单参构造 `Width(double)` 让 3.14 变 Width）。两个方向都能被**隐式触发**——你没写转换，编译器自己走了：写起来顺（`f + 1.5` 直接算），但也会"自作主张"（`cout << f` 想打分数打出 0.5）。
+昨天学了 `=delete` 的语法；今天把它变成**设计工具**。计划指定的练习是"不可拷贝的单例雏形"——全局唯一的 Logger：模块 A、B、main 各自拿到的必须是**同一个**实例（计数连续证明）。配套把 Day 51 的 FileGuard 正式武器化：当时的"禁拷贝"是编译器因 fstream 成员自动删的（巧合），今天 `=delete` 显式声明（设计）。
 
-今天的把关工具是 **explicit**：锁住隐式通道、明写才放行。一条经验法则贯穿：**单参构造默认加 explicit**——白名单思维。
+两者的共同点是一个设计原则：**唯一性用类型表达**——注释说"请勿拷贝"可被违反，`=delete` 是物理禁止。
 
 ## 2. 先看全貌：今天的内容位于哪里？
 
-![转换的两端与 explicit](images/01-overview.svg)
+![单例三道门与守卫两路线](images/01-overview.svg)
 
-**图 1**：左卡是类型转换运算符（`operator 目标类型()`——无返回类型标注，类型名本身就是）；右卡绿是 explicit 的锁（锁"一步隐式"、明写仍可）；下方红卡是意外现场预告。
+**图 1**：左卡是单例 Logger 的三道门（①私有构造 ②`=delete` 拷贝 ③静态访问点——Day 11 函数内 static 的伏笔回收）；右卡绿是守卫的两种用法（引用借出 / 移动移交——Day 111 预告）；下方红卡是"唯一性交给类型系统"的设计原则。
 
 三步概括今天：
 
-1. 转出靠 `operator double()`、转入靠单参构造——两端都可能隐式触发；
-2. 隐式的代价：cout 决策链"退而求其次"走了 double 通道；
-3. explicit 锁一步隐式；经验法则：单参构造默认加。
+1. 单例三道门：私有构造（不能自己造）+ 禁拷贝（不能复制）+ 静态点（只能经此取）；
+2. `=delete` 是资源唯一性类的标配（单例/守卫/锁）；
+3. 持有方式：引用（借出）或移动（移交），就是不拷贝。
 
 ## 3. 核心概念：先用直觉，再给准确定义
 
-### 3.1 类型转换运算符：类的出口
+### 3.1 单例：三道门的保险箱
 
-- **一句通俗解释**：`operator double()` 给类开一个"出口"——凡是需要 double 的地方，Fraction 都能悄悄挤过去。
-- **一个类比**：外币兑换窗口——人民币（Fraction）在任何收美元（double）的场合自动按汇率换——方便，但你没喊"兑换"它也换了。
-- **对应到技术上是**：实测三种触发——①显式 `static_cast<double>(f)` 得 0.5；②隐式赋值 `double d2 = f` 得 0.5；③混合运算 `f + 1.5` 得 2（0.5+1.5=2.0，cout 默认格式打 2——顺带见证了流格式细节）。签名特点：**没有返回类型标注**（`operator double()` 不是 `double operator double()`）——目标类型名本身就说明了返回什么。类比的边界：兑换窗口只能按你写的汇率（函数体）；不写就没有这个出口——**转换是类自己的决定**。
-- **常见误解**："转出比转入安全"——都一样：`cout << f` 的意外就是转出端闯的祸。
+- **一句通俗解释**：单例（singleton）是全程序只有一个实例的类——三道门锁死"只能有一个"：不能自己造（私有构造）、不能复制（`=delete`）、只能经固定入口取（静态访问点）。
+- **一个类比**：公司公章——不能自己刻（私有构造）、不能复印（禁拷贝）、要用只能去行政部登记领取（`instance()`）——全公司盖出来的都是同一颗章。
+- **对应到技术上是**：实测——模块 A/B/main 各调 `Logger::instance()`：`[Logger 出生]` 只打**一次**、计数 `#1~#4` 连续（四个调用方共享同一实例）、进程结束才销毁。函数内 `static Logger the_one;` 是唯一性的核心（Day 11 埋的伏笔：static 局部变量只在首次调用时初始化一次）。类比的边界：公章闲置时也在保险柜（实例进程期间一直活着）； Meyers 单例是今天的雏形——线程安全版（C++11 起自动）到 Day 25 周并发时正式点题。
+- **常见误解**："static 变量每个调用者一份"——恰恰相反；函数内 static 全程一份，这正是选它当单例载体的原因。
 
-### 3.2 意外现场：cout 的决策链
+### 3.2 =delete 是资源唯一性的命根子
 
-- **一句通俗解释**：`cout << f` 想 `operator<<(ostream, Fraction)`——没有；编译器不放弃，找到 double 通道就把 f 换成 0.5 塞给 `operator<<(ostream, double)`。
-- **一个类比**：点菜没有——服务员看你能变身成"简餐"就自作主张上了简餐。
-- **对应到技术上是**：实测 `cout << f` 打出 **0.5 不是 1/2**——三步决策链：①找精确匹配（没有）→ ②找可行的转换（double 通道开着）→ ③用转换后的版本。教训：**开转换通道前想清所有会被触发的地方**——cout 只是今天撞见的第一个。类比的边界：转换只走**一步**（Fraction→double 直接可达；Fraction→double→int 的两步链编译器不走——Day 47 也见过"一步规则"）。
-- **常见误解**："没写 operator<< 就该编译错"——恰好给了编译器"退而求其次"的机会；想要编译错或正确行为，都该显式写 operator<<（昨天的技能）。
+- **一句通俗解释**：拷贝一个"唯一性资源"（日志器/文件守卫/锁）在语义上就错了——`=delete` 把这个错误堵在编译期。
+- **一个类比**：克隆一把已激活的门禁卡——两张卡刷同一扇门，系统不知道该信谁（双关 = double close/double free）。
+- **对应到技术上是**：两条执法实测——`Logger l;` 报 `calling a private constructor`（门①拦）；`Logger l2 = Logger::instance();` 报 `call to deleted constructor`（门②拦）。守卫版的道理：两个 FileGuard 持同一 fd，析构时 double close（和 Day 55 的 double free 同构）。类比的边界：`=delete` 不等于"没这函数"——它明确存在但被禁；错误信息也因此更友好（"被删除"而非"不存在"）。
+- **Day 51 的对照**：当时 FileGuard 的拷贝被编译器**自动**删（fstream 成员不可拷贝的连带）——巧合的保护；今天显式 `=delete`——**设计**的保护。前者换了成员可能悄悄失守，后者永远锁死。
 
-### 3.3 explicit：一步隐式的锁
+### 3.3 引用与移动：禁拷贝类的两种用法
 
-- **一句通俗解释**：`explicit` 锁住"一步隐式转换"——`print_meters(3.14)` 编译不过；明写 `Meters(3.14)` 或 `static_cast<Meters>(2.0)` 照常通行。
-- **一个类比**：门禁卡——explicit 的卡必须本人刷（明写）；非 explicit 的卡谁捡到都能刷（隐式）。
-- **对应到技术上是**：实测对照——`print_width(3.14)` 编译过（Width 的构造没锁，double 暗地构造）；`print_meters(3.14)` 编译错（`no known conversion from 'double' to 'const Meters'`）；`Meters(3.14)` 明写编译过。C++11 起 explicit 也能加在转换运算符上（`explicit operator double()`）——同样的锁、同样的放行规则。类比的边界：**锁的只是一步隐式**——明写（直接初始化/static_cast）永远合法；Day 37 的 `explicit Probe(int)` 见过用法，今天补上了"为什么"。
-- **经验法则**：单参构造**默认加 explicit**——需要隐式时再摘（白名单思维：默认关、按需开——比"默认开、出事再关"的黑名单安全得多）。
+- **一句通俗解释**：不能复制的东西怎么用？**借**（引用）或**移交**（移动）——就是不抄。
+- **一个类比**：原件合同——借阅（引用：用完还）或过户（移动：所有权转手，原持有人失去权利）。
+- **对应到技术上是**：实测两条路线——`process(f)` 引用传递（f 借出守卫权、出块自己关，唯一性不变 ✔）；`FileGuard g = std::move(f)` 移动移交（f 的 fd 置 -1 变空守卫、g 接管；f 析构时判空不重复关 ✔）。类比的边界：移动是 Day 111 的正课——今天的 FileGuard 移动构造是预告版，看懂"所有权转移"四个字即可。
+- **常见误解**："禁了拷贝这类就没法传了"——引用和指针畅通无阻；禁的只是**值语义**（复制）。
 
 ## 4. 图解核心机制
 
-![转换的两端与决策链](images/02-mechanism.svg)
+![instance() 的唯一性原理与守卫移交](images/02-mechanism.svg)
 
-**图 2**：上半部分蓝卡是转换的两条路——转出（operator double）与转入（单参构造），两端都可能自作主张、两端都能上锁；左下红卡是 `cout << f` 的三步决策链（找精确匹配 → 走转换通道 → 打 0.5）；右下绿卡是 explicit 的三问决策（语义自然吗/会出意外吗/构造是凑巧单参吗）。
+**图 2**：上半部分蓝卡是 `instance()` 的解剖——函数内 static 首次调用初始化（仅一次）、之后每次返回同一个（C++11 起线程安全）；左下绿卡是守卫的两条路线（引用借出 vs 移动移交——后者 f.fd_ = -1 失活、析构判空）；右下红卡是两条执法线（private constructor / deleted constructor）。
 
 按图逐步讲：
 
-1. **先认两端**：转出是 `operator 目标类型()`、转入是单参构造——今天两个实验各占一端；explicit 两处都能上锁；
-2. **走一遍决策链**：cout 的"退而求其次"是编译器的常规操作（重载决议的一部分）——意外不是 bug 而是机制的自然结果；理解了链路才能预测意外；
-3. **三问过滤一遍**：语义不自然→不写转换；会出意外→explicit；构造凑巧单参→explicit——三问覆盖今天的全部决策；
-4. **白名单法则落袋**：默认 explicit、按需摘——和 Day 52"唯一性交给类型系统"同源：**默认安全，例外才开口**。
+1. **看 static 的"仅一次"**：初始化发生在第一次调用时——实测 `[Logger 出生]` 在模块 A 首调时打出、B 和 main 复调时**不再打**；
+2. **看计数的连续性**：#1~#4 无跳号——四个调用方写的是同一个 log_count_（唯一性的行为证据）；
+3. **看移动的失活**：f 移交后 fd_ = -1（空守卫）——析构的 `if (fd_ >= 0)` 判空防重复关（和三步式的自赋值检查同是"先验后动"）；
+4. **销毁时机**：`[Logger 销毁]` 在**进程结束时**打（main 的 return 之后）——static 局部的生命期是全程，不是出块。
 
 ## 5. 动手实践：完成一个最小可运行例子
 
 ### 5.1 准备文件
 
 ```bash
-cd ai-compiler-roadmap/tutorials/day-058/examples
+cd ai-compiler-roadmap/tutorials/day-052/examples
 ```
 
-两个程序：`implicit_convert.cpp`（转出端）、`explicit_guard.cpp`（转入端对照）。
+两个程序：`singleton_logger.cpp`（主角）、`guard_delete.cpp`（守卫武器化）。
 
 ### 5.2 编写代码
 
-两个关键片段（完整代码见本目录）：
+主角 `singleton_logger.cpp` 的三道门（完整代码见本目录）：
 
 ```cpp
-class Fraction {
-    …
-    operator double() const {                    // 类型转换运算符（出口）
-        return static_cast<double>(num_) / den_;
-    }
-};
+class Logger {
+private:
+    std::string name_;
+    int log_count_;
 
-class Meters {
-    …
-    explicit Meters(double v) : value_(v) {}     // explicit：锁住一步隐式（入口）
+    Logger() : name_("全局日志"), log_count_(0) {       // ①构造私有
+        std::cout << "  [Logger 出生] 全局唯一实例创建" << std::endl;
+    }
+
+public:
+    Logger(const Logger&) = delete;                     // ②禁拷贝
+    Logger& operator=(const Logger&) = delete;
+
+    static Logger& instance() {                         // ③静态访问点
+        static Logger the_one;                          //   首次调用创建，进程结束才销毁
+        return the_one;
+    }
+
+    void log(const std::string& msg) { … }
 };
 ```
 
 ### 5.3 运行与观察
 
 ```bash
-g++ -Wall implicit_convert.cpp -o ic && ./ic
+g++ -Wall singleton_logger.cpp -o sl && ./sl
 ```
 
 实际执行结果（本机）：
 
 ```text
-== 显式转换 ==
-static_cast<double>(f) = 0.5
+== 通过静态点获取（两次都是同一个） ==
+  [Logger 出生] 全局唯一实例创建
+  [#1] 模块 A 启动
+  [#2] 模块 B 干活
+  [#3] main 结束前
 
-== 隐式转换（看不见但发生了） ==
-double d2 = f → 0.5
-f + 1.5 = 2
-
-== 隐式转换的意外现场 ==
-cout << f 打出的是：0.5
-（Fraction 没有 operator<<，cout 找到 double 通道就走了）
+== 引用别名（仍然唯一） ==
+  [#4] 经引用调用
+总条数 = 4
+  [Logger 销毁] 共记录 4 条
 ```
 
 ```bash
-g++ -Wall explicit_guard.cpp -o eg && ./eg
+g++ -Wall guard_delete.cpp -o gd && ./gd
 ```
 
 ```text
-== 非 explicit 版（隐式通道开着） ==
-  3.14 宽
-（print_width(3.14) 编译通过——double 暗地里走了 Width 构造）
-Width w = 2.5 → 2.5
+== 引用传递（守卫唯一） ==
+  [打开] data.txt（fd=3）
+  [使用] data.txt
+  [关闭] data.txt（fd=3）
 
-== explicit 版（通道上锁） ==
-  3.14 m
-（必须 Meters(3.14) 明写——一步都逃不掉）
-static_cast<Meters>(2.0) → 2
+== 移动移交（Day 111 预告） ==
+  [打开] b.txt（fd=5）
+  [移交] 守卫权转移
+  [使用] b.txt
+  [关闭] b.txt（fd=5）
+  [析构] 已移交的空守卫（不重复关）
 ```
 
-![三种触发与锁的执法](images/03-example.svg)
+![单例战报与守卫移交](images/03-example.svg)
 
-**图 3**：左上三种触发 + 意外现场（含 `f+1.5=2` 的格式注解）；右上是 explicit 的锁（编译错误原文）；下方橙卡是白名单法则、灰卡预告明天。
+**图 3**：左上单例战报（一次出生/计数连续/进程结束销毁三证）；右上守卫两条路线（含空守卫判空）；下方橙卡是 Day 51 巧合 vs 今天设计的对照。
 
-### 5.4 修改一行再观察：锁的执法亲测
+### 5.4 修改一行再观察：两条执法线
 
-把 `explicit_guard.cpp` 里 `print_meters(3.14);` 的注释放开（预期编译失败，本机实测）：
+**执法一（私有构造）**：把 `Logger l;` 的注释放开（预期编译失败，本机实测）：
 
 ```text
-error: no matching function for call to 'print_meters'
-note: candidate function not viable: no known conversion from 'double' to 'const Meters' for 1st argument
+error: calling a private constructor of class 'Logger'
 ```
 
-**对照两步**：①把 `print_meters(3.14)` 改成 `print_meters(Meters(3.14))`——编译过（明写放行）；②把 `explicit` 删掉——`print_meters(3.14)` 也编译过（锁没了）。**一锁一开一摘**三态对照，explicit 管的就是"一步隐式"实证。顺带实验：**两步隐式永远不通**——`print_width(3.14)` 能过是因为一步（double→Width）；若再有 `void f(const Meters&)` 想从 Width 走过去（Width→Meters 没有通道）——编译器不会替你串两步。
+**执法二（禁拷贝）**：把 `Logger l2 = Logger::instance();` 的注释放开（预期编译失败，本机实测）：
+
+```text
+error: call to deleted constructor of 'Logger'
+```
+
+两条错误守住单例的两道门（第三道——静态访问点——是入口不是限制）。**对照实验**：把构造改 public、拷贝的 `=delete` 删掉——两条都编译过但单例破了（`[Logger 出生]` 会打两次、计数分裂）——一改一对，三道门各司其职的实证。
 
 ## 6. 常见错误与排查
 
-**错误 1：`cout << myobj` 打出奇怪的数字**
+**错误 1：`error: calling a private constructor of class 'Logger'`**
 
-- 现象：想打印自定义格式却出了 double 值；
-- 原因：类开了 `operator double()`——cout 的重载决议"退而求其次"走了它；
-- 定位：看类里有没有转换运算符；
-- 修复：写正经的 `operator<<`（Day 56）；或转换运算符加 explicit（C++11 起支持）。
+- 现象：直接 `Logger l;`；
+- 原因：门①——单例不许外界自己造；
+- 定位：看构造函数在 private 区；
+- 修复：走 `Logger::instance()`。
 
-**错误 2：`error: no matching function … no known conversion from 'double'`**
+**错误 2：`error: call to deleted constructor of 'Logger'`**
 
-- 现象：传字面量给 `const T&` 参数被拒；
-- 原因：T 的单参构造是 explicit——一步隐式被锁；
-- 定位：看构造函数的 explicit；
-- 修复：明写 `T(value)` 或 `static_cast<T>`；确认设计意图（锁是故意的就别摘）。
+- 现象：`Logger l2 = Logger::instance();`；
+- 原因：门②——拷贝被 `=delete`；
+- 定位：看类声明里的 delete 行；
+- 修复：用引用——`Logger& ref = Logger::instance();`（借出不复制）。
 
-**错误 3：两步转换不生效**
+**错误 3：单例计数"分裂"（各模块从 1 开始数）**
 
-- 现象：A→B→C 的链编译不过；
-- 原因：隐式转换最多一步（语言规则）；
-- 定位：检查中间类型；
-- 修复：明写一步（`B(a)` 再传）；或给 A 写直达 C 的转换（慎——多开口多意外）。
+- 现象：`[#1]` 出现多次；
+- 原因：实例被复制了（构造没私有或拷贝没删）——每个副本有自己的 log_count_；
+- 定位：`[Logger 出生]` 打了几次——多于一次就是破了；
+- 修复：三道门逐一检查补齐。
 
 ## 7. 今日练习
 
 ### 必做练习
 
-给 Day 55 的 Fraction 补 `operator<<`（打 "1/2" 格式），验证 `cout << f` 打出 **1/2 而不是 0.5**——精确匹配优先于转换通道（决策链的第一步获胜）。预期产出：前后对照（有/无 operator<< 的两种输出）。
+给单例加"按等级过滤"：`enum class Level { Debug, Info, Error };` 加 `set_level(Level)` 和 `log(Level, msg)`（低于设定等级的不打印）。预期产出：设 Error 后 Debug/Info 被滤、Error 通过——过滤状态全局生效（又是唯一性的证明）。
 
 ### 选做挑战
 
-给 Fraction 的转换运算符加 explicit（`explicit operator double() const`）——本机实测三种语境两种被锁：`double d = f` 编译错（`explicit conversion function is not a candidate`——拷贝初始化不放行）；`f + 1.5` 编译错（`invalid operands to binary expression`——算术语境不放行）；`static_cast<double>(f)` 照常通行。**只有 static_cast 一条活路**——把三种语境的实测结果记入 notes.md（例外：`explicit operator bool` 在 if 条件里可隐式用——上下文转换，第 12 周遇异常处理时再展开）。
+把 Day 54 的 BankAccount 利率改成"单例 Config"：`Config::instance().interest_rate()` 提供全行利率（替代 static 成员）。对比两种做法：static 成员 vs 单例——什么时候后者更好（提示：需要初始化逻辑/多字段/懒加载时单例更顺手）。
 
 ## 8. 今日验收
 
-- [ ] 我的 operator double() 三种触发实测通过（显式/赋值/混合运算）
-- [ ] 我能讲出 cout << f 打 0.5 的三步决策链
-- [ ] 我实测了 explicit 的锁（编译错误原文）和两种放行（明写/static_cast）
-- [ ] 我知道两步隐式永远不通（一步规则）
-- [ ] 我能背出白名单法则：单参构造默认加 explicit
+- [ ] 我能实现三道门的单例并实测唯一性（一次出生/计数连续/进程结束销毁）
+- [ ] 我能说出函数内 static 保证唯一性的原理
+- [ ] 我能用引用和移动两种方式正确使用禁拷贝的守卫
+- [ ] 我实测了两条执法线（private constructor / deleted constructor）
+- [ ] 我理解"唯一性交给类型系统"比文档约定可靠
 
 ## 9. 一句话总结与明天预告
 
-今天的问题是"类型转换的隐式通道怎么开怎么锁"；机制上，转出靠 operator 目标类型()、转入靠单参构造，两端的隐式触发由重载决议驱动（cout 意外就是它），explicit 锁一步隐式、明写放行；实践上，三种触发、意外现场、锁的三态对照全部实测；验证标准是看到任何转换能说出"隐式走得通吗、意外在哪、锁怎么上"。明天 **Day 59：Matrix 矩阵类实战**——本周运算符全家桶（`[] () 算术 ==`）的总演练场：`m[i][j]` 链式下标是 Day 57 的进阶应用。
+今天的问题是"唯一性怎么用代码锁死"；机制上，单例三道门（私有构造 + 禁拷贝 + 静态点）配合函数内 static 的一次初始化，守卫用引用借出或移动移交；实践上，唯一性三证、两路线、执法线全部实测；验证标准是看到任何"全局唯一"的需求能画出三道门的草图。明天 **Day 75：组合 vs 继承的坏例重构**——"为复用而继承"的经典反模式怎么改造成组合（计划指定的重构练习）：第 10 周倒数第二课。

@@ -31,11 +31,11 @@
     <text x="610" y="228" text-anchor="middle" font-size="13" fill="#8a8578">[5]</text>
     <text x="710" y="228" text-anchor="middle" font-size="13" fill="#8a8578">[6]</text>
     <text x="810" y="228" text-anchor="middle" font-size="13" font-weight="bold" fill="#45703a">[7]</text>
-    <text x="480" y="258" text-anchor="middle" font-size="13.5" fill="#55606e">下标从 0 开始，到 7 结束——第 1 周住 [0]，第 8 周住 [7]</text>
+    <text x="480" y="258" text-anchor="middle" font-size="13.5" fill="#55606e">下标从 0 开始，到 7 结束——第 1 周住 [0]，第 12 周住 [7]</text>
 
     <path d="M 40,290 Q 240,284 440,290 Q 444,370 440,452 Q 240,458 42,452 Q 36,370 40,290 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 240 371)"/>
     <text x="240" y="320" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">今天的统计四件套</text>
-    <text x="66" y="352" font-size="13" fill="#3b3a36">最大 = 35（第 8 周）　最小 = 9（第 3 周）</text>
+    <text x="66" y="352" font-size="13" fill="#3b3a36">最大 = 35（第 12 周）　最小 = 9（第 3 周）</text>
     <text x="66" y="378" font-size="13" fill="#3b3a36">总和 = 179　　平均 = 22.375</text>
     <text x="66" y="412" font-size="12.5" fill="#6b675e">擂台法：拿 [0] 当擂主，for 扫一遍逐个挑战；</text>
     <text x="66" y="432" font-size="12.5" fill="#6b675e">平均记得乘 1.0 变浮点（Day 3 的老朋友）</text>

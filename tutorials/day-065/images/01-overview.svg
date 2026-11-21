@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 65 全貌：Matrix——运算符全家桶的总演练场</text>
+    <path d="M 290,60 Q 480,52 670,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">m[i][j] 链式下标 + 算术（+ 矩阵× 标量×）+ == + 输出流——本周四天的运算符在一个类里会师</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">m[i][j] 的两步接力</text>
+    <rect x="64" y="164" width="440" height="110" fill="#33413a"/>
+    <text x="284" y="190" font-size="11.5" fill="#cfe8c6">a[1][2] = 6;</text>
+    <text x="284" y="212" font-size="11" fill="#9fb8a8">①a.operator[](1) → 返回 Row{a,1}</text>
+    <text x="284" y="232" font-size="11" fill="#9fb8a8">②Row.operator[](2) → 返回 int&amp;（元素）</text>
+    <text x="284" y="252" font-size="10.5" fill="#9fb8a8">（两次 [] 各定一步：先定行再定列）</text>
+    <text x="64" y="300" font-size="12.5" fill="#3b3a36">为什么不直接 operator()(int,int)？</text>
+    <text x="64" y="322" font-size="12.5" fill="#6b675e">　能（m(1,2) 一步到位）——但 [][] 保留</text>
+    <text x="64" y="342" font-size="12.5" fill="#6b675e">　"像二维数组"的手感；代理是价格</text>
+    <text x="64" y="372" font-size="12" fill="#8a8578">（Row 是嵌套的轻量"定位器"——不带数据）</text>
+
+    <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">三个运算符重载的分工</text>
+    <text x="572" y="180" font-size="12.5" fill="#3b3a36">operator+：同型逐元素（断言护形）</text>
+    <text x="572" y="210" font-size="12.5" fill="#3b3a36">operator*(Matrix)：矩阵乘（三重循环）</text>
+    <text x="572" y="232" font-size="12" fill="#8a8578">　2×3 · 3×2 = 2×2（Day 14 老朋友类版）</text>
+    <text x="572" y="262" font-size="12.5" fill="#3b3a36">operator*(int)：标量乘（逐元素 ×k）</text>
+    <text x="572" y="292" font-size="12" fill="#6b675e">同名 operator* 靠参数类型分派——</text>
+    <text x="572" y="312" font-size="12" fill="#6b675e">　重载的日常形态（Day 10 的运算符版）</text>
+    <text x="572" y="350" font-size="12" fill="#8a8578">（== 逐元素比；&lt;&lt; setw(4) 对齐打印）</text>
+
+    <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
+    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#8a6d1a">三件套依然是地基</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">裸指针 data_ → 三件套全手写（Day 57 判断法）；运算符全家桶站在拷贝控制的地基上——缺地基运算符再花哨也是空中楼阁</text>
+    <text x="70" y="490" font-size="12.5" fill="#6b675e">（实测：Matrix b = a 拷贝构造 + 逆序析构各释放各的 ✔）</text>
+
+    <path d="M 60,514 Q 480,508 905,515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 61~64 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 65（今天）</text>
+    <circle cx="660" cy="514" r="5" fill="#e0955f"/>
+    <text x="660" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 60 项目日</text>
+    <circle cx="850" cy="514" r="5" fill="#5b8db8"/>
+    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">第 11 周 STL</text>
+  </g>
+</svg>

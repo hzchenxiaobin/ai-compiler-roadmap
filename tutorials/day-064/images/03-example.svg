@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">隐式触发、意外现场与锁的执法</text>
+    <path d="M 350,58 Q 480,52 610,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,260 470,420 Q 248,425 26,420 Q 20,260 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 261)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">实验 1：三种触发 + 意外</text>
+    <rect x="38" y="146" width="420" height="260" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./ic　（-Wall 零警告）</text>
+    <text x="54" y="200" font-size="12" fill="#9fb8a8">static_cast&lt;double&gt;(f) = 0.5　显式 ✔</text>
+    <text x="54" y="226" font-size="12.5" fill="#cfe8c6">double d2 = f → 0.5　隐式 ✔</text>
+    <text x="54" y="252" font-size="12.5" fill="#cfe8c6">f + 1.5 = 2　混合运算隐式 ✔</text>
+    <text x="54" y="274" font-size="11" fill="#9fb8a8">（0.5+1.5=2.0，cout 默认格式打 2）</text>
+    <text x="54" y="310" font-size="12" fill="#9fb8a8">意外现场：</text>
+    <text x="54" y="334" font-size="12.5" fill="#f0c9c0">cout &lt;&lt; f 打出的是：0.5</text>
+    <text x="54" y="356" font-size="12" fill="#9fb8a8">（Fraction 没有 operator&lt;&lt;，</text>
+    <text x="54" y="374" font-size="12" fill="#9fb8a8">　cout 找到 double 通道就走了）</text>
+    <text x="54" y="402" font-size="12" fill="#9fb8a8">（想打 1/2 要写 operator&lt;&lt;——昨天技能）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,260 934,420 Q 712,425 490,420 Q 484,260 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 261)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">实验 2：explicit 的锁</text>
+    <rect x="502" y="146" width="420" height="260" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="11.5" fill="#9fb8a8">$ ./eg</text>
+    <text x="514" y="196" font-size="12" fill="#9fb8a8">非 explicit 版（Width）：</text>
+    <text x="514" y="218" font-size="12.5" fill="#cfe8c6">　print_width(3.14) → 3.14 宽</text>
+    <text x="514" y="238" font-size="11.5" fill="#9fb8a8">　（double 暗地里走了构造！）</text>
+    <text x="514" y="268" font-size="12" fill="#9fb8a8">explicit 版（Meters）：</text>
+    <text x="514" y="290" font-size="12.5" fill="#cfe8c6">　print_meters(Meters(3.14)) ✔</text>
+    <text x="514" y="310" font-size="12.5" fill="#cfe8c6">　static_cast&lt;Meters&gt;(2.0) → 2 ✔</text>
+    <text x="514" y="342" font-size="12" fill="#9fb8a8">print_meters(3.14)（取消注释）→</text>
+    <text x="514" y="366" font-size="11" fill="#ffd7d0">error: no matching function for call</text>
+    <text x="514" y="384" font-size="11" fill="#ffd7d0">　no known conversion from 'double'</text>
+    <text x="514" y="408" font-size="11.5" fill="#9fb8a8">　to 'const Meters'（一步都逃不掉）</text>
+
+    <path d="M 24,446 Q 470,440 905,447 L 901,530 Q 470,524 26,529 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 488)"/>
+    <text x="46" y="474" font-size="15.5" font-weight="bold" fill="#9c5a22">一条经验法则</text>
+    <text x="46" y="504" font-size="12.5" fill="#3b3a36">单参构造默认加 explicit——需要隐式时再摘：白名单思维（默认关、按需开），比黑名单（默认开、出事再关）安全</text>
+
+    <path d="M 24,550 Q 470,544 905,551 L 901,640 Q 470,634 26,639 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 595)"/>
+    <text x="480" y="580" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#55606e">明天预告</text>
+    <text x="480" y="608" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 65：Matrix 矩阵类实战——本周运算符全家桶（[] () 算术 ==）的总演练场</text>
+    <text x="480" y="628" font-size="12.5" fill="#6b675e">（m[i][j] 链式下标是 Day 63 的进阶应用）</text>
+  </g>
+</svg>

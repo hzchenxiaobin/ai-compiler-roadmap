@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">链式输出与三种输入战报</text>
+    <path d="M 370,58 Q 480,52 590,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,270 470,440 Q 248,445 26,440 Q 20,270 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 271)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出</text>
+    <rect x="38" y="146" width="420" height="280" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./so　（-Wall 零警告）</text>
+    <text x="54" y="200" font-size="12" fill="#9fb8a8">== 输出侧链式 ==</text>
+    <text x="54" y="222" font-size="12.5" fill="#cfe8c6">a=1/2 b=3/4（一句连打）</text>
+    <text x="54" y="252" font-size="12" fill="#9fb8a8">== 输入侧（正常格式） ==</text>
+    <text x="54" y="274" font-size="12.5" fill="#cfe8c6">读到 c = 1/2（5/10 约分成 1/2）</text>
+    <text x="54" y="304" font-size="12" fill="#9fb8a8">== 输入侧（格式错误） ==</text>
+    <text x="54" y="326" font-size="12" fill="#f0c9c0">[输入格式错误：流已置错]</text>
+    <text x="54" y="346" font-size="12.5" fill="#cfe8c6">失败后 d = 0/1（保持默认值）</text>
+    <text x="54" y="374" font-size="12" fill="#f0c9c0">[格式错误：期望 / 却读到 'x']</text>
+    <text x="54" y="394" font-size="12.5" fill="#cfe8c6">失败后 e = 0/1</text>
+    <text x="54" y="420" font-size="12" fill="#9fb8a8">（两条拦截路径 + 一条成功路径）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,270 934,440 Q 712,445 490,440 Q 484,270 488,102 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 711 271)"/>
+    <text x="510" y="132" font-size="15.5" font-weight="bold" fill="#55606e">本周技能树</text>
+    <rect x="502" y="146" width="420" height="200" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="11.5" fill="#cfe8c6">Day 61：算术/比较运算符（成员版）✔</text>
+    <text x="514" y="196" font-size="11.5" fill="#cfe8c6">Day 62：流运算符（友元版）✔ 今天</text>
+    <text x="514" y="220" font-size="11.5" fill="#9fb8a8">Day 63：下标/调用/解引用（容器族）</text>
+    <text x="514" y="244" font-size="11.5" fill="#9fb8a8">Day 64：类型转换与 explicit</text>
+    <text x="514" y="268" font-size="11.5" fill="#9fb8a8">Day 65：Matrix 矩阵类实战</text>
+    <text x="514" y="292" font-size="11.5" fill="#9fb8a8">Day 60：项目日（第 11 周收官）</text>
+    <text x="510" y="336" font-size="12.5" fill="#3b3a36">流运算符是"可打印"的门票——</text>
+    <text x="510" y="358" font-size="12.5" fill="#3b3a36">　自定义类型从此能进 cout 日志流</text>
+    <text x="510" y="392" font-size="12" fill="#8a8578">（通讯录的 print() 到时候可以</text>
+    <text x="510" y="412" font-size="12" fill="#8a8578">　重写成 &lt;&lt; 版——更 C++ 的姿势）</text>
+
+    <path d="M 24,466 Q 470,460 905,467 L 901,530 Q 470,524 26,529 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 498)"/>
+    <text x="46" y="494" font-size="15.5" font-weight="bold" fill="#9c5a22">今天的一对镜像</text>
+    <text x="46" y="522" font-size="12.5" fill="#3b3a36">&lt;&lt; 输出：const Fraction&amp;（只读）｜&gt;&gt; 输入：Fraction&amp;（要写）｜返回都是流引用（链式）——const 的有无即读写之别</text>
+
+    <path d="M 24,550 Q 470,544 905,551 L 901,630 Q 470,624 26,629 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 590)"/>
+    <text x="480" y="580" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#55606e">明天预告</text>
+    <text x="480" y="608" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 63：下标 []、调用 ()、解引用 -&gt;——容器族运算符（Day 66 的读写双版下标是热身）</text>
+    <text x="480" y="628" font-size="12.5" fill="#6b675e">（() 让对象像函数——仿函数是 STL 算法的钥匙，第 11 周预告）</text>
+  </g>
+</svg>

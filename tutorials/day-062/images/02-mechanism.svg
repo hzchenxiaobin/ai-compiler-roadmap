@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">链式的数据流与输入的三条路径</text>
+    <path d="M 300,58 Q 480,52 660,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,310 Q 470,304 44,309 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 205)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">cout &lt;&lt; a &lt;&lt; b 的求值流</text>
+    <rect x="90" y="146" width="180" height="56" fill="#f9d9b8" stroke="#e0955f" stroke-width="2.2"/>
+    <text x="180" y="170" text-anchor="middle" font-size="11" fill="#9c5a22">第一段：operator&lt;&lt;(cout, a)</text>
+    <text x="180" y="188" text-anchor="middle" font-size="10" fill="#8a8578">（打印 1/2）</text>
+    <rect x="390" y="146" width="180" height="56" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.2"/>
+    <text x="480" y="170" text-anchor="middle" font-size="11" fill="#a33f2e">返回 cout（ostream&amp;）</text>
+    <text x="480" y="188" text-anchor="middle" font-size="10" fill="#8a8578">（流对象本体往回传）</text>
+    <rect x="690" y="146" width="180" height="56" fill="#d8ecce" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="780" y="170" text-anchor="middle" font-size="11" fill="#45703a">第二段：operator&lt;&lt;(cout, b)</text>
+    <text x="780" y="188" text-anchor="middle" font-size="10" fill="#8a8578">（打印 3/4）</text>
+    <path d="M 272,174 Q 330,174 388,174" fill="none" stroke="#3b3a36" stroke-width="2.2"/>
+    <path d="M 572,174 Q 630,174 688,174" fill="none" stroke="#3b3a36" stroke-width="2.2"/>
+    <text x="472" y="234" font-size="12.5" fill="#3b3a36">若返回 void：第二段的左操作数没了——链断（只能 cout &lt;&lt; a; cout &lt;&lt; b; 两句）</text>
+    <text x="472" y="262" text-anchor="middle" font-size="10.5" fill="#6b675e">若返回 ostream 值：流不可拷贝（=delete 亲戚）→ 编译错</text>
+    <text x="472" y="290" font-size="12" fill="#8a8578">（所以签名锁定：ostream&amp; 返回 + ostream&amp; 参数——三处引用一处不能少）</text>
+
+    <path d="M 40,334 Q 280,328 520,334 Q 524,450 520,576 Q 280,582 42,576 Q 36,450 40,334 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 455)"/>
+    <text x="280" y="364" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">输入的三条路径（实测）</text>
+    <rect x="64" y="382" width="430" height="60" fill="#33413a"/>
+    <text x="279" y="406" font-size="11.5" fill="#cfe8c6">"5/10"：三段读全成 + / 对 → 走构造</text>
+    <text x="279" y="428" font-size="11.5" fill="#cfe8c6">　→ 5/10 约分成 1/2 ✔</text>
+    <rect x="64" y="454" width="430" height="52" fill="#33413a"/>
+    <text x="279" y="476" font-size="11.5" fill="#f0c9c0">"hello"：is >> n 读不了字母 → 流置错</text>
+    <text x="279" y="496" font-size="11.5" fill="#9fb8a8">　→ !is 拦截 → d 保持 0/1 ✔</text>
+    <rect x="64" y="516" width="430" height="52" fill="#33413a"/>
+    <text x="279" y="538" font-size="11.5" fill="#f0c9c0">"3x4"：n 读到 3、slash 读到 x</text>
+    <text x="279" y="558" font-size="11.5" fill="#9fb8a8">　→ slash != '/' 拦截 → e 保持 0/1 ✔</text>
+
+    <path d="M 550,334 Q 730,328 905,334 Q 908,450 905,576 Q 730,582 552,576 Q 547,450 550,334 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 455)"/>
+    <text x="727" y="364" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">istringstream 的妙用</text>
+    <text x="572" y="398" font-size="12.5" fill="#3b3a36">把字符串当流读——测试不用</text>
+    <text x="572" y="418" font-size="12.5" fill="#3b3a36">　真敲键盘（程序自动喂输入）</text>
+    <text x="572" y="452" font-size="12" fill="#8a8578">（Day 8 的 cin 实验今天升级：</text>
+    <text x="572" y="470" font-size="12" fill="#8a8578">　三组输入三个流、互不干扰）</text>
+    <text x="572" y="504" font-size="12.5" fill="#45703a">真实输入流 cin 同样适用——</text>
+    <text x="572" y="524" font-size="12.5" fill="#45703a">　格式检查逻辑完全一样</text>
+    <text x="572" y="558" font-size="12" fill="#8a8578">（第 11 周文件 I/O 的读入前置课）</text>
+  </g>
+</svg>

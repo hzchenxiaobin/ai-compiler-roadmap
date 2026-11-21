@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 69 全貌：虚析构——delete 的完整收摊</text>
+    <path d="M 310,60 Q 480,52 650,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">前两天照抄的 virtual ~Shape() = default; 今天正式开学：漏一个 virtual，派生类的身后事没人管</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,260 520,394 Q 280,400 42,394 Q 36,260 40,116 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.3 280 255)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#a33f2e">非虚析构 + delete 基类指针</text>
+    <rect x="64" y="164" width="440" height="110" fill="#33413a"/>
+    <text x="284" y="190" text-anchor="middle" font-size="11.5" fill="#cfe8c6">[Base 构造] → [Derived 构造]</text>
+    <text x="284" y="214" text-anchor="middle" font-size="11.5" fill="#f0c9c0">delete p; → [Base 析构]　←只拆了基类！</text>
+    <text x="284" y="238" text-anchor="middle" font-size="10.5" fill="#9fb8a8">（[Derived 析构] 没出现——被跳过）</text>
+    <text x="280" y="300" text-anchor="middle" font-size="12.5" fill="#a33f2e">后果：Derived 的资源（堆内存/文件句柄）</text>
+    <text x="280" y="322" text-anchor="middle" font-size="12.5" fill="#a33f2e">全部泄漏——程序不报错，静默丢内存</text>
+    <text x="280" y="364" text-anchor="middle" font-size="12" fill="#8a8578">（析构走静态绑定——和 Day 68 非 virtual 函数同款规则）</text>
+
+    <path d="M 550,116 Q 740,110 905,116 Q 908,260 905,394 Q 740,400 552,394 Q 547,260 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 255)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">虚析构 + delete 基类指针</text>
+    <rect x="572" y="164" width="320" height="110" fill="#33413a"/>
+    <text x="732" y="190" text-anchor="middle" font-size="11.5" fill="#cfe8c6">[VBase 构造] → [VDerived 构造]</text>
+    <text x="732" y="214" text-anchor="middle" font-size="11.5" fill="#cfe8c6">delete vp; →</text>
+    <text x="732" y="238" text-anchor="middle" font-size="11.5" fill="#cfe8c6">[VDerived 析构] → [VBase 析构] ✔</text>
+    <text x="727" y="302" text-anchor="middle" font-size="12.5" fill="#45703a">两个析构逆序执行——</text>
+    <text x="727" y="324" text-anchor="middle" font-size="12.5" fill="#45703a">资源完整收摊（Day 51 铁律恢复）</text>
+    <text x="727" y="364" text-anchor="middle" font-size="12" fill="#8a8578">（语法：virtual ~VBase() { … }）</text>
+
+    <path d="M 40,418 Q 470,412 905,419 L 901,500 Q 470,494 44,499 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.2 472 459)"/>
+    <text x="472" y="448" text-anchor="middle" font-size="15" font-weight="bold" fill="#8a6d1a">铁则与简洁写法</text>
+    <text x="70" y="478" font-size="13" fill="#3b3a36">基类析构一律标 virtual（哪怕空实现）；C++11 起可写 virtual ~Shape() = default;（= default 自动生成默认版）</text>
+    <text x="70" y="496" font-size="12.5" fill="#6b675e">（判断依据：类会被继承且经基类指针 delete → 必须 virtual；不确定就 virtual——多态基类的标配）</text>
+
+    <path d="M 60,514 Q 480,508 905,515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 67~70 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 69（今天）</text>
+    <circle cx="650" cy="514" r="5" fill="#5b8db8"/>
+    <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 74 转换与设计</text>
+    <circle cx="850" cy="514" r="5" fill="#e0955f"/>
+    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 72 里程碑</text>
+  </g>
+</svg>

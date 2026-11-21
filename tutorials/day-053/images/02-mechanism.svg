@@ -1,31 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
   <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
   <g stroke-linecap="round" stroke-linejoin="round">
-    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">接口暴露的对比与重构的解剖</text>
-    <path d="M 340,58 Q 480,52 620,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">零件先就位，整车后组装</text>
+    <path d="M 350,58 Q 480,52 610,59" fill="none" stroke="#e0955f" stroke-width="3"/>
 
-    <path d="M 40,100 Q 470,94 905,101 L 901,310 Q 470,304 44,309 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 205)"/>
-    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">继承版的接口洪水（BadStack : vector）</text>
-    <rect x="90" y="146" width="380" height="130" fill="#33413a"/>
-    <text x="280" y="172" font-size="11.5" fill="#cfe8c6">Stack 该有的：push / pop / size / empty</text>
-    <text x="280" y="198" font-size="11.5" fill="#f0c9c0">不该有的也来了：insert / erase / [] / clear</text>
-    <text x="280" y="220" font-size="11.5" fill="#f0c9c0">　resize / reserve / begin / end / …</text>
-    <text x="280" y="248" font-size="11" fill="#9fb8a8">（vector 的全部 public 接口约 50 个——全暴露）</text>
-    <rect x="500" y="146" width="380" height="130" fill="#33413a"/>
-    <text x="690" y="172" font-size="11.5" fill="#cfe8c6">实测绕过不变量：</text>
-    <text x="690" y="196" font-size="10.5" fill="#f0c9c0">s.insert(begin, 99); ←Stack 没这语义！</text>
-    <text x="690" y="218" font-size="12" fill="#f0c9c0">s[0] = 42;　　　　　　　←随机改值！</text>
-    <text x="690" y="244" font-size="11" fill="#9fb8a8">（两个都编译执行成功——不变量失守）</text>
-    <text x="472" y="298" font-size="12" fill="#9fb8a8">（"后进先出"是行为承诺——继承版的承诺靠使用者自觉）</text>
+    <path d="M 40,100 Q 470,94 905,101 L 901,330 Q 470,324 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 215)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">组合版的构造流水线（实测顺序）</text>
+    <rect x="110" y="146" width="740" height="160" fill="#33413a"/>
+    <text x="130" y="174" font-size="12" fill="#9fb8a8">Car car("学步车 1.0", 75, 230); 触发：</text>
+    <text x="130" y="200" font-size="12.5" fill="#cfe8c6">　[Engine 构造] 75 马力　　　　　← 成员 1（按声明序）</text>
+    <text x="130" y="222" font-size="12.5" fill="#cfe8c6">　[Wheel 构造] ×4 胎压 230　　　 ← 成员 2（数组逐个）</text>
+    <text x="130" y="244" font-size="12.5" fill="#f0c9c0">　[Car 构造] 学步车 1.0 组装完成　← 最后是整车自己</text>
+    <text x="130" y="278" font-size="12" fill="#9fb8a8">析构严格反过来：先拆 Car，再拆轮子（逆序），最后拆发动机</text>
+    <text x="130" y="298" font-size="12" fill="#9fb8a8">（Day 51 铁律的类成员版：声明序进、逆序出）</text>
 
-    <path d="M 40,334 Q 470,328 905,335 L 901,576 Q 470,570 44,575 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.2 472 455)"/>
-    <text x="472" y="364" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">组合版的接口闸门（GoodStack 有 vector）</text>
-    <rect x="150" y="382" width="660" height="110" fill="#33413a"/>
-    <text x="480" y="410" font-size="11.5" fill="#cfe8c6">private: std::vector&lt;T&gt; data_;　←私用零件，外界不可见</text>
-    <text x="480" y="434" font-size="11.5" fill="#cfe8c6">public: push / pop / empty / size　←只开四扇门</text>
-    <text x="480" y="462" font-size="12" fill="#f0c9c0">s.insert(...) → error: no member named 'insert'</text>
-    <text x="480" y="484" font-size="12" fill="#f0c9c0">s[0] = 42 → error: does not provide a subscript operator</text>
-    <text x="472" y="522" font-size="12.5" fill="#45703a">不变量由编译器执行——想绕过的人连编译都过不了</text>
-    <text x="472" y="556" font-size="12" fill="#8a8578">（转发函数 4 行——这是"锁死不变量"的全部价格）</text>
+    <path d="M 40,354 Q 470,348 905,355 L 901,460 Q 470,454 44,459 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.2 472 407)"/>
+    <text x="472" y="384" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">初始化列表：零件清单必须写在这</text>
+    <text x="70" y="414" font-size="13" fill="#3b3a36">Car(…) : model_(model), engine_(hp), wheels_{Wheel(p), Wheel(p), Wheel(p), Wheel(p)} { … }</text>
+    <text x="70" y="440" font-size="12.5" fill="#6b675e">组合成员没有默认构造时，列表是唯一通道（Day 50 红线的组合版）</text>
+
+    <path d="M 40,484 Q 470,478 905,485 L 901,576 Q 470,570 44,575 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(-0.2 472 530)"/>
+    <text x="472" y="514" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#55606e">组合 vs 继承（下周预告的分界线）</text>
+    <text x="70" y="544" font-size="12.5" fill="#3b3a36">组合 has-a：Car 有一台 Engine——零件可换、各自演进；继承 is-a：跑车是一辆 Car——共享血脉</text>
+    <text x="70" y="566" font-size="12.5" fill="#6b675e">口诀：能用组合就先用组合（今天练熟），继承留给真正的 is-a（第 12 周）</text>
   </g>
 </svg>

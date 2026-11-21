@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 70 全貌：抽象类——只定规矩，不干活</text>
+    <path d="M 310,60 Q 480,52 650,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">纯虚函数是"合同条款"：谁继承谁实现——抽象类用类型系统强制接口，漏一个都编译不过</text>
+
+    <path d="M 40,116 Q 290,110 540,116 Q 544,240 540,384 Q 290,390 42,384 Q 36,240 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 290 250)"/>
+    <text x="290" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">Shape 抽象类的三个纯虚</text>
+    <rect x="64" y="162" width="460" height="100" fill="#fffdf7" stroke="#9db8cf" stroke-width="2"/>
+    <text x="84" y="188" font-size="12" fill="#a33f2e">virtual double area() const = 0;</text>
+    <text x="84" y="210" font-size="12" fill="#a33f2e">virtual double perimeter() const = 0;</text>
+    <text x="84" y="232" font-size="12" fill="#a33f2e">virtual std::string name() const = 0;</text>
+    <text x="290" y="290" text-anchor="middle" font-size="12.5" fill="#45703a">非虚公共逻辑照样能放基类：</text>
+    <text x="290" y="314" text-anchor="middle" font-size="12.5" fill="#45703a">report() 调 name()/area()/perimeter()</text>
+    <text x="290" y="338" text-anchor="middle" font-size="12.5" fill="#6b675e">——写在基类、行为由派生注入（多态杠杆）</text>
+    <text x="290" y="368" text-anchor="middle" font-size="12" fill="#8a8578">（实测：report 是 Shape 的，输出全是派生类的数据）</text>
+
+    <path d="M 570,116 Q 740,110 905,116 Q 908,240 905,384 Q 740,390 572,384 Q 567,240 570,116 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(0.3 737 250)"/>
+    <text x="737" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#a33f2e">两条执法线（实测报错）</text>
+    <text x="594" y="182" font-size="12.5" fill="#3b3a36">①Shape s;　→ 抽象类不许出生</text>
+    <text x="594" y="204" font-size="11" fill="#a33f2e">　error: variable type 'Shape' is an abstract class</text>
+    <text x="594" y="240" font-size="12.5" fill="#3b3a36">②class Blob : Shape {};</text>
+    <text x="594" y="262" font-size="12.5" fill="#3b3a36">　（漏实现纯虚）→ Blob 也是抽象类</text>
+    <text x="594" y="284" font-size="11" fill="#a33f2e">　error: variable type 'Blob' is an abstract class</text>
+    <text x="594" y="324" font-size="12.5" fill="#45703a">漏写接口不是运行时崩溃——</text>
+    <text x="594" y="346" font-size="12.5" fill="#45703a">是编译期红牌（类型系统把关）</text>
+
+    <path d="M 40,408 Q 470,402 905,409 L 901,494 Q 470,488 44,493 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.2 472 451)"/>
+    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">混合设计：抽象层 + 默认实现层</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">Shape（纯抽象）→ NamedShape（通用 describe/name 默认实现）→ Square/Circle（只实现 area）</text>
+    <text x="70" y="488" font-size="12.5" fill="#6b675e">——派生类只填差异，公共代码只写一遍（模板方法模式雏形）</text>
+
+    <path d="M 60,514 Q 480,508 905,515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 67~68 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 70（今天）</text>
+    <circle cx="640" cy="514" r="5" fill="#5b8db8"/>
+    <text x="640" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 69 虚析构</text>
+    <circle cx="850" cy="514" r="5" fill="#e0955f"/>
+    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 72 里程碑</text>
+  </g>
+</svg>

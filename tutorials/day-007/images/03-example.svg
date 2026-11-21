@@ -34,7 +34,7 @@
     <text x="516" y="252" font-size="13" fill="#cfe8c6">[##################..................]</text>
     <text x="516" y="274" font-size="13" fill="#9fb8a8"> 72/144 天（对折：18 格实心）</text>
     <text x="516" y="304" font-size="13" fill="#cfe8c6">[####################################]</text>
-    <text x="516" y="326" font-size="13" fill="#9fb8a8"> 144/144 天（毕业：36 格全满）</text>
+    <text x="516" y="326" font-size="13" fill="#9fb8a8"> 168/144 天（毕业：36 格全满）</text>
     <text x="510" y="372" font-size="13" fill="#2c5a82">for (int i = 0; i &lt; 36; ++i)</text>
     <text x="510" y="396" font-size="12.5" fill="#6b675e">一次循环扫一格：够 4 天画 #，否则画 .</text>
     <text x="510" y="416" font-size="12.5" fill="#6b675e">每格代表 4 天：144 ÷ 36 = 4</text>
