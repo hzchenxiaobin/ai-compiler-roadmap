@@ -29,7 +29,7 @@
 
     <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
     <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">开发插曲：substr 的双重身份（本日实录）</text>
-    <text x="70" y="468" font-size="13" fill="#3b3a36">full.substr(0,4) 返回临时 string——view 指它照样悬空（-Wdangling 警告抓到）；正解 string_view(full).substr(0,4)——view 的 substr 才是零拷贝切片</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">full.substr(0,4) 返回临时——view 指它照样悬空（-Wdangling 抓到）；正解 string_view(full).substr（view 版切片）</text>
     <text x="70" y="490" font-size="12.5" fill="#6b675e">（同名方法的"string 版 vs view 版"语义差——本教程自己踩了一次）</text>
 
     <path d="M 60,514 Q 480,508 905 515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
