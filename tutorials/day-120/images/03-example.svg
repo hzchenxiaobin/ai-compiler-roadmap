@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">前后对照、全量复扫与第 20 周战绩</text>
+    <path d="M 350,58 Q 480,52 610,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 -std=c++17；-Wall 零警告 + ASan 零报错）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,490 Q 248,495 26,490 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 296)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出（节选）</text>
+    <rect x="38" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./ba　（-Wall 零警告）</text>
+    <text x="54" y="200" font-size="12" fill="#9fb8a8">== 改造前 ==</text>
+    <text x="54" y="222" font-size="11.5" fill="#cfe8c8">[旧·析构]×3（手动删）✔ 总 43</text>
+    <text x="54" y="246" font-size="12" fill="#9fb8a8">== 改造后 ==</text>
+    <text x="54" y="268" font-size="11.5" fill="#cfe8c8">零 delete 自动析构 ✔ 总 43</text>
+    <text x="54" y="290" font-size="11" fill="#9fb8a8">（两版结果一致 ✔）</text>
+    <text x="54" y="314" font-size="12" fill="#9fb8a8">== 全量复查（计划指定） ==</text>
+    <text x="54" y="336" font-size="11.5" fill="#cfe8c8">scan_all.sh：218 个源文件</text>
+    <text x="54" y="356" font-size="11.5" fill="#f0c9c0">-Wall 警告：0 ✔</text>
+    <text x="54" y="376" font-size="11.5" fill="#f0c9c0">ASan 报错：0 ✔</text>
+    <text x="54" y="398" font-size="11.5" fill="#cfe8c8">教学白名单 17（故意的）✔</text>
+    <text x="54" y="424" font-size="11" fill="#9fb8a8">（scan 脚本升级 c++17 的插曲：</text>
+    <text x="54" y="442" font-size="11" fill="#9fb8a8">　旧脚本无 -std 误报 10 个</text>
+    <text x="54" y="460" font-size="11" fill="#9fb8a8">　C++17 扩展警告——修复后 0）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,490 Q 712,495 490,490 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 296)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">第 20 周战绩（Day 115~120）</text>
+    <rect x="502" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">智能指针周六天：</text>
+    <text x="514" y="198" font-size="11.5" fill="#cfe8c8">115 unique（独占+工厂）</text>
+    <text x="514" y="218" font-size="11.5" fill="#cfe8c8">116 shared（计数+边界）</text>
+    <text x="514" y="238" font-size="11.5" fill="#cfe8c8">117 weak（破环+lock）</text>
+    <text x="514" y="258" font-size="11.5" fill="#cfe8c8">118 删除器（FILE* RAII）</text>
+    <text x="514" y="278" font-size="11.5" fill="#cfe8c8">119 容器/多态（from_this）</text>
+    <text x="514" y="298" font-size="11.5" fill="#cfe8c8">120 全量复查（今天）✔</text>
+    <text x="514" y="330" font-size="12" fill="#9fb8a8">告别裸 new/delete 的里程碑：</text>
+    <text x="514" y="352" font-size="11" fill="#9fb8a8">　五个月的手写训练（42 起的</text>
+    <text x="514" y="370" font-size="11" fill="#9fb8a8">　IntArray → 今天的一行 make）</text>
+    <text x="514" y="400" font-size="12.5" fill="#45703a">（120/144 = 83.3%——五分之四</text>
+    <text x="514" y="420" font-size="12.5" fill="#45703a">　剩 24 天：异常周+性能+JSON）</text>
+    <text x="514" y="452" font-size="11" fill="#9fb8a8">（19 个项目日全胜）</text>
+
+    <path d="M 24,516 Q 470,510 905,517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>
+    <text x="46" y="542" font-size="15.5" font-weight="bold" fill="#9c5a22">复查的意义</text>
+    <text x="46" y="568" font-size="12.5" fill="#3b3a36">改完不算完——机器验证才算数（218 个文件零警告零报错）；"我检查过了"和"工具证明过了"是两种信心——五个月的老规矩今天又立一功</text>
+
+    <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 121——第 21 周开篇：optional/variant/any 与 optional&lt;int&gt; 的失败表达（计划指定）</text>
+  </g>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">新旧两版的代码解剖与"删掉的是协议"</text>
+    <path d="M 270,58 Q 480,52 690,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,340 Q 470,334 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 220)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">同一功能两种文明（并排）</text>
+    <rect x="110" y="146" width="360" height="170" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.2"/>
+    <text x="290" y="172" font-size="11" fill="#a33f2e">旧版（裸指针）：</text>
+    <text x="290" y="196" font-size="10.5" fill="#8a8578">Shape* shapes[3];</text>
+    <text x="290" y="216" font-size="10.5" fill="#8a8578">shapes[0] = make_circle(1); …</text>
+    <text x="290" y="240" font-size="10.5" fill="#a33f2e">for (auto* s : shapes) delete s;</text>
+    <text x="290" y="264" font-size="10" fill="#8a8578">（谁删？何时删？忘了呢？——协议负担）</text>
+    <text x="290" y="296" font-size="10" fill="#8a8578">（实测：手动删三次 [旧·析构]×3）</text>
+    <rect x="510" y="146" width="340" height="170" fill="#d8ecce" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="680" y="172" font-size="11" fill="#45703a">新版（智能指针）：</text>
+    <text x="680" y="196" font-size="10.5" fill="#8a8578">vector&lt;unique_ptr&lt;Shape&gt;&gt; shapes;</text>
+    <text x="680" y="216" font-size="10.5" fill="#8a8578">shapes.push_back(make_circle(1)); …</text>
+    <text x="680" y="240" font-size="10.5" fill="#45703a">（没有 delete 行——出作用域自动）</text>
+    <text x="680" y="264" font-size="10" fill="#8a8578">（所有权在类型里——零协议）</text>
+    <text x="680" y="296" font-size="10" fill="#8a8578">（实测：同样三对象自动析构 ✔）</text>
+    <text x="472" y="334" font-size="11.5" fill="#8a8578">（行为一致（都 43）——改的只是内存管理的"谁来负责"）</text>
+
+    <path d="M 40,364 Q 280,358 520,364 Q 524,480 520,576 Q 280,582 42,576 Q 36,480 40,364 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 470)"/>
+    <text x="280" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">教学教具 vs 生产代码</text>
+    <rect x="64" y="412" width="430" height="150" fill="#33413a"/>
+    <text x="279" y="438" font-size="10.5" fill="#9fb8a8">教具（保留裸的）：</text>
+    <text x="279" y="460" font-size="10.5" fill="#cfe8c8">day-055 浅拷贝崩溃课（要翻车）</text>
+    <text x="279" y="480" font-size="10.5" fill="#cfe8c8">day-057 三法则课（要手写五件）</text>
+    <text x="279" y="500" font-size="10.5" fill="#cfe8c8">MyString/IntArray（教容器内幕）</text>
+    <text x="279" y="528" font-size="10" fill="#8a8578">（替换它们 = 删掉教材）</text>
+
+    <path d="M 550,364 Q 730,358 905,364 Q 908,480 905,576 Q 730,582 552,576 Q 547,480 550,364 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 470)"/>
+    <text x="727" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">生产形态（已达标）</text>
+    <rect x="572" y="412" width="320" height="150" fill="#33413a"/>
+    <text x="732" y="438" font-size="10.5" fill="#9fb8a8">图形库 v2（day-076）：</text>
+    <text x="732" y="460" font-size="10.5" fill="#cfe8c8">vector&lt;unique_ptr&lt;LabeledShape&gt;&gt; ✔</text>
+    <text x="732" y="488" font-size="10.5" fill="#9fb8a8">图形库 v3（day-077）：</text>
+    <text x="732" y="510" font-size="10.5" fill="#cfe8c8">工厂返回 unique_ptr ✔</text>
+    <text x="732" y="538" font-size="10" fill="#8a8578">（当时的写法今天就该这样）</text>
+  </g>
+</svg>
