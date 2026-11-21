@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">单例战报、守卫移交与执法记录</text>
+    <path d="M 360,58 Q 480,52 600,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,260 470,420 Q 248,425 26,420 Q 20,260 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 261)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">实验 1：单例 Logger</text>
+    <rect x="38" y="146" width="420" height="260" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./sl</text>
+    <text x="54" y="196" font-size="12" fill="#9fb8a8">模块 A、B、main 各调 instance()：</text>
+    <text x="54" y="220" font-size="12.5" fill="#cfe8c6">[Logger 出生]（只打一次！）</text>
+    <text x="54" y="240" font-size="12.5" fill="#cfe8c6">[#1] 模块 A 启动</text>
+    <text x="54" y="258" font-size="12.5" fill="#cfe8c6">[#2] 模块 B 干活</text>
+    <text x="54" y="276" font-size="12.5" fill="#cfe8c6">[#3] main 结束前</text>
+    <text x="54" y="300" font-size="12.5" fill="#cfe8c6">[#4] 经引用调用（仍是同一个）</text>
+    <text x="54" y="322" font-size="12.5" fill="#cfe8c6">总条数 = 4（计数连续证明唯一）</text>
+    <text x="54" y="354" font-size="12.5" fill="#f0c9c0">[Logger 销毁] 共记录 4 条</text>
+    <text x="54" y="378" font-size="12" fill="#9fb8a8">（进程结束才销毁——不是出 main 块）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,260 934,420 Q 712,425 490,420 Q 484,260 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 261)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">实验 2：守卫两条路线</text>
+    <rect x="502" y="146" width="420" height="260" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="12" fill="#9fb8a8">引用路线：</text>
+    <text x="514" y="192" font-size="12.5" fill="#cfe8c6">[打开] data.txt → [使用] → [关闭] ✔</text>
+    <text x="514" y="222" font-size="12" fill="#9fb8a8">移动路线：</text>
+    <text x="514" y="242" font-size="12.5" fill="#cfe8c6">[打开] b.txt → [移交] 守卫权转移</text>
+    <text x="514" y="262" font-size="12.5" fill="#cfe8c6">→ [使用] → [关闭]（g 关的）</text>
+    <text x="514" y="284" font-size="12.5" fill="#f0c9c0">→ [析构] 已移交的空守卫（不重复关）</text>
+    <text x="514" y="322" font-size="12" fill="#9fb8a8">两条执法：</text>
+    <text x="514" y="346" font-size="11" fill="#ffd7d0">Logger l; → private constructor</text>
+    <text x="514" y="370" font-size="11" fill="#ffd7d0">l2 = instance(); → deleted constructor</text>
+    <text x="514" y="398" font-size="12" fill="#9fb8a8">（守卫的拷贝同样被删——同款拦截）</text>
+
+    <path d="M 24,446 Q 470,440 905,447 L 901,530 Q 470,524 26,529 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 488)"/>
+    <text x="46" y="474" font-size="15.5" font-weight="bold" fill="#9c5a22">=delete 的设计威力</text>
+    <text x="46" y="504" font-size="12.5" fill="#3b3a36">Day 39 FileGuard 用"约定"禁拷贝（编译器自动删了——巧合）；今天 =delete 显式声明——从巧合到设计</text>
+
+    <path d="M 24,550 Q 470,544 905,551 L 901,630 Q 470,624 26,629 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 590)"/>
+    <text x="480" y="580" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#55606e">明天预告</text>
+    <text x="480" y="608" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 53：组合 vs 继承的坏例重构——"为复用而继承"的经典错误怎么改成组合（计划指定的重构练习）</text>
+    <text x="480" y="626" text-anchor="middle" font-size="12.5" fill="#6b675e">（第 9 周还剩两天：明天设计课 + 后天项目日收官）</text>
+  </g>
+</svg>
