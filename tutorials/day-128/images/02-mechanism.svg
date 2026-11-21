@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">variant 的六格与递归树的指针链</text>
+    <path d="M 320,58 Q 480,52 640,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,340 Q 470,334 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 220)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">JsonValue 的内部（32 字节的六格柜）</text>
+    <rect x="110" y="146" width="740" height="170" fill="#33413a"/>
+    <text x="480" y="172" font-size="11" fill="#9fb8a8">variant&lt;monostate, bool, double, string, JsonArray, JsonObject&gt;</text>
+    <rect x="130" y="190" width="150" height="34" fill="#f1f4f7" stroke="#8a94a3" stroke-width="1.6"/>
+    <text x="205" y="212" font-size="9.5" fill="#8a94a3">monostate（null）</text>
+    <rect x="290" y="190" width="100" height="34" fill="#d8ecce" stroke="#7aa663" stroke-width="1.6"/>
+    <text x="340" y="212" font-size="9.5" fill="#45703a">bool</text>
+    <rect x="400" y="190" width="100" height="34" fill="#d8ecce" stroke="#7aa663" stroke-width="1.6"/>
+    <text x="450" y="212" font-size="9.5" fill="#45703a">double</text>
+    <rect x="510" y="190" width="140" height="34" fill="#f9d9b8" stroke="#e0955f" stroke-width="1.6"/>
+    <text x="580" y="212" font-size="9.5" fill="#9c5a22">string（24B）</text>
+    <rect x="660" y="190" width="160" height="34" fill="#f9e9e5" stroke="#c96a5a" stroke-width="1.6"/>
+    <text x="740" y="212" font-size="9.5" fill="#a33f2e">JsonArray（24B）</text>
+    <text x="480" y="258" font-size="10.5" fill="#8a8578">（同一时刻只活一种——标签记着是哪种）</text>
+    <text x="480" y="286" font-size="10.5" fill="#8a8578">（string 和 vector 都是 24 字节——最大成员定尺寸 + 标签 = 32）</text>
+    <text x="480" y="314" font-size="10.5" fill="#8a8578">（holds_alternative 查类型 / get&lt;T&gt; 取值——visit 穷尽分派）</text>
+
+    <path d="M 40,364 Q 280,358 520,364 Q 524,480 520,576 Q 280,582 42,576 Q 36,480 40,364 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 470)"/>
+    <text x="280" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">递归的指针链（实测的树）</text>
+    <rect x="64" y="412" width="430" height="150" fill="#33413a"/>
+    <text x="279" y="436" font-size="10.5" fill="#9fb8a8">object（map 的三键）</text>
+    <text x="279" y="458" font-size="10.5" fill="#cfe8c8">├ name → unique_ptr → string("Ada")</text>
+    <text x="279" y="478" font-size="10.5" fill="#cfe8c8">├ scores → unique_ptr → array</text>
+    <text x="279" y="498" font-size="10.5" fill="#cfe8c8">│　　　　　├ ptr → number(95)</text>
+    <text x="279" y="518" font-size="10.5" fill="#cfe8c8">│　　　　　└ ptr → number(88)</text>
+    <text x="279" y="538" font-size="10.5" fill="#cfe8c8">└ meta → ptr → object{ok: true}</text>
+
+    <path d="M 550,364 Q 730,358 905,364 Q 908,480 905,576 Q 730,582 552,576 Q 547,480 550,364 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 470)"/>
+    <text x="727" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">depth() 的递归</text>
+    <rect x="572" y="412" width="320" height="150" fill="#33413a"/>
+    <text x="732" y="436" font-size="10.5" fill="#9fb8a8">depth()：</text>
+    <text x="732" y="458" font-size="10.5" fill="#cfe8c8">叶子 → 0</text>
+    <text x="732" y="478" font-size="10.5" fill="#cfe8c8">容器 → max(子.depth())+1</text>
+    <text x="732" y="506" font-size="10.5" fill="#f0c9c0">实测：object→array→number = 2</text>
+    <text x="732" y="534" font-size="10" fill="#8a8578">（树的测量——递归的自然应用）</text>
+  </g>
+</svg>
