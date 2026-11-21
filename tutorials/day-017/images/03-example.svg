@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">两条命运、六个词、三行账本</text>
+    <path d="M 350,58 Q 480,52 610,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21，管道喂入）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,210 470,318 Q 248,323 26,318 Q 20,210 24,102 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="3" transform="rotate(-0.3 247 210)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#a33f2e">实验 1：坑与修复（同输入）</text>
+    <rect x="38" y="146" width="420" height="150" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="12" fill="#9fb8a8">$ printf '20\nXiao Ming\n' | ./getline_pitfall</text>
+    <text x="54" y="196" font-size="12.5" fill="#f0c9c0">读到的 name 是【】，长度 0　←坑</text>
+    <text x="54" y="228" font-size="12" fill="#9fb8a8">$ printf '20\nXiao Ming\n' | ./getline_fixed</text>
+    <text x="54" y="252" font-size="12.5" fill="#cfe8c6">读到的 name 是【Xiao Ming】，长度 9</text>
+    <text x="54" y="284" font-size="12" fill="#9fb8a8">两文件只差一行 ignore</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,210 934,318 Q 712,323 490,318 Q 484,210 488,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(0.3 711 210)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#45703a">实验 2：stringstream 切词</text>
+    <rect x="502" y="146" width="420" height="150" rx="6" fill="#33413a"/>
+    <text x="514" y="170" font-size="11.5" fill="#9fb8a8">句子里有三个空格连排和一个制表符</text>
+    <text x="514" y="194" font-size="12.5" fill="#cfe8c6">1. the（3）　2. quick（5）　3. brown（5）</text>
+    <text x="514" y="218" font-size="12.5" fill="#cfe8c6">4. fox（3）　5. jumps（5）　6. over（4）</text>
+    <text x="514" y="248" font-size="12.5" fill="#cfe8c6">共 6 个词</text>
+    <text x="514" y="284" font-size="12" fill="#9fb8a8">昨天 reverse_words 要处理的连续空格，今天自动消失</text>
+
+    <path d="M 24,344 Q 470,338 905,345 L 901,500 Q 470,494 26,499 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(-0.2 464 422)"/>
+    <text x="46" y="374" font-size="16" font-weight="bold" fill="#2c5a82">实验 3：while (getline) 逐行记账（喂三行文本）</text>
+    <rect x="38" y="390" width="850" height="96" rx="6" fill="#33413a"/>
+    <text x="54" y="416" font-size="12.5" fill="#cfe8c6">第 1 行：长度 11，2 个词　　第 2 行：长度 19，4 个词　　第 3 行：长度 6，1 个词</text>
+    <text x="54" y="444" font-size="12.5" fill="#cfe8c6">合计：3 行，7 个词</text>
+    <text x="54" y="472" font-size="12" fill="#9fb8a8">EOF 是循环的自然出口——管道喂完自动收工（Day 8 的暗门在这里成了正门）</text>
+
+    <path d="M 24,522 Q 470,516 905,523 L 901,610 Q 470,604 26,609 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(0.2 464 566)"/>
+    <text x="46" y="552" font-size="14" font-weight="bold" fill="#8a6d1a">明天的组装图纸已就绪</text>
+    <text x="46" y="582" font-size="12.5" fill="#6b675e">行数 = getline 循环圈数；词数 = 内层切词计数；字符数 = 每行 size() 累加；字母频率 = 26 格数组（Day 13）</text>
+  </g>
+</svg>

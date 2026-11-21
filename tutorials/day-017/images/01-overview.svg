@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 17 全貌：读整行与自动切词</text>
+    <path d="M 340,60 Q 480,52 620,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">cin &gt;&gt; 见空格就停的百年老问题，今天用 getline 和 stringstream 一次性解决</text>
+
+    <path d="M 40,110 Q 240,104 440,110 Q 444,190 440,270 Q 240,276 42,270 Q 36,190 40,110 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="3" transform="rotate(-0.3 240 190)"/>
+    <text x="240" y="140" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#a33f2e">cin &gt;&gt; word：见空格停</text>
+    <rect x="70" y="156" width="340" height="36" fill="#fffdf7" stroke="#dda79b" stroke-width="2"/>
+    <text x="240" y="179" text-anchor="middle" font-size="12.5" fill="#3b3a36">输入 Xiao Ming → 只拿到 Xiao</text>
+    <text x="64" y="216" font-size="12.5" fill="#6b675e">（Day 4 埋的坑：Ming 留在传送带上）</text>
+    <text x="64" y="244" font-size="12.5" fill="#a33f2e">适合读数字、单词这类"一个词"的输入</text>
+
+    <path d="M 40,300 Q 240,294 440,300 Q 444,380 440,460 Q 240,466 42,460 Q 36,380 40,300 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(0.3 240 380)"/>
+    <text x="240" y="330" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">getline(cin, line)：整行抱走</text>
+    <rect x="70" y="346" width="340" height="36" fill="#fffdf7" stroke="#a8c494" stroke-width="2"/>
+    <text x="240" y="369" text-anchor="middle" font-size="12.5" fill="#3b3a36">输入 Xiao Ming → 整行到手</text>
+    <text x="64" y="406" font-size="12.5" fill="#6b675e">（换行符被吃掉但不算进内容）</text>
+    <text x="64" y="434" font-size="12.5" fill="#45703a">适合读姓名、地址、一整句话</text>
+
+    <path d="M 470,110 Q 690,104 905,110 Q 909,290 905,460 Q 690,466 472,460 Q 466,290 470,110 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(-0.3 687 285)"/>
+    <text x="687" y="142" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">stringstream：字符串造的传送带</text>
+    <rect x="500" y="160" width="360" height="40" fill="#fffdf7" stroke="#9db8cf" stroke-width="2"/>
+    <text x="680" y="185" text-anchor="middle" font-size="12" fill="#3b3a36">istringstream ss(sentence)</text>
+    <path d="M 680,206 Q 680,226 680,242" fill="none" stroke="#3b3a36" stroke-width="2.4"/>
+    <path d="M 672,236 Q 680,246 689,237" fill="none" stroke="#3b3a36" stroke-width="2.4"/>
+    <rect x="500" y="252" width="360" height="40" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
+    <text x="680" y="277" text-anchor="middle" font-size="12" fill="#45703a">while (ss &gt;&gt; word)：自动按空白切词</text>
+    <text x="687" y="326" text-anchor="middle" font-size="12.5" fill="#3b3a36">昨天的 find/substr 手工切词十行，</text>
+    <text x="687" y="348" text-anchor="middle" font-size="12.5" fill="#3b3a36">今天一行搞定——多空格、制表符全不怕</text>
+    <text x="687" y="392" text-anchor="middle" font-size="12.5" fill="#6b675e">黄金搭档：getline 读一行，</text>
+    <text x="687" y="414" text-anchor="middle" font-size="12.5" fill="#6b675e">stringstream 切这行的词</text>
+    <text x="687" y="446" text-anchor="middle" font-size="12" fill="#8a8578">（明天项目日的核心流水线）</text>
+
+    <path d="M 60,496 Q 480,490 905,497" fill="none" stroke="#8a8578" stroke-width="3"/>
+    <circle cx="200" cy="496" r="6" fill="#8a94a3"/>
+    <text x="200" y="522" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 13~16 ✓</text>
+    <circle cx="400" cy="497" r="13" fill="none" stroke="#c96a5a" stroke-width="2.2"/>
+    <circle cx="400" cy="497" r="6" fill="#5b8db8"/>
+    <text x="400" y="522" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#c96a5a">Day 17（今天）</text>
+    <circle cx="600" cy="496" r="6" fill="#e0955f"/>
+    <text x="600" y="522" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 18 项目日</text>
+    <circle cx="790" cy="497" r="6" fill="#5b8db8"/>
+    <text x="790" y="522" text-anchor="middle" font-size="12.5" fill="#3b3a36">第 4 周 指针</text>
+
+    <rect x="140" y="532" width="680" height="22" fill="#f7e8a0" opacity="0.5" transform="rotate(-0.3 480 543)"/>
+    <text x="480" y="548" text-anchor="middle" font-size="13" fill="#8a6d1a">零件集齐：数组＋C 串＋string＋getline/stringstream——明天的文本统计器只差组装</text>
+  </g>
+</svg>
