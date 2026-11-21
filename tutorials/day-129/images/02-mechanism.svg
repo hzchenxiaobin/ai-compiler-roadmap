@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">数字字符集的扫描状态与错误的四闸</text>
+    <path d="M 300,58 Q 480,52 660,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,340 Q 470,334 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 220)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">数字文法的字符集（今天的扫描器）</text>
+    <rect x="110" y="146" width="740" height="170" fill="#33413a"/>
+    <text x="480" y="172" font-size="11" fill="#9fb8a8">文法：-? int (. frac)? ([eE][+-]? exp)?</text>
+    <rect x="130" y="190" width="140" height="36" fill="#f9d9b8" stroke="#e0955f" stroke-width="1.6"/>
+    <text x="200" y="212" font-size="9.5" fill="#9c5a22">起始：- 或 digit</text>
+    <rect x="290" y="190" width="140" height="36" fill="#d8ecce" stroke="#7aa663" stroke-width="1.6"/>
+    <text x="360" y="212" font-size="9.5" fill="#45703a">digits…（整数部）</text>
+    <rect x="450" y="190" width="140" height="36" fill="#d8ecce" stroke="#7aa663" stroke-width="1.6"/>
+    <text x="520" y="212" font-size="9.5" fill="#45703a">.digits（小数部）</text>
+    <rect x="610" y="190" width="220" height="36" fill="#f9d9b8" stroke="#e0955f" stroke-width="1.6"/>
+    <text x="720" y="212" font-size="9.5" fill="#9c5a22">e/E ± digits（指数）</text>
+    <text x="480" y="258" font-size="10.5" fill="#8a8578">（今天的扫描：字符集 0-9 . e E + - 连读成串）</text>
+    <text x="480" y="284" font-size="10.5" fill="#8a8578">（"至少一个 digit"的校验——"-."被拒的原理）</text>
+    <text x="480" y="308" font-size="10.5" fill="#8a8578">（严格文法如 "1.2.3" 拒收——Day 131 的 strtod 验证）</text>
+
+    <path d="M 40,364 Q 280,358 520,364 Q 524,480 520,576 Q 280,582 42,576 Q 36,480 40,364 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 470)"/>
+    <text x="280" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">错误四闸（实测）</text>
+    <rect x="64" y="412" width="430" height="150" fill="#33413a"/>
+    <text x="279" y="436" font-size="10.5" fill="#9fb8a8">闸一：意外字符（default 分支）</text>
+    <text x="279" y="458" font-size="10.5" fill="#9fb8a8">闸二：非法转义（\\ 后不认识）</text>
+    <text x="279" y="480" font-size="10.5" fill="#9fb8a8">闸三：字符串未闭合（行尾/EOF）</text>
+    <text x="279" y="502" font-size="10.5" fill="#9fb8a8">闸四：数字无 digit（"-."）</text>
+    <text x="279" y="530" font-size="10" fill="#8a8578">（全带行号——收集进 errors 数组）</text>
+
+    <path d="M 550,364 Q 730,358 905,364 Q 908,480 905,576 Q 730,582 552,576 Q 547,480 550,364 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 470)"/>
+    <text x="727" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">错误收集 vs 即停</text>
+    <rect x="572" y="412" width="320" height="150" fill="#33413a"/>
+    <text x="732" y="436" font-size="10.5" fill="#cfe8c8">收集式（今天）：errors 数组</text>
+    <text x="732" y="456" font-size="10" fill="#8a8578">（扫完一次报全——用户改一轮）</text>
+    <text x="732" y="484" font-size="10.5" fill="#9fb8a8">即停式：第一个错就 return</text>
+    <text x="732" y="504" font-size="10" fill="#8a8578">（改一个错再跑再报——多轮）</text>
+    <text x="732" y="532" font-size="10" fill="#8a8578">（IDE/编译器的惯例是收集式 ✔）</text>
+  </g>
+</svg>

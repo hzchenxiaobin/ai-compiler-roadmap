@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">七组输入、四闸执法与转义解码战报</text>
+    <path d="M 350,58 Q 480,52 610,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 -std=c++20 -Wall -Wextra；ASan 零报错）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,490 Q 248,495 26,490 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 296)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出（节选）</text>
+    <rect x="38" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./tf　（c++20 零警告）</text>
+    <text x="54" y="200" font-size="12" fill="#9fb8a8">== 正常输入（多行） ==</text>
+    <text x="54" y="222" font-size="11.5" fill="#cfe8c8">18 记号 ✔（city/杭州/pop…）</text>
+    <text x="54" y="242" font-size="11.5" fill="#cfe8c8">错误：无 ✔</text>
+    <text x="54" y="266" font-size="12" fill="#9fb8a8">== 数字形态 ==</text>
+    <text x="54" y="288" font-size="11.5" fill="#cfe8c8">0 -1 3.14 1e5 2.5E-3 42 ✔</text>
+    <text x="54" y="312" font-size="12" fill="#9fb8a8">== 转义 ==</text>
+    <text x="54" y="334" font-size="11.5" fill="#cfe8c8">a+换行 / c+制表 / d\ / e"f ✔</text>
+    <text x="54" y="360" font-size="12" fill="#9fb8a8">== 四闸执法 ==</text>
+    <text x="54" y="382" font-size="11.5" fill="#f0c9c0">[错误] 第1行：意外字符 '@' ✔</text>
+    <text x="54" y="402" font-size="11.5" fill="#f0c9c0">[错误] 第1行：非法转义 \x ✔</text>
+    <text x="54" y="422" font-size="11.5" fill="#f0c9c0">[错误] 未闭合 ✔｜"-." ✔</text>
+    <text x="54" y="448" font-size="11.5" fill="#9fb8a8">== 设计要点 ==</text>
+    <text x="54" y="470" font-size="11" fill="#9fb8a8">（收集式/行号/简化转义集的说明）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,490 Q 712,495 490,490 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 296)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">Tokenizer 的完成度</text>
+    <rect x="502" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">今天做到：</text>
+    <text x="514" y="198" font-size="11.5" fill="#cfe8c8">六符号/字面量三件 ✔（127 原型）</text>
+    <text x="514" y="218" font-size="11.5" fill="#cfe8c8">数字字符集+digit 校验 ✔（新增）</text>
+    <text x="514" y="238" font-size="11.5" fill="#cfe8c8">字符串+五转义 ✔（新增）</text>
+    <text x="514" y="258" font-size="11.5" fill="#cfe8c8">四闸错误+行号+收集式 ✔（新增）</text>
+    <text x="514" y="288" font-size="12" fill="#9fb8a8">明天补（Day 130）：</text>
+    <text x="514" y="310" font-size="11.5" fill="#8a8578">\uXXXX 四位十六进制转义</text>
+    <text x="514" y="330" font-size="11.5" fill="#8a8578">（代理对——多字节字符的深水区）</text>
+    <text x="514" y="360" font-size="12" fill="#9fb8a8">后天补（Day 131）：</text>
+    <text x="514" y="382" font-size="11.5" fill="#8a8578">数字严格文法（strtod 验证</text>
+    <text x="514" y="400" font-size="11.5" fill="#8a8578">　"1.2.3" 这类拒收）</text>
+    <text x="514" y="432" font-size="12.5" fill="#45703a">（129/144 = 89.6%）</text>
+    <text x="514" y="462" font-size="11" fill="#9fb8a8">（Parser 骨架 Day 132——大后天）</text>
+
+    <path d="M 24,516 Q 470,510 905,517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>
+    <text x="46" y="542" font-size="15.5" font-weight="bold" fill="#9c5a22">错误处理的用户观</text>
+    <text x="46" y="568" font-size="12.5" fill="#3b3a36">"第3行：字符串未闭合"比"解析失败"友好一百倍——行号+原因让用户直达病灶；错误处理不是附庸是产品的脸面</text>
+
+    <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 130 字符串转义完整版——\n \" \\ \u 的处理（含 \uXXXX 十六进制）</text>
+  </g>
+</svg>
