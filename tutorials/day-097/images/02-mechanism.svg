@@ -23,7 +23,7 @@
     <text x="730" y="180" font-size="10.5" fill="#6b675e">两份独立机器码</text>
     <text x="730" y="200" font-size="10.5" fill="#6b675e">（零运行时开销——</text>
     <text x="730" y="220" font-size="10.5" fill="#6b675e">　没有虚表的间接跳转）</text>
-    <text x="472" y="322" font-size="11.5" fill="#8a8578">（对比 Day 73 的虚函数：模板 = 编译期多态（静态分派）、virtual = 运行期多态（查虚表））</text>
+    <text x="472" y="322" font-size="10" fill="#8a8578">（对比 Day 73 虚函数：模板 = 编译期多态（静态分派）、virtual = 运行期多态（查虚表））</text>
 
     <path d="M 40,364 Q 280,358 520,364 Q 524,480 520,576 Q 280,582 42,576 Q 36,480 40,364 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 470)"/>
     <text x="280" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">mySum 的接口选择</text>
