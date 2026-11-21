@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 140 全貌：ASan + UBSan 全绿——优化代码过消毒柜</text>
+    <path d="M 300,60 Q 480,52 660,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定"修复所有报告问题"——Day 139 优化后的解析器进消毒柜：17 输入（含全部错误路径）+ 108KB 大输入，两 San 零报告；探针先验证消毒柜在工作</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">两 San 的分工</text>
+    <text x="64" y="180" font-size="12.5" fill="#45703a">ASan（AddressSanitizer）：</text>
+    <text x="64" y="202" font-size="12" fill="#8a8578">（内存错误的运行时执法——越界读/</text>
+    <text x="64" y="222" font-size="12" fill="#8a8578">　写、use-after-free、泄漏）</text>
+    <text x="64" y="252" font-size="12.5" fill="#45703a">UBSan（UndefinedBehavior）：</text>
+    <text x="64" y="274" font-size="12" fill="#8a8578">（UB 的检查——有符号溢出、</text>
+    <text x="64" y="294" font-size="12" fill="#8a8578">　位移越界、空指针解引用…）</text>
+    <text x="64" y="326" font-size="12.5" fill="#6b675e">编译开关：-fsanitize=address /</text>
+    <text x="64" y="348" font-size="12.5" fill="#6b675e">　-fsanitize=undefined</text>
+    <text x="64" y="376" font-size="11.5" fill="#8a8578">（可同开——互补的两只眼）</text>
+
+    <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">实测战报（全绿）</text>
+    <text x="572" y="180" font-size="12" fill="#45703a">被检负载：17 输入 + 108KB</text>
+    <text x="572" y="202" font-size="12" fill="#8a8578">（正常 9 + 畸形 8——错误路径全跑）</text>
+    <text x="572" y="232" font-size="12.5" fill="#cfe8c8">ASan：零报错 ✔</text>
+    <text x="572" y="260" font-size="12.5" fill="#cfe8c8">UBSan：零报告 ✔</text>
+    <text x="572" y="292" font-size="12" fill="#a33f2e">探针（验证消毒柜工作）：</text>
+    <text x="572" y="314" font-size="11" fill="#8a8578">（堆越界 → ASan 当场抓 ✔）</text>
+    <text x="572" y="334" font-size="11" fill="#8a8578">（1000000×1000000 → UBSan 报溢出 ✔）</text>
+    <text x="572" y="366" font-size="11.5" fill="#8a8578">（"没报"和"柜子坏了"要能区分——探针的意义）</text>
+
+    <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
+    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">为什么今天在 Day 139 之后</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">昨天改了代码（view/reserve/解析器重构）——优化是"新改动"：任何改动都该过消毒柜；先正确（138）再快（139）再复查（今天）——三明治的闭环</text>
+    <text x="70" y="490" font-size="12.5" fill="#6b675e">（错误路径也要跑：17 输入里 8 个畸形——半途而废的树最考验回收）</text>
+
+    <path d="M 60,514 Q 480,508 905 515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 136~139 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 140（今天）</text>
+    <circle cx="650" cy="514" r="5" fill="#5b8db8"/>
+    <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 141~143</text>
+    <circle cx="850" cy="514" r="5" fill="#e0955f"/>
+    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 144 毕业</text>
+  </g>
+</svg>

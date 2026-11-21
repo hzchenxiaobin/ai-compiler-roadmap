@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">探针的报告形态与错误路径的覆盖论证</text>
+    <path d="M 300,58 Q 480,52 660,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,340 Q 470,334 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 220)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">两个探针的实测报告（故意埋的雷）</text>
+    <rect x="110" y="146" width="360" height="170" fill="#33413a"/>
+    <text x="290" y="172" font-size="10.5" fill="#9fb8a8">探针①堆越界读（heap[5]）：</text>
+    <text x="290" y="196" font-size="10" fill="#f0c9c0">ERROR: AddressSanitizer:</text>
+    <text x="290" y="214" font-size="10" fill="#f0c9c0">　heap-buffer-overflow</text>
+    <text x="290" y="234" font-size="10" fill="#8a8578">　on address 0x602…（位置）</text>
+    <text x="290" y="258" font-size="10" fill="#9fb8a8">SUMMARY: … in asan_probe()</text>
+    <text x="290" y="282" font-size="10" fill="#8a8578">（函数名+偏移——直达病灶）</text>
+    <rect x="510" y="146" width="340" height="170" fill="#33413a"/>
+    <text x="680" y="172" font-size="10.5" fill="#9fb8a8">探针②有符号溢出：</text>
+    <text x="680" y="196" font-size="10" fill="#f0c9c0">runtime error: signed</text>
+    <text x="680" y="214" font-size="10" fill="#f0c9c0">　integer overflow:</text>
+    <text x="680" y="234" font-size="10" fill="#f0c9c0">　1000000 * 1000000 cannot</text>
+    <text x="680" y="252" font-size="10" fill="#f0c9c0">　be represented in type 'int'</text>
+    <text x="680" y="278" font-size="10" fill="#8a8578">（文件:行号 + 算式——自解释）</text>
+    <text x="472" y="334" font-size="11.5" fill="#8a8578">（探针的意义：证明"柜子在工作"——全绿才可信（否则可能是开关没开））</text>
+
+    <path d="M 40,364 Q 280,358 520,364 Q 524,480 520,576 Q 280,582 42,576 Q 36,480 40,364 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 470)"/>
+    <text x="280" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">错误路径的覆盖论证</text>
+    <rect x="64" y="412" width="430" height="150" fill="#33413a"/>
+    <text x="279" y="436" font-size="10.5" fill="#9fb8a8">8 个畸形输入的意义：</text>
+    <text x="279" y="458" font-size="10.5" fill="#cfe8c8">（错误路径 = 树的"半途而废"</text>
+    <text x="279" y="478" font-size="10.5" fill="#cfe8c8">　——unwind 的 unique_ptr 回收）</text>
+    <text x="279" y="502" font-size="10.5" fill="#f0c9c0">不跑错误路径 = 消毒柜只照了半边</text>
+    <text x="279" y="530" font-size="10" fill="#8a8578">（今天 17 输入：9 正常 + 8 畸形 + 大输入）</text>
+
+    <path d="M 550,364 Q 730,358 905,364 Q 908,480 905,576 Q 730,582 552,576 Q 547,480 550,364 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 470)"/>
+    <text x="727" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">两 San 能抓/不能抓</text>
+    <rect x="572" y="412" width="320" height="150" fill="#33413a"/>
+    <text x="732" y="436" font-size="10.5" fill="#cfe8c8">ASan：越界/UAF/泄漏 ✔</text>
+    <text x="732" y="460" font-size="10.5" fill="#cfe8c8">UBSan：溢出/位移 UB ✔</text>
+    <text x="732" y="488" font-size="10.5" fill="#8a8578">都不能抓：逻辑错（对不对）——</text>
+    <text x="732" y="508" font-size="10.5" fill="#8a8578">（那是 Day 137/138 测试的事——</text>
+    <text x="732" y="528" font-size="10.5" fill="#8a8578">　三件套：测试+San+审查）</text>
+  </g>
+</svg>

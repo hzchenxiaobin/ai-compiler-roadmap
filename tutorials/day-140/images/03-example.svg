@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">两 San 零报告、探针执法与三明治闭环战报</text>
+    <path d="M 330,58 Q 480,52 630,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 -std=c++20 -Wall -Wextra + -fsanitize=address/undefined）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,490 Q 248,495 26,490 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 296)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出（节选）</text>
+    <rect x="38" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ g++ … -fsanitize=address &amp;&amp; ./sc_a</text>
+    <text x="54" y="200" font-size="12" fill="#9fb8a8">== 17 输入 ==</text>
+    <text x="54" y="222" font-size="11.5" fill="#cfe8c8">[OK] 9 正常（嵌套/转义/数字）✔</text>
+    <text x="54" y="242" font-size="11.5" fill="#f0c9c0">[拒] 8 畸形（各配消息）✔</text>
+    <text x="54" y="266" font-size="11.5" fill="#cfe8c8">大输入 108150B/5000 键 → OK ✔</text>
+    <text x="54" y="292" font-size="12" fill="#f0c9c0">ASan：零报错 ✔</text>
+    <text x="54" y="318" font-size="12" fill="#9fb8a8">$ g++ … -fsanitize=undefined</text>
+    <text x="54" y="340" font-size="12" fill="#f0c9c0">UBSan：零报告 ✔</text>
+    <text x="54" y="370" font-size="12" fill="#9fb8a8">== 探针模式（--probes） ==</text>
+    <text x="54" y="392" font-size="11" fill="#9fb8a8">heap[5] 越界读：</text>
+    <text x="54" y="410" font-size="10.5" fill="#f0c9c0">ASan: heap-buffer-overflow ✔</text>
+    <text x="54" y="434" font-size="11" fill="#9fb8a8">1000000×1000000：</text>
+    <text x="54" y="452" font-size="10.5" fill="#f0c9c0">UBSan: signed overflow ✔</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,490 Q 712,495 490,490 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 296)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">正确性的三件套（至此齐了）</text>
+    <rect x="502" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">① 测试（137/138）：</text>
+    <text x="514" y="196" font-size="11.5" fill="#cfe8c8">内部 28 + 外部 283 = 行为对</text>
+    <text x="514" y="222" font-size="12" fill="#9fb8a8">② Sanitizer（今天）：</text>
+    <text x="514" y="244" font-size="11.5" fill="#f0c9c0">ASan+UBSan 全绿 = 内存/UB 干净</text>
+    <text x="514" y="270" font-size="12" fill="#9fb8a8">③ 审查（每天的诚实清单）：</text>
+    <text x="514" y="292" font-size="11.5" fill="#8a8578">（已知限制的文档化——教学从简）</text>
+    <text x="514" y="324" font-size="12" fill="#9fb8a8">三明治的闭环：</text>
+    <text x="514" y="346" font-size="11.5" fill="#8a8578">（138 正确 → 139 优化 →</text>
+    <text x="514" y="366" font-size="11.5" fill="#8a8578">　今天复查——优化没破坏正确）</text>
+    <text x="514" y="398" font-size="12.5" fill="#45703a">（140/144 = 97.2%）</text>
+    <text x="514" y="428" font-size="11" fill="#9fb8a8">（剩 4 天：整理/CMake/博客/毕业</text>
+    <text x="514" y="446" font-size="11" fill="#9fb8a8">　——项目的最后冲刺）</text>
+    <text x="514" y="476" font-size="11" fill="#9fb8a8">（全库 233 文件持续全绿的</text>
+    <text x="514" y="494" font-size="11" fill="#9fb8a8">　今天又添新成员的验证）</text>
+
+    <path d="M 24,516 Q 470,510 905 517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>
+    <text x="46" y="542" font-size="15.5" font-weight="bold" fill="#9c5a22">全绿的底气</text>
+    <text x="46" y="568" font-size="12.5" fill="#3b3a36">"没报错"和"检查过没报错"是两句话——探针先验证消毒柜在工作，全绿才有分量；这个方法论从 Day 39 的第一次 ASan 到今天没变过</text>
+
+    <path d="M 24,596 Q 470,590 905 597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 141 代码整理——README、目录结构、注释规范（计划指定）</text>
+  </g>
+</svg>
