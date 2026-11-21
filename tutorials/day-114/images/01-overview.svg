@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 114 项目日：移动 vs 拷贝基准——一周的毫秒答卷（第 19 周收官）</text>
+    <path d="M 220,60 Q 480,52 740,61" fill="none" stroke="#e0955f" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定"benchmark + chrono 计时"——762MB 数据的整批搬运：拷贝 335ms vs 移动 1ms（335 倍）——移动语义的账本用数字结清</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">三个基准（实测）</text>
+    <text x="64" y="180" font-size="12.5" fill="#45703a">基准一·整批：335 ms vs 1 ms（335 倍）</text>
+    <text x="64" y="202" font-size="12" fill="#8a8578">（vector 拷贝构造 vs 移动构造）</text>
+    <text x="64" y="232" font-size="12.5" fill="#45703a">基准二·逐个 push：398 ms vs 0 ms</text>
+    <text x="64" y="254" font-size="12" fill="#8a8578">（push(左值) vs push(move)——快到测不出）</text>
+    <text x="64" y="284" font-size="12.5" fill="#45703a">基准三·扩容：184 ms vs 151 ms</text>
+    <text x="64" y="306" font-size="12" fill="#8a8578">（不 reserve vs reserve——Day 79 兑现）</text>
+    <text x="64" y="344" font-size="12.5" fill="#6b675e">测试规模：2000 个 × 390KB ≈ 762MB</text>
+    <text x="64" y="374" font-size="11.5" fill="#8a8578">（-O2 优化编译——steady_clock 计时）</text>
+
+    <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">数字的解读（诚实账本）</text>
+    <text x="572" y="180" font-size="12" fill="#45703a">335 倍来自"不干活"：</text>
+    <text x="572" y="202" font-size="11.5" fill="#8a8578">（偷指针 2 字 vs 分配+抄 762MB）</text>
+    <text x="572" y="232" font-size="12" fill="#6b675e">数据越大越明显（量级差）</text>
+    <text x="572" y="260" font-size="12" fill="#6b675e">小对象（int）：拷贝=移动</text>
+    <text x="572" y="288" font-size="11.5" fill="#8a8578">（优化无从谈起——别白忙）</text>
+    <text x="572" y="318" font-size="12" fill="#a33f2e">0 ms 是"太快测不出"</text>
+    <text x="572" y="340" font-size="11.5" fill="#8a8578">（要精细用纳秒级/循环放大）</text>
+    <text x="572" y="372" font-size="11" fill="#8a8578">（基准方法论：多次取平均——今天从简）</text>
+
+    <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
+    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">一周知识的兑现清单</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">109 值类别→110 move→111 移动构造+noexcept→112 五法则→113 forward→今天数字：整条链在 762MB 的搬运里各就各位</text>
+    <text x="70" y="490" font-size="12.5" fill="#6b675e">（noexcept 让 vector 走移动搬家——111 的论断今天是前提）</text>
+
+    <path d="M 60,514 Q 480,508 905 515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#e0955f"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#9c5a22">Day 114（第 19 周收官）</text>
+    <circle cx="690" cy="514" r="5" fill="#5b8db8"/>
+    <text x="690" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">第 20 周 智能指针</text>
+    <circle cx="870" cy="514" r="5" fill="#e0955f"/>
+    <text x="870" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">JSON 项目</text>
+  </g>
+</svg>
