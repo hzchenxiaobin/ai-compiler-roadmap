@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">三遍历、地址发现与悬空陷阱战报</text>
+    <path d="M 350,58 Q 480,52 610,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21，libc++）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,280 470,470 Q 248,475 26,470 Q 20,280 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 286)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出（节选）</text>
+    <rect x="38" y="146" width="420" height="310" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./st　（-Wall 零警告）</text>
+    <text x="54" y="198" font-size="11.5" fill="#cfe8c6">C 字符串：h e l l o _ w o r l d</text>
+    <text x="54" y="216" font-size="11" fill="#9fb8a8">（长度 11——strlen 数出来的）</text>
+    <text x="54" y="242" font-size="11.5" fill="#cfe8c6">std::string：同串（长度 11 O(1)）</text>
+    <text x="54" y="268" font-size="11.5" fill="#cfe8c6">string_view：同串（长度 11 O(1)）</text>
+    <text x="54" y="298" font-size="12" fill="#9fb8a8">地址发现：</text>
+    <text x="54" y="320" font-size="11.5" fill="#cfe8c6">cstr → 常量区 0x100b89d94</text>
+    <text x="54" y="342" font-size="11.5" fill="#f0c9c0">str.data() → 栈 0x…6d30（SSO！）</text>
+    <text x="54" y="364" font-size="11.5" fill="#cfe8c6">sv.data() 同址——纯借看 ✔</text>
+    <text x="54" y="392" font-size="11.5" fill="#9fb8a8">sizeof：cstr=8 buf=32 str=24 sv=16</text>
+    <text x="54" y="422" font-size="12" fill="#9fb8a8">悬空陷阱：</text>
+    <text x="54" y="444" font-size="11.5" fill="#f0c9c0">临时析构后 bad.size()=12（假象）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,280 934,470 Q 712,475 490,470 Q 484,280 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 286)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">三个发现的教学价值</text>
+    <rect x="502" y="146" width="420" height="310" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">① SSO 现场证据：</text>
+    <text x="514" y="196" font-size="11.5" fill="#cfe8c6">str.data() 在栈——11 字节 ≤ 22 阈值</text>
+    <text x="514" y="216" font-size="11" fill="#9fb8a8">（长串会走堆——Day 42 扩容同款）</text>
+    <text x="514" y="248" font-size="12" fill="#9fb8a8">② view 的轻：</text>
+    <text x="514" y="270" font-size="11.5" fill="#cfe8c6">sizeof 16 vs string 24；借用零拷贝</text>
+    <text x="514" y="290" font-size="11" fill="#9fb8a8">（传参场景 const string&amp; 的替代）</text>
+    <text x="514" y="322" font-size="12" fill="#9fb8a8">③ 悬空的静默：</text>
+    <text x="514" y="344" font-size="11.5" fill="#f0c9c0">size()=12 看似正常——数据已死</text>
+    <text x="514" y="364" font-size="11" fill="#9fb8a8">（又见"能读≠合法"——Day 39 同款）</text>
+    <text x="514" y="398" font-size="12.5" fill="#45703a">本周 3 天知识在一张输出里会师：</text>
+    <text x="514" y="420" font-size="12" fill="#9fb8a8">　常量区（Day 37）+ 栈布局（Day 37）</text>
+    <text x="514" y="440" font-size="12" fill="#9fb8a8">　+ 悬空 UB（Day 39）</text>
+
+    <path d="M 24,496 Q 470,490 905,497 L 901,570 Q 470,564 26,569 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 533)"/>
+    <text x="46" y="522" font-size="15.5" font-weight="bold" fill="#9c5a22">第 8 周进行时</text>
+    <text x="46" y="550" font-size="12.5" fill="#3b3a36">今天的"字符串三种户口"是本周内存进阶的第一站——明天对齐与字节序（了解级）</text>
+
+    <path d="M 24,586 Q 470,580 905,587 L 901,648 Q 470,642 26,647 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 617)"/>
+    <text x="480" y="621" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 44 内存对齐（alignof）与字节序——打印常见类型的对齐值（计划指定练习）</text>
+  </g>
+</svg>

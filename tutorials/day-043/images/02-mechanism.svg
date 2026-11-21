@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">SSO 内联与 view 的借看结构</text>
+    <path d="M 370,58 Q 480,52 590,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,320 Q 470,314 44,319 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 210)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">string 的两副面孔（SSO vs 堆）</text>
+    <rect x="90" y="146" width="380" height="130" fill="#fffdf7" stroke="#5b8db8" stroke-width="2"/>
+    <text x="280" y="172" font-size="12" fill="#2c5a82">短串（≤22 字节，libc++）：</text>
+    <text x="280" y="196" font-size="11" fill="#45703a">[ h e l l o   w o r l d \0 | 未用空间 | size ]</text>
+    <text x="280" y="218" font-size="10.5" fill="#8a8578">（全部内联在 string 对象里——不碰堆！）</text>
+    <text x="280" y="248" font-size="10.5" fill="#6b675e">实测 "hello world" 的 data() 在栈 0x…6d30 ✔</text>
+    <rect x="490" y="146" width="380" height="130" fill="#fffdf7" stroke="#7aa663" stroke-width="2"/>
+    <text x="680" y="172" font-size="12" fill="#45703a">长串（&gt;22 字节）：</text>
+    <text x="680" y="196" font-size="11" fill="#6b675e">string 对象：[ ptr | size | capacity ]</text>
+    <text x="680" y="218" font-size="11" fill="#6b675e">　　　　　　　　↓ 指向</text>
+    <text x="680" y="240" font-size="11" fill="#6b675e">堆块：[ 很长的内容\0 ]</text>
+    <text x="680" y="262" font-size="10.5" fill="#8a8578">（Day 42 动态数组的扩容思路 + Day 41 深拷贝）</text>
+    <text x="472" y="296" font-size="12" fill="#9fb8a8">（SSO 省一次分配——短串高频场景的优化；代价是 string 对象稍大：24 字节）</text>
+
+    <path d="M 40,344 Q 280,338 520,344 Q 524,460 520,576 Q 280,582 42,576 Q 36,460 40,344 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 460)"/>
+    <text x="280" y="374" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">string_view 的解剖（sizeof=16）</text>
+    <rect x="90" y="392" width="160" height="56" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
+    <text x="170" y="416" text-anchor="middle" font-size="11" fill="#9c5a22">const char* data</text>
+    <text x="170" y="436" text-anchor="middle" font-size="10" fill="#8a8578">（8 字节：借谁）</text>
+    <rect x="270" y="392" width="160" height="56" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
+    <text x="350" y="416" text-anchor="middle" font-size="11" fill="#45703a">size_t size</text>
+    <text x="350" y="436" text-anchor="middle" font-size="10" fill="#8a8578">（8 字节：多长）</text>
+    <path d="M 250,420 Q 260,420 268,420" fill="none" stroke="#3b3a36" stroke-width="1.6"/>
+    <text x="280" y="476" font-size="11.5" fill="#3b3a36">没有 '\0' 结尾要求、不管理内存、</text>
+    <text x="280" y="496" font-size="11.5" fill="#3b3a36">　不能改内容——纯"观察窗"</text>
+    <text x="280" y="526" font-size="11" fill="#a33f2e">寿命规则：被借者活多久 view 才能用多久</text>
+    <text x="280" y="552" font-size="11" fill="#8a8578">（主场：函数参数——const string&amp; 的</text>
+    <text x="280" y="570" font-size="11" fill="#8a8578">　更轻替代，接 string/C串/字面量都免拷贝）</text>
+
+    <path d="M 550,344 Q 730,338 905,344 Q 908,460 905,576 Q 730,582 552,576 Q 547,460 550,344 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 460)"/>
+    <text x="727" y="374" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">互转的三条通道</text>
+    <text x="572" y="408" font-size="12.5" fill="#45703a">string → C 串：str.c_str()</text>
+    <text x="572" y="430" font-size="12" fill="#8a8578">（直通——返回内部指针，零拷贝）</text>
+    <text x="572" y="460" font-size="12.5" fill="#45703a">C 串 → string：std::string s = cstr;</text>
+    <text x="572" y="482" font-size="12" fill="#8a8578">（要拷——strlen 数长 + memcpy）</text>
+    <text x="572" y="512" font-size="12.5" fill="#45703a">string ↔ view：str 或 str.c_str()</text>
+    <text x="572" y="534" font-size="12" fill="#8a8578">（view 借 string 零拷贝；反向造 string 要拷）</text>
+    <text x="572" y="566" font-size="11" fill="#8a8578">（实测往返：hello world → hello world ✔）</text>
+  </g>
+</svg>
