@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 83 全貌：容器选择决策 + 三适配器</text>
+    <path d="M 320,60 Q 480,52 640,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定"括号匹配（stack 经典题）"——昨天的动物园今天教你怎么逛：决策树选容器、适配器换视角</text>
+
+    <path d="M 40,116 Q 470,110 905,117 L 901,380 Q 470,374 44,379 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 248)"/>
+    <text x="472" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">容器选择决策树（四问定型）</text>
+    <text x="70" y="180" font-size="13" fill="#3b3a36">问一：只在一端进出（后进先出）？→ stack（今天的括号匹配）</text>
+    <text x="70" y="208" font-size="13" fill="#3b3a36">问二：两端进出（先进先出）？→ queue / 双端 deque</text>
+    <text x="70" y="236" font-size="13" fill="#3b3a36">问三：按优先级出队？→ priority_queue（堆结构）</text>
+    <text x="70" y="264" font-size="13" fill="#3b3a36">问四：普通存取？→ 默认 vector（随机+缓存友好）</text>
+    <text x="70" y="296" font-size="12.5" fill="#6b675e">细分：编译期定长→array｜中间频繁插删→list｜</text>
+    <text x="70" y="318" font-size="12.5" fill="#6b675e">　头尾都频繁→deque｜内存极省→forward_list</text>
+    <text x="70" y="356" font-size="12" fill="#8a8578">（90% 的场景落在问四的 vector——先默认再特化）</text>
+
+    <path d="M 40,404 Q 470,398 905,405 L 901,500 Q 470,494 44,499 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.2 472 452)"/>
+    <text x="472" y="434" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">三适配器 = 给容器换"视角"</text>
+    <text x="70" y="464" font-size="13" fill="#3b3a36">stack：只露顶（push/pop/top）｜queue：只露头尾（push/front/pop）｜priority_queue：只露最大（push/top/pop）</text>
+    <text x="70" y="488" font-size="12.5" fill="#6b675e">（不是新容器——是给 deque/vector 穿上纪律外衣：故意藏掉用不到的操作）</text>
+
+    <path d="M 60,514 Q 480,508 905,515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 79~82 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 83（今天）</text>
+    <circle cx="660" cy="514" r="5" fill="#e0955f"/>
+    <text x="660" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 84 项目日</text>
+    <circle cx="860" cy="514" r="5" fill="#5b8db8"/>
+    <text x="860" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">第 15 周 关联容器</text>
+  </g>
+</svg>

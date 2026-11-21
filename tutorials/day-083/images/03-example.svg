@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">七例判定、三秩序与适配器解剖战报</text>
+    <path d="M 340,58 Q 480,52 620,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21；-Wall 零警告）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,480 Q 248,485 26,480 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 291)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出</text>
+    <rect x="38" y="146" width="420" height="320" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./ad　（-Wall 零警告）</text>
+    <text x="54" y="200" font-size="12" fill="#9fb8a8">== 括号匹配（七例） ==</text>
+    <text x="54" y="222" font-size="11.5" fill="#cfe8c6">"()" ✔　"([{}])" ✔（嵌套）</text>
+    <text x="54" y="242" font-size="11.5" fill="#f0c9c0">"(]" ✘（类型错）</text>
+    <text x="54" y="260" font-size="11.5" fill="#f0c9c0">"(" ✘（有开无闭）")" ✘（反向）</text>
+    <text x="54" y="282" font-size="11.5" fill="#cfe8c6">"a(b[c]d)e" ✔（无关字符穿过）</text>
+    <text x="54" y="300" font-size="11.5" fill="#cfe8c6">"" ✔（空串边界）</text>
+    <text x="54" y="330" font-size="12" fill="#9fb8a8">== stack ==</text>
+    <text x="54" y="352" font-size="11.5" fill="#cfe8c6">push 1 2 3 → top = 3</text>
+    <text x="54" y="370" font-size="11.5" fill="#cfe8c6">pop → top = 2（LIFO ✔）</text>
+    <text x="54" y="398" font-size="12" fill="#9fb8a8">== queue ==</text>
+    <text x="54" y="420" font-size="11.5" fill="#cfe8c6">front = 一号 → 出队 → 二号</text>
+    <text x="54" y="448" font-size="12" fill="#9fb8a8">== priority_queue ==</text>
+    <text x="54" y="470" font-size="11.5" fill="#f0c9c0">出队 5 4 3 1 1（大的先出 ✔）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,480 Q 712,485 490,480 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 291)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">适配器 = 纪律外衣</text>
+    <rect x="502" y="146" width="420" height="320" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">为什么 stack 没有下标/遍历？</text>
+    <text x="514" y="198" font-size="11.5" fill="#cfe8c6">它底层就是 deque——但故意</text>
+    <text x="514" y="218" font-size="11.5" fill="#cfe8c6">　只开放 push/pop/top</text>
+    <text x="514" y="242" font-size="11" fill="#9fb8a8">（Day 80 问过"为什么没有</text>
+    <text x="514" y="260" font-size="11" fill="#9fb8a8">　begin/end"——今天答案揭晓）</text>
+    <text x="514" y="290" font-size="12" fill="#9fb8a8">设计哲学：</text>
+    <text x="514" y="312" font-size="11.5" fill="#cfe8c6">接口越小越难用错——</text>
+    <text x="514" y="332" font-size="11.5" fill="#cfe8c6">　stack 只能栈操作（误用面极小）</text>
+    <text x="514" y="362" font-size="12" fill="#9fb8a8">和第 9 周的呼应：</text>
+    <text x="514" y="384" font-size="11.5" fill="#cfe8c6">Day 53 的三问清单（暴露面最小化）</text>
+    <text x="514" y="404" font-size="11" fill="#9fb8a8">　在标准库里的同款思想</text>
+    <text x="514" y="440" font-size="12.5" fill="#45703a">（83/144 = 57.6%——</text>
+    <text x="514" y="460" font-size="12.5" fill="#45703a">　明天项目日收官第 14 周）</text>
+
+    <path d="M 24,506 Q 470,500 905,507 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 543)"/>
+    <text x="46" y="532" font-size="15.5" font-weight="bold" fill="#9c5a22">LIFO 的普适性</text>
+    <text x="46" y="560" font-size="12.5" fill="#3b3a36">括号匹配/函数调用栈/撤销重做/迷宫回溯——"最近的问题最先解决"是计算机科学反复出现的模式（Day 37 的栈帧就是它）</text>
+
+    <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 84（项目日）——第 14 周收官项目（顺序容器全家桶的综合实战）</text>
+  </g>
+</svg>

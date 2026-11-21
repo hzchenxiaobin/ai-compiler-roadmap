@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">括号匹配的栈轨迹与三种出队秩序</text>
+    <path d="M 280,58 Q 480,52 680,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,340 Q 470,334 44,339 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 220)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">"([{}])" 的栈轨迹（LIFO 天职）</text>
+    <rect x="120" y="146" width="60" height="30" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
+    <text x="150" y="166" font-size="10" fill="#45703a">(</text>
+    <text x="150" y="192" font-size="9.5" fill="#8a8578">读 ( ：入栈</text>
+    <rect x="200" y="146" width="60" height="30" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
+    <text x="230" y="166" font-size="10" fill="#45703a">[</text>
+    <text x="230" y="192" font-size="9.5" fill="#8a8578">读 [ ：入栈</text>
+    <rect x="280" y="146" width="60" height="30" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
+    <text x="310" y="166" font-size="10" fill="#45703a">{</text>
+    <text x="310" y="192" font-size="9.5" fill="#8a8578">读 { ：入栈</text>
+    <rect x="360" y="146" width="60" height="30" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2"/>
+    <text x="390" y="166" font-size="10" fill="#a33f2e">{}配</text>
+    <text x="390" y="192" font-size="9.5" fill="#8a8578">读 } ：top={ 出栈 ✔</text>
+    <rect x="440" y="146" width="60" height="30" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2"/>
+    <text x="470" y="166" font-size="10" fill="#a33f2e">[]配</text>
+    <text x="470" y="192" font-size="9.5" fill="#8a8578">读 ] ：top=[ 出栈 ✔</text>
+    <rect x="520" y="146" width="60" height="30" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2"/>
+    <text x="550" y="166" font-size="10" fill="#a33f2e">()配</text>
+    <text x="550" y="192" font-size="9.5" fill="#8a8578">读 ) ：top=( 出栈 ✔</text>
+    <rect x="620" y="146" width="80" height="30" fill="#d8ecce" stroke="#7aa663" stroke-width="2.4"/>
+    <text x="660" y="166" font-size="10" fill="#45703a">空 = 匹配 ✔</text>
+    <path d="M 184,161 Q 192,161 198,161" fill="none" stroke="#3b3a36" stroke-width="1.8"/>
+    <path d="M 264,161 Q 272,161 278,161" fill="none" stroke="#3b3a36" stroke-width="1.8"/>
+    <path d="M 344,161 Q 352,161 358,161" fill="none" stroke="#3b3a36" stroke-width="1.8"/>
+    <path d="M 424,161 Q 432,161 438,161" fill="none" stroke="#3b3a36" stroke-width="1.8"/>
+    <path d="M 504,161 Q 512,161 518,161" fill="none" stroke="#3b3a36" stroke-width="1.8"/>
+    <text x="760" y="160" font-size="10.5" fill="#6b675e">为什么必须 LIFO：</text>
+    <text x="760" y="178" font-size="10.5" fill="#6b675e">最近的未配开括号</text>
+    <text x="760" y="196" font-size="10.5" fill="#6b675e">最先等到闭括号</text>
+    <text x="472" y="232" font-size="12" fill="#a33f2e">三种失败：类型错（(]）、有开无闭（(——栈剩）、有闭无开（）——栈空时来闭）</text>
+    <text x="472" y="262" font-size="12" fill="#45703a">最后 st.empty() 是关键：走完全串还剩开括号 = 不匹配</text>
+    <text x="472" y="296" font-size="11" fill="#8a8578">（实测七例全对——含嵌套/穿无关字符/空串边界）</text>
+
+    <path d="M 40,364 Q 280,358 520,364 Q 524,480 520,576 Q 280,582 42,576 Q 36,480 40,364 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 470)"/>
+    <text x="280" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">三种出队秩序（实测）</text>
+    <rect x="64" y="412" width="420" height="120" fill="#33413a"/>
+    <text x="274" y="438" font-size="11" fill="#9fb8a8">stack（LIFO）：push 1 2 3 →</text>
+    <text x="274" y="458" font-size="11.5" fill="#cfe8c6">　top = 3（后进先出）</text>
+    <text x="274" y="482" font-size="11" fill="#9fb8a8">queue（FIFO）：入队一二三 →</text>
+    <text x="274" y="502" font-size="11.5" fill="#cfe8c6">　front = 一号（先进先出）</text>
+    <text x="274" y="526" font-size="11.5" fill="#cfe8c6">　出队后 front = 二号</text>
+
+    <path d="M 550,364 Q 730,358 905,364 Q 908,480 905,576 Q 730,582 552,576 Q 547,480 550,364 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 470)"/>
+    <text x="727" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">priority_queue（堆）</text>
+    <rect x="572" y="412" width="320" height="120" fill="#33413a"/>
+    <text x="732" y="438" font-size="11" fill="#9fb8a8">push 3 1 4 1 5 → 出队：</text>
+    <text x="732" y="462" font-size="12" fill="#f0c9c0">5 4 3 1 1（大的先出！）</text>
+    <text x="732" y="488" font-size="11" fill="#9fb8a8">（默认大顶堆；小顶堆要</text>
+    <text x="732" y="506" font-size="10.5" fill="#9fb8a8">　greater&lt;int&gt; 当比较器）</text>
+  </g>
+</svg>
