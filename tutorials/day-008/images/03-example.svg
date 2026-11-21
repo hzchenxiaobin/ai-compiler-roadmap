@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">三种循环、一场游戏、一次哨兵求和</text>
+    <path d="M 320,58 Q 480,52 640,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,210 470,318 Q 248,323 26,318 Q 20,210 24,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(-0.3 247 210)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#2c5a82">同一任务（打印 1~5）三写法</text>
+    <rect x="38" y="146" width="420" height="160" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="12.5" fill="#cfe8c6">for：　　1 2 3 4 5</text>
+    <text x="54" y="196" font-size="12.5" fill="#cfe8c6">while：　1 2 3 4 5</text>
+    <text x="54" y="220" font-size="12.5" fill="#cfe8c6">do-while：1 2 3 4 5</text>
+    <text x="54" y="252" font-size="12" fill="#9fb8a8">输出一样，但结构不同：</text>
+    <text x="54" y="272" font-size="12" fill="#9fb8a8">for 把 起步/条件/步进 挤在一行；</text>
+    <text x="54" y="292" font-size="12" fill="#9fb8a8">while 的 ++j 要自己写在身体末尾</text>
+    <text x="46" y="330" font-size="12.5" fill="#2c5a82">选型口诀：数得清用 for，等条件用 while，</text>
+    <text x="46" y="350" font-size="12.5" fill="#2c5a82">必须先做一次才谈得上判，用 do-while</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,230 934,400 Q 712,405 490,400 Q 484,230 488,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(0.3 711 251)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#45703a">猜数字完整对话（srand(42)）</text>
+    <rect x="502" y="146" width="420" height="150" rx="6" fill="#33413a"/>
+    <text x="514" y="170" font-size="12" fill="#9fb8a8">$ printf 'abc\n50\n90\n95\n' | ./guess_game</text>
+    <text x="514" y="192" font-size="12.5" fill="#f0c9c0">你的猜测：请输入 1~100 的整数。　←abc 被拦</text>
+    <text x="514" y="214" font-size="12.5" fill="#cfe8c6">你的猜测：太小了，往大猜。　　←50</text>
+    <text x="514" y="236" font-size="12.5" fill="#cfe8c6">你的猜测：太小了，往大猜。　　←90</text>
+    <text x="514" y="262" font-size="12.5" fill="#cfe8c6">你的猜测：猜中了！答案就是 95，</text>
+    <text x="514" y="282" font-size="12.5" fill="#cfe8c6">　　　　共用了 3 次。　（exit=0）</text>
+    <text x="510" y="322" font-size="12.5" fill="#45703a">次数统计只在有效猜测时 +1：</text>
+    <text x="510" y="342" font-size="12.5" fill="#6b675e">abc 那次不算——continue 跳过了 ++tries</text>
+    <text x="510" y="372" font-size="12.5" fill="#45703a">二分策略：100 以内的数，7 次内必中；</text>
+    <text x="510" y="392" font-size="12.5" fill="#6b675e">这次 3 次纯属运气（95 恰在高位）</text>
+
+    <path d="M 24,360 Q 248,354 470,360 Q 474,470 470,580 Q 248,585 26,580 Q 20,470 24,360 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="3" transform="rotate(-0.3 247 470)"/>
+    <text x="46" y="392" font-size="16" font-weight="bold" fill="#9c5a22">哨兵循环：读到 0 就收工</text>
+    <rect x="38" y="406" width="420" height="120" rx="6" fill="#33413a"/>
+    <text x="54" y="432" font-size="12" fill="#9fb8a8">$ printf '10\n20\n30\n0\n' | ./sum_until_zero</text>
+    <text x="54" y="456" font-size="12.5" fill="#cfe8c6">逐个输入要累加的数（输入 0 结束）：</text>
+    <text x="54" y="478" font-size="12.5" fill="#cfe8c6">总和 = 60</text>
+    <text x="54" y="508" font-size="12" fill="#9fb8a8">0 是哨兵：它本身不参加累加，</text>
+    <text x="54" y="528" font-size="12" fill="#9fb8a8">只是循环条件的终止信号</text>
+    <text x="46" y="560" font-size="12.5" fill="#9c5a22">注意读取写在 while 内外的"边读边判"结构：</text>
+    <text x="46" y="578" font-size="12.5" fill="#6b675e">先读一次进门，循环体内再读续命（Day 16 再深挖）</text>
+
+    <path d="M 488,428 Q 712,422 934,428 Q 938,510 934,590 Q 712,595 490,590 Q 484,510 488,428 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(0.3 711 509)"/>
+    <text x="711" y="458" text-anchor="middle" font-size="15" font-weight="bold" fill="#8a6d1a">今天的选型地图</text>
+    <text x="711" y="490" text-anchor="middle" font-size="12.5" fill="#3b3a36">固定 144 格进度条 → for</text>
+    <text x="711" y="514" text-anchor="middle" font-size="12.5" fill="#3b3a36">猜到中为止 → while(true)+break</text>
+    <text x="711" y="538" text-anchor="middle" font-size="12.5" fill="#3b3a36">读到 0 为止 → while(n != 0)</text>
+    <text x="711" y="562" text-anchor="middle" font-size="12.5" fill="#3b3a36">菜单至少显示一次 → do-while 也行</text>
+    <text x="711" y="586" text-anchor="middle" font-size="12" fill="#8a8578">（换算器当时用的 while(true) 同样合法）</text>
+  </g>
+</svg>

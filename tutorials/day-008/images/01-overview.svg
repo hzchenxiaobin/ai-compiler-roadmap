@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 8 全貌：循环家族与两个岔口</text>
+    <path d="M 340,60 Q 480,52 620,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">昨天学了 for 一枝，今天补齐循环全家——并揭开 Day 6 埋下的 while(true) 之谜</text>
+
+    <path d="M 40,120 Q 200,114 356,120 Q 360,180 356,238 Q 200,244 42,238 Q 36,180 40,120 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(-0.4 198 179)"/>
+    <text x="198" y="150" text-anchor="middle" font-size="17" font-weight="bold" fill="#2c5a82">for</text>
+    <text x="198" y="178" text-anchor="middle" font-size="13" fill="#3b3a36">次数已知的心里有数</text>
+    <text x="198" y="200" text-anchor="middle" font-size="12" fill="#6b675e">跑 9 圈、打 5 行星号</text>
+    <text x="198" y="226" text-anchor="middle" font-size="12" fill="#8a8578">（昨天的主角）</text>
+
+    <path d="M 380,120 Q 540,114 696,120 Q 700,180 696,238 Q 540,244 382,238 Q 376,180 380,120 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(0.4 538 179)"/>
+    <text x="538" y="150" text-anchor="middle" font-size="17" font-weight="bold" fill="#45703a">while</text>
+    <text x="538" y="178" text-anchor="middle" font-size="13" fill="#3b3a36">条件成立就一直做</text>
+    <text x="538" y="200" text-anchor="middle" font-size="12" fill="#6b675e">猜到对为止、读到 0 为止</text>
+    <text x="538" y="226" text-anchor="middle" font-size="12" fill="#8a8578">（先判后做，可能 0 次）</text>
+
+    <path d="M 720,120 Q 840,114 930,120 Q 933,180 930,238 Q 840,244 722,238 Q 717,180 720,120 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="3" transform="rotate(-0.4 824 179)"/>
+    <text x="824" y="150" text-anchor="middle" font-size="17" font-weight="bold" fill="#9c5a22">do-while</text>
+    <text x="824" y="178" text-anchor="middle" font-size="13" fill="#3b3a36">先做一次再判</text>
+    <text x="824" y="200" text-anchor="middle" font-size="12" fill="#6b675e">至少执行 1 次</text>
+    <text x="824" y="226" text-anchor="middle" font-size="12" fill="#8a8578">（先做后判）</text>
+
+    <path d="M 480,258 Q 480,282 480,300" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+    <path d="M 472,294 Q 480,304 489,295" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+
+    <path d="M 140,306 L 820,306 L 820,420 Q 480,448 140,420 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(-0.2 480 377)"/>
+    <text x="480" y="344" text-anchor="middle" font-size="17" font-weight="bold" fill="#55606e">循环体里的两个岔口（Day 6 见过的老朋友）</text>
+    <rect x="220" y="366" width="220" height="52" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.5" transform="rotate(-0.6 330 392)"/>
+    <text x="330" y="388" text-anchor="middle" font-size="14" font-weight="bold" fill="#a33f2e">break;　彻底跳出循环</text>
+    <text x="330" y="408" text-anchor="middle" font-size="11.5" fill="#8a8578">换算器输 0 退出、猜中收场</text>
+    <rect x="520" y="366" width="220" height="52" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.5" transform="rotate(0.6 630 392)"/>
+    <text x="630" y="388" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5a82">continue;　跳过本轮回开头</text>
+    <text x="630" y="408" text-anchor="middle" font-size="11.5" fill="#8a8578">乱敲字母抢救完重新问</text>
+
+    <path d="M 60,474 Q 480,466 905,475" fill="none" stroke="#8a8578" stroke-width="3"/>
+    <circle cx="140" cy="473" r="6" fill="#8a94a3"/>
+    <text x="140" y="500" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 7 ✓</text>
+    <circle cx="300" cy="474" r="13" fill="none" stroke="#c96a5a" stroke-width="2.2"/>
+    <circle cx="300" cy="474" r="6" fill="#5b8db8"/>
+    <text x="300" y="500" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#c96a5a">Day 8（今天）</text>
+    <circle cx="480" cy="473" r="6" fill="#5b8db8"/>
+    <text x="480" y="500" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 9~11</text>
+    <circle cx="660" cy="474" r="6" fill="#5b8db8"/>
+    <text x="660" y="500" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 12 项目日</text>
+    <circle cx="840" cy="473" r="6" fill="#e0955f"/>
+    <text x="840" y="500" text-anchor="middle" font-size="12.5" fill="#3b3a36">第 3 周 数组</text>
+
+    <rect x="120" y="516" width="720" height="34" fill="#f7e8a0" opacity="0.5" transform="rotate(-0.3 480 533)"/>
+    <text x="480" y="538" text-anchor="middle" font-size="13.5" fill="#8a6d1a">今天的里程碑：三种循环各写一遍同一任务，猜数字游戏 3 次内通关</text>
+  </g>
+</svg>
