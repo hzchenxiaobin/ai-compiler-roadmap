@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 22 全貌：const——给房间和门牌上锁</text>
+    <path d="M 310,60 Q 480,52 650,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">昨天学会了改，今天学"承诺不改"——四种锁法、只读别名、编译期常量，一次讲透</text>
+
+    <path d="M 40,116 Q 470,110 905,117 L 901,308 Q 470,302 44,307 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 212)"/>
+    <text x="472" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">四种组合：谁被锁？（★ = 允许）</text>
+    <rect x="66" y="160" width="500" height="30" fill="#fffdf7" stroke="#9db8cf" stroke-width="1.5"/>
+    <text x="80" y="180" font-size="11.5" fill="#3b3a36">int* p　　　　　　　　　改 *p ★　换 p ★　　（都不锁）</text>
+    <rect x="66" y="192" width="500" height="30" fill="#d8ecce" stroke="#7aa663" stroke-width="1.8"/>
+    <text x="80" y="212" font-size="11.5" fill="#3b3a36">const int* p　　　　　　改 *p ✘　换 p ★　　（锁物）</text>
+    <rect x="66" y="224" width="500" height="30" fill="#f9d9b8" stroke="#e0955f" stroke-width="1.8"/>
+    <text x="80" y="244" font-size="11.5" fill="#3b3a36">int* const p　　　　　　改 *p ★　换 p ✘　　（锁针）</text>
+    <rect x="66" y="256" width="500" height="30" fill="#f9e9e5" stroke="#c96a5a" stroke-width="1.8"/>
+    <text x="80" y="276" font-size="11.5" fill="#3b3a36">const int* const p　　　改 *p ✘　换 p ✘　　（双锁）</text>
+    <text x="596" y="180" font-size="11.5" fill="#8a8578">口诀：const 在 * 左边</text>
+    <text x="596" y="198" font-size="11.5" fill="#8a8578">锁"指的东西"；</text>
+    <text x="596" y="216" font-size="11.5" fill="#8a8578">const 在 * 右边</text>
+    <text x="596" y="234" font-size="11.5" fill="#8a8578">锁"指针本身"。</text>
+    <text x="596" y="258" font-size="11.5" fill="#8a8578">两边都有 = 双锁。</text>
+    <text x="596" y="288" font-size="11" fill="#8a8578">（从右往左读名字最准）</text>
+
+    <path d="M 40,332 Q 280,326 520,332 Q 524,420 520,500 Q 280,506 42,500 Q 36,420 40,332 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 416)"/>
+    <text x="280" y="362" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">const 引用：只读别名</text>
+    <text x="64" y="392" font-size="12.5" fill="#3b3a36">const std::string&amp; text：不拷贝 + 承诺不改</text>
+    <text x="64" y="418" font-size="12.5" fill="#6b675e">（Day 10 起照抄的签名，今天读全了）</text>
+    <text x="64" y="446" font-size="12.5" fill="#45703a">特长：还能绑字面量（实测"字面量也行"）</text>
+    <text x="64" y="474" font-size="12.5" fill="#6b675e">改它 → 编译期就拦（实测 no viable overloaded '='）</text>
+
+    <path d="M 550,332 Q 730,326 905,332 Q 908,420 905,500 Q 730,506 552,500 Q 547,420 550,332 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(0.3 727 416)"/>
+    <text x="727" y="362" text-anchor="middle" font-size="15" font-weight="bold" fill="#8a6d1a">constexpr：编译期定值</text>
+    <text x="572" y="392" font-size="12.5" fill="#3b3a36">const：运行期定值也算（input 直接入）</text>
+    <text x="572" y="418" font-size="12.5" fill="#3b3a36">constexpr：必须编译期算得出（5*5 = 25 ✔）</text>
+    <text x="572" y="446" font-size="12.5" fill="#a33f2e">绑运行期值 → 实测报错"must be initialized</text>
+    <text x="572" y="466" font-size="12.5" fill="#a33f2e">by a constant expression"</text>
+    <text x="572" y="490" font-size="11.5" fill="#8a8578">（能当数组长度用——编译期已知）</text>
+
+    <path d="M 60,522 Q 480,516 905,523" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="220" cy="522" r="5" fill="#8a94a3"/>
+    <text x="220" y="542" text-anchor="middle" font-size="12" fill="#3b3a36">Day 19~21 ✓</text>
+    <circle cx="410" cy="522" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="410" cy="522" r="5" fill="#5b8db8"/>
+    <text x="410" y="542" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 22（今天）</text>
+    <circle cx="590" cy="522" r="5" fill="#5b8db8"/>
+    <text x="590" y="542" text-anchor="middle" font-size="12" fill="#3b3a36">Day 23 二级指针</text>
+    <circle cx="780" cy="522" r="5" fill="#e0955f"/>
+    <text x="780" y="542" text-anchor="middle" font-size="12" fill="#3b3a36">Day 24 自测日</text>
+  </g>
+</svg>

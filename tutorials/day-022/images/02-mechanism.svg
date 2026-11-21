@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">读法、锁位与两个"时期"</text>
+    <path d="M 380,58 Q 480,52 580,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,262 Q 470,256 44,261 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 181)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">从右往左读：名字自己会说话</text>
+    <text x="70" y="162" font-size="13" fill="#3b3a36">const int* p　→　"p is a pointer to const int"：指向常量的指针——锁物</text>
+    <text x="70" y="190" font-size="13" fill="#3b3a36">int* const p　→　"p is a const pointer to int"：常量指针——锁针</text>
+    <text x="70" y="218" font-size="13" fill="#3b3a36">const int* const p → "const pointer to const int"：双锁</text>
+    <text x="70" y="246" font-size="12.5" fill="#6b675e">判断捷径：const 在 * 的哪一侧，就锁哪一侧的东西（左物右针）</text>
+
+    <path d="M 40,286 Q 470,280 905,287 L 901,452 Q 470,446 44,451 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 472 369)"/>
+    <text x="472" y="316" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#55606e">锁在门牌上 vs 锁在房间里（实测行为）</text>
+    <rect x="90" y="336" width="110" height="40" fill="#fffdf7" stroke="#5b8db8" stroke-width="2.2"/>
+    <text x="145" y="360" text-anchor="middle" font-size="12" fill="#3b3a36">a = 12</text>
+    <path d="M 300,356 Q 240,356 206,356" fill="none" stroke="#e0955f" stroke-width="2.4"/>
+    <path d="M 214,348 Q 204,356 214,364" fill="none" stroke="#e0955f" stroke-width="2.4"/>
+    <rect x="316" y="336" width="200" height="40" fill="#d8ecce" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="416" y="354" text-anchor="middle" font-size="10.5" fill="#45703a">const int* p2：房间上锁</text>
+    <text x="416" y="369" text-anchor="middle" font-size="10.5" fill="#45703a">*p2 = 30 ✘　p2 = &amp;b ✔</text>
+    <rect x="560" y="336" width="200" height="40" fill="#f9d9b8" stroke="#e0955f" stroke-width="2.2"/>
+    <text x="660" y="354" text-anchor="middle" font-size="10.5" fill="#9c5a22">int* const p3：门牌上锁</text>
+    <text x="660" y="369" text-anchor="middle" font-size="10.5" fill="#9c5a22">*p3 = 12 ✔　p3 = &amp;b ✘</text>
+    <text x="472" y="404" text-anchor="middle" font-size="12.5" fill="#3b3a36">实测战报：a 被 p1 改成 11、又被 p3 改成 12（两把都没锁房间）</text>
+    <text x="472" y="428" text-anchor="middle" font-size="12.5" fill="#3b3a36">p2 换绑后看着 b = 20；p4 双锁只读看着 a = 12</text>
+
+    <path d="M 40,476 Q 470,470 905,477 L 901,576 Q 470,570 44,575 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.2 472 526)"/>
+    <text x="472" y="506" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#8a6d1a">const vs constexpr：两个"时期"</text>
+    <text x="70" y="538" font-size="13" fill="#3b3a36">const int n = input;　　✔（运行期定值也算只读）</text>
+    <text x="510" y="538" font-size="13" fill="#a33f2e">constexpr int bad = input;　✘（必须编译期算得出）</text>
+    <text x="70" y="566" font-size="12.5" fill="#6b675e">今天初识：能当数组长度、编译器替你算好的才是 constexpr；深挖在 Day 107 编译期计算</text>
+  </g>
+</svg>
