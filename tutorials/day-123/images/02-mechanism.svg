@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">递归迭代器的走树顺序与 entry 的解剖</text>
+    <path d="M 300,58 Q 480,52 660,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,340 Q 470,334 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 220)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">测试树与递归遍历的顺序</text>
+    <rect x="190" y="146" width="180" height="40" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
+    <text x="280" y="171" font-size="10.5" fill="#9c5a22">root/（根目录）</text>
+    <rect x="100" y="210" width="100" height="36" fill="#d8ecce" stroke="#7aa663" stroke-width="1.8"/>
+    <text x="150" y="233" font-size="9.5" fill="#45703a">a/</text>
+    <rect x="240" y="210" width="100" height="36" fill="#d8ecce" stroke="#7aa663" stroke-width="1.8"/>
+    <text x="290" y="233" font-size="9.5" fill="#45703a">b/</text>
+    <rect x="360" y="210" width="110" height="36" fill="#f1f4f7" stroke="#8a94a3" stroke-width="1.6"/>
+    <text x="415" y="233" font-size="9.5" fill="#8a94a3">top.txt 100B</text>
+    <rect x="60" y="274" width="100" height="36" fill="#f9d9b8" stroke="#e0955f" stroke-width="1.8"/>
+    <text x="110" y="297" font-size="9.5" fill="#9c5a22">sub/</text>
+    <rect x="180" y="274" width="100" height="36" fill="#f1f4f7" stroke="#8a94a3" stroke-width="1.6"/>
+    <text x="230" y="297" font-size="9" fill="#8a94a3">one.bin 500B</text>
+    <rect x="300" y="274" width="100" height="36" fill="#f1f4f7" stroke="#8a94a3" stroke-width="1.6"/>
+    <text x="350" y="297" font-size="9" fill="#8a94a3">two.bin 200B</text>
+    <rect x="420" y="274" width="120" height="36" fill="#f1f4f7" stroke="#8a94a3" stroke-width="1.6"/>
+    <text x="480" y="297" font-size="9" fill="#8a94a3">three.txt 300B</text>
+    <path d="M 240,188 Q 170,200 155,208" fill="none" stroke="#3b3a36" stroke-width="1.6"/>
+    <path d="M 320,188 Q 295,200 290,208" fill="none" stroke="#3b3a36" stroke-width="1.6"/>
+    <path d="M 388,188 Q 420,198 420,208" fill="none" stroke="#3b3a36" stroke-width="1.6"/>
+    <path d="M 130,246 Q 110,260 110,272" fill="none" stroke="#3b3a36" stroke-width="1.6"/>
+    <text x="620" y="240" font-size="10.5" fill="#6b675e">递归顺序：a → sub → two → one</text>
+    <text x="620" y="262" font-size="10.5" fill="#6b675e">　→ b → three → .hidden</text>
+    <text x="620" y="284" font-size="10.5" fill="#6b675e">　→ 回根 → top.txt</text>
+    <text x="620" y="310" font-size="10" fill="#8a8578">（深度优先——进目录钻到底再回来）</text>
+
+    <path d="M 40,364 Q 280,358 520,364 Q 524,480 520,576 Q 280,582 42,576 Q 36,480 40,364 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 470)"/>
+    <text x="280" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">entry 的多态接口</text>
+    <rect x="64" y="412" width="430" height="150" fill="#33413a"/>
+    <text x="279" y="438" font-size="10.5" fill="#9fb8a8">e.is_directory() → 是目录吗</text>
+    <text x="279" y="460" font-size="10.5" fill="#9fb8a8">e.is_regular_file() → 普通文件吗</text>
+    <text x="279" y="482" font-size="10.5" fill="#cfe8c8">e.file_size() → 多少字节</text>
+    <text x="279" y="504" font-size="10.5" fill="#cfe8c8">e.path().filename() → 名字</text>
+    <text x="279" y="532" font-size="10" fill="#8a8578">（一个 entry 对象答所有——不用再 stat）</text>
+
+    <path d="M 550,364 Q 730,358 905,364 Q 908,480 905,576 Q 730,582 552,576 Q 547,480 550,364 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 470)"/>
+    <text x="727" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">和容器迭代器的神似</text>
+    <rect x="572" y="412" width="320" height="150" fill="#33413a"/>
+    <text x="732" y="438" font-size="10.5" fill="#9fb8a8">for (auto&amp; e : fs::directory_iterator(d))</text>
+    <text x="732" y="462" font-size="10.5" fill="#cfe8c8">（范围 for 直接用——Day 80 的姿势）</text>
+    <text x="732" y="490" font-size="10.5" fill="#9fb8a8">++it 深入/回溯（递归版）</text>
+    <text x="732" y="514" font-size="10" fill="#8a8578">（end 迭代器 = 树走完的哨兵）</text>
+    <text x="732" y="540" font-size="10" fill="#8a8578">（Day 88 的迭代器分类又添一族）</text>
+  </g>
+</svg>
