@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">三代同输、四路全通与 insert 拆包战报</text>
+    <path d="M 300,58 Q 480,52 660,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 -std=c++17；-Wall 零警告）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,490 Q 248,495 26,490 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 296)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出（节选）</text>
+    <rect x="38" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./sb　（-Wall 零警告）</text>
+    <text x="54" y="200" font-size="12" fill="#9fb8a8">== 三代 map 遍历 ==</text>
+    <text x="54" y="222" font-size="11.5" fill="#cfe8c6">三代输出一字不差 ✔</text>
+    <text x="54" y="242" font-size="11" fill="#9fb8a8">（it-> / .first / [k,v]）</text>
+    <text x="54" y="268" font-size="12" fill="#9fb8a8">== tie 对照 ==</text>
+    <text x="54" y="290" font-size="11.5" fill="#cfe8c6">tie 42,3.14｜绑定 42,3.14 ✔</text>
+    <text x="54" y="314" font-size="12" fill="#9fb8a8">== tuple 三元 ==</text>
+    <text x="54" y="336" font-size="11.5" fill="#cfe8c8">小明，15 岁，88.5 分 ✔</text>
+    <text x="54" y="360" font-size="12" fill="#9fb8a8">== 结构体/数组 ==</text>
+    <text x="54" y="382" font-size="11.5" fill="#cfe8c8">px=3 py=4｜10,20,30 ✔</text>
+    <text x="54" y="406" font-size="12" fill="#9fb8a8">== 嵌套统计 ==</text>
+    <text x="54" y="428" font-size="11.5" fill="#cfe8c8">数学 87.5｜语文 80 ✔</text>
+    <text x="54" y="452" font-size="12" fill="#9fb8a8">== insert 拆包 ==</text>
+    <text x="54" y="474" font-size="11.5" fill="#cfe8c8">首 insert=true；再 insert=false ✔</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,490 Q 712,495 490,490 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 296)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">绑定出现的历史时刻</text>
+    <rect x="502" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">教程里的"偷用"记录：</text>
+    <text x="514" y="198" font-size="11.5" fill="#cfe8c6">Day 84 词频 v1（首次！）</text>
+    <text x="514" y="218" font-size="11" fill="#9fb8a8">　for (const auto&amp; [w, n] : freq)</text>
+    <text x="514" y="246" font-size="11.5" fill="#cfe8c8">Day 87 multimap 的 equal_range</text>
+    <text x="514" y="266" font-size="11" fill="#9fb8a8">　auto [first, last] = …</text>
+    <text x="514" y="294" font-size="11.5" fill="#cfe8c8">Day 94 二分的 equal_range</text>
+    <text x="514" y="314" font-size="11" fill="#9fb8a8">　auto [l2, u2] = …（区间拆头尾）</text>
+    <text x="514" y="342" font-size="11.5" fill="#cfe8c8">Day 96/98 等持续在用——</text>
+    <text x="514" y="362" font-size="11" fill="#9fb8a8">　今天正式正名（机制+限制）</text>
+    <text x="514" y="394" font-size="12.5" fill="#45703a">（106/144 = 73.6%）</text>
+    <text x="514" y="426" font-size="11.5" fill="#9fb8a8">明天 if constexpr（编译期分支）</text>
+    <text x="514" y="446" font-size="11" fill="#9fb8a8">　→ 周六项目日：现代特性重写</text>
+    <text x="514" y="466" font-size="11" fill="#9fb8a8">　　通讯录 v3（本周所学全用上）</text>
+
+    <path d="M 24,516 Q 470,510 905,517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>
+    <text x="46" y="542" font-size="15.5" font-weight="bold" fill="#9c5a22">命名的价值</text>
+    <text x="46" y="568" font-size="12.5" fill="#3b3a36">.first/.second 是"位置"（读者要记），[name, age] 是"名字"（自 explaining）——代码可读性的每一寸都值得争</text>
+
+    <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 107 if constexpr 与编译期计算——编译期阶乘（计划指定练习）</text>
+  </g>
+</svg>

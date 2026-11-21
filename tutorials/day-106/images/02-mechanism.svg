@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">绑定的机制（拆给谁）与两版接收的对照</text>
+    <path d="M 290,58 Q 480,52 670,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,330 Q 470,334 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 215)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">auto [a, b] = p 的展开（概念）</text>
+    <rect x="180" y="146" width="150" height="60" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
+    <text x="255" y="172" font-size="10.5" fill="#9c5a22">pair p</text>
+    <text x="255" y="190" font-size="9.5" fill="#8a8578">（.first=42 .second=3.14）</text>
+    <path d="M 334,176 Q 370,176 404,176" fill="none" stroke="#3b3a36" stroke-width="2.2"/>
+    <text x="370" y="166" font-size="9.5" fill="#6b675e">拆开</text>
+    <rect x="410" y="146" width="90" height="60" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
+    <text x="455" y="180" font-size="10.5" fill="#45703a">a ← first</text>
+    <rect x="510" y="146" width="90" height="60" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
+    <text x="555" y="180" font-size="10.5" fill="#45703a">b ← second</text>
+    <text x="640" y="160" font-size="10.5" fill="#6b675e">（a、b 是 p 的成员的</text>
+    <text x="640" y="178" font-size="10.5" fill="#6b675e">　别名（auto&amp;）或拷贝（auto）</text>
+    <text x="472" y="240" font-size="12" fill="#3b3a36">auto [a,b] = p → 拷贝（改 a 不动 p.first）</text>
+    <text x="472" y="264" font-size="12" fill="#45703a">auto&amp; [a,b] = p → 别名（改 a 即改 p.first）</text>
+    <text x="472" y="296" font-size="11.5" fill="#8a8578">（auto 的值/引用分野在绑定里同样适用——Day 103 的规则迁移）</text>
+
+    <path d="M 40,354 Q 280,348 520,354 Q 524,470 520,576 Q 280,582 42,576 Q 36,470 40,354 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 465)"/>
+    <text x="280" y="384" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">多返回值的接收对照</text>
+    <rect x="64" y="402" width="430" height="150" fill="#33413a"/>
+    <text x="279" y="428" font-size="10.5" fill="#9fb8a8">旧法：</text>
+    <text x="279" y="450" font-size="10.5" fill="#9fb8a8">　auto t = get_student();</text>
+    <text x="279" y="470" font-size="10.5" fill="#f0c9c0">　std::get&lt;0&gt;(t)… get&lt;1&gt;(t)…（序号魔法数）</text>
+    <text x="279" y="498" font-size="10.5" fill="#cfe8c6">新法：</text>
+    <text x="279" y="520" font-size="10.5" fill="#cfe8c6">　auto [name, age, score] = get_student();</text>
+    <text x="279" y="540" font-size="10" fill="#8a8578">　（声明+拆一步——名字自述）</text>
+
+    <path d="M 550,354 Q 730,348 905,354 Q 908,470 905,576 Q 730,582 552,576 Q 547,470 550,354 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 465)"/>
+    <text x="727" y="384" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">绑定的限制（诚实清单）</text>
+    <text x="572" y="418" font-size="12" fill="#3b3a36">不能嵌套绑定（[a, [b, c]] 不行）</text>
+    <text x="572" y="442" font-size="11.5" fill="#8a8578">（要拆两层就分两行）</text>
+    <text x="572" y="472" font-size="12" fill="#3b3a36">数量必须精确匹配</text>
+    <text x="572" y="494" font-size="11.5" fill="#8a8578">（pair 拆 3 个 → 编译错）</text>
+    <text x="572" y="524" font-size="12" fill="#3b3a36">结构体要全 public 成员</text>
+    <text x="572" y="546" font-size="11.5" fill="#8a8578">（private 的类不适用——用 getter）</text>
+  </g>
+</svg>
