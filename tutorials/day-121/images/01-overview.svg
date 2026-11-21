@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 121 全貌：optional / variant / any——值语义的"可能"（第 21 周开篇）</text>
+    <path d="M 300,60 Q 480,52 660,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定"解析函数返回 optional&lt;int&gt; 表达失败"——三种"不确定"的容器：可能没有（optional）/是几种之一（variant）/什么都行（any）</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">optional&lt;T&gt;：可能没有（计划指定）</text>
+    <rect x="64" y="164" width="440" height="70" fill="#33413a"/>
+    <text x="284" y="190" font-size="11" fill="#9fb8a8">optional&lt;int&gt; parse_int(string);</text>
+    <text x="284" y="212" font-size="11" fill="#cfe8c8">有值 return value; 失败 return nullopt;</text>
+    <text x="64" y="260" font-size="12.5" fill="#45703a">调用方：if (auto r = f()) 用 *r</text>
+    <text x="64" y="282" font-size="12" fill="#8a8578">（bool 上下文判空——必须面对失败）</text>
+    <text x="64" y="312" font-size="12.5" fill="#45703a">value_or(默认)：失败时的兜底</text>
+    <text x="64" y="334" font-size="12" fill="#8a8578">（实测 100 / -1 两路）</text>
+    <text x="64" y="366" font-size="11.5" fill="#8a8578">（对照旧风格：int out; if (f(s,out))——丑）</text>
+
+    <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">variant / any：联合与万能</text>
+    <text x="572" y="180" font-size="12" fill="#45703a">variant&lt;Circle, Rect&gt;：只能是其中一种</text>
+    <text x="572" y="202" font-size="12" fill="#8a8578">（visit 按实际分派——穷尽检查）</text>
+    <text x="572" y="232" font-size="12" fill="#45703a">any：运行期才知道装了什么</text>
+    <text x="572" y="254" font-size="12" fill="#8a8578">（any_cast 取——错类型 nullptr/抛）</text>
+    <text x="572" y="290" font-size="12.5" fill="#6b675e">选型阶梯：能 optional 别 variant；</text>
+    <text x="572" y="312" font-size="12.5" fill="#6b675e">　能 variant 别 any——越具体越安全</text>
+    <text x="572" y="352" font-size="11.5" fill="#8a8578">（Day 107 的 if constexpr 在 visit 里复用）</text>
+
+    <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
+    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">三者的共同精神：类型说话</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">失败从"返回码+输出参数"变成"返回类型的一部分"——调用方编译期就看得到"可能没有"；文档即代码、代码即契约</text>
+    <text x="70" y="490" font-size="12.5" fill="#6b675e">（和智能指针同源：把约定从注释搬进类型系统）</text>
+
+    <path d="M 60,514 Q 480,508 905 515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 115~120 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 121（第 21 周开篇）</text>
+    <circle cx="650" cy="514" r="5" fill="#5b8db8"/>
+    <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 122~125</text>
+    <circle cx="850" cy="514" r="5" fill="#e0955f"/>
+    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 126 里程碑</text>
+  </g>
+</svg>

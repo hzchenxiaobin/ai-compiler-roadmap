@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">optional 的内部结构与新旧的调用对照</text>
+    <path d="M 300,58 Q 480,52 660,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,340 Q 470,334 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 220)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">optional&lt;int&gt; 的概念结构</text>
+    <rect x="150" y="146" width="300" height="100" fill="#33413a"/>
+    <text x="300" y="172" font-size="11" fill="#9fb8a8">optional&lt;int&gt; 内部（概念）：</text>
+    <rect x="190" y="186" width="110" height="36" fill="#d8ecce" stroke="#7aa663" stroke-width="1.8"/>
+    <text x="245" y="209" font-size="10" fill="#45703a">int 值</text>
+    <rect x="310" y="186" width="90" height="36" fill="#f9d9b8" stroke="#e0955f" stroke-width="1.8"/>
+    <text x="355" y="209" font-size="10" fill="#9c5a22">bool 有</text>
+    <text x="300" y="262" font-size="10" fill="#8a8578">（值 + 有效标志——sizeof 通常 T+1 对齐）</text>
+    <rect x="510" y="146" width="340" height="100" fill="#33413a"/>
+    <text x="680" y="172" font-size="11" fill="#9fb8a8">访问的纪律：</text>
+    <text x="680" y="196" font-size="10.5" fill="#cfe8c8">判空后 \*r / r.value()（读值）</text>
+    <text x="680" y="218" font-size="10.5" fill="#f0c9c0">空时 \*r 是 UB！value() 抛 bad_optional_access</text>
+    <text x="680" y="240" font-size="10" fill="#cfe8c8">value_or(默认) 最省心（空给默认）</text>
+    <text x="472" y="286" font-size="11.5" fill="#8a8578">（Day 117 lock 的判空纪律同款——"可能没有"的访问规矩处处一样）</text>
+
+    <path d="M 40,364 Q 280,358 520,364 Q 524,480 520,576 Q 280,582 42,576 Q 36,480 40,364 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 470)"/>
+    <text x="280" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">旧风格 vs 新风格</text>
+    <rect x="64" y="412" width="430" height="150" fill="#33413a"/>
+    <text x="279" y="438" font-size="10.5" fill="#9fb8a8">旧：bool parse(const char* s, int&amp; out)</text>
+    <text x="279" y="460" font-size="10.5" fill="#f0c9c0">　int x; if (parse(s, x)) use(x);（丑）</text>
+    <text x="279" y="488" font-size="10.5" fill="#cfe8c8">新：optional&lt;int&gt; parse(string)</text>
+    <text x="279" y="510" font-size="10.5" fill="#cfe8c8">　if (auto r = parse(s)) use(*r);（净）</text>
+    <text x="279" y="538" font-size="10" fill="#8a8578">（返回值是完整的值语义——没有输出参数）</text>
+
+    <path d="M 550,364 Q 730,358 905,364 Q 908,480 905,576 Q 730,582 552,576 Q 547,480 550,364 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 470)"/>
+    <text x="727" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">身边的 optional 场景</text>
+    <rect x="572" y="412" width="320" height="150" fill="#33413a"/>
+    <text x="732" y="438" font-size="10.5" fill="#9fb8a8">查找：map.find 没找到 → optional</text>
+    <text x="732" y="460" font-size="10.5" fill="#9fb8a8">解析：字符串→数字（今天）</text>
+    <text x="732" y="482" font-size="10.5" fill="#9fb8a8">配置：读环境变量（可能没设）</text>
+    <text x="732" y="504" font-size="10.5" fill="#9fb8a8">首元素：空容器的 front</text>
+    <text x="732" y="534" font-size="10" fill="#8a8578">（一切"可能没有"的返回——告别哨兵值 -1）</text>
+  </g>
+</svg>
