@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">排序前后全记录与手算账本</text>
+    <path d="M 350,58 Q 480,52 610,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,300 470,500 Q 248,505 26,500 Q 20,300 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 301)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出</text>
+    <rect x="38" y="146" width="420" height="340" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./sl</text>
+    <text x="54" y="196" font-size="12" fill="#9fb8a8">== 排序前（插入序） ==</text>
+    <text x="54" y="218" font-size="11.5" fill="#cfe8c6">　圆(r=2)：面积 12.5664，周长 12.5664</text>
+    <text x="54" y="238" font-size="11.5" fill="#cfe8c6">　矩形(3×4)：面积 12，周长 14</text>
+    <text x="54" y="258" font-size="11.5" fill="#cfe8c6">　正方形(边5)：面积 25，周长 20</text>
+    <text x="54" y="278" font-size="11.5" fill="#cfe8c6">　三角形(3,4,5)：面积 6，周长 12</text>
+    <text x="54" y="298" font-size="11.5" fill="#cfe8c6">　椭圆(4,2)：面积 25.1327，周长 19.3769</text>
+    <text x="54" y="330" font-size="12" fill="#9fb8a8">== 按面积升序后 ==</text>
+    <text x="54" y="352" font-size="11.5" fill="#cfe8c6">　三角形(6) → 矩形(12) → 圆(12.5664)</text>
+    <text x="54" y="372" font-size="11.5" fill="#cfe8c6">　→ 正方形(25) → 椭圆(25.1327)</text>
+    <text x="54" y="406" font-size="12.5" fill="#f0c9c0">总面积 = 80.6991</text>
+    <text x="54" y="446" font-size="12" fill="#9fb8a8">手算账本（五项全对）：</text>
+    <text x="54" y="468" font-size="12" fill="#9fb8a8">　海伦 √36=6 ✔ 3×4=12 ✔ 4π=12.57 ✔</text>
+    <text x="54" y="488" font-size="12" fill="#9fb8a8">　5²=25 ✔ π×4×2=25.13 ✔ 和=80.70 ✔</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,300 934,500 Q 712,505 490,500 Q 484,300 488,102 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 711 301)"/>
+    <text x="510" y="132" font-size="15.5" font-weight="bold" fill="#55606e">八周战绩总表</text>
+    <rect x="502" y="146" width="420" height="180" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="11.5" fill="#cfe8c6">第 7 周：类五件套 + 银行账户　　　✔</text>
+    <text x="514" y="196" font-size="11.5" fill="#cfe8c6">第 8 周：继承多态 + 图形库 v3　　　✔</text>
+    <text x="514" y="220" font-size="11.5" fill="#cfe8c6">（48/144 = 33%；七个项目日全胜）</text>
+    <text x="514" y="248" font-size="12" fill="#9fb8a8">面向对象三大件（封装/继承/多态）</text>
+    <text x="514" y="268" font-size="12" fill="#9fb8a8">全部到手——第 9 周起攻拷贝控制</text>
+    <text x="510" y="316" font-size="12.5" fill="#3b3a36">本周新增零件：继承树、虚函数、虚表、</text>
+    <text x="510" y="338" font-size="12.5" fill="#3b3a36">抽象类、report 杠杆、虚析构、三种 cast</text>
+    <text x="510" y="382" font-size="12.5" fill="#45703a">设计判断法的毕业考已过：</text>
+    <text x="510" y="404" font-size="12.5" fill="#45703a">Square : Rect 是 is-a（✔ 继承）；</text>
+    <text x="510" y="426" font-size="12.5" fill="#45703a">日志/发动机是 has-a（✔ 组合）</text>
+    <text x="510" y="470" font-size="12" fill="#8a8578">下周预告：拷贝构造、三法则、深拷贝——</text>
+    <text x="510" y="490" font-size="12" fill="#8a8578">Shape 家族将学会正确的复制姿势</text>
+  </g>
+</svg>

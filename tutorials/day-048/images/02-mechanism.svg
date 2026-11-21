@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Shape 家族的继承树与排序的分发</text>
+    <path d="M 300,58 Q 480,52 660,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,320 Q 470,314 44,319 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 210)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">继承树（五种图形一层基类）</text>
+    <rect x="330" y="146" width="300" height="50" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.4"/>
+    <text x="480" y="168" text-anchor="middle" font-size="11.5" fill="#a33f2e">Shape（抽象：area/perimeter/name = 0）</text>
+    <text x="480" y="186" text-anchor="middle" font-size="10.5" fill="#8a8578">（report 杠杆 + 虚析构也在这层）</text>
+    <path d="M 200,200 Q 200,216 200,228" fill="none" stroke="#45703a" stroke-width="2"/>
+    <path d="M 480,200 Q 480,216 480,228" fill="none" stroke="#45703a" stroke-width="2"/>
+    <path d="M 760,200 Q 760,216 760,228" fill="none" stroke="#45703a" stroke-width="2"/>
+    <rect x="90" y="232" width="130" height="40" fill="#eef5e8" stroke="#7aa663" stroke-width="2"/>
+    <text x="155" y="256" text-anchor="middle" font-size="10.5" fill="#45703a">Circle（πr²）</text>
+    <rect x="240" y="232" width="130" height="40" fill="#eef5e8" stroke="#7aa663" stroke-width="2"/>
+    <text x="305" y="256" text-anchor="middle" font-size="10.5" fill="#45703a">Rect（w×h）</text>
+    <rect x="410" y="232" width="130" height="40" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
+    <text x="475" y="250" text-anchor="middle" font-size="10.5" fill="#9c5a22">Square : Rect</text>
+    <text x="475" y="266" text-anchor="middle" font-size="9" fill="#8a8578">（is-a：复用 w×h）</text>
+    <rect x="560" y="232" width="130" height="40" fill="#eef5e8" stroke="#7aa663" stroke-width="2"/>
+    <text x="625" y="256" text-anchor="middle" font-size="10.5" fill="#45703a">Triangle（海伦）</text>
+    <rect x="710" y="232" width="130" height="40" fill="#eef5e8" stroke="#7aa663" stroke-width="2"/>
+    <text x="775" y="256" text-anchor="middle" font-size="10.5" fill="#45703a">Ellipse（Ramanujan）</text>
+    <path d="M 370,252 Q 395,252 408,252" fill="none" stroke="#45703a" stroke-width="2"/>
+    <text x="472" y="296" text-anchor="middle" font-size="12" fill="#6b675e">Square 挂在 Rect 下——is-a 判断法今天的活用（计划第 8 周指定练习）</text>
+
+    <path d="M 40,344 Q 470,338 905,345 L 901,576 Q 470,570 44,575 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.2 472 460)"/>
+    <text x="472" y="374" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">sort 的多态分发（一行 lambda）</text>
+    <rect x="150" y="390" width="660" height="80" fill="#33413a"/>
+    <text x="480" y="418" text-anchor="middle" font-size="11.5" fill="#cfe8c6">std::sort(shapes.begin(), shapes.end(),</text>
+    <text x="480" y="440" text-anchor="middle" font-size="11.5" fill="#cfe8c6">　[](auto&amp; a, auto&amp; b) { return a-&gt;area() &lt; b-&gt;area(); });</text>
+    <text x="480" y="460" font-size="11" fill="#9fb8a8">（每次比较都是虚分发——五种 area 各自参战）</text>
+    <text x="472" y="506" font-size="12.5" fill="#3b3a36">手算核对（五项全对）：三角形 6 → 矩形 12 → 圆 12.5664 → 正方形 25 → 椭圆 25.1327</text>
+    <text x="472" y="530" font-size="12.5" fill="#3b3a36">总面积 80.6991 = 五项之和（逐项加一遍 ✔）</text>
+    <text x="472" y="558" font-size="12" fill="#8a8578">（周长公式：椭圆用 Ramanujan 近似、三角形海伦——都标注在代码注释）</text>
+  </g>
+</svg>
