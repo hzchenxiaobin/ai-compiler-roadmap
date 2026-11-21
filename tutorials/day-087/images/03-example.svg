@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">分组视图、区间切分与删除粒度战报</text>
+    <path d="M 330,58 Q 480,52 630,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 -std=c++17；-Wall 零警告）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,480 Q 248,485 26,480 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 291)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出（节选）</text>
+    <rect x="38" y="146" width="420" height="320" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./mg　（-Wall 零警告）</text>
+    <text x="54" y="200" font-size="12" fill="#9fb8a8">== multimap 一键多值 ==</text>
+    <text x="54" y="222" font-size="11.5" fill="#cfe8c6">插入 5 人，size = 5</text>
+    <text x="54" y="242" font-size="11" fill="#9fb8a8">（map 同场景覆盖剩 2）</text>
+    <text x="54" y="270" font-size="12" fill="#9fb8a8">== 分组视图（键序遍历） ==</text>
+    <text x="54" y="292" font-size="11.5" fill="#cfe8c6">一班：小明 → 小刚 → 小亮</text>
+    <text x="54" y="312" font-size="11.5" fill="#cfe8c6">二班：小红 → 小李 ✔</text>
+    <text x="54" y="340" font-size="12" fill="#9fb8a8">== equal_range ==</text>
+    <text x="54" y="362" font-size="11.5" fill="#cfe8c6">一班成员：小明 小刚 小亮</text>
+    <text x="54" y="382" font-size="11" fill="#9fb8a8">（区间长度 = 3 = count）</text>
+    <text x="54" y="410" font-size="12" fill="#9fb8a8">== 删除粒度 ==</text>
+    <text x="54" y="432" font-size="11.5" fill="#f0c9c0">erase(90)：count 3→0（全删）</text>
+    <text x="54" y="452" font-size="11.5" fill="#cfe8c6">erase(find(90))：3→2（只删一）✔</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,480 Q 712,485 490,480 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 291)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">关联容器家族全图</text>
+    <rect x="502" y="146" width="420" height="320" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">树族（有序，Day 85）：</text>
+    <text x="514" y="196" font-size="11.5" fill="#cfe8c6">map（键唯一）/ multimap（今天）</text>
+    <text x="514" y="216" font-size="11.5" fill="#cfe8c6">set / multiset（今天）</text>
+    <text x="514" y="246" font-size="12" fill="#9fb8a8">哈希族（无序，Day 86）：</text>
+    <text x="514" y="268" font-size="11.5" fill="#cfe8c6">unordered_map/set（键唯一）</text>
+    <text x="514" y="288" font-size="11.5" fill="#cfe8c6">unordered_multimap/set（多值）</text>
+    <text x="514" y="318" font-size="12" fill="#9fb8a8">2×2×2 的立方：</text>
+    <text x="514" y="340" font-size="11.5" fill="#cfe8c8">有序？× 键值/纯键？× 唯一/多值？</text>
+    <text x="514" y="360" font-size="11" fill="#9fb8a8">（8 个容器全在这三个轴上）</text>
+    <text x="514" y="394" font-size="12.5" fill="#45703a">（87/144 = 60.4%——</text>
+    <text x="514" y="414" font-size="12.5" fill="#45703a">　家族拼图完成）</text>
+    <text x="514" y="446" font-size="11.5" fill="#9fb8a8">明天迭代器分类表（88）→ 项目日（89）</text>
+
+    <path d="M 24,506 Q 470,500 905,507 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 543)"/>
+    <text x="46" y="532" font-size="15.5" font-weight="bold" fill="#9c5a22">分组数据的通用模式</text>
+    <text x="46" y="560" font-size="12.5" fill="#3b3a36">班级→学生、部门→员工、标签→文章、日期→日志——"一对多 + 按键分组"是数据组织的常见形态；multimap 或 map+vector 二选一</text>
+
+    <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 88 迭代器分类总结——输入/输出/前向/双向/随机访问的对照表（一周容器的收官整理）</text>
+  </g>
+</svg>

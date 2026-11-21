@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">树上的同键相邻与 equal_range 的一刀</text>
+    <path d="M 290,58 Q 480,52 670,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,330 Q 470,324 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 215)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">分组数据的树上排列（中序视角）</text>
+    <rect x="120" y="150" width="720" height="40" fill="#33413a"/>
+    <text x="480" y="175" font-size="11" fill="#cfe8c6">一班:小明 → 一班:小刚 → 一班:小亮 → | 二班:小红 → 二班:小李</text>
+    <rect x="120" y="196" width="440" height="30" fill="#d8ecce" stroke="#7aa663" stroke-width="2" transform="rotate(-0.5 340 211)"/>
+    <text x="340" y="216" font-size="10" fill="#45703a">equal_range("一班") 的区间 [first, last)</text>
+    <path d="M 118,150 Q 110,175 118,196" fill="none" stroke="#7aa663" stroke-width="2.4"/>
+    <path d="M 560,150 Q 568,175 560,196" fill="none" stroke="#7aa663" stroke-width="2.4"/>
+    <text x="700" y="216" font-size="10" fill="#8a8578">last == 二班首项（半开）</text>
+    <text x="472" y="252" font-size="11.5" fill="#3b3a36">同键相邻是树序的推论：中序遍历按键排 → 相同键自然连成段</text>
+    <text x="472" y="278" font-size="11.5" fill="#45703a">equal_range(k) 返回这段的 [first, last)——循环走一遍就是"取出分组"</text>
+    <text x="472" y="306" font-size="11" fill="#8a8578">（和 Day 80 的 [begin,end) 半开同款——区间的统一语言）</text>
+
+    <path d="M 40,354 Q 280,348 520,354 Q 524,470 520,576 Q 280,582 42,576 Q 36,470 40,354 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 465)"/>
+    <text x="280" y="384" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">multiset 的排序相邻</text>
+    <text x="64" y="418" font-size="12" fill="#3b3a36">插入 {90,85,90,78,85,90}：</text>
+    <text x="64" y="440" font-size="12" fill="#45703a">　排序后 78 85 85 90 90 90</text>
+    <text x="64" y="462" font-size="12" fill="#6b675e">　（同值天然相邻）</text>
+    <text x="64" y="494" font-size="12" fill="#45703a">equal_range(90) 切出 3 个 90</text>
+    <text x="64" y="516" font-size="11.5" fill="#8a8578">（区间长度 = count = 3）</text>
+    <text x="64" y="548" font-size="11.5" fill="#8a8578">（成绩表找同分段/日志找同期——场景同构）</text>
+
+    <path d="M 550,354 Q 730,348 905,354 Q 908,470 905,576 Q 730,582 552,576 Q 547,470 550,354 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 465)"/>
+    <text x="727" y="384" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">为什么 multimap 没有 operator[]</text>
+    <text x="572" y="418" font-size="12" fill="#3b3a36">classes["一班"] 该返回谁？</text>
+    <text x="572" y="440" font-size="12" fill="#6b675e">（小明？小刚？小亮？——语义不明！）</text>
+    <text x="572" y="472" font-size="12" fill="#45703a">所以 multimap 只留 insert/find/</text>
+    <text x="572" y="494" font-size="12" fill="#45703a">　equal_range——语义清晰</text>
+    <text x="572" y="526" font-size="11.5" fill="#8a8578">（Day 83 适配器的"接口小误用少"同款哲学）</text>
+  </g>
+</svg>

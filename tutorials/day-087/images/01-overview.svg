@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 87 全貌：multimap / multiset——一键多值与区间查询</text>
+    <path d="M 270,60 Q 480,52 690,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定"学生按班级分组"——map 的键唯一今天放开；equal_range 一刀切出同键区间；删除有两种粒度</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">multimap 的分组视图</text>
+    <text x="64" y="180" font-size="12.5" fill="#45703a">一键多值：一班×3 + 二班×2 = size 5</text>
+    <text x="64" y="202" font-size="12" fill="#8a8578">（map 同场景覆盖剩 2——multi 全保留）</text>
+    <text x="64" y="232" font-size="12.5" fill="#45703a">同键相邻：遍历即分组视图</text>
+    <text x="64" y="254" font-size="12" fill="#8a8578">（一班三连 → 二班两连——树序保证）</text>
+    <text x="64" y="288" font-size="12.5" fill="#45703a">count(一班) = 3（分组人数）</text>
+    <text x="64" y="316" font-size="12.5" fill="#45703a">equal_range("一班")：小明 小刚 小亮</text>
+    <text x="64" y="338" font-size="12" fill="#8a8578">（区间 [first, last)——Day 80 的半开！）</text>
+    <text x="64" y="370" font-size="12" fill="#8a8578">（没有 operator[]——一键多值取谁？）</text>
+
+    <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">删除的两种粒度（实测）</text>
+    <text x="572" y="180" font-size="12.5" fill="#a33f2e">erase(90)：按值删——全删！</text>
+    <text x="572" y="202" font-size="12" fill="#8a8578">（count 3 → 0）</text>
+    <text x="572" y="232" font-size="12.5" fill="#45703a">erase(find(90))：按迭代器——只删一个</text>
+    <text x="572" y="254" font-size="12" fill="#8a8578">（count 3 → 2）</text>
+    <text x="572" y="288" font-size="12.5" fill="#6b675e">选型：清空该值用前者；</text>
+    <text x="572" y="310" font-size="12.5" fill="#6b675e">　去重一次用后者</text>
+    <text x="572" y="344" font-size="12" fill="#8a8578">（Day 81 的 erase 返回值同款适用）</text>
+    <text x="572" y="372" font-size="12" fill="#8a8578">（multiset 的同值相邻让删除也成段）</text>
+
+    <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
+    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">替代方案对照：map&lt;K, vector&lt;V&gt;&gt;</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">一键多值也能 map + vector 实现（值是容器）——multimap 免管理内层容器、equal_range 免先查再遍历；但 vector 值更好随机访问</text>
+    <text x="70" y="490" font-size="12.5" fill="#6b675e">（两方案的取舍写进 notes.md——今天教学用 multimap）</text>
+
+    <path d="M 60,514 Q 480,508 905,515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 85~86 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 87（今天）</text>
+    <circle cx="650" cy="514" r="5" fill="#5b8db8"/>
+    <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 88 分类表</text>
+    <circle cx="850" cy="514" r="5" fill="#e0955f"/>
+    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 89 项目日</text>
+  </g>
+</svg>
