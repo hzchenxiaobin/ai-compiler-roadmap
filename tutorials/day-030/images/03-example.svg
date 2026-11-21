@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">八回合真实会话与边界自测</text>
+    <path d="M 350,58 Q 480,52 610,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21，管道喂入）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,260 470,420 Q 248,425 26,420 Q 20,260 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 261)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">主会话：增查改删全流程</text>
+    <rect x="38" y="146" width="420" height="260" rx="6" fill="#33413a"/>
+    <text x="54" y="170" font-size="11.5" fill="#9fb8a8">加张三/李四/王五 →（各回一句"已添加 … 当前 N 人"）</text>
+    <text x="54" y="194" font-size="11.5" fill="#f0c9c0">再加张三 → 添加失败：同名已存在或通讯录已满。</text>
+    <text x="54" y="218" font-size="11.5" fill="#9fb8a8">列表 →</text>
+    <text x="54" y="238" font-size="11.5" fill="#cfe8c6">  1. 张三　13800000001</text>
+    <text x="54" y="256" font-size="11.5" fill="#cfe8c6">  2. 李四　13800000002</text>
+    <text x="54" y="274" font-size="11.5" fill="#cfe8c6">  3. 王五　13800000003</text>
+    <text x="54" y="298" font-size="11.5" fill="#9fb8a8">查李四 → 找到：李四　13800000002</text>
+    <text x="54" y="322" font-size="11.5" fill="#9fb8a8">改李四号 → 已更新 李四</text>
+    <text x="54" y="346" font-size="11.5" fill="#9fb8a8">删王五 → 已删除 王五</text>
+    <text x="54" y="370" font-size="11.5" fill="#9fb8a8">再列表 → 1. 张三　13800000001</text>
+    <text x="54" y="388" font-size="11.5" fill="#cfe8c6">　　　　　2. 李四　13811111111（新号生效）</text>
+    <text x="54" y="412" font-size="11.5" fill="#cfe8c6">退出 → 再见！当前共 2 位联系人。</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,230 934,360 Q 712,365 490,360 Q 484,230 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 231)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">边界自测（实测）</text>
+    <rect x="502" y="146" width="420" height="190" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="11.5" fill="#9fb8a8">空通讯录直接列表：</text>
+    <text x="514" y="192" font-size="11.5" fill="#cfe8c6">　（通讯录是空的）</text>
+    <text x="514" y="220" font-size="11.5" fill="#9fb8a8">删除不存在的人：</text>
+    <text x="514" y="240" font-size="11.5" fill="#f0c9c0">　没找到 赵六</text>
+    <text x="514" y="268" font-size="11.5" fill="#9fb8a8">空表退出：</text>
+    <text x="514" y="288" font-size="11.5" fill="#cfe8c6">　再见！当前共 0 位联系人。</text>
+    <text x="514" y="320" font-size="12" fill="#9fb8a8">每条边界都体面：不崩、不傻等、有话说</text>
+
+    <path d="M 488,386 Q 712,380 934,386 Q 938,500 934,610 Q 712,615 490,610 Q 484,500 488,386 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(-0.3 711 498)"/>
+    <text x="510" y="416" font-size="15.5" font-weight="bold" fill="#55606e">里程碑自测</text>
+    <text x="510" y="448" font-size="12.5" fill="#3b3a36">□ 不看教程独立复现三文件版</text>
+    <text x="510" y="474" font-size="12.5" fill="#3b3a36">□ -Wall 零警告；增删改查全会话</text>
+    <text x="510" y="500" font-size="12.5" fill="#3b3a36">□ 删除的移位能对着图讲清楚</text>
+    <text x="510" y="526" font-size="12.5" fill="#3b3a36">□ 边界三连（空表/查无/满员）体面</text>
+    <text x="510" y="558" font-size="12" fill="#8a8578">全部打勾 = 第 5 周收官</text>
+    <text x="510" y="584" font-size="12" fill="#8a8578">下周一文件 I/O：v2 存盘见</text>
+
+    <path d="M 24,444 Q 248,438 470,444 Q 474,520 470,600 Q 248,605 26,600 Q 20,520 24,444 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(0.3 247 524)"/>
+    <text x="46" y="472" font-size="14.5" font-weight="bold" fill="#9c5a22">v1 的已知局限（诚实清单）</text>
+    <text x="46" y="502" font-size="12" fill="#3b3a36">程序退出数据即散（Day 31 文件 I/O 解决）</text>
+    <text x="46" y="526" font-size="12" fill="#3b3a36">容量 100 写死（Day 98 动态数组解决）</text>
+    <text x="46" y="550" font-size="12" fill="#3b3a36">查找是逐个比（第 16 周 sorted/map 提速）</text>
+    <text x="46" y="584" font-size="12" fill="#6b675e">知道局限在哪里，升级才有方向——</text>
+    <text x="46" y="602" font-size="12" fill="#6b675e">这张清单就是后 114 天的路标</text>
+  </g>
+</svg>
