@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">边界用例的分区图与幂等闭环</text>
+    <path d="M 340,58 Q 480,52 620,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,340 Q 470,334 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 220)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">输入空间的分区（每区至少一用例）</text>
+    <rect x="110" y="146" width="200" height="80" fill="#d8ecce" stroke="#7aa663" stroke-width="1.8"/>
+    <text x="210" y="174" font-size="10.5" fill="#45703a">合法·简单（8 例）</text>
+    <text x="210" y="194" font-size="9" fill="#8a8578">空容器/null/字面量/数字四态</text>
+    <text x="210" y="212" font-size="9" fill="#8a8578">（结构的原子）</text>
+    <rect x="330" y="146" width="200" height="80" fill="#f9d9b8" stroke="#e0955f" stroke-width="1.8"/>
+    <text x="430" y="174" font-size="10.5" fill="#9c5a22">合法·复杂（4 例）</text>
+    <text x="430" y="194" font-size="9" fill="#8a8578">7 层嵌套/多行/空白/</text>
+    <text x="430" y="212" font-size="9" fill="#8a8578">Unicode 码点（今天的深水）</text>
+    <rect x="550" y="146" width="300" height="80" fill="#f9e9e5" stroke="#c96a5a" stroke-width="1.8"/>
+    <text x="700" y="174" font-size="10.5" fill="#a33f2e">非法（4 例 + 隐含若干）</text>
+    <text x="700" y="194" font-size="9" fill="#8a8578">空串/意外字符/畸形数字/未闭合</text>
+    <text x="700" y="212" font-size="9" fill="#8a8578">（拒收 + 消息对——每路断言）</text>
+    <text x="472" y="260" font-size="11.5" fill="#3b3a36">行为维度：解析对（12）· 错误对（4）· dump 对（4）· 访问对（6）· 码点对（2）</text>
+    <text x="472" y="290" font-size="11.5" fill="#8a8578">（分区的意义：任何区域的回归都逃不掉——改 tokenizer 跑 28、改 dump 也跑 28）</text>
+    <text x="472" y="320" font-size="11" fill="#8a8578">（"至少一例"是底线——今天多数区域 2~3 例）</text>
+
+    <path d="M 40,364 Q 280,358 520,364 Q 524,480 520,576 Q 280,582 42,576 Q 36,480 40,364 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 470)"/>
+    <text x="280" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">幂等闭环（DumpTest.Idempotent）</text>
+    <rect x="64" y="412" width="430" height="150" fill="#33413a"/>
+    <text x="279" y="436" font-size="10.5" fill="#9fb8a8">v1 = parse(原文)　→ s1 = dump(v1)</text>
+    <text x="279" y="458" font-size="10.5" fill="#cfe8c8">v2 = parse(s1)　→ s2 = dump(v2)</text>
+    <text x="279" y="486" font-size="10.5" fill="#f0c9c0">断言：s2 == s1 ✔（幂等成立）</text>
+    <text x="279" y="512" font-size="10" fill="#8a8578">（第一轮把格式差异规范化掉——第二轮不变）</text>
+    <text x="279" y="538" font-size="10" fill="#8a8578">（Day 134 的伏笔今天成真）</text>
+
+    <path d="M 550,364 Q 730,358 905,364 Q 908,480 905,576 Q 730,582 552,576 Q 547,480 550,364 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 470)"/>
+    <text x="727" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">开发插曲（诚实记录）</text>
+    <rect x="572" y="412" width="320" height="150" fill="#33413a"/>
+    <text x="732" y="436" font-size="10.5" fill="#9fb8a8">首版 DeepNestingValue：</text>
+    <text x="732" y="458" font-size="10.5" fill="#f0c9c0">[[[[[1]]]]] 配了 4 个 [0] → 失败</text>
+    <text x="732" y="480" font-size="10.5" fill="#8a8578">（5 层括号要剥 5 次——每层一个）</text>
+    <text x="732" y="508" font-size="10.5" fill="#cfe8c8">修正：5 个 [0] → 过 ✔</text>
+    <text x="732" y="534" font-size="10" fill="#8a8578">（教训：测试自己也可能错——</text>
+    <text x="732" y="550" font-size="10" fill="#8a8578">　失败时先审测试再审被测）</text>
+  </g>
+</svg>

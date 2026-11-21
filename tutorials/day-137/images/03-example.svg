@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">五套件 28 用例、全绿战报与插曲实录</text>
+    <path d="M 350,58 Q 480,52 610,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 -std=c++20 -Wall -Wextra + googletest 1.18.0；ASan 零报错）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,490 Q 248,495 26,490 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 296)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出（节选）</text>
+    <rect x="38" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./jt　（c++20 零警告）</text>
+    <text x="54" y="200" font-size="12" fill="#9fb8a8">== ParseTest ×12 ==</text>
+    <text x="54" y="222" font-size="11.5" fill="#cfe8c8">EmptyObject/EmptyArray/null ✔</text>
+    <text x="54" y="242" font-size="11.5" fill="#cfe8c8">数字四态（int/neg/sci/frac）✔</text>
+    <text x="54" y="262" font-size="11.5" fill="#f0c9c0">DeepNesting 7 层 ✔</text>
+    <text x="54" y="282" font-size="11.5" fill="#cfe8c8">MultiLine/Whitespace ✔</text>
+    <text x="54" y="308" font-size="12" fill="#9fb8a8">== ParseErrorTest ×4 ==</text>
+    <text x="54" y="330" font-size="11.5" fill="#cfe8c8">空串→"空输入" ✔</text>
+    <text x="54" y="350" font-size="11.5" fill="#cfe8c8">@→"意外字符 '@'" ✔ 等</text>
+    <text x="54" y="374" font-size="12" fill="#9fb8a8">== DumpTest ×4 ==</text>
+    <text x="54" y="396" font-size="11.5" fill="#cfe8c8">RoundTrip/键序/转义/幂等 ✔</text>
+    <text x="54" y="420" font-size="12" fill="#9fb8a8">== AccessTest×6 + Unicode×2 ==</text>
+    <text x="54" y="442" font-size="11.5" fill="#cfe8c8">下钻/下标/size/两抛 ✔</text>
+    <text x="54" y="462" font-size="11.5" fill="#cfe8c8">码点 "A"/CJK 3 字节 ✔</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,490 Q 712,495 490,490 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 296)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">质量周的中场</text>
+    <rect x="502" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">昨天（136）：框架入门——</text>
+    <text x="514" y="196" font-size="11.5" fill="#cfe8c8">7 用例（学 EXPECT/ASSERT/报告）</text>
+    <text x="514" y="222" font-size="12" fill="#9fb8a8">今天（137）：真矩阵——</text>
+    <text x="514" y="244" font-size="11.5" fill="#f0c9c0">28 用例×5 套件（计划 20+ 超额）</text>
+    <text x="514" y="270" font-size="12" fill="#9fb8a8">明天（138）：外部考试——</text>
+    <text x="514" y="292" font-size="11.5" fill="#8a8578">JSONTestSuite 公开测试集</text>
+    <text x="514" y="312" font-size="11" fill="#9fb8a8">（业界同款题库——别人出的题）</text>
+    <text x="514" y="344" font-size="12" fill="#9fb8a8">回归的价值（从今天起）：</text>
+    <text x="514" y="366" font-size="11" fill="#9fb8a8">　（改任何一行解析器代码</text>
+    <text x="514" y="384" font-size="11" fill="#9fb8a8">　　→ ./jt 一跑 → 28 项自动审）</text>
+    <text x="514" y="416" font-size="12.5" fill="#45703a">（137/144 = 95.1%——过九成五）</text>
+    <text x="514" y="446" font-size="11" fill="#9fb8a8">（Effective 15~42 同步中）</text>
+    <text x="514" y="466" font-size="11" fill="#9fb8a8">（项目最后 7 天：性能/清理/</text>
+    <text x="514" y="484" font-size="11" fill="#9fb8a8">　CMake/博客/毕业）</text>
+
+    <path d="M 24,516 Q 470,510 905 517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>
+    <text x="46" y="542" font-size="15.5" font-weight="bold" fill="#9c5a22">全绿的心情</text>
+    <text x="46" y="568" font-size="12.5" fill="#3b3a36">28 行 [ OK ] 刷过——十天的解析器在一分钟内被反复审了 28 遍；这份"任何时刻可重验"的确定性，就是测试给开发者的礼物</text>
+
+    <path d="M 24,596 Q 470,590 905 597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 138 公开测试集（JSONTestSuite）验证正确性——业界题库的外部考试</text>
+  </g>
+</svg>
