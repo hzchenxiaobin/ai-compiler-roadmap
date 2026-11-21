@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">增删查全实录与 sizeof 结构线索</text>
+    <path d="M 380,58 Q 480,52 580,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 / libc++；-Wall 零警告）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,300 470,490 Q 248,495 26,490 Q 20,300 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 296)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出（节选）</text>
+    <rect x="38" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./cz　（-Wall 零警告）</text>
+    <text x="54" y="198" font-size="12" fill="#9fb8a8">== 查 ==</text>
+    <text x="54" y="220" font-size="11.5" fill="#cfe8c6">vector[2]=3 deque[2]=3 array[2]=3</text>
+    <text x="54" y="240" font-size="11.5" fill="#f0c9c0">list 走两步=3（O(n)——只能走）</text>
+    <text x="54" y="268" font-size="12" fill="#9fb8a8">== 增 ==</text>
+    <text x="54" y="290" font-size="11.5" fill="#cfe8c6">vector 中插：1 2 99 3 4 5（O(n)）</text>
+    <text x="54" y="310" font-size="11.5" fill="#cfe8c6">list 中插：同结果（O(1)！）</text>
+    <text x="54" y="330" font-size="11.5" fill="#cfe8c6">deque 两端：0 1 2 3 4 5 6（O(1)）</text>
+    <text x="54" y="350" font-size="11.5" fill="#cfe8c6">forward_list 头插：0 1 2 3 4 5</text>
+    <text x="54" y="378" font-size="12" fill="#9fb8a8">== 删 ==</text>
+    <text x="54" y="400" font-size="11.5" fill="#cfe8c6">vector 填坑 O(n)｜list 摘节点 O(1)</text>
+    <text x="54" y="420" font-size="11.5" fill="#cfe8c6">deque 删头 O(1)｜array 不能删</text>
+    <text x="54" y="450" font-size="12" fill="#9fb8a8">== sizeof ==</text>
+    <text x="54" y="472" font-size="11.5" fill="#f0c9c0">vec=24 list=24 deq=48</text>
+    <text x="54" y="492" font-size="11.5" fill="#f0c9c0">array=20 flist=8（结构线索）</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,300 934,490 Q 712,495 490,490 Q 484,300 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 296)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">本周知识与本周课的连接</text>
+    <rect x="502" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">向前的回收：</text>
+    <text x="514" y="198" font-size="11.5" fill="#cfe8c6">Day 79 vector 扩容——今天的“一整块”</text>
+    <text x="514" y="218" font-size="11" fill="#9fb8a8">　结构的代价面</text>
+    <text x="514" y="246" font-size="11.5" fill="#cfe8c6">Day 81 失效规则——结构决定的差异</text>
+    <text x="514" y="266" font-size="11" fill="#9fb8a8">　（vector 填坑全员动 vs list 只摘一个）</text>
+    <text x="514" y="294" font-size="12" fill="#9fb8a8">Day 80 能力分层——随机访问的出处：</text>
+    <text x="514" y="316" font-size="11.5" fill="#cfe8c6">　连续内存地址可算（base+i×4）</text>
+    <text x="514" y="346" font-size="12" fill="#9fb8a8">向后的伏笔：</text>
+    <text x="514" y="368" font-size="11.5" fill="#cfe8c6">Day 83 决策树 + stack/queue 适配器</text>
+    <text x="514" y="388" font-size="11.5" fill="#cfe8c6">　（括号匹配经典题）</text>
+    <text x="514" y="416" font-size="12.5" fill="#45703a">（82/144 = 56.9%——动物园看完，</text>
+    <text x="514" y="436" font-size="12.5" fill="#45703a">　明天学“怎么选”）</text>
+
+    <path d="M 24,516 Q 470,510 905,517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>
+    <text x="46" y="542" font-size="15.5" font-weight="bold" fill="#9c5a22">结构决定能力</text>
+    <text x="46" y="568" font-size="12.5" fill="#3b3a36">连续→跳得快但插得慢｜链表→插得快但跳不动｜分段→两头快——没有全能选手，只有场景匹配（明天的决策树）</text>
+
+    <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 83 容器选择决策 + stack/queue/priority_queue 适配器——括号匹配（stack 经典题）</text>
+  </g>
+</svg>

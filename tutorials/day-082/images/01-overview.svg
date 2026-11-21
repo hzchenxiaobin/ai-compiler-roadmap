@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 82 全貌：五容器动物园——底层结构与增删改查</text>
+    <path d="M 290,60 Q 480,52 670,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定"各容器的增删改查"——vector/list/deque/array/forward_list 五张户口卡：结构决定能力</text>
+
+    <path d="M 40,116 Q 290,110 540,116 Q 544,250 540,384 Q 290,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 290 250)"/>
+    <text x="290" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">三张主力户口卡</text>
+    <text x="64" y="180" font-size="12.5" fill="#3b3a36">vector：一整块连续内存</text>
+    <text x="64" y="202" font-size="12" fill="#8a8578">（随机访问 O(1)；中插 O(n)——搬全家）</text>
+    <text x="64" y="232" font-size="12.5" fill="#3b3a36">list：双向链表（节点独立）</text>
+    <text x="64" y="254" font-size="12" fill="#8a8578">（中插 O(1)；访问 O(n)——只能走）</text>
+    <text x="64" y="284" font-size="12.5" fill="#3b3a36">deque：分段连续 + 中控表</text>
+    <text x="64" y="306" font-size="12" fill="#8a8578">（两端 O(1)；随机访问 O(1)）</text>
+    <text x="64" y="340" font-size="12.5" fill="#6b675e">sizeof 实测：vector 24 / list 24 /</text>
+    <text x="64" y="360" font-size="12.5" fill="#6b675e">　deque 48（中控最胖）/ array 20（本体）</text>
+
+    <path d="M 570,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 572,384 Q 567,250 570,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 737 250)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">增删查的实测对照</text>
+    <text x="592" y="180" font-size="12.5" fill="#45703a">查：vec/deq/arr [2]=3（O(1)）</text>
+    <text x="592" y="202" font-size="12" fill="#8a8578">　list 走两步=3（O(n)——advance）</text>
+    <text x="592" y="232" font-size="12.5" fill="#45703a">增：vector 中插 1 2 99 3…（O(n)）</text>
+    <text x="592" y="254" font-size="12" fill="#8a8578">　list 中插同结果（O(1)！）</text>
+    <text x="592" y="284" font-size="12.5" fill="#45703a">删：vector 填坑（Day 81 事故二）</text>
+    <text x="592" y="306" font-size="12" fill="#8a8578">　list 摘节点（只有它失效）</text>
+    <text x="592" y="336" font-size="12.5" fill="#6b675e">forward_list：只有头（8 字节最轻）</text>
+    <text x="592" y="358" font-size="12.5" fill="#6b675e">array：20 字节=5 个 int 本体</text>
+
+    <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
+    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#8a6d1a">选型的第一直觉</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">默认 vector（随机访问+缓存友好）｜头尾频繁操作 deque｜中间频繁插删 list ｜编译期定长 array ｜极致省内存 forward_list</text>
+    <text x="70" y="490" font-size="12.5" fill="#6b675e">（明天 Day 83 的决策树把直觉变成流程——后天项目日用栈练手）</text>
+
+    <path d="M 60,514 Q 480,508 905,515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 79~81 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 82（今天）</text>
+    <circle cx="650" cy="514" r="5" fill="#5b8db8"/>
+    <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 83</text>
+    <circle cx="850" cy="514" r="5" fill="#e0955f"/>
+    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 84 项目日</text>
+  </g>
+</svg>
