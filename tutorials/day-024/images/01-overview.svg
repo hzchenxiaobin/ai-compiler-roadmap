@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 24 自测日：闭卷三题，讲稿一篇</text>
+    <path d="M 340,60 Q 480,52 620,61" fill="none" stroke="#e0955f" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">第 4 周收官：不看资料写出来才是自己的——写完再讲给自己听一遍</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,200 520,284 Q 280,290 42,284 Q 36,200 40,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 200)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">题一：引用版 swap</text>
+    <text x="64" y="176" font-size="12.5" fill="#3b3a36">void swap(int&amp; a, int&amp; b) 三行交换</text>
+    <text x="64" y="202" font-size="12.5" fill="#6b675e">验收：3,8 → 8,3（实测）</text>
+    <text x="64" y="228" font-size="12.5" fill="#8a8578">翻车点：调用处多写了 &amp;</text>
+    <text x="64" y="256" font-size="12.5" fill="#8a8578">　　　　或又抄回值传递</text>
+
+    <path d="M 550,116 Q 730,110 905,116 Q 908,200 905,284 Q 730,290 552,284 Q 547,200 550,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(0.3 727 200)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">题二：指针遍历求和＋最大</text>
+    <text x="572" y="176" font-size="12.5" fill="#3b3a36">p 从 scores 走到 scores+WEEKS</text>
+    <text x="572" y="202" font-size="12.5" fill="#6b675e">验收：总和 179，最大 35（实测）</text>
+    <text x="572" y="228" font-size="12.5" fill="#8a8578">翻车点：哨兵写成 &lt;=（多踩一格）</text>
+    <text x="572" y="256" font-size="12.5" fill="#8a8578">　　　　擂主忘了从首格取值</text>
+
+    <path d="M 40,308 Q 470,302 905,309 L 901,400 Q 470,394 44,399 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 354)"/>
+    <text x="472" y="338" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">题三：四种 const 组合（各写一行＋含义注释）</text>
+    <text x="70" y="368" font-size="12.5" fill="#3b3a36">int* p1（不锁）　const int* p2（锁物）　int* const p3（锁针）　const int* const p4（双锁）</text>
+    <text x="70" y="392" font-size="12.5" fill="#6b675e">验收：sizeof 全是 8（都是指针）；实测 p2 换绑看 b、p4 只读（实测）</text>
+
+    <path d="M 40,424 Q 470,418 905,425 L 901,490 Q 470,484 44,489 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(0.2 472 457)"/>
+    <text x="472" y="452" text-anchor="middle" font-size="15" font-weight="bold" fill="#8a6d1a">讲稿主题：指针和引用的区别（对着镜子讲 3 分钟）</text>
+    <text x="472" y="478" text-anchor="middle" font-size="12.5" fill="#6b675e">五个维度：本质、绑定、空值、语法、用途——对照图见机制图</text>
+
+    <path d="M 60,510 Q 480,504 905,511" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="240" cy="510" r="5" fill="#8a94a3"/>
+    <text x="240" y="530" text-anchor="middle" font-size="12" fill="#3b3a36">Day 19~23 ✓</text>
+    <circle cx="430" cy="510" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="430" cy="510" r="5" fill="#5b8db8"/>
+    <text x="430" y="530" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 24（今天）</text>
+    <circle cx="630" cy="510" r="5" fill="#e0955f"/>
+    <text x="630" y="530" text-anchor="middle" font-size="12" fill="#3b3a36">Day 25~26 并发</text>
+    <circle cx="820" cy="510" r="5" fill="#5b8db8"/>
+    <text x="820" y="530" text-anchor="middle" font-size="12" fill="#3b3a36">第 6 周 收尾</text>
+  </g>
+</svg>

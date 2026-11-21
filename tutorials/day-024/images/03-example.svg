@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">闭卷三题的参考答案战报</text>
+    <path d="M 350,58 Q 480,52 610,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）——先闭卷写，再对照</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,200 470,300 Q 248,305 26,300 Q 20,200 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 201)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">题一：引用版 swap</text>
+    <rect x="38" y="146" width="420" height="140" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="12" fill="#9fb8a8">$ ./quiz_swap</text>
+    <text x="54" y="198" font-size="12.5" fill="#cfe8c6">交换前：x = 3，y = 8</text>
+    <text x="54" y="224" font-size="12.5" fill="#cfe8c6">交换后：x = 8，y = 3</text>
+    <text x="54" y="256" font-size="12" fill="#9fb8a8">参数表 int&amp; a, int&amp; b；函数体三行交换</text>
+    <text x="54" y="276" font-size="12" fill="#9fb8a8">——和 Day 21 逐字一致即为过关</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,200 934,300 Q 712,305 490,300 Q 484,200 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 201)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">题二：指针遍历＋最大值</text>
+    <rect x="502" y="146" width="420" height="140" rx="6" fill="#33413a"/>
+    <text x="514" y="172" font-size="12" fill="#9fb8a8">$ ./quiz_walk</text>
+    <text x="514" y="198" font-size="12.5" fill="#cfe8c6">总和 = 179</text>
+    <text x="514" y="224" font-size="12.5" fill="#cfe8c6">最大 = 35</text>
+    <text x="514" y="254" font-size="12" fill="#9fb8a8">哨兵 p != scores + WEEKS；擂主 *scores 起步</text>
+    <text x="514" y="274" font-size="12" fill="#9fb8a8">——179/35 与 Day 13/20 双双对上</text>
+
+    <path d="M 24,326 Q 248,320 470,326 Q 474,430 470,540 Q 248,545 26,540 Q 20,430 24,326 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="3" transform="rotate(-0.3 247 435)"/>
+    <text x="46" y="356" font-size="16" font-weight="bold" fill="#a33f2e">题三：四种 const 组合</text>
+    <rect x="38" y="370" width="420" height="160" rx="6" fill="#33413a"/>
+    <text x="54" y="396" font-size="12" fill="#9fb8a8">$ ./quiz_const</text>
+    <text x="54" y="420" font-size="12.5" fill="#cfe8c6">a = 13（p1 改成 11，p3 又改成 13）</text>
+    <text x="54" y="444" font-size="12.5" fill="#cfe8c6">*p2 = 20（换绑后看 b）</text>
+    <text x="54" y="468" font-size="12.5" fill="#cfe8c6">*p4 = 13（双锁只读）</text>
+    <text x="54" y="496" font-size="12.5" fill="#cfe8c6">sizeof: p1=8，p2=8，p3=8，p4=8</text>
+    <text x="54" y="518" font-size="12" fill="#9fb8a8">——四个都是指针，锁位各不同</text>
+
+    <path d="M 488,326 Q 712,320 934,326 Q 938,430 934,540 Q 712,545 490,540 Q 484,430 488,326 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 711 435)"/>
+    <text x="510" y="356" font-size="15.5" font-weight="bold" fill="#55606e">常见翻车点（判卷官笔记）</text>
+    <text x="510" y="388" font-size="12.5" fill="#a33f2e">①swap 抄回值传递——三个版本要分得清</text>
+    <text x="510" y="416" font-size="12.5" fill="#a33f2e">②哨兵写成 &lt;= 或漏了取首格擂主</text>
+    <text x="510" y="444" font-size="12.5" fill="#a33f2e">③const 位置背串（记口诀：左物右针）</text>
+    <text x="510" y="472" font-size="12.5" fill="#a33f2e">④讲稿只背语法不说"本质/空值/绑定"三差异</text>
+    <text x="510" y="506" font-size="12.5" fill="#55606e">中一条就回炉对应的那天；</text>
+    <text x="510" y="528" font-size="12.5" fill="#55606e">全中说明"看懂了"但还没"写得出"</text>
+
+    <path d="M 24,562 Q 470,556 905,563 L 901,630 Q 470,624 26,629 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.2" transform="rotate(0.2 464 596)"/>
+    <text x="480" y="586" text-anchor="middle" font-size="12.5" fill="#8a6d1a">下周预告：第 5 周多文件与调试——头文件/源文件、分离编译链接、gdb 断点单步</text>
+    <text x="480" y="610" text-anchor="middle" font-size="12.5" fill="#8a6d1a">通讯录 v1 项目（结构体＋定长数组＋多文件增删改查）在周六等你</text>
+  </g>
+</svg>

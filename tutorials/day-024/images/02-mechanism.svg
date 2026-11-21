@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">讲稿核心图：指针 vs 引用五维对比</text>
+    <path d="M 320,58 Q 480,52 640,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <rect x="60" y="90" width="180" height="36" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.4"/>
+    <text x="150" y="113" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#2c5a82">指针 int* p</text>
+    <rect x="720" y="90" width="180" height="36" fill="#eef5e8" stroke="#7aa663" stroke-width="2.4"/>
+    <text x="810" y="113" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#45703a">引用 int&amp; r</text>
+    <path d="M 250,108 Q 480,100 710,108" fill="none" stroke="#8a94a3" stroke-width="2" stroke-dasharray="6 5"/>
+
+    <rect x="60" y="140" width="840" height="30" fill="#f1f4f7" stroke="#8a94a3" stroke-width="1.5"/>
+    <text x="76" y="160" font-size="12" font-weight="bold" fill="#55606e">维度</text>
+    <text x="200" y="160" font-size="12" fill="#3b3a36">本质：存地址的变量（自己有房间）</text>
+    <text x="660" y="160" font-size="12" fill="#3b3a36">本质：别名（没有自己的房间）</text>
+    <rect x="60" y="172" width="840" height="30" fill="#fffdf7" stroke="#8a94a3" stroke-width="1.5"/>
+    <text x="200" y="192" font-size="12" fill="#3b3a36">绑定：可换（p = &amp;y 随时改指）</text>
+    <text x="660" y="192" font-size="12" fill="#3b3a36">绑定：终身制（r = y 是赋值不是换绑）</text>
+    <rect x="60" y="204" width="840" height="30" fill="#f1f4f7" stroke="#8a94a3" stroke-width="1.5"/>
+    <text x="200" y="224" font-size="12" fill="#3b3a36">空值：可为 nullptr（用前要判空）</text>
+    <text x="660" y="224" font-size="12" fill="#3b3a36">空值：不存在空引用（天然安全）</text>
+    <rect x="60" y="236" width="840" height="30" fill="#fffdf7" stroke="#8a94a3" stroke-width="1.5"/>
+    <text x="200" y="256" font-size="12" fill="#3b3a36">语法：调用写 &amp;x，函数体写 *p</text>
+    <text x="660" y="256" font-size="12" fill="#3b3a36">语法：像值一样自然，无仪式感</text>
+    <rect x="60" y="268" width="840" height="30" fill="#f1f4f7" stroke="#8a94a3" stroke-width="1.5"/>
+    <text x="200" y="288" font-size="12" fill="#3b3a36">用途：可空目标、游标遍历、argv</text>
+    <text x="660" y="288" font-size="12" fill="#3b3a36">用途：传参要改、只读大对象（const&amp;）</text>
+
+    <path d="M 40,320 Q 470,314 905,321 L 901,410 Q 470,404 44,409 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.2 472 365)"/>
+    <text x="472" y="348" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#8a6d1a">讲稿模板（对镜子说满 3 分钟）</text>
+    <text x="70" y="376" font-size="12.5" fill="#3b3a36">①开门见山："指针是存门牌的变量，引用是给房间起的第二个名字"</text>
+    <text x="70" y="398" font-size="12.5" fill="#3b3a36">②对比三条：绑定能不能换、有没有空、调用长相　　③收尾口诀：可空换绑用指针，要改传参用引用</text>
+
+    <path d="M 40,432 Q 470,426 905,433 L 901,576 Q 470,570 44,575 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 472 504)"/>
+    <text x="472" y="462" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#55606e">第 4 周战绩单（六天全记录）</text>
+    <text x="70" y="492" font-size="12.5" fill="#3b3a36">Day 19 门牌模型＋段错误现场　　Day 20 退化＋步长＋纯指针求和（179）　　Day 21 别名＋swap 三版大战</text>
+    <text x="70" y="518" font-size="12.5" fill="#3b3a36">Day 22 四把 const 锁＋constexpr 两时期　　Day 23 套娃三层链＋argv 验明　　Day 24 今日闭卷三题</text>
+    <text x="70" y="550" font-size="12.5" fill="#6b675e">阶段结论：指针难在"谁指着谁"——六天里每次画图都在回答这一个问题；画图习惯就是本周最大收获</text>
+  </g>
+</svg>
