@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">栈为什么快、字面量为什么不能改</text>
+    <path d="M 320,58 Q 480,52 640,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,320 Q 470,314 44,319 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 210)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">栈的自动管理（递归实测）</text>
+    <rect x="200" y="146" width="220" height="40" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2"/>
+    <text x="310" y="164" text-anchor="middle" font-size="10.5" fill="#a33f2e">depth1 帧：0x…d18</text>
+    <text x="310" y="180" text-anchor="middle" font-size="9" fill="#8a8578">（局部 local + 返回地址）</text>
+    <rect x="200" y="192" width="220" height="40" fill="#fcefe4" stroke="#e0955f" stroke-width="2"/>
+    <text x="310" y="210" text-anchor="middle" font-size="10.5" fill="#9c5a22">depth2 帧：0x…cf8（减 0x20）</text>
+    <text x="310" y="226" text-anchor="middle" font-size="9" fill="#8a8578">（压栈——地址递减）</text>
+    <rect x="200" y="238" width="220" height="40" fill="#f9d9b8" stroke="#d9b23a" stroke-width="2"/>
+    <text x="310" y="256" text-anchor="middle" font-size="10.5" fill="#8a6d1a">depth3 帧：0x…cd8（再减 0x20）</text>
+    <text x="310" y="272" text-anchor="middle" font-size="9" fill="#8a8578">（return 后逐层弹出）</text>
+    <path d="M 460,170 Q 500,170 540,190" fill="none" stroke="#5b8db8" stroke-width="2"/>
+    <text x="640" y="170" font-size="12" fill="#2c5a82">压栈 = 地址减</text>
+    <text x="640" y="192" font-size="11" fill="#6b675e">（"栈向下生长"——</text>
+    <text x="640" y="210" font-size="11" fill="#6b675e">　和叠盘子一样后进先出）</text>
+    <text x="640" y="240" font-size="12" fill="#45703a">回收零成本：</text>
+    <text x="640" y="262" font-size="11" fill="#6b675e">　函数返回只需移动栈顶指针，</text>
+    <text x="640" y="280" font-size="11" fill="#6b675e">　不用逐个"删除"——这就是</text>
+    <text x="640" y="298" font-size="11" fill="#6b675e">　栈快的根本原因</text>
+
+    <path d="M 40,344 Q 470,338 905,345 L 901,576 Q 470,570 44,575 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(0.2 472 460)"/>
+    <text x="472" y="374" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">常量区只读 + 字面量合并（实测）</text>
+    <rect x="180" y="392" width="600" height="100" fill="#33413a"/>
+    <text x="480" y="420" font-size="12" fill="#cfe8c6">const char* a = "hello";　→ 0x10060545c</text>
+    <text x="480" y="444" font-size="12" fill="#cfe8c6">const char* b = "world";　→ 0x100605592</text>
+    <text x="480" y="468" font-size="12" fill="#f0c9c0">const char* c = "hello";　→ 0x10060545c（与 a 相同——已合并！）</text>
+    <text x="472" y="516" font-size="12.5" fill="#3b3a36">合并 = 省内存；代价是"改一个等于改所有"——所以语言干脆禁止改（写入即崩）</text>
+    <text x="472" y="544" font-size="12.5" fill="#6b675e">（第 1 周说过的"字符串字面量只读"今天有了地址证据；char a[] = "hello" 是拷贝进栈——可改）</text>
+  </g>
+</svg>
