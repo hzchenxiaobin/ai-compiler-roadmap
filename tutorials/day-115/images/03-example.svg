@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">独占执法、工厂返回与清理顺序战报</text>
+    <path d="M 350,58 Q 480,52 610,59" fill="none" stroke="#7aa663" stroke-width="3"/>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 -std=c++17；-Wall 零警告 + ASan 零报错）</text>
+
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,490 Q 248,495 26,490 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 296)"/>
+    <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出（节选）</text>
+    <rect x="38" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./up　（-Wall 零警告）</text>
+    <text x="54" y="200" font-size="12" fill="#9fb8a8">== 基本用法 ==</text>
+    <text x="54" y="222" font-size="11.5" fill="#cfe8c8">[获取] → [使用] → 出块 [释放] ✔</text>
+    <text x="54" y="242" font-size="11" fill="#9fb8a8">（没有 delete！）</text>
+    <text x="54" y="266" font-size="12" fill="#9fb8a8">== 独占性 ==</text>
+    <text x="54" y="288" font-size="11.5" fill="#f0c9c0">b = a → 编译错（拷贝禁）✔</text>
+    <text x="54" y="308" font-size="11.5" fill="#cfe8c8">b = move(a) → ✔ a 变空</text>
+    <text x="54" y="332" font-size="12" fill="#9fb8a8">== 工厂（计划指定） ==</text>
+    <text x="54" y="354" font-size="11.5" fill="#cfe8c8">make_resource → use ✔</text>
+    <text x="54" y="376" font-size="12" fill="#9fb8a8">== 交接往返 ==</text>
+    <text x="54" y="398" font-size="11.5" fill="#cfe8c8">move 传入 → NRVO 回来 ✔</text>
+    <text x="54" y="422" font-size="12" fill="#9fb8a8">== 容器池 ==</text>
+    <text x="54" y="444" font-size="11.5" fill="#cfe8c8">vector 三个：A/B/C 全 use ✔</text>
+    <text x="54" y="468" font-size="12" fill="#9fb8a8">== 清理顺序 ==</text>
+    <text x="54" y="490" font-size="11.5" fill="#cfe8c8">C→B→A→传家宝→工厂→独占 ✔</text>
+
+    <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,490 Q 712,495 490,490 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 296)"/>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">智能指针周的路标</text>
+    <rect x="502" y="146" width="420" height="330" rx="6" fill="#33413a"/>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">第 20 周（告别裸 new/delete）：</text>
+    <text x="514" y="198" font-size="11.5" fill="#cfe8c8">115 unique_ptr（今天——独占）</text>
+    <text x="514" y="218" font-size="11.5" fill="#cfe8c8">116 shared_ptr（引用计数）</text>
+    <text x="514" y="238" font-size="11.5" fill="#cfe8c8">117 weak_ptr（循环引用）</text>
+    <text x="514" y="258" font-size="11.5" fill="#cfe8c8">118 make_* / 删除器（RAII 封 FILE*）</text>
+    <text x="514" y="278" font-size="11.5" fill="#cfe8c8">119 容器/多态配合</text>
+    <text x="514" y="298" font-size="11.5" fill="#cfe8c8">120 项目日</text>
+    <text x="514" y="330" font-size="12" fill="#9fb8a8">三兄弟的分工：</text>
+    <text x="514" y="352" font-size="11.5" fill="#cfe8c8">unique：唯一主人（默认首选）</text>
+    <text x="514" y="372" font-size="11.5" fill="#cfe8c8">shared：共享（计数管理）</text>
+    <text x="514" y="392" font-size="11.5" fill="#cfe8c8">weak：观察不拥有（破循环）</text>
+    <text x="514" y="424" font-size="12.5" fill="#45703a">（115/144 = 79.9%）</text>
+    <text x="514" y="454" font-size="11" fill="#9fb8a8">（Effective 同步：条款 18</text>
+    <text x="514" y="472" font-size="11" fill="#9fb8a8">　——独占语义与 =delete）</text>
+
+    <path d="M 24,516 Q 470,510 905,517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>
+    <text x="46" y="542" font-size="15.5" font-weight="bold" fill="#9c5a22">所有权的语言化</text>
+    <text x="46" y="568" font-size="12.5" fill="#3b3a36">"谁负责删除"从注释约定变成类型系统的事实——move 即交接、拷贝即禁止、作用域即期限；五周手写五法则的训练今天兑换成一行 make_unique</text>
+
+    <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 116 shared_ptr——引用计数与 use_count 的观察（计划指定练习）</text>
+  </g>
+</svg>

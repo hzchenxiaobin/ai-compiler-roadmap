@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 115 全貌：unique_ptr——独占所有权（第 20 周开篇）</text>
+    <path d="M 300,60 Q 480,52 660,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定"工厂函数返回 unique_ptr"——告别裸 new/delete 的第一步：拷贝被 =delete、移动即交接、析构全自动（五法则的官方代驾）</text>
+
+    <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
+    <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">独占的三个表现</text>
+    <text x="64" y="180" font-size="12.5" fill="#a33f2e">拷贝被禁：auto b = a → 编译错</text>
+    <text x="64" y="202" font-size="12" fill="#8a8578">（=delete——Day 112 NoCopy 的完全体）</text>
+    <text x="64" y="232" font-size="12.5" fill="#45703a">移动即交接：auto b = move(a) ✔</text>
+    <text x="64" y="254" font-size="12" fill="#8a8578">（a 变 nullptr——所有权单向转移）</text>
+    <text x="64" y="284" font-size="12.5" fill="#45703a">析构全自动：出作用域即释放</text>
+    <text x="64" y="306" font-size="12" fill="#8a8578">（没有 delete——日志实测释放顺序）</text>
+    <text x="64" y="344" font-size="12.5" fill="#6b675e">五法则去哪了？——类库内部写了</text>
+    <text x="64" y="366" font-size="12.5" fill="#6b675e">　（你只用 make_unique + 作用域）</text>
+
+    <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
+    <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">工厂函数（计划指定）</text>
+    <rect x="572" y="164" width="320" height="90" fill="#33413a"/>
+    <text x="732" y="190" font-size="10.5" fill="#9fb8a8">unique_ptr&lt;Resource&gt; make_resource(</text>
+    <text x="732" y="210" font-size="10.5" fill="#9fb8a8">　　const string&amp; name) {</text>
+    <text x="732" y="230" font-size="10.5" fill="#cfe8c8">　return make_unique&lt;Resource&gt;(name); }</text>
+    <text x="572" y="282" font-size="12" fill="#45703a">返回即移交所有权（Day 77 工厂同款升级）</text>
+    <text x="572" y="310" font-size="12" fill="#6b675e">容器持有：vector&lt;unique_ptr&gt; 池 ✔</text>
+    <text x="572" y="338" font-size="12" fill="#6b675e">（Day 76 图形库的 vector&lt;unique_ptr&gt;</text>
+    <text x="572" y="358" font-size="12" fill="#6b675e">　&lt;LabeledShape&gt;——当时就用对了！）</text>
+
+    <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
+    <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">清理顺序（实测日志）</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">main 尾逆序释放：pool 的 C→B→A → r3 传家宝 → r2 工厂产物 → b 独占资源——严格反着来（栈的后进先出）</text>
+    <text x="70" y="490" font-size="12.5" fill="#6b675e">（看日志顺序对照声明顺序——析构纪律的实证）</text>
+
+    <path d="M 60,514 Q 480,508 905 515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 109~114 ✓</text>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 115（第 20 周开篇）</text>
+    <circle cx="650" cy="514" r="5" fill="#5b8db8"/>
+    <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 116~119</text>
+    <circle cx="850" cy="514" r="5" fill="#e0955f"/>
+    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 120 项目日</text>
+  </g>
+</svg>
