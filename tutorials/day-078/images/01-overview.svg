@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 78 里程碑：四概念脱稿自测——阶段三毕业礼</text>
+    <path d="M 270,60 Q 480,52 690,61" fill="none" stroke="#e0955f" stroke-width="3"/>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定"脱稿讲清三法则、虚析构、RAII、深浅拷贝"——每个概念配最小可运行证据，讲不出的地方就是没吃透的地方</text>
+
+    <path d="M 40,116 Q 470,110 905,117 L 901,400 Q 470,394 44,399 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 258)"/>
+    <text x="472" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">四概念的因果链（问题 → 答案 → 自动化 → 补缺口）</text>
+    <rect x="70" y="164" width="190" height="80" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.2"/>
+    <text x="165" y="190" font-size="11.5" fill="#a33f2e">深浅拷贝（问题）</text>
+    <text x="165" y="210" font-size="10" fill="#8a8578">默认= 抄地址</text>
+    <text x="165" y="228" font-size="10" fill="#8a8578">共享 + double free</text>
+    <rect x="290" y="164" width="190" height="80" fill="#f9d9b8" stroke="#e0955f" stroke-width="2.2"/>
+    <text x="385" y="190" font-size="11.5" fill="#9c5a22">三法则（手写答案）</text>
+    <text x="385" y="210" font-size="10" fill="#8a8578">拷贝构造/赋值/析构</text>
+    <text x="385" y="228" font-size="10" fill="#8a8578">三件一起写（Day 57）</text>
+    <rect x="510" y="164" width="190" height="80" fill="#d8ecce" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="605" y="190" font-size="11.5" fill="#45703a">RAII（自动化）</text>
+    <text x="605" y="210" font-size="10" fill="#8a8578">构造拿/析构放</text>
+    <text x="605" y="228" font-size="10" fill="#8a8578">忘了释放不存在（51）</text>
+    <rect x="730" y="164" width="160" height="80" fill="#eef5e8" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="810" y="190" font-size="11.5" fill="#45703a">虚析构（补缺口）</text>
+    <text x="810" y="210" font-size="10" fill="#8a8578">多态销毁两层拆</text>
+    <text x="810" y="228" font-size="10" fill="#8a8578">（Day 69）</text>
+    <path d="M 262,204 Q 275,204 288,204" fill="none" stroke="#3b3a36" stroke-width="2"/>
+    <path d="M 482,204 Q 495,204 508,204" fill="none" stroke="#3b3a36" stroke-width="2"/>
+    <path d="M 702,204 Q 715,204 728,204" fill="none" stroke="#3b3a36" stroke-width="2"/>
+    <text x="472" y="276" font-size="12.5" fill="#3b3a36">四句话先背下来：①默认拷贝抄地址不抄家 ②管 new 的类三件一起写</text>
+    <text x="472" y="298" font-size="12.5" fill="#3b3a36">③构造拿析构放——忘不了 ④多态基类析构一律 virtual</text>
+    <text x="472" y="336" font-size="12.5" fill="#45703a">自测三重检验：脱稿讲（规则+证据+反例）→ 跑程序对照 → 录音回听补漏</text>
+    <text x="472" y="366" font-size="12" fill="#8a8578">（Day 35 的自测方法论在阶段末的复用——对着程序讲最诚实）</text>
+
+    <path d="M 40,424 Q 470,418 905,425 L 901,500 Q 470,494 44,499 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.2 472 462)"/>
+    <text x="472" y="452" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">阶段三战绩（Day 49~78，30 天）</text>
+    <text x="70" y="480" font-size="13" fill="#3b3a36">OOP 四支柱齐备 ｜ 12 个项目日全胜 ｜ 图形库三部曲 + MyString×2 + 银行账户 ｜ 78/144 = 54.2%</text>
+
+    <path d="M 60,514 Q 480,508 905,515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="440" cy="514" r="5" fill="#e0955f"/>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#9c5a22">Day 78（阶段三收官）</text>
+    <circle cx="690" cy="514" r="5" fill="#5b8db8"/>
+    <text x="690" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">第 14 周 顺序容器</text>
+    <circle cx="870" cy="514" r="5" fill="#5b8db8"/>
+    <text x="870" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">……阶段四</text>
+  </g>
+</svg>

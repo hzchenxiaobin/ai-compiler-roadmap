@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">四概念的证据清单与自测流程</text>
+    <path d="M 350,58 Q 480,52 610,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,330 Q 470,324 44,319 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 215)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">每个概念三件套：规则 + 证据 + 反例</text>
+    <rect x="70" y="146" width="400" height="160" fill="#fffdf7" stroke="#5b8db8" stroke-width="2"/>
+    <text x="270" y="172" font-size="11.5" fill="#2c5a82">深浅拷贝：</text>
+    <text x="270" y="192" font-size="10.5" fill="#6b675e">规则：= 只抄指针值（地址）</text>
+    <text x="270" y="210" font-size="10.5" fill="#45703a">证据：s1.p == s2.p 同址（实测）</text>
+    <text x="270" y="228" font-size="10.5" fill="#a33f2e">反例：double free（Day 55 的 ASan）</text>
+    <text x="270" y="250" font-size="10.5" fill="#6b675e">三法则：</text>
+    <text x="270" y="268" font-size="10.5" fill="#45703a">证据：Buffer3 三件套、b/c 独立</text>
+    <text x="270" y="286" font-size="10.5" fill="#a33f2e">反例：缺①→炸、缺②→自雷、缺③→漏</text>
+    <rect x="490" y="146" width="400" height="160" fill="#fffdf7" stroke="#7aa663" stroke-width="2"/>
+    <text x="690" y="172" font-size="11.5" fill="#45703a">RAII：</text>
+    <text x="690" y="192" font-size="10.5" fill="#6b675e">规则：构造拿/析构放/作用域管</text>
+    <text x="690" y="210" font-size="10.5" fill="#45703a">证据：FileTag 出块自动 [关闭]</text>
+    <text x="690" y="228" font-size="10.5" fill="#a33f2e">反例：多 return 漏关（Day 51）</text>
+    <text x="690" y="250" font-size="10.5" fill="#45703a">虚析构：</text>
+    <text x="690" y="268" font-size="10.5" fill="#45703a">证据：~DerivedV→~BaseV 两层拆</text>
+    <text x="690" y="286" font-size="10.5" fill="#a33f2e">反例：只拆基类层漏资源（69）</text>
+    <text x="472" y="326" font-size="11" fill="#9fb8a8">（左问题右方案——四概念两两配对成完整图景）</text>
+
+    <path d="M 40,354 Q 280,348 520,354 Q 524,470 520,576 Q 280,582 42,576 Q 36,470 40,354 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 465)"/>
+    <text x="280" y="384" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">脱稿自测流程（5.4）</text>
+    <text x="64" y="418" font-size="12.5" fill="#3b3a36">①关掉讲稿，对着 ./me 输出逐段讲</text>
+    <text x="64" y="442" font-size="12.5" fill="#3b3a36">②每段：规则 → 指证据 → 讲反例</text>
+    <text x="64" y="466" font-size="12.5" fill="#3b3a36">③手机录音 3 分钟，回听找卡壳</text>
+    <text x="64" y="490" font-size="12.5" fill="#45703a">④卡壳点翻对应天（55/57/51/69）</text>
+    <text x="64" y="520" font-size="12" fill="#8a8578">（四个全过才进复盘笔记）</text>
+
+    <path d="M 550,354 Q 730,348 905,354 Q 908,470 905,576 Q 730,582 552,576 Q 547,470 550,354 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 465)"/>
+    <text x="727" y="384" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">复盘笔记三项（第 7 节）</text>
+    <text x="572" y="418" font-size="12.5" fill="#3b3a36">①三个认知位移</text>
+    <text x="572" y="440" font-size="12" fill="#8a8578">（"学到什么"写成"原来以为…现在懂了…"）</text>
+    <text x="572" y="470" font-size="12.5" fill="#3b3a36">②三个挂账疑问（带去向）</text>
+    <text x="572" y="492" font-size="12" fill="#8a8578">（移动语义→Day 111；异常→进阶）</text>
+    <text x="572" y="522" font-size="12.5" fill="#3b3a36">③三个最能打的产物</text>
+    <text x="572" y="544" font-size="12" fill="#8a8578">（图形库三部曲/MyString/银行账户）</text>
+  </g>
+</svg>
