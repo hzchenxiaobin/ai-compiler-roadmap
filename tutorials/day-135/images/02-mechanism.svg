@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
+  <rect x="4" y="4" width="952" height="612" rx="14" fill="#fffdf7"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">链式下钻的路径与错误的三层拦截</text>
+    <path d="M 320,58 Q 480,52 640,59" fill="none" stroke="#e0955f" stroke-width="3"/>
+
+    <path d="M 40,100 Q 470,94 905,101 L 901,340 Q 470,334 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 220)"/>
+    <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">doc["address"]["city"] 的下钻路径</text>
+    <rect x="150" y="146" width="660" height="170" fill="#33413a"/>
+    <text x="480" y="172" font-size="10.5" fill="#9fb8a8">doc（object，5 键）</text>
+    <text x="480" y="196" font-size="10.5" fill="#cfe8c8">　["address"] → 返回子树的 const 引用</text>
+    <text x="480" y="216" font-size="10.5" fill="#cfe8c8">　　（object，2 键：city/zip）</text>
+    <text x="480" y="240" font-size="10.5" fill="#cfe8c8">　　　["city"] → 又一层 const 引用</text>
+    <text x="480" y="260" font-size="10.5" fill="#cfe8c8">　　　　　（string "Hangzhou"）</text>
+    <text x="480" y="284" font-size="10.5" fill="#45703a">　　　　　　　.get&lt;std::string&gt;() → "Hangzhou" ✔</text>
+    <text x="480" y="308" font-size="10" fill="#8a8578">（每层返回 const&amp;——零拷贝的链）</text>
+    <text x="472" y="334" font-size="11.5" fill="#8a8578">（对照 Day 133 的手建树访问 as_object()["name"]->as_string()——今天一行）</text>
+
+    <path d="M 40,364 Q 280,358 520,364 Q 524,480 520,576 Q 280,582 42,576 Q 36,480 40,364 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 470)"/>
+    <text x="280" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">错误的三层拦截</text>
+    <rect x="64" y="412" width="430" height="150" fill="#33413a"/>
+    <text x="279" y="436" font-size="10.5" fill="#9fb8a8">层一（形状）：[] 对非容器</text>
+    <text x="279" y="456" font-size="10.5" fill="#f0c9c0">　"name"[0] → "实际是 string"</text>
+    <text x="279" y="480" font-size="10.5" fill="#9fb8a8">层二（存在）：键/下标</text>
+    <text x="279" y="500" font-size="10.5" fill="#f0c9c0">　["nope"] / [99] → 各自消息</text>
+    <text x="279" y="524" font-size="10.5" fill="#9fb8a8">层三（类型）：get&lt;T&gt;</text>
+    <text x="279" y="544" font-size="10.5" fill="#f0c9c0">　get&lt;double&gt; 对 string → 抛</text>
+
+    <path d="M 550,364 Q 730,358 905,364 Q 908,480 905,576 Q 730,582 552,576 Q 547,480 550,364 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 470)"/>
+    <text x="727" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">抛 vs 返 null 的取舍</text>
+    <rect x="572" y="412" width="320" height="150" fill="#33413a"/>
+    <text x="732" y="436" font-size="10.5" fill="#cfe8c8">抛（今天）：访问错立即暴露</text>
+    <text x="732" y="456" font-size="10" fill="#8a8578">（"nope" 一打就发现——不埋雷）</text>
+    <text x="732" y="484" font-size="10.5" fill="#9fb8a8">返 null（nlohmann 缺键时）：</text>
+    <text x="732" y="504" font-size="10" fill="#8a8578">（链式深挖方便——但拼错键静默）</text>
+    <text x="732" y="534" font-size="10" fill="#8a8578">（教学选抛：错误早发现优于深挖方便）</text>
+  </g>
+</svg>
