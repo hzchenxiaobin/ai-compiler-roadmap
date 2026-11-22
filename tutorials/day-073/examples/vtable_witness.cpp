@@ -55,7 +55,7 @@ void witness_table_dump() {
 
     void* const* vptr = *reinterpret_cast<void* const**>(p);   // 对象头 → 虚表
     std::cout << "  虚表地址 = " << vptr << std::endl;
-    std::cout << "  槽位[0] = " << vptr[0] << "（who 的入口——Itanium ABI 下带 this 偏移，教学仅看地址）" << std::endl;
+    std::cout << "  槽位[0] = " << vptr[0] << "（who 的入口——单继承下就是函数本体；多继承可能出现 this 调整 thunk）" << std::endl;
     std::cout << "  槽位[1] = " << vptr[1] << "（extra 的入口）" << std::endl;
     std::cout << "  槽位[2] = " << vptr[2] << "（析构等后续槽）" << std::endl;
     std::cout << "  （槽位连续排列——'表'是真的表）" << std::endl;

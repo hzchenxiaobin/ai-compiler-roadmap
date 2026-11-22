@@ -32,7 +32,7 @@
     <text x="50" y="456" font-size="13.5" fill="#3b3a36">int b = ++i;　→ b = 7, i = 7</text>
     <path d="M 502,486" fill="none"/>
     <path d="M 50,486 Q 160,480 260,487 L 257,530 Q 160,524 53,529 Z" fill="#fffdf7" stroke="#a8c494" stroke-width="2.2" stroke-dasharray="8 5" transform="rotate(-0.2 155 507)"/>
-    <text x="60" y="508" font-size="12.5" fill="#45703a">i++ 后置：先把旧值交出去，自己再 +1</text>
+    <text x="60" y="508" font-size="12.5" fill="#45703a">i++ 后置：先交出旧值，再自己 +1</text>
     <text x="60" y="526" font-size="12.5" fill="#45703a">++i 前置：先 +1，再把新值交出去</text>
     <text x="46" y="566" font-size="13" fill="#6b675e">单独一句 i++; 与 ++i; 效果相同，</text>
     <text x="46" y="586" font-size="13" fill="#6b675e">差别只在"表达式的值"被别人用到时</text>
@@ -44,8 +44,9 @@
     <text x="514" y="456" font-size="13.5" fill="#3b3a36">big + 1 = -2147483648（绕回最小值）</text>
     <path d="M 502,486 Q 711,480 922,487 L 919,566 Q 711,560 505,565 Z" fill="#33413a"/>
     <text x="514" y="510" font-size="11.5" fill="#f0c9c0">$ ./overflow_ubsan</text>
-    <text x="514" y="528" font-size="11" fill="#ffd7d0">runtime error: signed integer overflow:</text>
-    <text x="514" y="544" font-size="11" fill="#ffd7d0">2147483647 + 1 cannot be represented in type 'int'</text>
+    <text x="514" y="526" font-size="11" fill="#ffd7d0">overflow.cpp:8:24: runtime error:</text>
+    <text x="514" y="542" font-size="11" fill="#ffd7d0">signed integer overflow: 2147483647 + 1</text>
+    <text x="514" y="558" font-size="11" fill="#ffd7d0">cannot be represented in type 'int'</text>
     <text x="510" y="592" font-size="12.5" fill="#a33f2e">平时悄悄绕回 ≠ 合法：这是未定义行为，UBSan 一开就现形</text>
   </g>
 </svg>

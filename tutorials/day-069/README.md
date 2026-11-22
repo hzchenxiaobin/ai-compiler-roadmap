@@ -64,7 +64,7 @@ Day 68 的常见错误第 3 条预告过：基类析构没标 virtual，`delete`
 ### 5.1 准备文件
 
 ```bash
-cd ai-compiler-roadmap/tutorials/day-046/examples
+cd ai-compiler-roadmap/tutorials/day-069/examples
 ```
 
 两个程序：`virtual_dtor.cpp`（对照主角）、`leak_demo.cpp`（泄漏账本）。
@@ -120,9 +120,10 @@ g++ -Wall leak_demo.cpp -o ld && ./ld
   [BigBuffer 构造] 拿了 1000 字节
   [BigBuffer 析构] 释放了内存
   [Buffer 析构]
+（上面缺了 [BigBuffer 析构] —— 1000 字节泄漏）
 ```
 
-一行 `virtual` 的差别——`[BigBuffer 析构]` 归队、1000 字节回家、构造析构 2:2 账平。**这个亲手修复实验建议必做**——一行代码前后对照，比读十遍规则记得牢。
+末行是程序里写死的提示文本（首行"非虚析构版"同理）——修复后它已名不副实，正好当"账平"的反向对照。一行 `virtual` 的差别——`[BigBuffer 析构]` 归队、1000 字节回家、构造析构 2:2 账平。**这个亲手修复实验建议必做**——一行代码前后对照，比读十遍规则记得牢。
 
 ## 6. 常见错误与排查
 
@@ -155,7 +156,7 @@ g++ -Wall leak_demo.cpp -o ld && ./ld
 
 ### 选做挑战
 
-用 `std::unique_ptr<Shape>` 管理同样的对象（`auto s = std::make_unique<Circle>(2);`）——智能指针离开作用域自动 delete，**也走虚析构**。验证：unique_ptr 版无需手写 delete、析构照样齐全——这就是 Day 51 RAII 与今天虚析构的合流（第 15 周智能指针专场的前菜）。
+用 `std::unique_ptr<Shape>` 管理同样的对象（`auto s = std::make_unique<Circle>(2);`）——智能指针离开作用域自动 delete，**也走虚析构**。验证：unique_ptr 版无需手写 delete、析构照样齐全——这就是 Day 51 RAII 与今天虚析构的合流（第 20 周智能指针专场的前菜）。
 
 ## 8. 今日验收
 

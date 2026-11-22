@@ -39,7 +39,7 @@
 
     <path d="M 24,550 Q 470,544 905,551 L 901,630 Q 470,624 26,629 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 590)"/>
     <text x="480" y="580" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#55606e">明天预告</text>
-    <text x="480" y="608" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 75：组合 vs 继承的坏例重构——"为复用而继承"的经典错误怎么改成组合（计划指定的重构练习）</text>
-    <text x="480" y="626" text-anchor="middle" font-size="12.5" fill="#6b675e">（第 10 周还剩两天：明天设计课 + 后天项目日收官）</text>
+    <text x="480" y="608" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 59：友元 friend——给外部函数开的侧门（计划指定的练习）</text>
+    <text x="480" y="626" text-anchor="middle" font-size="12.5" fill="#6b675e">（第 10 周还剩两天：明天友元课 + 后天项目日收官）</text>
   </g>
 </svg>

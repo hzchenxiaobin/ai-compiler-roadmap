@@ -12,7 +12,7 @@
     <path d="M 430,176 Q 490,176 540,176" fill="none" stroke="#3b3a36" stroke-width="2.4"/>
     <text x="487" y="166" font-size="10" fill="#8a8578">扩容</text>
     <rect x="550" y="146" width="330" height="60" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
-    <text x="715" y="170" font-size="11" fill="#45703a">新块（容量 8）：[10][20][30][40][ ][ ][ ][ ]</text>
+    <text x="705" y="170" font-size="10" fill="#45703a">新块（容量 8）：[10][20][30][40][][][][]</text>
     <text x="715" y="190" font-size="9.5" fill="#8a8578">（旧四个搬来 + 空四个等新客）</text>
     <text x="472" y="234" font-size="12.5" fill="#3b3a36">四步：①new int[8]{}　②逐个搬旧　③delete[] 旧块　④data_ 换新指针</text>
     <text x="472" y="262" font-size="12.5" fill="#a33f2e">顺序不能乱：③在②后（先搬完才放旧——Day 41 深拷贝的同款纪律）</text>
@@ -30,7 +30,7 @@
     <path d="M 550,354 Q 730,348 905,354 Q 908,470 905,576 Q 730,582 552,576 Q 547,470 550,354 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 465)"/>
     <text x="727" y="384" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">v1 的边界诚实账本</text>
     <text x="572" y="418" font-size="12.5" fill="#3b3a36">at() 越界：打印 + exit(1)</text>
-    <text x="572" y="440" font-size="12" fill="#8a8578">（教学版简洁；真实做法抛异常——第 12 周）</text>
+    <text x="572" y="440" font-size="12" fill="#8a8578">（教学版简洁；真实做法抛异常——如 vector::at）</text>
     <text x="572" y="474" font-size="12.5" fill="#3b3a36">operator[] 未提供</text>
     <text x="572" y="496" font-size="12" fill="#8a8578">（v2 补——带读写下标是 Day 63 的课）</text>
     <text x="572" y="530" font-size="12" fill="#8a8578">（拷贝被禁——第 10 周三法则后解禁）</text>

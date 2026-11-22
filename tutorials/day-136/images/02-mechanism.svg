@@ -37,7 +37,7 @@
     <text x="732" y="436" font-size="10.5" fill="#9fb8a8">套件（Suite）：AddTest（3 用例）</text>
     <text x="732" y="458" font-size="10.5" fill="#cfe8c8">用例（Case）：TwoPlusTwo 等</text>
     <text x="732" y="480" font-size="10.5" fill="#9fb8a8">断言（Assert）：EXPECT_EQ 等</text>
-    <text x="732" y="510" font-size="10.5" fill="#8a8578">（--gtest_filter="套件.*" 按套件跑）</text>
+    <text x="732" y="510" font-size="10.5" fill="#8a8578">（--gtest_filter 按套件跑）</text>
     <text x="732" y="536" font-size="10" fill="#8a8578">（明天 JSON 测试按模块分套件）</text>
   </g>
 </svg>

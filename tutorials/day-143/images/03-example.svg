@@ -19,7 +19,7 @@
     <text x="54" y="358" font-size="11" fill="#f0c9c0">测试自己错（剥层数）✔</text>
     <text x="54" y="388" font-size="12" fill="#9fb8a8">== 心法四条 ==</text>
     <text x="54" y="410" font-size="11" fill="#cfe8c8">讲故事/数字真实/承认局限/钩子 ✔</text>
-    <text x="54" y="438" font-size="11.5" fill="#9fb8a8">（生成器 102 行——骨架可执行）</text>
+    <text x="54" y="438" font-size="11.5" fill="#9fb8a8">（生成器 76 行——骨架可执行）</text>
 
     <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,490 Q 712,495 490,490 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 296)"/>
     <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">明天：144 毕业总结</text>

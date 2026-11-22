@@ -10,8 +10,8 @@
     <text x="300" y="174" font-size="11" fill="#a33f2e">take_ptr(NULL) 旧时代：</text>
     <text x="300" y="198" font-size="10.5" fill="#8a8578">NULL 是 0（整数宏）</text>
     <rect x="200" y="212" width="200" height="34" fill="#f1f4f7" stroke="#8a94a3" stroke-width="1.6"/>
-    <text x="300" y="234" font-size="10" fill="#8a94a3">→ 选 take_ptr(int) ✘</text>
-    <text x="300" y="272" font-size="10" fill="#a33f2e">（想传"空指针"却进了整数门）</text>
+    <text x="300" y="234" font-size="10" fill="#8a94a3">→ 重载歧义编译错 ✘</text>
+    <text x="300" y="272" font-size="10" fill="#a33f2e">（想传"空指针"却编译错！）</text>
     <rect x="510" y="148" width="300" height="140" fill="#d8ecce" stroke="#7aa663" stroke-width="2.2"/>
     <text x="660" y="174" font-size="11" fill="#45703a">take_ptr(nullptr) 现代：</text>
     <text x="660" y="198" font-size="10.5" fill="#8a8578">nullptr 是指针类型</text>

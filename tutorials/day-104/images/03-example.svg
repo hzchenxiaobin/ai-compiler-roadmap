@@ -29,7 +29,7 @@
     <text x="514" y="174" font-size="12" fill="#9fb8a8">第 18 周（语言核心改进）：</text>
     <text x="514" y="198" font-size="11.5" fill="#cfe8c6">103 auto/decltype ✓</text>
     <text x="514" y="218" font-size="11.5" fill="#cfe8c8">104 统一初始化（今天）</text>
-    <text x="514" y="248" font-size="12" fill="#9fb8a8"> Effective 同步：条款 6 邻近的</text>
+    <text x="514" y="248" font-size="12" fill="#9fb8a8"> Effective 同步：条款 2 邻近的</text>
     <text x="514" y="270" font-size="11" fill="#9fb8a8">　{} 与 auto 的互动（{} 推导规则）</text>
     <text x="514" y="300" font-size="12" fill="#9fb8a8">今天的知识回响：</text>
     <text x="514" y="322" font-size="11.5" fill="#cfe8c6">Day 86 的初值坑（0 vs 0.0）——</text>
@@ -37,14 +37,14 @@
     <text x="514" y="370" font-size="11.5" fill="#cfe8c6">Day 79 的 vector 扩容实验里</text>
     <text x="514" y="390" font-size="11" fill="#9fb8a8">　用的 v{...}——今天正名</text>
     <text x="514" y="422" font-size="12.5" fill="#45703a">（104/144 = 72.2%）</text>
-    <text x="514" y="454" font-size="11.5" fill="#9fb8a8">本周后续：右值引用/完美转发/</text>
-    <text x="514" y="474" font-size="11.5" fill="#9fb8a8">　lambda 进阶 → 项目日</text>
+    <text x="514" y="454" font-size="11.5" fill="#9fb8a8">本周后续：四件套/结构化绑定/</text>
+    <text x="514" y="474" font-size="11.5" fill="#9fb8a8">　if constexpr → 项目日</text>
 
     <path d="M 24,516 Q 470,510 905,517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>
     <text x="46" y="542" font-size="15.5" font-weight="bold" fill="#9c5a22">{} 的价值排序</text>
     <text x="46" y="568" font-size="12.5" fill="#3b3a36">防窄化（编译期拦坑）&gt; 统一语法（少记规则）&gt; 防 most vexing（偶尔救命）——三个福利里"安全"最值钱</text>
 
     <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
-    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 105 右值引用与移动构造——偷资源为什么比抄资源快</text>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 105 nullptr / enum class / using / constexpr——四件套现代化</text>
   </g>
 </svg>

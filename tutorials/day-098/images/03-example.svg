@@ -38,13 +38,13 @@
     <text x="514" y="380" font-size="11" fill="#9fb8a8">（官方多的 emplace/异常——工程打磨）</text>
     <text x="514" y="412" font-size="12.5" fill="#45703a">（98/144 = 68.1%）</text>
     <text x="514" y="444" font-size="11.5" fill="#9fb8a8">本周路线：97 函数模板 ✓</text>
-    <text x="514" y="464" font-size="11.5" fill="#9fb8a8">　→ 98 类模板（今天）→ 特化 → 项目</text>
+    <text x="514" y="464" font-size="11.5" fill="#9fb8a8">　→ 98 类模板（今天）→ 99 非类型参数</text>
 
     <path d="M 24,516 Q 470,510 905,517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>
     <text x="46" y="542" font-size="15.5" font-weight="bold" fill="#9c5a22">模板类的意义</text>
     <text x="46" y="568" font-size="12.5" fill="#3b3a36">"类型的参数化"——容器只写一次、元素类型开放；这是 STL 六件套（vector/string/map…）共同的底层秘密，今天亲手揭开了</text>
 
     <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
-    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 99 模板与代码组织——头文件/分离编译的模板现实</text>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 99 非类型模板参数与默认模板参数——FixedStack&lt;T, MaxSize&gt;</text>
   </g>
 </svg>

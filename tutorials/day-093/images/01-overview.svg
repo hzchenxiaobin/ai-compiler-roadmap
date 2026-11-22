@@ -13,7 +13,7 @@
     <text x="284" y="232" font-size="10.5" fill="#cfe8c6">return a.name &lt; b.name;　←副裁：同分姓名升序</text>
     <text x="64" y="280" font-size="12.5" fill="#45703a">实测：Alice(92) Eve(92) ✔、Bob(85) Charlie(85) ✔</text>
     <text x="64" y="302" font-size="12" fill="#8a8578">（同分组内名字字典序——榜面确定可复现）</text>
-    <text x="64" y="336" font-size="12.5" fill="#6b675e">严格弱序红线（Day 48 老规矩）：比较器</text>
+    <text x="64" y="336" font-size="12.5" fill="#6b675e">严格弱序红线（Day 72 老规矩）：比较器</text>
     <text x="64" y="356" font-size="12.5" fill="#6b675e">　不许写 &lt;=（相等也真 = 自相矛盾 → 崩）</text>
 
     <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>

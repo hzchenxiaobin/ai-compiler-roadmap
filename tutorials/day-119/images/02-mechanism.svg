@@ -12,11 +12,11 @@
     <text x="300" y="222" font-size="10.5" fill="#cfe8c8">②unique_ptr delete 指针</text>
     <text x="300" y="246" font-size="10.5" fill="#cfe8c8">③虚析构 → ~Circle() 先跑</text>
     <text x="300" y="268" font-size="10.5" fill="#cfe8c8">④~Shape() 后跑（两层清）</text>
-    <text x="300" y="296" font-size="10" fill="#8a8578">（虚析构是链条的关键一环——Day 69）</text>
+    <text x="300" y="296" font-size="10" fill="#8a8578">（虚析构是关键——Day 69）</text>
     <rect x="520" y="146" width="290" height="170" fill="#33413a"/>
     <text x="665" y="176" font-size="11" fill="#9fb8a8">为什么必须指针容器：</text>
     <text x="665" y="200" font-size="10.5" fill="#cfe8c8">vector&lt;Shape&gt;（值）会切片！</text>
-    <text x="665" y="222" font-size="10.5" fill="#8a8578">（Day 53 的老坑——存基类值</text>
+    <text x="665" y="222" font-size="10.5" fill="#8a8578">（Day 68 的老坑——存基类值</text>
     <text x="665" y="240" font-size="10.5" fill="#8a8578">　派生部分被切掉）</text>
     <text x="665" y="268" font-size="10.5" fill="#cfe8c8">指针容器 = 多态的正解</text>
     <text x="665" y="296" font-size="10" fill="#8a8578">（智能指针 = 正解的安全版）</text>

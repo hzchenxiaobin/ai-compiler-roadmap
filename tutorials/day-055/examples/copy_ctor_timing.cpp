@@ -53,7 +53,7 @@ int main() {
 
     std::cout << "\n== ⑤ 赋值（不是拷贝构造！） ==" << std::endl;
     Logger d("目标");
-    d = a;                           // 这是拷贝赋值运算符（Day 62），不是拷贝构造
+    d = a;                           // 这是拷贝赋值运算符（Day 56），不是拷贝构造
     std::cout << "  （赋值不打拷贝构造日志——两者不同）" << std::endl;
     return 0;
 }

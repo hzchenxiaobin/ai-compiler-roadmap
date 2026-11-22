@@ -100,7 +100,7 @@ std::optional<JsonValue> parse(const std::string& src, Error& err) { … }
 
 ```bash
 g++ -Wall -Wextra -std=c++20 tidy_check.cpp -o tc && ./tc
-wc -l ../day-13{3,4,5,6,7,8,9}/examples/*.cpp ../day-140/examples/*.cpp
+wc -l ../../day-13{3,4,5,6,7,8,9}/examples/*.cpp ../../day-140/examples/*.cpp
 ```
 
 实际执行结果（本机）：

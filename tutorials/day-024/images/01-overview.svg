@@ -35,7 +35,7 @@
     <circle cx="430" cy="510" r="5" fill="#5b8db8"/>
     <text x="430" y="530" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 24（今天）</text>
     <circle cx="630" cy="510" r="5" fill="#e0955f"/>
-    <text x="630" y="530" text-anchor="middle" font-size="12" fill="#3b3a36">Day 25~26 并发</text>
+    <text x="630" y="530" text-anchor="middle" font-size="12" fill="#3b3a36">Day 25~26 多文件</text>
     <circle cx="820" cy="510" r="5" fill="#5b8db8"/>
     <text x="820" y="530" text-anchor="middle" font-size="12" fill="#3b3a36">第 6 周 收尾</text>
   </g>

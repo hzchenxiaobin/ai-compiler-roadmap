@@ -7,7 +7,7 @@
 
 ## 1. 今天解决什么问题？
 
-lambda 从 Day 48（比较器）用到今天——捕获列表 `[]` 一直是"照葫芦画瓢"。今天把**捕获**讲透：值 vs 引用的语义差异（快照 vs 别名——实测对照）、混合/全捕获、mutable、初始化捕获、this 捕获，以及最关键的**悬空陷阱**（引用捕获的局部变量死了、lambda 还活着——UB）。
+lambda 从 Day 72（比较器）用到今天——捕获列表 `[]` 一直是"照葫芦画瓢"。今天把**捕获**讲透：值 vs 引用的语义差异（快照 vs 别名——实测对照）、混合/全捕获、mutable、初始化捕获、this 捕获，以及最关键的**悬空陷阱**（引用捕获的局部变量死了、lambda 还活着——UB）。
 
 计划指定的 **10 个小场景**全部实测——每个场景一行结论。今天也是**第 100 天**（100/144 = 69.4%）——百天碑。
 
@@ -121,7 +121,7 @@ g++ -Wall -std=c++17 lambda_capture.cpp -o lc && ./lc
 == 场景 6：mutable——值捕获也能改（改的是拷贝） ==
   第三次调用 counter() = 3（内部 n 在涨）
 
-== 场景 7：初始化捕获 [n = x + 1] ==
+== 场景 7：初始化捕获 [sum = x + y] ==
   [sum = x + y] 捕获时算好 = 300（捕获时刻 100+200）
 
 == 场景 8：捕获 this（成员场景的模拟） ==
@@ -130,7 +130,7 @@ g++ -Wall -std=c++17 lambda_capture.cpp -o lc && ./lc
 == 场景 9：悬空陷阱——引用捕获局部变量的 lambda 逃逸 ==
   （正确写法：[local] 值捕获——拷贝活下来）
 
-== 场景 10：容器算法里的捕获（本周的日常） ==
+== 场景 10：容器算法里的捕获（上周的日常） ==
   >4 的有 4 个（引用累计 + 值只读的标准组合）
 ```
 
@@ -148,7 +148,7 @@ g++ -Wall -std=c++17 -fsanitize=address lambda_capture.cpp -o lca && ./lca
 
 ### 5.4 修改一个输入再观察：悬空的 ASan 目击
 
-把场景 9 的注释放开（真的 `return [&local] { return local; };`）——ASan 版编译运行：调用逃逸的 lambda 报 **stack-use-after-return**（读已死局部——悬空的官方判决）。普通版可能"碰巧"打出垃圾（UB 老朋友）。**一注释一放开**：红线从口诀变目击——这就是"lambda 活得久必须值捕获"的全部理由。
+把场景 9 的注释放开（真的 `return [&local] { return local; };`）——ASan 版编译运行（macOS/Apple clang 默认关着这项检测，要加 `ASAN_OPTIONS=detect_stack_use_after_return=1` 再跑）：调用逃逸的 lambda 报 **stack-use-after-return**（读已死局部——悬空的官方判决）。普通版可能"碰巧"打出垃圾（UB 老朋友）。**一注释一放开**：红线从口诀变目击——这就是"lambda 活得久必须值捕获"的全部理由。
 
 ## 6. 常见错误与排查
 
@@ -157,7 +157,7 @@ g++ -Wall -std=c++17 -fsanitize=address lambda_capture.cpp -o lca && ./lca
 - 现象：异步回调、存起来的 lambda 调用时行为诡异；
 - 原因：引用捕获的局部变量已死（场景 9/5.4）；
 - 定位：ASan 的 stack-use-after-return 报告；
-- 修复：值捕获；或延长变量生命（shared_ptr——第 18 周）。
+- 修复：值捕获；或延长变量生命（shared_ptr——第 20 周）。
 
 **错误 2：`error: 'x' cannot be implicitly captured`（没写捕获列表）**
 

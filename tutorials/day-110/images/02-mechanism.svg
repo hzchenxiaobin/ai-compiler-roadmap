@@ -24,10 +24,10 @@
     <path d="M 40,364 Q 280,358 520,364 Q 524,480 520,576 Q 280,582 42,576 Q 36,480 40,364 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 470)"/>
     <text x="280" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">push_back 的两版（实测）</text>
     <rect x="64" y="412" width="430" height="150" fill="#33413a"/>
-    <text x="279" y="438" font-size="10.5" fill="#9fb8a8">string tmp = "一批数据";</text>
-    <text x="279" y="462" font-size="10.5" fill="#cfe8c6">v.push_back(tmp);　　　// 拷贝（tmp 还要用）</text>
-    <text x="279" y="486" font-size="10.5" fill="#cfe8c6">v.push_back(move(tmp2)); // 移动（tmp2 不要了）</text>
-    <text x="279" y="514" font-size="10" fill="#8a8578">（决策：源还要不要？要→不 move，不要→move）</text>
+    <text x="80" y="438" font-size="10.5" fill="#9fb8a8">string tmp = "一批数据";</text>
+    <text x="80" y="462" font-size="10.5" fill="#cfe8c6">v.push_back(tmp);　　　// 拷贝（tmp 还要用）</text>
+    <text x="80" y="486" font-size="10.5" fill="#cfe8c6">v.push_back(move(tmp2)); // 移动（tmp2 不要了）</text>
+    <text x="80" y="514" font-size="10" fill="#8a8578">（决策：源还要不要？要→不 move，不要→move）</text>
 
     <path d="M 550,364 Q 730,358 905,364 Q 908,480 905,576 Q 730,582 552,576 Q 547,480 550,364 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 470)"/>
     <text x="727" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">误用清单</text>

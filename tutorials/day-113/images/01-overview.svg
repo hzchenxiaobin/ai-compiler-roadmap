@@ -26,7 +26,7 @@
 
     <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
     <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">emplace_back 的核心（计划指定实测）</text>
-    <text x="70" y="468" font-size="13" fill="#3b3a36">emplace_back(左值) → const&amp; 构造（拷贝路径）｜emplace_back(move(x)) → &amp;&amp; 构造（移动路径！）——Day 92 vector::emplace_back 快的原理</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">emplace_back(左值) → const&amp; 构造（拷贝路径）｜emplace_back(move(x)) → &amp;&amp; 构造（移动路径！）——Day 79 vector::emplace_back 快的原理</text>
     <text x="70" y="490" font-size="12.5" fill="#6b675e">（容器收原料、转发给构造函数——参数原样直达）</text>
 
     <path d="M 60,514 Q 480,508 905 515" fill="none" stroke="#8a8578" stroke-width="2.6"/>

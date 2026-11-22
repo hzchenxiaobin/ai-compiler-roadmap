@@ -10,7 +10,7 @@
     <text x="300" y="170" font-size="11" fill="#9c5a22">①主裁：85 != 85？</text>
     <text x="300" y="190" font-size="10.5" fill="#8a8578">（相等——主裁弃权）</text>
     <rect x="460" y="148" width="240" height="56" fill="#d8ecce" stroke="#7aa663" stroke-width="2.2"/>
-    <text x="580" y="170" font-size="11" fill="#45703a">②副裁："Bob" &lt; "Charlie"？</text>
+    <text x="580" y="170" font-size="11" fill="#45703a">②副裁：Bob&lt;Charlie？</text>
     <text x="580" y="190" font-size="10.5" fill="#45703a">（是！B 在 C 前 → Bob 排前）✔</text>
     <path d="M 422,176 Q 440,176 458,176" fill="none" stroke="#3b3a36" stroke-width="2"/>
     <text x="472" y="236" font-size="12" fill="#3b3a36">同分 → 主裁说"不小于也不大于"（弃权）→ 副裁出场（字典序）——两级流水线</text>

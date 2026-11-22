@@ -8,7 +8,7 @@
     <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">扩容前后的两块内存（事故一解剖）</text>
     <rect x="100" y="146" width="240" height="60" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2" stroke-dasharray="6 3"/>
     <text x="220" y="170" font-size="10.5" fill="#8a94a3">旧块 0x…12c0（已还！）：[1][2][3]</text>
-    <text x="220" y="188" font-size="9.5" fill="#a33f2e">（旧迭代器 it 还指这里——悬空）</text>
+    <text x="220" y="188" font-size="9.5" fill="#a33f2e">（旧 it 还指这里——悬空）</text>
     <rect x="430" y="146" width="240" height="60" fill="#d8ecce" stroke="#7aa663" stroke-width="2.2"/>
     <text x="550" y="170" font-size="10.5" fill="#45703a">新块 0x…12d0：[1][2][3][4]</text>
     <text x="550" y="188" font-size="9.5" fill="#8a8578">（v.data() 现在指这里）</text>
@@ -22,9 +22,9 @@
 
     <path d="M 40,354 Q 470,348 905,355 L 901,576 Q 470,570 44,575 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.2 472 465)"/>
     <text x="472" y="384" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">修正模式：erase 的返回值接力（事故三的解）</text>
-    <rect x="150" y="402" width="660" height="130" fill="#33413a"/>
+    <rect x="150" y="402" width="720" height="130" fill="#33413a"/>
     <text x="480" y="430" font-size="12" fill="#9fb8a8">for (auto it = s.begin(); it != s.end(); /* 不写 ++ */) {</text>
-    <text x="480" y="456" font-size="12" fill="#cfe8c6">　if (*it % 2 == 0) { it = s.erase(it); }　← erase 返回"下一个"，it 已推进</text>
+    <text x="480" y="456" font-size="12" fill="#cfe8c6">　if (*it % 2 == 0) { it = s.erase(it); }　← 返回下一个，it 已推进</text>
     <text x="480" y="480" font-size="12" fill="#cfe8c6">　else { ++it; }　　　　　　　　　　　　　← 没删才自己走</text>
     <text x="480" y="508" font-size="11.5" fill="#9fb8a8">}</text>
     <text x="480" y="542" font-size="12" fill="#45703a">（实测删偶数：1 2 3 4 5 6 → 1 3 5 ✔——不跳不越界）</text>

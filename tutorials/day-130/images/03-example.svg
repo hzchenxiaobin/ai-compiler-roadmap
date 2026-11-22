@@ -40,7 +40,7 @@
 
     <path d="M 24,516 Q 470,510 905,517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>
     <text x="46" y="542" font-size="15.5" font-weight="bold" fill="#9c5a22">编码的知识红利</text>
-    <text x="46" y="568" font-size="12.5" fill="#3b3a36">今天手工写了 UTF-8 编码——从此"中文字符串为什么 size 是 3""char 遍历为什么拆字节"（Day 19 的老疑问）全部有了原理级答案</text>
+    <text x="46" y="568" font-size="12.5" fill="#3b3a36">今天手工写了 UTF-8 编码——从此"中文字符串为什么 size 是 3""char 遍历为什么拆字节"（入门期的老疑问）全部有了原理级答案</text>
 
     <path d="M 24,596 Q 470,590 905 597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
     <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 131 数字解析——整数/浮点/科学计数法（strtod 严格文法）</text>

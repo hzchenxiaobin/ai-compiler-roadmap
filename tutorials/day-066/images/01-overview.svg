@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
   <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
   <g stroke-linecap="round" stroke-linejoin="round">
-    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 66 项目日：MyString v2——第 10 周收官</text>
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 66 项目日：MyString v2——第 11 周收官</text>
     <path d="M 300,60 Q 480,52 660,61" fill="none" stroke="#e0955f" stroke-width="3"/>
     <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">手写动态数组的完整拷贝控制——四天零件（拷贝构造/拷贝赋值/三法则/=delete）一次装齐</text>
 
@@ -11,7 +11,7 @@
     <text x="70" y="204" font-size="13" fill="#3b3a36">三法则②拷贝赋值（三步式+自赋值检查）　　　← Day 56</text>
     <text x="70" y="230" font-size="13" fill="#3b3a36">三法则③析构（delete[] 收摊）　　　　　　　　← Day 51/46</text>
     <text x="70" y="256" font-size="13" fill="#3b3a36">operator[] 读写双版（const 正确性）　　　　← Day 52</text>
-    <text x="70" y="282" font-size="13" fill="#3b3a36">append 动态扩容（new 大块→抄→放旧）　　　← Day 31 预告兑现</text>
+    <text x="70" y="282" font-size="13" fill="#3b3a36">append 动态扩容（new 大块→抄→放旧）　　　← Day 47 预告兑现</text>
     <text x="70" y="306" font-size="12.5" fill="#6b675e">（返回 *this 链式 append().append()——Day 49/50 的 this 三用法）</text>
 
     <path d="M 40,334 Q 280,328 520,334 Q 524,430 520,504 Q 280,510 42,504 Q 36,430 40,334 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 419)"/>
@@ -28,14 +28,14 @@
     <text x="572" y="418" font-size="12.5" fill="#3b3a36">□ -Wall 零警告 + ASan 零报错</text>
     <text x="572" y="442" font-size="12.5" fill="#3b3a36">□ 五场景输出逐行对上</text>
     <text x="572" y="466" font-size="12.5" fill="#3b3a36">□ 能指认每个零件出处</text>
-    <text x="572" y="490" font-size="12" fill="#8a8578">（全勾 = 第 10 周收官）</text>
+    <text x="572" y="490" font-size="12" fill="#8a8578">（全勾 = 第 11 周收官）</text>
 
     <path d="M 60,520 Q 480,514 905,521" fill="none" stroke="#8a8578" stroke-width="2.6"/>
     <circle cx="440" cy="520" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
     <circle cx="440" cy="520" r="5" fill="#e0955f"/>
-    <text x="440" y="540" text-anchor="middle" font-size="12" font-weight="bold" fill="#9c5a22">Day 66（第 10 周收官）</text>
+    <text x="440" y="540" text-anchor="middle" font-size="12" font-weight="bold" fill="#9c5a22">Day 66（第 11 周收官）</text>
     <circle cx="680" cy="520" r="5" fill="#5b8db8"/>
-    <text x="680" y="540" text-anchor="middle" font-size="12" fill="#3b3a36">第 11 周 OOP 深入</text>
+    <text x="680" y="540" text-anchor="middle" font-size="12" fill="#3b3a36">第 12 周 继承/多态</text>
     <circle cx="860" cy="520" r="5" fill="#5b8db8"/>
     <text x="860" y="540" text-anchor="middle" font-size="12" fill="#3b3a36">……Day 78 里程碑</text>
   </g>

@@ -43,7 +43,7 @@
 
 - **一句通俗解释**：`<<` 只读对象（const Fraction&）、`>>` 要写对象（Fraction&）——const 的有无就是读写之别；istringstream 把字符串变成流，测试自动喂输入。
 - **一个类比**：展览（<< 隔玻璃看，const）和录入（>> 填表格，非 const）；istringstream 像自动喂卡机——把写好的卡片（字符串）依次送进读卡器。
-- **对应到技术上是**：实测用三个 istringstream 分别喂 "5/10"、"hello"、"3x4"——互不干扰、无需键盘交互；同样逻辑换 cin 直接可用（第 11 周文件读入的前置课）。类比的边界：istringstream 是**只读流**（喂进去就不能改）；要动态拼输入用 ostringstream（先拼再转）——进阶工具箱的存货。
+- **对应到技术上是**：实测用三个 istringstream 分别喂 "5/10"、"hello"、"3x4"——互不干扰、无需键盘交互；同样逻辑换 cin 直接可用（第 13 周 Day 77 文件驱动、第 14 周 Day 84 读文件的前置课）。类比的边界：istringstream 是**只读流**（喂进去就不能改）；要动态拼输入用 ostringstream（先拼再转）——进阶工具箱的存货。
 - **常见误解**："测试输入必须 cin 交互"——istringstream 让输入成为测试数据的一部分（可重复、可自动化）；这也是今天三个失败路径能并排实测的原因。
 
 ## 4. 图解核心机制
@@ -64,7 +64,7 @@
 ### 5.1 准备文件
 
 ```bash
-cd ai-compiler-roadmap/tutorials/day-056/examples
+cd ai-compiler-roadmap/tutorials/day-062/examples
 ```
 
 主角：`stream_ops.cpp`（流运算符完整版）。
@@ -124,18 +124,18 @@ a=1/2 b=3/4（一句连打）
 
 ### 5.4 修改一行再观察：链式的两种断法
 
-**断法一（返回 void）**：把 `operator<<` 的返回类型改成 `void`（函数体去掉 `return os;`）——编译报错：`no operand "<<" matches these operands`（第二段 `<< b` 的左操作数没了）。**断法二（按值返回）**：返回类型改成 `std::ostream`（去掉 &）——编译报错：`call to implicitly-deleted copy constructor`（流不可拷贝——Day 57 `=delete` 的标准库现身）。两种断法一对照，**返回 ostream& 是唯一活路**的结论自己浮出来。
+**断法一（返回 void）**：把 `operator<<` 的返回类型改成 `void`（函数体去掉 `return os;`）——编译报错：`invalid operands to binary expression ('void' and 'const char[4]')`（第二段 `<< " b="` 的左操作数没了）。**断法二（按值返回）**：返回类型改成 `std::ostream`（去掉 &）——编译报错：`call to deleted constructor of 'std::ostream'`（流不可拷贝——Day 57 `=delete` 的标准库现身）。两种断法一对照，**返回 ostream& 是唯一活路**的结论自己浮出来。
 
 ## 6. 常见错误与排查
 
-**错误 1：`no operand "<<" matches these operands`**
+**错误 1：`invalid operands to binary expression ('void' and 'const char[4]')`**
 
 - 现象：链式 `cout << a << b` 编译失败（第二段报错）；
 - 原因：operator<< 返回了 void——第一段的结果不是流；
 - 定位：看报错指向第二个 <<；
 - 修复：返回 `std::ostream&` 并 `return os;`。
 
-**错误 2：`call to implicitly-deleted copy constructor`**
+**错误 2：`call to deleted constructor of 'std::ostream'`**
 
 - 现象：operator<< 按值返回 ostream；
 - 原因：流对象不可拷贝（标准库 =delete 了拷贝）；
@@ -157,7 +157,7 @@ a=1/2 b=3/4（一句连打）
 
 ### 选做挑战
 
-给 Fraction 加 `operator>>` 的"宽容格式"：允许 "3"（无分母默认 /1）——用 `is.peek()` 预看下一字符：不是 `/` 就跳过分母读取（d = 1）。预期产出：`3` → 3/1、`3/4` → 3/4 两种输入都能读。这是第 11 周配置文件解析的迷你预演。
+给 Fraction 加 `operator>>` 的"宽容格式"：允许 "3"（无分母默认 /1）——用 `is.peek()` 预看下一字符：不是 `/` 就跳过分母读取（d = 1）。预期产出：`3` → 3/1、`3/4` → 3/4 两种输入都能读。这是后续解析格式化输入（第 22 周 JSON 解析器同款思路）的迷你预演。
 
 ## 8. 今日验收
 
@@ -169,4 +169,4 @@ a=1/2 b=3/4（一句连打）
 
 ## 9. 一句话总结与明天预告
 
-今天的问题是"流运算符的链式和输入安全怎么做"；机制上，链式的命脉是返回流引用（void 断链、按值编译错），输入的安全靠三道闸（流状态/分隔符/构造校验）+ 写入点收敛；实践上，链式输出、三种输入路径、两种断链全部实测；验证标准是看到任何 `cout << a << b` 能画出数据流、任何 `>>` 能指出闸在哪。明天 **Day 63：下标 []、调用 ()、解引用 ->**——容器族运算符：Day 66 的读写双版下标是热身，`()` 让对象像函数（仿函数是第 11 周 STL 算法的钥匙）。
+今天的问题是"流运算符的链式和输入安全怎么做"；机制上，链式的命脉是返回流引用（void 断链、按值编译错），输入的安全靠三道闸（流状态/分隔符/构造校验）+ 写入点收敛；实践上，链式输出、三种输入路径、两种断链全部实测；验证标准是看到任何 `cout << a << b` 能画出数据流、任何 `>>` 能指出闸在哪。明天 **Day 63：下标 []、调用 ()、解引用 ->**——容器族运算符：Day 66 的读写双版下标是热身，`()` 让对象像函数（仿函数是第 16 周 STL 算法的钥匙）。

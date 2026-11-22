@@ -38,7 +38,7 @@
 
     <path d="M 24,530 Q 470,524 905,531 L 901,630 Q 470,624 26,629 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 580)"/>
     <text x="480" y="560" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#55606e">明天预告</text>
-    <text x="480" y="590" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 74：类型转换（static_cast / dynamic_cast / const_cast）与组合 vs 继承的设计抉择——第 12 周收官前的最后一课</text>
-    <text x="480" y="612" text-anchor="middle" font-size="12.5" fill="#6b675e">（Day 72 项目日：图形库 v3——本周全部零件的总装大考）</text>
+    <text x="480" y="590" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 70：纯虚函数与抽象类——= 0 接口强制、report 杠杆与混合分层</text>
+    <text x="480" y="612" text-anchor="middle" font-size="12.5" fill="#6b675e">（Day 72 项目日：图形库 v1——第 12 周总装大考）</text>
   </g>
 </svg>

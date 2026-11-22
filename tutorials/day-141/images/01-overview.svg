@@ -7,8 +7,8 @@
 
     <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
     <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">三层注释的规范（示范）</text>
-    <text x="64" y="180" font-size="12.5" fill="#45703a">文件头：模块/特性/限制/天数</text>
-    <text x="64" y="202" font-size="12" fill="#8a8578">（四行说清"这是什么、能干嘛、不能干嘛"）</text>
+    <text x="64" y="180" font-size="12.5" fill="#45703a">文件头：定位/模块/特性/限制/天数</text>
+    <text x="64" y="202" font-size="12" fill="#8a8578">（五行说清"这是什么、能干嘛、不能干嘛"）</text>
     <text x="64" y="232" font-size="12.5" fill="#45703a">节注释：==== 分隔 + 一句设计</text>
     <text x="64" y="254" font-size="12" fill="#8a8578">（JsonValue：variant+unique_ptr 的理由）</text>
     <text x="64" y="284" font-size="12.5" fill="#45703a">行内：只注"为什么"不注"是什么"</text>
@@ -27,11 +27,11 @@
     <text x="732" y="288" font-size="10" fill="#9fb8a8">138 run_suite.cpp　　259 行</text>
     <text x="732" y="308" font-size="10" fill="#9fb8a8">139 bench.cpp　　　 191 行</text>
     <text x="732" y="328" font-size="10" fill="#cfe8c8">140 sanitizer_check.cpp 228 行</text>
-    <text x="732" y="350" font-size="10.5" fill="#45703a">合计 1717 行（每天一个自包含主题）</text>
+    <text x="732" y="350" font-size="10.5" fill="#45703a">合计 1717 行（每天自包含）</text>
 
     <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
     <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">整理的判断：什么值得做</text>
-    <text x="70" y="468" font-size="13" fill="#3b3a36">不合并八文件成"一个大文件"（教学仓库的"每天自包含"是特性不是乱）；做的是：注释规范示范（今天的 tidy_check）+ 二进制清理 + 限制的醒目化</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">不合并八文件成"一个大文件"（教学仓库的"每天自包含"是特性不是乱）；做的是：注释示范（tidy_check）+ 二进制清理 + 限制的醒目化</text>
     <text x="70" y="490" font-size="12.5" fill="#6b675e">（整理不是重新组织——是让现有的组织被人看得见）</text>
 
     <path d="M 60,514 Q 480,508 905 515" fill="none" stroke="#8a8578" stroke-width="2.6"/>

@@ -3,7 +3,7 @@
   <g stroke-linecap="round" stroke-linejoin="round">
     <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 123 全貌：&lt;filesystem&gt;——目录树的现代遍历</text>
     <path d="M 310,60 Q 480,52 650,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
-    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">计划指定"递归遍历目录统计文件大小"——C++17 终于有官方的路径/目录库：跨平台、异常安全、迭代器风格（老 C 的 dirent 手工时代结束）</text>
+    <text x="480" y="84" text-anchor="middle" font-size="15.5" fill="#8a8578">计划指定"递归遍历目录统计文件大小"——C++17 终于有官方的路径/目录库：跨平台、异常安全、迭代器风格（dirent 手工时代结束）</text>
 
     <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
     <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">计划指定：递归统计（实测）</text>
@@ -30,7 +30,7 @@
     <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
     <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">和手写时代的对照</text>
     <text x="70" y="468" font-size="13" fill="#3b3a36">老 C：opendir/readdir/closedir + 手拼路径 + 平台分支（POSIX/Windows 两套）→ C++17：一个头文件、跨平台、迭代器风格——十年祈愿的落地</text>
-    <text x="70" y="490" font-size="12.5" fill="#6b675e">（错误处理：默认抛 filesystem_error；无抛版传 error_code——Day 126 前的预告）</text>
+    <text x="70" y="490" font-size="12.5" fill="#6b675e">（错误处理：默认抛 filesystem_error；无抛版传 error_code——Day 133 的预告）</text>
 
     <path d="M 60,514 Q 480,508 905 515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
     <circle cx="250" cy="514" r="5" fill="#8a94a3"/>

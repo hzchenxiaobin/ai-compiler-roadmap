@@ -7,7 +7,7 @@
 // Day 125：《Effective Modern C++》条款 1~14 重读——用代码验证经典条款
 // 本教程五个月的实践就是这 14 条的“实验记录”——今天集中验证几个代表性条款
 
-// ===== 条款 14（代表验证）：不使用裸 new/delete 的好处 =====
+// ===== 条款 21（代表验证）：不使用裸 new/delete 的好处 =====
 // （本教程 Day 120 已经全量做过——今天一个最小对照）
 namespace raw_era {
 int* make_arr(int n) { return new int[n](); }
@@ -26,10 +26,10 @@ void show_count(const char* label, const std::shared_ptr<int>& p) {
 int main() {
     std::cout << "== 五个月实践对条款 1~14 的覆盖图 ==" << std::endl;
     std::cout << "  条款 1-6（类型推导/auto）：Day 103 已学 ✔" << std::endl;
-    std::cout << "  条款 7-14（移向现代/智能指针）：Day 109~120 已学 ✔" << std::endl;
+    std::cout << "  条款 7-14（转向现代 C++）：Day 104~112 穿插已学 ✔" << std::endl;
     std::cout << "  （重读的“读法”：每条问“教程哪天验证过它”）" << std::endl;
 
-    std::cout << "\n== 条款 14 验证：make_unique vs 裸 new ==" << std::endl;
+    std::cout << "\n== 条款 21 验证：make_unique vs 裸 new ==" << std::endl;
     {
         auto arr = modern_era::make_arr(100);
         arr[42] = 7;

@@ -7,13 +7,13 @@
     <path d="M 40,100 Q 470,94 905,101 L 901,340 Q 470,334 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 220)"/>
     <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">条款学习在教程的三层沉淀</text>
     <rect x="130" y="148" width="220" height="56" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
-    <text x="240" y="170" font-size="10.5" fill="#45703a">① 书面：读条款（五个月前）</text>
+    <text x="240" y="170" font-size="10.5" fill="#45703a">① 五个月前：书面读</text>
     <text x="240" y="190" font-size="9.5" fill="#8a8578">（跟天数学的穿插读）</text>
     <rect x="370" y="148" width="220" height="56" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
-    <text x="480" y="170" font-size="10.5" fill="#9c5a22">② 实验：验证条款（当周）</text>
+    <text x="480" y="170" font-size="10.5" fill="#9c5a22">② 当周：实验验证</text>
     <text x="480" y="190" font-size="9.5" fill="#8a8578">（每天的探针/日志）</text>
     <rect x="610" y="148" width="220" height="56" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2"/>
-    <text x="720" y="170" font-size="10.5" fill="#a33f2e">③ 重读：带着伤疤（今天）</text>
+    <text x="720" y="170" font-size="10.5" fill="#a33f2e">③ 今天：带伤疤重读</text>
     <text x="720" y="190" font-size="9.5" fill="#8a8578">（画面/疑问/答案三层）</text>
     <path d="M 352,176 Q 360,176 368,176" fill="none" stroke="#3b3a36" stroke-width="1.8"/>
     <path d="M 592,176 Q 600,176 608,176" fill="none" stroke="#3b3a36" stroke-width="1.8"/>

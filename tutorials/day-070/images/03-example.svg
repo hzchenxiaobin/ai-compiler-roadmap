@@ -38,7 +38,7 @@
 
     <path d="M 24,530 Q 470,524 905,531 L 901,630 Q 470,624 26,629 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 580)"/>
     <text x="480" y="560" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#55606e">明天预告</text>
-    <text x="480" y="590" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 69：虚析构函数为什么必须写——delete 基类指针时，派生类的析构不执行会怎样（真实泄漏实验 + ASan 抓获）</text>
-    <text x="480" y="612" text-anchor="middle" font-size="12.5" fill="#6b675e">今天两个示例里照抄的 virtual ~Shape() = default; 明天正式开学</text>
+    <text x="480" y="590" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 71：多态容器——vector&lt;Shape*&gt; 与 vector&lt;unique_ptr&lt;Shape&gt;&gt;：一族对象进容器、加形状零改循环</text>
+    <text x="480" y="612" text-anchor="middle" font-size="12.5" fill="#6b675e">今天的接口类设计将装进标准容器——开闭原则的第一口甜头</text>
   </g>
 </svg>

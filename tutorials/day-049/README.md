@@ -67,7 +67,7 @@
 ### 5.1 准备文件
 
 ```bash
-cd ai-compiler-roadmap/tutorials/day-037/examples
+cd ai-compiler-roadmap/tutorials/day-049/examples
 ```
 
 三个程序：`rectangle.cpp`、`this_demo.cpp`、`access_demo.cpp`。

@@ -14,7 +14,7 @@
     <text x="54" y="248" font-size="12" fill="#f0c9c0">（没有任何报错——静默的可怕）</text>
     <text x="54" y="280" font-size="12" fill="#9fb8a8">悬空部分：</text>
     <text x="54" y="302" font-size="12.5" fill="#cfe8c6">d = 0x104f01300（值还在）</text>
-    <text x="54" y="326" font-size="12.5" fill="#f0c9c0">*d = 3（旧值假象——UB）</text>
+    <text x="54" y="326" font-size="12.5" fill="#f0c9c0">*d = 3（垃圾值——UB）</text>
     <text x="54" y="360" font-size="12" fill="#9fb8a8">ASan 版：</text>
     <text x="54" y="382" font-size="11" fill="#ffd7d0">ERROR: heap-use-after-free</text>
     <text x="54" y="400" font-size="11" fill="#9fb8a8">READ of size 4 + SUMMARY 定位行号</text>

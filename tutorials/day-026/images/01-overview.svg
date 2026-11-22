@@ -12,7 +12,7 @@
     <text x="64" y="230" font-size="12.5" fill="#6b675e">（昨天的三文件结构原样适用）</text>
     <text x="64" y="262" font-size="12.5" fill="#45703a">std 其实就是个命名空间——</text>
     <text x="64" y="286" font-size="12.5" fill="#45703a">std::cout 读了 25 天"全限定"，今天认亲</text>
-    <text x="64" y="312" font-size="11.5" fill="#8a8578">（连 :: 都是老朋友：Day 19 命名空间作用域符）</text>
+    <text x="64" y="312" font-size="11.5" fill="#8a8578">（连 :: 都是老朋友：Day 11 的作用域解析运算符）</text>
 
     <path d="M 550,116 Q 730,110 905,116 Q 908,220 905,324 Q 730,330 552,324 Q 547,220 550,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(0.3 727 220)"/>
     <text x="727" y="146" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">三种用法（宽松度递增）</text>

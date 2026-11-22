@@ -8,7 +8,7 @@
     <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">string 的两副面孔（SSO vs 堆）</text>
     <rect x="90" y="146" width="380" height="130" fill="#fffdf7" stroke="#5b8db8" stroke-width="2"/>
     <text x="280" y="172" font-size="12" fill="#2c5a82">短串（≤22 字节，libc++）：</text>
-    <text x="280" y="196" font-size="11" fill="#45703a">[ h e l l o   w o r l d \0 | 未用空间 | size ]</text>
+    <text x="280" y="196" font-size="10" fill="#45703a">[ h e l l o   w o r l d \0 | 未用 | size ]</text>
     <text x="280" y="218" font-size="10.5" fill="#8a8578">（全部内联在 string 对象里——不碰堆！）</text>
     <text x="280" y="248" font-size="10.5" fill="#6b675e">实测 "hello world" 的 data() 在栈 0x…6d30 ✔</text>
     <rect x="490" y="146" width="380" height="130" fill="#fffdf7" stroke="#7aa663" stroke-width="2"/>
@@ -16,7 +16,7 @@
     <text x="680" y="196" font-size="11" fill="#6b675e">string 对象：[ ptr | size | capacity ]</text>
     <text x="680" y="218" font-size="11" fill="#6b675e">　　　　　　　　↓ 指向</text>
     <text x="680" y="240" font-size="11" fill="#6b675e">堆块：[ 很长的内容\0 ]</text>
-    <text x="680" y="262" font-size="10.5" fill="#8a8578">（Day 42 动态数组的扩容思路 + Day 41 深拷贝）</text>
+    <text x="680" y="262" font-size="10.5" fill="#8a8578">（Day 42 扩容思路+Day 41 深拷贝）</text>
     <text x="472" y="296" font-size="12" fill="#9fb8a8">（SSO 省一次分配——短串高频场景的优化；代价是 string 对象稍大：24 字节）</text>
 
     <path d="M 40,344 Q 280,338 520,344 Q 524,460 520,576 Q 280,582 42,576 Q 36,460 40,344 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 460)"/>

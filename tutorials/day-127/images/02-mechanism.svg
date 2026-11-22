@@ -36,10 +36,10 @@
     <path d="M 550,364 Q 730,358 905,364 Q 908,480 905,576 Q 730,582 552,576 Q 547,480 550,364 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 470)"/>
     <text x="727" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">18 天的项目路线</text>
     <rect x="572" y="412" width="320" height="150" fill="#33413a"/>
-    <text x="732" y="436" font-size="10.5" fill="#cfe8c8">127 规范+设计+Tokenizer 原型（今天）✔</text>
-    <text x="732" y="458" font-size="10.5" fill="#9fb8a8">128 Parser（递归下降）</text>
-    <text x="732" y="478" font-size="10.5" fill="#9fb8a8">129 完整（转义/错误处理）</text>
-    <text x="732" y="498" font-size="10.5" fill="#9fb8a8">130~143 序列化/访问/测试…</text>
+    <text x="732" y="436" font-size="10.5" fill="#cfe8c8">127 规范+设计+Tokenizer 原型✔</text>
+    <text x="732" y="458" font-size="10.5" fill="#9fb8a8">128 Value 数据结构（variant）</text>
+    <text x="732" y="478" font-size="10.5" fill="#9fb8a8">129~131 完整版（转义/数字）</text>
+    <text x="732" y="498" font-size="10.5" fill="#9fb8a8">132~143 Parser/序列化/测试…</text>
     <text x="732" y="518" font-size="10.5" fill="#9fb8a8">144 终点验收（对照真实 JSON）</text>
     <text x="732" y="544" font-size="10.5" fill="#cfe8c8">（五阶段技能的全合成考试）</text>
   </g>

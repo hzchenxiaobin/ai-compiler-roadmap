@@ -24,6 +24,6 @@
     <text x="572" y="250" font-size="12" fill="#45703a">　解②：双参版 myMax2（T/U 各推）</text>
     <text x="572" y="284" font-size="12.5" fill="#a33f2e">坑②：myMax2 返回 T 时 7.5 被截成 7</text>
     <text x="572" y="306" font-size="12" fill="#8a8578">（返回类型选了 T=int——窄化的老坑）</text>
-    <text x="572" y="344" font-size="12" fill="#8a8578">（C++14 的 auto 返回推导是后话——第 17 周内）</text>
+    <text x="572" y="344" font-size="12" fill="#8a8578">（C++14 的 auto 返回推导是后话——第 18 周）</text>
   </g>
 </svg>

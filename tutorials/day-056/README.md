@@ -44,7 +44,7 @@
 
 - **一句通俗解释**：教科书三步式（检查 → 释放 → 开新抄）逻辑直白；替代方案 copy-and-swap 更巧（先做拷贝再交换——旧的自然释放）。
 - **一个类比**：三步式像先退旧房再搬新家具（中间有空窗，自赋值就炸在空窗）；copy-and-swap 像先在新址布置好一模一样的房间再交换钥匙——任何时刻都有完整的家。
-- **对应到技术上是**：三步式是今天的正文（实测三个场景全过）；copy-and-swap 四行——`T& operator=(T other) { swap(other); return *this; }`（参数按值传 = 编译器自动拷贝，swap 后 other 析构带走旧内存）——自赋值安全 + 异常安全一步到位。类比的边界：copy-and-swap 多一次拷贝构造的开销；三步式可先 `new` 后 `delete` 换序获得异常安全——细节 Day 63 三法则时再展开。
+- **对应到技术上是**：三步式是今天的正文（实测三个场景全过）；copy-and-swap 四行——`T& operator=(T other) { swap(other); return *this; }`（参数按值传 = 编译器自动拷贝，swap 后 other 析构带走旧内存）——自赋值安全 + 异常安全一步到位。类比的边界：copy-and-swap 多一次拷贝构造的开销；三步式可先 `new` 后 `delete` 换序获得异常安全——细节 Day 57 三法则时再展开。
 - **常见误解**："返回 void 也行"——编译能过，但 `c = b = a` 链断掉；惯例返回 `T&`。
 
 ## 4. 图解核心机制
@@ -65,7 +65,7 @@
 ### 5.1 准备文件
 
 ```bash
-cd ai-compiler-roadmap/tutorials/day-050/examples
+cd ai-compiler-roadmap/tutorials/day-056/examples
 ```
 
 两个程序：`copy_assign.cpp`（三步式主角）、`self_assign_trap.cpp`（踩雷版）。
@@ -169,11 +169,11 @@ SUMMARY: AddressSanitizer: heap-buffer-overflow (sat_asan:arm64+0x100002d2c) in 
 
 ### 必做练习（计划指定：给动态数组补全赋值）
 
-把 Day 74 周的深拷贝类改造成"赋值三场景测试"：普通赋值、自赋值、链式各跑一遍并打印地址和内容。预期产出：三场景全过的日志 + 一句"地址不变内容翻新"的观察记录。
+把本周（Day 55/56）的深拷贝类改造成"赋值三场景测试"：普通赋值、自赋值、链式各跑一遍并打印地址和内容。预期产出：三场景全过的日志 + 一句"地址不变内容翻新"的观察记录。
 
 ### 选做挑战
 
-实现 copy-and-swap 版赋值：`MyString& operator=(MyString other) { swap(other); return *this; }`（注意参数**按值**——编译器自动拷贝）。跑今天的三个场景验证全过（自赋值天然安全：拷贝出来的 other 和自己交换后带走旧内存）。对比三步式：哪个少操心、哪个少一次拷贝——把结论写进 `notes.md`（Day 63 三法则的素材）。
+实现 copy-and-swap 版赋值：`MyString& operator=(MyString other) { swap(other); return *this; }`（注意参数**按值**——编译器自动拷贝）。跑今天的三个场景验证全过（自赋值天然安全：拷贝出来的 other 和自己交换后带走旧内存）。对比三步式：哪个少操心、哪个少一次拷贝——把结论写进 `notes.md`（Day 57 三法则的素材）。
 
 ## 8. 今日验收
 

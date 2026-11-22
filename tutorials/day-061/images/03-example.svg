@@ -35,7 +35,7 @@
 
     <path d="M 24,446 Q 470,440 905,447 L 901,510 Q 470,504 26,509 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 478)"/>
     <text x="46" y="474" font-size="15.5" font-weight="bold" fill="#9c5a22">本周路线（第 11 周）</text>
-    <text x="46" y="502" font-size="12.5" fill="#3b3a36">今天算术与比较 → Day 62 流运算符深入 → Day 63 下标/调用 → Day 64 类型转换与 explicit → Day 65 Matrix → Day 60 项目日</text>
+    <text x="46" y="502" font-size="12.5" fill="#3b3a36">今天算术与比较 → Day 62 流运算符深入 → Day 63 下标/调用 → Day 64 类型转换与 explicit → Day 65 Matrix → Day 66 项目日</text>
 
     <path d="M 24,530 Q 470,524 905,531 L 901,630 Q 470,624 26,629 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 580)"/>
     <text x="480" y="560" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#55606e">明天预告</text>

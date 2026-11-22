@@ -45,6 +45,6 @@
     <text x="46" y="560" font-size="12.5" fill="#3b3a36">括号匹配/函数调用栈/撤销重做/迷宫回溯——"最近的问题最先解决"是计算机科学反复出现的模式（Day 37 的栈帧就是它）</text>
 
     <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
-    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 84（项目日）——第 14 周收官项目（顺序容器全家桶的综合实战）</text>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 84（项目日）——第 14 周收官项目（词频统计 v1：读文件、计数、输出）</text>
   </g>
 </svg>

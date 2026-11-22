@@ -29,7 +29,7 @@
 
 - **一句通俗解释**：`vector<unique_ptr<Shape>>` 装 Circle/Rect 混合——指针避免切片、虚析构保证正确销毁、unique 自动管理。
 - **一个类比**：艺术品展柜——展柜（vector）管陈列、防弹玻璃（unique_ptr）管每件的安全、讲解系统（虚函数）让每件讲自己的故事。
-- **对应到技术上是**：实测——圆(2)/矩(3×4)/圆(1) 混装：`s->name()` 各走各的（Day 73 虚表）、`s->area()` 求和 **27.708**。**为什么必须指针**：`vector<Shape>`（值容器）会**切片**（Day 53 的老坑——基类值把派生部分切掉）；指针容器是多态的正解、智能指针是正解的安全版。**析构链**（图 2）：容器析构 → 逐元素 unique_ptr 析构 → delete 指针 → **虚析构** → ~Circle 先 ~Shape 后（Day 69 的虚析构在这链条上）。**Day 76 的正名**：图形库 v2 的写法当时"照官方"——今天全部要素到齐。类比的边界：多态容器的排序/查找要自定义比较器（Day 93 的两级裁判配 function/deref——进阶组合）。
+- **对应到技术上是**：实测——圆(2)/矩(3×4)/圆(1) 混装：`s->name()` 各走各的（Day 73 虚表）、`s->area()` 求和 **27.708**。**为什么必须指针**：`vector<Shape>`（值容器）会**切片**（Day 68 的老坑——基类值把派生部分切掉）；指针容器是多态的正解、智能指针是正解的安全版。**析构链**（图 2）：容器析构 → 逐元素 unique_ptr 析构 → delete 指针 → **虚析构** → ~Circle 先 ~Shape 后（Day 69 的虚析构在这链条上）。**Day 76 的正名**：图形库 v2 的写法当时"照官方"——今天全部要素到齐。类比的边界：多态容器的排序/查找要自定义比较器（Day 93 的两级裁判配 function/deref——进阶组合）。
 - **常见误解**："智能指针容器性能差"——unique 版和裸指针版**零差距**（Day 115 的零开销）；shared 版多一次原子计数（要拷贝语义时才用）。
 
 ### 3.2 容器拷贝的语义分野
@@ -43,7 +43,7 @@
 
 - **一句通俗解释**：对象内部想拿"管理自己的 shared_ptr"（注册回调/异步保活）——继承 `enable_shared_from_this` 后用 `shared_from_this()`；**不能** `shared_ptr<T>(this)`（会造第二计数 → 双删）。
 - **一个类比**：房主想在交易中出具"房产证"——应该从登记系统调出**原件记录**（shared_from_this），而不是自己再画一张（`shared_ptr<T>(this)`——两本证两个计数，拆两次崩）。
-- **对应到技术上是**：实测——Service 继承 enable_shared_from_this；`svc->register_self()` 内部 `service_registry.push_back(shared_from_this())` → count **1→2**（注册表持了一份）；svc 出块后服务**仍活**（注册表还持着）——`service_registry.clear()` 才销毁 ✔。**原理**：基类里藏了一个 weak_ptr（构造 shared 时自动记录控制块）——shared_from_this 就是它的 lock（找到真控制块造 shared 拷贝）。**this 版的坑**：`shared_ptr<T>(this)` 新建独立控制块——两个计数各自归零 → **double delete**。**典型用途**：异步任务里保活自己（任务对象持 shared——跑完前不死）、事件订阅的 handler 持发送者。**前提**：对象**必须已被 shared 管理**（栈对象/unique 管理下调 shared_from_this 是 UB——bad_weak_pad 抛异常）。类比的边界：**了解级**——用时再查；工程里回调保活更常见的手法是传 shared 拷贝进 lambda 捕获（Day 100 的捕获 + 这里的 from_this 两路）。
+- **对应到技术上是**：实测——Service 继承 enable_shared_from_this；`svc->register_self()` 内部 `service_registry.push_back(shared_from_this())` → count **1→2**（注册表持了一份）；svc 出块后服务**仍活**（注册表还持着）——`service_registry.clear()` 才销毁 ✔。**原理**：基类里藏了一个 weak_ptr（构造 shared 时自动记录控制块）——shared_from_this 就是它的 lock（找到真控制块造 shared 拷贝）。**this 版的坑**：`shared_ptr<T>(this)` 新建独立控制块——两个计数各自归零 → **double delete**。**典型用途**：异步任务里保活自己（任务对象持 shared——跑完前不死）、事件订阅的 handler 持发送者。**前提**：对象**必须已被 shared 管理**（栈对象/unique 管理下调 shared_from_this 会抛 std::bad_weak_ptr——C++17 前才是 UB）。类比的边界：**了解级**——用时再查；工程里回调保活更常见的手法是传 shared 拷贝进 lambda 捕获（Day 100 的捕获 + 这里的 from_this 两路）。
 - **常见误解**："enable_shared_from_this 很高级很难"——核心就一句"基类藏了个 weak、帮你 lock"；今天了解语义、认得场景即可。
 
 ## 4. 图解核心机制

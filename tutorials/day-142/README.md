@@ -29,7 +29,7 @@
 
 - **一句通俗解释**：`cmake -S . -B build`（读清单生成平台的构建文件）、`cmake --build build`（调后端编译+链接——增量）、`ctest`（自动跑测试）——三步是**所有平台统一**的入口。
 - **一个类比**：连锁餐厅的中央厨房——菜单（CMakeLists）统一制定；各门店（Mac 的 Make/Ninja、Windows 的 VS 工程）按本地设备出餐（构建）；质检流程（ctest）全国一致。
-- **对应到技术上是**：实测——**配置**：`-S 源目录 -B 构建目录`（**out-of-source**：产物全进 build/——git status 干净；删 build/ = 完全重来）；输出 `Found GTest/Threads`（find_package 的自动发现）。**构建**：`--build build`（增量——只重编改动的；`--target xxx` 选目标）；三目标 100% 零警告。**测试**：`ctest --output-on-failure`（自动发现 gtest 用例——`gtest_discover_tests` 的魔法；2/2 Passed）。**CMAKE_BUILD_TYPE**：Release（-O2）/ Debug（-g）的档位。类比的边界：**CMake 不是编译器**——它生成平台构建文件再调后端（层次：CMake → Make/Ninja/MSBuild → 编译器）。
+- **对应到技术上是**：实测——**配置**：`-S 源目录 -B 构建目录`（**out-of-source**：产物全进 build/——git status 干净；删 build/ = 完全重来）；输出 `-- Found Threads: TRUE`（Threads 显式打印 Found；GTest 以 CONFIG 模式静默找到、找不到才报错——find_package 的自动发现）。**构建**：`--build build`（增量——只重编改动的；`--target xxx` 选目标）；三目标编译 100% 零警告（链接 gtest 与 gtest_main 时 macOS 的 ld 或提示重复库——无害）。**测试**：`ctest --output-on-failure`（自动发现 gtest 用例——`gtest_discover_tests` 的魔法；2/2 Passed）。**CMAKE_BUILD_TYPE**：Release（-O2）/ Debug（-g）的档位。类比的边界：**CMake 不是编译器**——它生成平台构建文件再调后端（层次：CMake → Make/Ninja/MSBuild → 编译器）。
 - **常见误解**："CMake 编译代码"——它**配置**构建（编译是后端的事）——这也是为什么同清单能跨平台（每平台有自己的后端）。
 
 ### 3.2 生成器表达式：多平台的钥匙
@@ -132,7 +132,7 @@ $ cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 $ cmake --build build
 [100%] Built target json_demo
 [100%] Built target json_tests
-[100%] Built target json_sanitize               ← 三目标零警告
+[100%] Built target json_sanitize               ← 三目标编译零警告
 
 $ ./build/json_demo
 == CMake 构建的 json_demo ==

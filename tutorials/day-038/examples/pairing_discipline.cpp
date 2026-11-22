@@ -20,7 +20,7 @@ int main() {
 
     std::cout << "\n== 错误三：new[] 配 delete（错配） ==" << std::endl;
     int* arr = new int[3]{1, 2, 3};
-    // delete arr;                     // ✘ 应该用 delete[]——UB（ASan 能抓）
+    // delete arr;                     // ✘ 应该用 delete[]——UB（macOS 的 ASan 抓不到——int 无析构差异，见 README 5.4）
     delete[] arr;                      // ✔ 正确配对
     std::cout << "  new[] 必须配 delete[]（元素的析构只被 [] 版逐个调用）" << std::endl;
     return 0;

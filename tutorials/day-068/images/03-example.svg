@@ -35,7 +35,7 @@
 
     <path d="M 24,510 Q 470,504 905,511 L 901,630 Q 470,624 26,629 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 570)"/>
     <text x="480" y="540" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#55606e">明天的作业已备好</text>
-    <text x="480" y="570" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 70：纯虚函数深入 + Shape 抽象体系完善——今天动物园里瞥过的 = 0、override、unique_ptr 明天逐个讲透</text>
-    <text x="480" y="594" text-anchor="middle" font-size="12.5" fill="#6b675e">（Day 72 里程碑：图形库 v3——多态全家桶的组装大考）</text>
+    <text x="480" y="570" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 69：虚析构函数——delete 的完整收摊——今天照抄的 virtual ~Shape() = default; 明天正式开学</text>
+    <text x="480" y="594" text-anchor="middle" font-size="12.5" fill="#6b675e">（Day 72 项目日：图形库 v1——第 12 周总装大考）</text>
   </g>
 </svg>

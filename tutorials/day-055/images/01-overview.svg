@@ -11,7 +11,7 @@
     <text x="64" y="204" font-size="12.5" fill="#45703a">②take_by_value(a)（值传参）✔ 触发</text>
     <text x="64" y="228" font-size="12.5" fill="#a33f2e">③take_by_ref(a)（引用传参）✘ 不触发</text>
     <text x="64" y="252" font-size="12.5" fill="#8a8578">④return local（RVO 省略，本机实测零拷贝）</text>
-    <text x="64" y="276" font-size="12.5" fill="#8a8578">⑤d = a（赋值）✘ 不触发——那是 Day 62 的拷贝赋值</text>
+    <text x="64" y="276" font-size="12.5" fill="#8a8578">⑤d = a（赋值）✘ 不触发——那是 Day 56 的拷贝赋值</text>
     <text x="64" y="316" font-size="12.5" fill="#6b675e">签名：T(const T&amp; other)——参数必须是引用：</text>
     <text x="64" y="338" font-size="12.5" fill="#6b675e">　T(T other) 会无限递归（传值又要拷贝→死循环）</text>
     <text x="64" y="366" font-size="12" fill="#8a8578">（Day 9 的"复印件"今日正式命名）</text>
@@ -30,11 +30,11 @@
     <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
     <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">深拷贝的修复（实测地址分离）</text>
     <text x="70" y="468" font-size="13" fill="#3b3a36">拷贝构造里两步：①new 同大小新内存 ②memcpy 抄内容——实测 a@…92c0 / b@…92d0 各自安全析构 ✔</text>
-    <text x="70" y="492" font-size="12.5" fill="#6b675e">（Day 63 的"三法则"会总结：析构 + 拷贝构造 + 拷贝赋值三者要一起来）</text>
+    <text x="70" y="492" font-size="12.5" fill="#6b675e">（Day 57 的"三法则"会总结：析构 + 拷贝构造 + 拷贝赋值三者要一起来）</text>
 
     <path d="M 60,514 Q 480,508 905,515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
     <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
-    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 67~72 ✓</text>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 49~54 ✓</text>
     <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
     <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
     <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 55（今天）</text>

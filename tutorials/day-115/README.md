@@ -56,7 +56,7 @@
 
 1. **走交接的时间线**：箭头从 a 改挂到 b（资源不动）、a 变空把手——**独占不变式**：任何时刻只有一个主人；
 2. **读两个时代的对照**：裸时代 `delete p` 忘了泄漏/双删崩（Day 39/55 的旧伤）；今天没有 delete 这一行——作用域自动；
-3. **看历史用对的时刻**：Day 76/77 的 unique_ptr 用法——五个月前埋的正确写法今天有了原理注脚；
+3. **看历史用对的时刻**：Day 76/77 的 unique_ptr 用法——五周多前埋的正确写法今天有了原理注脚；
 4. **连五法则**：手写五周（MyString/IntArray/MyVector）换来的是"知道 unique_ptr 在替你干什么"——不是白学。
 
 ## 5. 动手实践：完成一个最小可运行例子
@@ -179,7 +179,7 @@ g++ -Wall -std=c++17 unique_ownership.cpp -o up && ./up
 
 ### 选做挑战
 
-"独占守卫"：写 `template <typename T> class ScopeGuard { std::unique_ptr<T> p_; ... }`——构造接 unique_ptr、析构时打印"守卫释放"再走（双层 RAII 的嵌套观察）；实测守卫出块时**先**打日志**后**释放成员（析构顺序：成员先于构造体）。
+"独占守卫"：写 `template <typename T> class ScopeGuard { std::unique_ptr<T> p_; ... }`——构造接 unique_ptr、析构时打印"守卫释放"再走（双层 RAII 的嵌套观察）；实测守卫出块时**先**打日志**后**释放成员（析构顺序：析构函数体先于成员销毁）。
 
 ## 8. 今日验收
 

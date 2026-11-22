@@ -7,36 +7,36 @@
     <path d="M 40,100 Q 470,94 905,101 L 901,340 Q 470,334 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 220)"/>
     <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">三类真 bug（昨天的 28 用例全没抓到）</text>
     <rect x="110" y="146" width="250" height="170" fill="#33413a"/>
-    <text x="235" y="172" font-size="10.5" fill="#9fb8a8">①尾逗号（5 个用例）</text>
+    <text x="235" y="172" font-size="10.5" fill="#9fb8a8">①尾逗号（4 个用例）</text>
     <text x="235" y="194" font-size="10" fill="#f0c9c0">[1,2,] {"a":1,} 被接受</text>
     <text x="235" y="216" font-size="10" fill="#8a8578">（重写循环时引入的回归——</text>
     <text x="235" y="234" font-size="10" fill="#8a8578">　Day 132 版本本来会拒）</text>
     <text x="235" y="262" font-size="10" fill="#cfe8c8">修复：逗号后再见闭括 → 拒</text>
     <text x="235" y="296" font-size="10" fill="#8a8578">（教训：重构也可能退步）</text>
     <rect x="380" y="146" width="230" height="170" fill="#33413a"/>
-    <text x="495" y="172" font-size="10.5" fill="#9fb8a8">②数字文法（8 个）</text>
+    <text x="495" y="172" font-size="10.5" fill="#9fb8a8">②数字文法（7 个）</text>
     <text x="495" y="194" font-size="10" fill="#f0c9c0">2.e3 / -2.. / -.1 被接受</text>
     <text x="495" y="216" font-size="10" fill="#8a8578">（strtod 认但 JSON 不认——</text>
     <text x="495" y="234" font-size="10" fill="#8a8578">　Day 131 的四禁漏了几条）</text>
-    <text x="495" y="262" font-size="10" fill="#cfe8c8">修复：点前后/指数后/负号后</text>
-    <text x="495" y="280" font-size="10" fill="#cfe8c8">　必须有数字的显式检查</text>
+    <text x="495" y="262" font-size="10" fill="#cfe8c8">点前后/指数后/负号后</text>
+    <text x="495" y="280" font-size="10" fill="#cfe8c8">　修复：三处必须有数字</text>
     <rect x="630" y="146" width="220" height="170" fill="#33413a"/>
     <text x="740" y="172" font-size="10.5" fill="#9fb8a8">③负号前导零（2 个）</text>
     <text x="740" y="194" font-size="10" fill="#f0c9c0">[-01] [-012] 被接受</text>
-    <text x="740" y="216" font-size="10" fill="#8a8578">（前导零检查只看了 s[0]——</text>
+    <text x="740" y="216" font-size="10" fill="#8a8578">（前导零只看 s[0]——</text>
     <text x="740" y="234" font-size="10" fill="#8a8578">　没跳过负号）</text>
-    <text x="740" y="262" font-size="10" fill="#cfe8c8">修复：首个数字位判前导零</text>
+    <text x="740" y="262" font-size="10" fill="#cfe8c8">修复：负号后判前导零</text>
     <text x="740" y="296" font-size="10" fill="#8a8578">（修完 → 100%）</text>
     <text x="472" y="334" font-size="11.5" fill="#8a8578">（三类都是"词法/语法层的边界细化"——不改变架构只补规则）</text>
 
     <path d="M 40,364 Q 280,358 520,364 Q 524,480 520,576 Q 280,582 42,576 Q 36,480 40,364 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 470)"/>
     <text x="280" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">深度护栏（栈溢出的修复）</text>
     <rect x="64" y="412" width="430" height="150" fill="#33413a"/>
-    <text x="279" y="436" font-size="10.5" fill="#9fb8a8">测试集含百万层括号文件：</text>
+    <text x="279" y="436" font-size="10.5" fill="#9fb8a8">测试集含十万层括号文件：</text>
     <text x="279" y="458" font-size="10.5" fill="#f0c9c0">n_structure_100000_opening_arrays</text>
     <text x="279" y="480" font-size="10.5" fill="#8a8578">（递归下降 → 栈溢出崩——ASan 定位）</text>
     <text x="279" y="506" font-size="10.5" fill="#cfe8c8">修复：depth &gt; 500 → 拒"嵌套过深"</text>
-    <text x="279" y="532" font-size="10" fill="#8a8578">（生产级解析器的标准做法——Day 132 的进阶注兑现）</text>
+    <text x="279" y="532" font-size="10" fill="#8a8578">（生产级惯例——Day 132 进阶注兑现）</text>
 
     <path d="M 550,364 Q 730,358 905,364 Q 908,480 905,576 Q 730,582 552,576 Q 547,480 550,364 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 470)"/>
     <text x="727" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">考试的时间线</text>

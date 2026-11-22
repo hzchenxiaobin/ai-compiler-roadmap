@@ -24,9 +24,9 @@
     <text x="472" y="384" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">字节序：同一个数的两种摆法（实测小端）</text>
     <rect x="150" y="402" width="660" height="90" fill="#33413a"/>
     <text x="480" y="428" font-size="11.5" fill="#cfe8c6">uint32_t x = 0x01020304;</text>
-    <text x="480" y="452" font-size="12" fill="#f0c9c0">小端（本机实测）：内存低→高 = 04 03 02 01（低位字节在低地址）</text>
+    <text x="480" y="452" font-size="12" fill="#f0c9c0">小端：内存低→高 = 04 03 02 01（低位字节在低地址）</text>
     <text x="480" y="476" font-size="12" fill="#9fb8a8">大端（网络序）：内存低→高 = 01 02 03 04（高位字节在低地址）</text>
     <text x="472" y="518" font-size="12.5" fill="#45703a">同一机器写读一致 → C++ 程序员平时无感（memcpy 实测 258→258 ✔）</text>
-    <text x="472" y="544" font-size="12.5" fill="#a33f2e">跨机器的字节流（网络/文件格式/硬件协议）→ 必须约定序并转换（htons/htonl）</text>
+    <text x="472" y="544" font-size="12.5" fill="#a33f2e">跨机器的字节流（网络/文件/硬件）→ 必须约定序并转换（htons/htonl）</text>
   </g>
 </svg>

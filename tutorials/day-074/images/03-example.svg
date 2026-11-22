@@ -34,8 +34,8 @@
     <text x="46" y="468" font-size="12.5" fill="#6b675e">选型分析详见程序末尾的四行打印——is-a 稳定则继承，否则组合</text>
 
     <path d="M 24,530 Q 470,524 905,531 L 901,630 Q 470,624 26,629 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 580)"/>
-    <text x="480" y="560" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#55606e">第 12 周收官 · 明天项目日</text>
-    <text x="480" y="590" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 72：图形库 v3——5 种图形、多态计算面积/周长并排序输出（本周六天零件的总装大考）</text>
-    <text x="480" y="612" text-anchor="middle" font-size="12.5" fill="#6b675e">（72/144 = 33%，第三个阶段过三分之一）</text>
+    <text x="480" y="560" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#55606e">第 13 周进行时 · 明天</text>
+    <text x="480" y="590" text-anchor="middle" font-size="12.5" fill="#3b3a36">Day 75：组合 vs 继承的坏例重构——把『为复用而继承』的坏例子改成组合（判断法实战）</text>
+    <text x="480" y="612" text-anchor="middle" font-size="12.5" fill="#6b675e">（74/144 = 51%——第 13 周第 2 天）</text>
   </g>
 </svg>

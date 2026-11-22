@@ -44,7 +44,7 @@
     <text x="572" y="444" font-size="12.5" fill="#45703a">状态携带是它超越函数的地方：</text>
     <text x="572" y="466" font-size="12" fill="#6b675e">　factor_ 存在对象里——</text>
     <text x="572" y="486" font-size="12" fill="#6b675e">　同一个 triple 反复用、不用传 3.0</text>
-    <text x="572" y="520" font-size="12" fill="#8a8578">（第 11 周 STL：sort 的比较器、</text>
+    <text x="572" y="520" font-size="12" fill="#8a8578">（第 16 周 STL：sort 的比较器、</text>
     <text x="572" y="540" font-size="12" fill="#8a8578">　transform 的操作——全是仿函数）</text>
   </g>
 </svg>

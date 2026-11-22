@@ -130,11 +130,11 @@ g++ -Wall container_zoo.cpp -o cz && ./cz
 
 ### 5.4 修改一个输入再观察：list 没有下标的执法
 
-把 `lst 走两步` 那行改成 `lst[2]`——**编译错误**（`no viable overloaded operator[]`——list 根本没有下标运算符）。对照 vec[2] 编译通过。**一有一无**：随机访问不是所有容器的标配——它是"连续内存"结构的会员特权（Day 80 能力分层的容器级呈现）。恢复 advance 版——全绿。
+把 `lst 走两步` 那行改成 `lst[2]`——**编译错误**（`type 'std::list<int>' does not provide a subscript operator`——list 根本没有下标运算符）。对照 vec[2] 编译通过。**一有一无**：随机访问不是所有容器的标配——它是"连续内存"结构的会员特权（Day 80 能力分层的容器级呈现）。恢复 advance 版——全绿。
 
 ## 6. 常见错误与排查
 
-**错误 1：`error: no viable overloaded operator[]`（list 用下标）**
+**错误 1：`error: type 'std::list<int>' does not provide a subscript operator`（list 用下标）**
 
 - 现象：`lst[2]` 编译失败；
 - 原因：list 没有 operator[]——链表不能跳；

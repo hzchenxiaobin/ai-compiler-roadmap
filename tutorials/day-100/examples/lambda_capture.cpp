@@ -46,7 +46,7 @@ int main() {
     counter(); counter();
     std::cout << "  第三次调用 counter() = " << counter() << "（内部 n 在涨）" << std::endl;
 
-    std::cout << "\n== 场景 7：初始化捕获 [n = x + 1] ==" << std::endl;
+    std::cout << "\n== 场景 7：初始化捕获 [sum = x + y] ==" << std::endl;
     auto init_cap = [sum = x + y] { return sum; };   // 表达式进捕获
     std::cout << "  [sum = x + y] 捕获时算好 = " << init_cap()
               << "（捕获时刻 100+200）" << std::endl;
@@ -71,7 +71,7 @@ int main() {
     }();
     std::cout << "  " << bad << std::endl;
 
-    std::cout << "\n== 场景 10：容器算法里的捕获（本周的日常） ==" << std::endl;
+    std::cout << "\n== 场景 10：容器算法里的捕获（上周的日常） ==" << std::endl;
     std::vector<int> v = {1, 2, 3, 4, 5, 6, 7, 8};
     int threshold = 4;
     int above = 0;

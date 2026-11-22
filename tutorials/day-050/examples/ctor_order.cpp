@@ -11,7 +11,7 @@ public:
         std::cout << "  【出生】" << tag_ << std::endl;
     }
 
-    ~Logger() {                                     // 析构函数：对象销毁时自动调用（第 10 周主角，先混个脸熟）
+    ~Logger() {                                     // 析构函数：对象销毁时自动调用（Day 51 主角，先混个脸熟）
         std::cout << "  【销毁】" << tag_ << std::endl;
     }
 };

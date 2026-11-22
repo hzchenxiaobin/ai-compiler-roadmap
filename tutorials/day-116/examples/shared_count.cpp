@@ -69,7 +69,7 @@ int main() {
     std::cout << "\n== 计数的原子性（线程安全说明） ==" << std::endl;
     std::cout << "  计数本身是原子的（多线程增减不加锁也不乱）" << std::endl;
     std::cout << "  但指向的对象不是！（并发读写 Doc 要自己加锁）" << std::endl;
-    std::cout << "  （明天 weak_ptr + 后天并发周展开）" << std::endl;
+    std::cout << "  （明天 weak_ptr 展开——并发正课本系列未安排）" << std::endl;
     std::cout << "\n== main 尾的清理 ==" << std::endl;
     return 0;
 }

@@ -42,6 +42,6 @@
     <text x="510" y="460" font-size="12.5" fill="#3b3a36">③查编译命令：它的 .cpp 带上了吗</text>
     <text x="510" y="496" font-size="12.5" fill="#55606e">常见诱因清单：</text>
     <text x="510" y="520" font-size="12" fill="#6b675e">漏文件 / 函数名拼写不一致 / 声明与定义签名不同</text>
-    <text x="510" y="544" font-size="12" fill="#6b675e">——第 3 种最隐蔽：calc.h 声明 double，calc.cpp 写成 int</text>
+    <text x="510" y="544" font-size="12" fill="#6b675e">——第 3 种最隐蔽：calc.h 参数 char，calc.cpp 写成 int</text>
   </g>
 </svg>

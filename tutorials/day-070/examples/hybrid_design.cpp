@@ -8,7 +8,7 @@ public:
     virtual double area() const = 0;
     virtual std::string name() const = 0;
 
-    // 纯虚也可以有函数体（进阶但实用）：派生类可以用 Shape::area() 调它
+    // 进阶特性：纯虚函数也可以有函数体（本文件未用到）——派生类可用 Shape::describe() 显式调用基类版
     virtual std::string describe() const = 0;
 
     virtual ~Shape() = default;

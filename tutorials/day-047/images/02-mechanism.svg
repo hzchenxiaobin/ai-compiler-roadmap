@@ -28,7 +28,7 @@
     <text x="280" y="374" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">对比：精确加一的阶梯</text>
     <text x="64" y="408" font-size="12.5" fill="#3b3a36">每次满了只多要 1 间：</text>
     <text x="64" y="432" font-size="12.5" fill="#a33f2e">　4→5→6→…→100（96 次搬家）</text>
-    <text x="64" y="460" font-size="12.5" fill="#a33f2e">　总搬运 1+2+…+99 = 4950</text>
+    <text x="64" y="460" font-size="12.5" fill="#a33f2e">　总搬运 4+5+…+99 = 4944</text>
     <text x="64" y="492" font-size="12.5" fill="#6b675e">内存零浪费 vs 搬到怀疑人生——</text>
     <text x="64" y="514" font-size="12.5" fill="#6b675e">　39.9 倍的搬运差距</text>
     <text x="64" y="548" font-size="12" fill="#8a8578">（工程取折中：倍增——浪费可控、成本摊平）</text>
@@ -37,7 +37,7 @@
     <text x="727" y="374" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">std::vector 同款设计</text>
     <text x="572" y="408" font-size="12.5" fill="#3b3a36">今天的 IntArray 就是手写 vector：</text>
     <text x="572" y="430" font-size="12" fill="#8a8578">push_back / reserve / size / capacity</text>
-    <text x="572" y="458" font-size="12.5" fill="#45703a">第 11 周用真 vector 时对照回忆——</text>
+    <text x="572" y="458" font-size="12.5" fill="#45703a">第 14 周用真 vector 时对照回忆——</text>
     <text x="572" y="480" font-size="12.5" fill="#45703a">　行为完全同款（倍增+摊还）</text>
     <text x="572" y="512" font-size="12" fill="#8a8578">（v1→v2 的升级路径也是 vector 的</text>
     <text x="572" y="532" font-size="12" fill="#8a8578">　历史路线——先能用再优化）</text>

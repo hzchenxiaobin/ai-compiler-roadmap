@@ -37,9 +37,9 @@
 
     <path d="M 24,506 Q 470,500 905,507 L 901,570 Q 470,564 26,569 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 538)"/>
     <text x="46" y="532" font-size="14.5" font-weight="bold" fill="#9c5a22">明天项目日预告</text>
-    <text x="46" y="558" font-size="12.5" fill="#3b3a36">Day 60：第 11 周收官项目——运算符全家桶的综合应用（详细需求明天揭晓）</text>
+    <text x="46" y="558" font-size="12.5" fill="#3b3a36">Day 66：第 11 周收官项目——MyString v2 完整拷贝控制（详细需求明天揭晓）</text>
 
     <path d="M 24,586 Q 470,580 905,587 L 901,640 Q 470,634 26,639 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 613)"/>
-    <text x="480" y="612" text-anchor="middle" font-size="12.5" fill="#55606e">（60/144 = 41.7%——十个项目日近在眼前）</text>
+    <text x="480" y="612" text-anchor="middle" font-size="12.5" fill="#55606e">（65/144 = 45.1%——明天迎来第 11 个项目日）</text>
   </g>
 </svg>

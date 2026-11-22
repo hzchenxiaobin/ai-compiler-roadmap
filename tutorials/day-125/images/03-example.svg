@@ -11,8 +11,8 @@
     <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./rc　（-Wall 零警告）</text>
     <text x="54" y="200" font-size="12" fill="#9fb8a8">== 覆盖图 ==</text>
     <text x="54" y="222" font-size="11.5" fill="#cfe8c8">条款 1-6 → Day 103 ✔</text>
-    <text x="54" y="242" font-size="11.5" fill="#cfe8c8">条款 7-14 → Day 109~120 ✔</text>
-    <text x="54" y="266" font-size="12" fill="#9fb8a8">== 条款 14 验证 ==</text>
+    <text x="54" y="242" font-size="11.5" fill="#cfe8c8">条款 7-14 → Day 104~112 ✔</text>
+    <text x="54" y="266" font-size="12" fill="#9fb8a8">== 条款 21 验证 ==</text>
     <text x="54" y="288" font-size="11.5" fill="#cfe8c8">modern arr[42]=7（零删）✔</text>
     <text x="54" y="308" font-size="11" fill="#9fb8a8">（raw 版要手动删的对照）</text>
     <text x="54" y="332" font-size="12" fill="#9fb8a8">== 条款 21（理论又见） ==</text>

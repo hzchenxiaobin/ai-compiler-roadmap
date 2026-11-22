@@ -7,10 +7,10 @@
     <path d="M 40,100 Q 470,94 905,101 L 901,300 Q 470,294 44,299 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 200)"/>
     <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">构造链实测：基类先建、派生类后建</text>
     <rect x="240" y="146" width="480" height="130" fill="#33413a"/>
-    <text x="480" y="174" font-size="12" fill="#cfe8c6">[Person 构造] 小明　　　← 基类部分先就位</text>
-    <text x="480" y="198" font-size="12" fill="#cfe8c6">[Student 构造] 小明 9 年级　← 派生类部分后组装</text>
-    <text x="480" y="228" font-size="12" fill="#f0c9c0">[Student 析构] 小明　　← 派生类先拆</text>
-    <text x="480" y="252" font-size="12" fill="#f0c9c0">[Person 析构] 小明　　　← 基类后拆</text>
+    <text x="256" y="174" font-size="12" fill="#cfe8c6">[Person 构造] 小明　　　← 基类部分先就位</text>
+    <text x="256" y="198" font-size="12" fill="#cfe8c6">[Student 构造] 小明 9 年级　← 派生类部分后组装</text>
+    <text x="256" y="228" font-size="12" fill="#f0c9c0">[Student 析构] 小明　　← 派生类先拆</text>
+    <text x="256" y="252" font-size="12" fill="#f0c9c0">[Person 析构] 小明　　　← 基类后拆</text>
     <text x="472" y="286" text-anchor="middle" font-size="12" fill="#9fb8a8">（组合的"零件先就位"在继承里变成"祖先先就位"——同一套栈规则）</text>
 
     <path d="M 40,324 Q 280,318 520,324 Q 524,450 520,560 Q 280,566 42,560 Q 36,450 40,324 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 442)"/>
@@ -21,7 +21,7 @@
     <text x="64" y="464" font-size="12" fill="#a33f2e">error: no member named 'study' in 'Person'</text>
     <text x="64" y="496" font-size="12" fill="#6b675e">基类指针只知道基类的接口——</text>
     <text x="64" y="516" font-size="12" fill="#6b675e">派生类新增的能力它"看不见"</text>
-    <text x="64" y="546" font-size="12" fill="#8a8578">（虚函数 Day 70 解锁这一格）</text>
+    <text x="64" y="546" font-size="12" fill="#8a8578">（虚函数 Day 68 解锁这一格）</text>
 
     <path d="M 550,324 Q 730,318 905,324 Q 908,450 905,560 Q 730,566 552,560 Q 547,450 550,324 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 442)"/>
     <text x="727" y="354" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">组合 vs 继承（昨天牌 today 对表）</text>

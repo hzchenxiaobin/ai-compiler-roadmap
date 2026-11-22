@@ -36,6 +36,6 @@
     <circle cx="660" cy="520" r="5" fill="#e0955f"/>
     <text x="660" y="540" text-anchor="middle" font-size="12" fill="#3b3a36">Day 36 里程碑</text>
     <circle cx="850" cy="520" r="5" fill="#5b8db8"/>
-    <text x="850" y="540" text-anchor="middle" font-size="12" fill="#3b3a36">第 9 周 面向对象</text>
+    <text x="850" y="540" text-anchor="middle" font-size="12" fill="#3b3a36">第 7 周起 指针与内存</text>
   </g>
 </svg>

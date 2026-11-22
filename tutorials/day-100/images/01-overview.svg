@@ -14,7 +14,7 @@
     <text x="384" y="188" font-size="11" fill="#9c5a22">[&amp;x] 引用捕获</text>
     <text x="384" y="206" font-size="10" fill="#8a8578">（别名——活但会悬空）</text>
     <text x="64" y="252" font-size="12.5" fill="#45703a">实测对照：捕获后 x=999</text>
-    <text x="64" y="274" font-size="12.5" fill="#3b3a36">　值版仍 10｜引用版跟到 999</text>
+    <text x="64" y="274" font-size="12.5" fill="#3b3a36">　值版仍 10｜引用版跟到 555</text>
     <text x="64" y="304" font-size="12.5" fill="#6b675e">选择直觉：</text>
     <text x="64" y="326" font-size="12" fill="#8a8578">只读小对象→值；要改外部/大对象→引用；</text>
     <text x="64" y="346" font-size="12" fill="#8a8578">lambda 活得比变量久→必须值（防悬空）</text>

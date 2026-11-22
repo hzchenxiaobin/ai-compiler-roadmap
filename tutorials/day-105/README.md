@@ -25,9 +25,9 @@
 
 ### 3.1 nullptr：空指针的类型化
 
-- **一句通俗解释**：NULL 本质是整数 0（宏）——传给重载函数会进"整数门"；nullptr 是指针类型——进"指针门"。
+- **一句通俗解释**：NULL 本质是整数 0（宏）——传给重载函数要么选错门、要么（如本机）直接报重载歧义；nullptr 是指针类型——进"指针门"。
 - **一个类比**：空房间——写"0 号房"（NULL）前台可能把你引去数字柜台；写"空房间"（nullptr）前台知道你要找房间。
-- **对应到技术上是**：实测——`take_ptr(nullptr)` 走 `take_ptr(int*)`（指针重载 ✔）；`take_ptr(0)` 走 `take_ptr(int)`（整数重载）——**同一函数两个门，实参类型决定进哪个**。Day 19 起的判空 `if (p)` 写法不变（nullptr 也符合）——变的只是"空"的写法。类比的边界：`p != NULL` 的旧代码仍编译（NULL 宏还在）——新代码一律 nullptr。
+- **对应到技术上是**：实测——`take_ptr(nullptr)` 走 `take_ptr(int*)`（指针重载 ✔）；`take_ptr(0)` 走 `take_ptr(int)`（整数重载）——**同一函数两个门，实参类型决定进哪个**（`take_ptr(NULL)` 在本机实测**直接编译错**：`call to 'take_ptr' is ambiguous`——NULL 两边都能转，nullptr 才是唯一无歧义写法）。Day 19 起的判空 `if (p)` 写法不变（nullptr 也符合）——变的只是"空"的写法。类比的边界：`p != NULL` 的旧代码仍编译（NULL 宏还在）——新代码一律 nullptr。
 - **常见误解**："nullptr 就是 NULL 的美化"——是**类型**不同（nullptr_t 类型）——重载歧义从根上消除。
 
 ### 3.2 enum class：作用域 + 强类型
@@ -52,7 +52,7 @@
 
 按图逐步讲：
 
-1. **看两个门的分岔**：NULL（=0）进整数门、nullptr 进指针门——**类型即意图**；
+1. **看两个门的分岔**：NULL 想进指针门却报重载歧义（本机实测）、nullptr 进指针门——**类型即意图**；
 2. **读 constexpr 的三种用法**：常量上下文编译期算、运行期照调、数组大小（编译期值的特权——Day 99 非类型参数同款要求）；
 3. **对比两种别名的读法**：typedef 从中间往外、using 从左往右——函数指针立即看出差距；
 4. **记四对清单**：NULL→nullptr / enum{}→enum class / typedef→using / #define→constexpr——明天起旧代码见到就换。
@@ -104,7 +104,7 @@ g++ -Wall -std=c++17 modern_four.cpp -o mf && ./mf
   take_ptr(int*)：指针重载
   take_ptr(int)：整数重载
   p = nullptr; p == nullptr → true
-  （NULL 是整数宏——重载会选错；nullptr 是指针类型）
+  （NULL 是整数宏——重载歧义/选错门；nullptr 是指针类型）
 
 == ② enum class：作用域 + 强类型 ==
   Color::Red 和 Traffic::Red 共存 ✔（旧式 enum 全局就撞名）

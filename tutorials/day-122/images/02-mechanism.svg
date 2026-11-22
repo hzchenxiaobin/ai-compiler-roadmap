@@ -41,6 +41,6 @@
     <text x="732" y="458" font-size="10.5" fill="#8a8578">（对象死→lock 得 null——安全检测）</text>
     <text x="732" y="486" font-size="10.5" fill="#9fb8a8">string_view：不拥有（窗口）</text>
     <text x="732" y="506" font-size="10.5" fill="#f0c9c0">（数据死→用是 UB——没有保护！）</text>
-    <text x="732" y="534" font-size="10" fill="#8a8578">（同样的"不拥有"——view 连失败检测都没有）</text>
+    <text x="732" y="534" font-size="10" fill="#8a8578">（同是"不拥有"——view 无检测）</text>
   </g>
 </svg>

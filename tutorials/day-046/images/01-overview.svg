@@ -25,7 +25,7 @@
     <path d="M 40,354 Q 470,348 905,355 L 901,500 Q 470,494 44,499 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.2 472 427)"/>
     <text x="472" y="384" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">auto 的判断规则（编译器替你推）</text>
     <text x="70" y="416" font-size="13" fill="#3b3a36">auto x = expr; → 用 expr 的类型初始化 x（实测：42→int、3.14→double、string→24 字节对象）</text>
-    <text x="70" y="444" font-size="13" fill="#3b3a36">auto&amp; x = expr; → 引用（可写通道——Day 57 的写入通道）；const auto&amp; → 只读省拷贝（参数标配）</text>
+    <text x="70" y="444" font-size="13" fill="#3b3a36">auto&amp; x = expr; → 引用（可写通道——Day 63 的写入通道）；const auto&amp; → 只读省拷贝（参数标配）</text>
     <text x="70" y="472" font-size="12.5" fill="#6b675e">（auto 不是弱类型——类型在编译期定死，只是"让编译器写"）</text>
     <text x="70" y="494" font-size="12.5" fill="#6b675e">（拿不准类型时可作探针：auto x = expr; 看 sizeof——今天实验同款）</text>
 

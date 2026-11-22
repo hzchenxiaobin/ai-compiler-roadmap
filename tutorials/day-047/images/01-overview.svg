@@ -10,8 +10,8 @@
     <text x="64" y="180" font-size="12.5" fill="#3b3a36">push 100 个（容量 4 起步）：</text>
     <text x="64" y="208" font-size="12.5" fill="#45703a">倍增：5 次扩容、搬运 124 个元素</text>
     <text x="64" y="230" font-size="12" fill="#8a8578">（4+8+16+32+64 = 124）</text>
-    <text x="64" y="260" font-size="12.5" fill="#a33f2e">精确加一：99 次扩容、搬运 4950 个</text>
-    <text x="64" y="282" font-size="12" fill="#8a8578">（1+2+…+99 = 4950）</text>
+    <text x="64" y="260" font-size="12.5" fill="#a33f2e">精确加一：96 次扩容、搬运 4944 个</text>
+    <text x="64" y="282" font-size="12" fill="#8a8578">（4+5+…+99 = 4944）</text>
     <text x="64" y="316" font-size="13" fill="#45703a">差 39.9 倍——N 个 push 的总搬运</text>
     <text x="64" y="338" font-size="13" fill="#45703a">　倍增是 O(N)、加一是 O(N²)</text>
     <text x="64" y="370" font-size="12" fill="#8a8578">（代价：多占内存——128 vs 100）</text>

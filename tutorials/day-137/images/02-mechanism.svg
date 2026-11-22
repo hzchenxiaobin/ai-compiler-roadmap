@@ -8,12 +8,12 @@
     <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">输入空间的分区（每区至少一用例）</text>
     <rect x="110" y="146" width="200" height="80" fill="#d8ecce" stroke="#7aa663" stroke-width="1.8"/>
     <text x="210" y="174" font-size="10.5" fill="#45703a">合法·简单（8 例）</text>
-    <text x="210" y="194" font-size="9" fill="#8a8578">空容器/null/字面量/数字四态</text>
+    <text x="210" y="194" font-size="9" fill="#8a8578">空容器/null/布尔/数字</text>
     <text x="210" y="212" font-size="9" fill="#8a8578">（结构的原子）</text>
     <rect x="330" y="146" width="200" height="80" fill="#f9d9b8" stroke="#e0955f" stroke-width="1.8"/>
     <text x="430" y="174" font-size="10.5" fill="#9c5a22">合法·复杂（4 例）</text>
     <text x="430" y="194" font-size="9" fill="#8a8578">7 层嵌套/多行/空白/</text>
-    <text x="430" y="212" font-size="9" fill="#8a8578">Unicode 码点（今天的深水）</text>
+    <text x="430" y="212" font-size="9" fill="#8a8578">取值下钻（剥 5 层）</text>
     <rect x="550" y="146" width="300" height="80" fill="#f9e9e5" stroke="#c96a5a" stroke-width="1.8"/>
     <text x="700" y="174" font-size="10.5" fill="#a33f2e">非法（4 例 + 隐含若干）</text>
     <text x="700" y="194" font-size="9" fill="#8a8578">空串/意外字符/畸形数字/未闭合</text>

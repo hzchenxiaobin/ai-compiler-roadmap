@@ -36,7 +36,7 @@
     <text x="514" y="346" font-size="11.5" fill="#cfe8c6">函数模板/MyVector/非类型/lambda/function</text>
     <text x="514" y="378" font-size="12.5" fill="#45703a">（102/144 = 70.8%）</text>
     <text x="514" y="408" font-size="12" fill="#9fb8a8">阶段五（剩 42 天）：</text>
-    <text x="514" y="430" font-size="11.5" fill="#cfe8c6">智能指针/异常/并发/性能</text>
+    <text x="514" y="430" font-size="11.5" fill="#cfe8c6">现代特性/移动/智能指针/现代库</text>
     <text x="514" y="450" font-size="11.5" fill="#cfe8c8">→ 综合项目（JSON 解析器）</text>
 
     <path d="M 24,516 Q 470,510 905,517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>
@@ -44,6 +44,6 @@
     <text x="46" y="568" font-size="12.5" fill="#3b3a36">"脱稿重写"证明知识内化了（不是背的）；"白板讲差异"证明理解结构了（不是用的）——两关都过才算真的拥有</text>
 
     <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
-    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 103——阶段五开篇：unique_ptr 与所有权（RAII 的自动版）</text>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 103——阶段五开篇：auto / decltype——规则与陷阱</text>
   </g>
 </svg>

@@ -37,7 +37,7 @@
 
     <path d="M 40,428 Q 470,422 905,429 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 464)"/>
     <text x="472" y="456" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">基类指针：统一管理 + 一个限制</text>
-    <text x="70" y="486" font-size="13" fill="#3b3a36">Person* roster[] 统一点名 ✔　基类指针调派生类新函数 ✘（编译拦截）——虚函数（Day 70）将解锁这一格</text>
+    <text x="70" y="486" font-size="13" fill="#3b3a36">Person* roster[] 统一点名 ✔　基类指针调派生类新函数 ✘（编译拦截）——虚函数（Day 68）将解锁这一格</text>
 
     <path d="M 60,514 Q 480,508 905,515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
     <circle cx="250" cy="514" r="5" fill="#8a94a3"/>

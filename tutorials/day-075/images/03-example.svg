@@ -32,11 +32,11 @@
     <path d="M 24,406 Q 470,400 905,407 L 901,510 Q 470,504 26,509 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 464 458)"/>
     <text x="46" y="434" font-size="15.5" font-weight="bold" fill="#2c5a82">功能对照（重构不改行为）</text>
     <text x="46" y="464" font-size="12.5" fill="#3b3a36">两版 pop 都得 3、都能正常工作——重构判据：该有的功能一样不少、不该有的接口一个不多</text>
-    <text x="46" y="488" font-size="12.5" fill="#6b675e">（Day 34 复习日的"功能不变的 重构"标准在第 10 周再次适用）</text>
+    <text x="46" y="488" font-size="12.5" fill="#6b675e">（Day 34 复习日的"功能不变的 重构"标准今天再次适用）</text>
 
     <path d="M 24,530 Q 470,524 905,531 L 901,630 Q 470,624 26,629 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 580)"/>
     <text x="480" y="560" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#55606e">明天项目日预告</text>
-    <text x="480" y="590" text-anchor="middle" font-size="11" fill="#3b3a36">Day 66：MyString v2——手写动态数组的完整拷贝控制（三法则＋运算符集＋自测），第 10 周收官</text>
-    <text x="480" y="612" font-size="12.5" fill="#6b675e">（今天三问 + 本周三件套 + Day 56 运算符全部上阵）</text>
+    <text x="480" y="590" text-anchor="middle" font-size="11" fill="#3b3a36">Day 76（项目日）：图形库 v2——重新设计继承层次、抽出公共基类与接口（第 13 周收官）</text>
+    <text x="480" y="612" text-anchor="middle" font-size="12.5" fill="#6b675e">（今天的三问清单和组合手法明天全部上阵）</text>
   </g>
 </svg>

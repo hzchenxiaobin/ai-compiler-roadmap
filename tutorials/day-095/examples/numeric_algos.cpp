@@ -58,6 +58,6 @@ int main() {
     std::cout << "  均值 = " << mean << std::endl;
     std::cout << "  方差（定义式）= " << var1 << std::endl;
     std::cout << "  方差（E[x²]-mean²）= " << var2 << "（两式一致 ✔）" << std::endl;
-    std::cout << "  标准差 ≈ " << 4.69 << "（sqrt 手查——近似值）" << std::endl;
+    std::cout << "  标准差 ≈ " << 4.88 << "（sqrt 手查——近似值）" << std::endl;
     return 0;
 }

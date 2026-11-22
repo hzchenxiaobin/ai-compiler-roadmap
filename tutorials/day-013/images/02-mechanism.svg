@@ -47,7 +47,7 @@
     <text x="500" y="450" font-size="12.5" fill="#a33f2e">注意：下标来自变量时，防线一会失明——防线三才是根本</text>
 
     <path d="M 40,478 Q 460,472 905,479 L 901,576 Q 460,570 44,575 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 472 527)"/>
-    <text x="472" y="510" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#55606e">数组与函数（明天的预习课）</text>
+    <text x="472" y="510" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#55606e">数组与函数（第 4 周的预习课）</text>
     <text x="70" y="542" font-size="13" fill="#3b3a36">把统计四件套装进函数时，长度不能自动带过去——</text>
     <text x="70" y="566" font-size="13" fill="#3b3a36">要么再加一个 int count 参数（今天的写法），要么等第 4 周指针/第 14 周 vector 讲"自带长度"的集装箱</text>
   </g>

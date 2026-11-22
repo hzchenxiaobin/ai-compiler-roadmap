@@ -37,7 +37,7 @@
     <text x="514" y="348" font-size="11.5" fill="#cfe8c6">sort 要随机访问 / find 只要输入——</text>
     <text x="514" y="368" font-size="11.5" fill="#cfe8c6">　算法签名里的 It 名字就是要求</text>
     <text x="514" y="400" font-size="12.5" fill="#45703a">（88/144 = 61.1%——明天项目日</text>
-    <text x="514" y="420" font-size="12.5" fill="#45703a">　收官第 15 周）</text>
+    <text x="514" y="420" font-size="12.5" fill="#45703a">　LRU 缓存实战）</text>
     <text x="514" y="452" font-size="11.5" fill="#9fb8a8">（iterator_traits + if constexpr 是</text>
     <text x="514" y="470" font-size="11.5" fill="#9fb8a8">　第 17 周模板的先行预告）</text>
 
@@ -46,6 +46,6 @@
     <text x="46" y="568" font-size="12.5" fill="#3b3a36">迭代器类别 = 能力的契约——容器结构决定它能提供哪级；算法按需索取最低级——两头解耦（STL 的设计之美）</text>
 
     <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
-    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 89（项目日）——第 15 周收官项目（关联容器的综合实战）</text>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 89（项目日）——LRU 缓存项目（list + unordered_map 综合实战）</text>
   </g>
 </svg>

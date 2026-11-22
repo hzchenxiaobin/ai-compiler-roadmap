@@ -73,7 +73,7 @@ int main() {
     std::cout << "emplace_back(move(material))：" << std::endl;
     mv.emplace_back(std::move(material));        // 右值 → && 构造（移动路径！）
     std::cout << "  （同一个 emplace——forward 保持来路的类别）" << std::endl;
-    std::cout << "  （这就是 Day 92 vector::emplace_back 快的原理）" << std::endl;
+    std::cout << "  （这就是 Day 79 vector::emplace_back 快的原理）" << std::endl;
 
     std::cout << "\n== 引用折叠速查 ==" << std::endl;
     std::cout << "  T=string  时 T&& = string&&（右值引用）" << std::endl;

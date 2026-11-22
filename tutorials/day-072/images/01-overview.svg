@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
   <rect x="4" y="4" width="952" height="552" rx="14" fill="#fffdf7"/>
   <g stroke-linecap="round" stroke-linejoin="round">
-    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 72 项目日：图形库 v3——第 12 周总装大考</text>
+    <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 72 项目日：图形库 v1——第 12 周总装大考</text>
     <path d="M 300,60 Q 480,52 660,61" fill="none" stroke="#e0955f" stroke-width="3"/>
-    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">六天零件（继承/多态/抽象/虚析构/转换/设计）一次装齐——计划第 12 周的收官验收</text>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">五天零件（继承/多态/虚析构/抽象/多态容器）一次装齐——计划第 12 周的收官验收</text>
 
     <path d="M 40,116 Q 470,110 905,117 L 901,310 Q 470,304 44,309 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 213)"/>
     <text x="472" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">零件清单（每天一件，今天全用上）</text>
@@ -35,7 +35,7 @@
     <circle cx="440" cy="520" r="5" fill="#e0955f"/>
     <text x="440" y="540" text-anchor="middle" font-size="12" font-weight="bold" fill="#9c5a22">Day 72（第 12 周收官）</text>
     <circle cx="680" cy="520" r="5" fill="#5b8db8"/>
-    <text x="680" y="540" text-anchor="middle" font-size="12" fill="#3b3a36">第 10 周 拷贝控制</text>
+    <text x="680" y="540" text-anchor="middle" font-size="12" fill="#3b3a36">第 13 周 虚表机制</text>
     <circle cx="860" cy="520" r="5" fill="#5b8db8"/>
     <text x="860" y="540" text-anchor="middle" font-size="12" fill="#3b3a36">……Day 78 里程碑</text>
   </g>

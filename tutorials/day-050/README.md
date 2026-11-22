@@ -55,7 +55,7 @@
 
 按图逐步讲：
 
-1. **看时刻表记两条规律**：声明即出生（不是用到才出生）；同块内先出生的后销毁——第 10 周析构函数的主角戏码今天先看预告片；
+1. **看时刻表记两条规律**：声明即出生（不是用到才出生）；同块内先出生的后销毁——明天（Day 51）析构函数的主角戏码今天先看预告片；
 2. **三构造看实参**：无参→默认、三参→完整版、单参→委托版；测试非法输入（13 月 99 日）验证了构造期校验；
 3. **红线只在列表**：const 成员的执法错误原文值得抄录——它把"两种初始化的差别"从风格问题升级成了合法性问题；
 4. **出生即就绪的意义**：昨天的隐患（忘 set_size）今天从语言层面不存在——"忘"这个动作没有发生的机会。
@@ -65,7 +65,7 @@
 ### 5.1 准备文件
 
 ```bash
-cd ai-compiler-roadmap/tutorials/day-038/examples
+cd ai-compiler-roadmap/tutorials/day-050/examples
 ```
 
 三个程序：`date_class.cpp`、`ctor_order.cpp`、`init_list_vs_assign.cpp`。
@@ -180,7 +180,7 @@ error: constructor for 'WithConst' must explicitly initialize the const member '
 
 ### 必做练习（计划指定：Date 类多种构造）
 
-给 Date 再加两个构造：`Date(int y, int m)`（委托给三参，日默认 1）和拷贝式构造 `Date(const Date& other)`（照抄另一个 Date——拷贝构造的正式登场在第 11 周，今天先混脸熟）。预期产出：五种出生各打印一行，非法输入仍被拦。
+给 Date 再加两个构造：`Date(int y, int m)`（委托给三参，日默认 1）和拷贝式构造 `Date(const Date& other)`（照抄另一个 Date——拷贝构造的正式登场在第 10 周（Day 55），今天先混脸熟）。预期产出：五种出生各打印一行，非法输入仍被拦。
 
 ### 选做挑战
 

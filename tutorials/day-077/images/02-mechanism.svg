@@ -8,7 +8,7 @@
     <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">"circle 2" → Circle(2) 的翻译过程</text>
     <rect x="90" y="146" width="780" height="150" fill="#33413a"/>
     <text x="480" y="174" font-size="11.5" fill="#cfe8c6">std::unique_ptr&lt;LabeledShape&gt; make_shape(const std::string&amp; line) {</text>
-    <text x="480" y="198" font-size="11.5" fill="#9fb8a8">　std::istringstream iss(line);　std::string kind;　iss &gt;&gt; kind;　// ①拆第一个词</text>
+    <text x="480" y="198" font-size="11.5" fill="#9fb8a8">　std::istringstream iss(line); std::string kind; iss &gt;&gt; kind; // ①拆首个词</text>
     <text x="480" y="222" font-size="11.5" fill="#9fb8a8">　if (kind == "circle") { double r; if (iss &gt;&gt; r)　　// ②按词型取参</text>
     <text x="480" y="246" font-size="11.5" fill="#cfe8c6">　　return std::make_unique&lt;Circle&gt;(r); }　　　　　　　// ③造多态对象</text>
     <text x="480" y="272" font-size="11.5" fill="#9fb8a8">　…（rect/triangle 同款）　return nullptr;　}　　　　　　// ④都不匹配 → 空</text>
@@ -22,7 +22,7 @@
     <text x="64" y="482" font-size="12" fill="#8a8578">（实测 "hexagon 6" 第 5 行被跳 ✔）</text>
     <text x="64" y="512" font-size="12.5" fill="#45703a">闸三：缺参数 → 解析失败 → 跳</text>
     <text x="64" y="534" font-size="12" fill="#8a8578">（实测 "circle" 第 6 行被跳 ✔）</text>
-    <text x="64" y="566" font-size="11.5" fill="#8a8578">（跳过都打日志——静默容错是坑）</text>
+    <text x="64" y="566" font-size="11.5" fill="#8a8578">（坏行打日志——静默容错是坑）</text>
 
     <path d="M 550,344 Q 730,338 905,344 Q 908,470 905,576 Q 730,582 552,576 Q 547,470 550,344 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 460)"/>
     <text x="727" y="374" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">v1→v2→v3 的演进史</text>

@@ -38,7 +38,7 @@
     <circle cx="440" cy="514" r="5" fill="#c96a5a"/>
     <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 102（阶段四毕业）</text>
     <circle cx="690" cy="514" r="5" fill="#5b8db8"/>
-    <text x="690" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">第 18 周 智能指针</text>
+    <text x="690" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">第 18 周 现代特性</text>
     <circle cx="870" cy="514" r="5" fill="#e0955f"/>
     <text x="870" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">JSON 项目</text>
   </g>

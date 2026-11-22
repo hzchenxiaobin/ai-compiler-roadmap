@@ -12,7 +12,7 @@
     <text x="290" y="218" font-size="10.5" fill="#f0c9c0">②逐字节复制（memcpy）</text>
     <text x="290" y="240" font-size="10.5" fill="#8a8578">③生命期管理（析构回收）</text>
     <text x="290" y="268" font-size="10.5" fill="#9fb8a8">× 40000 词段/轮（键+值）</text>
-    <text x="290" y="296" font-size="10" fill="#8a8578">（6 万次分配+复制/轮——A 版的大头）</text>
+    <text x="290" y="296" font-size="10" fill="#8a8578">（4 万次分配+复制/轮——A 版的大头）</text>
     <rect x="510" y="146" width="340" height="170" fill="#33413a"/>
     <text x="680" y="172" font-size="10.5" fill="#9fb8a8">string_view::substr：</text>
     <text x="680" y="196" font-size="10.5" fill="#cfe8c8">①记指针+长度（16B 栈上）</text>
@@ -28,7 +28,7 @@
     <rect x="64" y="412" width="430" height="150" fill="#33413a"/>
     <text x="279" y="436" font-size="10.5" fill="#9fb8a8">无 reserve：1→2→4→8→…（log₂ 轮）</text>
     <text x="279" y="458" font-size="10.5" fill="#f0c9c0">每轮：新分配 + 全员搬家 + 旧回收</text>
-    <text x="279" y="480" font-size="10.5" fill="#8a8578">（6 万元素的最后一轮搬家最贵）</text>
+    <text x="279" y="480" font-size="10.5" fill="#8a8578">（8 万元素的最后一轮搬家最贵）</text>
     <text x="279" y="506" font-size="10.5" fill="#cfe8c8">reserve(预估)：一次到位</text>
     <text x="279" y="528" font-size="10" fill="#8a8578">（src.size()/6 的启发式——键值对的均长）</text>
 

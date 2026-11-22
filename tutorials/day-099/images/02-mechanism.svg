@@ -9,7 +9,7 @@
     <rect x="110" y="146" width="340" height="150" fill="#d8ecce" stroke="#7aa663" stroke-width="2.2"/>
     <text x="280" y="174" font-size="11" fill="#45703a">非类型参数版（FixedStack）：栈上</text>
     <rect x="170" y="188" width="220" height="34" fill="#d8ecce" stroke="#7aa663" stroke-width="1.6"/>
-    <text x="280" y="210" font-size="10" fill="#45703a">data_[100]（404 字节连排）</text>
+    <text x="280" y="210" font-size="10" fill="#45703a" text-anchor="middle">data_[100]（404 字节连排）</text>
     <text x="280" y="248" font-size="10" fill="#8a8578">（零 new/delete——析构免费）</text>
     <text x="280" y="272" font-size="10" fill="#8a8578">（容量定死——满了只能拒绝）</text>
     <rect x="510" y="146" width="340" height="150" fill="#f9d9b8" stroke="#e0955f" stroke-width="2.2"/>

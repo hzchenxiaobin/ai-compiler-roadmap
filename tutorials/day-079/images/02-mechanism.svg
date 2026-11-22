@@ -21,7 +21,7 @@
     <rect x="490" y="146" width="90" height="20" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2"/>
     <text x="535" y="161" font-size="8" fill="#a33f2e">64</text>
     <text x="640" y="161" font-size="10" fill="#8a8578">（size=40 住 64 格）</text>
-    <text x="472" y="200" font-size="12" fill="#6b675e">每次翻倍 → 扩容次数 log₂(40) ≈ 6 次阶梯</text>
+    <text x="472" y="200" font-size="12" fill="#6b675e">每次翻倍 → 扩容次数 7 次 = log₂(64)（实测 7 级阶梯）</text>
     <text x="472" y="222" font-size="12" fill="#6b675e">（总搬运 1+2+4+8+16+32 = 63 ＜ 40×2——</text>
     <text x="472" y="242" font-size="12" fill="#6b675e">　摊还保证平均每次 push O(1)）</text>
     <text x="472" y="280" font-size="12" fill="#3b3a36">扩容的搬运用移动而非拷贝（Day 111 的预告）——</text>
@@ -32,14 +32,14 @@
     <text x="280" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">push_back vs emplace_back</text>
     <rect x="64" y="412" width="210" height="90" fill="#33413a"/>
     <text x="169" y="436" font-size="10" fill="#9fb8a8">push_back(Big())：</text>
-    <text x="169" y="456" font-size="10" fill="#cfe8c6">栈上构造临时 → 拷贝进容器</text>
+    <text x="169" y="456" font-size="10" fill="#cfe8c6">栈上构造→拷贝进容器</text>
     <text x="169" y="476" font-size="10" fill="#f0c9c0">（构造 1 + 拷贝 1）</text>
     <rect x="294" y="412" width="210" height="90" fill="#33413a"/>
     <text x="399" y="436" font-size="10" fill="#9fb8a8">emplace_back()：</text>
     <text x="399" y="456" font-size="10" fill="#cfe8c6">容器里原地构造</text>
     <text x="399" y="476" font-size="10" fill="#f0c9c0">（构造 1 + 拷贝 0！）</text>
     <text x="280" y="530" font-size="12" fill="#45703a">选型：已有对象→push；现场造→emplace</text>
-    <text x="280" y="554" font-size="11" fill="#8a8578">（emplace 把参数包转发给构造函数——模板进阶的预告）</text>
+    <text x="280" y="554" font-size="11" fill="#8a8578">（参数包转发给构造函数——模板进阶的预告）</text>
 
     <path d="M 550,364 Q 730,358 905,364 Q 908,480 905,576 Q 730,582 552,576 Q 547,480 550,364 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 470)"/>
     <text x="727" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">官方版 vs 手写 v2 对照表</text>

@@ -16,7 +16,7 @@
     <text x="54" y="292" font-size="11.5" fill="#cfe8c6">圆(r=2)：面积 12.5664，周长 12.5664</text>
     <text x="54" y="312" font-size="11.5" fill="#cfe8c6">矩形(3×4)：面积 12，周长 14</text>
     <text x="54" y="332" font-size="11.5" fill="#f0c9c0">正方形(5×5)：面积 25，周长 20</text>
-    <text x="54" y="350" font-size="10.5" fill="#9fb8a8">（委托构造自报家门——修好 v1 遗留）</text>
+    <text x="54" y="350" font-size="10.5" fill="#9fb8a8">（委托构造自报家门——格式化单点在基类）</text>
     <text x="54" y="372" font-size="11.5" fill="#cfe8c6">三角形(3,4,5)：面积 6，周长 12</text>
     <text x="54" y="392" font-size="11.5" fill="#cfe8c6">椭圆(4,2)：面积 25.1327，周长 19.3769</text>
     <text x="54" y="422" font-size="12" fill="#9fb8a8">== 按面积排序后 ==</text>
@@ -43,7 +43,7 @@
 
     <path d="M 24,526 Q 470,520 905,527 L 901,590 Q 470,584 26,589 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 558)"/>
     <text x="46" y="552" font-size="15.5" font-weight="bold" fill="#9c5a22">项目日判据回顾</text>
-    <text x="46" y="578" font-size="12.5" fill="#3b3a36">行为不丢（v1 全功能保留+Square 修正）+ 结构变优（三层/设施单点）+ 三证齐全（日志/-Wall/ASan）——重构的三重达标</text>
+    <text x="46" y="578" font-size="12.5" fill="#3b3a36">行为不丢（v1 全功能原样保留）+ 结构变优（三层/设施单点）+ 三证齐全（日志/-Wall/ASan）——重构的三重达标</text>
 
     <path d="M 24,602 Q 470,596 905,603 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 626)"/>
     <text x="480" y="628" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 77（项目日）图形库 v3——从文件读取图形描述、多态创建、渲染到文本界面</text>

@@ -31,10 +31,10 @@
     <text x="514" y="218" font-size="11.5" fill="#cfe8c6">92 remove_if 的删除谓词</text>
     <text x="514" y="238" font-size="11.5" fill="#cfe8c6">93 sort 的比较谓词（今天）</text>
     <text x="514" y="268" font-size="12" fill="#9fb8a8">历史回响：</text>
-    <text x="514" y="290" font-size="11.5" fill="#cfe8c6">Day 16 首次手写 sort 比较器</text>
-    <text x="514" y="310" font-size="11" fill="#9fb8a8">　（当时 sort(v.rbegin(), v.rend())）</text>
-    <text x="514" y="338" font-size="11.5" fill="#cfe8c6">Day 48 起多项目反复用两级裁判</text>
-    <text x="514" y="358" font-size="11" fill="#9fb8a8">　（图形库 sort/词频 v2）——今天正名</text>
+    <text x="514" y="290" font-size="11.5" fill="#cfe8c6">Day 72 首次手写 sort 比较器</text>
+    <text x="514" y="310" font-size="11" fill="#9fb8a8">　（图形库按面积排序——单裁）</text>
+    <text x="514" y="338" font-size="11.5" fill="#cfe8c6">Day 90 词频 v2 首用两级裁判</text>
+    <text x="514" y="358" font-size="11" fill="#9fb8a8">　（rbegin 倒序见 Day 80）——今天正名</text>
     <text x="514" y="392" font-size="12.5" fill="#45703a">（93/144 = 64.6%——</text>
     <text x="514" y="412" font-size="12.5" fill="#45703a">　阶段四 STL 的核心周过半）</text>
     <text x="514" y="444" font-size="11.5" fill="#9fb8a8">明天：lower_bound/upper_bound/堆</text>

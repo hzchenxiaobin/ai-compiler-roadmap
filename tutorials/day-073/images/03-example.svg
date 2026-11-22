@@ -35,9 +35,9 @@
     <text x="514" y="330" font-size="10.5" fill="#cfe8c6">　void* const**&gt;(p);</text>
     <text x="514" y="350" font-size="10.5" fill="#cfe8c6">vt[0]、vt[1]、vt[2]…</text>
     <text x="514" y="380" font-size="11" fill="#9fb8a8">诚实边界：</text>
-    <text x="514" y="402" font-size="11" fill="#9fb8a8">（Itanium 槽位含 this 调整——</text>
+    <text x="514" y="402" font-size="11" fill="#9fb8a8">（多继承下槽位可能含 this 调整——</text>
     <text x="514" y="420" font-size="11" fill="#9fb8a8">　探针只证明"表存在且连续"，</text>
-    <text x="514" y="438" font-size="11" fill="#9fb8a8">　不解析槽内布局）</text>
+    <text x="514" y="438" font-size="11" fill="#9fb8a8">　本例单继承，槽位即函数本体）</text>
     <text x="514" y="460" font-size="11" fill="#9fb8a8">（UB 警告：探针仅教学！）</text>
 
     <path d="M 24,506 Q 470,500 905,507 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 543)"/>

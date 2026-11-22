@@ -40,10 +40,10 @@
     <path d="M 550,364 Q 730,358 905,364 Q 908,480 905,576 Q 730,582 552,576 Q 547,480 550,364 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 470)"/>
     <text x="727" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">noexcept 没标的后果</text>
     <rect x="572" y="412" width="320" height="140" fill="#33413a"/>
-    <text x="732" y="438" font-size="10.5" fill="#9fb8a8">MyString(MyString&amp;&amp; o) /* 没标 */</text>
-    <text x="732" y="462" font-size="10.5" fill="#f0c9c0">vector 扩容 → 检查 is_nothrow_move</text>
-    <text x="732" y="482" font-size="10.5" fill="#f0c9c0">　→ false → 退拷贝搬家（慢！）</text>
-    <text x="732" y="510" font-size="10.5" fill="#cfe8c6">标了 noexcept → 移动搬家（快 ✔）</text>
-    <text x="732" y="536" font-size="10" fill="#8a8578">（一句 noexcept 决定快慢——性价比之王）</text>
+    <text x="588" y="438" font-size="10.5" fill="#9fb8a8">MyString(MyString&amp;&amp; o) /* 没标 */</text>
+    <text x="588" y="462" font-size="10.5" fill="#f0c9c0">vector 扩容 → 检查 is_nothrow_move</text>
+    <text x="588" y="482" font-size="10.5" fill="#f0c9c0">　→ false → 退拷贝搬家（慢！）</text>
+    <text x="588" y="510" font-size="10.5" fill="#cfe8c6">标了 noexcept → 移动搬家（快 ✔）</text>
+    <text x="588" y="536" font-size="10" fill="#8a8578">（一句 noexcept 决定快慢——性价比之王）</text>
   </g>
 </svg>

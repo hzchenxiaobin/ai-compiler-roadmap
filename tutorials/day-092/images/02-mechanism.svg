@@ -11,7 +11,7 @@
     <rect x="100" y="200" width="500" height="40" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
     <text x="350" y="225" font-size="11" fill="#45703a">remove 后逻辑区：[1][2][3][5][3]　（留下的前移）</text>
     <rect x="600" y="200" width="200" height="40" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.2" stroke-dasharray="6 3"/>
-    <text x="700" y="225" font-size="10.5" fill="#a33f2e">垃圾区 [5,7)：4 3（遗留）</text>
+    <text x="700" y="225" font-size="10.5" fill="#a33f2e">垃圾区 [5,7)：4 3</text>
     <text x="472" y="268" font-size="12" fill="#3b3a36">size 仍 7！remove 只做两件事：把非 4 前移 + 返回新逻辑尾（位置 5）</text>
     <text x="472" y="296" font-size="12" fill="#a33f2e">垃圾区的内容是"未指定"——erase(new_end, v.end()) 一刀切掉才是真删</text>
     <text x="472" y="324" font-size="11" fill="#8a8578">（实测：erase 后 size=5 [1 2 3 5 3] ✔）</text>
@@ -29,7 +29,7 @@
     <rect x="572" y="412" width="320" height="120" fill="#33413a"/>
     <text x="732" y="438" font-size="10.5" fill="#9fb8a8">{1,1,2,2,2,3,1,1}</text>
     <text x="732" y="462" font-size="10.5" fill="#cfe8c6">unique+erase → {1,2,3,1}</text>
-    <text x="732" y="482" font-size="10" fill="#f0c9c0">（尾部的 1 没去——和头部的 1 不相邻！）</text>
+    <text x="732" y="482" font-size="10" fill="#f0c9c0">（尾部 1 没去：与头 1 不相邻！）</text>
     <text x="732" y="508" font-size="10.5" fill="#cfe8c6">sort 后再 unique → {1,2,3} ✔</text>
     <text x="727" y="560" font-size="11" fill="#8a8578">（全量去重 = sort+unique+erase 三连）</text>
   </g>

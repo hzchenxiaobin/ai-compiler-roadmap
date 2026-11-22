@@ -27,7 +27,7 @@
 
     <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
     <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">悬空指针初见</text>
-    <text x="70" y="468" font-size="13" fill="#3b3a36">delete 后指针本身的值没变（还存着旧地址）——但解引用是 UB；明天工具课 + Day 49 的智能指针根治它</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">delete 后指针本身的值没变（还存着旧地址）——但解引用是 UB；明天工具课 + Day 115 的智能指针根治它</text>
     <text x="70" y="490" font-size="12.5" fill="#6b675e">（今天先记三条纪律；"忘了配对怎么办"是明天的 ASan 课）</text>
 
     <path d="M 60,514 Q 480,508 905,515" fill="none" stroke="#8a8578" stroke-width="2.6"/>

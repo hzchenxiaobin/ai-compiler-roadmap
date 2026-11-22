@@ -32,13 +32,13 @@
 
     <path d="M 60,514 Q 480,508 905,515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
     <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
-    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 67~70 ✓</text>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 67~68 ✓</text>
     <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
     <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
     <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 69（今天）</text>
     <circle cx="650" cy="514" r="5" fill="#5b8db8"/>
     <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 74 转换与设计</text>
     <circle cx="850" cy="514" r="5" fill="#e0955f"/>
-    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 72 里程碑</text>
+    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 78 里程碑</text>
   </g>
 </svg>

@@ -9,7 +9,7 @@
     <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">实验 1：统计四件套</text>
     <rect x="38" y="146" width="420" height="170" rx="6" fill="#33413a"/>
     <text x="54" y="172" font-size="12.5" fill="#cfe8c6">8 周成绩：12 25 9 31 18 27 22 35</text>
-    <text x="54" y="196" font-size="12.5" fill="#cfe8c6">最大 = 35（第 12 周）</text>
+    <text x="54" y="196" font-size="12.5" fill="#cfe8c6">最大 = 35（第 8 周）</text>
     <text x="54" y="220" font-size="12.5" fill="#cfe8c6">最小 = 9（第 3 周）</text>
     <text x="54" y="244" font-size="12.5" fill="#cfe8c6">总和 = 179</text>
     <text x="54" y="268" font-size="12.5" fill="#cfe8c6">平均 = 22.375</text>
@@ -33,7 +33,7 @@
     <text x="46" y="436" font-size="16" font-weight="bold" fill="#a33f2e">实验 3：越界的三种命运（全部真实）</text>
     <text x="46" y="466" font-size="13" fill="#3b3a36">普通编译运行：三行照常打印、exit=0——静默踩踏，最危险的形态</text>
     <text x="46" y="492" font-size="13" fill="#3b3a36">-Wall：编译时警告 array index 8 is past the end（常量下标才抓得到）</text>
-    <text x="500" y="466" font-size="13" fill="#a33f2e">-fsanitize=address：当场击落（exit=141），报告如下</text>
+    <text x="500" y="466" font-size="13" fill="#a33f2e">-fsanitize=address：当场击落（exit=134），报告如下</text>
     <text x="500" y="492" font-size="13" fill="#6b675e">ASan 的存在证明：越界不是"没报错就没发生"</text>
 
     <rect x="24" y="526" width="912" height="110" rx="8" fill="#33413a"/>

@@ -25,8 +25,8 @@
     <rect x="502" y="146" width="420" height="300" rx="6" fill="#33413a"/>
     <text x="514" y="172" font-size="12" fill="#9fb8a8">打开 b 的 delete 注释后：</text>
     <text x="514" y="200" font-size="12" fill="#9fb8a8">普通编译：</text>
-    <text x="514" y="222" font-size="11.5" fill="#cfe8c6">（打出前半段输出后静默结束</text>
-    <text x="514" y="240" font-size="11.5" fill="#cfe8c6">　exit=0——又骗了一次）</text>
+    <text x="514" y="222" font-size="11.5" fill="#cfe8c6">（打印到"delete[] a.data 完成"即崩</text>
+    <text x="514" y="240" font-size="11.5" fill="#cfe8c6">　Abort trap:5、exit=133——UB 翻脸）</text>
     <text x="514" y="274" font-size="12" fill="#9fb8a8">ASan 版：</text>
     <text x="514" y="298" font-size="11" fill="#ffd7d0">ERROR: attempting double-free</text>
     <text x="514" y="316" font-size="11" fill="#9fb8a8">　on 0x6020000009f0</text>

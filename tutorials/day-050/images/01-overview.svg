@@ -23,7 +23,7 @@
     <text x="594" y="246" font-size="12.5" fill="#3b3a36">成员"出生即带值"，不是"出生后再赋值"</text>
     <text x="594" y="276" font-size="12.5" fill="#a33f2e">const 成员只认这条路——</text>
     <text x="594" y="298" font-size="12.5" fill="#a33f2e">构造体内赋值 = 改 const，编译报错</text>
-    <text x="594" y="334" font-size="12" fill="#8a8578">（实测错误原文见 5.3；引用成员同理，</text>
+    <text x="594" y="334" font-size="12" fill="#8a8578">（实测错误原文见 5.4；引用成员同理，</text>
     <text x="594" y="356" font-size="12" fill="#8a8578">第 10 周还会回来深化）</text>
 
     <path d="M 40,408 Q 470,402 905,409 L 901,494 Q 470,488 44,493 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.2 472 451)"/>

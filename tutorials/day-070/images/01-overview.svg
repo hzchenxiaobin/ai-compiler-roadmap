@@ -33,13 +33,13 @@
 
     <path d="M 60,514 Q 480,508 905,515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
     <circle cx="250" cy="514" r="5" fill="#8a94a3"/>
-    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 67~68 ✓</text>
+    <text x="250" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 67~69 ✓</text>
     <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
     <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
     <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 70（今天）</text>
     <circle cx="640" cy="514" r="5" fill="#5b8db8"/>
-    <text x="640" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 69 虚析构</text>
+    <text x="640" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 72 项目日</text>
     <circle cx="850" cy="514" r="5" fill="#e0955f"/>
-    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 72 里程碑</text>
+    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 78 里程碑</text>
   </g>
 </svg>

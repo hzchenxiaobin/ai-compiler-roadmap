@@ -41,6 +41,6 @@
     <text x="732" y="478" font-size="10.5" fill="#9fb8a8">}</text>
     <text x="732" y="504" font-size="10.5" fill="#cfe8c8">（above 引用——累计结果出去）</text>
     <text x="732" y="522" font-size="10.5" fill="#cfe8c8">（threshold 值——只读参数快照）</text>
-    <text x="732" y="544" font-size="10" fill="#8a8578">（本周 for_each/count_if 的日常姿势）</text>
+    <text x="732" y="544" font-size="10" fill="#8a8578">（for_each/count_if 日常姿势）</text>
   </g>
 </svg>

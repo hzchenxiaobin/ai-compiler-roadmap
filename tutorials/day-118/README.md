@@ -7,7 +7,7 @@
 
 ## 1. 今天解决什么问题？
 
-智能指针默认管 new/delete——但很多资源的"关"不是 delete：**FILE\* 要 fclose**、malloc 的要 free、socket 要 closesocket……**自定义删除器**把"怎么关"写进类型——任何"打开-使用-关闭"的资源都能 RAII 化。计划指定的 **FILE\* 封装**是今天的骨架：Day 51 手写过 FileTag（三行守卫）——今天 `unique_ptr<FILE, FileCloser>` 一行搞定（RAII 从"管内存"升级成"管一切"）。
+智能指针默认管 new/delete——但很多资源的"关"不是 delete：**FILE\* 要 fclose**、malloc 的要 free、socket 要 closesocket……**自定义删除器**把"怎么关"写进类型——任何"打开-使用-关闭"的资源都能 RAII 化。计划指定的 **FILE\* 封装**是今天的骨架：Day 51 手写过 FileGuard（三行守卫）——今天 `unique_ptr<FILE, FileCloser>` 一行搞定（RAII 从"管内存"升级成"管一切"）。
 
 配套讲 make_unique/make_shared 的**实质优势**（不只是语法糖——异常安全是 Effective 条款 21 的正题）和数组版本。
 
@@ -29,7 +29,7 @@
 
 - **一句通俗解释**：`unique_ptr<FILE, FileCloser> f(fopen(...))`——打开即封装、出块自动 **fclose**（不是 delete！怎么关由删除器说了算）。
 - **一个类比**：租车还车——普通车（new/delete）还车是"原样归还"；特殊车（FILE\*）还车要"熄火+拔钥匙+交费"（fclose）——还车流程（删除器）因车而异。
-- **对应到技术上是**：实测——三版删除器（函数指针/函子/lambda）**都打出关闭日志**（[fclose] ×2 + [fclose-lambda]）；写完出块自动关；**读回验证**：重新 fopen 读出 "hello RAII" ✔（关了再开读——RAII 封装后读写两不误）。**Day 51 的闭环**：FileTag 手写三行（构造打开/析构关闭/中间用）——今天一行（类型里带策略）；手写版教会的是**原理**、删除器版是**通用化**。**忘记 fclose 不存在**：出块必关（哪怕中途 return/抛异常——RAII 的全覆盖）。类比的边界：fopen 失败返回 nullptr——删除器要**判空**（今天的 `if (f)`——fclose(nullptr) 是 UB）。
+- **对应到技术上是**：实测——三版删除器（函数指针/函子/lambda）**都打出关闭日志**（[fclose] ×2 + [fclose-lambda]）；写完出块自动关；**读回验证**：重新 fopen 读出 "hello RAII" ✔（关了再开读——RAII 封装后读写两不误）。**Day 51 的闭环**：FileGuard 手写三行（构造打开/析构关闭/中间用）——今天一行（类型里带策略）；手写版教会的是**原理**、删除器版是**通用化**。**忘记 fclose 不存在**：出块必关（哪怕中途 return/抛异常——RAII 的全覆盖）。类比的边界：fopen 失败返回 nullptr——删除器要**判空**（今天的 `if (f)`——fclose(nullptr) 是 UB）。
 - **常见误解**："unique_ptr 只能管 new 出来的"——默认是；**删除器一换什么都能管**（今天的 FILE\* 就是证明）。
 
 ### 3.2 删除器的三种形态
@@ -43,7 +43,7 @@
 
 - **一句通俗解释**：make_unique 不只是少打字——还有**异常安全**（C++17 前的经典坑：`foo(unique_ptr<T>(new T), bar())` 中间可能泄漏）；数组版配 delete[]。
 - **一个类比**：代客泊车（make）vs 自己停（new）——不只省事，还保证钥匙不中途丢（异常安全）。
-- **对应到技术上是**：实测——`make_unique<string>("make 版")` vs `unique_ptr<string>(new string("裸 new 版"))` **都能工作**（功能同）；**优势一**：省类型书写（new 版写两遍 string）；**优势二**：异常安全——C++17 前求值顺序未定，`foo(unique_ptr<T>(new T), may_throw())` 可能 new 完还没进 unique_ptr 就被异常打断（泄漏）；C++17 修了求值顺序但 make 依然是**无脑安全**的选择（Effective 21）。**数组版**：`make_unique<int[]>(10)` + 下标访问（arr[0]=42 ✔）——删除器自动 **delete[]**（数组要配对）；**但优先 vector**（Day 79 起的主力——数组版是"和 C API 交互"等特殊场景）。**make_shared 的复利**：对象+控制块一次分配（Day 116 讲过）。类比的边界：make_shared 不能直接配自定义删除器（C++20 才补上 make_shared_for_overwrite 等——今天用 unique 演示删除器正是原因之一）。
+- **对应到技术上是**：实测——`make_unique<string>("make 版")` vs `unique_ptr<string>(new string("裸 new 版"))` **都能工作**（功能同）；**优势一**：省类型书写（new 版写两遍 string）；**优势二**：异常安全——C++17 前求值顺序未定，`foo(unique_ptr<T>(new T), may_throw())` 可能 new 完还没进 unique_ptr 就被异常打断（泄漏）；C++17 修了求值顺序但 make 依然是**无脑安全**的选择（Effective 21）。**数组版**：`make_unique<int[]>(10)` + 下标访问（arr[0]=42 ✔）——删除器自动 **delete[]**（数组要配对）；**但优先 vector**（Day 79 起的主力——数组版是"和 C API 交互"等特殊场景）。**make_shared 的复利**：对象+控制块一次分配（Day 116 讲过）。类比的边界：make_shared（含 for_overwrite 版）都不接受自定义删除器——要删除器只能用 shared_ptr 构造函数传，或像今天这样用 unique_ptr。
 - **常见误解**："make 就是语法糖"——异常安全是**实质差异**（历史坑的现代解法）；裸 new 版留给"面试要求解释为什么"的场景。
 
 ## 4. 图解核心机制
@@ -57,7 +57,7 @@
 1. **看两件套的分工**：指针管"指向谁"、删除器管"怎么关"——策略进类型（编译期装配）；
 2. **读资源清单**：FILE\*/malloc/socket/mutex/连接——"打开-关闭"模式的**全部**都能套今天的模板；
 3. **对比两家的删除器**：unique 编译期（类型带策略零开销）/ shared 运行期（类型统一有间接）——按需求选；
-4. **连 Day 51**：FileTag 的三行 → 今天的一行——手写教会原理、删除器完成通用化。
+4. **连 Day 51**：FileGuard 的三行 → 今天的一行——手写教会原理、删除器完成通用化。
 
 ## 5. 动手实践：完成一个最小可运行例子
 
@@ -127,7 +127,7 @@ g++ -Wall -std=c++17 file_raii.cpp -o fr && ./fr
 
 ![三版删除器战报](images/03-example.svg)
 
-**图 3**：左上完整输出（FILE RAII/make 对照/数组/读回四段）；右侧是 RAII 学习史的闭环（Day 51 FileTag → 今天的通用化）和资源清单；下方橙卡是删除器的哲学。
+**图 3**：左上完整输出（FILE RAII/make 对照/数组/读回四段）；右侧是 RAII 学习史的闭环（Day 51 FileGuard → 今天的通用化）和资源清单；下方橙卡是删除器的哲学。
 
 ### 5.4 修改一个输入再观察：忘记判空的删除器
 

@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" font-family="'Kaiti SC','KaiTi','Comic Sans MS',cursive">
   <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
   <g stroke-linecap="round" stroke-linejoin="round">
-    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">六段演示、三文件与 16 周战绩</text>
+    <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">七段演示、三文件与 16 周战绩</text>
     <path d="M 380,58 Q 480,52 580,59" fill="none" stroke="#7aa663" stroke-width="3"/>
     <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 -std=c++17；-Wall 零警告 + ASan 零报错）</text>
 
@@ -45,6 +45,6 @@
     <text x="46" y="568" font-size="12.5" fill="#3b3a36">数据/接口/实现三分——改一处不牵全身；这是从"练习题"到"工程项目"的组织跨越（第 5 周函数分解的文件级版本）</text>
 
     <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
-    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 97（周日）复盘日——算法周笔记整理（阶段四第三周收官）</text>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 97 函数模板——实参推导与泛型 myMax/mySum（第 17 周开篇）</text>
   </g>
 </svg>

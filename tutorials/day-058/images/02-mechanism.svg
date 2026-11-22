@@ -11,7 +11,7 @@
     <text x="480" y="194" font-size="11.5" fill="#cfe8c6">　　static Logger the_one;　←首次调用初始化（仅一次）</text>
     <text x="480" y="216" font-size="11.5" fill="#cfe8c6">　　return the_one;　　　　　←之后每次都返回同一个</text>
     <text x="480" y="238" font-size="11.5" fill="#cfe8c6">}</text>
-    <text x="472" y="286" font-size="12" fill="#9fb8a8">（C++11 起线程安全——并发下也只建一次；Day 25 周并发时回来点题）</text>
+    <text x="472" y="286" font-size="12" fill="#9fb8a8">（C++11 起线程安全——并发下也只建一次）</text>
 
     <path d="M 40,324 Q 280,318 520,324 Q 524,440 520,556 Q 280,562 42,556 Q 36,440 40,324 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 440)"/>
     <text x="280" y="354" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">守卫的两条路线</text>

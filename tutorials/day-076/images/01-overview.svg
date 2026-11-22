@@ -12,9 +12,9 @@
     <text x="480" y="198" font-size="9.5" fill="#8a8578">（最小面——纯 Shape* 只认这两个）</text>
     <rect x="330" y="216" width="300" height="44" fill="#f9d9b8" stroke="#e0955f" stroke-width="2.2"/>
     <text x="480" y="236" font-size="11" fill="#9c5a22">②公共基类 LabeledShape：id_/dims_ + report()</text>
-    <text x="480" y="252" font-size="9.5" fill="#8a8578">（设施上提——杠杆打印吃虚函数的饭）</text>
+    <text x="480" y="252" font-size="9.5" fill="#8a8578">（设施上提——报表吃虚函数的饭）</text>
     <rect x="130" y="270" width="180" height="36" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
-    <text x="220" y="288" font-size="10" fill="#45703a">Polygon（直边中间层）</text>
+    <text x="220" y="288" font-size="10" fill="#45703a">Polygon（中间层）</text>
     <rect x="330" y="270" width="140" height="36" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
     <text x="400" y="288" font-size="10" fill="#45703a">Circle</text>
     <rect x="490" y="270" width="140" height="36" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>

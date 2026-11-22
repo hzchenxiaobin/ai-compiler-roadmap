@@ -9,7 +9,7 @@
 
 昨天的 Shape 用了一个纯虚 `area() = 0`——今天正式回答三个问题：**为什么有的函数该纯虚**（接口强制：漏实现编译不过）；**基类还能有非虚函数吗**（能——report 的杠杆：公共逻辑写一遍，行为由派生注入）；**层次多了怎么分工**（混合设计：抽象层定规矩、默认实现层给通用版、具体层只填差异）。
 
-今天的知识直接为 Day 72 图形库 v3 项目日备货：一个像样的类层次都长今天这个样子。
+今天的知识直接为 Day 72 图形库 v1 项目日备货：一个像样的类层次都长今天这个样子。
 
 ## 2. 先看全貌：今天的内容位于哪里？
 
@@ -65,7 +65,7 @@
 ### 5.1 准备文件
 
 ```bash
-cd ai-compiler-roadmap/tutorials/day-045/examples
+cd ai-compiler-roadmap/tutorials/day-070/examples
 ```
 
 两个程序：`interface_shape.cpp`（主角）、`hybrid_design.cpp`（分层版）。
@@ -125,7 +125,7 @@ g++ -Wall hybrid_design.cpp -o hd && ./hd
 
 ![report 杠杆与执法线](images/03-example.svg)
 
-**图 3**：左上 report 的杠杆（Shape 的函数输出派生类的数据）；右上两条执法线（实例化抽象 ✘、漏实现也 ✘——报错原文）；下方蓝卡是混合设计的三层输出；灰卡预告明天的虚析构。
+**图 3**：左上 report 的杠杆（Shape 的函数输出派生类的数据）；右上两条执法线（实例化抽象 ✘、漏实现也 ✘——报错原文）；下方蓝卡是混合设计的三层输出；灰卡预告明天的多态容器。
 
 ### 5.4 修改一行再观察：两条执法线
 
@@ -161,7 +161,7 @@ error: variable type 'Blob' is an abstract class
 
 **错误 3：中间层的 final 覆盖被拦**
 
-- 现象：孙子类想覆盖 name，报 `declaration of 'name' overrides a 'final' member`；
+- 现象：孙子类想覆盖 name，报 `declaration of 'name' overrides a 'final' function`；
 - 原因：NamedShape 已把 name 锁死（今天 hybrid 的设计意图）；
 - 定位：报错会指明 final 成员；
 - 修复：要么不覆盖（遵守设计），要么去掉中间层的 final（改设计要慎重——Day 74 专题）。

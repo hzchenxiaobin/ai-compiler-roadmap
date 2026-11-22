@@ -37,7 +37,7 @@
     <text x="732" y="438" font-size="10.5" fill="#9fb8a8">unique：删除器是类型一部分</text>
     <text x="732" y="460" font-size="10.5" fill="#cfe8c8">（编译期装配——函子可零开销）</text>
     <text x="732" y="488" font-size="10.5" fill="#9fb8a8">shared：删除器是运行期值</text>
-    <text x="732" y="510" font-size="10.5" fill="#cfe8c8">（构造时传入——类型统一 shared_ptr&lt;T&gt;）</text>
-    <text x="732" y="538" font-size="10" fill="#8a8578">（各有适用——重策略用 shared 的灵活性）</text>
+    <text x="732" y="510" font-size="10.5" fill="#cfe8c8">（构造时传入——类型统一）</text>
+    <text x="732" y="538" font-size="10" fill="#8a8578">（各有适用——重策略用 shared）</text>
   </g>
 </svg>

@@ -7,12 +7,12 @@
     <path d="M 40,100 Q 470,94 905,101 L 901,340 Q 470,334 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 220)"/>
     <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">MyVector 的五件触发实录</text>
     <rect x="130" y="146" width="700" height="170" fill="#33413a"/>
-    <text x="480" y="172" font-size="11" fill="#9fb8a8">MyVector&lt;int&gt; v1;  push 1,2,3;</text>
-    <text x="480" y="196" font-size="11" fill="#cfe8c6">MyVector&lt;int&gt; v2 = v1;　　　　→ [五法则①拷贝构造]</text>
-    <text x="480" y="220" font-size="11" fill="#cfe8c8">MyVector&lt;int&gt; v3 = move(v1);　→ [五法则②移动构造]（v1 掏空）</text>
-    <text x="480" y="244" font-size="11" fill="#cfe8c8">v4 = v2;　　　　　　　　　　　 → [五法则③拷贝赋值]</text>
-    <text x="480" y="268" font-size="11" fill="#cfe8c8">v5 = move(v3);　　　　　　　　→ [五法则④移动赋值]（v3 掏空）</text>
-    <text x="480" y="296" font-size="11" fill="#9fb8a8">}（作用域尾）　　　　　　　　　→ [五法则⑤析构] ×5（掏空的 size=0 安全）</text>
+    <text x="146" y="172" font-size="11" fill="#9fb8a8">MyVector&lt;int&gt; v1;  push 1,2,3;</text>
+    <text x="146" y="196" font-size="11" fill="#cfe8c6">MyVector&lt;int&gt; v2 = v1;　　　　→ [五法则①拷贝构造]</text>
+    <text x="146" y="220" font-size="11" fill="#cfe8c8">MyVector&lt;int&gt; v3 = move(v1);　→ [五法则②移动构造]（v1 掏空）</text>
+    <text x="146" y="244" font-size="11" fill="#cfe8c8">v4 = v2;　　　　　　　　　　　 → [五法则③拷贝赋值]</text>
+    <text x="146" y="268" font-size="11" fill="#cfe8c8">v5 = move(v3);　　　　　　　　→ [五法则④移动赋值]（v3 掏空）</text>
+    <text x="146" y="296" font-size="11" fill="#9fb8a8">}（作用域尾）　　　　　　　　　→ [五法则⑤析构] ×5（掏空的 size=0 安全）</text>
     <text x="472" y="334" font-size="11.5" fill="#8a8578">（实测：五段日志 + 尾部五次析构——v5 还有 3 个元素一路传下来）</text>
 
     <path d="M 40,364 Q 280,358 520,364 Q 524,480 520,576 Q 280,582 42,576 Q 36,480 40,364 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 470)"/>
@@ -26,7 +26,7 @@
 
     <path d="M 550,364 Q 730,358 905,364 Q 908,480 905,576 Q 730,582 552,576 Q 547,480 550,364 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 470)"/>
     <text x="727" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">身边的独占类型</text>
-    <text x="572" y="428" font-size="12" fill="#3b3a36">std::unique_ptr（第 19 周主角之一）</text>
+    <text x="572" y="428" font-size="12" fill="#3b3a36">std::unique_ptr（下周·第 20 周主角）</text>
     <text x="572" y="452" font-size="11.5" fill="#8a8578">（拷贝 =delete——只能移动）</text>
     <text x="572" y="482" font-size="12" fill="#3b3a36">std::thread、fstream</text>
     <text x="572" y="506" font-size="11.5" fill="#8a8578">（独占资源的标准姿势）</text>

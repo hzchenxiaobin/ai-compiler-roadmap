@@ -23,7 +23,7 @@
     <text x="572" y="232" font-size="12" fill="#45703a">计数原子操作（多线程增减安全）</text>
     <text x="572" y="254" font-size="11.5" fill="#8a8578">（atomic——不加锁也不乱）</text>
     <text x="572" y="284" font-size="12" fill="#a33f2e">对象本身不线程安全！</text>
-    <text x="572" y="306" font-size="11.5" fill="#8a8578">（并发读写 Doc 要自己加锁——后天展开）</text>
+    <text x="572" y="306" font-size="11.5" fill="#8a8578">（并发读写 Doc 要自己加锁——本系列不展开）</text>
     <text x="572" y="344" font-size="12" fill="#6b675e">循环引用的陷阱 → 明天 weak_ptr</text>
     <text x="572" y="366" font-size="11.5" fill="#8a8578">（两个 shared 互指 = 计数永不归零）</text>
 

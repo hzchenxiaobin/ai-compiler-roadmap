@@ -50,7 +50,7 @@ int main() {
     std::cout << "\n== 临时对象的生死线（完整语句） ==" << std::endl;
     std::cout << "语句：take_by_value(Traced(5));" << std::endl;
     take_by_value(Traced(5));
-    std::cout << "  （临时构造 → 进函数（移动/拷贝）→ 函数结束析构 → 临时析构——语句末统一回收）" << std::endl;
+    std::cout << "  （临时直接在参数位构造（C++17 保证消除）→ 函数结束析构——一次构造一次析构）" << std::endl;
 
     std::cout << "\n== 用完临时就死的经典坑 ==" << std::endl;
     const std::string& ref = std::string("临时串");

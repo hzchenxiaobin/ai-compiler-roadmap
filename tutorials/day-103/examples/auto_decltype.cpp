@@ -26,7 +26,7 @@ int main() {
               << "（& 才是引用）" << std::endl;
     std::cout << "  （规则：auto = 值语义（拷贝）；auto& = 左值引用；auto&& = 万能引用）" << std::endl;
 
-    std::cout << "\n== 代理类型陷阱（vector&lt;bool&gt; 经典） ==" << std::endl;
+    std::cout << "\n== 代理类型陷阱（vector<bool> 经典） ==" << std::endl;
     std::vector<bool> flags = {true, false, true};
     auto f = flags[0];               // vector<bool>::reference —— 代理！不是 bool
     std::cout << "  auto f = flags[0]; f = " << f
@@ -54,7 +54,7 @@ int main() {
     // 重写前（Day 85 风格的冗长迭代器）
     std::map<std::string, int> ages = {{"小明", 15}, {"小红", 14}};
     std::cout << "  重写前：std::map<std::string, int>::iterator it = m.begin();" << std::endl;
-    std::cout << "  重写后：auto it = m.begin();（短 30 个字符）" << std::endl;
+    std::cout << "  重写后：auto it = m.begin();（短 32 个字符）" << std::endl;
     for (auto it = ages.begin(); it != ages.end(); ++it) {
         std::cout << "    " << it->first << " = " << it->second << std::endl;
     }

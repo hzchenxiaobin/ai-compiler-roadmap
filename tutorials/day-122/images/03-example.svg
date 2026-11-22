@@ -37,8 +37,8 @@
     <text x="514" y="334" font-size="11.5" fill="#f0c9c0">长期存储（成员/缓存/容器跨调用）</text>
     <text x="514" y="354" font-size="11" fill="#9fb8a8">（要持有→拷成 string）</text>
     <text x="514" y="384" font-size="12.5" fill="#45703a">（122/144 = 84.7%）</text>
-    <text x="514" y="414" font-size="11" fill="#9fb8a8">（Effective 同步：条款 17</text>
-    <text x="514" y="432" font-size="11" fill="#9fb8a8">　——view 的便利与生命期）</text>
+    <text x="514" y="414" font-size="11" fill="#9fb8a8">（Effective 同步：EMC 未覆盖 view——</text>
+    <text x="514" y="432" font-size="11" fill="#9fb8a8">　但生命期纪律一脉相通）</text>
     <text x="514" y="462" font-size="11" fill="#9fb8a8">（明天 123：filesystem 目录遍历）</text>
 
     <path d="M 24,516 Q 470,510 905,517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>

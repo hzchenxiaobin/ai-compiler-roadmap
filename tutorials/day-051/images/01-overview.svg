@@ -23,7 +23,7 @@
     <text x="594" y="268" font-size="12.5" fill="#6b675e">为什么自动？销毁由作用域决定，</text>
     <text x="594" y="290" font-size="12.5" fill="#6b675e">作用域由花括号决定——</text>
     <text x="594" y="312" font-size="12.5" fill="#6b675e">程序员"忘记"这个动作没有入口</text>
-    <text x="594" y="350" font-size="12" fill="#8a8578">（智能指针 = RAII 的巅峰，第 15 周见）</text>
+    <text x="594" y="350" font-size="12" fill="#8a8578">（智能指针 = RAII 的巅峰，第 20 周见）</text>
 
     <path d="M 40,408 Q 470,402 905,409 L 901,494 Q 470,488 44,493 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 451)"/>
     <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">对照实测：手动 close 的多路径翻车</text>

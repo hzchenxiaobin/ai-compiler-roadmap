@@ -11,10 +11,10 @@
     <text x="180" y="188" text-anchor="middle" font-size="9.5" fill="#8a8578">（警告=分诊起点）</text>
     <rect x="300" y="146" width="180" height="60" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
     <text x="390" y="170" text-anchor="middle" font-size="10.5" fill="#9c5a22">②教学白名单？</text>
-    <text x="390" y="188" text-anchor="middle" font-size="9.5" fill="#8a8578">（17 个故意翻车文件）</text>
+    <text x="390" y="188" text-anchor="middle" font-size="9.5" fill="#8a8578">（18 个教学预期与跳过）</text>
     <rect x="510" y="146" width="180" height="60" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2"/>
     <text x="600" y="170" text-anchor="middle" font-size="10.5" fill="#a33f2e">③多文件项目？</text>
-    <text x="600" y="188" text-anchor="middle" font-size="9.5" fill="#8a8578">（18 个需联合编译）</text>
+    <text x="600" y="188" text-anchor="middle" font-size="9.5" fill="#8a8578">（22 个需联合编译）</text>
     <rect x="720" y="146" width="150" height="60" fill="#eef5e8" stroke="#7aa663" stroke-width="2"/>
     <text x="795" y="170" text-anchor="middle" font-size="10.5" fill="#45703a">④ASan 运行</text>
     <text x="795" y="188" text-anchor="middle" font-size="9.5" fill="#8a8578">（stdin 饿死交互）</text>

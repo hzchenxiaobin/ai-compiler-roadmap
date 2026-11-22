@@ -20,8 +20,8 @@
     <text x="472" y="352" font-size="11.5" fill="#8a8578">（"类型擦除"：盒子记住了"怎么调"但忘掉了"它是什么"——代价 32 字节换统一）</text>
 
     <path d="M 40,376 Q 280,370 520,376 Q 524,480 520,576 Q 280,582 42,576 Q 36,480 40,376 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 476)"/>
-    <text x="280" y="406" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">与 Day 48/91 的会师</text>
-    <text x="64" y="440" font-size="12" fill="#3b3a36">Day 48：qsort 的函数指针比较器</text>
+    <text x="280" y="406" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">三代可调用方案的会师</text>
+    <text x="64" y="440" font-size="12" fill="#3b3a36">裸函数指针：C 时代的回调方案</text>
     <text x="64" y="462" font-size="11.5" fill="#8a8578">（只能装普通函数——lambda 要 +[] 转换）</text>
     <text x="64" y="492" font-size="12" fill="#3b3a36">Day 91~100：sort/find_if 的模板参数</text>
     <text x="64" y="514" font-size="11.5" fill="#8a8578">（auto 推导——零开销但不统一）</text>

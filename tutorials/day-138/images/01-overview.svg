@@ -3,7 +3,7 @@
   <g stroke-linecap="round" stroke-linejoin="round">
     <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 138 全貌：JSONTestSuite 外部考试——283/283 全对（100%）</text>
     <path d="M 230,60 Q 480,52 730,61" fill="none" stroke="#e0955f" stroke-width="3"/>
-    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">nst/JSONTestSuite 318 用例：y_ 95/95 ✔ n_ 188/188 ✔（i_ 35 自定不判）——外部考试抓出 15 个真 bug 后满分</text>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">nst/JSONTestSuite 318 用例：y_ 95/95 ✔ n_ 188/188 ✔（i_ 35 自定不判）——外部考试抓出 13 个真 bug 后满分</text>
 
     <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
     <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">测试集的三类用例</text>
@@ -13,8 +13,8 @@
     <text x="164" y="240" font-size="10.5" fill="#a33f2e">n_ ×188：必须拒绝</text>
     <rect x="64" y="264" width="200" height="42" fill="#f1f4f7" stroke="#8a94a3" stroke-width="1.8"/>
     <text x="164" y="290" font-size="10.5" fill="#55606e">i_ ×35：实现自定</text>
-    <text x="64" y="330" font-size="12.5" fill="#6b675e">官方覆盖：数字文法 32 类错误、</text>
-    <text x="64" y="352" font-size="12.5" fill="#6b675e">　字符串 10+、结构 5+ 的全家桶</text>
+    <text x="64" y="330" font-size="12.5" fill="#6b675e">官方覆盖：数字文法 51 类错误、</text>
+    <text x="64" y="352" font-size="12.5" fill="#6b675e">　字符串 43+、结构 5+ 的全家桶</text>
 
     <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
     <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">三轮修复的爬坡（实测）</text>
@@ -22,9 +22,9 @@
     <text x="572" y="208" font-size="12" fill="#45703a">修尾逗号+数字文法 → 99%（剩 2）</text>
     <text x="572" y="236" font-size="12" fill="#45703a">修负号前导零 → 100% ✔</text>
     <text x="572" y="270" font-size="12.5" fill="#a33f2e">沿途的另一战果：</text>
-    <text x="572" y="292" font-size="12" fill="#8a8578">（百万层括号 → 栈溢出崩 →</text>
+    <text x="572" y="292" font-size="12" fill="#8a8578">（十万层括号 → 栈溢出崩 →</text>
     <text x="572" y="312" font-size="12" fill="#8a8578">　加 500 层深度限制——生产级惯例）</text>
-    <text x="572" y="348" font-size="12.5" fill="#6b675e">（外部考试抓出 15 个真 bug）</text>
+    <text x="572" y="348" font-size="12.5" fill="#6b675e">（外部考试抓出 13 个真 bug）</text>
     <text x="572" y="372" font-size="11.5" fill="#8a8578">（昨天 28 用例全绿≠无 bug——盲区）</text>
 
     <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>

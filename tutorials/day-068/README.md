@@ -64,7 +64,7 @@
 ### 5.1 准备文件
 
 ```bash
-cd ai-compiler-roadmap/tutorials/day-044/examples
+cd ai-compiler-roadmap/tutorials/day-068/examples
 ```
 
 三个程序：`polymorphism.cpp`（主角）、`no_virtual.cpp`（绑定对照）、`abstract_zoo.cpp`（多态动物园）。

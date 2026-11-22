@@ -43,7 +43,7 @@
     <path d="M 550,364 Q 730,358 905,364 Q 908,480 905,576 Q 730,582 552,576 Q 547,480 550,364 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 470)"/>
     <text x="727" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">和容器迭代器的神似</text>
     <rect x="572" y="412" width="320" height="150" fill="#33413a"/>
-    <text x="732" y="438" font-size="10.5" fill="#9fb8a8">for (auto&amp; e : fs::directory_iterator(d))</text>
+    <text x="700" y="438" font-size="10.5" fill="#9fb8a8">for (auto&amp; e : directory_iterator(d))</text>
     <text x="732" y="462" font-size="10.5" fill="#cfe8c8">（范围 for 直接用——Day 80 的姿势）</text>
     <text x="732" y="490" font-size="10.5" fill="#9fb8a8">++it 深入/回溯（递归版）</text>
     <text x="732" y="514" font-size="10" fill="#8a8578">（end 迭代器 = 树走完的哨兵）</text>

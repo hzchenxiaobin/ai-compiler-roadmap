@@ -1,6 +1,6 @@
 #include <iostream>
 
-// 第 2 天主线例子：用 5 种基本类型记录一条学习档案
+// 第 2 天主线例子：用 5 个变量、4 种基本类型记录一条学习档案
 int main() {
     const int total_days = 144;      // 整数：学习总天数
     int today = 2;                   // 整数：今天是第几天

@@ -20,7 +20,7 @@
     <text x="660" y="212" font-size="10" fill="#9c5a22">strong_count（强计数）</text>
     <text x="660" y="230" font-size="10" fill="#9c5a22">weak_count（弱计数——明天）</text>
     <text x="660" y="248" font-size="9.5" fill="#8a8578">（deleter 等管理信息）</text>
-    <text x="660" y="284" font-size="10" fill="#8a8578">（make_shared：对象和控制块一锅端）</text>
+    <text x="660" y="284" font-size="10" fill="#8a8578">（make_shared：一锅端）</text>
     <text x="472" y="334" font-size="11.5" fill="#8a8578">（归零 → 控制块调 deleter 销毁对象；两计数都归零 → 控制块本身也回收）</text>
 
     <path d="M 40,364 Q 280,358 520,364 Q 524,480 520,576 Q 280,582 42,576 Q 36,480 40,364 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 470)"/>
@@ -39,6 +39,6 @@
     <text x="732" y="460" font-size="10.5" fill="#cfe8c8">→ count +1（多一个主人）</text>
     <text x="732" y="488" font-size="10.5" fill="#9fb8a8">auto z = move(x); （移动）</text>
     <text x="732" y="510" font-size="10.5" fill="#cfe8c8">→ count 不变（份额转手）</text>
-    <text x="732" y="538" font-size="10" fill="#8a8578">（实测：拷贝后 2；move 后仍 2、x 空）</text>
+    <text x="732" y="538" font-size="10" fill="#8a8578">（实测：拷贝后 2；move 后仍 2）</text>
   </g>
 </svg>

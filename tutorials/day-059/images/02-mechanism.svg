@@ -33,7 +33,7 @@
     <text x="472" y="354" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">什么时候需要友元（决策树）</text>
     <text x="90" y="390" font-size="12.5" fill="#3b3a36">问题：外部代码需要类的私有数据？</text>
     <text x="90" y="416" font-size="12.5" fill="#45703a">→ 先问能不能走 public 接口（getter/成员函数）——能就不需要友元</text>
-    <text x="90" y="442" font-size="12.5" fill="#45703a">→ 运算符左操作数不是本类（operator&lt;&lt;）？→ 友元函数（Day 56 的场景）</text>
+    <text x="90" y="442" font-size="12.5" fill="#45703a">→ 运算符左操作数不是本类（operator&lt;&lt;）？→ 友元函数（Day 60 的场景）</text>
     <text x="90" y="468" font-size="12.5" fill="#45703a">→ 两个类深度协作（容器和它的迭代器）？→ 友元类</text>
     <text x="90" y="496" font-size="12.5" fill="#a33f2e">→ 只是为了少写 getter？→ 不要友元（破坏封装的借口）</text>
     <text x="472" y="540" font-size="12" fill="#8a8578">（经验法则：友元是"接口表达不了"时的最后手段——不是偷懒的侧门）</text>

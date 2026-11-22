@@ -3,7 +3,7 @@
   <g stroke-linecap="round" stroke-linejoin="round">
     <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 61 全貌：运算符重载——让类用上 + - * /</text>
     <path d="M 290,60 Q 480,52 670,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
-    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">Day 66 的 append 链式已是伏笔——今天 Fraction 分数类让算术变成日常：a + b 不再是函数调用，是加法本法</text>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">昨天 MyString v1 的 operator&lt;&lt; 链式已是伏笔——今天 Fraction 分数类让算术变成日常：a + b 不再是函数调用，是加法本法</text>
 
     <path d="M 40,116 Q 280,110 520,116 Q 524,260 520,384 Q 280,390 42,384 Q 36,260 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
     <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">operator+ 的解剖</text>
@@ -38,8 +38,8 @@
     <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
     <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 61（今天）</text>
     <circle cx="650" cy="514" r="5" fill="#5b8db8"/>
-    <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 62~60 运算符/转换</text>
+    <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 62~65 运算符/转换</text>
     <circle cx="850" cy="514" r="5" fill="#e0955f"/>
-    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 60 项目日</text>
+    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 66 项目日</text>
   </g>
 </svg>

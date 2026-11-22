@@ -37,10 +37,10 @@
     <text x="510" y="436" font-size="12" fill="#8a8578">属于全类 → static。</text>
 
     <path d="M 488,476 Q 712,470 934,476 Q 938,540 934,610 Q 712,615 490,610 Q 484,540 488,476 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.3 711 543)"/>
-    <text x="711" y="502" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#8a6d1a">第 9 周收官 · 下周预告</text>
-    <text x="711" y="528" text-anchor="middle" font-size="12" fill="#6b675e">Day 67：继承基础——Person → Student</text>
-    <text x="711" y="550" text-anchor="middle" font-size="12" fill="#6b675e">今天的组合是 has-a，下周的继承是 is-a</text>
-    <text x="711" y="578" text-anchor="middle" font-size="12" fill="#8a8578">（54/144 天 = 29%，第 3 个项目周收官）</text>
+    <text x="711" y="502" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#8a6d1a">第 9 周收官 · 明天预告</text>
+    <text x="711" y="528" text-anchor="middle" font-size="12" fill="#6b675e">Day 55：拷贝构造函数——复制对象</text>
+    <text x="711" y="550" text-anchor="middle" font-size="12" fill="#6b675e">本周五件兵器到手，明天拷贝控制开篇</text>
+    <text x="711" y="578" text-anchor="middle" font-size="12" fill="#8a8578">（54/144 天 = 37.5%，第 3 个项目周收官）</text>
     <text x="711" y="600" text-anchor="middle" font-size="12" fill="#8a8578">六个项目日全胜的战绩继续</text>
   </g>
 </svg>

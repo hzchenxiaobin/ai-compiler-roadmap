@@ -25,7 +25,7 @@
     <text x="70" y="394" font-size="13" fill="#3b3a36">substr(7, 3)：从下标 7 搬 3 个字符（实测得 "C++"）</text>
     <text x="510" y="366" font-size="13" fill="#3b3a36">find("C++")：返回起点下标 7</text>
     <text x="510" y="394" font-size="13" fill="#3b3a36">find("Java")：返回 npos（没找到的暗号）</text>
-    <text x="472" y="424" text-anchor="middle" font-size="12.5" fill="#6b675e">配上周三学的 size() 与 [i]，本周字符串三件套就齐了两件</text>
+    <text x="472" y="424" text-anchor="middle" font-size="12.5" fill="#6b675e">配上今天刚学的 size() 与本周用过的 [i]，本周字符串三件套就齐了两件</text>
 
     <path d="M 60,470 Q 480,464 905,471" fill="none" stroke="#8a8578" stroke-width="3"/>
     <circle cx="170" cy="470" r="6" fill="#8a94a3"/>

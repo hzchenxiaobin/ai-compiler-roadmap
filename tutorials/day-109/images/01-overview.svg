@@ -19,12 +19,12 @@
     <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
     <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">临时对象的生死线（实测）</text>
     <rect x="572" y="164" width="320" height="170" fill="#33413a"/>
-    <text x="732" y="190" font-size="10.5" fill="#9fb8a8">take_by_value(Traced(5));</text>
-    <text x="732" y="214" font-size="10.5" fill="#cfe8c6">[构造] Traced(5)</text>
-    <text x="732" y="236" font-size="10.5" fill="#cfe8c6">[函数] 收到 5</text>
-    <text x="732" y="258" font-size="10.5" fill="#cfe8c8">[析构] ~Traced(5)</text>
-    <text x="732" y="288" font-size="10" fill="#8a8578">（构造→用→析构：语句是生命周期）</text>
-    <text x="732" y="310" font-size="10" fill="#8a8578">（C++17 直接在参数位构造——零拷贝！）</text>
+    <text x="588" y="190" font-size="10.5" fill="#9fb8a8">take_by_value(Traced(5));</text>
+    <text x="588" y="214" font-size="10.5" fill="#cfe8c6">[构造] Traced(5)</text>
+    <text x="588" y="236" font-size="10.5" fill="#cfe8c6">[函数] 收到 5</text>
+    <text x="588" y="258" font-size="10.5" fill="#cfe8c8">[析构] ~Traced(5)</text>
+    <text x="588" y="288" font-size="10" fill="#8a8578">（构造→用→析构：语句是生命周期）</text>
+    <text x="588" y="310" font-size="10" fill="#8a8578">（C++17 直接在参数位构造——零拷贝！）</text>
 
     <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
     <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">const&amp; 延长生命 vs 非 const ✘</text>

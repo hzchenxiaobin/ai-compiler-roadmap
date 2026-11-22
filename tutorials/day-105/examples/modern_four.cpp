@@ -30,7 +30,7 @@ int main() {
     take_ptr(0);                                       // 0 是 int → 整数重载
     int* p = nullptr;                                  // 现代空指针写法
     std::cout << "  p = nullptr; p == nullptr → " << (p == nullptr ? "true" : "false") << std::endl;
-    std::cout << "  （NULL 是整数宏——重载会选错；nullptr 是指针类型）" << std::endl;
+    std::cout << "  （NULL 是整数宏——重载歧义/选错门；nullptr 是指针类型）" << std::endl;
 
     std::cout << "\n== ② enum class：作用域 + 强类型 ==" << std::endl;
     Color c = Color::Red;                              // 必须带作用域 Color::

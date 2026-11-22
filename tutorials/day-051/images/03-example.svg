@@ -38,7 +38,7 @@
 
     <path d="M 24,520 Q 470,514 905,521 L 901,630 Q 470,624 26,629 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 575)"/>
     <text x="480" y="550" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#55606e">为什么这是"最重要的一课"？</text>
-    <text x="480" y="580" text-anchor="middle" font-size="12.5" fill="#3b3a36">第 15 周的智能指针、第 20 周的锁守卫、通讯录的存盘——全是 RAII 的变体；</text>
+    <text x="480" y="580" text-anchor="middle" font-size="12.5" fill="#3b3a36">第 20 周的智能指针、进阶阶段的锁守卫、通讯录的存盘——全是 RAII 的变体；</text>
     <text x="480" y="604" text-anchor="middle" font-size="12.5" fill="#3b3a36">今天学会"构造拿、析构放"，后面十个专题都是在给这个思想换资源类型</text>
   </g>
 </svg>

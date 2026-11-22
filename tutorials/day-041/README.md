@@ -36,7 +36,7 @@ Day 40 结尾埋的问题：把 `int**` 矩阵塞进 struct 直接赋值会怎�
 
 - **一句通俗解释**：两根指针指向同一块内存，各自 delete 一次——第二次释放就是 double free（UB，通常崩）。
 - **一个类比**：两张同号钞票——第一个人花掉了（第一次 delete），第二个人再花（第二次 delete）银行系统直接报警。
-- **对应到技术上是**：实测——打开 b 的 delete 注释后：普通版**静默跑完**（exit=0——UB 又骗了一次）；ASan 版立刻报 `attempting double-free on 0x6020000009f0` + `SUMMARY: double-free in main+0x274`（定位到释放行）。**第三宗罪更隐蔽**：不 delete b 也不对（那块内存 a 已经还了、b 的"所有权"说不清——**浅拷贝在语义上就没有正确出路**）。类比的边界：malloc 家族的分配器对 double free 的反应依实现而异——崩溃、静默、堆损坏都可能；唯一确定的是**不许**。
+- **对应到技术上是**：实测——打开 b 的 delete 注释后：普通版**当场崩溃**（本机 Abort trap、exit=133——打印到"delete[] a.data 完成"就断，后两行没出来；换个环境也可能静默跑完，UB 就是这么分裂）；ASan 版立刻报 `attempting double-free on 0x6020000009f0` + `SUMMARY: double-free in main+0x274`（定位到释放行）。**第三宗罪更隐蔽**：不 delete b 也不对（那块内存 a 已经还了、b 的"所有权"说不清——**浅拷贝在语义上就没有正确出路**）。类比的边界：malloc 家族的分配器对 double free 的反应依实现而异——崩溃、静默、堆损坏都可能；唯一确定的是**不许**。
 - **常见误解**："小心点只 delete 一次就行"——那另一个 struct 的指针就悬空了（用它就 UB）——结构性问题没有纪律解。
 
 ### 3.3 深拷贝：复印而非共用
@@ -135,11 +135,11 @@ g++ -Wall deep_struct.cpp -o ds && ./ds
 
 ![共享证据与 double-free 战报](images/03-example.svg)
 
-**图 3**：左上浅/深两版对照输出（"Xello" 共享 vs "hello/Xello" 独立）；右上是 double-free 的 ASan 现形（含普通版静默的对照）；下方橙卡预告项目日。
+**图 3**：左上浅/深两版对照输出（"Xello" 共享 vs "hello/Xello" 独立）；右上是 double-free 的 ASan 现形（含普通版崩溃的对照）；下方橙卡预告项目日。
 
 ### 5.4 修改一行再观察：引爆炸弹
 
-把 `shallow_struct.cpp` 里 `// delete[] b.data;` 的注释放开——普通编译重跑：**静默跑完**（exit=0——UB 又一次欺骗）；ASan 版重跑：
+把 `shallow_struct.cpp` 里 `// delete[] b.data;` 的注释放开——普通编译重跑：**当场崩溃**（本机 Abort trap: 5、exit=133——打印到"delete[] a.data 完成……"后两行没出来就断；也可能在其他环境静默跑完，UB 的两种脸）；ASan 版重跑：
 
 ```text
 ERROR: AddressSanitizer: attempting double-free on 0x6020000009f0 in thread T0:

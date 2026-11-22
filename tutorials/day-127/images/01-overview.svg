@@ -29,7 +29,7 @@
     <text x="732" y="206" font-size="10" fill="#8a8578">（今天原型：26 记号全识别 ✔）</text>
     <rect x="572" y="230" width="320" height="56" fill="#33413a"/>
     <text x="732" y="252" font-size="10.5" fill="#9fb8a8">②Parser：记号流 → JsonValue 树</text>
-    <text x="732" y="272" font-size="10" fill="#8a8578">（Day 128 主场——递归下降）</text>
+    <text x="732" y="272" font-size="10" fill="#8a8578">（Day 132 主场——递归下降）</text>
     <rect x="572" y="296" width="320" height="56" fill="#33413a"/>
     <text x="732" y="318" font-size="10.5" fill="#9fb8a8">③Value：六种值的表示+访问</text>
     <text x="732" y="338" font-size="10" fill="#8a8578">（今天设计稿：Type 枚举起步）</text>
@@ -37,7 +37,7 @@
 
     <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
     <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">与五个月旧知识的连接</text>
-    <text x="70" y="468" font-size="13" fill="#3b3a36">Tokenizer ≈ Day 77 工厂 + Day 56 流拆词｜Value 树 ≈ Day 76 多态层次（variant 备选——Day 121）｜Parser ≈ Day 121 optional&lt;Json&gt; 的失败表达</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">Tokenizer ≈ Day 77 工厂 + Day 17 流拆词｜Value 树 ≈ Day 76 多态层次（variant 备选——Day 121）｜Parser ≈ Day 121 optional&lt;Json&gt; 的失败表达</text>
     <text x="70" y="490" font-size="12.5" fill="#6b675e">（"集大成"不是口号——每个模块都有五个月的技能背书）</text>
 
     <path d="M 60,514 Q 480,508 905 515" fill="none" stroke="#8a8578" stroke-width="2.6"/>

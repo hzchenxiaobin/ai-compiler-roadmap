@@ -12,7 +12,7 @@
     <text x="284" y="212" font-size="11" fill="#cfe8c8">　　fopen(path, "w"));　// 打开即封装</text>
     <text x="64" y="260" font-size="12.5" fill="#45703a">出块自动 fclose（不是 delete！）</text>
     <text x="64" y="282" font-size="12" fill="#8a8578">（实测：三版删除器都打了关闭日志）</text>
-    <text x="64" y="312" font-size="12.5" fill="#45703a">Day 51 FileTag 手写版 → 今天一行</text>
+    <text x="64" y="312" font-size="12.5" fill="#45703a">Day 51 FileGuard 手写版 → 今天一行</text>
     <text x="64" y="334" font-size="12" fill="#8a8578">（RAII 的通用化：资源不止内存）</text>
     <text x="64" y="366" font-size="11.5" fill="#8a8578">（读回验证：写完关了再开读 ✔）</text>
 

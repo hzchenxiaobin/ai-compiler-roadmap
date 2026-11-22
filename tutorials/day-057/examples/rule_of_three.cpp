@@ -33,7 +33,7 @@ public:
         return *this;
     }
 
-    // ③析构（Day 51/46）
+    // ③析构（Day 51）
     ~Buffer() {
         std::cout << "  [析构] 释放 " << static_cast<void*>(data_) << std::endl;
         delete[] data_;

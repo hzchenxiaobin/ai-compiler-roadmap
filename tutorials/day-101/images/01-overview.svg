@@ -22,7 +22,7 @@
     <path d="M 264,199 Q 274,199 282,199" fill="none" stroke="#3b3a36" stroke-width="1.8"/>
     <path d="M 164,236 Q 164,242 164,248" fill="none" stroke="#3b3a36" stroke-width="1.8"/>
     <text x="64" y="350" font-size="11.5" fill="#8a8578">（实测：f1=7 / f2=21 / f3=107——同型同语法）</text>
-    <text x="64" y="378" font-size="12" fill="#6b675e">（Day 48 的比较器、Day 91 的谓词——都进了盒子）</text>
+    <text x="64" y="378" font-size="12" fill="#6b675e">（Day 72 的比较器、Day 91 的谓词——都进了盒子）</text>
 
     <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>
     <text x="727" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">回调注册表（计划指定）</text>
@@ -49,6 +49,6 @@
     <circle cx="650" cy="514" r="5" fill="#e0955f"/>
     <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 102 里程碑</text>
     <circle cx="850" cy="514" r="5" fill="#5b8db8"/>
-    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">第 18 周 智能指针</text>
+    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">第 18 周 现代特性</text>
   </g>
 </svg>

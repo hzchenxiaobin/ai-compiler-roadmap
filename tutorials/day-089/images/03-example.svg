@@ -24,9 +24,9 @@
     <text x="54" y="458" font-size="11" fill="#9fb8a8">（ASan 全场景零报错）</text>
 
     <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,480 Q 712,485 490,480 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 291)"/>
-    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">第 15 周战绩（Day 85~89）</text>
+    <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">第 15 周战绩（85~89 已完成）</text>
     <rect x="502" y="146" width="420" height="320" rx="6" fill="#33413a"/>
-    <text x="514" y="174" font-size="12" fill="#9fb8a8">关联容器周五天：</text>
+    <text x="514" y="174" font-size="12" fill="#9fb8a8">关联容器周前五天：</text>
     <text x="514" y="198" font-size="11.5" fill="#cfe8c6">85 map/set（红黑树/有序）</text>
     <text x="514" y="218" font-size="11.5" fill="#cfe8c6">86 unordered（哈希/3.17 倍）</text>
     <text x="514" y="238" font-size="11.5" fill="#cfe8c6">87 multimap/equal_range（分组）</text>
@@ -37,14 +37,14 @@
     <text x="514" y="352" font-size="11.5" fill="#cfe8c6">unordered 的 find（86）</text>
     <text x="514" y="372" font-size="11.5" fill="#cfe8c6">迭代器做 map 的值（80）</text>
     <text x="514" y="404" font-size="12.5" fill="#45703a">（89/144 = 61.8%——14 个项目日全胜）</text>
-    <text x="514" y="436" font-size="11.5" fill="#9fb8a8">下周（第 16 周）：算法——sort/find/</text>
-    <text x="514" y="456" font-size="11.5" fill="#9fb8a8">　transform……迭代器分类表的兑现周</text>
+    <text x="514" y="436" font-size="11.5" fill="#9fb8a8">明天 Day 90 词频 v2 收官本周，</text>
+    <text x="514" y="456" font-size="11.5" fill="#9fb8a8">　之后第 16 周：算法——sort/find/……</text>
 
     <path d="M 24,506 Q 470,500 905,507 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 543)"/>
     <text x="46" y="532" font-size="15.5" font-weight="bold" fill="#9c5a22">LRU 的现实身影</text>
     <text x="46" y="560" font-size="12.5" fill="#3b3a36">浏览器后退页的淘汰、Redis 的 maxmemory 策略、CPU 缓存行的替换、数据库的缓冲池——"最近最少使用"无处不在</text>
 
     <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
-    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 90（周六）阶段自测日——白板讲清哈希原理/红黑树/迭代器分类（阶段四中段检验）</text>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 90（项目日）——词频统计 v2：Top-N 与双排序（第 15 周收官项目）</text>
   </g>
 </svg>

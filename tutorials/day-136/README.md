@@ -29,7 +29,7 @@
 
 - **一句通俗解释**：`TEST(套件名, 用例名) { 断言… }`——套件分组（AddTest）、用例各跑各的（TwoPlusTwo 等）；断言是"应该成立"的陈述（不成立就报告）。
 - **一个类比**：质检流水线——车间（套件）里的多道工序（用例）；每道工序的验收标准（断言）逐项打勾——不合格贴标签（失败报告）。
-- **对应到技术上是**：实测——**AddTest 三用例**（TwoPlusTwo/NegativeNumbers/Zero 全过）；**断言十件**（EQ 相等/NE 不等/LT 小于/LE 小于等/GT/GE/TRUE/FALSE/**FLOAT_EQ 浮点近似**——0.1+0.2 vs 0.3 过了（4 位 ULP 的容忍——Day 113 讲过的浮点比较问题在这解决）/DOUBLE_EQ）。**编译命令**：`g++ … -lgtest -lgtest_main`（**main 库提供**——不用手写；`Running main() from gtest_main.cc` 的提示可证）。**组织的层级**：套件 → 用例 → 断言（三层——明天的 JSON 测试按 Parse/Dump/Access 分套件）。类比的边界：TEST 宏是**无夹具**的轻量版（共享状态的 TEST_F 是进阶——今天够用）。
+- **对应到技术上是**：实测——**AddTest 三用例**（TwoPlusTwo/NegativeNumbers/Zero 全过）；**断言十件**（EQ 相等/NE 不等/LT 小于/LE 小于等/GT/GE/TRUE/FALSE/**FLOAT_EQ 浮点近似**——0.1+0.2 vs 0.3 过了（4 位 ULP 的容忍——二进制浮点表示误差的老问题在这解决）/DOUBLE_EQ）。**编译命令**：`g++ … -lgtest -lgtest_main`（**main 库提供**——不用手写；`Running main() from gtest_main.cc` 的提示可证）。**组织的层级**：套件 → 用例 → 断言（三层——明天的 JSON 测试按 Parse/Dump/Access 分套件）。类比的边界：TEST 宏是**无夹具**的轻量版（共享状态的 TEST_F 是进阶——今天够用）。
 - **常见误解**："测试要写 main"——链接 gtest_main 就不用（框架提供）；要自定义初始化才手写。
 
 ### 3.2 EXPECT vs ASSERT：失败的分岔
@@ -166,7 +166,7 @@ $ ./ft --gtest_filter="AddTest.*"
 **错误 3：浮点用 EXPECT_EQ（假失败）**
 
 - 现象：0.1+0.2 == 0.3 失败（明明"相等"）；
-- 原因：二进制浮点的表示误差（Day 113 讲过）；
+- 原因：二进制浮点的表示误差；
 - 定位：失败报告的两值差一点点；
 - 修复：EXPECT_FLOAT_EQ / DOUBLE_EQ（ULP 容忍）或 EXPECT_NEAR(a, b, 1e-9)。
 

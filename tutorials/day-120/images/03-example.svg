@@ -37,7 +37,7 @@
     <text x="514" y="352" font-size="11" fill="#9fb8a8">　五个月的手写训练（42 起的</text>
     <text x="514" y="370" font-size="11" fill="#9fb8a8">　IntArray → 今天的一行 make）</text>
     <text x="514" y="400" font-size="12.5" fill="#45703a">（120/144 = 83.3%——五分之四</text>
-    <text x="514" y="420" font-size="12.5" fill="#45703a">　剩 24 天：异常周+性能+JSON）</text>
+    <text x="514" y="420" font-size="12.5" fill="#45703a">　剩 24 天：JSON 解析器+工程收尾）</text>
     <text x="514" y="452" font-size="11" fill="#9fb8a8">（19 个项目日全胜）</text>
 
     <path d="M 24,516 Q 470,510 905,517 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 548)"/>

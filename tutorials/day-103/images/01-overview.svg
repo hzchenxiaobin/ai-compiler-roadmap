@@ -3,7 +3,7 @@
   <g stroke-linecap="round" stroke-linejoin="round">
     <text x="480" y="48" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">Day 103 全貌：auto / decltype——类型推导的双刃剑</text>
     <path d="M 300,60 Q 480,52 660,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
-    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">阶段五（现代 C++）开篇——计划指定"用 auto 重写旧代码"：省 30 字符的便利和三个坑（拷贝语义/代理类型/decltype 的时机）</text>
+    <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">阶段五（现代 C++）开篇——计划指定"用 auto 重写旧代码"：省 32 字符的便利和三个坑（拷贝语义/代理类型/decltype 的时机）</text>
 
     <path d="M 40,116 Q 280,110 520,116 Q 524,250 520,384 Q 280,390 42,384 Q 36,250 40,116 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 280 250)"/>
     <text x="280" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">auto 的推导规则</text>
@@ -39,8 +39,8 @@
     <circle cx="440" cy="514" r="5" fill="#5b8db8"/>
     <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 103（阶段五开篇）</text>
     <circle cx="650" cy="514" r="5" fill="#5b8db8"/>
-    <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 104~108</text>
+    <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 104~107</text>
     <circle cx="850" cy="514" r="5" fill="#e0955f"/>
-    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 109 项目日</text>
+    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 108 项目日</text>
   </g>
 </svg>

@@ -24,9 +24,9 @@
     <path d="M 60,514 Q 480,508 905 515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
     <circle cx="440" cy="514" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
     <circle cx="440" cy="514" r="5" fill="#e0955f"/>
-    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#9c5a22">Day 89（第 15 周收官）</text>
+    <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#9c5a22">Day 89（项目日）</text>
     <circle cx="690" cy="514" r="5" fill="#5b8db8"/>
-    <text x="690" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">第 16 周 算法</text>
+    <text x="690" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 90 → 第 16 周</text>
     <circle cx="870" cy="514" r="5" fill="#5b8db8"/>
     <text x="870" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">……阶段四</text>
   </g>

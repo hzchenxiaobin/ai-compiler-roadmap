@@ -119,7 +119,7 @@ int main() {
 
     std::cout << "\n== 三模块的分工（总体设计） ==" << std::endl;
     std::cout << "  Tokenizer：字符流 → 记号流（今天原型 ✔）" << std::endl;
-    std::cout << "  Parser：记号流 → JsonValue 树（Day 128 主场）" << std::endl;
+    std::cout << "  Parser：记号流 → JsonValue 树（Day 132 主场）" << std::endl;
     std::cout << "  Value：六种值的表示 + 访问/序列化" << std::endl;
     std::cout << "  （三层流水线——各管一段，接口清晰）" << std::endl;
 
@@ -141,7 +141,7 @@ int main() {
     std::cout << "  （完整版还要：未闭合字符串/非法数字——Day 129 的错误处理专场）" << std::endl;
 
     std::cout << "\n== 与旧知识的连接 ==" << std::endl;
-    std::cout << "  Tokenizer ≈ Day 77 工厂（一行一对象）+ Day 56 istringstream" << std::endl;
+    std::cout << "  Tokenizer ≈ Day 77 工厂（一行一对象）+ Day 17 istringstream" << std::endl;
     std::cout << "  Value 树 ≈ Day 76 图形库的多态层次（variant 也行——Day 121）" << std::endl;
     std::cout << "  Parser ≈ Day 121 的 optional<Json>（失败表达）" << std::endl;
     return 0;

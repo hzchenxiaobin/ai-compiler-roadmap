@@ -26,8 +26,8 @@
     <path d="M 212,360 Q 220,370 229,361" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
 
     <rect x="60" y="372" width="320" height="44" fill="#fcefe4" stroke="#e0955f" stroke-width="2.4"/>
-    <text x="220" y="392" text-anchor="middle" font-size="12.5" fill="#9c5a22">第三账：切词 words_total += 4</text>
-    <text x="220" y="410" text-anchor="middle" font-size="12" fill="#8a8578">（ss &gt;&gt; word 四圈：jumps/over/the/lazy）</text>
+    <text x="220" y="392" text-anchor="middle" font-size="12.5" fill="#9c5a22">第三账：切词 words_total += 5</text>
+    <text x="220" y="410" text-anchor="middle" font-size="12" fill="#8a8578">（ss &gt;&gt; word 五圈：jumps/over/the/lazy/dog.）</text>
 
     <path d="M 220,422 Q 220,440 220,456" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
     <path d="M 212,450 Q 220,460 229,451" fill="none" stroke="#3b3a36" stroke-width="2.8"/>

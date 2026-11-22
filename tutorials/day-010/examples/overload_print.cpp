@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-// 第 10 天主角一：三个重载的 print——同一个名字，按参数各就各位
+// 第 10 天主角一：四个重载的 print——同一个名字，按参数各就各位
 void print(int value) {
     std::cout << "[整数] " << value << std::endl;
 }

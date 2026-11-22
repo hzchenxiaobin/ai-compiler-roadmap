@@ -8,8 +8,8 @@ int main() {
     int* raw = v.data();                      // 记录旧内存地址
     auto it = v.begin(); (void)it;   // 记录旧位置（悬空证据用）
     std::cout << "  扩容前：data = " << raw << std::endl;
-    v.push_back(4);                           // 触发扩容（1→2→4：第三次 push 翻倍）
-    v.push_back(5);                           // capacity 1→2→4：这次扩到 4
+    v.push_back(4);                           // 触发扩容（初始 capacity=3：翻倍到 6 并搬家）
+    v.push_back(5);                           // capacity 已是 6：落在余量内、不再扩
     std::cout << "  扩容后：data = " << v.data()
               << (v.data() != raw ? "（搬家了！旧地址全部作废）" : "（没搬——还没触发）") << std::endl;
     // *it = 99;  // ✘ 取消注释（ASan 版）：heap-use-after-free——旧内存已还

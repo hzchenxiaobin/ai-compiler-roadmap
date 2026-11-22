@@ -27,7 +27,7 @@
 
 - **一句通俗解释**：`auto x = expr` 永远是**拷贝**——即使 expr 是引用（引用被剥掉）；要别名必须写 `auto&`。
 - **一个类比**：转发邮件——auto 把附件**复制**给你一份（原件不动）；auto& 是把**原邮箱的钥匙**给你（动原件）。
-- **对应到技术上是**：实测——`auto x = v[0]; x = 999;` 后 **v[0] 仍 1**（x 是拷贝）；`auto& r = v[0]; r = 777;` 后 **v[0] = 777**（别名）。**规则三条**：`auto`（值——安全默认）、`auto&`（左值引用——要改外部）、`auto&&`（万能引用——转发场景，明天移动语义开讲）。**推导机制**：auto 走模板实参推导同款规则（剥引用剥 const 除非你写回去）——这就是"v[0] 是 int& 但 auto 推出 int"的原因。类比的边界：`const auto&`（只读引用）是遍历大对象的标准姿势（Day 89 起就在用）。
+- **对应到技术上是**：实测——`auto x = v[0]; x = 999;` 后 **v[0] 仍 1**（x 是拷贝）；`auto& r = v[0]; r = 777;` 后 **v[0] = 777**（别名）。**规则三条**：`auto`（值——安全默认）、`auto&`（左值引用——要改外部）、`auto&&`（万能引用——转发场景，下周移动语义周开讲）。**推导机制**：auto 走模板实参推导同款规则（剥引用剥 const 除非你写回去）——这就是"v[0] 是 int& 但 auto 推出 int"的原因。类比的边界：`const auto&`（只读引用）是遍历大对象的标准姿势（Day 89 起就在用）。
 - **常见误解**："auto 会自动选最优类型"——不；auto 只按规则推导（值拷贝）；最优要自己写（& / const&）。
 
 ### 3.2 代理类型陷阱：vector\<bool\>
@@ -41,7 +41,7 @@
 
 - **一句通俗解释**：decltype(expr) 查表达式的**类型**但不执行它（编译期零成本）；配 auto 做**尾置返回**解决"返回类型依赖参数"的题。
 - **一个类比**：问路——decltype 问"这条路通向哪（类型）"但不真的走（不求值）。
-- **对应到技术上是**：实测——`decltype(a) another = 20;`（another 是 int——a 的类型）；`decltype(a + 1)`（表达式类型 int）。**尾置返回**：`template <typename T, typename U> auto add(T a, U b) -> decltype(a + b)`——**Day 97 myMax2 窄化坑的正解**（返回类型跟随 a+b 的真实类型：add(3, 4.5) 实测 7.5——double 不被截）。**C++14 更简**：`auto add(T a, U b) { return a + b; }`（返回类型自动推导）。**历史回响**：Day 88 的 `iterator_traits` 就是"查类型"的前辈（decltype 是语言级、traits 是库级）。类比的边界：decltype(变量) 和 decltype(表达式) 的规则略异（变量保引用、表达式按值类）——进阶细节，今天会用即可。
+- **对应到技术上是**：实测——`decltype(a) another = 20;`（another 是 int——a 的类型）；`decltype(a + 1)`（表达式类型 int）。**尾置返回**：`template <typename T, typename U> auto add(T a, U b) -> decltype(a + b)`——**Day 97 myMax2 窄化坑的正解**（返回类型跟随 a+b 的真实类型：add(3, 4.5) 实测 7.5——double 不被截）。**C++14 更简**：`auto add(T a, U b) { return a + b; }`（返回类型自动推导）。**历史回响**：Day 88 的 `iterator_traits` 就是"查类型"的前辈（decltype 是语言级、traits 是库级）。类比的边界：decltype(变量名) 给声明类型（`int a;` → `decltype(a)` 是 int、不带引用）、加括号变左值表达式（`decltype((a))` 得 `int&`）——进阶细节，今天会用即可。
 - **常见误解**："decltype 会执行表达式"——不执行（`decltype(a++)` 不会自增——纯类型查询）。
 
 ## 4. 图解核心机制
@@ -122,7 +122,7 @@ g++ -Wall -std=c++17 auto_decltype.cpp -o ad && ./ad
 
 == 计划指定：用 auto 重写旧代码 ==
   重写前：std::map<std::string, int>::iterator it = m.begin();
-  重写后：auto it = m.begin();（短 30 个字符）
+  重写后：auto it = m.begin();（短 32 个字符）
     小明 = 15
     小红 = 14
   结构化绑定（C++17）更进一步：for (auto& [k, v] : m)
@@ -136,7 +136,7 @@ g++ -Wall -std=c++17 auto_decltype.cpp -o ad && ./ad
 
 ### 5.4 修改一个输入再观察：typeid 验代理
 
-在代理段加 `#include <typeinfo>` 和 `std::cout << typeid(f).name()`——打出 `NSt3__16vectorIbNS_9allocatorIbEEE11referenceE`（libc++ 的代理类型名——带 `reference` 字样）；对照 `typeid(real_b).name()` 是 `b`（bool 的修饰名）。**名字级别的证据**：auto 推出的确实不是 bool——打印值看不出差别但类型早已分叉。这也演示了 typeid 这个"类型透视镜"（排查 auto 推导的日常工具）。
+在代理段加 `#include <typeinfo>` 和 `std::cout << typeid(f).name()`——打出 `NSt3__115__bit_referenceINS_6vectorIbNS_9allocatorIbEEEELb1EEE`（libc++ 的代理类型名——demangle 后是 `std::__1::__bit_reference<...>`，带引用语义的代理）；对照 `typeid(real_b).name()` 是 `b`（bool 的修饰名）。**名字级别的证据**：auto 推出的确实不是 bool——打印值看不出差别但类型早已分叉。这也演示了 typeid 这个"类型透视镜"（排查 auto 推导的日常工具）。
 
 ## 6. 常见错误与排查
 
@@ -181,4 +181,4 @@ g++ -Wall -std=c++17 auto_decltype.cpp -o ad && ./ad
 
 ## 9. 一句话总结与明天预告
 
-今天的问题是"auto 便利的背后要防什么"；机制上，auto 是值拷贝语义（引用被剥——要别名写 &）、代理类型是隐形分叉（vector\<bool\> 案例）、decltype 查类型不求值（尾置返回解窄化）；实践上，三形态、双坑、重写、typeid 透视全部落地；验证标准是看到任何 auto 声明能说出"推出来的是什么、是拷贝还是别名"。明天 **Day 104：右值引用与移动语义**——偷资源为什么比抄资源快：Day 79 扩容"搬新家"的进阶版（搬家不用搬家具——连房本一起过户）。
+今天的问题是"auto 便利的背后要防什么"；机制上，auto 是值拷贝语义（引用被剥——要别名写 &）、代理类型是隐形分叉（vector\<bool\> 案例）、decltype 查类型不求值（尾置返回解窄化）；实践上，三形态、双坑、重写、typeid 透视全部落地；验证标准是看到任何 auto 声明能说出"推出来的是什么、是拷贝还是别名"。明天 **Day 104：统一初始化 {} 与 initializer_list**——花括号的统一语法与它的新规矩（窄化即编译错——初始化列表的优先级陷阱）。

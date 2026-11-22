@@ -19,7 +19,7 @@
     <text x="572" y="176" font-size="12.5" fill="#3b3a36">给一组整数常量起名：Easy=1、Medium=2、Hard=3</text>
     <text x="572" y="204" font-size="12.5" fill="#45703a">变量只能取列出的值，switch 分发不写魔法数字</text>
     <text x="572" y="238" font-size="12.5" fill="#6b675e">本质仍是整数（实测打印 today 得 2）</text>
-    <text x="572" y="272" font-size="12.5" fill="#6b675e">预告：第 15 周的 enum class 更严格——</text>
+    <text x="572" y="272" font-size="12.5" fill="#6b675e">预告：第 18 周的 enum class 更严格——</text>
     <text x="572" y="294" font-size="12.5" fill="#6b675e">不许隐式当 int 用</text>
     <text x="572" y="322" font-size="12" fill="#8a8578">（通讯录的菜单编号就是它的舞台）</text>
 

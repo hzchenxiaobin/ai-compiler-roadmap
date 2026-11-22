@@ -9,7 +9,7 @@
 
 Day 110 留下的问题：转发函数 `void relay(T&& arg)` 里 **arg 本身是左值**（有名字）——直接 `process(arg)` 传出去**永远走左值版**（右值来的也降级）！今天的**完美转发**是正式解法：`process(std::forward<T>(arg))`——左值来传左值、右值来传右值（**类别保持**）。
 
-配套两个前置概念：**万能引用**（`T&&` 在模板推导语境——左值右值都能收，靠**引用折叠**实现）和 **move/forward 的分工**（move 无条件变右值——"我不要了"；forward 有条件保持——"怎么来的怎么传"）。计划指定的 **emplace_back 简化版**是落地场景：Day 92 的 vector::emplace_back 为什么快——今天手写看原理。
+配套两个前置概念：**万能引用**（`T&&` 在模板推导语境——左值右值都能收，靠**引用折叠**实现）和 **move/forward 的分工**（move 无条件变右值——"我不要了"；forward 有条件保持——"怎么来的怎么传"）。计划指定的 **emplace_back 简化版**是落地场景：Day 79 的 vector::emplace_back 为什么快——今天手写看原理。
 
 ## 2. 先看全貌：今天的内容位于哪里？
 
@@ -43,7 +43,7 @@ Day 110 留下的问题：转发函数 `void relay(T&& arg)` 里 **arg 本身是
 
 - **一句通俗解释**：`emplace_back(U&& v)` 收万能引用、`forward<U>(v)` 直达构造函数——左值走拷贝构造、右值走移动构造（**参数原样直达**，不先造临时再拷）。
 - **一个类比**：装修送材——push_back 是"先在楼下组装好家具再搬上楼"（临时+搬运）；emplace_back 是"把原料直接送上楼在你家组装"（forward 直达）。
-- **对应到技术上是**：实测——`emplace_back(material)`（左值）→ Widget 走 `[构造] 从 const string&`（**拷贝路径**）；`emplace_back(std::move(material))`（右值）→ `[构造] 从 string&&`（**移动路径！**）——**同一个 emplace、按来路选路径**。**Day 92 的兑现**：当时说"emplace_back 把构造参数转发进容器、省一次拷贝"——今天的 `new (slot) T(std::forward<U>(v))` 就是原理（就地构造——不产生临时）。**进阶注**：完整版 emplace_back 是变参模板（`template <typename... Args> emplace_back(Args&&... args)`——任意个数参数全转发）——今天是单参简化版（变参是模板进阶话题）。类比的边界：emplace 要求参数和构造函数**匹配**（不匹配编译错）；push_back 永远是"拷/移一个现成对象"。
+- **对应到技术上是**：实测——`emplace_back(material)`（左值）→ Widget 走 `[构造] 从 const string&`（**拷贝路径**）；`emplace_back(std::move(material))`（右值）→ `[构造] 从 string&&`（**移动路径！**）——**同一个 emplace、按来路选路径**。**Day 79 的兑现**：当时说"emplace_back 把构造参数转发进容器、省一次拷贝"——今天的 `new (slot) T(std::forward<U>(v))` 就是原理（就地构造——不产生临时）。**进阶注**：完整版 emplace_back 是变参模板（`template <typename... Args> emplace_back(Args&&... args)`——任意个数参数全转发）——今天是单参简化版（变参是模板进阶话题）。类比的边界：emplace 要求参数和构造函数**匹配**（不匹配编译错）；push_back 永远是"拷/移一个现成对象"。
 - **常见误解**："emplace_back 就是 push_back 的快版"——本质是**语义不同**：push 收对象、emplace 收**构造参数**；快是"省临时"的副产品。
 
 ## 4. 图解核心机制
@@ -124,7 +124,7 @@ emplace_back(左值 material)：
 emplace_back(move(material))：
   [构造] 从 string&&："原材料"（移动路径！）
   （同一个 emplace——forward 保持来路的类别）
-  （这就是 Day 92 vector::emplace_back 快的原理）
+  （这就是 Day 79 vector::emplace_back 快的原理）
 
 == 引用折叠速查 ==
   T=string  时 T&& = string&&（右值引用）
@@ -186,4 +186,4 @@ emplace_back(move(material))：
 
 ## 9. 一句话总结与明天预告
 
-今天的问题是"中间层怎么不丢参数的类别"；机制上，万能引用（T&&+推导——折叠实现两种来路都收）、forward（有条件保持——怎么来的怎么传）、emplace_back 是落地（参数直达构造——Day 92 的原理）；实践上，万能收发、双路径、判定实验、两阶段查找插曲全部落地；验证标准是看到任何 T&& 能报出"万能吗、怎么折叠、转发用什么"。明天 **Day 114（项目日）：移动 vs 拷贝性能基准测试**（`<chrono>` 计时——计划指定）：一周的移动语义用毫秒数收官。
+今天的问题是"中间层怎么不丢参数的类别"；机制上，万能引用（T&&+推导——折叠实现两种来路都收）、forward（有条件保持——怎么来的怎么传）、emplace_back 是落地（参数直达构造——Day 79 的原理）；实践上，万能收发、双路径、判定实验、两阶段查找插曲全部落地；验证标准是看到任何 T&& 能报出"万能吗、怎么折叠、转发用什么"。明天 **Day 114（项目日）：移动 vs 拷贝性能基准测试**（`<chrono>` 计时——计划指定）：一周的移动语义用毫秒数收官。

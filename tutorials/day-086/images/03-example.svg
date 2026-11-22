@@ -38,7 +38,7 @@
     <text x="514" y="388" font-size="11" fill="#9fb8a8">　计数场景它的主场（快而无序 OK）</text>
     <text x="514" y="420" font-size="12.5" fill="#45703a">（86/144 = 59.7%）</text>
     <text x="514" y="444" font-size="11.5" fill="#9fb8a8">本周剩：87 multimap/equal_range</text>
-    <text x="514" y="464" font-size="11.5" fill="#9fb8a8">　88 迭代器分类 → 89 项目日</text>
+    <text x="514" y="464" font-size="11.5" fill="#9fb8a8">　88 迭代器分类 → 89 LRU → 90 项目日</text>
 
     <path d="M 24,506 Q 470,500 905,507 L 901,580 Q 470,574 26,579 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 543)"/>
     <text x="46" y="532" font-size="15.5" font-weight="bold" fill="#9c5a22">速度与秩序的交换律</text>

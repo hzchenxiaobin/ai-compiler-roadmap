@@ -7,7 +7,7 @@
 
 ## 1. 今天解决什么问题？
 
-Day 55（拷贝构造）、Day 56（拷贝赋值）各讲了一件；今天把它们和析构（Day 51/46）打包成**三法则**（Rule of Three）：**类自己管理资源（裸指针成员）时，三件套必须一起写**——缺①double free、缺②踩自雷、缺③泄漏。这三天的坑今天在"漏风模型"里各归各位。
+Day 55（拷贝构造）、Day 56（拷贝赋值）各讲了一件；今天把它们和析构（Day 51）打包成**三法则**（Rule of Three）：**类自己管理资源（裸指针成员）时，三件套必须一起写**——缺①double free、缺②踩自雷、缺③泄漏。这三天的坑今天在"漏风模型"里各归各位。
 
 配套两个精确控制工具：`T(…) = default`（显式要编译器的默认版——意图清晰）和 `T(…) = delete`（禁止某操作——NoCopy 类实测编译拦截）。Day 51 FileGuard 的"想禁拷贝"思想今天正式武器化。
 
@@ -66,7 +66,7 @@ Day 55（拷贝构造）、Day 56（拷贝赋值）各讲了一件；今天把�
 ### 5.1 准备文件
 
 ```bash
-cd ai-compiler-roadmap/tutorials/day-051/examples
+cd ai-compiler-roadmap/tutorials/day-057/examples
 ```
 
 两个程序：`rule_of_three.cpp`（三件套联动）、`default_delete.cpp`（两种控制）。

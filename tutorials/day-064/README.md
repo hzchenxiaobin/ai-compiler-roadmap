@@ -36,7 +36,7 @@
 
 - **一句通俗解释**：`cout << f` 想 `operator<<(ostream, Fraction)`——没有；编译器不放弃，找到 double 通道就把 f 换成 0.5 塞给 `operator<<(ostream, double)`。
 - **一个类比**：点菜没有——服务员看你能变身成"简餐"就自作主张上了简餐。
-- **对应到技术上是**：实测 `cout << f` 打出 **0.5 不是 1/2**——三步决策链：①找精确匹配（没有）→ ②找可行的转换（double 通道开着）→ ③用转换后的版本。教训：**开转换通道前想清所有会被触发的地方**——cout 只是今天撞见的第一个。类比的边界：转换只走**一步**（Fraction→double 直接可达；Fraction→double→int 的两步链编译器不走——Day 74 也见过"一步规则"）。
+- **对应到技术上是**：实测 `cout << f` 打出 **0.5 不是 1/2**——三步决策链：①找精确匹配（没有）→ ②找可行的转换（double 通道开着）→ ③用转换后的版本。教训：**开转换通道前想清所有会被触发的地方**——cout 只是今天撞见的第一个。类比的边界：转换只走**一步**（Fraction→double 直接可达；Fraction→double→int 的两步链编译器不走——Day 74 的 cast 课会再遇到这条"一步规则"）。
 - **常见误解**："没写 operator<< 就该编译错"——恰好给了编译器"退而求其次"的机会；想要编译错或正确行为，都该显式写 operator<<（昨天的技能）。
 
 ### 3.3 explicit：一步隐式的锁
@@ -64,7 +64,7 @@
 ### 5.1 准备文件
 
 ```bash
-cd ai-compiler-roadmap/tutorials/day-058/examples
+cd ai-compiler-roadmap/tutorials/day-064/examples
 ```
 
 两个程序：`implicit_convert.cpp`（转出端）、`explicit_guard.cpp`（转入端对照）。
@@ -170,7 +170,7 @@ note: candidate function not viable: no known conversion from 'double' to 'const
 
 ### 选做挑战
 
-给 Fraction 的转换运算符加 explicit（`explicit operator double() const`）——本机实测三种语境两种被锁：`double d = f` 编译错（`explicit conversion function is not a candidate`——拷贝初始化不放行）；`f + 1.5` 编译错（`invalid operands to binary expression`——算术语境不放行）；`static_cast<double>(f)` 照常通行。**只有 static_cast 一条活路**——把三种语境的实测结果记入 notes.md（例外：`explicit operator bool` 在 if 条件里可隐式用——上下文转换，第 12 周遇异常处理时再展开）。
+给 Fraction 的转换运算符加 explicit（`explicit operator double() const`）——本机实测三种语境两种被锁：`double d = f` 编译错（`explicit conversion function is not a candidate`——拷贝初始化不放行）；`f + 1.5` 编译错（`invalid operands to binary expression`——算术语境不放行）；`static_cast<double>(f)` 照常通行。**只有 static_cast 一条活路**——把三种语境的实测结果记入 notes.md（例外：`explicit operator bool` 在 if 条件里可隐式用——上下文转换，先记住这个例外即可）。
 
 ## 8. 今日验收
 

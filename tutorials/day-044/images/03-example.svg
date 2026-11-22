@@ -34,11 +34,11 @@
     <text x="514" y="290" font-size="11" fill="#9fb8a8">（Day 37 栈数组差 8 的悬案今天破案！）</text>
     <text x="514" y="322" font-size="12" fill="#9fb8a8">③字节序是跨机话题：</text>
     <text x="514" y="344" font-size="11.5" fill="#cfe8c6">　单机无感；网络/文件才管</text>
-    <text x="514" y="366" font-size="11" fill="#9fb8a8">（了解级——第 22 周网络编程再见）</text>
+    <text x="514" y="366" font-size="11" fill="#9fb8a8">（了解级——碰跨机字节流时再打交道）</text>
     <text x="514" y="400" font-size="12.5" fill="#45703a">破案注解：Day 37 的 stack_arr</text>
-    <text x="514" y="422" font-size="12" fill="#9fb8a8">　相邻元素差 8 不是 4——因为后面</text>
-    <text x="514" y="440" font-size="12" fill="#9fb8a8">　跟了 8 字节对齐的变量（当时记为</text>
-    <text x="514" y="458" font-size="12" fill="#9fb8a8">　"含对齐"——今天有了完整解释）</text>
+    <text x="514" y="422" font-size="12" fill="#9fb8a8">　打印比较的是 [0] 与 [2]——差 8</text>
+    <text x="514" y="440" font-size="12" fill="#9fb8a8">　正好两个 int；相邻元素恒差 4——</text>
+    <text x="514" y="458" font-size="12" fill="#9fb8a8">　int 数组内部没有填充（注错"含对齐"）</text>
 
     <path d="M 24,496 Q 470,490 905,497 L 901,570 Q 470,564 26,569 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 533)"/>
     <text x="46" y="522" font-size="15.5" font-weight="bold" fill="#9c5a22">明天的错误案例课的地基</text>

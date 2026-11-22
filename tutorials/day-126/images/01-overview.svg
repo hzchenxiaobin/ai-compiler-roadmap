@@ -26,7 +26,7 @@
     <text x="572" y="268" font-size="12" fill="#45703a">五（18~21 周）：现代 C++——今天收官</text>
     <text x="572" y="298" font-size="12" fill="#6b675e">一条主线："约定进类型"（三法则→</text>
     <text x="572" y="318" font-size="12" fill="#6b675e">　RAII→智能指针→optional/concepts）</text>
-    <text x="572" y="352" font-size="12.5" fill="#45703a">剩 18 天：并发 1 周 + 性能 + JSON</text>
+    <text x="572" y="352" font-size="12.5" fill="#45703a">剩 18 天：JSON 解析器+测试/性能/收尾</text>
 
     <path d="M 40,408 Q 470,402 905,409 L 901,500 Q 470,494 44,499 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 454)"/>
     <text x="472" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">为什么"零警告"值得里程碑</text>
@@ -38,7 +38,7 @@
     <circle cx="440" cy="514" r="5" fill="#c96a5a"/>
     <text x="440" y="534" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 126（阶段五毕业）</text>
     <circle cx="690" cy="514" r="5" fill="#5b8db8"/>
-    <text x="690" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">第 22 周 并发</text>
+    <text x="690" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">第 22 周 JSON 开工</text>
     <circle cx="870" cy="514" r="5" fill="#e0955f"/>
     <text x="870" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">JSON 项目</text>
   </g>

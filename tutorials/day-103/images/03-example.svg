@@ -22,14 +22,14 @@
     <text x="54" y="424" font-size="12" fill="#9fb8a8">== 尾置返回 ==</text>
     <text x="54" y="446" font-size="11.5" fill="#cfe8c6">add(3,4.5)=7.5 ✔（混合型加法）</text>
     <text x="54" y="470" font-size="12" fill="#9fb8a8">== 重写旧代码 ==</text>
-    <text x="54" y="492" font-size="11.5" fill="#cfe8c8">迭代器声明短 30 字符 ✔</text>
+    <text x="54" y="492" font-size="11.5" fill="#cfe8c8">迭代器声明短 32 字符 ✔</text>
 
     <path d="M 488,102 Q 712,97 934,102 Q 938,290 934,490 Q 712,495 490,490 Q 484,290 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 296)"/>
     <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">阶段五开篇 + 知识回响</text>
     <rect x="502" y="146" width="420" height="330" rx="6" fill="#33413a"/>
     <text x="514" y="174" font-size="12" fill="#9fb8a8">阶段五（现代 C++，4 周）：</text>
     <text x="514" y="198" font-size="11.5" fill="#cfe8c6">语言核心改进 → 移动语义 →</text>
-    <text x="514" y="218" font-size="11.5" fill="#cfe8c8">　智能指针 → 并发/性能 → 项目</text>
+    <text x="514" y="218" font-size="11.5" fill="#cfe8c8">　智能指针 → 现代库 → JSON 项目</text>
     <text x="514" y="248" font-size="12" fill="#9fb8a8">同步阅读：《Effective Modern C++》</text>
     <text x="514" y="270" font-size="11" fill="#9fb8a8">　（每天 1~2 条款——计划原文要求）</text>
     <text x="514" y="300" font-size="12" fill="#9fb8a8">今天的知识回响：</text>
@@ -37,8 +37,8 @@
     <text x="514" y="342" font-size="11.5" fill="#cfe8c6">Day 88 iterator_traits → decltype 前辈</text>
     <text x="514" y="362" font-size="11.5" fill="#cfe8c8">Day 84/85 的长迭代器声明 → auto 解放</text>
     <text x="514" y="394" font-size="12.5" fill="#45703a">（103/144 = 71.5%）</text>
-    <text x="514" y="426" font-size="11.5" fill="#9fb8a8">本周路线：103 auto ✓ → 104 移动语义</text>
-    <text x="514" y="446" font-size="11.5" fill="#9fb8a8">　→ 105 完美转发 → …… → 109 项目日</text>
+    <text x="514" y="426" font-size="11.5" fill="#9fb8a8">本周路线：103 auto ✓ → 104 统一初始化</text>
+    <text x="514" y="446" font-size="11.5" fill="#9fb8a8">　→ 105 nullptr 四件套 → …… → 108 项目日</text>
     <text x="514" y="476" font-size="11" fill="#9fb8a8">（Effective 同步：条款 1~6 的 auto 部分</text>
     <text x="514" y="494" font-size="11" fill="#9fb8a8">　——今天涉及条款 6）</text>
 
@@ -47,6 +47,6 @@
     <text x="46" y="568" font-size="12.5" fill="#3b3a36">"类型显然时让它自己说"（省字符+重构友好）vs "类型重要时自己写"（接口边界+代理场景）——工具服务可读性不是反过来</text>
 
     <path d="M 24,596 Q 470,590 905,597 L 901,650 Q 470,644 26,649 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 623)"/>
-    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 104 右值引用与移动语义——偷资源为什么比抄资源快</text>
+    <text x="480" y="627" text-anchor="middle" font-size="12.5" fill="#55606e">明天预告：Day 104 统一初始化 {} 与 initializer_list——花括号的新规矩</text>
   </g>
 </svg>

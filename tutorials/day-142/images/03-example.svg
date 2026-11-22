@@ -3,7 +3,7 @@
   <g stroke-linecap="round" stroke-linejoin="round">
     <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">三目标全通、ctest 2/2 与消毒柜战报</text>
     <path d="M 380,58 Q 480,52 580,59" fill="none" stroke="#7aa663" stroke-width="3"/>
-    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21 + cmake 4.5.1 + GTest 1.18.0——配置/构建/测试/消毒四段全绿）</text>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出来自本机真实运行（macOS arm64 + Apple clang 21 + cmake 4.5.1 + GTest 1.18.0——配置/构建/运行/测试/消毒五段全绿）</text>
 
     <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,490 Q 248,495 26,490 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 296)"/>
     <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">完整输出（节选）</text>
@@ -12,7 +12,7 @@
     <text x="54" y="196" font-size="11" fill="#cfe8c8">-- Found Threads: TRUE ✔</text>
     <text x="54" y="216" font-size="11" fill="#cfe8c8">-- Configuring done ✔</text>
     <text x="54" y="240" font-size="11.5" fill="#9fb8a8">$ cmake --build build</text>
-    <text x="54" y="262" font-size="11" fill="#cfe8c8">[100%] 三个目标 Built ✔（零警告）</text>
+    <text x="54" y="262" font-size="11" fill="#cfe8c8">[100%] 三个目标 Built ✔（编译零警告）</text>
     <text x="54" y="288" font-size="11.5" fill="#9fb8a8">$ ./build/json_demo</text>
     <text x="54" y="310" font-size="11" fill="#f0c9c0">C++ 标准：C++20 ✔（编译期检测）</text>
     <text x="54" y="334" font-size="11.5" fill="#9fb8a8">$ ctest --output-on-failure</text>

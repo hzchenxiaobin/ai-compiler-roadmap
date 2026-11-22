@@ -7,11 +7,11 @@
     <path d="M 40,100 Q 470,94 905,101 L 901,350 Q 470,344 44,349 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 225)"/>
     <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">容量 2 的四步演变（实测快照）</text>
     <rect x="90" y="146" width="280" height="40" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
-    <text x="230" y="171" font-size="11" fill="#45703a">①put(1) put(2)：[2 → 1]（2 最新）</text>
+    <text x="230" y="171" font-size="11" fill="#45703a">①put(1) put(2)：[2→1]</text>
     <rect x="400" y="146" width="280" height="40" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
     <text x="540" y="171" font-size="11" fill="#9c5a22">②get(1)：splice 移头 [1 → 2]</text>
     <rect x="90" y="200" width="280" height="40" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2"/>
-    <text x="230" y="225" font-size="11" fill="#a33f2e">③put(3)：满 → 淘汰尾 2 → [3 → 1]</text>
+    <text x="230" y="225" font-size="11" fill="#a33f2e">③put(3)：满→淘汰尾 2→[3→1]</text>
     <rect x="400" y="200" width="280" height="40" fill="#d8ecce" stroke="#7aa663" stroke-width="2"/>
     <text x="540" y="225" font-size="11" fill="#45703a">④get(2)：-1（已被淘汰）</text>
     <text x="720" y="171" font-size="10.5" fill="#6b675e">头 = 最近使用</text>

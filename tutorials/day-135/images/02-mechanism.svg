@@ -33,6 +33,6 @@
     <text x="732" y="456" font-size="10" fill="#8a8578">（"nope" 一打就发现——不埋雷）</text>
     <text x="732" y="484" font-size="10.5" fill="#9fb8a8">返 null（nlohmann 缺键时）：</text>
     <text x="732" y="504" font-size="10" fill="#8a8578">（链式深挖方便——但拼错键静默）</text>
-    <text x="732" y="534" font-size="10" fill="#8a8578">（教学选抛：错误早发现优于深挖方便）</text>
+    <text x="732" y="534" font-size="10" fill="#8a8578">（教学选抛：早发现优于深挖）</text>
   </g>
 </svg>

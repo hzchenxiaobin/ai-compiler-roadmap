@@ -49,7 +49,7 @@
     <text x="96" y="494" font-size="12" fill="#6b675e">f(int a, int b=1, int c=2) ✔</text>
     <text x="96" y="514" font-size="12" fill="#a33f2e">f(int a=1, int b) ✘ 左边有默认右边没有</text>
     <text x="80" y="542" font-size="12.5" fill="#3b3a36">2. 声明里写默认值，定义里不再写</text>
-    <text x="80" y="562" font-size="12.5" fill="#3b3a36">3. 调用时也按从左往右省略，不能跳着省</text>
+    <text x="80" y="562" font-size="12.5" fill="#3b3a36">3. 调用时也按从右往左省略，不能跳着省</text>
 
     <path d="M 540,410 Q 730,404 920,410 Q 924,490 920,570 Q 730,576 542,570 Q 536,490 540,410 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(0.3 730 490)"/>
     <text x="730" y="442" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#8a6d1a">真实实验两连（本机实测）</text>

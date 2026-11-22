@@ -5,7 +5,7 @@
 #include <vector>
 
 // ===== Day 108 项目日：通讯录 v3——现代特性重写（计划指定） =====
-// v1（Day 12 数组版）→ v3（今天）：auto / {} / enum class / using / 结构化绑定 / if constexpr 全上场
+// v1（Day 30 数组版）→ v3（今天）：auto / {} / enum class / using / 结构化绑定 / if constexpr 全上场
 
 enum class MatchMode { Exact, Prefix };                  // ② enum class（Day 105）
 

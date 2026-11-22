@@ -35,6 +35,6 @@
     <path d="M 480,424 Q 480,432 480,440" fill="none" stroke="#3b3a36" stroke-width="2.2"/>
     <path d="M 473,434 Q 480,442 488,435" fill="none" stroke="#3b3a36" stroke-width="2.2"/>
     <text x="472" y="530" text-anchor="middle" font-size="12.5" fill="#45703a">派生类只填差异（area），公共代码（name/describe）只写一遍</text>
-    <text x="472" y="556" text-anchor="middle" font-size="12" fill="#8a8578">（模板方法模式的雏形——Day 75 设计模式周再回来点题）</text>
+    <text x="472" y="556" text-anchor="middle" font-size="12" fill="#8a8578">（模板方法模式的雏形——第 13 周设计课再回来点题）</text>
   </g>
 </svg>

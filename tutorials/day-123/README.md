@@ -43,7 +43,7 @@ C++17 终于有了**官方文件系统库**：`<filesystem>` 的 path 对象、�
 
 - **一句通俗解释**：exists/file_size/create_directories/copy/remove_all——日常文件操作一个头文件全包；错误默认抛异常（无抛版传 error_code）。
 - **一个类比**：工具箱换新——旧的三件套（opendir/stat/unlink 各平台一套）换成一整套统一制式的新工具。
-- **对应到技术上是**：实测——`create_directories(root/"a"/"sub")`（多层一次建 ✔）；`fs::copy(src, dst)`（复制后 exists=1 ✔）；`remove_all(root)`（整树删——造场前清和收尾都用）；`current_path()`（当前目录——打印截断防溢出）。**错误处理的两版**：默认抛 `filesystem_error`（带路径详情——异常周 Day 127+ 的预告）；无抛版 `fs::exists(p, ec)` 传 `std::error_code`（老 C 返回码的现代版——两版按场景选）。**和 JSON 项目周的连接**：解析器要读文件（ifstream + path）、测试要扫描用例目录——今天学的直接上场。类比的边界：权限/并发（别的进程在改目录）会让迭代器抛或跳——生产级要容错（练习从简）。
+- **对应到技术上是**：实测——`create_directories(root/"a"/"sub")`（多层一次建 ✔）；`fs::copy(src, dst)`（复制后 exists=1 ✔）；`remove_all(root)`（整树删——造场前清和收尾都用）；`current_path()`（当前目录——打印截断防溢出）。**错误处理的两版**：默认抛 `filesystem_error`（带路径详情——Day 133 JSON 错误处理的预告）；无抛版 `fs::exists(p, ec)` 传 `std::error_code`（老 C 返回码的现代版——两版按场景选）。**和 JSON 项目周的连接**：解析器要读文件（ifstream + path）、测试要扫描用例目录——今天学的直接上场。类比的边界：权限/并发（别的进程在改目录）会让迭代器抛或跳——生产级要容错（练习从简）。
 - **常见误解**："file_size 对目录也返回总和"——目录的大小（条目表的字节数）不是内容总和——总和自己累加（今天的 scan 做法）。
 
 ## 4. 图解核心机制
@@ -183,7 +183,7 @@ g++ -Wall -std=c++17 dir_stats.cpp -o ds && ./ds
 - [ ] 我的三种遍历姿势过（单层列出/递归扫描/范围 for）
 - [ ] 我的 entry 三连问实测（is_dir/file_size/filename）
 - [ ] 我的操作速览全过（create/copy/remove_all/current_path）
-- [ ] 我知道错误处理的两版（抛异常 vs error_code——Day 126+ 的预告）
+- [ ] 我知道错误处理的两版（抛异常 vs error_code——Day 133 的预告）
 
 ## 9. 一句话总结与明天预告
 

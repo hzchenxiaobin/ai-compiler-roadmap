@@ -16,7 +16,7 @@
     <text x="520" y="171" text-anchor="middle" font-size="11.5" fill="#8a8578">对齐垫 3B</text>
     <text x="600" y="162" font-size="11.5" fill="#6b675e">24 + 4 + 1 = 29，为什么是 32？</text>
     <text x="600" y="182" font-size="11.5" fill="#6b675e">内存对齐：结构体大小凑成成员</text>
-    <text x="600" y="202" font-size="11.5" fill="#6b675e">最大对齐值（8）的倍数——Day 68 专题</text>
+    <text x="600" y="202" font-size="11.5" fill="#6b675e">最大对齐值（8）的倍数——Day 44 专题</text>
     <text x="70" y="222" font-size="12.5" fill="#3b3a36">结论：sizeof(struct) 不等于成员简单相加——永远现场 sizeof，别心算</text>
     <text x="70" y="252" font-size="12.5" fill="#55606e">成员各自独立可改：s1.score = 95 只动分数栏，其他栏不动（实测）</text>
 
@@ -40,6 +40,6 @@
     <text x="472" y="474" text-anchor="middle" font-size="15" font-weight="bold" fill="#8a6d1a">enum 的双重身份（实测）</text>
     <text x="70" y="506" font-size="13" fill="#3b3a36">名字身份：switch (lv) { case Easy: … } ——代码读起来是"人话"</text>
     <text x="70" y="534" font-size="13" fill="#3b3a36">数值身份：cout &lt;&lt; today 打印 2；for (int lv = Easy; lv &lt;= Hard; ++lv) 直接当整数循环</text>
-    <text x="70" y="562" font-size="12.5" fill="#6b675e">这种"隐式变整数"很方便但不安全——第 15 周的 enum class 会加上围栏，今天先享受便利并知道边界</text>
+    <text x="70" y="562" font-size="12.5" fill="#6b675e">这种"隐式变整数"很方便但不安全——第 18 周的 enum class 会加上围栏，今天先享受便利并知道边界</text>
   </g>
 </svg>

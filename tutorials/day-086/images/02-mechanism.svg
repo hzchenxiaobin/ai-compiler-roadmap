@@ -16,7 +16,7 @@
     <text x="415" y="168" font-size="9.5" fill="#8a94a3">桶3</text>
     <rect x="460" y="146" width="140" height="56" fill="#f9d9b8" stroke="#e0955f" stroke-width="2.2"/>
     <text x="530" y="168" font-size="9.5" fill="#9c5a22">桶4:banana→cherry</text>
-    <text x="530" y="186" font-size="8.5" fill="#8a8578">（冲突链！两键同桶）</text>
+    <text x="530" y="186" font-size="8.5" fill="#8a8578">（冲突链！）</text>
     <text x="472" y="234" font-size="11.5" fill="#3b3a36">哈希函数：hash("apple")%5=1、hash("banana")%5=4、hash("cherry")%5=4（冲突）</text>
     <text x="472" y="260" font-size="11.5" fill="#6b675e">冲突处理：桶内挂链（banana → cherry 串一起）——查找时桶内逐个比对</text>
     <text x="472" y="290" font-size="11.5" fill="#45703a">load_factor 0.6 = 3 键/5 桶——超过 ~1.0 自动扩桶（rehash 重分布）</text>
@@ -28,8 +28,8 @@
     <text x="64" y="450" font-size="11.5" fill="#6b675e">（每个键一个节点——红黑规则维持）</text>
     <text x="64" y="480" font-size="12" fill="#3b3a36">unordered：桶数组+桶内链</text>
     <text x="64" y="502" font-size="11.5" fill="#6b675e">（哈希直达桶——树高消失）</text>
-    <text x="64" y="536" font-size="11.5" fill="#8a8578">（迭代器都是双向（Day 88 的伏笔）——</text>
-    <text x="64" y="556" font-size="11.5" fill="#8a8578">　但 unordered 的序没有意义）</text>
+    <text x="64" y="536" font-size="11.5" fill="#8a8578">（map/set 的迭代器双向、unordered 是前向——</text>
+    <text x="64" y="556" font-size="11.5" fill="#8a8578">　只能 ++ 不能 --，序没有意义）</text>
 
     <path d="M 550,364 Q 730,358 905,364 Q 908,470 905,576 Q 730,582 552,576 Q 547,470 550,364 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 727 470)"/>
     <text x="727" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">自定义 key 的两条路</text>

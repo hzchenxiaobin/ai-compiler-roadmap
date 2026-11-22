@@ -16,6 +16,6 @@ int main() {
     table[0] = 100;
     std::cout << "table[0] = " << table[0] << "（长度 " << compile_n << "）" << std::endl;
 
-    constexpr int bad = input;
+    // constexpr int bad = input;   // ✘ 探针 C：放开即编译错误（constexpr 绑运行期输入）
     return 0;
 }

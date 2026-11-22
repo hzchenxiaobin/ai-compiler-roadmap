@@ -42,7 +42,7 @@
     <text x="732" y="424" font-size="10.5" fill="#9fb8a8">　　　 cols_ == rhs.cols_);</text>
     <text x="732" y="448" font-size="10.5" fill="#cfe8c6">（2×3 + 3×2 直接崩——教学版简洁）</text>
     <text x="572" y="498" font-size="12.5" fill="#6b675e">真实库抛异常（带信息恢复）——</text>
-    <text x="572" y="518" font-size="12.5" fill="#6b675e">　第 12 周的改进方向</text>
+    <text x="572" y="518" font-size="12.5" fill="#6b675e">　产品级的改进方向</text>
     <text x="572" y="552" font-size="12" fill="#8a8578">（不变量"同型才可加"的守卫形态）</text>
   </g>
 </svg>

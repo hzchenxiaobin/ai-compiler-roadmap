@@ -36,7 +36,7 @@
 
 - **一句通俗解释**：pair、tuple、结构体、数组——任何"多个成员的东西"都能 `auto [a, b, c] = 它` 一步拆开。
 - **一个类比**：快递拆箱——成对的（pair）、成套的（tuple）、定制的（结构体）、一排的（数组）——开箱姿势统一。
-- **对应到技术上是**：实测——pair：`auto [a, b] = make_pair(42, 3.14)`；**tuple**：`auto [name, age, score] = get_student()`（多返回值优雅接收——`get<0>(t)` 序号魔法数退场）；**结构体**：`auto [px, py] = Point{3,4}`（按成员序）；**数组**：`auto [x,y,z] = int[3]`（按位置）；**嵌套**：`map<string, vector<int>>` 的 `[subject, scores]` 双层遍历（均分统计实测）；**insert 拆包**：`auto [iter, inserted] = seen.insert("apple")`（首 insert **true**、再 insert **false**——bool 立判新旧）。类比的边界：**不能嵌套声明**（`[a, [b, c]]` 不行——拆两层分两行）；**数量要精确**（pair 拆三个编译错）；**结构体要全 public**（private 的类用 getter）。
+- **对应到技术上是**：实测——pair：`auto [a, b] = make_pair(42, 3.14)`；**tuple**：`auto [name, age, score] = get_student()`（多返回值优雅接收——`get<0>(t)` 序号魔法数退场）；**结构体**：`auto [px, py] = Point{3,4}`（按成员序）；**数组**：`auto [x,y,z] = arr`（定长数组按位置拆）；**嵌套**：`map<string, vector<int>>` 的 `[subject, scores]` 双层遍历（均分统计实测）；**insert 拆包**：`auto [iter, inserted] = seen.insert("apple")`（首 insert **true**、再 insert **false**——bool 立判新旧）。类比的边界：**不能嵌套声明**（`[a, [b, c]]` 不行——拆两层分两行）；**数量要精确**（pair 拆三个编译错）；**结构体要全 public**（private 的类用 getter）。
 - **常见误解**："tuple 只能用 get\<i\> 取"——C++17 起绑定更好；get\<i\> 留给"只要其中一个"的场景。
 
 ### 3.3 值/引用分野的迁移

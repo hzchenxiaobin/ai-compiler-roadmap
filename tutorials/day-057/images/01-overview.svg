@@ -14,7 +14,7 @@
     <text x="284" y="270" font-size="12" fill="#45703a">②拷贝赋值 operator=(const Buffer&amp;) ——Day 56</text>
     <text x="284" y="292" font-size="12" fill="#8a8578">（不写 → 默认浅赋值 + 无自赋值检查）</text>
     <rect x="64" y="328" width="440" height="46" fill="#eef5e8" stroke="#7aa663" stroke-width="2.2"/>
-    <text x="284" y="348" font-size="12" fill="#45703a">③析构 ~Buffer() ——Day 51/46</text>
+    <text x="284" y="348" font-size="12" fill="#45703a">③析构 ~Buffer() ——Day 51</text>
     <text x="284" y="366" font-size="12" fill="#8a8578">（不写 → 泄漏）</text>
 
     <path d="M 550,116 Q 740,110 905,116 Q 908,250 905,384 Q 740,390 552,384 Q 547,250 550,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 250)"/>

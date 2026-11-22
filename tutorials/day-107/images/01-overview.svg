@@ -42,6 +42,6 @@
     <circle cx="650" cy="514" r="5" fill="#e0955f"/>
     <text x="650" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">Day 108 项目日</text>
     <circle cx="850" cy="514" r="5" fill="#5b8db8"/>
-    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">第 19 周 智能指针</text>
+    <text x="850" y="534" text-anchor="middle" font-size="12" fill="#3b3a36">第 19 周 移动语义</text>
   </g>
 </svg>

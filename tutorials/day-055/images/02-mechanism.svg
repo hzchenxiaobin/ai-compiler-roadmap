@@ -19,7 +19,7 @@
     <path d="M 562,174 Q 610,174 648,176" fill="none" stroke="#8a94a3" stroke-width="2.2" stroke-dasharray="6 4"/>
     <text x="472" y="240" font-size="12.5" fill="#a33f2e">两根指针、一块内存——析构两次 = double free</text>
     <text x="472" y="268" font-size="12.5" fill="#3b3a36">ASan 实测：attempting double-free on 0x…92c0</text>
-    <text x="472" y="296" font-size="12" fill="#8a8578">（普通编译这次静默通过——又见"能跑不等于对"）</text>
+    <text x="472" y="296" font-size="12" fill="#8a8578">（普通编译这次本机 abort——exit=133，又见"能跑不等于对"）</text>
 
     <path d="M 40,344 Q 470,338 905,345 L 901,576 Q 470,570 44,575 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.2 472 460)"/>
     <text x="472" y="374" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">深拷贝：两个对象两块内存</text>
