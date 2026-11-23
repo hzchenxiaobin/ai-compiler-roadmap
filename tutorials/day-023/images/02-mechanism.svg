@@ -33,7 +33,7 @@
     <text x="472" y="414" text-anchor="middle" font-size="15" font-weight="bold" fill="#55606e">判断口诀：看谁先和名字结合</text>
     <text x="70" y="444" font-size="13" fill="#3b3a36">名字先碰 [] → 是数组（元素是指针）；名字先被括号包住碰 * → 是指针（指向整行）</text>
 
-    <path d="M 40,490 Q 470,484 905,491 L 901,576 Q 470,570 44,575 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(0.2 472 533)"/>
+    <path d="M 40,490 Q 470,484 905,491 L 901,598 Q 470,592 44,597 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(0.2 472 544)"/>
     <text x="472" y="520" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#8a6d1a">为什么"了解即可"？</text>
     <text x="70" y="550" font-size="12.5" fill="#6b675e">二级指针多出现在老代码和 argv 场景；现代 C++ 用引用、vector、string_view 替代了大部分套娃——</text>
     <text x="70" y="572" font-size="12.5" fill="#6b675e">会读图、能看懂别人的声明，就是今天的满分线；自己需要三层间接时，先想想是不是设计能简化</text>

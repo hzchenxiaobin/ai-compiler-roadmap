@@ -110,7 +110,7 @@ int main() {
 ### 5.3 运行与观察
 
 ```bash
-g++ -Wall array_decay.cpp -o ad && ./ad
+g++ -Wall array_decay.cpp -o array_decay && ./array_decay
 ```
 
 实际执行结果（本机）：
@@ -126,7 +126,7 @@ sizeof(p)      = 8（指针自己只有 8 字节）
 ```
 
 ```bash
-g++ -Wall ptr_arith.cpp -o pa && ./pa
+g++ -Wall ptr_arith.cpp -o ptr_arith && ./ptr_arith
 ```
 
 ```text
@@ -148,7 +148,7 @@ double 数组：
 
 ### 5.4 修改一个输入再观察：换 double 再走一遍
 
-把 `pointer_sum.cpp` 的数组改成 `double prices[4] = {9.9, 19.5, 4.5, 3.0}`，指针版循环里 `int* p` 相应改成 `double* p`（本机真实输出）：
+把 `pointer_sum.cpp` 的数组改成 `double prices[4] = {9.9, 19.5, 4.5, 3.0}`（`WEEKS` 相应改成 4），指针版循环里 `int* p` 相应改成 `double* p`，两个累加变量 `sum_index`、`sum_pointer` 也要改成 `double`——保持 `int` 会被截断成 35（本机真实输出）：
 
 ```text
 下标版总和 = 36.9

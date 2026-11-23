@@ -36,6 +36,6 @@
     <path d="M 24,490 Q 470,484 905,491 L 901,610 Q 470,604 26,609 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 550)"/>
     <text x="46" y="518" font-size="14" font-weight="bold" fill="#55606e">argv 彩蛋：main(int argc, char** argv)</text>
     <text x="46" y="548" font-size="12.5" fill="#3b3a36">argv 就是指向字符指针的指针——命令行参数表；argv[0] 是程序名。今天之后，这个签名从"天书"变成"熟人"</text>
-    <text x="46" y="576" font-size="12.5" fill="#6b675e">试试：./ptr_array 你好 世界 —— 参数怎么进 argv？明天自测日的选做小实验</text>
+    <text x="46" y="576" font-size="12.5" fill="#6b675e">试试：/tmp/argv_probe 你好 世界 —— 参数怎么进 argv？见 5.4 节本机实测</text>
   </g>
 </svg>

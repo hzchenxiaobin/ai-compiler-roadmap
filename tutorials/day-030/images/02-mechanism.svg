@@ -26,9 +26,9 @@
     <text x="106" y="414" font-size="11.5" fill="#f0c9c0">cin.ignore(10000, '\n');　　　// 冲掉换行（漏了这行，getline 拿到空名！）</text>
     <text x="106" y="434" font-size="11.5" fill="#cfe8c6">getline(cin, name);　　　　　　// 现在拿到真正的整行</text>
 
-    <path d="M 40,484 Q 470,478 905,485 L 901,576 Q 470,570 44,575 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.2 472 530)"/>
+    <path d="M 40,484 Q 470,478 905,485 L 901,586 Q 470,580 44,585 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.2 472 530)"/>
     <text x="472" y="514" text-anchor="middle" font-size="15" font-weight="bold" fill="#8a6d1a">count 的三条军规</text>
-    <text x="70" y="546" font-size="13" fill="#3b3a36">①新增先检查 count &lt; 100　　②删除后立刻 --　　③一切遍历只走 [0, count)</text>
+    <text x="70" y="546" font-size="13" fill="#3b3a36">①新增先检查 count &lt; 100　　②删除后立刻 --count　　③一切遍历只走 [0, count)</text>
     <text x="70" y="570" font-size="12.5" fill="#6b675e">（定长数组的"有效长度"全靠它维护——第 14 周 vector 把 count 也包进容器里）</text>
   </g>
 </svg>

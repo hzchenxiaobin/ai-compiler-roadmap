@@ -7,14 +7,14 @@
     <path d="M 40,100 Q 470,94 905,101 L 901,330 Q 470,324 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 215)"/>
     <text x="472" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">CPU 读内存的"轨距"（8 字节为例）</text>
     <rect x="80" y="146" width="800" height="40" fill="#f1f4f7" stroke="#8a94a3" stroke-width="1.8"/>
-    <text x="480" y="171" font-size="10.5" fill="#8a94a3">轨道：每 8 字节一趟车（地址必须是 8 的倍数才"在站台上"）</text>
-    <rect x="392" y="200" width="192" height="34" fill="#d8ecce" stroke="#7aa663" stroke-width="2.2"/>
-    <text x="270" y="222" font-size="10.5" fill="#45703a">double 在偏移 8（对齐 ✔）</text>
-    <text x="270" y="256" font-size="11.5" fill="#45703a">一次读走（快）✔</text>
-    <rect x="356" y="200" width="192" height="34" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.2"/>
-    <text x="452" y="222" font-size="10.5" fill="#a33f2e">double 在偏移 4（未对齐 ✘）</text>
-    <text x="452" y="256" font-size="11.5" fill="#a33f2e">横跨两趟车：两次读+拼装（慢）</text>
-    <text x="452" y="286" font-size="11" fill="#a33f2e">（某些平台直接崩——x86 容忍但慢）</text>
+    <text x="480" y="171" text-anchor="middle" font-size="10.5" fill="#8a94a3">轨道：每 8 字节一趟车（地址必须是 8 的倍数才"在站台上"）</text>
+    <rect x="110" y="200" width="200" height="34" fill="#d8ecce" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="210" y="222" text-anchor="middle" font-size="10.5" fill="#45703a">double 在偏移 8（对齐 ✔）</text>
+    <text x="210" y="256" text-anchor="middle" font-size="11.5" fill="#45703a">一次读走（快）✔</text>
+    <rect x="380" y="200" width="210" height="34" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.2"/>
+    <text x="485" y="222" text-anchor="middle" font-size="10.5" fill="#a33f2e">double 在偏移 4（未对齐 ✘）</text>
+    <text x="485" y="256" text-anchor="middle" font-size="11.5" fill="#a33f2e">横跨两趟车：两次读+拼装（慢）</text>
+    <text x="485" y="286" text-anchor="middle" font-size="11" fill="#a33f2e">（某些平台直接崩——x86 容忍但慢）</text>
     <text x="700" y="230" font-size="11.5" fill="#6b675e">编译器的解法：</text>
     <text x="700" y="252" font-size="11.5" fill="#6b675e">　插填充字节把成员</text>
     <text x="700" y="272" font-size="11.5" fill="#6b675e">　推到对齐地址上</text>
@@ -23,9 +23,9 @@
     <path d="M 40,354 Q 470,348 905,355 L 901,576 Q 470,570 44,575 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.2 472 465)"/>
     <text x="472" y="384" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">字节序：同一个数的两种摆法（实测小端）</text>
     <rect x="150" y="402" width="660" height="90" fill="#33413a"/>
-    <text x="480" y="428" font-size="11.5" fill="#cfe8c6">uint32_t x = 0x01020304;</text>
-    <text x="480" y="452" font-size="12" fill="#f0c9c0">小端：内存低→高 = 04 03 02 01（低位字节在低地址）</text>
-    <text x="480" y="476" font-size="12" fill="#9fb8a8">大端（网络序）：内存低→高 = 01 02 03 04（高位字节在低地址）</text>
+    <text x="480" y="428" text-anchor="middle" font-size="11.5" fill="#cfe8c6">uint32_t x = 0x01020304;</text>
+    <text x="480" y="452" text-anchor="middle" font-size="12" fill="#f0c9c0">小端：内存低→高 = 04 03 02 01（低位字节在低地址）</text>
+    <text x="480" y="476" text-anchor="middle" font-size="12" fill="#9fb8a8">大端（网络序）：内存低→高 = 01 02 03 04（高位字节在低地址）</text>
     <text x="472" y="518" font-size="12.5" fill="#45703a">同一机器写读一致 → C++ 程序员平时无感（memcpy 实测 258→258 ✔）</text>
     <text x="472" y="544" font-size="12.5" fill="#a33f2e">跨机器的字节流（网络/文件/硬件）→ 必须约定序并转换（htons/htonl）</text>
   </g>

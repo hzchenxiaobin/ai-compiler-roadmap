@@ -32,7 +32,7 @@
 
     <path d="M 60,510 Q 480,504 905,511" fill="none" stroke="#8a8578" stroke-width="2.6"/>
     <circle cx="250" cy="510" r="5" fill="#8a94a3"/>
-    <text x="250" y="530" text-anchor="middle" font-size="12" fill="#3b3a36">第 1~6 周 ✓</text>
+    <text x="250" y="530" text-anchor="middle" font-size="12" fill="#3b3a36">第 1~8 周 ✓</text>
     <circle cx="440" cy="510" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
     <circle cx="440" cy="510" r="5" fill="#5b8db8"/>
     <text x="440" y="530" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 49（今天）</text>

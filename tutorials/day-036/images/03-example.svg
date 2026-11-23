@@ -2,7 +2,7 @@
   <rect x="4" y="4" width="952" height="652" rx="14" fill="#fffdf7"/>
   <g stroke-linecap="round" stroke-linejoin="round">
     <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">git 管理实录与六周战绩总表</text>
-    <path d="M 340,58 Q 480,52 620,59" fill="none" stroke="#7aa663" weight="3"/>
+    <path d="M 340,58 Q 480,52 620,59" fill="none" stroke="#7aa663" stroke-width="3"/>
     <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
 
     <path d="M 24,102 Q 248,97 470,102 Q 474,250 470,400 Q 248,405 26,400 Q 20,250 24,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(-0.3 247 251)"/>

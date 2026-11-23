@@ -18,9 +18,9 @@
     <rect x="720" y="146" width="150" height="60" fill="#eef5e8" stroke="#7aa663" stroke-width="2"/>
     <text x="795" y="170" text-anchor="middle" font-size="10.5" fill="#45703a">④ASan 运行</text>
     <text x="795" y="188" text-anchor="middle" font-size="9.5" fill="#8a8578">（stdin 饿死交互）</text>
-    <text x="472" y="238" font-size="12.5" fill="#3b3a36">分诊价值：把"报错"分成三类——真问题（要修）、教学预期（内容本身）、</text>
-    <text x="472" y="262" font-size="12.5" fill="#3b3a36">多文件局限（换联合编译复验）——不做一刀切的"全绿"假账</text>
-    <text x="472" y="298" font-size="12" fill="#8a8578">（实测抓到 day-074 未用变量——修了；多文件抽样联合编译通过——复验了）</text>
+    <text x="472" y="238" text-anchor="middle" font-size="12.5" fill="#3b3a36">分诊价值：把"报错"分成三类——真问题（要修）、教学预期（内容本身）、</text>
+    <text x="472" y="262" text-anchor="middle" font-size="12.5" fill="#3b3a36">多文件局限（换联合编译复验）——不做一刀切的"全绿"假账</text>
+    <text x="472" y="298" text-anchor="middle" font-size="12" fill="#8a8578">（实测抓到 day-074 未用变量——修了；多文件抽样联合编译通过——复验了）</text>
 
     <path d="M 40,354 Q 280,348 520,354 Q 524,470 520,576 Q 280,582 42,576 Q 36,470 40,354 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 465)"/>
     <text x="280" y="384" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">五维白板的程序化证据</text>

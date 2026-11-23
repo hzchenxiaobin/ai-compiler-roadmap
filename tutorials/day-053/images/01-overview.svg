@@ -10,8 +10,8 @@
     <text x="70" y="178" font-size="13" fill="#3b3a36">std::string model_;　　（成员一：旧朋友）</text>
     <text x="70" y="206" font-size="13" fill="#45703a">Engine engine_;　　　 （成员二：类对象——组合！）</text>
     <text x="70" y="234" font-size="13" fill="#45703a">Wheel wheels_[4];　　（成员三：类对象数组）</text>
-    <text x="70" y="270" font-size="12.5" fill="#6b675e">初始化列表：engine_(hp) 和 wheels_{Wheel(p),…}——零件先就位，整车后组装</text>
-    <text x="70" y="292" font-size="12.5" fill="#6b675e">report() 里 engine_.horsepower()：一层 . 选零件，再一层选能力（两层访问）</text>
+    <text x="70" y="262" font-size="12.5" fill="#6b675e">初始化列表：engine_(hp) 和 wheels_{Wheel(p),…}——零件先就位，整车后组装</text>
+    <text x="70" y="284" font-size="12.5" fill="#6b675e">report() 里 engine_.horsepower()：一层 . 选零件，再一层选能力（两层访问）</text>
 
     <path d="M 40,324 Q 280,318 520,324 Q 524,430 520,500 Q 280,506 42,500 Q 36,430 40,324 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 412)"/>
     <text x="280" y="354" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">组合的三个红利</text>

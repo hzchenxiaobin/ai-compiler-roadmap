@@ -18,8 +18,8 @@
     <rect x="520" y="168" width="120" height="60" fill="#fffdf7" stroke="#7aa663" stroke-width="2.6"/>
     <text x="580" y="192" text-anchor="middle" font-size="10.5" fill="#45703a">0x16d812d78</text>
     <text x="580" y="212" text-anchor="middle" font-size="11" fill="#8a8578">p 存的是 x 的门牌</text>
-    <path d="M 640,198 Q 700,198 760,198" fill="none" stroke="#c96a5a" stroke-width="2.6"/>
-    <path d="M 752,190 Q 761,196 753,206" fill="none" stroke="#c96a5a" stroke-width="2.6"/>
+    <path d="M 518,198 Q 390,192 268,198" fill="none" stroke="#c96a5a" stroke-width="2.6"/>
+    <path d="M 276,190 Q 267,196 275,206" fill="none" stroke="#c96a5a" stroke-width="2.6"/>
 
     <path d="M 770,120 Q 850,114 930,120 Q 933,200 930,280 Q 850,286 772,280 Q 767,200 770,120 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.4 850 200)"/>
     <text x="850" y="150" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#a33f2e">nullptr</text>

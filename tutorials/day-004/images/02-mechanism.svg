@@ -46,7 +46,7 @@
     <text x="480" y="424" text-anchor="middle" font-size="15" font-weight="bold" fill="#8a6d1a">失败旗立起来之后？</text>
     <text x="480" y="450" text-anchor="middle" font-size="13" fill="#6b675e">cin 进入失败状态：后续所有读取立刻失败，坏字符一直躺在传送带上</text>
 
-    <path d="M 60,494 Q 478,488 900,495 L 896,568 Q 478,562 64,567 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.5" transform="rotate(0.2 480 530)"/>
+    <path d="M 60,494 Q 478,488 900,495 L 896,590 Q 478,584 64,589 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.5" transform="rotate(0.2 480 530)"/>
     <text x="480" y="522" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">标准抢救句式（今天先背下来，Day 8 学循环后升级成重试）</text>
     <text x="480" y="548" text-anchor="middle" font-size="13.5" fill="#3b3a36">std::cin.clear();　// 降下失败旗</text>
     <text x="480" y="566" text-anchor="middle" font-size="13.5" fill="#3b3a36">std::cin.ignore(很大数, '\n');　// 把这一行残料冲走</text>

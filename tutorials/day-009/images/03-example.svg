@@ -32,7 +32,7 @@
 
     <path d="M 24,404 Q 248,398 470,404 Q 474,500 470,600 Q 248,605 26,600 Q 20,500 24,404 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 247 504)"/>
     <text x="46" y="434" font-size="16" font-weight="bold" fill="#2c5a82">回收：Day 5 的 if 链装进函数</text>
-    <rect x="38" y="450" width="420" height="130" rx="6" fill="#33413a"/>
+    <rect x="38" y="450" width="420" height="112" rx="6" fill="#33413a"/>
     <text x="54" y="476" font-size="12.5" fill="#cfe8c6">95 分 → 等级 A</text>
     <text x="54" y="500" font-size="12.5" fill="#cfe8c6">75 分 → 等级 C</text>
     <text x="54" y="524" font-size="12.5" fill="#cfe8c6">60 分 → 等级 D</text>

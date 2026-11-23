@@ -25,8 +25,9 @@
     <text x="230" y="496" text-anchor="middle" font-size="12.5" fill="#6b675e">'A'、true 参与运算时先变成 int</text>
 
     <path d="M 382,221 Q 420,221 438,300" fill="none" stroke="#8a94a3" stroke-width="2" stroke-dasharray="6 5"/>
-    <text x="404" y="200" font-size="12.5" fill="#8a8578">混合运算时</text>
-    <text x="404" y="218" font-size="12.5" fill="#8a8578">低处自动升到高处</text>
+    <text x="380" y="150" font-size="12.5" fill="#8a8578">混合运算时</text>
+    <text x="380" y="168" font-size="12.5" fill="#8a8578">低处自动</text>
+    <text x="380" y="186" font-size="12.5" fill="#8a8578">升到高处</text>
 
     <path d="M 460,130 Q 700,125 930,130 Q 934,330 930,470 Q 700,475 462,470 Q 456,330 460,130 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(0.3 695 300)"/>
     <text x="695" y="162" text-anchor="middle" font-size="16.5" font-weight="bold" fill="#45703a">同一组数字，两种写法，两个命运</text>

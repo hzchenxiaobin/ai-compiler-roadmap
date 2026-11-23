@@ -16,14 +16,14 @@
 
     <path d="M 520,116 Q 720,110 905,116 Q 908,230 905,344 Q 720,350 522,344 Q 517,230 520,116 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 712 230)"/>
     <text x="712" y="146" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">符号表：要的与供的</text>
-    <rect x="544" y="162" width="340" height="160" fill="#33413a"/>
+    <rect x="544" y="162" width="340" height="150" fill="#33413a"/>
     <text x="560" y="186" font-size="11.5" fill="#9fb8a8">$ nm main.o（节选）</text>
     <text x="560" y="208" font-size="11.5" fill="#f0c9c0">U __Z4calcdcd　　←要（未解析）</text>
     <text x="560" y="228" font-size="11.5" fill="#9fb8a8">$ nm calc.o（节选）</text>
     <text x="560" y="250" font-size="11.5" fill="#cfe8c6">T __Z4calcdcd　　←供（已定义）</text>
     <text x="560" y="280" font-size="11.5" fill="#9fb8a8">U= Undefined（等链接）</text>
     <text x="560" y="300" font-size="11.5" fill="#9fb8a8">T= Text（机器在档）</text>
-    <text x="712" y="326" text-anchor="middle" font-size="11.5" fill="#8a8578">修饰名一致 → 拼装成功（实测 ./app ✔）</text>
+    <text x="712" y="332" text-anchor="middle" font-size="11.5" fill="#8a8578">修饰名一致 → 拼装成功（实测 ./app ✔）</text>
 
     <path d="M 40,370 Q 470,364 905,371 L 901,470 Q 470,464 44,469 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 420)"/>
     <text x="472" y="400" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">Undefined symbols 的三大病因（今天全部实测）</text>

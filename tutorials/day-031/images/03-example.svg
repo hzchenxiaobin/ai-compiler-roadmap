@@ -25,7 +25,7 @@
     <text x="514" y="232" font-size="12.5" fill="#cfe8c6">3: 2. 文件在程序结束后依然存在</text>
     <text x="514" y="252" font-size="12.5" fill="#cfe8c6">共读到 3 行</text>
     <text x="514" y="284" font-size="12" fill="#9fb8a8">$ 读不存在文件 →</text>
-    <text x="514" y="304" font-size="12.5" fill="#f0c9c0">不存在文件.txt 不存在（或打不开）</text>
+    <text x="514" y="304" font-size="12.5" fill="#f0c9c0">notes.txt 不存在（或打不开）</text>
     <text x="514" y="326" font-size="12" fill="#9fb8a8">（if (!in) 守门员实测拦下）</text>
 
     <path d="M 24,386 Q 470,380 905,387 L 901,490 Q 470,484 26,489 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 438)"/>

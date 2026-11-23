@@ -8,26 +8,26 @@
     <path d="M 40,116 Q 470,110 905,117 L 901,330 Q 470,324 44,329 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 223)"/>
     <text x="472" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">同一遍历的新旧对照（实测同输出）</text>
     <rect x="70" y="162" width="390" height="150" fill="#33413a"/>
-    <text x="265" y="190" font-size="10.5" fill="#9fb8a8">旧（迭代器版，第 4 周写法）：</text>
-    <text x="265" y="212" font-size="10.5" fill="#cfe8c6">for (std::vector&lt;int&gt;::</text>
-    <text x="265" y="230" font-size="10.5" fill="#cfe8c6">　 const_iterator it = v.begin();</text>
-    <text x="265" y="248" font-size="10.5" fill="#cfe8c6">　 it != v.end(); ++it)</text>
-    <text x="265" y="270" font-size="10.5" fill="#cfe8c6">　 cout &lt;&lt; *it;</text>
-    <text x="265" y="296" font-size="10" fill="#8a8578">（三行类型声明 + 解引用）</text>
+    <text x="265" text-anchor="middle" y="190" font-size="10.5" fill="#9fb8a8">旧（迭代器版，第 4 周写法）：</text>
+    <text x="265" text-anchor="middle" y="212" font-size="10.5" fill="#cfe8c6">for (std::vector&lt;int&gt;::</text>
+    <text x="265" text-anchor="middle" y="230" font-size="10.5" fill="#cfe8c6">　 const_iterator it = v.begin();</text>
+    <text x="265" text-anchor="middle" y="248" font-size="10.5" fill="#cfe8c6">　 it != v.end(); ++it)</text>
+    <text x="265" text-anchor="middle" y="270" font-size="10.5" fill="#cfe8c6">　 cout &lt;&lt; *it;</text>
+    <text x="265" text-anchor="middle" y="296" font-size="10" fill="#8a8578">（三行类型声明 + 解引用）</text>
     <rect x="490" y="162" width="390" height="150" fill="#33413a"/>
-    <text x="685" y="190" font-size="10.5" fill="#9fb8a8">新（范围 for，今天）：</text>
-    <text x="685" y="216" font-size="11" fill="#cfe8c6">for (int x : v)</text>
-    <text x="685" y="236" font-size="11" fill="#cfe8c6">　cout &lt;&lt; x;</text>
-    <text x="685" y="270" font-size="10" fill="#8a8578">（一行说清"每个元素"）</text>
-    <text x="685" y="296" font-size="10" fill="#45703a">（实测输出完全相同）</text>
+    <text x="685" text-anchor="middle" y="190" font-size="10.5" fill="#9fb8a8">新（范围 for，今天）：</text>
+    <text x="685" text-anchor="middle" y="216" font-size="11" fill="#cfe8c6">for (int x : v)</text>
+    <text x="685" text-anchor="middle" y="236" font-size="11" fill="#cfe8c6">　cout &lt;&lt; x;</text>
+    <text x="685" text-anchor="middle" y="270" font-size="10" fill="#8a8578">（一行说清"每个元素"）</text>
+    <text x="685" text-anchor="middle" y="296" font-size="10" fill="#45703a">（实测输出完全相同）</text>
     <text x="472" y="340" font-size="0" fill="none">.</text>
 
     <path d="M 40,354 Q 470,348 905,355 L 901,500 Q 470,494 44,499 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.2 472 427)"/>
     <text x="472" y="384" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">auto 的判断规则（编译器替你推）</text>
     <text x="70" y="416" font-size="13" fill="#3b3a36">auto x = expr; → 用 expr 的类型初始化 x（实测：42→int、3.14→double、string→24 字节对象）</text>
     <text x="70" y="444" font-size="13" fill="#3b3a36">auto&amp; x = expr; → 引用（可写通道——Day 63 的写入通道）；const auto&amp; → 只读省拷贝（参数标配）</text>
-    <text x="70" y="472" font-size="12.5" fill="#6b675e">（auto 不是弱类型——类型在编译期定死，只是"让编译器写"）</text>
-    <text x="70" y="494" font-size="12.5" fill="#6b675e">（拿不准类型时可作探针：auto x = expr; 看 sizeof——今天实验同款）</text>
+    <text x="70" y="466" font-size="12.5" fill="#6b675e">（auto 不是弱类型——类型在编译期定死，只是"让编译器写"）</text>
+    <text x="70" y="488" font-size="12.5" fill="#6b675e">（拿不准类型时可作探针：auto x = expr; 看 sizeof——今天实验同款）</text>
 
     <path d="M 60,514 Q 480,508 905,515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
     <circle cx="250" cy="514" r="5" fill="#8a94a3"/>

@@ -10,7 +10,7 @@ int manual_style(int mode, const std::string& file_name) {
     }
     out << "manual style line" << std::endl;
     if (mode == 1) {
-        return 2;                     // 路径二：提前返回——忘了 close！（缓冲未冲盘）
+        return 2;                     // 路径二：提前返回——忘了 close！（冲盘靠析构兜底）
     }
     if (mode == 2) {
         // 假设这里还有十行代码、三层 if……忘了 close 的概率只增不减
@@ -54,7 +54,7 @@ int raii_style(int mode, const std::string& file_name) {
 int main() {
     std::cout << "手动版 mode=1（提前返回，忘了 close）：" << std::endl;
     manual_style(1, "manual.txt");
-    std::cout << "  （无任何输出——文件是否冲盘全凭运气）" << std::endl;
+    std::cout << "  （手动版无输出——但 manual.txt 已被析构冲盘）" << std::endl;
 
     std::cout << "RAII 版 mode=1（提前返回）：" << std::endl;
     raii_style(1, "raii.txt");

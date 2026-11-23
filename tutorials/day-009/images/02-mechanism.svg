@@ -11,19 +11,19 @@
     <text x="160" y="218" text-anchor="middle" font-size="12" fill="#6b675e">原件：调用前 21</text>
     <text x="160" y="240" text-anchor="middle" font-size="12" fill="#6b675e">调用后还是 21（实测）</text>
 
-    <path d="M 240,175 Q 330,167 420,175" fill="none" stroke="#3b3a36" stroke-width="2.8" stroke-dasharray="8 6"/>
-    <path d="M 412,167 Q 421,173 413,183" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
     <rect x="298" y="132" width="156" height="26" fill="#f7e8a0" opacity="0.7" transform="rotate(-1.2 376 145)"/>
     <text x="376" y="150" text-anchor="middle" font-size="12" fill="#8a6d1a">double_it(x) 复印一份</text>
 
     <path d="M 520,110 Q 720,104 920,110 Q 924,190 920,270 Q 720,276 522,270 Q 516,190 520,110 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(0.3 720 190)"/>
     <text x="720" y="140" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">double_it 的地盘</text>
-    <rect x="580" y="158" width="120" height="34" fill="#fffdf7" stroke="#7aa663" stroke-width="2.2"/>
-    <text x="640" y="180" text-anchor="middle" font-size="13" fill="#3b3a36">n = 21</text>
+    <path d="M 240,175 Q 440,163 640,175" fill="none" stroke="#3b3a36" stroke-width="2.8" stroke-dasharray="8 6"/>
+    <path d="M 632,167 Q 641,173 633,183" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
+    <rect x="660" y="158" width="120" height="34" fill="#fffdf7" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="720" y="180" text-anchor="middle" font-size="13" fill="#3b3a36">n = 21</text>
     <text x="720" y="218" text-anchor="middle" font-size="12" fill="#6b675e">复印件进门是 21</text>
     <text x="720" y="240" text-anchor="middle" font-size="12" fill="#a33f2e">× 2 后变 42，改的只是它</text>
 
-    <path d="M 40,300 Q 480,294 920,301 L 916,384 Q 480,378 44,383 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.6" transform="rotate(-0.2 480 342)"/>
+    <path d="M 40,300 Q 480,294 920,301 L 916,392 Q 480,386 44,391 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.6" transform="rotate(-0.2 480 342)"/>
     <text x="480" y="330" text-anchor="middle" font-size="15" font-weight="bold" fill="#8a6d1a">真实输出（本机实测）</text>
     <text x="480" y="358" text-anchor="middle" font-size="13.5" fill="#3b3a36">调用前 x = 21　→　函数内 n = 42　→　调用后 x = 21</text>
     <text x="480" y="378" text-anchor="middle" font-size="12.5" fill="#8a8578">想让函数改原件？第 3 周的"引用传参"专治此症（swap 三连实验在 Day 21）</text>

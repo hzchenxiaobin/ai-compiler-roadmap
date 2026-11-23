@@ -181,7 +181,7 @@ g++ -Wall grade_switch_fixed.cpp -o grade_switch_fixed && ./grade_switch_fixed
 
 **错误 1：if 链顺序写反，宽条件挡住窄条件**
 
-- 现象：输入 95 却输出"等级 B"甚至更低；
+- 现象：输入 95 却输出"等级 D：及格"；
 - 原因：`score >= 60` 写在了 `>= 90` 前面，95 在第一站就被接走；
 - 定位：把每个条件单独打印（`std::cout << (score >= 60)`）确认命中位置；
 - 修复：范围条件**从窄到宽**排列，或者全部改用 `score >= 80 && score < 90` 的显式区间。

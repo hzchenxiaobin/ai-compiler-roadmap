@@ -5,9 +5,9 @@
     <path d="M 350,58 Q 480,52 610,59" fill="none" stroke="#7aa663" stroke-width="3"/>
     <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
 
-    <path d="M 24,102 Q 248,97 470,102 Q 474,280 470,460 Q 248,465 26,460 Q 20,280 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 281)"/>
+    <path d="M 24,102 Q 248,97 470,102 Q 474,290 470,492 Q 248,497 26,492 Q 20,290 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 281)"/>
     <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">主会话（全程实录）</text>
-    <rect x="38" y="146" width="420" height="300" rx="6" fill="#33413a"/>
+    <rect x="38" y="146" width="420" height="322" rx="6" fill="#33413a"/>
     <text x="54" y="172" font-size="11.5" fill="#9fb8a8">$ ./ba</text>
     <text x="54" y="194" font-size="12.5" fill="#cfe8c6">当前全行利率 = 3%</text>
     <text x="54" y="222" font-size="12.5" fill="#cfe8c6">小明余额 = 1300</text>

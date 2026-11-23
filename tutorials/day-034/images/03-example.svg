@@ -7,13 +7,13 @@
 
     <path d="M 24,102 Q 248,97 470,102 Q 474,200 470,300 Q 248,305 26,300 Q 20,200 24,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(-0.3 247 201)"/>
     <text x="46" y="130" font-size="14.5" font-weight="bold" fill="#2c5a82">重写一：swap 三版本</text>
-    <rect x="38" y="144" width="420" height="140" rx="6" fill="#33413a"/>
+    <rect x="38" y="144" width="420" height="148" rx="6" fill="#33413a"/>
     <text x="54" y="170" font-size="12" fill="#9fb8a8">$ ./rewrite_swap</text>
     <text x="54" y="194" font-size="12.5" fill="#f0c9c0">值版本后：　x=1 y=2（不动）</text>
     <text x="54" y="216" font-size="12.5" fill="#cfe8c6">指针版本后：x=2 y=1（换了）</text>
     <text x="54" y="238" font-size="12.5" fill="#cfe8c6">引用版本后：x=1 y=2（换回）</text>
-    <text x="54" y="266" font-size="12" fill="#9fb8a8">三连节奏与 Day 21 一字不差——</text>
-    <text x="54" y="284" font-size="12" fill="#9fb8a8">两次交换回到初值即正确性自证</text>
+    <text x="54" y="262" font-size="12" fill="#9fb8a8">三连节奏与 Day 21 一字不差——</text>
+    <text x="54" y="280" font-size="12" fill="#9fb8a8">两次交换回到初值即正确性自证</text>
 
     <path d="M 488,102 Q 712,97 934,102 Q 938,200 934,300 Q 712,305 490,300 Q 484,200 488,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(0.3 711 201)"/>
     <text x="510" y="130" font-size="14.5" font-weight="bold" fill="#45703a">重写二：纯指针遍历</text>

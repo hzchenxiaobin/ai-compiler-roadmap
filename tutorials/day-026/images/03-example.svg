@@ -28,16 +28,16 @@
     <text x="514" y="310" font-size="12" fill="#9fb8a8">编译器列出候选后拒绝猜测</text>
     <text x="514" y="330" font-size="12" fill="#9fb8a8">（与 Day 10 重载二义同款逻辑）</text>
 
-    <path d="M 24,386 Q 248,380 470,386 Q 474,470 470,560 Q 248,565 26,560 Q 20,470 24,386 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 247 473)"/>
+    <path d="M 24,386 Q 248,380 470,386 Q 474,480 470,584 Q 248,589 26,584 Q 20,480 24,386 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 247 473)"/>
     <text x="46" y="414" font-size="15.5" font-weight="bold" fill="#2c5a82">实验 3：修复版（实测）</text>
-    <rect x="38" y="428" width="420" height="120" rx="6" fill="#33413a"/>
+    <rect x="38" y="428" width="420" height="140" rx="6" fill="#33413a"/>
     <text x="54" y="452" font-size="12" fill="#9fb8a8">注释掉第二个 using（收回一个名字）：</text>
     <text x="54" y="476" font-size="12.5" fill="#cfe8c6">[A] 1　　← lib_a::print_value(1)</text>
     <text x="54" y="500" font-size="12.5" fill="#cfe8c6">[B] 2　　← lib_b::print_value(2)</text>
     <text x="54" y="524" font-size="12.5" fill="#cfe8c6">[A] 3　　← 裸调命中 using 的那个</text>
     <text x="54" y="548" font-size="12" fill="#9fb8a8">歧义消失：少放行一个就少一个候选</text>
 
-    <path d="M 488,386 Q 712,380 934,386 Q 938,470 934,560 Q 712,565 490,560 Q 484,470 488,386 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 711 473)"/>
+    <path d="M 488,386 Q 712,380 934,386 Q 938,480 934,584 Q 712,589 490,584 Q 484,480 488,386 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.3 711 473)"/>
     <text x="510" y="414" font-size="15.5" font-weight="bold" fill="#55606e">std 的认亲时刻</text>
     <text x="510" y="446" font-size="12.5" fill="#3b3a36">std::cout——"命名空间 std 里的 cout"</text>
     <text x="510" y="472" font-size="12.5" fill="#3b3a36">25 天的全限定写法今天有了名字</text>

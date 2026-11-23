@@ -5,7 +5,7 @@
 #include "contact.h"
 
 // ===== 通讯录 v2 的机器区 = v1 五项 + 存读盘 + 校验 =====
-// （五项操作与 v1 完全相同，此处省略——完整代码见本文件末尾）
+// （五项操作原样沿用 v1，实现见下方）
 
 int add_contact(Contact contacts[], int& count, const std::string& name, const std::string& phone) {
     if (count >= MAX_CONTACTS) {

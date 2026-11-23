@@ -7,11 +7,11 @@
 
     <path d="M 40,116 Q 470,110 905,117 L 901,290 Q 470,284 44,289 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 203)"/>
     <text x="472" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">五个重写目标（覆盖五周的核心骨架）</text>
-    <text x="70" y="180" font-size="13" fill="#3b3a36">①swap 三版本（Day 9/19/21）——值/指针/引用，传参三式一题写全</text>
-    <text x="70" y="208" font-size="13" fill="#3b3a36">②纯指针遍历（Day 20）——哨兵 + 解引用 + 擂主，179/35</text>
-    <text x="70" y="236" font-size="13" fill="#3b3a36">③切词统计（Day 17）——getline + stringstream，4 词 16 字符</text>
-    <text x="70" y="264" font-size="13" fill="#3b3a36">④卡片冒泡（Day 29）——struct + 整卡交换，66→92</text>
-    <text x="70" y="292" font-size="13" fill="#3b3a36">⑤存读盘闭环（Day 31）——ofstream/ifstream 两行进两行出</text>
+    <text x="70" y="176" font-size="13" fill="#3b3a36">①swap 三版本（Day 9/19/21）——值/指针/引用，传参三式一题写全</text>
+    <text x="70" y="200" font-size="13" fill="#3b3a36">②纯指针遍历（Day 20）——哨兵 + 解引用 + 擂主，179/35</text>
+    <text x="70" y="224" font-size="13" fill="#3b3a36">③切词统计（Day 17）——getline + stringstream，4 词 16 字符</text>
+    <text x="70" y="248" font-size="13" fill="#3b3a36">④卡片冒泡（Day 29）——struct + 整卡交换，66→92</text>
+    <text x="70" y="272" font-size="13" fill="#3b3a36">⑤存读盘闭环（Day 31）——ofstream/ifstream 两行进两行出</text>
 
     <path d="M 40,314 Q 280,308 520,314 Q 524,420 520,500 Q 280,506 42,500 Q 36,420 40,314 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 407)"/>
     <text x="280" y="344" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">复习方法论：为什么重写</text>

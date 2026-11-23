@@ -13,9 +13,9 @@
     <text x="54" y="216" font-size="12.5" fill="#cfe8c6">[Wheel 构造] 胎压 230 ×4</text>
     <text x="54" y="236" font-size="12.5" fill="#cfe8c6">[Car 构造] 学步车 1.0 组装完成</text>
     <text x="54" y="266" font-size="12.5" fill="#cfe8c6">学步车 1.0：75 马力，胎压 230</text>
-    <text x="54" y="300" font-size="12" fill="#9fb8a8">engine_.horsepower() 两层访问：</text>
-    <text x="54" y="320" font-size="12" fill="#9fb8a8">先从 car 拿零件，再问零件的能力</text>
-    <text x="54" y="344" font-size="12" fill="#9fb8a8">（struct 嵌套的类版）</text>
+    <text x="54" y="292" font-size="12" fill="#9fb8a8">engine_.horsepower() 两层访问：</text>
+    <text x="54" y="312" font-size="12" fill="#9fb8a8">先从 car 拿零件，再问零件的能力</text>
+    <text x="54" y="332" font-size="12" fill="#9fb8a8">（struct 嵌套的类版）</text>
 
     <path d="M 488,102 Q 712,97 934,102 Q 938,230 934,360 Q 712,365 490,360 Q 484,230 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 231)"/>
     <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">实验 2：零件进出栈</text>

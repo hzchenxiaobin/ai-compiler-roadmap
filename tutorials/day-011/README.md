@@ -143,7 +143,7 @@ static   count = 3
 
 ### 5.4 修改一行再观察：两个加料实验
 
-**实验 A（出栏访问，预期编译失败）**：把 `scope_demo.cpp` 里注释着的那行换成一个真实的访问（`std::cout << y;` 放在块外），重新编译：
+**实验 A（出栏访问，预期编译失败）**：把 `scope_demo.cpp` 复制一份改名 `undeclared.cpp`（原文件保持不动，实验 B 还要用），将第 15 行那句注释换成一个真实的访问（`std::cout << y;` 放在块外），重新编译它：
 
 ```text
 undeclared.cpp:15:18: error: use of undeclared identifier 'y'

@@ -19,24 +19,24 @@
     <text x="572" y="228" font-size="12.5" fill="#8a8578">翻车点：哨兵写成 &lt;=（多踩一格）</text>
     <text x="572" y="256" font-size="12.5" fill="#8a8578">　　　　擂主忘了从首格取值</text>
 
-    <path d="M 40,308 Q 470,302 905,309 L 901,400 Q 470,394 44,399 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 354)"/>
+    <path d="M 40,308 Q 470,302 905,309 L 901,412 Q 470,406 44,411 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 354)"/>
     <text x="472" y="338" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">题三：四种 const 组合（各写一行＋含义注释）</text>
     <text x="70" y="368" font-size="12.5" fill="#3b3a36">int* p1（不锁）　const int* p2（锁物）　int* const p3（锁针）　const int* const p4（双锁）</text>
     <text x="70" y="392" font-size="12.5" fill="#6b675e">验收：sizeof 全是 8（都是指针）；实测 p2 换绑看 b、p4 只读（实测）</text>
 
-    <path d="M 40,424 Q 470,418 905,425 L 901,490 Q 470,484 44,489 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(0.2 472 457)"/>
+    <path d="M 40,430 Q 470,424 905,431 L 901,502 Q 470,496 44,501 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(0.2 472 457)"/>
     <text x="472" y="452" text-anchor="middle" font-size="15" font-weight="bold" fill="#8a6d1a">讲稿主题：指针和引用的区别（对着镜子讲 3 分钟）</text>
     <text x="472" y="478" text-anchor="middle" font-size="12.5" fill="#6b675e">五个维度：本质、绑定、空值、语法、用途——对照图见机制图</text>
 
-    <path d="M 60,510 Q 480,504 905,511" fill="none" stroke="#8a8578" stroke-width="2.6"/>
-    <circle cx="240" cy="510" r="5" fill="#8a94a3"/>
-    <text x="240" y="530" text-anchor="middle" font-size="12" fill="#3b3a36">Day 19~23 ✓</text>
-    <circle cx="430" cy="510" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
-    <circle cx="430" cy="510" r="5" fill="#5b8db8"/>
-    <text x="430" y="530" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 24（今天）</text>
-    <circle cx="630" cy="510" r="5" fill="#e0955f"/>
-    <text x="630" y="530" text-anchor="middle" font-size="12" fill="#3b3a36">Day 25~26 多文件</text>
-    <circle cx="820" cy="510" r="5" fill="#5b8db8"/>
-    <text x="820" y="530" text-anchor="middle" font-size="12" fill="#3b3a36">第 6 周 收尾</text>
+    <path d="M 60,518 Q 480,512 905,519" fill="none" stroke="#8a8578" stroke-width="2.6"/>
+    <circle cx="240" cy="518" r="5" fill="#8a94a3"/>
+    <text x="240" y="538" text-anchor="middle" font-size="12" fill="#3b3a36">Day 19~23 ✓</text>
+    <circle cx="430" cy="518" r="11" fill="none" stroke="#c96a5a" stroke-width="2"/>
+    <circle cx="430" cy="518" r="5" fill="#5b8db8"/>
+    <text x="430" y="538" text-anchor="middle" font-size="12" font-weight="bold" fill="#c96a5a">Day 24（今天）</text>
+    <circle cx="630" cy="518" r="5" fill="#e0955f"/>
+    <text x="630" y="538" text-anchor="middle" font-size="12" fill="#3b3a36">Day 25~26 多文件</text>
+    <circle cx="820" cy="518" r="5" fill="#5b8db8"/>
+    <text x="820" y="538" text-anchor="middle" font-size="12" fill="#3b3a36">第 6 周 收尾</text>
   </g>
 </svg>

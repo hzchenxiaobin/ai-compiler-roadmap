@@ -6,7 +6,7 @@
     <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">本机真实运行（macOS arm64 + Apple clang 21），管道喂入，提示与回显挤行属正常</text>
 
     <rect x="24" y="102" width="912" height="270" rx="8" fill="#33413a"/>
-    <text x="40" y="128" font-size="12" fill="#9fb8a8">$ printf '12 + 30 / 7 2 / 5 0 / abc 10 * 4 / n' | ./calc_v1　（实际逐行喂入）</text>
+    <text x="40" y="128" font-size="12" fill="#9fb8a8">$ printf '12\n+\n30\ny\n7\n/\n2\ny\n5\n/\n0\ny\nabc\n10\n*\n4\nn\n' | ./calc_v1　（实际逐行喂入）</text>
     <text x="40" y="156" font-size="12.5" fill="#cfe8c6">第一个数：运算符：第二个数：12 + 30 = 42</text>
     <text x="40" y="182" font-size="12.5" fill="#cfe8c6">继续吗？(y/n)：第一个数：运算符：第二个数：7 / 2 = 3.5</text>
     <text x="40" y="208" font-size="12.5" fill="#f0c9c0">继续吗？(y/n)：第一个数：运算符：第二个数：除数不能为 0，本次作废。</text>

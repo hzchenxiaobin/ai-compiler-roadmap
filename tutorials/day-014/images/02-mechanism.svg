@@ -18,17 +18,20 @@
     <text x="158" y="318" font-size="13" fill="#3b3a36">　　　　　4 8 12</text>
     <text x="260" y="336" text-anchor="middle" font-size="12" fill="#8a8578">（全部本机实测输出）</text>
 
-    <path d="M 520,100 Q 730,94 930,100 Q 934,340 930,560 Q 730,566 522,560 Q 516,340 520,100 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(0.3 725 330)"/>
+    <path d="M 520,100 Q 730,94 930,100 Q 934,340 930,586 Q 730,592 522,586 Q 516,340 520,100 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(0.3 725 330)"/>
     <text x="725" y="130" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">乘法：行与列的点积</text>
-    <text x="545" y="164" font-size="13" fill="#3b3a36">A（2×3）　　　B（3×2）</text>
-    <text x="560" y="192" font-size="13" fill="#3b3a36">1 2 3　　　　 7　8</text>
-    <text x="560" y="214" font-size="13" fill="#3b3a36">4 5 6　　　　 9 10</text>
-    <text x="700" y="214" font-size="13" fill="#3b3a36">11 12</text>
-    <text x="725" y="248" text-anchor="middle" font-size="13" fill="#45703a">C[i][j] = A 第 i 行 · B 第 j 列</text>
-    <rect x="550" y="264" width="150" height="24" fill="#f7e8a0" opacity="0.7"/>
-    <text x="625" y="281" text-anchor="middle" font-size="11.5" fill="#8a6d1a">A 第 0 行：1 2 3</text>
-    <rect x="740" y="264" width="150" height="24" fill="#f7e8a0" opacity="0.7"/>
-    <text x="815" y="281" text-anchor="middle" font-size="11.5" fill="#8a6d1a">B 第 0 列：7 9 11</text>
+    <text x="560" y="164" font-size="13" fill="#3b3a36">A（2×3）</text>
+    <text x="700" y="164" font-size="13" fill="#3b3a36">B（3×2）</text>
+    <text x="560" y="186" font-size="13" fill="#3b3a36">1 2 3</text>
+    <text x="700" y="186" font-size="13" fill="#3b3a36">7　8</text>
+    <text x="560" y="208" font-size="13" fill="#3b3a36">4 5 6</text>
+    <text x="700" y="208" font-size="13" fill="#3b3a36">9 10</text>
+    <text x="700" y="230" font-size="13" fill="#3b3a36">11 12</text>
+    <text x="725" y="252" text-anchor="middle" font-size="13" fill="#45703a">C[i][j] = A 第 i 行 · B 第 j 列</text>
+    <rect x="550" y="268" width="150" height="24" fill="#f7e8a0" opacity="0.7"/>
+    <text x="625" y="285" text-anchor="middle" font-size="11.5" fill="#8a6d1a">A 第 0 行：1 2 3</text>
+    <rect x="740" y="268" width="150" height="24" fill="#f7e8a0" opacity="0.7"/>
+    <text x="815" y="285" text-anchor="middle" font-size="11.5" fill="#8a6d1a">B 第 0 列：7 9 11</text>
     <text x="725" y="316" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#45703a">C[0][0] = 1×7 + 2×9 + 3×11 = 58</text>
     <text x="725" y="344" text-anchor="middle" font-size="13" fill="#3b3a36">四个格子同理 → C = | 58　64 |</text>
     <text x="745" y="366" text-anchor="middle" font-size="13" fill="#3b3a36">　　　　　　　 | 139 154 |</text>
@@ -40,7 +43,7 @@
     <text x="725" y="544" text-anchor="middle" font-size="12" fill="#8a8578">乘法无交换律：A×B ≠ B×A，</text>
     <text x="725" y="562" text-anchor="middle" font-size="12" fill="#8a8578">连形状都可能不同（2×2 vs 3×3）</text>
 
-    <path d="M 40,370 Q 260,364 480,370 Q 484,460 480,552 Q 260,558 42,552 Q 36,460 40,370 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.3 260 461)"/>
+    <path d="M 40,370 Q 260,364 480,370 Q 484,460 480,578 Q 260,584 42,578 Q 36,460 40,370 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.3 260 461)"/>
     <text x="260" y="400" text-anchor="middle" font-size="15" font-weight="bold" fill="#8a6d1a">双重循环的三条军规</text>
     <text x="60" y="432" font-size="12.5" fill="#3b3a36">1. 换行在外层身体内（Day 7 老规矩）</text>
     <text x="60" y="458" font-size="12.5" fill="#3b3a36">2. 内层上限可以"看外层脸色"</text>

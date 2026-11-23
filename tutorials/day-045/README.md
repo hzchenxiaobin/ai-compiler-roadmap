@@ -43,7 +43,7 @@
 
 - **一句通俗解释**：new 了没人还——**没人踩的漏网之鱼**：红区（在范围外）和隔离区（已释放）都碰不到它。
 - **一个类比**：仓库账本漏记——货还在库里（内存还占着）但没人知道归谁；盘点工具（LeakSanitizer/valgrind）能查账，雷达（ASan 红区）查不了。
-- **对应到技术上是**：实测——案例四分配 400 字节不还：**macOS 的 ASan 完全静默**（`detect_leaks is not supported`——Day 39 的边界复现）；Linux 上 LeakSanitizer/valgrind 能抓（报告"still reachable/definitely lost"）。**根治不在工具在结构**：RAII（Day 51 正课）让"忘了 delete"从语法上不存在。类比的边界：短命程序的泄漏被进程退出兜底（OS 回收地址空间）——**长跑服务**才是泄漏的主战场（Day 39 的 400KB/天 ≈ 120MB/月）。
+- **对应到技术上是**：实测——案例四分配 400 字节不还：**macOS 的 ASan 完全静默**（`detect_leaks is not supported`——Day 39 的边界复现）；Linux 上 LeakSanitizer/valgrind 能抓（valgrind 报"definitely lost"、LSan 报"Direct leak"）。**根治不在工具在结构**：RAII（Day 51 正课）让"忘了 delete"从语法上不存在。类比的边界：短命程序的泄漏被进程退出兜底（OS 回收地址空间）——**长跑服务**才是泄漏的主战场（Day 39 的 400KB/天 ≈ 12MB/月）。
 - **常见误解**："ASan 开着就不会漏"——它抓"踩"；漏是"不踩"——两类正交。
 
 ## 4. 图解核心机制
@@ -121,7 +121,7 @@ ERROR: AddressSanitizer: attempting double-free on 0x602000000950
 
 ```bash
 # 普通版对照（不加 ASan）：
-g++ -Wall error_museum.cpp -o em2 && ./em2 1（以及 2/3/4）
+g++ -Wall error_museum.cpp -o em2 && ./em2 1   # 以及 2/3/4 各跑一次
 ```
 
 ```text

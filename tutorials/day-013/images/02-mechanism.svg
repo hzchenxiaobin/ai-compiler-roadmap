@@ -37,7 +37,7 @@
     <text x="500" y="292" font-size="12.5" fill="#3b3a36">那里可能是另一个变量、函数记录，</text>
     <text x="500" y="312" font-size="12.5" fill="#a33f2e">踩坏什么全凭运气：未定义行为</text>
 
-    <path d="M 40,340 Q 460,334 905,341 L 901,452 Q 460,446 44,451 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.2 472 396)"/>
+    <path d="M 40,340 Q 460,334 905,341 L 901,468 Q 460,462 44,467 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.2 472 396)"/>
     <text x="472" y="372" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#8a6d1a">三道防线（全部本机实测）</text>
     <text x="70" y="404" font-size="13" fill="#3b3a36">防线一（编译期）：-Wall 对常量下标给 [-Warray-bounds] 警告，</text>
     <text x="70" y="426" font-size="13" fill="#6b675e">　　　　　　　　　当场点名"array index 8 is past the end"</text>
@@ -46,9 +46,9 @@
     <text x="500" y="426" font-size="13" fill="#6b675e">长度交给常量管，绝不写魔法数字 8</text>
     <text x="500" y="450" font-size="12.5" fill="#a33f2e">注意：下标来自变量时，防线一会失明——防线三才是根本</text>
 
-    <path d="M 40,478 Q 460,472 905,479 L 901,576 Q 460,570 44,575 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 472 527)"/>
-    <text x="472" y="510" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#55606e">数组与函数（第 4 周的预习课）</text>
-    <text x="70" y="542" font-size="13" fill="#3b3a36">把统计四件套装进函数时，长度不能自动带过去——</text>
-    <text x="70" y="566" font-size="13" fill="#3b3a36">要么再加一个 int count 参数（今天的写法），要么等第 4 周指针/第 14 周 vector 讲"自带长度"的集装箱</text>
+    <path d="M 40,494 Q 460,488 905,495 L 901,592 Q 460,586 44,591 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 472 543)"/>
+    <text x="472" y="526" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#55606e">数组与函数（第 4 周的预习课）</text>
+    <text x="70" y="558" font-size="13" fill="#3b3a36">把统计四件套装进函数时，长度不能自动带过去——</text>
+    <text x="70" y="582" font-size="13" fill="#3b3a36">要么再加一个 int count 参数（今天的写法），要么等第 4 周指针/第 14 周 vector 讲"自带长度"的集装箱</text>
   </g>
 </svg>

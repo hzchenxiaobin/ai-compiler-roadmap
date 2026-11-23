@@ -19,15 +19,15 @@
 
     <path d="M 488,102 Q 712,97 934,102 Q 938,250 934,400 Q 712,405 490,400 Q 484,250 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 251)"/>
     <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">独立核对（wc 三连）</text>
-    <rect x="502" y="146" width="420" height="100" rx="6" fill="#33413a"/>
+    <rect x="502" y="146" width="420" height="112" rx="6" fill="#33413a"/>
     <text x="514" y="172" font-size="12" fill="#9fb8a8">wc -l：3 行</text>
     <text x="514" y="196" font-size="12" fill="#9fb8a8">wc -c − wc -l：62 − 3 = 59 字符</text>
     <text x="514" y="220" font-size="12" fill="#9fb8a8">wc -w：13 词</text>
     <text x="514" y="244" font-size="12" fill="#9fb8a8">（62 是含换行的总字节数）</text>
-    <path d="M 502,262 Q 711,256 922,263 L 919,338 Q 711,332 505,337 Z" fill="#fffdf7" stroke="#9db8cf" stroke-width="2" stroke-dasharray="8 5"/>
-    <text x="711" y="288" text-anchor="middle" font-size="12.5" fill="#45703a">三个数字与统计器逐项一致 ✔</text>
-    <text x="711" y="310" text-anchor="middle" font-size="12" fill="#6b675e">频率表无 wc 可对，改用人工抽检：</text>
-    <text x="711" y="330" text-anchor="middle" font-size="12" fill="#6b675e">dog×4 家族 → d:4 g:4 各 4 次 ✔</text>
+    <path d="M 502,272 Q 711,266 922,273 L 919,352 Q 711,346 505,351 Z" fill="#fffdf7" stroke="#9db8cf" stroke-width="2" stroke-dasharray="8 5"/>
+    <text x="711" y="298" text-anchor="middle" font-size="12.5" fill="#45703a">三个数字与统计器逐项一致 ✔</text>
+    <text x="711" y="320" text-anchor="middle" font-size="12" fill="#6b675e">频率表无 wc 可对，改用人工抽检：</text>
+    <text x="711" y="340" text-anchor="middle" font-size="12" fill="#6b675e">dog×4 家族 → d:4 g:4 各 4 次 ✔</text>
     <text x="711" y="376" text-anchor="middle" font-size="12.5" fill="#55606e">对账哲学：能用现成工具核的绝不用眼睛核</text>
 
     <path d="M 24,426 Q 470,420 905,427 L 901,490 Q 470,484 26,489 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 458)"/>

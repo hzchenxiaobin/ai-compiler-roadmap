@@ -21,15 +21,15 @@
     <text x="480" y="180" font-size="11.5" fill="#6b675e">第二层：每行一个独立 new int[cols]{}</text>
     <text x="480" y="202" font-size="11" fill="#8a8578">（行内连续、行间不必相邻——实测差 0x10）</text>
     <text x="480" y="234" font-size="12" fill="#3b3a36">访问 m[i][j]：第一次 [] 解一层指针、</text>
-    <text x="480" y="254" font-size="12" fill="#3b3a36">　第二次 [] 到达元素（Day 19 的指针数组）</text>
-    <text x="472" y="300" font-size="12.5" fill="#45703a">创建：1 + rows 次分配（先指针数组后逐行）</text>
-    <text x="472" y="330" font-size="12.5" fill="#a33f2e">拆除：逆依赖序——先逐行 delete[] 再删指针数组</text>
-    <text x="472" y="352" font-size="12" fill="#8a8578">（顺序反了 = 先拆楼板再拆住户——悬空一片）</text>
+    <text x="480" y="254" font-size="12" fill="#3b3a36">　第二次 [] 到达元素（Day 23 的指针数组）</text>
+    <text x="480" y="300" font-size="12.5" fill="#45703a">创建：1 + rows 次分配（先指针数组后逐行）</text>
+    <text x="480" y="330" font-size="12.5" fill="#a33f2e">拆除：逆依赖序——先逐行 delete[] 再删指针数组</text>
+    <text x="480" y="352" font-size="12" fill="#8a8578">（顺序反了 = 先拆楼板再拆住户——悬空一片）</text>
 
     <path d="M 40,414 Q 470,408 905,415 L 901,500 Q 470,494 44,499 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.2 472 457)"/>
     <text x="472" y="444" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">实测战报（ASan 全过）</text>
-    <text x="70" y="472" font-size="13" fill="#3b3a36">乘法 a·e 手算核对 [58,64;139,154] ✔；a·I=a（单位矩阵）✔；5 次 free_matrix 全部正确——ASan 零报错 ✔</text>
-    <text x="70" y="494" font-size="12.5" fill="#6b675e">（两种布局对照：锯齿 3 次释放 vs 折叠 1 次——泄漏面差 3 倍）</text>
+    <text x="70" y="468" font-size="13" fill="#3b3a36">乘法 a·e 手算核对 [58,64;139,154] ✔；a·I=a（单位矩阵）✔；5 次 free_matrix 全部正确——ASan 零报错 ✔</text>
+    <text x="70" y="488" font-size="12.5" fill="#6b675e">（两种布局对照：锯齿 3 次释放 vs 折叠 1 次——泄漏面差 3 倍）</text>
 
     <path d="M 60,514 Q 480,508 905,515" fill="none" stroke="#8a8578" stroke-width="2.6"/>
     <circle cx="250" cy="514" r="5" fill="#8a94a3"/>

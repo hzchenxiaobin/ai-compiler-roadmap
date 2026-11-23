@@ -18,18 +18,18 @@
     <rect x="750" y="146" width="150" height="56" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.2"/>
     <text x="825" y="168" text-anchor="middle" font-size="10.5" fill="#a33f2e">④delete[] 归还</text>
     <text x="825" y="186" text-anchor="middle" font-size="9.5" fill="#8a8578">（[] 逐个处理元素）</text>
-    <text x="472" y="234" font-size="12.5" fill="#3b3a36">实测地址排列：…12c0 → 12c4 → 12c8 → 12cc → 12d0——连续 5 格、每格 4 字节</text>
-    <text x="472" y="262" font-size="12.5" fill="#6b675e">（和栈数组一样连续——区别只在"谁管回收"：栈出块自动、堆等你 delete）</text>
-    <text x="472" y="296" font-size="12" fill="#8a8578">（第 19 天的指针算术在堆上照常工作：*(arr+2) == arr[2]）</text>
+    <text x="472" y="234" text-anchor="middle" font-size="12.5" fill="#3b3a36">实测地址排列：…12c0 → 12c4 → 12c8 → 12cc → 12d0——连续 5 格、每格 4 字节</text>
+    <text x="472" y="262" text-anchor="middle" font-size="12.5" fill="#6b675e">（和栈数组一样连续——区别只在"谁管回收"：栈出块自动、堆等你 delete）</text>
+    <text x="472" y="296" text-anchor="middle" font-size="12" fill="#8a8578">（第 19 天的指针算术在堆上照常工作：*(arr+2) == arr[2]）</text>
 
     <path d="M 40,344 Q 470,338 905,345 L 901,576 Q 470,570 44,575 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.2 472 460)"/>
     <text x="472" y="374" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">-Wall 的免费质检（实测警告原文）</text>
     <rect x="150" y="392" width="660" height="110" fill="#33413a"/>
-    <text x="480" y="420" font-size="11" fill="#ffd7d0">warning: 'delete' applied to a pointer that was</text>
-    <text x="480" y="440" font-size="11" fill="#ffd7d0">allocated with 'new[]'; did you mean 'delete[]'?</text>
-    <text x="480" y="466" font-size="10.5" fill="#9fb8a8">[-Wmismatched-new-delete]</text>
-    <text x="480" y="490" font-size="10.5" fill="#9fb8a8">note: allocated with 'new[]' here</text>
-    <text x="472" y="530" font-size="12.5" fill="#45703a">编译期就把错配点名——又一次"错误暴露越早越安全"（Day 22/53 的同款结论）</text>
-    <text x="472" y="556" font-size="12" fill="#8a8578">（诚实记录：macOS 的 ASan 对 int 数组错配未报——工具有限度，纪律是底线）</text>
+    <text x="170" y="420" font-size="11" fill="#ffd7d0">warning: 'delete' applied to a pointer that was</text>
+    <text x="170" y="440" font-size="11" fill="#ffd7d0">allocated with 'new[]'; did you mean 'delete[]'?</text>
+    <text x="170" y="466" font-size="10.5" fill="#9fb8a8">[-Wmismatched-new-delete]</text>
+    <text x="170" y="490" font-size="10.5" fill="#9fb8a8">note: allocated with 'new[]' here</text>
+    <text x="472" y="530" text-anchor="middle" font-size="12.5" fill="#45703a">编译期就把错配点名——又一次"错误暴露越早越安全"（Day 22/53 的同款结论）</text>
+    <text x="472" y="556" text-anchor="middle" font-size="12" fill="#8a8578">（诚实记录：macOS 的 ASan 对 int 数组错配未报——工具有限度，纪律是底线）</text>
   </g>
 </svg>

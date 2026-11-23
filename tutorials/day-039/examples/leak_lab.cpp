@@ -35,6 +35,6 @@ int main() {
     std::cout << "\n== 悬空指针 ==" << std::endl;
     int* d = make_dangling();
     std::cout << "  d = " << d << "（值还在，但指向已释放内存）" << std::endl;
-    std::cout << "  *d = " << *d << "（悬空读取——UB：普通版可能打出旧值 4 的假象）" << std::endl;
+    std::cout << "  *d = " << *d << "（悬空读取——UB：普通版打出与存入值无关的垃圾）" << std::endl;
     return 0;
 }

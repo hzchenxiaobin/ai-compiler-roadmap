@@ -25,10 +25,10 @@
     <path d="M 542,167 Q 551,173 543,183" fill="none" stroke="#c96a5a" stroke-width="2.6"/>
     <path d="M 560,136 Q 720,130 880,136 Q 884,200 880,264 Q 720,270 562,264 Q 556,200 560,136 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(0.3 720 200)"/>
     <text x="720" y="164" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#a33f2e">退化：名字交出门牌</text>
-    <text x="582" y="194" font-size="12" fill="#3b3a36">scores 本身 = &amp;scores[0] = 0x16f75ed60</text>
-    <text x="582" y="218" font-size="12" fill="#3b3a36">（实测两者分毫不差）</text>
-    <text x="582" y="246" font-size="12" fill="#a33f2e">scores + 1 = 0x…d64：加 1 跳一个元素（4 字节），</text>
-    <text x="582" y="264" font-size="12" fill="#a33f2e">不是加 1 个字节——步长由类型决定</text>
+    <text x="582" y="190" font-size="12" fill="#3b3a36">scores 本身 = &amp;scores[0] = 0x16f75ed60</text>
+    <text x="582" y="212" font-size="12" fill="#3b3a36">（实测两者分毫不差）</text>
+    <text x="582" y="236" font-size="12" fill="#a33f2e">scores + 1 = 0x…d64：加 1 跳一个元素</text>
+    <text x="582" y="256" font-size="12" fill="#a33f2e">（4 字节），不是加 1 个字节——步长由类型决定</text>
 
     <path d="M 40,296 Q 470,290 905,297 L 901,420 Q 470,414 44,419 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.2 472 358)"/>
     <text x="472" y="326" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">步长实测：int 迈 4 字节，double 迈 8 字节</text>

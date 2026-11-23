@@ -34,7 +34,7 @@
     <text x="46" y="468" font-size="12.5" fill="#6b675e">数字精确呼应 Day 51 的逆序销毁——计数器像呼吸一样随作用域涨落</text>
 
     <path d="M 24,520 Q 470,514 905,521 L 901,630 Q 470,624 26,629 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 464 575)"/>
-    <text x="480" y="550" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#55606e">通讯录的 next 预告</text>
+    <text x="480" y="550" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#55606e">明天与周六预告</text>
     <text x="480" y="580" text-anchor="middle" font-size="12.5" fill="#3b3a36">明天 Day 53 组合（has-a）：Engine + Car + Wheel——类做成员，比"全塞一个类"优雅在哪</text>
     <text x="480" y="604" text-anchor="middle" font-size="12.5" fill="#6b675e">周六 Day 54 项目日：银行账户类（static 利率 + mutable 日志 + const 查询）——今天三件兵器全用上</text>
   </g>

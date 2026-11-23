@@ -8,14 +8,14 @@
     <path d="M 40,116 Q 470,110 905,117 L 901,380 Q 470,374 44,379 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 248)"/>
     <text x="472" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">四案的 ASan 判决书（实测原文）</text>
     <rect x="70" y="162" width="820" height="200" fill="#33413a"/>
-    <text x="490" y="188" font-size="11.5" fill="#cfe8c6">案例一 堆越界：a[3]（合法到 a[2]）</text>
-    <text x="490" y="208" font-size="11" fill="#ffd7d0">ERROR: heap-buffer-overflow on 0x…095c</text>
-    <text x="490" y="234" font-size="11.5" fill="#cfe8c6">案例二 UAF：delete 后读 *p</text>
-    <text x="490" y="254" font-size="11" fill="#ffd7d0">ERROR: heap-use-after-free + READ of size 4</text>
-    <text x="490" y="280" font-size="11.5" fill="#cfe8c6">案例三 double-free：同一块 delete 两次</text>
-    <text x="490" y="300" font-size="11" fill="#ffd7d0">ERROR: attempting double-free on 0x…0950</text>
-    <text x="490" y="326" font-size="11.5" fill="#cfe8c6">案例四 泄漏：new 了没还</text>
-    <text x="490" y="346" font-size="11" fill="#9fb8a8">（macOS ASan 静默——Linux/valgrind 可抓，诚实记录）</text>
+    <text x="480" y="188" text-anchor="middle" font-size="11.5" fill="#cfe8c6">案例一 堆越界：a[3]（合法到 a[2]）</text>
+    <text x="480" y="208" text-anchor="middle" font-size="11" fill="#ffd7d0">ERROR: heap-buffer-overflow on 0x…095c</text>
+    <text x="480" y="234" text-anchor="middle" font-size="11.5" fill="#cfe8c6">案例二 UAF：delete 后读 *p</text>
+    <text x="480" y="254" text-anchor="middle" font-size="11" fill="#ffd7d0">ERROR: heap-use-after-free + READ of size 4</text>
+    <text x="480" y="280" text-anchor="middle" font-size="11.5" fill="#cfe8c6">案例三 double-free：同一块 delete 两次</text>
+    <text x="480" y="300" text-anchor="middle" font-size="11" fill="#ffd7d0">ERROR: attempting double-free on 0x…0950</text>
+    <text x="480" y="326" text-anchor="middle" font-size="11.5" fill="#cfe8c6">案例四 泄漏：new 了没还</text>
+    <text x="480" y="346" text-anchor="middle" font-size="11" fill="#9fb8a8">（macOS ASan 静默——Linux/valgrind 可抓，诚实记录）</text>
 
     <path d="M 40,404 Q 280,398 520,404 Q 524,450 520,500 Q 280,506 42,500 Q 36,450 40,404 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 452)"/>
     <text x="280" y="432" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">共同点：全都静默</text>

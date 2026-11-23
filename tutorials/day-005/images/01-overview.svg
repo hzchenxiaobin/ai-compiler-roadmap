@@ -8,7 +8,7 @@
     <path d="M 30,150 Q 150,144 266,150 Q 270,196 266,240 Q 150,246 32,240 Q 26,196 30,150 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(-0.4 148 195)"/>
     <text x="148" y="180" text-anchor="middle" font-size="16" font-weight="bold" fill="#2c5a82">输入 score</text>
     <rect x="64" y="192" width="168" height="32" fill="#fffdf7" stroke="#9db8cf" stroke-width="2"/>
-    <text x="148" y="213" text-anchor="middle" font-size="13" fill="#3b3a36">75（举例）</text>
+    <text x="148" y="213" text-anchor="middle" font-size="13" fill="#3b3a36">85（举例）</text>
 
     <path d="M 276,195 Q 310,187 344,195" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
     <path d="M 336,187 Q 345,193 337,203" fill="none" stroke="#3b3a36" stroke-width="2.8"/>
@@ -34,9 +34,10 @@
 
     <path d="M 630,330 Q 680,322 730,330" fill="none" stroke="#7aa663" stroke-width="2.6"/>
     <path d="M 722,322 Q 731,328 723,338" fill="none" stroke="#7aa663" stroke-width="2.6"/>
+    <text x="672" y="314" font-size="12" fill="#45703a">真</text>
     <path d="M 734,306 Q 836,300 928,306 Q 931,336 928,364 Q 836,369 736,364 Q 732,336 734,306 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.5"/>
     <text x="831" y="330" text-anchor="middle" font-size="14" font-weight="bold" fill="#45703a">等级 B：良好</text>
-    <text x="831" y="354" text-anchor="middle" font-size="12" fill="#6b675e">75 的归宿（真实输出）</text>
+    <text x="831" y="354" text-anchor="middle" font-size="12" fill="#6b675e">85 的归宿（真实输出）</text>
 
     <path d="M 30,420 Q 470,412 905,421" fill="none" stroke="#8a8578" stroke-width="3"/>
     <circle cx="90" cy="420" r="6" fill="#8a94a3"/>

@@ -37,7 +37,7 @@
     <text x="240" y="320" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">今天的统计四件套</text>
     <text x="66" y="352" font-size="13" fill="#3b3a36">最大 = 35（第 8 周）　最小 = 9（第 3 周）</text>
     <text x="66" y="378" font-size="13" fill="#3b3a36">总和 = 179　　平均 = 22.375</text>
-    <text x="66" y="412" font-size="12.5" fill="#6b675e">擂台法：拿 [0] 当擂主，for 扫一遍逐个挑战；</text>
+    <text x="66" y="412" font-size="12.5" fill="#6b675e">擂主法：拿 [0] 当擂主，for 扫一遍逐个挑战；</text>
     <text x="66" y="432" font-size="12.5" fill="#6b675e">平均记得乘 1.0 变浮点（Day 3 的老朋友）</text>
 
     <path d="M 470,290 Q 680,284 905,290 Q 909,370 905,452 Q 680,458 472,452 Q 466,370 470,290 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="3" transform="rotate(0.3 687 371)"/>

@@ -10,7 +10,7 @@
     <text x="195" y="162" text-anchor="middle" font-size="11" fill="#45703a">Day 22：const 修饰变量/指针</text>
     <text x="195" y="180" text-anchor="middle" font-size="11" fill="#8a8578">（锁单个名字）</text>
     <rect x="350" y="144" width="250" height="44" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
-    <text x="475" y="162" text-anchor="middle" font-size="11" fill="#9c5a22">Day 49~50：const 成员函数</text>
+    <text x="475" y="162" text-anchor="middle" font-size="11" fill="#9c5a22">Day 49：const 成员函数</text>
     <text x="475" y="180" text-anchor="middle" font-size="11" fill="#8a8578">（锁成员函数的 this）</text>
     <rect x="630" y="144" width="250" height="44" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2"/>
     <text x="755" y="162" text-anchor="middle" font-size="11" fill="#a33f2e">Day 52：const 对象</text>

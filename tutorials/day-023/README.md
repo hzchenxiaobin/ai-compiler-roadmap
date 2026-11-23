@@ -150,7 +150,20 @@ row + 1 跳多远？
 
 ### 5.4 修改一个输入再观察：参数真的进了 argv
 
-给 `array_ptr` 加个彩蛋验证（本机真实输出）——用 `ptr_array` 自己打印参数表：写一个两行的探针程序 `main(int argc, char** argv)` 循环打印 `argv[i]`，然后 `./a.out 你好 世界` 运行：
+写一个两行探针程序 `argv_probe.cpp`，编译到 `/tmp/argv_probe` 后运行 `/tmp/argv_probe 你好 世界`（本机真实输出）：
+
+```cpp
+#include <iostream>
+int main(int argc, char** argv) {
+    std::cout << "argc = " << argc << std::endl;
+    for (int i = 0; i < argc; ++i) std::cout << "argv[" << i << "] = " << argv[i] << std::endl;
+    return 0;
+}
+```
+
+```bash
+g++ -Wall argv_probe.cpp -o /tmp/argv_probe && /tmp/argv_probe 你好 世界
+```
 
 ```text
 argc = 3

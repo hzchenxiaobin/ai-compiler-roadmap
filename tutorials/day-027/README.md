@@ -137,7 +137,7 @@ g++ main.o calc_typo.o -o broken3
 
 ### 5.4 修改一行再观察：两种"改返回类型"的命运
 
-**命运 A（安全拦截）**：`calc.cpp` 保留 `#include "calc.h"`，把返回类型 `double` 改成 `int` 再编译：
+**命运 A（安全拦截）**：把 `calc.cpp` 复制为 `calc_int.cpp`，保留 `#include "calc.h"`，把返回类型 `double` 改成 `int` 再编译：
 
 ```text
 calc_int.cpp:4:5: error: functions that differ only in their return type cannot be overloaded

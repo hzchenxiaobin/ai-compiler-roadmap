@@ -35,14 +35,14 @@
     <path d="M 760,196 l 10,10 m 0,-10 l -10,10 m 8,6 l 10,10 m 0,-10 l -10,10" stroke="#c96a5a" stroke-width="2.2" fill="none"/>
     <text x="710" y="330" text-anchor="middle" font-size="12.5" fill="#a33f2e" transform="rotate(0 710 330)">17 字节溢出杯外（实测 ASan：WRITE of size 25）</text>
 
-    <path d="M 40,330 Q 460,324 905,331 L 901,442 Q 460,436 44,441 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.2 472 386)"/>
-    <text x="472" y="360" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#8a6d1a">sizeof 与 strlen：一对最容易混的尺子</text>
-    <text x="70" y="392" font-size="13" fill="#3b3a36">sizeof(greet) = 6：数组占的总字节数（含句号），编译期定死，零成本</text>
-    <text x="70" y="420" font-size="13" fill="#3b3a36">strlen(greet) = 5：不含句号的字符数，运行期从头数到句号，O(n)</text>
+    <path d="M 40,344 Q 460,338 905,345 L 901,456 Q 460,450 44,455 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.2 472 400)"/>
+    <text x="472" y="374" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#8a6d1a">sizeof 与 strlen：一对最容易混的尺子</text>
+    <text x="70" y="406" font-size="13" fill="#3b3a36">sizeof(greet) = 6：数组占的总字节数（含句号），编译期定死，零成本</text>
+    <text x="70" y="434" font-size="13" fill="#3b3a36">strlen(greet) = 5：不含句号的字符数，运行期从头数到句号，O(n)</text>
 
-    <path d="M 40,466 Q 460,460 905,467 L 901,576 Q 460,570 44,575 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.2 472 521)"/>
-    <text x="472" y="496" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">为什么还要学它？</text>
-    <text x="70" y="528" font-size="13" fill="#3b3a36">std::string 内部就含一截字符数组；接口、文件、老代码里 C 字符串无处不在</text>
-    <text x="70" y="556" font-size="13" fill="#6b675e">明天见分晓：std::string 自带长度、自动扩容、不溢出——今天受的苦都是明天的甜</text>
+    <path d="M 40,480 Q 460,474 905,481 L 901,590 Q 460,584 44,589 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.2 472 535)"/>
+    <text x="472" y="510" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#45703a">为什么还要学它？</text>
+    <text x="70" y="542" font-size="13" fill="#3b3a36">std::string 内部就含一截字符数组；接口、文件、老代码里 C 字符串无处不在</text>
+    <text x="70" y="570" font-size="13" fill="#6b675e">明天见分晓：std::string 自带长度、自动扩容、不溢出——今天受的苦都是明天的甜</text>
   </g>
 </svg>

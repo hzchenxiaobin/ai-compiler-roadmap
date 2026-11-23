@@ -50,7 +50,8 @@
 
     <path d="M 520,436 Q 520,470 520,494" fill="none" stroke="#45703a" stroke-width="2.8"/>
     <path d="M 512,488 Q 520,498 529,489" fill="none" stroke="#45703a" stroke-width="2.8"/>
-    <path d="M 200,436 Q 200,470 380,480" fill="none" stroke="#c96a5a" stroke-width="2" stroke-dasharray="6 5"/>
+    <path d="M 690,216 Q 692,330 690,440 Q 688,470 632,482" fill="none" stroke="#c96a5a" stroke-width="2" stroke-dasharray="6 5"/>
+    <path d="M 640,472 Q 630,482 644,488" fill="none" stroke="#c96a5a" stroke-width="2"/>
     <path d="M 815,436 Q 815,470 660,480" fill="none" stroke="#5b8db8" stroke-width="2" stroke-dasharray="6 5"/>
 
     <path d="M 380,486 Q 520,478 660,486 Q 663,522 660,552 Q 520,558 382,552 Q 378,522 380,486 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="3" transform="rotate(-0.3 520 520)"/>

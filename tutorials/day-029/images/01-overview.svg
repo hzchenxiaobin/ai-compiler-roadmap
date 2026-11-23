@@ -15,7 +15,7 @@
     <text x="280" y="316" text-anchor="middle" font-size="12.5" fill="#8a8578">成员用 . 访问：s1.name、s1.score（实测 sizeof = 32）</text>
 
     <path d="M 550,110 Q 730,104 905,110 Q 908,220 905,330 Q 730,336 552,330 Q 547,220 550,110 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(0.3 727 220)"/>
-    <text x="727" y="140" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">enum Level { Easy, Medium, Hard }</text>
+    <text x="727" y="140" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">enum Level { Easy=1, …, Hard=3 }</text>
     <text x="572" y="176" font-size="12.5" fill="#3b3a36">给一组整数常量起名：Easy=1、Medium=2、Hard=3</text>
     <text x="572" y="204" font-size="12.5" fill="#45703a">变量只能取列出的值，switch 分发不写魔法数字</text>
     <text x="572" y="238" font-size="12.5" fill="#6b675e">本质仍是整数（实测打印 today 得 2）</text>

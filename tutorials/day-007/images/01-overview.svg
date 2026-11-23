@@ -49,6 +49,6 @@
     <text x="850" y="484" text-anchor="middle" font-size="11.5" fill="#8a8578">项目日 · 计算器</text>
 
     <rect x="150" y="502" width="660" height="40" fill="#f7e8a0" opacity="0.5" transform="rotate(-0.3 480 522)"/>
-    <text x="480" y="528" text-anchor="middle" font-size="13.5" fill="#8a6d1a">上周边界：i &lt; 9 和 i &lt;= 9 只差一个等号——差一次执行，就是差一行输出</text>
+    <text x="480" y="528" text-anchor="middle" font-size="13.5" fill="#8a6d1a">关键边界：i &lt; 9 和 i &lt;= 9 只差一个等号——差一次执行，就是差一行输出</text>
   </g>
 </svg>

@@ -6,15 +6,17 @@
 
     <path d="M 40,100 Q 260,94 480,100 Q 484,200 480,300 Q 260,306 42,300 Q 36,200 40,100 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.3 260 200)"/>
     <text x="260" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#2c5a82">写出流水线</text>
-    <rect x="70" y="146" width="130" height="44" fill="#eef5e8" stroke="#7aa663" stroke-width="2.2"/>
-    <text x="135" y="172" text-anchor="middle" font-size="11" fill="#45703a">内存变量</text>
-    <path d="M 204,168 Q 240,168 276,168" fill="none" stroke="#3b3a36" stroke-width="2.4"/>
-    <path d="M 268,160 Q 277,166 269,176" fill="none" stroke="#3b3a36" stroke-width="2.4"/>
-    <rect x="280" y="146" width="130" height="44" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.2"/>
-    <text x="345" y="166" text-anchor="middle" font-size="10.5" fill="#2c5a82">out &lt;&lt; 值</text>
-    <text x="345" y="182" text-anchor="middle" font-size="10" fill="#8a8578">（写进缓冲）</text>
-    <path d="M 414,168 Q 450,168 486,168" fill="none" stroke="#3b3a36" stroke-width="2.4"/>
-    <path d="M 478,160 Q 487,166 479,176" fill="none" stroke="#3b3a36" stroke-width="2.4"/>
+    <rect x="52" y="146" width="100" height="44" fill="#eef5e8" stroke="#7aa663" stroke-width="2.2"/>
+    <text x="102" y="172" text-anchor="middle" font-size="11" fill="#45703a">内存变量</text>
+    <path d="M 156,168 Q 172,168 188,168" fill="none" stroke="#3b3a36" stroke-width="2.4"/>
+    <path d="M 182,160 Q 190,166 183,176" fill="none" stroke="#3b3a36" stroke-width="2.4"/>
+    <rect x="192" y="146" width="116" height="44" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.2"/>
+    <text x="250" y="166" text-anchor="middle" font-size="10.5" fill="#2c5a82">out &lt;&lt; 值</text>
+    <text x="250" y="182" text-anchor="middle" font-size="10" fill="#8a8578">（写进缓冲）</text>
+    <path d="M 312,168 Q 328,168 344,168" fill="none" stroke="#3b3a36" stroke-width="2.4"/>
+    <path d="M 338,160 Q 346,166 339,176" fill="none" stroke="#3b3a36" stroke-width="2.4"/>
+    <rect x="348" y="146" width="116" height="44" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.2"/>
+    <text x="406" y="172" text-anchor="middle" font-size="11" fill="#55606e">磁盘文件</text>
     <text x="260" y="216" text-anchor="middle" font-size="12" fill="#6b675e">收摊时自动关闭、冲进磁盘</text>
     <text x="260" y="244" text-anchor="middle" font-size="12" fill="#3b3a36">ofstream 覆盖式打开：同名文件旧内容清零</text>
     <text x="260" y="272" text-anchor="middle" font-size="12" fill="#a33f2e">想追加用 std::ios::app（进阶参数）</text>
@@ -28,7 +30,7 @@
     <text x="725" y="248" text-anchor="middle" font-size="12" fill="#3b3a36">实测：读回 3 行，行号 1/2/3</text>
     <text x="725" y="276" text-anchor="middle" font-size="12" fill="#a33f2e">if (!in) 必须在循环前——文件都不存在读什么</text>
 
-    <path d="M 40,324 Q 470,318 905,325 L 901,460 Q 470,454 44,459 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.2 472 392)"/>
+    <path d="M 40,324 Q 470,318 905,325 L 901,468 Q 470,462 44,467 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.2 472 392)"/>
     <text x="472" y="354" text-anchor="middle" font-size="15" font-weight="bold" fill="#8a6d1a">存盘格式：每行一条 "姓名,电话"</text>
     <rect x="330" y="370" width="300" height="72" fill="#33413a"/>
     <text x="480" y="394" text-anchor="middle" font-size="11.5" fill="#cfe8c6">张三,13800000001</text>
@@ -36,10 +38,10 @@
     <text x="480" y="434" text-anchor="middle" font-size="10.5" fill="#9fb8a8">（cat 看得懂，程序切得开）</text>
     <text x="70" y="392" font-size="12.5" fill="#3b3a36">读回时按逗号切两段（右图）：</text>
     <text x="70" y="414" font-size="11.5" fill="#6b675e">getline(ss, name, ',') 再 getline(ss, phone)</text>
-    <text x="70" y="440" font-size="11.5" fill="#a33f2e">格式隐患先记账：名字里带逗号会切错——</text>
-    <text x="70" y="456" font-size="11.5" fill="#a33f2e">第 22 周 JSON 用结构化格式根治</text>
+    <text x="70" y="436" font-size="11.5" fill="#a33f2e">格式隐患先记账：名字里带逗号会切错——</text>
+    <text x="70" y="452" font-size="11.5" fill="#a33f2e">第 22 周 JSON 用结构化格式根治</text>
 
-    <path d="M 40,484 Q 470,478 905,485 L 901,576 Q 470,570 44,575 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 472 530)"/>
+    <path d="M 40,484 Q 470,478 905,485 L 901,584 Q 470,578 44,583 Z" fill="#f1f4f7" stroke="#8a94a3" stroke-width="2.8" transform="rotate(0.2 472 530)"/>
     <text x="472" y="514" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#55606e">持久化闭环（明天的 v2）</text>
     <text x="70" y="546" font-size="13" fill="#3b3a36">启动 → load_contacts 读盘重建数组 → 菜单操作 → 退出前 save_contacts 落盘</text>
     <text x="70" y="570" font-size="12.5" fill="#6b675e">（今天的主角程序已单侧验证：三次运行 0→2→4→6 持续累积）</text>

@@ -10,19 +10,19 @@
     <text x="120" y="164" font-size="9" fill="#45703a">4</text>
     <rect x="165" y="146" width="100" height="26" fill="#d8ecce" stroke="#7aa663" stroke-width="1.6"/>
     <text x="215" y="164" font-size="9" fill="#45703a">8</text>
-    <rect x="270" y="146" width="130" height="26" fill="#d8ecce" stroke="#7aa663" stroke-width="1.6"/>
-    <text x="335" y="164" font-size="9" fill="#45703a">16</text>
-    <rect x="405" y="146" width="160" height="26" fill="#d8ecce" stroke="#7aa663" stroke-width="1.6"/>
-    <text x="485" y="164" font-size="9" fill="#45703a">32</text>
-    <rect x="570" y="146" width="180" height="26" fill="#d8ecce" stroke="#7aa663" stroke-width="1.6"/>
-    <text x="660" y="164" font-size="9" fill="#45703a">64</text>
-    <rect x="755" y="146" width="130" height="26" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
-    <text x="820" y="164" font-size="9" fill="#9c5a22">128</text>
-    <text x="472" y="200" font-size="11.5" fill="#3b3a36">每级搬运 = 旧容量的全部元素（4→8 搬 4 个、8→16 搬 8 个…）</text>
-    <text x="472" y="228" font-size="12" fill="#45703a">总搬运 = 4+8+16+32+64 = 124 ＜ 100（N 个 push！）</text>
-    <text x="472" y="254" font-size="12" fill="#6b675e">摊还分析：偶发的"大搬迁"被平常的"廉价 push"摊平——</text>
-    <text x="472" y="276" font-size="12" fill="#6b675e">　平均每次 push 只花 O(1)（均摊成本）</text>
-    <text x="472" y="304" font-size="11" fill="#8a8578">（128 格只住 100——浪费 28 格是买"不频繁搬家"的价）</text>
+    <rect x="270" y="146" width="120" height="26" fill="#d8ecce" stroke="#7aa663" stroke-width="1.6"/>
+    <text x="330" y="164" font-size="9" fill="#45703a">16</text>
+    <rect x="395" y="146" width="140" height="26" fill="#d8ecce" stroke="#7aa663" stroke-width="1.6"/>
+    <text x="465" y="164" font-size="9" fill="#45703a">32</text>
+    <rect x="540" y="146" width="160" height="26" fill="#d8ecce" stroke="#7aa663" stroke-width="1.6"/>
+    <text x="620" y="164" font-size="9" fill="#45703a">64</text>
+    <rect x="705" y="146" width="180" height="26" fill="#f9d9b8" stroke="#e0955f" stroke-width="2"/>
+    <text x="795" y="164" font-size="9" fill="#9c5a22">128</text>
+    <text x="472" y="200" text-anchor="middle" font-size="11.5" fill="#3b3a36">每级搬运 = 旧容量的全部元素（4→8 搬 4 个、8→16 搬 8 个…）</text>
+    <text x="472" y="228" text-anchor="middle" font-size="12" fill="#45703a">总搬运 = 4+8+16+32+64 = 124 ≈ 1.24×N（N = 100 个 push）</text>
+    <text x="472" y="254" text-anchor="middle" font-size="12" fill="#6b675e">摊还分析：偶发的"大搬迁"被平常的"廉价 push"摊平——</text>
+    <text x="472" y="276" text-anchor="middle" font-size="12" fill="#6b675e">　平均每次 push 只花 O(1)（均摊成本）</text>
+    <text x="472" y="304" text-anchor="middle" font-size="11" fill="#8a8578">（128 格只住 100——浪费 28 格是买"不频繁搬家"的价）</text>
 
     <path d="M 40,344 Q 280,338 520,344 Q 524,460 520,576 Q 280,582 42,576 Q 36,460 40,344 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 460)"/>
     <text x="280" y="374" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">对比：精确加一的阶梯</text>

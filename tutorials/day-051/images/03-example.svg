@@ -15,21 +15,21 @@
     <text x="54" y="264" font-size="12.5" fill="#9fb8a8">块外验证：文件是否写好了？</text>
     <text x="54" y="286" font-size="12.5" fill="#cfe8c6">　读回：第一行：RAII 写入</text>
     <text x="54" y="306" font-size="12.5" fill="#cfe8c6">　读回：第二行：块还没结束</text>
-    <text x="54" y="340" font-size="12" fill="#9fb8a8">出块自动关 + 内容完整读回——</text>
-    <text x="54" y="360" font-size="12" fill="#9fb8a8">全程零 close() 调用</text>
+    <text x="54" y="334" font-size="12" fill="#9fb8a8">出块自动关 + 内容完整读回——</text>
+    <text x="54" y="354" font-size="12" fill="#9fb8a8">全程零 close() 调用</text>
 
     <path d="M 488,102 Q 712,97 934,102 Q 938,240 934,380 Q 712,385 490,380 Q 484,240 488,102 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(0.3 711 241)"/>
     <text x="510" y="132" font-size="16" font-weight="bold" fill="#2c5a82">实验 2：手动 vs RAII</text>
     <rect x="502" y="146" width="420" height="220" rx="6" fill="#33413a"/>
     <text x="514" y="172" font-size="12" fill="#9fb8a8">手动版 mode=1（提前返回）：</text>
-    <text x="514" y="194" font-size="12" fill="#f0c9c0">　（无任何输出——冲盘全凭运气）</text>
+    <text x="514" y="194" font-size="12" fill="#f0c9c0">　（手动版无输出——但 manual.txt 已被析构冲盘）</text>
     <text x="514" y="222" font-size="12" fill="#9fb8a8">RAII 版 mode=1（提前返回）：</text>
     <text x="514" y="244" font-size="12" fill="#cfe8c6">　【构造】raii.txt → 【析构】已收摊</text>
     <text x="514" y="272" font-size="12" fill="#9fb8a8">RAII 版 mode=0（正常路径）：</text>
     <text x="514" y="294" font-size="12" fill="#cfe8c6">　【构造】raii.txt → 【析构】已收摊</text>
-    <text x="514" y="326" font-size="12" fill="#9fb8a8">（manual.txt 这次侥幸写上了内容——</text>
-    <text x="514" y="346" font-size="12" fill="#9fb8a8">　但"侥幸"不是工程方案：换个编译选项/</text>
-    <text x="514" y="362" font-size="12" fill="#9fb8a8">　崩溃路径就未必）</text>
+    <text x="514" y="320" font-size="12" fill="#9fb8a8">（manual.txt 内容其实是析构兜底冲的——把这当</text>
+    <text x="514" y="340" font-size="12" fill="#9fb8a8">工程方案才是侥幸：崩溃路径（abort）或 C 式</text>
+    <text x="514" y="356" font-size="12" fill="#9fb8a8">FILE* 都没有这层兜底）</text>
 
     <path d="M 24,406 Q 470,400 905,407 L 901,500 Q 470,494 26,499 Z" fill="#fcefe4" stroke="#e0955f" stroke-width="2.8" transform="rotate(-0.2 464 453)"/>
     <text x="46" y="434" font-size="15.5" font-weight="bold" fill="#9c5a22">实验 3：嵌套守卫进出栈</text>

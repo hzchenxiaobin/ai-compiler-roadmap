@@ -34,7 +34,7 @@
     <text x="400" y="432" text-anchor="middle" font-size="11" fill="#8a8578">小围栏里顶了同名</text>
     <text x="290" y="470" text-anchor="middle" font-size="12.5" fill="#3b3a36">小围栏内叫 x，答应的是 777；</text>
     <text x="290" y="490" text-anchor="middle" font-size="12.5" fill="#3b3a36">出栏后再叫，恢复 10（实测：出块后 x = 10）</text>
-    <path d="M 70,516 Q 290,510 510,517 L 507,560 Q 290,554 73,559 Z" fill="#fffdf7" stroke="#dda79b" stroke-width="2" stroke-dasharray="8 5"/>
+    <path d="M 70,516 Q 290,510 510,517 L 507,572 Q 290,566 73,571 Z" fill="#fffdf7" stroke="#dda79b" stroke-width="2" stroke-dasharray="8 5"/>
     <text x="290" y="538" text-anchor="middle" font-size="12" fill="#a33f2e">-Wshadow 会点名警告（本机实测已抓到）；</text>
     <text x="290" y="556" text-anchor="middle" font-size="12" fill="#6b675e">合法 ≠ 好习惯——内外同名纯属给自己埋雷</text>
 

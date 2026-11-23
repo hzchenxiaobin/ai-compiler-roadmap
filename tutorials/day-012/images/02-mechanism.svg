@@ -38,14 +38,14 @@
     <path d="M 200,318 L 620,318 L 620,352 L 200,352 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.8" transform="rotate(-0.4 410 335)"/>
     <text x="410" y="341" text-anchor="middle" font-size="14" font-weight="bold" fill="#8a6d1a">继续吗？(y/n)：— 不答 y 就 break 收工</text>
 
-    <path d="M 200,335 Q 120,335 110,240 Q 104,180 120,150" fill="none" stroke="#45703a" stroke-width="2.6"/>
-    <path d="M 114,158 Q 108,148 122,146" fill="none" stroke="#45703a" stroke-width="2.6"/>
+    <path d="M 200,335 Q 152,338 144,314 Q 140,296 142,272" fill="none" stroke="#45703a" stroke-width="2.6"/>
+    <path d="M 134,282 Q 142,270 150,282" fill="none" stroke="#45703a" stroke-width="2.6"/>
     <text x="88" y="316" font-size="12" fill="#45703a">答 y</text>
     <text x="66" y="336" font-size="12" fill="#45703a">↺ 回到开头</text>
 
     <path d="M 620,335 Q 740,335 760,380 Q 772,410 760,436" fill="none" stroke="#c96a5a" stroke-width="2.6"/>
     <path d="M 752,430 Q 760,441 770,434" fill="none" stroke="#c96a5a" stroke-width="2.6"/>
-    <text x="742" y="392" font-size="12" fill="#a33f2e">其他任何回答</text>
+    <text x="782" y="392" font-size="12" fill="#a33f2e">其他任何回答</text>
 
     <path d="M 660,440 Q 800,434 920,440 Q 923,480 920,516 Q 800,521 662,516 Q 658,480 660,440 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.6" transform="rotate(0.3 790 478)"/>
     <text x="790" y="470" text-anchor="middle" font-size="14" font-weight="bold" fill="#a33f2e">break → "收工！"</text>

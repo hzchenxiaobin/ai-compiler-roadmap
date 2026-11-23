@@ -27,10 +27,10 @@
     <path d="M 40,344 Q 470,338 905,345 L 901,576 Q 470,570 44,575 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(0.2 472 460)"/>
     <text x="472" y="374" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">常量区只读 + 字面量合并（实测）</text>
     <rect x="180" y="392" width="600" height="100" fill="#33413a"/>
-    <text x="480" y="420" font-size="12" fill="#cfe8c6">const char* a = "hello";　→ 0x10060545c</text>
-    <text x="480" y="444" font-size="12" fill="#cfe8c6">const char* b = "world";　→ 0x100605592</text>
-    <text x="480" y="468" font-size="12" fill="#f0c9c0">const char* c = "hello";　→ 0x10060545c（与 a 相同——已合并！）</text>
-    <text x="472" y="516" font-size="12.5" fill="#3b3a36">合并 = 省内存；代价是"改一个等于改所有"——所以语言干脆禁止改（写入即崩）</text>
+    <text x="480" y="420" text-anchor="middle" font-size="12" fill="#cfe8c6">const char* a = "hello";　→ 0x10060545c</text>
+    <text x="480" y="444" text-anchor="middle" font-size="12" fill="#cfe8c6">const char* b = "world";　→ 0x100605592</text>
+    <text x="480" y="468" text-anchor="middle" font-size="12" fill="#f0c9c0">const char* c = "hello";　→ 0x10060545c（与 a 相同——已合并！）</text>
+    <text x="480" y="516" text-anchor="middle" font-size="12.5" fill="#3b3a36">合并 = 省内存；代价是"改一个等于改所有"——所以语言干脆禁止改（写入即崩）</text>
     <text x="472" y="544" text-anchor="middle" font-size="10.5" fill="#6b675e">（第 1 周"字面量只读"有了地址证据；char a[] = "hello" 拷贝进栈——可改）</text>
   </g>
 </svg>

@@ -3,7 +3,7 @@
   <g stroke-linecap="round" stroke-linejoin="round">
     <text x="480" y="46" text-anchor="middle" font-size="27" font-weight="bold" fill="#3b3a36">一次成功、两种翻车的完整记录</text>
     <path d="M 340,58 Q 480,52 620,59" fill="none" stroke="#7aa663" stroke-width="3"/>
-    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang 21）</text>
+    <text x="480" y="82" text-anchor="middle" font-size="15.5" fill="#8a8578">以下输出全部来自本机真实运行（macOS arm64 + Apple clang）</text>
 
     <path d="M 24,102 Q 248,97 470,102 Q 474,210 470,320 Q 248,325 26,320 Q 20,210 24,102 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="3" transform="rotate(-0.3 247 211)"/>
     <text x="46" y="132" font-size="16" font-weight="bold" fill="#45703a">成功版：三文件合体</text>
@@ -20,8 +20,8 @@
     <rect x="502" y="146" width="420" height="160" rx="6" fill="#33413a"/>
     <text x="514" y="172" font-size="12" fill="#9fb8a8">$ g++ -Wall main.cpp -o broken</text>
     <text x="514" y="196" font-size="11.5" fill="#ffd7d0">Undefined symbols for architecture arm64:</text>
-    <text x="514" y="216" font-size="11.5" fill="#ffd7d0">　"calc(double, char, double)", referenced from: _main</text>
-    <text x="514" y="236" font-size="11.5" fill="#ffd7d0">　"is_valid_op(char)", referenced from: _main</text>
+    <text x="514" y="216" font-size="11.5" fill="#ffd7d0">　"is_valid_op(char)", referenced from: _main</text>
+    <text x="514" y="236" font-size="11.5" fill="#ffd7d0">　"calc(double, char, double)", referenced from: _main</text>
     <text x="514" y="264" font-size="12" fill="#9fb8a8">名片在手、机器缺席——第 4 站（链接）翻车</text>
     <text x="514" y="288" font-size="12" fill="#9fb8a8">修复：把 calc.cpp 加进编译命令（或先编 .o）</text>
 

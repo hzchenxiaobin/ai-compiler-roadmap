@@ -67,7 +67,7 @@
     <path d="M 610,386 Q 756,380 902,387 L 899,428 Q 756,422 613,427 Z" fill="#fffdf7" stroke="#a8c494" stroke-width="2" stroke-dasharray="7 5"/>
     <text x="756" y="412" text-anchor="middle" font-size="13.5" fill="#45703a">类型三件事：占几格 · 怎么解读 · 能做什么运算</text>
 
-    <path d="M 60,472 Q 478,466 902,473 L 898,548 Q 478,542 64,547 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.5" transform="rotate(-0.2 480 507)"/>
+    <path d="M 60,472 Q 478,466 902,473 L 898,568 Q 478,562 64,567 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.5" transform="rotate(-0.2 480 517)"/>
     <text x="480" y="500" text-anchor="middle" font-size="15" font-weight="bold" fill="#8a6d1a">本机实测提醒（macOS arm64 + Apple clang 21）</text>
     <text x="480" y="524" text-anchor="middle" font-size="13.5" fill="#6b675e">long 是 8 字节、long double 也是 8 字节；Linux x86-64 上 long double 是 16 字节</text>
     <text x="480" y="544" text-anchor="middle" font-size="13.5" fill="#6b675e">跨平台代码用 sizeof 现场问机器，不要背某个平台的答案</text>

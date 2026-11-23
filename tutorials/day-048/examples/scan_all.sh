@@ -4,6 +4,9 @@
 
 cd "$(dirname "$0")/../../.." || exit 1  # examples→day-048→tutorials→仓库根
 
+STD=c++20
+if ! g++ -std=$STD -x c++ /dev/null -fsyntax-only >/dev/null 2>&1; then STD=c++2a; fi
+
 total=0
 warn_fail=0
 asan_fail=0
@@ -12,7 +15,7 @@ multi_file=0
 results=""
 
 # 教学预期的"故意翻车"文件（UB 实验室/自赋值演示——它们的报错就是教学内容）
-TEACHING_OK="tutorials/day-001/examples/warn_unused.cpp tutorials/day-002/examples/uninit.cpp tutorials/day-013/examples/out_of_bounds.cpp tutorials/day-015/examples/strcpy_danger.cpp tutorials/day-019/examples/nullptr_crash.cpp tutorials/day-039/examples/leak_lab.cpp tutorials/day-045/examples/error_museum.cpp tutorials/day-055/examples/shallow_crash.cpp tutorials/day-056/examples/copy_assign.cpp tutorials/day-056/examples/self_assign_trap.cpp tutorials/day-066/examples/mystring_v2.cpp tutorials/day-060/examples/mystring_v1.cpp"
+TEACHING_OK="tutorials/day-001/examples/warn_unused.cpp tutorials/day-002/examples/uninit.cpp tutorials/day-013/examples/out_of_bounds.cpp tutorials/day-015/examples/strcpy_danger.cpp tutorials/day-019/examples/nullptr_crash.cpp tutorials/day-039/examples/leak_lab.cpp tutorials/day-045/examples/error_museum.cpp tutorials/day-055/examples/shallow_crash.cpp tutorials/day-056/examples/copy_assign.cpp tutorials/day-056/examples/self_assign_trap.cpp tutorials/day-066/examples/mystring_v2.cpp tutorials/day-060/examples/mystring_v1.cpp tutorials/day-069/examples/leak_demo.cpp"
 is_teaching() {
     case " $TEACHING_OK " in *" $1 "*) return 0;; esac
     return 1
@@ -24,7 +27,7 @@ for f in tutorials/day-*/examples/*.cpp; do
     name=$(basename "$f" .cpp)
 
     # 编译检查（-Wall 零警告；有交互输入的会超时——用 </dev/null 饿死它们）
-    if ! g++ -Wall -Wextra -std=c++20 "$f" -o "/tmp/scan_$name" 2> "/tmp/warn_$name"; then
+    if ! g++ -Wall -Wextra -std=$STD "$f" -o "/tmp/scan_$name" 2> "/tmp/warn_$name"; then
         if is_teaching "$f"; then
             asan_skip=$((asan_skip + 1))   # 教学预期归入跳过
         else
@@ -43,7 +46,7 @@ for f in tutorials/day-*/examples/*.cpp; do
     fi
 
     # ASan 运行（10 秒超时防交互卡死；stdin 关闭饿死 cin）
-    if g++ -Wall -Wextra -std=c++20 -fsanitize=address "$f" -o "/tmp/scan_asan_$name" 2>/dev/null; then
+    if g++ -Wall -Wextra -std=$STD -fsanitize=address "$f" -o "/tmp/scan_asan_$name" 2>/dev/null; then
         if timeout 10 /tmp/scan_asan_$name </dev/null > /dev/null 2> "/tmp/asan_$name"; then
             :   # 干净通过
         else

@@ -5,7 +5,7 @@
     <path d="M 280,60 Q 480,52 680,61" fill="none" stroke="#5b8db8" stroke-width="3"/>
     <text x="480" y="84" text-anchor="middle" font-size="16" fill="#8a8578">昨天重写了骨架，今天盖整栋楼——不看任何资料，核心功能一次写成</text>
 
-    <path d="M 40,116 Q 470,110 905,117 L 901,290 Q 470,284 44,289 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 203)"/>
+    <path d="M 40,116 Q 470,110 905,117 L 901,302 Q 470,296 44,301 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 209)"/>
     <text x="472" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">自测范围（核心功能子集）</text>
     <text x="70" y="180" font-size="13" fill="#3b3a36">struct Contact（卡片）+ 定长数组 + count 计数（Day 29/13/30）</text>
     <text x="70" y="208" font-size="13" fill="#3b3a36">读盘与存盘（"姓名,电话" 每行一条，Day 31）</text>

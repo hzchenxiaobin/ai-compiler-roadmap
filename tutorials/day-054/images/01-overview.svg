@@ -7,12 +7,12 @@
 
     <path d="M 40,116 Q 470,110 905,117 L 901,320 Q 470,314 44,319 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="2.8" transform="rotate(-0.2 472 218)"/>
     <text x="472" y="146" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">BankAccount 的兵器谱（每天一件）</text>
-    <text x="70" y="180" font-size="13" fill="#3b3a36">private balance_ + 存取校验　　← Day 49 封装与不变量</text>
-    <text x="70" y="208" font-size="13" fill="#3b3a36">构造（开户即有名有款+记账）　← Day 50 构造与初始化列表</text>
-    <text x="70" y="236" font-size="13" fill="#3b3a36">balance() const 查询　　　　　← Day 52 const 成员函数</text>
-    <text x="70" y="264" font-size="13" fill="#3b3a36">static interest_rate_ 全行一份 ← Day 52 static 成员</text>
-    <text x="70" y="292" font-size="13" fill="#3b3a36">mutable query_count_ 计数　　 ← Day 52 mutable 后门</text>
-    <text x="70" y="314" font-size="13" fill="#3b3a36">vector&lt;string&gt; log_ 操作日志　 ← Day 53 组合拼装</text>
+    <text x="70" y="176" font-size="13" fill="#3b3a36">private balance_ + 存取校验　　← Day 49 封装与不变量</text>
+    <text x="70" y="202" font-size="13" fill="#3b3a36">构造（开户即有名有款+记账）　← Day 50 构造与初始化列表</text>
+    <text x="70" y="228" font-size="13" fill="#3b3a36">balance() const 查询　　　　　← Day 52 const 成员函数</text>
+    <text x="70" y="254" font-size="13" fill="#3b3a36">static interest_rate_ 全行一份 ← Day 52 static 成员</text>
+    <text x="70" y="280" font-size="13" fill="#3b3a36">mutable query_count_ 计数　　 ← Day 52 mutable 后门</text>
+    <text x="70" y="306" font-size="13" fill="#3b3a36">vector&lt;string&gt; log_ 操作日志　 ← Day 53 组合拼装</text>
 
     <path d="M 40,344 Q 280,338 520,344 Q 524,440 520,500 Q 280,506 42,500 Q 36,440 40,344 Z" fill="#eef5e8" stroke="#7aa663" stroke-width="2.8" transform="rotate(-0.3 280 422)"/>
     <text x="280" y="374" text-anchor="middle" font-size="15" font-weight="bold" fill="#45703a">实测战报（全部通过）</text>

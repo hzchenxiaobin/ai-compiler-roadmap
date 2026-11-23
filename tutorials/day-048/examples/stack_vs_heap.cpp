@@ -7,10 +7,19 @@
 // 维度三：生命期的证据（演示故意的悬空——pragma 压制教学警告）
 int* dangling_demo() {
     int stack_local = 42;
+#if defined(__clang__)
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wreturn-stack-address"
+#else
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wreturn-local-addr"
+#endif
     return &stack_local;            // 返回栈变量地址——悬空！（教学演示）
+#if defined(__clang__)
 #pragma clang diagnostic pop
+#else
+#pragma GCC diagnostic pop
+#endif
 }
 
 int main() {

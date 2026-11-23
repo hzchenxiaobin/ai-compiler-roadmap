@@ -42,7 +42,7 @@
     <text x="510" y="506" font-size="12.5" fill="#55606e">中一条就回炉对应的那天；</text>
     <text x="510" y="528" font-size="12.5" fill="#55606e">全中说明"看懂了"但还没"写得出"</text>
 
-    <path d="M 24,562 Q 470,556 905,563 L 901,630 Q 470,624 26,629 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.2" transform="rotate(0.2 464 596)"/>
+    <path d="M 24,562 Q 480,556 934,563 L 930,630 Q 480,624 26,629 Z" fill="#fdf6dd" stroke="#d9b23a" stroke-width="2.2" transform="rotate(0.2 464 596)"/>
     <text x="480" y="586" text-anchor="middle" font-size="12.5" fill="#8a6d1a">下周预告：第 5 周多文件与调试——头文件/源文件、分离编译链接、gdb 断点单步</text>
     <text x="480" y="610" text-anchor="middle" font-size="12.5" fill="#8a6d1a">通讯录 v1 项目（结构体＋定长数组＋多文件增删改查）在周六等你</text>
   </g>

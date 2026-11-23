@@ -145,7 +145,7 @@ warning: 'delete' applied to a pointer that was allocated with 'new[]'; did you 
 note: allocated with 'new[]' here
 ```
 
-编译器不仅指出错误还给了修改建议（`did you mean 'delete[]'?`）——**又一条 -Wall 常开的理由**。诚实记录：把同款错配交给 macOS 的 ASan 跑——**没有报错**（int 是 trivial 类型，无析构差异可查）——工具覆盖有限度，配对纪律必须内化成肌肉记忆。
+编译器不仅指出错误还给了修改建议（`did you mean 'delete[]'?`）——**又一条 -Wall 常开的理由**。诚实记录：这条 `-Wmismatched-new-delete` 是 **Clang 系**诊断（上面原文为 macOS Apple clang 实测）；**GCC 的 `-Wall` 不报此错配**（g++ 9.4 实测零警告）——用 g++ 的读者请换 clang 复现本步。另外把同款错配交给 macOS 的 ASan 跑——**没有报错**（int 是 trivial 类型，无析构差异可查）——工具覆盖有限度，配对纪律必须内化成肌肉记忆。
 
 ## 6. 常见错误与排查
 

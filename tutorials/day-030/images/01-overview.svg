@@ -29,10 +29,10 @@
     <text x="572" y="326" font-size="12.5" fill="#6b675e">菜单选项用 enum（Exit/Add/Remove…）</text>
     <text x="572" y="348" font-size="12.5" fill="#6b675e">switch 分发零魔法数字</text>
 
-    <path d="M 40,388 Q 470,382 905,389 L 901,470 Q 470,464 44,469 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 429)"/>
-    <text x="472" y="418" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">今天的两个技术看点</text>
-    <text x="70" y="448" font-size="13" fill="#3b3a36">①删除 = 移位覆盖：后面卡片整体前移一格，count 减一（定长数组的经典操作）</text>
-    <text x="70" y="470" font-size="13" fill="#3b3a36">②数字与整行混读：&gt;&gt; 读菜单后 ignore 冲换行，getline 才读得到名字（Day 17 的坑实战版）</text>
+    <path d="M 40,388 Q 470,382 905,389 L 901,476 Q 470,470 44,475 Z" fill="#f9e9e5" stroke="#c96a5a" stroke-width="2.8" transform="rotate(-0.2 472 429)"/>
+    <text x="472" y="416" text-anchor="middle" font-size="15" font-weight="bold" fill="#a33f2e">今天的两个技术看点</text>
+    <text x="70" y="442" font-size="13" fill="#3b3a36">①删除 = 移位覆盖：后面卡片整体前移一格，count 减一（定长数组的经典操作）</text>
+    <text x="70" y="462" font-size="13" fill="#3b3a36">②数字与整行混读：&gt;&gt; 读菜单后 ignore 冲换行，getline 才读得到名字（Day 17 的坑实战版）</text>
 
     <path d="M 60,494 Q 480,488 905,495" fill="none" stroke="#8a8578" stroke-width="2.6"/>
     <circle cx="250" cy="494" r="5" fill="#8a94a3"/>

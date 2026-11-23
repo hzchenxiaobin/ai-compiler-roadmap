@@ -5,7 +5,7 @@
     <path d="M 310,58 Q 480,52 650,59" fill="none" stroke="#e0955f" stroke-width="3"/>
 
     <path d="M 40,100 Q 260,94 480,100 Q 484,210 480,320 Q 260,326 42,320 Q 36,210 40,100 Z" fill="#eaf2fa" stroke="#5b8db8" stroke-width="3" transform="rotate(-0.3 260 210)"/>
-    <text x="260" y="130" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">房间与钥匙的双向转换</text>
+    <text x="260" y="124" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#2c5a82">房间与钥匙的双向转换</text>
     <rect x="80" y="148" width="150" height="56" fill="#fffdf7" stroke="#5b8db8" stroke-width="2.4"/>
     <text x="155" y="172" text-anchor="middle" font-size="12" fill="#3b3a36">变量 x = 42</text>
     <text x="155" y="192" text-anchor="middle" font-size="10.5" fill="#8a8578">（有内容的房间）</text>
@@ -14,7 +14,7 @@
     <text x="365" y="192" text-anchor="middle" font-size="10.5" fill="#8a8578">（房间的门牌）</text>
     <path d="M 232,160 Q 260,148 288,160" fill="none" stroke="#2c5a82" stroke-width="2.6"/>
     <path d="M 280,152 Q 289,158 281,168" fill="none" stroke="#2c5a82" stroke-width="2.6"/>
-    <text x="260" y="142" text-anchor="middle" font-size="12" fill="#2c5a82">&amp;：房间→门牌</text>
+    <text x="260" y="144" text-anchor="middle" font-size="12" fill="#2c5a82">&amp;：房间→门牌</text>
     <path d="M 288,192 Q 260,204 232,192" fill="none" stroke="#45703a" stroke-width="2.6"/>
     <path d="M 240,184 Q 231,190 239,200" fill="none" stroke="#45703a" stroke-width="2.6"/>
     <text x="260" y="222" text-anchor="middle" font-size="12" fill="#45703a">*：门牌→房间</text>

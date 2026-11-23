@@ -55,7 +55,7 @@
     <text x="815" y="496" text-anchor="middle" font-size="12" fill="#55606e">验证：d+o+g 各 4 次</text>
     <text x="815" y="516" text-anchor="middle" font-size="12" fill="#6b675e">（dog. Dog dog DOG 四兄弟）</text>
 
-    <path d="M 60,548 Q 470,542 905,549" fill="none" stroke="#8a8578" stroke-width="2.6" stroke-dasharray="7 5"/>
-    <text x="472" y="580" text-anchor="middle" font-size="13" fill="#8a8578">EOF 出了主循环，报表一次打印——所有账本在循环里只加不印，收尾统一结账</text>
+    <path d="M 60,578 Q 470,572 905,579" fill="none" stroke="#8a8578" stroke-width="2.6" stroke-dasharray="7 5"/>
+    <text x="472" y="602" text-anchor="middle" font-size="13" fill="#8a8578">EOF 出了主循环，报表一次打印——所有账本在循环里只加不印，收尾统一结账</text>
   </g>
 </svg>
