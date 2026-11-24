@@ -444,6 +444,12 @@ def build_plan(tutorials):
 
 def build_tutorials(tutorials):
     for index, day in enumerate(tutorials):
+        week_start = ((day["number"] - 1) // 6) * 6 + 1
+        week_days = [
+            tutorial
+            for tutorial in tutorials
+            if week_start <= tutorial["number"] < week_start + 6
+        ]
         output_dir = PUBLIC_DIR / "tutorials" / day["slug"]
         output_dir.mkdir(parents=True, exist_ok=True)
         images = day["source"] / "images"
@@ -463,7 +469,7 @@ def build_tutorials(tutorials):
             day["title"],
             day["markdown"],
             root_prefix="../../",
-            pills=day_pills(tutorials, root_prefix="../../", current_day=day["number"]),
+            pills=day_pills(week_days, root_prefix="../../", current_day=day["number"]),
             back_link=("../../index.html#tutorials", "返回每日教程"),
             prev_link=prev_link,
             next_link=next_link,
